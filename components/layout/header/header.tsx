@@ -158,12 +158,10 @@ export default function Header({ partners, courses }: HeaderProps) {
                         </div>
                     </div>
 
-                    <Link href="#corporate" className="nav-link">Corporate</Link>
-                    <Link href="#about" className="nav-link">About</Link>
+                    <Link href="/about" className="nav-link">About</Link>
                 </nav>
 
                 <div className="header-actions">
-                    <button className="login-btn">Login</button>
                     <Link href="#get-started" className="cta-btn">Get Started</Link>
                 </div>
             </div>
