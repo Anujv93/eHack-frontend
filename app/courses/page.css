@@ -1,0 +1,103 @@
+/* Courses Page - Clean & Professional Design */
+
+.courses-page {
+    min-height: 100vh;
+    background: #FFFFFF;
+}
+
+/* Hero Section - Light with Orange Gradient */
+.courses-hero {
+    background: linear-gradient(180deg, #FFF7ED 0%, #FFFFFF 100%);
+    padding: 140px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.courses-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 107, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255, 107, 0, 0.06) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.courses-hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: #F8FAFC;
+    color: #FF6B00;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    border: 1px solid #E2E8F0;
+}
+
+.courses-hero h1 {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.courses-hero p {
+    font-size: 1.25rem;
+    color: #475569;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Courses Content Section */
+.courses-content {
+    padding: 60px 0 100px;
+    background: #F8FAFC;
+}
+
+.courses-content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .courses-hero {
+        padding: 120px 0 60px;
+    }
+
+    .courses-hero h1 {
+        font-size: 2rem;
+    }
+
+    .courses-hero p {
+        font-size: 1.125rem;
+    }
+
+    .courses-content {
+        padding: 40px 0 80px;
+    }
+}

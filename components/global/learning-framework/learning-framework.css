@@ -1,0 +1,121 @@
+.framework-section {
+    background: var(--ec-gray-100, #F8F9FA);
+    padding: 5rem 0;
+}
+
+.framework-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.framework-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.framework-section .section-header h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.framework-section .red-underline-center {
+    width: 60px;
+    height: 4px;
+    background: #FF6B00;
+    margin: 1rem auto 0;
+}
+
+.framework-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.framework-step {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.framework-step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.step-header {
+    background: linear-gradient(135deg, #FF6B00 0%, #CC5500 100%);
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.step-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="80" cy="20" r="30" fill="white" opacity="0.1"/><circle cx="20" cy="80" r="20" fill="white" opacity="0.1"/></svg>');
+    opacity: 0.5;
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.step-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.step-body {
+    padding: 1.5rem;
+}
+
+.step-body p {
+    font-size: 0.875rem;
+    color: #6C757D;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.step-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #FF6B00;
+    text-decoration: none;
+}
+
+.step-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+    .framework-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .framework-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .framework-section {
+        padding: 3rem 0;
+    }
+}

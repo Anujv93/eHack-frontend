@@ -1,0 +1,142 @@
+'use client';
+
+import Link from 'next/link';
+import './mastery-section.css';
+
+interface Program {
+    title: string;
+    features: string[];
+    duration: string;
+    trainingHours: string;
+    certifications: string;
+    membership: string;
+    certificateImage?: string;
+    ctaText: string;
+    ctaLink: string;
+    featured?: boolean;
+}
+
+const programs: Program[] = [
+    {
+        title: 'Master Class Program in Ethical Hacking',
+        features: [
+            "Build expertise in ethical hacking with the world's #1 certification (CEH v13)",
+            'Perfect for professionals looking to master attack strategies',
+            'Defensive countermeasures training'
+        ],
+        duration: '4 Months',
+        trainingHours: '100 Hours',
+        certifications: 'CEH v13',
+        membership: '6 Months',
+        certificateImage: '/images/certificates/ceh-certificate.jpg',
+        ctaText: 'Explore Program',
+        ctaLink: '/programs/masterclass-ethical-hacking',
+        featured: false
+    },
+    {
+        title: 'Graduate Program in Ethical Hacking & Cyber Security',
+        features: [
+            'Comprehensive program covering IT fundamentals',
+            'Ethical hacking, penetration testing, and digital forensics',
+            '2 global certifications from EC-Council'
+        ],
+        duration: '7-9 Months',
+        trainingHours: '200+ Hours',
+        certifications: 'CSCU, CND',
+        membership: '2 Years',
+        certificateImage: '/images/certificates/graduate-certificate.jpg',
+        ctaText: 'Explore Program',
+        ctaLink: '/programs/graduate-ethical-hacking',
+        featured: true
+    },
+    {
+        title: 'Masters Program with 5 Global Certifications',
+        features: [
+            'Ultimate cybersecurity mastery program',
+            '5 EC-Council certifications: CSCU, CND, CEH, CPENT, CHFI',
+            'For serious professionals aiming for advanced expertise'
+        ],
+        duration: '9-12 Months',
+        trainingHours: '300 Hours',
+        certifications: '5 Global Certs',
+        membership: '2 Years',
+        certificateImage: '/images/certificates/masters-certificate.jpg',
+        ctaText: 'Explore Program',
+        ctaLink: '/programs/masters-5-certifications',
+        featured: false
+    }
+];
+
+export default function MasterySection() {
+    return (
+        <section className="mastery-section">
+            <div className="mastery-container">
+                <div className="mastery-header">
+                    <span className="mastery-label">Comprehensive Curriculum</span>
+                    <h2 className="mastery-title">Choose Your Path to Mastery</h2>
+                </div>
+
+                <div className="programs-grid">
+                    {programs.map((program, index) => (
+                        <div
+                            key={index}
+                            className={`program-card ${program.featured ? 'program-card-featured' : ''}`}
+                        >
+                            <h3 className="program-title">{program.title}</h3>
+
+                            <ul className="program-features">
+                                {program.features.map((feature, idx) => (
+                                    <li key={idx} className="program-feature">
+                                        <svg className="feature-check" viewBox="0 0 20 20" fill="none">
+                                            <circle cx="10" cy="10" r="10" fill="#FFF7F0" />
+                                            <path d="M6 10l3 3 5-6" stroke="#df6718" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        <span>{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <div className="program-meta">
+                                <div className="meta-item">
+                                    <span className="meta-label">Duration</span>
+                                    <span className="meta-value">{program.duration}</span>
+                                </div>
+                                <div className="meta-item">
+                                    <span className="meta-label">Training Hours</span>
+                                    <span className="meta-value">{program.trainingHours}</span>
+                                </div>
+                                <div className="meta-item">
+                                    <span className="meta-label">Certifications</span>
+                                    <span className="meta-value">{program.certifications}</span>
+                                </div>
+                                <div className="meta-item">
+                                    <span className="meta-label">Membership</span>
+                                    <span className="meta-value">{program.membership}</span>
+                                </div>
+                            </div>
+
+                            <div className="program-certificate">
+                                {program.certificateImage ? (
+                                    <img
+                                        src={program.certificateImage}
+                                        alt={`${program.title} Certificate`}
+                                        className="certificate-image"
+                                    />
+                                ) : (
+                                    <div className="certificate-placeholder">
+                                        <span>🎓</span>
+                                        <span>Certificate Preview</span>
+                                    </div>
+                                )}
+                            </div>
+
+                            <Link href={program.ctaLink} className="program-cta">
+                                {program.ctaText}
+                            </Link>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

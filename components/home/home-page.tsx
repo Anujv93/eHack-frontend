@@ -1,0 +1,388 @@
+'use client';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import styles from '@/app/page.module.css';
+import ProgramsSection from './programs-section';
+import MasterySection from './mastery-section';
+import TestimonialsSection from './testimonials-section';
+
+// Types for props
+interface Partner {
+    id: number;
+    name: string;
+    slug: string;
+    logoUrl?: string;
+    courseCount: number;
+}
+
+interface Course {
+    id: number;
+    slug: string;
+    title: string;
+    level: string;
+    duration?: string;
+    partnerSlug?: string;
+    partnerName?: string;
+}
+
+interface Category {
+    id: string;
+    name: string;
+    slug: string;
+    colorCode: string;
+}
+
+interface HomePageProps {
+    partners: Partner[];
+    courses: Course[];
+    categories: Category[];
+}
+
+// Course category icons (fallback)
+const categoryIcons: Record<string, string> = {
+    'cybersecurity': '🛡️',
+    'digital-marketing': '📈',
+    'data-science': '🤖',
+    'cloud': '☁️',
+    'iot': '🌐',
+    'default': '📚'
+};
+
+// Our programs (hardcoded for now)
+const programs = [
+    {
+        title: 'Diploma in Ethical Hacking',
+        description: 'Comprehensive program with 2 industry certifications',
+        duration: '6 Months',
+        certifications: 2,
+        icon: '🎓',
+    },
+    {
+        title: 'Digital Marketing Masterclass',
+        description: 'From strategy to execution - complete digital marketing journey',
+        duration: '4 Months',
+        certifications: 1,
+        icon: '📱',
+    },
+    {
+        title: 'Data Science Bootcamp',
+        description: 'Transform into a data-driven decision maker',
+        duration: '5 Months',
+        certifications: 2,
+        icon: '📊',
+    },
+    {
+        title: 'IoT Specialist Program',
+        description: 'Build the connected world of tomorrow',
+        duration: '4 Months',
+        certifications: 1,
+        icon: '🌐',
+    },
+];
+
+// Stats
+const stats = [
+    { value: '15+', label: 'Years of Excellence' },
+    { value: '50,000+', label: 'Students Trained' },
+    { value: '98%', label: 'Placement Rate' },
+    { value: '200+', label: 'Expert Trainers' },
+];
+
+// Learning options
+const learningOptions = [
+    {
+        title: 'Live Online Training',
+        description: 'Interactive virtual sessions with real-time instructor engagement',
+        link: '/learning-options#live-online'
+    },
+    {
+        title: 'Classroom Training',
+        description: 'Traditional instructor-led learning in modern facilities',
+        link: '/learning-options#classroom'
+    },
+    {
+        title: '1-on-1 Training',
+        description: 'Personalized sessions tailored to your schedule and learning goals',
+        link: '/learning-options#one-on-one'
+    },
+    {
+        title: 'Fly-Me-a-Trainer',
+        description: 'Bring expert trainers directly to your location',
+        link: '/learning-options#fly-trainer'
+    },
+    {
+        title: 'Flexi',
+        description: 'Flexible learning that adapts to your schedule and pace',
+        link: '/learning-options#flexi'
+    },
+    {
+        title: 'Customized Training',
+        description: 'Tailored training programs designed for your specific needs',
+        link: '/learning-options#customized'
+    },
+    {
+        title: 'Webinar as a Service',
+        description: 'Professional webinar hosting and management solutions',
+        link: '/learning-options#webinar'
+    },
+    {
+        title: 'Upcoming Webinars',
+        description: 'Join our scheduled live sessions and interactive workshops',
+        link: '/learning-options#upcoming'
+    }
+];
+
+// Unique offerings
+const uniqueOfferings = [
+    {
+        title: '1-on-1 Training',
+        description: 'Personalized sessions tailored to your schedule and learning goals',
+        icon: '👤',
+    },
+    {
+        title: 'Industry Projects',
+        description: 'Work on real-world projects to build practical experience',
+        icon: '💼',
+    },
+    {
+        title: 'Placement Support',
+        description: 'Dedicated career services to help you land your dream job',
+        icon: '🎯',
+    },
+    {
+        title: 'Expert Mentorship',
+        description: 'Learn from certified professionals with industry experience',
+        icon: '🌟',
+    },
+];
+
+export default function HomePage({ partners, courses, categories }: HomePageProps) {
+    const router = useRouter();
+    const [searchQuery, setSearchQuery] = useState('');
+    const [activeCategory, setActiveCategory] = useState(categories[0]?.slug || 'all');
+
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (searchQuery.trim()) {
+            // Navigate to courses page with search using Next.js router
+            router.push(`/courses?search=${encodeURIComponent(searchQuery.trim())}`);
+        }
+    };
+
+    // Get courses for active category
+    const filteredCourses = activeCategory === 'all'
+        ? courses.slice(0, 4)
+        : courses.slice(0, 4); // For now show first 4, can be enhanced later
+
+    return (
+        <div className={styles.page}>
+
+            {/* Hero Section */}
+            <section className={styles.hero}>
+                <div className={styles.heroBackground}>
+                    <div className={styles.heroOverlay}></div>
+                    <div className={styles.heroImage}></div>
+                </div>
+                <div className={styles.heroContent}>
+                    <div className={styles.heroBadge}>
+                        <span>🏆</span> Your Trusted Training Partner
+                    </div>
+                    <h1 className={styles.heroTitle}>
+                        Transform Your Career with
+                        <span className={styles.heroHighlight}> Industry-Leading Skills</span>
+                    </h1>
+                    <p className={styles.heroSubtitle}>
+                        Expert-led certification courses in Cybersecurity, Digital Marketing,
+                        Data Science & AI, and IoT & Robotics
+                    </p>
+
+                    {/* Search Bar */}
+                    <form onSubmit={handleSearch} className={styles.searchForm}>
+                        <div className={styles.searchWrapper}>
+                            <span className={styles.searchIcon}>🔍</span>
+                            <input
+                                type="text"
+                                className={styles.searchInput}
+                                placeholder="Search courses, certifications, or topics..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                            <button type="submit" className={styles.searchBtn}>
+                                Search
+                            </button>
+                        </div>
+                    </form>
+
+                    {/* Quick Links */}
+                    <div className={styles.quickLinks}>
+                        <span className={styles.quickLinksLabel}>Popular:</span>
+                        {courses.slice(0, 4).map((course) => (
+                            <Link
+                                key={course.id}
+                                href={`/certificate/${course.slug}`}
+                                className={styles.quickLink}
+                            >
+                                {course.title.length > 15 ? course.title.slice(0, 15) + '...' : course.title}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Partners Section */}
+            <section className={styles.partners}>
+                <div className={styles.container}>
+                    <p className={styles.partnersLabel}>Trusted by World&apos;s Leading Certification Partners</p>
+                    <div className={styles.partnersGrid}>
+                        {partners.map((partner) => (
+                            <div key={partner.id} className={styles.partnerCard}>
+                                {partner.logoUrl ? (
+                                    <img
+                                        src={partner.logoUrl}
+                                        alt={partner.name}
+                                        className={styles.partnerLogo}
+                                    />
+                                ) : (
+                                    <span className={styles.partnerName}>{partner.name}</span>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Course Categories */}
+            <section id="courses" className={styles.coursesSection}>
+                <div className={styles.container}>
+                    <div className={styles.sectionHeader}>
+                        <h2 className={styles.sectionTitle}>Explore Our Courses</h2>
+                        <p className={styles.sectionSubtitle}>
+                            Choose from our comprehensive range of professional courses
+                        </p>
+                    </div>
+
+                    {/* Category Tabs */}
+                    {categories.length > 0 && (
+                        <div className={styles.categoryTabs}>
+                            {categories.map((category) => (
+                                <button
+                                    key={category.id}
+                                    className={`${styles.categoryTab} ${activeCategory === category.slug ? styles.categoryTabActive : ''}`}
+                                    onClick={() => setActiveCategory(category.slug)}
+                                >
+                                    {category.name}
+                                </button>
+                            ))}
+                        </div>
+                    )}
+
+                    {/* Course Cards */}
+                    <div className={styles.coursesGrid}>
+                        {courses.slice(0, 6).map((course) => (
+                            <Link
+                                key={course.id}
+                                href={`/certificate/${course.slug}`}
+                                className={styles.courseCard}
+                            >
+                                <h3 className={styles.courseCardTitle}>{course.title}</h3>
+                                <p className={styles.courseCardMeta}>
+                                    {course.partnerName || 'Professional Certification'} • {course.level}
+                                </p>
+                                <span className={styles.courseCardLink}>
+                                    View Details →
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
+
+                    <div className={styles.viewAllWrapper}>
+                        <Link href="/courses">
+                            <button className={styles.viewAllBtn}>View All Courses</button>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Choose Your Path to Mastery */}
+            <MasterySection />
+
+            {/* Learning Options */}
+            <section className={styles.learningSection}>
+                <div className={styles.container}>
+                    <div className={styles.sectionHeader}>
+                        <h2 className={styles.sectionTitle}>Flexible Learning Options</h2>
+                        <p className={styles.sectionSubtitle}>
+                            Choose the learning format that works best for you
+                        </p>
+                    </div>
+
+                    <div className={styles.learningGrid}>
+                        {learningOptions.map((option, index) => (
+                            <Link key={index} href={option.link} className={styles.learningCard}>
+                                <h3 className={styles.learningTitle}>{option.title}</h3>
+                                <p className={styles.learningDescription}>{option.description}</p>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Stats Section */}
+            <section className={styles.statsSection}>
+                <div className={styles.container}>
+                    <div className={styles.statsGrid}>
+                        {stats.map((stat, index) => (
+                            <div key={index} className={styles.statCard}>
+                                <span className={styles.statValue}>{stat.value}</span>
+                                <span className={styles.statLabel}>{stat.label}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+            {/* 
+            Unique Offerings
+            <section className={styles.offeringsSection}>
+                <div className={styles.container}>
+                    <div className={styles.sectionHeader}>
+                        <h2 className={styles.sectionTitle}>Why Choose eHack Academy?</h2>
+                        <p className={styles.sectionSubtitle}>
+                            Discover what sets us apart from the rest
+                        </p>
+                    </div>
+
+                    <div className={styles.offeringsGrid}>
+                        {uniqueOfferings.map((offering, index) => (
+                            <div key={index} className={styles.offeringCard}>
+                                <div className={styles.offeringIcon}>{offering.icon}</div>
+                                <h3 className={styles.offeringTitle}>{offering.title}</h3>
+                                <p className={styles.offeringDescription}>{offering.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section> */}
+
+            {/* What Our Learners Say */}
+            <TestimonialsSection />
+
+            {/* CTA Section */}
+            <section className={styles.ctaSection}>
+                <div className={styles.container}>
+                    <div className={styles.ctaContent}>
+                        <h2 className={styles.ctaTitle}>Ready to Transform Your Career?</h2>
+                        <p className={styles.ctaSubtitle}>
+                            Join thousands of professionals who have accelerated their careers with us
+                        </p>
+                        <div className={styles.ctaButtons}>
+                            <button className={styles.ctaPrimaryBtn}>Start Learning Today</button>
+                            <button className={styles.ctaSecondaryBtn}>Talk to Advisor</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div >
+    );
+}

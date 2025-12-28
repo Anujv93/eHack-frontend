@@ -1,0 +1,278 @@
+{
+  "exportDate": "2025-12-28T06:51:18.649Z",
+  "totalSchemas": 4,
+  "schemas": [
+    {
+      "uid": "api::admission-process",
+      "displayName": "AdmissionProcess",
+      "type": "api",
+      "name": "admission-process",
+      "collectionName": "admission_processes",
+      "kind": "singleType",
+      "attributes": [
+        "Title",
+        "ContactPhone",
+        "ContactEmail",
+        "Location",
+        "steps"
+      ],
+      "schema": {
+        "kind": "singleType",
+        "collectionName": "admission_processes",
+        "info": {
+          "singularName": "admission-process",
+          "pluralName": "admission-processes",
+          "displayName": "AdmissionProcess"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "Title": {
+            "type": "string"
+          },
+          "ContactPhone": {
+            "type": "string"
+          },
+          "ContactEmail": {
+            "type": "string"
+          },
+          "Location": {
+            "type": "string"
+          },
+          "steps": {
+            "type": "component",
+            "component": "global.admission-steps",
+            "repeatable": true
+          }
+        }
+      }
+    },
+    {
+      "uid": "api::certificate",
+      "displayName": "Certificate",
+      "type": "api",
+      "name": "certificate",
+      "collectionName": "certificates",
+      "kind": "collectionType",
+      "attributes": [
+        "Title",
+        "slug",
+        "pageContent",
+        "certificationPartner",
+        "categories",
+        "Level",
+        "Duration",
+        "ShortDescription",
+        "FeaturedOrder"
+      ],
+      "schema": {
+        "kind": "collectionType",
+        "collectionName": "certificates",
+        "info": {
+          "singularName": "certificate",
+          "pluralName": "certificates",
+          "displayName": "Certificate"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "Title": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "pageContent": {
+            "type": "dynamiczone",
+            "components": [
+              "single-certificate-section.hero-section",
+              "single-certificate-section.certificate-summary",
+              "global.features-grid",
+              "global.training-section",
+              "global.learning-framework",
+              "global.testimonials-section",
+              "global.target-audience",
+              "global.statistics-section",
+              "global.placement-partners",
+              "global.faq-section",
+              "global.accreditations-section",
+              "global.course-details",
+              "global.cta-section",
+              "global.exam-details"
+            ]
+          },
+          "certificationPartner": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::certification-partner.certification-partner",
+            "inversedBy": "certificates"
+          },
+          "categories": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::certification-category.certification-category",
+            "inversedBy": "certificates"
+          },
+          "Level": {
+            "type": "enumeration",
+            "enum": [
+              "Beginner",
+              "Intermediate",
+              "Advanced",
+              "Expert"
+            ],
+            "default": "Beginner"
+          },
+          "Duration": {
+            "type": "string"
+          },
+          "ShortDescription": {
+            "type": "text"
+          },
+          "FeaturedOrder": {
+            "type": "integer",
+            "default": 0
+          }
+        }
+      }
+    },
+    {
+      "uid": "api::certification-category",
+      "displayName": "Certification Category",
+      "type": "api",
+      "name": "certification-category",
+      "collectionName": "certification_categories",
+      "kind": "collectionType",
+      "attributes": [
+        "Name",
+        "slug",
+        "Description",
+        "Icon",
+        "ColorCode",
+        "certificates",
+        "DisplayOrder"
+      ],
+      "schema": {
+        "kind": "collectionType",
+        "collectionName": "certification_categories",
+        "info": {
+          "singularName": "certification-category",
+          "pluralName": "certification-categories",
+          "displayName": "Certification Category",
+          "description": "Categories for certifications (Cybersecurity, Cloud, AI, etc.)"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "Name": {
+            "type": "string",
+            "required": true,
+            "unique": true
+          },
+          "slug": {
+            "type": "uid",
+            "targetField": "Name",
+            "required": true
+          },
+          "Description": {
+            "type": "text"
+          },
+          "Icon": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "ColorCode": {
+            "type": "string",
+            "default": "#4945FF"
+          },
+          "certificates": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::certificate.certificate",
+            "inversedBy": "categories"
+          },
+          "DisplayOrder": {
+            "type": "integer",
+            "default": 0
+          }
+        }
+      }
+    },
+    {
+      "uid": "api::certification-partner",
+      "displayName": "Certification Partner",
+      "type": "api",
+      "name": "certification-partner",
+      "collectionName": "certification_partners",
+      "kind": "collectionType",
+      "attributes": [
+        "Name",
+        "slug",
+        "Logo",
+        "Description",
+        "WebsiteUrl",
+        "certificates",
+        "FeaturedOrder"
+      ],
+      "schema": {
+        "kind": "collectionType",
+        "collectionName": "certification_partners",
+        "info": {
+          "singularName": "certification-partner",
+          "pluralName": "certification-partners",
+          "displayName": "Certification Partner",
+          "description": "Organizations that provide certifications (EC-Council, ISC2, ISACA, etc.)"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "Name": {
+            "type": "string",
+            "required": true,
+            "unique": true
+          },
+          "slug": {
+            "type": "uid",
+            "targetField": "Name",
+            "required": true
+          },
+          "Logo": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "Description": {
+            "type": "text"
+          },
+          "WebsiteUrl": {
+            "type": "string"
+          },
+          "certificates": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::certificate.certificate",
+            "mappedBy": "certificationPartner"
+          },
+          "FeaturedOrder": {
+            "type": "integer",
+            "default": 0
+          }
+        }
+      }
+    }
+  ]
+}

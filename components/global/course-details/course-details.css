@@ -1,0 +1,497 @@
+/* ============================================
+   Course Details Component Styles
+   Tabbed navigation with 4 tabs:
+   - What You'll Learn
+   - Learning Framework
+   - Course Outline (Accordion)
+   - Exam Details
+   ============================================ */
+
+/* Variables - matching the CCSE theme */
+.course-details-section {
+    --cd-black: #000000;
+    --cd-white: #FFFFFF;
+    --cd-primary: #FF6B00;
+    --cd-primary-dark: #CC5500;
+    --cd-gray-100: #F8F9FA;
+    --cd-gray-200: #E9ECEF;
+    --cd-gray-300: #DEE2E6;
+    --cd-gray-400: #CED4DA;
+    --cd-gray-500: #6C757D;
+    --cd-gray-600: #495057;
+    --cd-gray-700: #343A40;
+    --cd-gray-800: #212529;
+
+    padding: 5rem 0;
+    background: var(--cd-white);
+}
+
+.course-details-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   Layout - Tabs on Left, Content on Right
+   ============================================ */
+.course-details-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+}
+
+/* ============================================
+   Tab Navigation (Left Side)
+   ============================================ */
+.course-details-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.course-details-tab {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cd-gray-600);
+    background: var(--cd-gray-100);
+    border: none;
+    border-left: 4px solid transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.course-details-tab:hover {
+    background: var(--cd-gray-200);
+}
+
+.course-details-tab.active {
+    background: var(--cd-white);
+    color: var(--cd-black);
+    border-left-color: var(--cd-primary);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================
+   Content Area (Right Side)
+   ============================================ */
+.course-details-content {
+    background: var(--cd-white);
+    border: 1px solid var(--cd-gray-200);
+    border-radius: 8px;
+}
+
+.content-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--cd-gray-200);
+}
+
+.content-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cd-black);
+    margin: 0;
+}
+
+.tab-panel {
+    display: block;
+}
+
+.tab-panel-body {
+    padding: 1.5rem;
+}
+
+.no-content {
+    text-align: center;
+    color: var(--cd-gray-500);
+    padding: 2rem;
+}
+
+/* ============================================
+   What You'll Learn - Card Grid
+   ============================================ */
+.learn-grid-clean {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.learn-card-clean {
+    background: var(--cd-white);
+    border: 1px solid var(--cd-gray-200);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-top: 4px solid var(--cd-primary);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.learn-card-clean:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.learn-card-clean .learn-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--cd-gray-200);
+    line-height: 1;
+}
+
+.learn-card-clean h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--cd-black);
+    margin: 0 0 0.75rem 0;
+    padding-right: 3rem;
+}
+
+.learn-card-clean p {
+    font-size: 0.875rem;
+    color: var(--cd-gray-600);
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+}
+
+.learn-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.learn-tags span {
+    display: inline-block;
+    background: var(--cd-gray-100);
+    color: var(--cd-gray-700);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ============================================
+   Learning Framework - Timeline
+   ============================================ */
+.framework-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+}
+
+.framework-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    bottom: 40px;
+    width: 2px;
+    background: var(--cd-gray-200);
+}
+
+.timeline-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+.timeline-step:first-child {
+    padding-top: 0;
+}
+
+.timeline-step:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-number {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: linear-gradient(135deg, var(--cd-primary) 0%, var(--cd-primary-dark) 100%);
+    color: var(--cd-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-top: 0.25rem;
+}
+
+.timeline-content h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cd-black);
+    margin: 0 0 0.5rem 0;
+}
+
+.timeline-content p {
+    font-size: 0.9375rem;
+    color: var(--cd-gray-600);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ============================================
+   Course Outline - Accordion
+   ============================================ */
+.accordion {
+    padding: 1rem;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--cd-gray-200);
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.accordion-header:hover {
+    background: var(--cd-gray-100);
+}
+
+.accordion-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.module-number {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--cd-primary);
+    min-width: 70px;
+}
+
+.module-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cd-black);
+}
+
+.accordion-toggle {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--cd-primary);
+    transition: transform 0.3s;
+}
+
+.accordion-item.active .accordion-toggle {
+    transform: rotate(45deg);
+}
+
+.accordion-body {
+    padding: 0 1rem 1.25rem;
+    padding-left: calc(1rem + 70px + 1rem);
+    display: none;
+}
+
+.accordion-item.active .accordion-body {
+    display: block;
+}
+
+.accordion-body p {
+    font-size: 0.875rem;
+    color: var(--cd-gray-600);
+    line-height: 1.7;
+    margin: 0 0 0.75rem 0;
+}
+
+.accordion-body .topics {
+    font-size: 0.75rem;
+    color: var(--cd-gray-500);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.accordion-body .topics strong {
+    color: var(--cd-primary);
+}
+
+/* ============================================
+   Exam Details - Two Column Grid
+   ============================================ */
+.exam-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.exam-detail-card {
+    background: var(--cd-white);
+    border: 1px solid var(--cd-gray-200);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.exam-detail-card h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--cd-black);
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--cd-primary);
+}
+
+.exam-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exam-info-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--cd-gray-100);
+    font-size: 0.9375rem;
+    color: var(--cd-gray-700);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.exam-info-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.exam-info-list li strong {
+    color: var(--cd-gray-800);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+@media (max-width: 992px) {
+    .course-details-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .course-details-tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 0;
+        border-bottom: 1px solid var(--cd-gray-200);
+    }
+
+    .course-details-tab {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+        padding: 1rem 1.25rem;
+    }
+
+    .course-details-tab.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--cd-primary);
+        box-shadow: none;
+    }
+
+    .learn-grid-clean {
+        grid-template-columns: 1fr;
+    }
+
+    .exam-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .course-details-section {
+        padding: 3rem 0;
+    }
+
+    .course-details-tabs {
+        margin: 0 -20px;
+        padding: 0 20px;
+    }
+
+    .course-details-tab {
+        font-size: 0.875rem;
+        padding: 0.875rem 1rem;
+    }
+
+    .accordion-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .module-number {
+        min-width: auto;
+    }
+
+    .accordion-body {
+        padding-left: 1rem;
+    }
+
+    .timeline-step {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .framework-timeline::before {
+        display: none;
+    }
+
+    .timeline-number {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-details-tab {
+        font-size: 0.8125rem;
+        padding: 0.75rem;
+    }
+
+    .learn-card-clean {
+        padding: 1.25rem;
+    }
+
+    .learn-card-clean .learn-number {
+        font-size: 1.5rem;
+    }
+
+    .exam-detail-card {
+        padding: 1.25rem;
+    }
+
+    .exam-info-list li {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
