@@ -30,46 +30,112 @@ button {
     padding: 0 20px;
 }
 
+/* Light Hero Section - Like Learning Options */
 .hero-banner {
-    background: var(--ec-black);
-    padding: 100px 0 80px;
+    background: linear-gradient(180deg, #FFF7ED 0%, #FFFFFF 100%);
+    padding: 140px 0 70px;
+    text-align: left;
     position: relative;
-    overflow: visible;
-    margin-top: 64px;
-    min-height: 300px;
+    overflow: hidden;
+    margin-top: 44px;
 }
 
 .hero-banner::before {
     content: '';
     position: absolute;
     top: 0;
+    left: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" preserveAspectRatio="none"><path d="M0,100 Q200,0 400,100 T800,100 L800,300 L0,300 Z" fill="%23FF6B00" opacity="0.4"/><path d="M0,150 Q200,50 400,150 T800,150 L800,300 L0,300 Z" fill="%23FF6B00" opacity="0.3"/></svg>') no-repeat center center;
-    background-size: 100% 100%;
-    opacity: 1;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 107, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255, 107, 0, 0.06) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.hero-banner .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .hero-content-wrapper {
     position: relative;
     z-index: 10;
+    max-width: 800px;
+}
+
+/* Hero Badge */
+.hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    color: #FFFFFF;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
 .hero-title-main {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
     font-weight: 800;
-    color: var(--ec-white);
-    line-height: 1.1;
-    margin-bottom: var(--space-4);
+    color: #0a0a1a;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
 }
 
 .hero-title-main .ai-highlight {
-    color: var(--ec-red);
+    color: var(--ec-red, #FF6B00);
+}
+
+/* Decorative Underline */
+.hero-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B00 0%, #FF8533 100%);
+    margin: 0 0 20px;
+    border-radius: 2px;
 }
 
 .hero-subtitle-main {
-    font-size: var(--font-size-xl);
-    color: var(--ec-gray-400);
+    font-size: 1.15rem;
+    color: #64748B;
+    line-height: 1.6;
     max-width: 600px;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 120px 0 50px;
+    }
+
+    .hero-badge {
+        padding: 8px 18px;
+        font-size: 0.65rem;
+    }
+
+    .hero-title-main {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle-main {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-main {
+        font-size: 1.5rem;
+    }
+
+    .hero-badge {
+        padding: 6px 14px;
+        font-size: 0.6rem;
+    }
 }

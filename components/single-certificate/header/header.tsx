@@ -41,11 +41,13 @@ export default function CertificateHeader({
     return (
         <section className="hero-banner" style={backgroundStyle}>
             <div className="hero-content-wrapper container">
+                <span className="hero-badge">CERTIFICATION TRAINING</span>
                 {title && (
                     <h1 className="hero-title-main">
                         {parseTitle(title)}
                     </h1>
                 )}
+                <div className="hero-underline"></div>
                 {subtitle && <p className="hero-subtitle-main">{subtitle}</p>}
             </div>
         </section>
