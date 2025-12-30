@@ -118,7 +118,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                     </h4>
                                     <div className="mega-courses">
                                         {filteredCourses.length > 0 ? (
-                                            filteredCourses.slice(0, 6).map((course) => (
+                                            filteredCourses.map((course) => (
                                                 <Link
                                                     key={course.id}
                                                     href={`/certificate/${course.slug}`}
