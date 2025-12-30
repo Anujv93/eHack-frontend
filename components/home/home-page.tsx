@@ -162,13 +162,29 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
     const router = useRouter();
     const [searchQuery, setSearchQuery] = useState('');
     const [activeCategory, setActiveCategory] = useState(categories[0]?.slug || 'all');
+    const [showSuggestions, setShowSuggestions] = useState(false);
+
+    // Filter courses for suggestions
+    const searchSuggestions = searchQuery.length >= 2
+        ? courses.filter(course =>
+            course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (course.partnerName && course.partnerName.toLowerCase().includes(searchQuery.toLowerCase()))
+        ).slice(0, 5)
+        : [];
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
+        setShowSuggestions(false);
         if (searchQuery.trim()) {
             // Navigate to courses page with search using Next.js router
             router.push(`/courses?search=${encodeURIComponent(searchQuery.trim())}`);
         }
+    };
+
+    const handleSuggestionClick = (slug: string) => {
+        setShowSuggestions(false);
+        setSearchQuery('');
+        router.push(`/certificate/${slug}`);
     };
 
     // Get courses for active category
@@ -198,21 +214,50 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         Data Science & AI, and IoT & Robotics
                     </p>
 
-                    {/* Search Bar */}
+                    {/* Search Bar with Suggestions */}
                     <form onSubmit={handleSearch} className={styles.searchForm}>
                         <div className={styles.searchWrapper}>
-                            <span className={styles.searchIcon}>🔍</span>
                             <input
                                 type="text"
                                 className={styles.searchInput}
                                 placeholder="Search courses, certifications, or topics..."
                                 value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
+                                onChange={(e) => {
+                                    setSearchQuery(e.target.value);
+                                    setShowSuggestions(true);
+                                }}
+                                onFocus={() => setShowSuggestions(true)}
+                                onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                             />
                             <button type="submit" className={styles.searchBtn}>
                                 Search
                             </button>
                         </div>
+
+                        {/* Search Suggestions Dropdown */}
+                        {showSuggestions && searchSuggestions.length > 0 && (
+                            <div className={styles.searchSuggestions}>
+                                {searchSuggestions.map((course) => {
+                                    const partner = partners.find(p => p.slug === course.partnerSlug);
+                                    return (
+                                        <div
+                                            key={course.id}
+                                            className={styles.suggestionItem}
+                                            onClick={() => handleSuggestionClick(course.slug)}
+                                        >
+                                            {partner?.logoUrl && (
+                                                <img
+                                                    src={partner.logoUrl}
+                                                    alt={partner.name}
+                                                    className={styles.suggestionLogo}
+                                                />
+                                            )}
+                                            <span className={styles.suggestionTitle}>{course.title}</span>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
                     </form>
 
                     {/* Quick Links */}
@@ -251,10 +296,10 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Course Categories */}
-            <section id="courses" className={styles.coursesSection}>
+            < section id="courses" className={styles.coursesSection} >
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
                         <h2 className={styles.sectionTitle}>Explore Our Courses</h2>
@@ -303,13 +348,13 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         </Link>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Choose Your Path to Mastery */}
-            <MasterySection />
+            < MasterySection />
 
             {/* Learning Options */}
-            <section className={styles.learningSection}>
+            < section className={styles.learningSection} >
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
                         <h2 className={styles.sectionTitle}>Flexible Learning Options</h2>
@@ -327,10 +372,10 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Stats Section */}
-            <section className={styles.statsSection}>
+            < section className={styles.statsSection} >
                 <div className={styles.container}>
                     <div className={styles.statsGrid}>
                         {stats.map((stat, index) => (
@@ -341,7 +386,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
             {/* 
             Unique Offerings
             <section className={styles.offeringsSection}>

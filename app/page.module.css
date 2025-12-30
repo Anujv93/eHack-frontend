@@ -195,6 +195,10 @@
 /* ===== Search Form ===== */
 .searchForm {
     margin-bottom: 1.5rem;
+    position: relative;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .searchWrapper {
@@ -250,6 +254,54 @@
 .searchBtn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+}
+
+/* ===== Search Suggestions ===== */
+.searchSuggestions {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 100;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.suggestionItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.suggestionItem:last-child {
+    border-bottom: none;
+}
+
+.suggestionItem:hover {
+    background: #FFF7ED;
+}
+
+.suggestionLogo {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.suggestionTitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0a0a1a;
+    flex: 1;
 }
 
 /* ===== Quick Links ===== */
