@@ -85,6 +85,23 @@ export default function TrainingSection({
         );
     };
 
+    // Format price to make GST text smaller
+    const formatPrice = (priceText: string) => {
+        // Check if the price contains GST text
+        const gstMatch = priceText.match(/(\+\s*GST|\+\s*Taxes?)/i);
+        if (gstMatch) {
+            const parts = priceText.split(gstMatch[0]);
+            return (
+                <>
+                    {parts[0]}
+                    <span className="price-tax">{gstMatch[0]}</span>
+                    {parts[1]}
+                </>
+            );
+        }
+        return priceText;
+    };
+
     return (
         <section className="ehack-training-section" id="ehack-training">
             <div className="container">
@@ -121,7 +138,7 @@ export default function TrainingSection({
                                     {pricing.OriginalPrice && (
                                         <span className="original-price">₹{pricing.OriginalPrice}</span>
                                     )}
-                                    <span className="offer-price">₹{pricing.DiscountedPrice}</span>
+                                    <span className="offer-price">₹{formatPrice(pricing.DiscountedPrice)}</span>
                                 </div>
                                 {pricing.Duration && (
                                     <div className="pricing-duration">

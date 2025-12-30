@@ -154,6 +154,13 @@
     color: var(--ec-red);
 }
 
+.price-tax {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--ec-gray-500);
+    margin-left: 4px;
+}
+
 .pricing-duration {
     display: flex;
     align-items: center;
