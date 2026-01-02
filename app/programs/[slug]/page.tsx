@@ -156,7 +156,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         <p className="credentials-subtitle">Graduate with internationally recognized certifications from {program.partner}{program.slug.includes('digital-marketing') ? ', building your expertise in digital marketing' : ', the world\'s leading cybersecurity certification body'}.</p>
 
                         {/* Certificate Images Gallery */}
-                        <div className="certificates-gallery">
+                        <div className={`certificates-gallery count-${program.certifications.length}`}>
                             {program.certifications.map((cert, idx) => (
                                 <div key={idx} className="certificate-image-card">
                                     <img src={cert.image} alt={`${cert.code} - ${cert.name} Certificate`} className="certificate-img" />

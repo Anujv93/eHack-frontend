@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="footer-grid">
                     <div className="footer-brand">
                         <div className="footer-logo-wrapper">
-                            <img src="/ehack-black.png" alt="eHack Academy" className="footer-logo" />
+                            <img src="/ehack-logo.png" alt="eHack Academy" className="footer-logo" />
                         </div>
                         <p className="footer-description">
                             Empowering careers through industry-leading professional training and certifications.
