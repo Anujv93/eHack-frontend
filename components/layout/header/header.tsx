@@ -137,44 +137,41 @@ export default function Header({ partners, courses }: HeaderProps) {
                                             )}
                                         </div>
                                     </div>
-
-                                    {/* eHack Originals */}
-                                    <div className="mega-menu-originals">
-                                        <h4 className="mega-menu-heading">eHack Originals</h4>
-                                        <div className="mega-originals-grid">
-                                            <Link href="/programs/diploma-cybersecurity" className="mega-original-card">
-                                                <span className="original-title">Diploma in Cybersecurity</span>
-                                                <span className="original-subtitle">Foundation Program</span>
-                                            </Link>
-                                            <Link href="/programs/graduate-cybersecurity" className="mega-original-card">
-                                                <span className="original-title">Graduate Program</span>
-                                                <span className="original-subtitle">Advanced Training</span>
-                                            </Link>
-                                            <Link href="/programs/masters-ethical-hacking" className="mega-original-card">
-                                                <span className="original-title">Masters in Ethical Hacking</span>
-                                                <span className="original-subtitle">Expert Level</span>
-                                            </Link>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 {/* Kennedy University Section - Right Column */}
                                 <div className="mega-menu-kennedy">
                                     <h4 className="mega-menu-heading">Global Degrees</h4>
-                                    <Link href="/kennedy-university" className="kennedy-card">
-                                        <img
-                                            src="/images/kennedy-university-megamenu.jpg"
-                                            alt="Kennedy University - Cybersecurity with AI Programs"
-                                            className="kennedy-image"
-                                        />
-                                        <div className="kennedy-info">
-                                            <span className="kennedy-title">Kennedy University</span>
-                                            <span className="kennedy-subtitle">Cybersecurity + AI Degrees</span>
+                                    <Link href="/kennedy-university" className="kennedy-partnership-card">
+                                        <div className="kennedy-logos">
+                                            <img src="/images/kennedy-university-logo.png" alt="Kennedy University" className="kennedy-logo-img" />
+                                            <span className="kennedy-logo-divider">×</span>
+                                            <img src="/images/ec-council-logo.png" alt="EC-Council" className="kennedy-logo-img ec-council" />
                                         </div>
+                                        <p className="kennedy-text">
+                                            Earn internationally accredited degrees in collaboration with EC-Council certifications
+                                        </p>
+                                        <span className="kennedy-cta">Learn More →</span>
                                     </Link>
-                                    <p className="kennedy-description">
-                                        Earn internationally accredited degrees in collaboration with EC-Council certifications
-                                    </p>
+                                </div>
+                            </div>
+
+                            {/* eHack Originals - Full Width */}
+                            <div className="mega-menu-originals-full">
+                                <h4 className="mega-menu-heading">eHack Originals</h4>
+                                <div className="mega-originals-grid">
+                                    <Link href="/programs/diploma-cybersecurity" className="mega-original-card">
+                                        <span className="original-title">Diploma in Cybersecurity</span>
+                                        <span className="original-subtitle">Foundation Program</span>
+                                    </Link>
+                                    <Link href="/programs/graduate-cybersecurity" className="mega-original-card">
+                                        <span className="original-title">Graduate Program</span>
+                                        <span className="original-subtitle">Advanced Training</span>
+                                    </Link>
+                                    <Link href="/programs/masters-ethical-hacking" className="mega-original-card">
+                                        <span className="original-title">Masters in Ethical Hacking</span>
+                                        <span className="original-subtitle">Expert Level</span>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
