@@ -171,6 +171,15 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.franchise-popup-form-section::-webkit-scrollbar {
+    display: none;
 }
 
 .franchise-popup-header {
@@ -239,6 +248,13 @@
     background: #FAFAFA;
     transition: all 0.2s ease;
     font-family: inherit;
+    width: 100%;
+    /* Ensure full width */
+}
+
+.form-group input {
+    height: 52px;
+    /* Fixed height to match phone input */
 }
 
 .form-group input:focus,
@@ -267,6 +283,9 @@
     background: #FAFAFA;
     overflow: hidden;
     transition: all 0.2s ease;
+    height: 52px;
+    /* Fixed height */
+    width: 100%;
 }
 
 .phone-input-wrapper:focus-within {

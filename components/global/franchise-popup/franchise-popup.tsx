@@ -131,7 +131,7 @@ export default function FranchisePopup() {
                             <div className="franchise-popup-header">
                                 <div className="franchise-popup-logo">
                                     <Image
-                                        src="/ehack-logo.png"
+                                        src="/ehack-black.png"
                                         alt="eHack Academy"
                                         width={120}
                                         height={40}
