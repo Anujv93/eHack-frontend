@@ -3,6 +3,7 @@ import { Montserrat, Open_Sans } from "next/font/google";
 import TopBar from "@/components/layout/top-bar/top-bar";
 import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
+import { FranchisePopup } from "@/components/global";
 import {
   getCertificationPartners,
   getCoursesForListing,
@@ -83,6 +84,7 @@ export default async function RootLayout({
         <Header partners={partners} courses={coursesTransformed} />
         {children}
         <Footer />
+        <FranchisePopup />
       </body>
     </html>
   );

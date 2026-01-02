@@ -13,6 +13,9 @@ export type {
     CertificationInfo,
 } from "./course-details/course-details";
 
+// Franchise Popup
+export { FranchisePopup } from "./franchise-popup";
+
 // TODO: Add other component exports as they are developed
 // export { default as Accreditations } from "./accreditations/accreditations";
 // export { default as FAQ } from "./faq/faq";
