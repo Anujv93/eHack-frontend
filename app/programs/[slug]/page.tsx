@@ -42,18 +42,34 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     {/* Left Content */}
                     <div className="hero-content">
                         <div className="partner-logos">
-                            <div className="partner-logo">
-                                <img src={program.partnerLogo} alt={`${program.partner} Accredited Training Center`} className="ec-council-badge" />
-                            </div>
-                            <div className="divider"></div>
+                            {/* Only show partner logo and divider for cybersecurity programs */}
+                            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && (
+                                <>
+                                    <div className="partner-logo">
+                                        <img src={program.partnerLogo} alt={`${program.partner} Accredited Training Center`} className="ec-council-badge" />
+                                    </div>
+                                    <div className="divider"></div>
+                                </>
+                            )}
                             <div className="partner-brand">
                                 <img src={program.ehackLogo} alt="eHack Academy" className="hero-brand-logo" />
                             </div>
                         </div>
 
                         <h1 className="hero-title">
-                            {program.title.split('Ethical Hacking')[0]}
-                            <span className="text-accent">Ethical Hacking & Cyber Security</span>
+                            {program.title.includes('Ethical Hacking') ? (
+                                <>
+                                    {program.title.split('Ethical Hacking')[0]}
+                                    <span className="text-accent">Ethical Hacking & Cyber Security</span>
+                                </>
+                            ) : program.title.includes('Digital Marketing') ? (
+                                <>
+                                    {program.title.split('Digital Marketing')[0]}
+                                    <span className="text-accent">Digital Marketing</span>
+                                </>
+                            ) : (
+                                program.title
+                            )}
                             <span className="cert-count">{program.subtitle}</span>
                         </h1>
 
@@ -137,7 +153,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 <div className="credentials-wrapper">
                     <div className="section-container">
                         <h2 className="credentials-title">Earn <span className="text-accent">{program.certifications.length} Global Certifications</span></h2>
-                        <p className="credentials-subtitle">Graduate with internationally recognized certifications from {program.partner}, the world's leading cybersecurity certification body.</p>
+                        <p className="credentials-subtitle">Graduate with internationally recognized certifications from {program.partner}{program.slug.includes('digital-marketing') ? ', building your expertise in digital marketing' : ', the world\'s leading cybersecurity certification body'}.</p>
 
                         {/* Certificate Images Gallery */}
                         <div className="certificates-gallery">
@@ -172,7 +188,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {/* Skills Section */}
             <section className="skills-section">
                 <div className="section-container">
-                    <h2 className="skills-title">Master <span className="text-accent">Cybersecurity</span> Skills</h2>
+                    <h2 className="skills-title">Master <span className="text-accent">{program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'}</span> Skills</h2>
 
                     <div className="skills-grid">
                         {program.skills.map((skill, idx) => (
@@ -201,7 +217,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <div className="roi-grid">
                         <div className="salary-card">
                             <p className="salary-stat">
-                                <span className="text-accent">Cybersecurity professionals</span> are among the highest-paid IT specialists with average salaries exceeding ₹12,00,000 annually.
+                                <span className="text-accent">{program.slug.includes('digital-marketing') ? 'Digital marketing professionals' : 'Cybersecurity professionals'}</span> are {program.slug.includes('digital-marketing') ? 'in high demand with competitive salaries averaging ₹6,00,000 annually' : 'among the highest-paid IT specialists with average salaries exceeding ₹12,00,000 annually'}.
                             </p>
                             <div className="salary-chart">
                                 <div className="chart-bars">
@@ -219,11 +235,11 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                     </div>
                                 </div>
                             </div>
-                            <h4 className="chart-title">A Cybersecurity Expert's Salary Progression</h4>
-                            <p className="chart-desc">Organizations offer highly competitive salaries to recruit and retain qualified cybersecurity professionals who can protect their digital assets.</p>
+                            <h4 className="chart-title">A {program.slug.includes('digital-marketing') ? 'Digital Marketing Professional\'s' : 'Cybersecurity Expert\'s'} Salary Progression</h4>
+                            <p className="chart-desc">{program.slug.includes('digital-marketing') ? 'Companies offer competitive salaries to skilled digital marketers who can drive measurable business growth through online channels.' : 'Organizations offer highly competitive salaries to recruit and retain qualified cybersecurity professionals who can protect their digital assets.'}</p>
                         </div>
                         <div className="testimonial-video-card">
-                            <p className="testimonial-intro">Watch how our graduates transformed their careers in cybersecurity.</p>
+                            <p className="testimonial-intro">Watch how our graduates transformed their careers in {program.slug.includes('digital-marketing') ? 'digital marketing' : 'cybersecurity'}.</p>
                             <div className="video-container">
                                 <div className="video-placeholder">
                                     <div className="play-button">
@@ -239,7 +255,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {/* Job Roles Section */}
             <section className="jobroles-section">
                 <div className="section-container">
-                    <h2 className="jobroles-title"><span className="text-accent">40+</span> Cybersecurity Roles</h2>
+                    <h2 className="jobroles-title"><span className="text-accent">{program.jobRoles.length}+</span> {program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'} Roles</h2>
 
                     <div className="jobroles-card">
                         <div className="jobroles-grid">
@@ -268,7 +284,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             <section className="why-ehack-section">
                 <div className="section-container">
                     <h2 className="roi-title">Why <span className="text-accent">eHack Academy</span>?</h2>
-                    <p className="roi-subtitle">Passion for Excellence in Information Security</p>
+                    <p className="roi-subtitle">{program.slug.includes('digital-marketing') ? 'Passion for Excellence in Digital Marketing Training' : 'Passion for Excellence in Information Security'}</p>
 
                     <div className="roi-grid">
                         <div className="salary-card">
@@ -297,7 +313,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <div className="audience-header">
                         <span className="audience-badge">IDEAL CANDIDATES</span>
                         <h2 className="audience-title">Who is this <span className="text-accent">Program</span> for?</h2>
-                        <p className="audience-subtitle">This program is designed for ambitious individuals ready to master cybersecurity</p>
+                        <p className="audience-subtitle">This program is designed for ambitious individuals ready to master {program.slug.includes('digital-marketing') ? 'digital marketing' : 'cybersecurity'}</p>
                     </div>
 
                     <div className="audience-grid">
@@ -321,8 +337,8 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <div className="curriculum-header">
                         <div className="curriculum-header-left">
                             <span className="curriculum-badge">Program Curriculum</span>
-                            <h2 className="curriculum-title">Master Cybersecurity<br />Through Practice</h2>
-                            <p className="curriculum-subtitle">A structured learning path designed by industry experts. Each module builds upon the previous, taking you from fundamentals to advanced penetration testing.</p>
+                            <h2 className="curriculum-title">Master {program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'}<br />Through Practice</h2>
+                            <p className="curriculum-subtitle">{program.slug.includes('digital-marketing') ? 'A structured learning path designed by industry experts. Each module builds upon the previous, taking you from fundamentals to advanced digital marketing strategies.' : 'A structured learning path designed by industry experts. Each module builds upon the previous, taking you from fundamentals to advanced penetration testing.'}</p>
                         </div>
                         <div className="curriculum-stats">
                             <div className="curr-stat">
@@ -388,7 +404,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 <div className="total-icon">🛡️</div>
                                 <div className="total-text">
                                     <strong>{program.certifications.length} Certifications</strong>
-                                    <span>EC-Council Accredited</span>
+                                    <span>{program.slug.includes('digital-marketing') ? 'Industry Recognized' : 'EC-Council Accredited'}</span>
                                 </div>
                             </div>
                         </div>
@@ -522,14 +538,18 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         {/* eHack Academy Card */}
                         <div className="cert-card cert-card-blue">
                             <div className="cert-image-wrapper">
-                                <img src="/images/certificates/masters-certificate.jpg" alt="eHack Academy Certificate" className="cert-image" />
+                                <img
+                                    src={program.slug === "masters-ethical-hacking" ? "/images/certificates/masters-certificate.jpg" : "/images/certificates/graduate-certificate.jpg"}
+                                    alt="eHack Academy Certificate"
+                                    className="cert-image"
+                                />
                             </div>
                             <div className="cert-content">
                                 <div className="cert-brand">
                                     <img src="/ehack-logo.png" alt="eHack Academy" className="cert-brand-logo" />
                                     <span className="brand-badge">ACADEMY</span>
                                 </div>
-                                <h3 className="cert-program-name">Masters in Cybersecurity Program</h3>
+                                <h3 className="cert-program-name">{program.title}</h3>
                                 <ul className="cert-features">
                                     <li>
                                         <span className="check-icon">✓</span>
@@ -541,57 +561,142 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                     </li>
                                     <li>
                                         <span className="check-icon">✓</span>
-                                        Placement Support
+                                        {program.slug === "masters-ethical-hacking" ? "Placement Support" : "Internship Opportunity*"}
                                     </li>
                                 </ul>
                                 <button className="btn-counsellor">Talk to Career Counsellor</button>
                             </div>
                         </div>
 
-                        {/* EC-Council Certifications Card */}
-                        <div className="cert-card cert-card-dark">
-                            <div className="cert-image-wrapper">
-                                <div className="cert-stack">
-                                    <img src="/images/certificates/ceh-certificate.jpg" alt="CSCU Certificate" className="cert-stack-img cert-stack-5" />
-                                    <img src="/images/certificates/ceh-certificate.jpg" alt="CND Certificate" className="cert-stack-img cert-stack-4" />
-                                    <img src="/images/certificates/ceh-certificate.jpg" alt="CEH Certificate" className="cert-stack-img cert-stack-3" />
-                                    <img src="/images/certificates/graduate-certificate.jpg" alt="CHFI Certificate" className="cert-stack-img cert-stack-2" />
-                                    <img src="/images/certificates/masters-certificate.jpg" alt="CPENT Certificate" className="cert-stack-img cert-stack-1" />
+                        {/* EC-Council Certifications Card - Only show for cybersecurity programs */}
+                        {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && (
+                            <div className="cert-card cert-card-dark">
+                                <div className="cert-image-wrapper">
+                                    <div className="cert-stack">
+                                        {program.certifications.map((cert, idx) => (
+                                            <img
+                                                key={idx}
+                                                src={cert.image}
+                                                alt={`${cert.code} Certificate`}
+                                                className={`cert-stack-img cert-stack-${program.certifications.length - idx}`}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="cert-content">
+                                    <div className="cert-brand">
+                                        <img src="/images/ec-council-badge.png" alt="EC-Council" className="ec-council-logo" />
+                                        <span className="partner-text">EC-Council<br /><small>Official Partner</small></span>
+                                    </div>
+                                    <h3 className="cert-program-name cert-underline">
+                                        {program.certifications.length} EC-Council Certifications
+                                    </h3>
+                                    <ul className="cert-features">
+                                        <li>
+                                            <span className="check-icon">✓</span>
+                                            {program.certifications.map(c => c.code).join(" | ")}
+                                        </li>
+                                        <li>
+                                            <span className="check-icon">✓</span>
+                                            Globally Recognized
+                                        </li>
+                                        <li>
+                                            <span className="check-icon">✓</span>
+                                            Industry Standard
+                                        </li>
+                                    </ul>
+                                    <button className="btn-counsellor btn-counsellor-dark">Talk to Career Counsellor</button>
                                 </div>
                             </div>
-                            <div className="cert-content">
-                                <div className="cert-brand">
-                                    <img src="/images/ec-council-badge.png" alt="EC-Council" className="ec-council-logo" />
-                                    <span className="partner-text">EC-Council<br /><small>Official Partner</small></span>
-                                </div>
-                                <h3 className="cert-program-name cert-underline">5 EC-Council Certifications</h3>
-                                <ul className="cert-features">
-                                    <li>
-                                        <span className="check-icon">✓</span>
-                                        CSCU | CND | CEH | CHFI | CPENT
-                                    </li>
-                                    <li>
-                                        <span className="check-icon">✓</span>
-                                        Globally Recognized
-                                    </li>
-                                    <li>
-                                        <span className="check-icon">✓</span>
-                                        Industry Standard
-                                    </li>
-                                </ul>
-                                <button className="btn-counsellor btn-counsellor-dark">Talk to Career Counsellor</button>
+                        )}
+                    </div>
+                    <p className="invest-footer">
+                        Connect with our admissions team to know about fees & financing.
+                        10th Anniversary Offer: <strong style={{ color: 'var(--accent)' }}>{program.pricing.discounted}</strong> (Original: {program.pricing.original})
+                    </p>
+                </div>
+            </section>
+
+            {/* Pricing Section */}
+            <section className="pricing-section">
+                <div className="pricing-container">
+                    <span className="pricing-badge">LIMITED TIME OFFER</span>
+                    <h2 className="pricing-title">Program Investment</h2>
+                    <p className="pricing-subtitle">
+                        Transform your career with industry-leading {program.slug.includes('digital-marketing') ? 'digital marketing' : 'cybersecurity'} training. Flexible payment options available.
+                    </p>
+
+                    <div className="pricing-card">
+                        <span className="offer-badge">🎉 10th Anniversary Special</span>
+
+                        <div className="price-wrapper">
+                            <div className="original-price">{program.pricing.original}</div>
+                            <div className="current-price">
+                                <span className="currency">₹</span>
+                                {program.pricing.discounted.replace('₹', '').replace(',', '')}
                             </div>
+                            {(() => {
+                                const original = parseInt(program.pricing.original.replace(/[₹,]/g, ''));
+                                const discounted = parseInt(program.pricing.discounted.replace(/[₹,]/g, ''));
+                                const savings = original - discounted;
+                                const percentage = Math.round((savings / original) * 100);
+                                return (
+                                    <span className="savings-badge">
+                                        Save ₹{savings.toLocaleString('en-IN')} ({percentage}% OFF)
+                                    </span>
+                                );
+                            })()}
+                        </div>
+
+                        <div className="emi-info">
+                            💳 <strong>EMI Available:</strong> {program.pricing.emi}
+                        </div>
+
+                        <ul className="pricing-benefits">
+                            <li>
+                                <span className="benefit-icon">✓</span>
+                                <span>{program.certifications.length} {program.slug.includes('digital-marketing') ? 'Professional' : 'Global EC-Council'} Certifications</span>
+                            </li>
+                            <li>
+                                <span className="benefit-icon">✓</span>
+                                <span>{program.stats.totalHours} of Hands-on Training</span>
+                            </li>
+                            <li>
+                                <span className="benefit-icon">✓</span>
+                                <span>Real-Time Labs & Practice Environment</span>
+                            </li>
+                            <li>
+                                <span className="benefit-icon">✓</span>
+                                <span>{program.stats.membership} Post-Training Support</span>
+                            </li>
+                            <li>
+                                <span className="benefit-icon">✓</span>
+                                <span>Program Completion Certificate</span>
+                            </li>
+                            <li>
+                                <span className="benefit-icon">✓</span>
+                                <span>{program.slug === "masters-ethical-hacking" ? "100% Placement Assistance" : "Internship Opportunities"}</span>
+                            </li>
+                        </ul>
+
+                        <div className="pricing-cta">
+                            <button className="btn-enroll">
+                                Enroll Now - Secure Your Spot
+                                <span>→</span>
+                            </button>
+                            <p className="contact-info">
+                                Have questions? Call us at <a href="tel:+919886035330">+91-9886035330</a>
+                            </p>
                         </div>
                     </div>
-                    <p className="invest-footer">Connect with our admissions team to know about fees & financing. 10th Anniversary Offer: ₹3,50,000 (Original: ₹5,00,000)</p>
                 </div>
             </section>
 
             {/* Cyber Threats News Section */}
             <section className="news-section">
                 <div className="news-container">
-                    <span className="news-badge">CYBER THREATS ARE RISING</span>
-                    <h2 className="news-title">Why Cybersecurity Skills Matter Now</h2>
+                    <span className="news-badge">{program.slug.includes('digital-marketing') ? 'DIGITAL MARKETING IS BOOMING' : 'CYBER THREATS ARE RISING'}</span>
+                    <h2 className="news-title">Why {program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'} Skills Matter Now</h2>
 
                     <div className="news-grid">
                         <article className="news-card">
@@ -599,8 +704,8 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" alt="Cybersecurity" />
                             </div>
                             <div className="news-content">
-                                <span className="news-date">December 2024</span>
-                                <h3 className="news-headline">India Records 500% Increase in Cyberattacks - Skilled Professionals in High Demand</h3>
+                                <span className="news-date">{program.slug.includes('digital-marketing') ? 'December 2024' : 'December 2024'}</span>
+                                <h3 className="news-headline">{program.slug.includes('digital-marketing') ? 'Digital Marketing Industry Expected to Reach $800B by 2026 - Skilled Professionals in High Demand' : 'India Records 500% Increase in Cyberattacks - Skilled Professionals in High Demand'}</h3>
                                 <p className="news-source">Economic Times</p>
                             </div>
                         </article>
@@ -609,8 +714,8 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop" alt="Hacking" />
                             </div>
                             <div className="news-content">
-                                <span className="news-date">November 2024</span>
-                                <h3 className="news-headline">Cybersecurity Job Market Expected to Grow 35% by 2027 - CEH Certified Professionals Lead</h3>
+                                <span className="news-date">{program.slug.includes('digital-marketing') ? 'November 2024' : 'November 2024'}</span>
+                                <h3 className="news-headline">{program.slug.includes('digital-marketing') ? 'Digital Marketing Roles Expected to Grow 40% by 2027 - Content Creators and SEO Experts Lead' : 'Cybersecurity Job Market Expected to Grow 35% by 2027 - CEH Certified Professionals Lead'}</h3>
                                 <p className="news-source">Forbes India</p>
                             </div>
                         </article>
@@ -619,8 +724,8 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop" alt="Data Security" />
                             </div>
                             <div className="news-content">
-                                <span className="news-date">October 2024</span>
-                                <h3 className="news-headline">Companies Willing to Pay Premium Salaries for Certified Ethical Hackers</h3>
+                                <span className="news-date">{program.slug.includes('digital-marketing') ? 'October 2024' : 'October 2024'}</span>
+                                <h3 className="news-headline">{program.slug.includes('digital-marketing') ? 'Companies Willing to Pay Premium Salaries for Skilled Digital Marketers and Growth Hackers' : 'Companies Willing to Pay Premium Salaries for Certified Ethical Hackers'}</h3>
                                 <p className="news-source">Business Standard</p>
                             </div>
                         </article>
@@ -633,7 +738,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {/* Final CTA Section */}
             <section className="program-cta-section">
                 <div className="section-container">
-                    <h2>Ready to Start Your Cybersecurity Journey?</h2>
+                    <h2>Ready to Start Your {program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'} Journey?</h2>
                     <p>Join thousands of professionals who have transformed their careers with eHack Academy</p>
                     <div className="cta-buttons">
                         <a href="tel:+919886035330" className="btn-primary btn-large">

@@ -510,6 +510,21 @@
     padding: var(--space-4) 0;
 }
 
+/* Single certificate styling - centered and larger */
+.certificates-gallery:has(.certificate-image-card:only-child) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.certificates-gallery:has(.certificate-image-card:only-child) .certificate-image-card {
+    max-width: 500px;
+    width: 100%;
+}
+
+.certificates-gallery:has(.certificate-image-card:only-child) .certificate-img {
+    height: 350px;
+}
+
 .certificate-image-card {
     position: relative;
     border-radius: var(--border-radius-lg);
@@ -1927,6 +1942,17 @@
     margin-bottom: var(--space-10);
 }
 
+/* Center single card for digital marketing program */
+.certification-cards:has(.cert-card:only-child) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.certification-cards:has(.cert-card:only-child) .cert-card {
+    max-width: 550px;
+    width: 100%;
+}
+
 .cert-card {
     border-radius: var(--border-radius-lg);
     overflow: hidden;
@@ -2144,6 +2170,240 @@
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9375rem;
+}
+
+/* ============================================
+   Pricing Section - Clean Light Theme
+   ============================================ */
+.pricing-section {
+    background: #f5f7fa;
+    padding: 60px 0;
+    position: relative;
+}
+
+.pricing-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.pricing-badge {
+    display: inline-block;
+    background: #fff5eb;
+    color: #c2410c;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1.5px solid #df6718;
+}
+
+.pricing-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a202c;
+    text-align: center;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.pricing-subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.pricing-card {
+    display: block;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #df6718 0%, #f59e0b 100%);
+    border-radius: 14px 14px 0 0;
+}
+
+.offer-badge {
+    display: inline-block;
+    background: #df6718;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.price-wrapper {
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.original-price {
+    font-size: 16px;
+    color: #94a3b8;
+    text-decoration: line-through;
+    margin-bottom: 8px;
+}
+
+.current-price {
+    font-size: 42px;
+    font-weight: 900;
+    color: #df6718;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.current-price .currency {
+    font-size: 24px;
+    vertical-align: super;
+    font-weight: 800;
+}
+
+.savings-badge {
+    display: inline-block;
+    background: #d1fae5;
+    color: #065f46;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 14px;
+    border: 1.5px solid #10b981;
+}
+
+.emi-info {
+    text-align: center;
+    background: #eff6ff;
+    color: #1e40af;
+    font-size: 13px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    border: 1px solid #bfdbfe;
+}
+
+.emi-info strong {
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+.pricing-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+.pricing-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #334155;
+    font-size: 14px;
+    padding: 10px 0;
+    line-height: 1.5;
+}
+
+.pricing-benefits li .benefit-icon {
+    color: #df6718;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.pricing-cta {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-enroll {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px 32px;
+    background: #df6718;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(223, 103, 24, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-enroll:hover {
+    background: #c2410c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(223, 103, 24, 0.4);
+}
+
+.btn-enroll span {
+    font-size: 18px;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 16px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.contact-info a {
+    color: #df6718;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pricing-section {
+        padding: 40px 0;
+    }
+
+    .pricing-card {
+        padding: 24px;
+    }
+
+    .current-price {
+        font-size: 36px;
+    }
+
+    .current-price .currency {
+        font-size: 20px;
+    }
+
+    .btn-enroll {
+        font-size: 14px;
+        padding: 14px 28px;
+    }
 }
 
 /* ============================================

@@ -111,48 +111,70 @@ export default function Header({ partners, courses }: HeaderProps) {
                                     </Link>
                                 </div>
 
-                                {/* Right Side: Courses */}
-                                <div className="mega-menu-right">
-                                    <h4 className="mega-menu-heading">
-                                        {activePartnerData ? `${activePartnerData.name} Courses` : 'Courses'}
-                                    </h4>
-                                    <div className="mega-courses">
-                                        {filteredCourses.length > 0 ? (
-                                            filteredCourses.map((course) => (
-                                                <Link
-                                                    key={course.id}
-                                                    href={`/certificate/${course.slug}`}
-                                                    className="mega-course-item"
-                                                >
-                                                    <span className="mega-course-name">{course.title}</span>
-                                                    {course.duration && (
-                                                        <span className="mega-course-duration">{course.duration}</span>
-                                                    )}
-                                                </Link>
-                                            ))
-                                        ) : (
-                                            <p className="mega-no-courses">No courses available</p>
-                                        )}
+                                {/* Middle Section: Courses + eHack Originals */}
+                                <div className="mega-menu-middle">
+                                    {/* Courses */}
+                                    <div className="mega-menu-right">
+                                        <h4 className="mega-menu-heading">
+                                            {activePartnerData ? `${activePartnerData.name} Courses` : 'Courses'}
+                                        </h4>
+                                        <div className="mega-courses">
+                                            {filteredCourses.length > 0 ? (
+                                                filteredCourses.map((course) => (
+                                                    <Link
+                                                        key={course.id}
+                                                        href={`/certificate/${course.slug}`}
+                                                        className="mega-course-item"
+                                                    >
+                                                        <span className="mega-course-name">{course.title}</span>
+                                                        {course.duration && (
+                                                            <span className="mega-course-duration">{course.duration}</span>
+                                                        )}
+                                                    </Link>
+                                                ))
+                                            ) : (
+                                                <p className="mega-no-courses">No courses available</p>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    {/* eHack Originals */}
+                                    <div className="mega-menu-originals">
+                                        <h4 className="mega-menu-heading">eHack Originals</h4>
+                                        <div className="mega-originals-grid">
+                                            <Link href="/programs/diploma-cybersecurity" className="mega-original-card">
+                                                <span className="original-title">Diploma in Cybersecurity</span>
+                                                <span className="original-subtitle">Foundation Program</span>
+                                            </Link>
+                                            <Link href="/programs/graduate-cybersecurity" className="mega-original-card">
+                                                <span className="original-title">Graduate Program</span>
+                                                <span className="original-subtitle">Advanced Training</span>
+                                            </Link>
+                                            <Link href="/programs/masters-ethical-hacking" className="mega-original-card">
+                                                <span className="original-title">Masters in Ethical Hacking</span>
+                                                <span className="original-subtitle">Expert Level</span>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
 
-                                {/* eHack Originals Section */}
-                                <div className="mega-menu-originals">
-                                    <h4 className="mega-menu-heading">eHack Originals</h4>
-                                    <div className="mega-originals-grid">
-                                        <Link href="/programs/diploma-cybersecurity" className="mega-original-card">
-                                            <span className="original-title">Diploma in Cybersecurity</span>
-                                            <span className="original-subtitle">Foundation Program</span>
-                                        </Link>
-                                        <Link href="/programs/graduate-cybersecurity" className="mega-original-card">
-                                            <span className="original-title">Graduate Program</span>
-                                            <span className="original-subtitle">Advanced Training</span>
-                                        </Link>
-                                        <Link href="/programs/masters-ethical-hacking" className="mega-original-card">
-                                            <span className="original-title">Masters in Ethical Hacking</span>
-                                            <span className="original-subtitle">Expert Level</span>
-                                        </Link>
-                                    </div>
+                                {/* Kennedy University Section - Right Column */}
+                                <div className="mega-menu-kennedy">
+                                    <h4 className="mega-menu-heading">Global Degrees</h4>
+                                    <Link href="/kennedy-university" className="kennedy-card">
+                                        <img
+                                            src="/images/kennedy-university-megamenu.jpg"
+                                            alt="Kennedy University - Cybersecurity with AI Programs"
+                                            className="kennedy-image"
+                                        />
+                                        <div className="kennedy-info">
+                                            <span className="kennedy-title">Kennedy University</span>
+                                            <span className="kennedy-subtitle">Cybersecurity + AI Degrees</span>
+                                        </div>
+                                    </Link>
+                                    <p className="kennedy-description">
+                                        Earn internationally accredited degrees in collaboration with EC-Council certifications
+                                    </p>
                                 </div>
                             </div>
                         </div>
