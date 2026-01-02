@@ -2245,19 +2245,11 @@
 .pricing-card {
     display: block;
     background: #ffffff;
-    border: 1px solid #f1f5f9;
-    border-top: none;
-    border-radius: 24px;
-    padding: 40px 32px;
-    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.pricing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 50px -12px rgba(223, 103, 24, 0.15);
 }
 
 .pricing-card::before {
@@ -2266,185 +2258,152 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 6px;
-    background: #df6718;
-    background: linear-gradient(90deg, #df6718 0%, #ff8a3d 100%);
+    height: 4px;
+    background: linear-gradient(90deg, #df6718 0%, #f59e0b 100%);
+    border-radius: 14px 14px 0 0;
 }
 
 .offer-badge {
-    display: table;
-    margin: 0 auto 24px;
-    background: rgba(223, 103, 24, 0.1);
-    color: #c2410c;
-    font-size: 12px;
+    display: inline-block;
+    background: #df6718;
+    color: #ffffff;
+    font-size: 13px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     padding: 8px 16px;
-    border-radius: 100px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .price-wrapper {
     text-align: center;
-    margin-bottom: 32px;
-    padding-bottom: 0;
-    position: relative;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .original-price {
     font-size: 16px;
-    font-weight: 500;
     color: #94a3b8;
     text-decoration: line-through;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
 }
 
 .current-price {
-    font-size: 48px;
-    font-weight: 800;
-    color: #1e293b;
-    line-height: 1.1;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
+    font-size: 42px;
+    font-weight: 900;
+    color: #df6718;
+    line-height: 1;
+    margin-bottom: 12px;
 }
 
 .current-price .currency {
-    font-size: 28px;
-    vertical-align: top;
-    position: relative;
-    top: 8px;
-    font-weight: 600;
-    color: #64748b;
-    margin-right: 4px;
+    font-size: 24px;
+    vertical-align: super;
+    font-weight: 800;
 }
 
 .savings-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #ecfdf5;
-    color: #059669;
+    display: inline-block;
+    background: #d1fae5;
+    color: #065f46;
     font-size: 13px;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 8px;
-    border: 1px solid #d1fae5;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 14px;
+    border: 1.5px solid #10b981;
 }
 
 .emi-info {
     text-align: center;
-    background: #f8fafc;
-    color: #475569;
-    font-size: 14px;
-    padding: 16px;
-    border-radius: 12px;
-    margin-bottom: 32px;
-    border: 1px dashed #cbd5e1;
+    background: #eff6ff;
+    color: #1e40af;
+    font-size: 13px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    border: 1px solid #bfdbfe;
 }
 
 .emi-info strong {
-    color: #0f172a;
+    color: #1e3a8a;
     font-weight: 700;
 }
 
 .pricing-benefits {
     list-style: none;
     padding: 0;
-    margin: 0 0 32px 0;
-    text-align: left;
+    margin: 0 0 24px 0;
 }
 
 .pricing-benefits li {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
     color: #334155;
-    font-size: 15px;
-    padding: 12px 0;
-    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+    padding: 10px 0;
     line-height: 1.5;
-}
-
-.pricing-benefits li:last-child {
-    border-bottom: none;
 }
 
 .pricing-benefits li .benefit-icon {
     color: #df6718;
-    background: rgba(223, 103, 24, 0.1);
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 12px;
+    font-size: 18px;
     flex-shrink: 0;
-    font-weight: bold;
+    margin-top: 2px;
 }
 
 .pricing-cta {
     text-align: center;
-    padding-top: 0;
-    border-top: none;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
 }
 
 .btn-enroll {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
     width: 100%;
-    height: 56px;
-    padding: 0 32px;
+    padding: 16px 32px;
     background: #df6718;
-    background: linear-gradient(135deg, #df6718 0%, #ea580c 100%);
     color: #ffffff;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 20px -5px rgba(223, 103, 24, 0.4);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(223, 103, 24, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .btn-enroll:hover {
+    background: #c2410c;
     transform: translateY(-2px);
-    box-shadow: 0 15px 30px -5px rgba(223, 103, 24, 0.5);
-    filter: brightness(1.1);
+    box-shadow: 0 6px 20px rgba(223, 103, 24, 0.4);
 }
 
 .btn-enroll span {
     font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-.btn-enroll:hover span {
-    transform: translateX(4px);
 }
 
 .contact-info {
     text-align: center;
-    margin-top: 20px;
-    color: #94a3b8;
-    font-size: 14px;
+    margin-top: 16px;
+    color: #64748b;
+    font-size: 13px;
 }
 
 .contact-info a {
     color: #df6718;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.2s;
 }
 
 .contact-info a:hover {
-    color: #c2410c;
+    text-decoration: underline;
 }
-
-
 
 /* Responsive */
 @media (max-width: 768px) {
