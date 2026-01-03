@@ -297,6 +297,24 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Kennedy University Partner Card - Special Styling */
+.mega-partner-card.kennedy-university-partner {
+    background: #fff;
+    border: 1px solid var(--neutral-200);
+    position: relative;
+}
+
+.mega-partner-card.kennedy-university-partner .partner-logo-img {
+    filter: brightness(0);
+}
+
+.mega-partner-card.kennedy-university-partner:hover,
+.mega-partner-card.kennedy-university-partner.active {
+    background: linear-gradient(135deg, #FFF7F0 0%, #FFFFFF 100%);
+    border-color: var(--brand-primary);
+    box-shadow: 0 2px 8px rgba(223, 103, 24, 0.1);
+}
+
 .partner-logo-img {
     width: 50px;
     height: 28px;

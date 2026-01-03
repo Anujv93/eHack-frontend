@@ -38,16 +38,31 @@ const ehackPrograms = [
 
 const ehackOriginalPartner: Partner = {
     id: 999,
-    name: 'eHack Originals',
+    name: 'eHack Popular Courses',
     slug: 'ehack-originals',
     logoUrl: '/ehack-black.png',
     courseCount: ehackPrograms.length
 };
 
+// Kennedy University degree programs
+const kennedyPrograms = [
+    { id: 201, slug: 'bscs-fast-track', title: 'Bachelor of Science in Cybersecurity (BSCS) – Fast Track', duration: '1 Year', partnerSlug: 'kennedy-university' },
+    { id: 202, slug: 'mscs-fast-track', title: 'Master of Science in Cybersecurity (MSCS) – Fast Track', duration: '1 Year', partnerSlug: 'kennedy-university' },
+    { id: 203, slug: 'integrated-bscs-mscs', title: 'Integrated BSCS + MSCS – Accelerated', duration: '15 Months', partnerSlug: 'kennedy-university' },
+];
+
+const kennedyPartner: Partner = {
+    id: 998,
+    name: 'Kennedy University',
+    slug: 'kennedy-university',
+    logoUrl: '/images/kennedy-university-logo.png',
+    courseCount: kennedyPrograms.length
+};
+
 export default function Header({ partners, courses }: HeaderProps) {
-    // Add eHack Originals to partners list
-    const allPartners = [...partners, ehackOriginalPartner];
-    const allCourses = [...courses, ...ehackPrograms];
+    // Add eHack Originals and Kennedy University to partners list - eHack first
+    const allPartners = [ehackOriginalPartner, kennedyPartner, ...partners];
+    const allCourses = [...courses, ...ehackPrograms, ...kennedyPrograms];
 
     const [megaMenuOpen, setMegaMenuOpen] = useState(false);
     const [activePartner, setActivePartner] = useState<string | null>(
@@ -60,8 +75,9 @@ export default function Header({ partners, courses }: HeaderProps) {
 
     const activePartnerData = allPartners.find(p => p.slug === activePartner);
 
-    // Check if we're showing eHack Originals
+    // Check if we're showing eHack Originals or Kennedy University
     const isEhackOriginals = activePartner === 'ehack-originals';
+    const isKennedyUniversity = activePartner === 'kennedy-university';
 
     const router = useRouter();
     const [searchQuery, setSearchQuery] = useState('');
@@ -86,9 +102,10 @@ export default function Header({ partners, courses }: HeaderProps) {
     const handleSuggestionClick = (slug: string) => {
         setShowSuggestions(false);
         setSearchQuery('');
-        // Check if it's an eHack program to route correctly
+        // Check if it's an eHack program or Kennedy program to route correctly
         const isEhack = ehackPrograms.some(p => p.slug === slug);
-        router.push(isEhack ? `/programs/${slug}` : `/certificate/${slug}`);
+        const isKennedy = kennedyPrograms.some(p => p.slug === slug);
+        router.push((isEhack || isKennedy) ? `/programs/${slug}` : `/certificate/${slug}`);
     };
 
     return (
@@ -111,7 +128,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                         onMouseLeave={() => setMegaMenuOpen(false)}
                     >
                         <button className="nav-link nav-dropdown-btn highlight-btn">
-                            Our Programs
+                            All Courses & Certifications
                             <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
                                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -127,7 +144,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         {allPartners.map((partner) => (
                                             <div
                                                 key={partner.id}
-                                                className={`mega-partner-card ${activePartner === partner.slug ? 'active' : ''} ${partner.slug === 'ehack-originals' ? 'ehack-originals-partner' : ''}`}
+                                                className={`mega-partner-card ${activePartner === partner.slug ? 'active' : ''} ${partner.slug === 'ehack-originals' ? 'ehack-originals-partner' : ''} ${partner.slug === 'kennedy-university' ? 'kennedy-university-partner' : ''}`}
                                                 onMouseEnter={() => setActivePartner(partner.slug)}
                                             >
                                                 {partner.logoUrl ? (
@@ -137,7 +154,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                 )}
                                                 <div className="partner-info">
                                                     <span className="partner-name">{partner.name}</span>
-                                                    <span className="partner-count">{partner.courseCount} {partner.slug === 'ehack-originals' ? 'Programs' : 'Courses'}</span>
+                                                    <span className="partner-count">{partner.courseCount} {partner.slug === 'ehack-originals' ? 'Programs' : partner.slug === 'kennedy-university' ? 'Degrees' : 'Courses'}</span>
                                                 </div>
                                                 <span className="partner-arrow">→</span>
                                             </div>
@@ -153,14 +170,14 @@ export default function Header({ partners, courses }: HeaderProps) {
                                     {/* Courses */}
                                     <div className="mega-menu-right">
                                         <h4 className="mega-menu-heading">
-                                            {activePartnerData ? (isEhackOriginals ? 'eHack Programs' : `${activePartnerData.name} Courses`) : 'Courses'}
+                                            {activePartnerData ? (isEhackOriginals ? 'eHack Programs' : isKennedyUniversity ? 'Kennedy University Degrees' : `${activePartnerData.name} Courses`) : 'Courses'}
                                         </h4>
                                         <div className="mega-courses">
                                             {filteredCourses.length > 0 ? (
                                                 filteredCourses.map((course) => (
                                                     <Link
                                                         key={course.id}
-                                                        href={isEhackOriginals ? `/programs/${course.slug}` : `/certificate/${course.slug}`}
+                                                        href={(isEhackOriginals || isKennedyUniversity) ? `/programs/${course.slug}` : `/certificate/${course.slug}`}
                                                         className="mega-course-item"
                                                     >
                                                         <span className="mega-course-name">{course.title}</span>
