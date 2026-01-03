@@ -3,7 +3,7 @@ export const programs = [
     {
         slug: "masters-ethical-hacking",
         title: "Masters Program in Ethical Hacking & Cyber Security",
-        subtitle: "with 5 Global Certifications",
+        subtitle: "with 6 Global Certifications",
         description: "Equip yourself with the skills to protect IT infrastructure, perform vulnerability assessments, and secure organizations against cyber threats.",
         features: "Includes real-time labs, hands-on penetration testing, network defense training, and internationally recognized certifications.",
         batchInfo: "IN JANUARY",
@@ -23,7 +23,8 @@ export const programs = [
             { code: "CND", name: "Certified Network Defender", image: "/images/certificates/cert-cnd.jpg" },
             { code: "CEH", name: "Certified Ethical Hacker", image: "/images/certificates/ceh-certificate.jpg" },
             { code: "CHFI", name: "Computer Hacking Forensic Investigator", image: "/images/certificates/cert-chfi.jpg" },
-            { code: "CPENT", name: "Certified Penetration Testing Professional", image: "/images/certificates/cert-cpent.jpg" }
+            { code: "CPENT", name: "Certified Penetration Testing Professional", image: "/images/certificates/cert-cpent.jpg" },
+            { code: "LPT", name: "Licensed Penetration Tester", image: "/images/lpt-certification.jpg" }
         ],
         skills: [
             { name: "Network Security", desc: "Master firewall configuration, IPS/IDS implementation, VPN setup, and network defense strategies." },
