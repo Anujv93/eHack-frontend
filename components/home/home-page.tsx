@@ -163,25 +163,25 @@ const heroSlides = [
     {
         title: "Master the Art of",
         highlight: "Cybersecurity Defense",
-        subtitle: "Global certification programs in Ethical Hacking, VAPT, SOC Operations, and Cloud Security to build a resilient digital future.",
+        subtitle: "Global certification programs in Ethical Hacking, VAPT, SOC Operations, and Cloud Security.",
         image: "/hero-cybersecurity.png"
     },
     {
         title: "Unlock the Power of",
         highlight: "Data Science & AI",
-        subtitle: "Transform data into actionable insights with our advanced Analytics, Machine Learning, and Artificial Intelligence curriculum.",
+        subtitle: "Transform data into insights with Analytics, Machine Learning, and AI curriculum.",
         image: "/hero-datascience.png"
     },
     {
         title: "Innovate with",
         highlight: "Robotics & IoT",
-        subtitle: "Design the connected world of tomorrow. Hands-on training in Robotics, Internet of Things, and Smart Technologies.",
+        subtitle: "Design the connected world. Hands-on training in Robotics and Smart Technologies.",
         image: "/hero-robotics.png"
     },
     {
         title: "Elevate Business with",
         highlight: "Corporate Security Services",
-        subtitle: "Premium corporate solutions including VAPT, SOC Management, Cloud Security, and Rapid Incident Response.",
+        subtitle: "Premium corporate solutions: VAPT, SOC Management, Cloud Security & Incident Response.",
         image: "/hero-corporate.png"
     }
 ];
@@ -245,9 +245,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                     ></div>
                 </div>
                 <div className={styles.heroContent}>
-                    <div className={styles.heroBadge}>
+                    {/* <div className={styles.heroBadge}>
                         <span>🏆</span> Your Trusted Training Partner
-                    </div>
+                    </div> */}
                     <h1 className={`${styles.heroTitle} ${styles.animateText}`} key={`title-${currentSlide}`}>
                         {heroSlides[currentSlide].title}
                         <span className={styles.heroHighlight}> {heroSlides[currentSlide].highlight}</span>
