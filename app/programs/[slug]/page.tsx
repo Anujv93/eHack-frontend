@@ -156,7 +156,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         <p className="credentials-subtitle">Graduate with internationally recognized certifications from {program.partner}{program.slug.includes('digital-marketing') ? ', building your expertise in digital marketing' : ', the world\'s leading cybersecurity certification body'}.</p>
 
                         {/* Certificate Images Gallery */}
-                        <div className="certificates-gallery">
+                        <div className={`certificates-gallery count-${program.certifications.length}`}>
                             {program.certifications.map((cert, idx) => (
                                 <div key={idx} className="certificate-image-card">
                                     <img src={cert.image} alt={`${cert.code} - ${cert.name} Certificate`} className="certificate-img" />
@@ -404,7 +404,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 <div className="total-icon">🛡️</div>
                                 <div className="total-text">
                                     <strong>{program.certifications.length} Certifications</strong>
-                                    <span>{program.slug.includes('digital-marketing') ? 'Industry Recognized' : 'EC-Council Accredited'}</span>
+                                    <span>{(program.slug.includes('digital-marketing') || program.slug.includes('robotics')) ? 'Industry Recognized' : 'EC-Council Accredited'}</span>
                                 </div>
                             </div>
                         </div>
@@ -693,7 +693,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* Cyber Threats News Section */}
-            <section className="news-section">
+            {!program.slug.includes('digital-marketing') && <section className="news-section">
                 <div className="news-container">
                     <span className="news-badge">{program.slug.includes('digital-marketing') ? 'DIGITAL MARKETING IS BOOMING' : 'CYBER THREATS ARE RISING'}</span>
                     <h2 className="news-title">Why {program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'} Skills Matter Now</h2>
@@ -731,7 +731,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         </article>
                     </div>
                 </div>
-            </section>
+            </section>}
 
 
 

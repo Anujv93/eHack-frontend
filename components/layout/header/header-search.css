@@ -1,0 +1,125 @@
+/* Header Search Bar Styling */
+.header-search-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-search-wrapper {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--neutral-300);
+    border-radius: 50px;
+    padding: 2px 2px 2px 14px;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.header-search-wrapper:focus-within {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(223, 103, 24, 0.1);
+}
+
+.header-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.875rem;
+    color: var(--neutral-800);
+    padding: 6px 0;
+    min-width: 0;
+}
+
+.header-search-input::placeholder {
+    color: var(--neutral-500);
+}
+
+.header-search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--brand-primary);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.header-search-btn:hover {
+    background: var(--brand-primary-dark);
+    transform: scale(1.05);
+}
+
+.header-search-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Header Search Suggestions */
+.header-search-suggestions {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--neutral-200);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.header-suggestion-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    border-bottom: 1px solid var(--neutral-100);
+}
+
+.header-suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.header-suggestion-item:hover {
+    background: #FFF7F0;
+}
+
+.header-suggestion-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.header-suggestion-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--neutral-800);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive Search */
+@media (max-width: 1024px) {
+    .header-search-container {
+        width: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-search-container {
+        display: none;
+        /* Hide on mobile for now, or adapt */
+    }
+}

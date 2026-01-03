@@ -19,11 +19,11 @@ export const programs = [
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
-            { code: "CSCU", name: "Certified Secure Computer User", image: "/images/certificates/ceh-certificate.jpg" },
-            { code: "CND", name: "Certified Network Defender", image: "/images/certificates/ceh-certificate.jpg" },
+            { code: "CSCU", name: "Certified Secure Computer User", image: "/images/certificates/cert-cscu.jpg" },
+            { code: "CND", name: "Certified Network Defender", image: "/images/certificates/cert-cnd.jpg" },
             { code: "CEH", name: "Certified Ethical Hacker", image: "/images/certificates/ceh-certificate.jpg" },
-            { code: "CHFI", name: "Computer Hacking Forensic Investigator", image: "/images/certificates/graduate-certificate.jpg" },
-            { code: "CPENT", name: "Certified Penetration Testing Professional", image: "/images/certificates/masters-certificate.jpg" }
+            { code: "CHFI", name: "Computer Hacking Forensic Investigator", image: "/images/certificates/cert-chfi.jpg" },
+            { code: "CPENT", name: "Certified Penetration Testing Professional", image: "/images/certificates/cert-cpent.jpg" }
         ],
         skills: [
             { name: "Network Security", desc: "Master firewall configuration, IPS/IDS implementation, VPN setup, and network defense strategies." },
@@ -179,8 +179,8 @@ export const programs = [
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
-            { code: "CSCU", name: "Certified Secure Computer User", image: "/images/cert-cscu.jpg" },
-            { code: "CND", name: "Certified Network Defender", image: "/images/cert-cnd.jpg" },
+            { code: "CSCU", name: "Certified Secure Computer User", image: "/images/certificates/cert-cscu.jpg" },
+            { code: "CND", name: "Certified Network Defender", image: "/images/certificates/cert-cnd.jpg" },
         ],
         skills: [
             { name: "Application Security", desc: "Input parameter validation, User/Role Authentication & Authorization, Session management, parameter manipulation & exception management, Auditing and logging." },

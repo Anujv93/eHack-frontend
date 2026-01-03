@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import './header.css';
+import './header-search.css';
 
 interface Partner {
     id: number;
@@ -25,17 +27,69 @@ interface HeaderProps {
     courses: Course[];
 }
 
+// eHack Originals programs from programs.ts
+const ehackPrograms = [
+    { id: 101, slug: 'masters-ethical-hacking', title: 'Masters Program in Ethical Hacking', duration: '9-12 Months', partnerSlug: 'ehack-originals' },
+    { id: 102, slug: 'graduate-cybersecurity', title: 'Graduate Program in Ethical Hacking', duration: '7-9 Months', partnerSlug: 'ehack-originals' },
+    { id: 103, slug: 'diploma-cybersecurity', title: 'Diploma in Ethical Hacking', duration: '4-6 Months', partnerSlug: 'ehack-originals' },
+    { id: 104, slug: 'digital-marketing-masterprogram', title: 'Masters Program in Digital Marketing', duration: '4 Months', partnerSlug: 'ehack-originals' },
+    { id: 105, slug: 'robotics-for-all', title: 'Robotics for Every One', duration: '60 Days', partnerSlug: 'ehack-originals' },
+];
+
+const ehackOriginalPartner: Partner = {
+    id: 999,
+    name: 'eHack Originals',
+    slug: 'ehack-originals',
+    logoUrl: '/ehack-black.png',
+    courseCount: ehackPrograms.length
+};
+
 export default function Header({ partners, courses }: HeaderProps) {
+    // Add eHack Originals to partners list
+    const allPartners = [...partners, ehackOriginalPartner];
+    const allCourses = [...courses, ...ehackPrograms];
+
     const [megaMenuOpen, setMegaMenuOpen] = useState(false);
     const [activePartner, setActivePartner] = useState<string | null>(
-        partners.length > 0 ? partners[0].slug : null
+        allPartners.length > 0 ? allPartners[0].slug : null
     );
 
     const filteredCourses = activePartner
-        ? courses.filter(c => c.partnerSlug === activePartner)
+        ? allCourses.filter(c => c.partnerSlug === activePartner)
         : [];
 
-    const activePartnerData = partners.find(p => p.slug === activePartner);
+    const activePartnerData = allPartners.find(p => p.slug === activePartner);
+
+    // Check if we're showing eHack Originals
+    const isEhackOriginals = activePartner === 'ehack-originals';
+
+    const router = useRouter();
+    const [searchQuery, setSearchQuery] = useState('');
+    const [showSuggestions, setShowSuggestions] = useState(false);
+
+    // Filter courses for suggestions
+    const searchSuggestions = searchQuery.length >= 2
+        ? allCourses.filter(course =>
+            course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (course.partnerSlug && course.partnerSlug.toLowerCase().includes(searchQuery.toLowerCase()))
+        ).slice(0, 5)
+        : [];
+
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        setShowSuggestions(false);
+        if (searchQuery.trim()) {
+            router.push(`/courses?search=${encodeURIComponent(searchQuery.trim())}`);
+        }
+    };
+
+    const handleSuggestionClick = (slug: string) => {
+        setShowSuggestions(false);
+        setSearchQuery('');
+        // Check if it's an eHack program to route correctly
+        const isEhack = ehackPrograms.some(p => p.slug === slug);
+        router.push(isEhack ? `/programs/${slug}` : `/certificate/${slug}`);
+    };
 
     return (
         <header className="header">
@@ -45,35 +99,13 @@ export default function Header({ partners, courses }: HeaderProps) {
                 </Link>
 
                 <nav className="nav">
-                    <Link href="/courses" className="nav-link">Courses</Link>
-
-                    {/* Learning Options Dropdown */}
-                    <div className="dropdown-wrapper">
-                        <button className="nav-link nav-dropdown-btn">
-                            Learning Options
-                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
-                        <div className="dropdown-menu">
-                            <Link href="/learning-options#live-online" className="dropdown-item">Live Online Training</Link>
-                            <Link href="/learning-options#classroom" className="dropdown-item">Classroom Training</Link>
-                            <Link href="/learning-options#one-on-one" className="dropdown-item">1-on-1 Training</Link>
-                            <Link href="/learning-options#fly-trainer" className="dropdown-item">Fly-Me-a-Trainer</Link>
-                            <Link href="/learning-options#flexi" className="dropdown-item">Flexi</Link>
-                            <Link href="/learning-options#customized" className="dropdown-item">Customized Training</Link>
-                            <Link href="/learning-options#webinar" className="dropdown-item">Webinar as a Service</Link>
-                            <Link href="/learning-options#upcoming" className="dropdown-item">Upcoming Webinars</Link>
-                        </div>
-                    </div>
-
                     {/* Mega Menu Wrapper */}
                     <div
                         className="mega-menu-wrapper"
                         onMouseEnter={() => setMegaMenuOpen(true)}
                         onMouseLeave={() => setMegaMenuOpen(false)}
                     >
-                        <button className="nav-link nav-dropdown-btn">
+                        <button className="nav-link nav-dropdown-btn highlight-btn">
                             Our Programs
                             <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
                                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -85,12 +117,12 @@ export default function Header({ partners, courses }: HeaderProps) {
                             <div className="mega-menu-inner">
                                 {/* Left Side: Partners */}
                                 <div className="mega-menu-left">
-                                    <h4 className="mega-menu-heading">Certification Partners</h4>
+                                    <h4 className="mega-menu-heading">Our Partners & Programs</h4>
                                     <div className="mega-partners">
-                                        {partners.map((partner) => (
+                                        {allPartners.map((partner) => (
                                             <div
                                                 key={partner.id}
-                                                className={`mega-partner-card ${activePartner === partner.slug ? 'active' : ''}`}
+                                                className={`mega-partner-card ${activePartner === partner.slug ? 'active' : ''} ${partner.slug === 'ehack-originals' ? 'ehack-originals-partner' : ''}`}
                                                 onMouseEnter={() => setActivePartner(partner.slug)}
                                             >
                                                 {partner.logoUrl ? (
@@ -100,7 +132,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                 )}
                                                 <div className="partner-info">
                                                     <span className="partner-name">{partner.name}</span>
-                                                    <span className="partner-count">{partner.courseCount} Courses</span>
+                                                    <span className="partner-count">{partner.courseCount} {partner.slug === 'ehack-originals' ? 'Programs' : 'Courses'}</span>
                                                 </div>
                                                 <span className="partner-arrow">→</span>
                                             </div>
@@ -111,19 +143,19 @@ export default function Header({ partners, courses }: HeaderProps) {
                                     </Link>
                                 </div>
 
-                                {/* Middle Section: Courses + eHack Originals */}
+                                {/* Middle Section: Courses */}
                                 <div className="mega-menu-middle">
                                     {/* Courses */}
                                     <div className="mega-menu-right">
                                         <h4 className="mega-menu-heading">
-                                            {activePartnerData ? `${activePartnerData.name} Courses` : 'Courses'}
+                                            {activePartnerData ? (isEhackOriginals ? 'eHack Programs' : `${activePartnerData.name} Courses`) : 'Courses'}
                                         </h4>
                                         <div className="mega-courses">
                                             {filteredCourses.length > 0 ? (
                                                 filteredCourses.map((course) => (
                                                     <Link
                                                         key={course.id}
-                                                        href={`/certificate/${course.slug}`}
+                                                        href={isEhackOriginals ? `/programs/${course.slug}` : `/certificate/${course.slug}`}
                                                         className="mega-course-item"
                                                     >
                                                         <span className="mega-course-name">{course.title}</span>
@@ -158,7 +190,7 @@ export default function Header({ partners, courses }: HeaderProps) {
 
                             {/* eHack Originals - Full Width */}
                             <div className="mega-menu-originals-full">
-                                <h4 className="mega-menu-heading">eHack Originals</h4>
+                                <h4 className="mega-menu-heading">eHack Signature Programs</h4>
                                 <div className="mega-originals-grid">
                                     <Link href="/programs/diploma-cybersecurity" className="mega-original-card">
                                         <span className="original-title">Diploma in Cybersecurity</span>
@@ -177,11 +209,78 @@ export default function Header({ partners, courses }: HeaderProps) {
                         </div>
                     </div>
 
+                    {/* Learning Options Dropdown */}
+                    <div className="dropdown-wrapper">
+                        <button className="nav-link nav-dropdown-btn">
+                            Learning Options
+                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                        <div className="dropdown-menu">
+                            <Link href="/learning-options#live-online" className="dropdown-item">Live Online Training</Link>
+                            <Link href="/learning-options#classroom" className="dropdown-item">Classroom Training</Link>
+                            <Link href="/learning-options#one-on-one" className="dropdown-item">1-on-1 Training</Link>
+                            <Link href="/learning-options#fly-trainer" className="dropdown-item">Fly-Me-a-Trainer</Link>
+                            <Link href="/learning-options#flexi" className="dropdown-item">Flexi</Link>
+                            <Link href="/learning-options#customized" className="dropdown-item">Customized Training</Link>
+                            <Link href="/learning-options#webinar" className="dropdown-item">Webinar as a Service</Link>
+                            <Link href="/learning-options#upcoming" className="dropdown-item">Upcoming Webinars</Link>
+                        </div>
+                    </div>
+
                     <Link href="/about" className="nav-link">About</Link>
                 </nav>
 
-                <div className="header-actions">
-                    <Link href="#get-started" className="cta-btn">Get Started</Link>
+                {/* Compact Header Search in place of Get Started */}
+                <div className="header-search-container">
+                    <form onSubmit={handleSearch} className="header-search-form">
+                        <div className="header-search-wrapper">
+                            <input
+                                type="text"
+                                className="header-search-input"
+                                placeholder="Search courses..."
+                                value={searchQuery}
+                                onChange={(e) => {
+                                    setSearchQuery(e.target.value);
+                                    setShowSuggestions(true);
+                                }}
+                                onFocus={() => setShowSuggestions(true)}
+                                onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+                            />
+                            <button type="submit" className="header-search-btn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </div>
+
+                        {/* Search Suggestions Dropdown */}
+                        {showSuggestions && searchSuggestions.length > 0 && (
+                            <div className="header-search-suggestions">
+                                {searchSuggestions.map((course) => {
+                                    const partner = allPartners.find(p => p.slug === course.partnerSlug);
+                                    return (
+                                        <div
+                                            key={course.id}
+                                            className="header-suggestion-item"
+                                            onClick={() => handleSuggestionClick(course.slug)}
+                                        >
+                                            {partner?.logoUrl && (
+                                                <img
+                                                    src={partner.logoUrl}
+                                                    alt={partner.name}
+                                                    className="header-suggestion-logo"
+                                                />
+                                            )}
+                                            <span className="header-suggestion-title">{course.title}</span>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
+                    </form>
                 </div>
             </div>
         </header>
