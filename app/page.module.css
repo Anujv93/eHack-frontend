@@ -151,6 +151,21 @@
     animation: fadeIn 0.8s ease-out;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animateText {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
 .heroBadge {
     display: inline-flex;
     align-items: center;

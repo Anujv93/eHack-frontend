@@ -95,10 +95,15 @@ export default function Header({ partners, courses }: HeaderProps) {
         <header className="header">
             <div className="header-container">
                 <Link href="/" className="logo">
-                    <img src="/ehack-black.png" alt="eHack Academy" className="logo-image" />
+                    <div className="logo-container">
+                        <img src="/only-ehack-black-removebg-preview.png" alt="eHack Academy" className="logo-image" />
+                        <span className="logo-superscript">Academy</span>
+                    </div>
+                    <span className="logo-subscript">Institute of Information Technology</span>
                 </Link>
 
                 <nav className="nav">
+                    <Link href="/" className="nav-link">Home</Link>
                     {/* Mega Menu Wrapper */}
                     <div
                         className="mega-menu-wrapper"
@@ -229,7 +234,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                         </div>
                     </div>
 
-                    <Link href="/about" className="nav-link">About</Link>
+                    <Link href="/about" className="nav-link">About eHack</Link>
                 </nav>
 
                 {/* Compact Header Search in place of Get Started */}

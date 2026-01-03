@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import styles from '@/app/page.module.css';
@@ -158,11 +158,48 @@ const uniqueOfferings = [
     },
 ];
 
+// Hero Slides Data
+const heroSlides = [
+    {
+        title: "Master the Art of",
+        highlight: "Cybersecurity Defense",
+        subtitle: "Global certification programs in Ethical Hacking, VAPT, SOC Operations, and Cloud Security to build a resilient digital future.",
+        image: "/hero-cybersecurity.png"
+    },
+    {
+        title: "Unlock the Power of",
+        highlight: "Data Science & AI",
+        subtitle: "Transform data into actionable insights with our advanced Analytics, Machine Learning, and Artificial Intelligence curriculum.",
+        image: "/hero-datascience.png"
+    },
+    {
+        title: "Innovate with",
+        highlight: "Robotics & IoT",
+        subtitle: "Design the connected world of tomorrow. Hands-on training in Robotics, Internet of Things, and Smart Technologies.",
+        image: "/hero-robotics.png"
+    },
+    {
+        title: "Elevate Business with",
+        highlight: "Corporate Security Services",
+        subtitle: "Premium corporate solutions including VAPT, SOC Management, Cloud Security, and Rapid Incident Response.",
+        image: "/hero-corporate.png"
+    }
+];
+
 export default function HomePage({ partners, courses, categories }: HomePageProps) {
     const router = useRouter();
     const [searchQuery, setSearchQuery] = useState('');
     const [activeCategory, setActiveCategory] = useState(categories[0]?.slug || 'all');
     const [showSuggestions, setShowSuggestions] = useState(false);
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    // Hero Carousel Effect
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
 
     // Filter courses for suggestions
     const searchSuggestions = searchQuery.length >= 2
@@ -199,19 +236,24 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             <section className={styles.hero}>
                 <div className={styles.heroBackground}>
                     <div className={styles.heroOverlay}></div>
-                    <div className={styles.heroImage}></div>
+                    <div
+                        className={styles.heroImage}
+                        style={{
+                            backgroundImage: `url('${heroSlides[currentSlide].image}')`,
+                            transition: 'background-image 1s ease-in-out'
+                        }}
+                    ></div>
                 </div>
                 <div className={styles.heroContent}>
                     <div className={styles.heroBadge}>
                         <span>🏆</span> Your Trusted Training Partner
                     </div>
-                    <h1 className={styles.heroTitle}>
-                        Transform Your Career with
-                        <span className={styles.heroHighlight}> Industry-Leading Skills</span>
+                    <h1 className={`${styles.heroTitle} ${styles.animateText}`} key={`title-${currentSlide}`}>
+                        {heroSlides[currentSlide].title}
+                        <span className={styles.heroHighlight}> {heroSlides[currentSlide].highlight}</span>
                     </h1>
-                    <p className={styles.heroSubtitle}>
-                        Expert-led certification courses in Cybersecurity, Digital Marketing,
-                        Data Science & AI, and IoT & Robotics
+                    <p className={`${styles.heroSubtitle} ${styles.animateText}`} key={`subtitle-${currentSlide}`}>
+                        {heroSlides[currentSlide].subtitle}
                     </p>
 
                     {/* Search Bar with Suggestions */}
