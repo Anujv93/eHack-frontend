@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Handshake } from 'lucide-react';
 import './header.css';
 import './header-search.css';
 
@@ -160,7 +161,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                             </div>
                                         ))}
                                     </div>
-                                    <Link href="/courses" className="mega-view-all">
+                                    <Link href="/courses" className="mega-view-all" onClick={() => setMegaMenuOpen(false)}>
                                         View All Courses →
                                     </Link>
                                 </div>
@@ -179,6 +180,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                         key={course.id}
                                                         href={(isEhackOriginals || isKennedyUniversity) ? `/programs/${course.slug}` : `/certificate/${course.slug}`}
                                                         className="mega-course-item"
+                                                        onClick={() => setMegaMenuOpen(false)}
                                                     >
                                                         <span className="mega-course-name">{course.title}</span>
                                                         {course.duration && (
@@ -196,11 +198,22 @@ export default function Header({ partners, courses }: HeaderProps) {
                                 {/* Kennedy University Section - Right Column */}
                                 <div className="mega-menu-kennedy">
                                     <h4 className="mega-menu-heading">Global Degrees</h4>
-                                    <Link href="/kennedy-university" className="kennedy-partnership-card">
-                                        <div className="kennedy-logos">
-                                            <img src="/images/kennedy-university-logo.png" alt="Kennedy University" className="kennedy-logo-img" />
-                                            <span className="kennedy-logo-divider">×</span>
-                                            <img src="/images/ec-council-logo.png" alt="EC-Council" className="kennedy-logo-img ec-council" />
+                                    <Link href="/kennedy-university" className="kennedy-partnership-card" onClick={() => setMegaMenuOpen(false)}>
+                                        <div className="kennedy-logos-vertical">
+                                            {/* EC-Council on top */}
+                                            <div className="kennedy-logo-row">
+                                                <img src="/images/ec-council-logo.png" alt="EC-Council" className="kennedy-logo-img ec-council" />
+                                            </div>
+                                            {/* Handshake divider */}
+                                            <div className="kennedy-handshake-divider">
+                                                <span className="divider-line"></span>
+                                                <Handshake className="handshake-icon" size={28} strokeWidth={1.5} />
+                                                <span className="divider-line"></span>
+                                            </div>
+                                            {/* Kennedy University below */}
+                                            <div className="kennedy-logo-row">
+                                                <img src="/images/kennedy-university-logo.png" alt="Kennedy University" className="kennedy-logo-img" />
+                                            </div>
                                         </div>
                                         <p className="kennedy-text">
                                             Earn internationally accredited degrees in collaboration with EC-Council certifications
@@ -214,15 +227,15 @@ export default function Header({ partners, courses }: HeaderProps) {
                             <div className="mega-menu-originals-full">
                                 <h4 className="mega-menu-heading">eHack Signature Programs</h4>
                                 <div className="mega-originals-grid">
-                                    <Link href="/programs/diploma-cybersecurity" className="mega-original-card">
+                                    <Link href="/programs/diploma-cybersecurity" className="mega-original-card" onClick={() => setMegaMenuOpen(false)}>
                                         <span className="original-title">Diploma in Cybersecurity</span>
                                         <span className="original-subtitle">Foundation Program</span>
                                     </Link>
-                                    <Link href="/programs/graduate-cybersecurity" className="mega-original-card">
+                                    <Link href="/programs/graduate-cybersecurity" className="mega-original-card" onClick={() => setMegaMenuOpen(false)}>
                                         <span className="original-title">Graduate Program</span>
                                         <span className="original-subtitle">Advanced Training</span>
                                     </Link>
-                                    <Link href="/programs/masters-ethical-hacking" className="mega-original-card">
+                                    <Link href="/programs/masters-ethical-hacking" className="mega-original-card" onClick={() => setMegaMenuOpen(false)}>
                                         <span className="original-title">Masters in Ethical Hacking</span>
                                         <span className="original-subtitle">Expert Level</span>
                                     </Link>
