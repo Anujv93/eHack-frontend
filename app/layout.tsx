@@ -3,6 +3,7 @@ import { Montserrat, Open_Sans } from "next/font/google";
 import TopBar from "@/components/layout/top-bar/top-bar";
 import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
+import BackToTop from "@/components/back-to-top/back-to-top";
 import { FranchisePopup } from "@/components/global";
 import {
   getCertificationPartners,
@@ -85,6 +86,7 @@ export default async function RootLayout({
         {children}
         <Footer />
         <FranchisePopup />
+        <BackToTop />
       </body>
     </html>
   );

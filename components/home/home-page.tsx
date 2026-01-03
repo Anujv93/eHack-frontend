@@ -325,15 +325,18 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                     <div className={styles.partnersGrid}>
                         {partners.map((partner) => (
                             <div key={partner.id} className={styles.partnerCard}>
-                                {partner.logoUrl ? (
-                                    <img
-                                        src={partner.logoUrl}
-                                        alt={partner.name}
-                                        className={styles.partnerLogo}
-                                    />
-                                ) : (
-                                    <span className={styles.partnerName}>{partner.name}</span>
-                                )}
+                                <div className={styles.partnerLogoWrapper}>
+                                    {partner.logoUrl ? (
+                                        <img
+                                            src={partner.logoUrl}
+                                            alt={partner.name}
+                                            className={styles.partnerLogo}
+                                        />
+                                    ) : (
+                                        <span className={styles.partnerPlaceholder}>{partner.name[0]}</span>
+                                    )}
+                                </div>
+                                <span className={styles.partnerName}>{partner.name}</span>
                             </div>
                         ))}
                     </div>
@@ -367,21 +370,33 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
                     {/* Course Cards */}
                     <div className={styles.coursesGrid}>
-                        {courses.slice(0, 6).map((course) => (
-                            <Link
-                                key={course.id}
-                                href={`/certificate/${course.slug}`}
-                                className={styles.courseCard}
-                            >
-                                <h3 className={styles.courseCardTitle}>{course.title}</h3>
-                                <p className={styles.courseCardMeta}>
-                                    {course.partnerName || 'Professional Certification'} • {course.level}
-                                </p>
-                                <span className={styles.courseCardLink}>
-                                    View Details →
-                                </span>
-                            </Link>
-                        ))}
+                        {courses.slice(0, 6).map((course) => {
+                            const partner = partners.find(p => p.slug === course.partnerSlug);
+                            return (
+                                <Link
+                                    key={course.id}
+                                    href={`/certificate/${course.slug}`}
+                                    className={styles.courseCard}
+                                >
+                                    {partner?.logoUrl && (
+                                        <div className={styles.coursePartnerLogo}>
+                                            <img
+                                                src={partner.logoUrl}
+                                                alt={partner.name}
+                                                className={styles.coursePartnerLogoImg}
+                                            />
+                                        </div>
+                                    )}
+                                    <h3 className={styles.courseCardTitle}>{course.title}</h3>
+                                    <p className={styles.courseCardMeta}>
+                                        {course.partnerName || 'Professional Certification'} • {course.level}
+                                    </p>
+                                    <span className={styles.courseCardLink}>
+                                        View Details →
+                                    </span>
+                                </Link>
+                            );
+                        })}
                     </div>
 
                     <div className={styles.viewAllWrapper}>
