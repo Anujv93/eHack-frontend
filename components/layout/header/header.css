@@ -30,7 +30,7 @@
 }
 
 .logo-image {
-    height: 32px;
+    height: 42px;
     width: auto;
     transition: transform 0.2s ease;
 }
@@ -40,7 +40,7 @@
 }
 
 .logo-superscript {
-    font-size: 0.55rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: var(--neutral-800);
     margin-left: -6px;
@@ -48,7 +48,7 @@
 }
 
 .logo-subscript {
-    font-size: 0.5rem;
+    font-size: 0.625rem;
     font-weight: 600;
     color: var(--neutral-500);
     letter-spacing: 0.5px;
