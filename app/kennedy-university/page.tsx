@@ -24,7 +24,7 @@ export default function KennedyUniversityPage() {
                     <div className="hero-content">
                         <div className="partner-logos">
                             <div className="partner-logo">
-                                <img src="/images/kennedy-university-logo.png" alt="Kennedy University" className="partner-logo-img" />
+                                <img src="/images/kennedy-university-logo.png" alt="Kennedy University" className="partner-logo-img kennedy" />
                             </div>
                             <div className="divider"></div>
                             <div className="partner-logo">
@@ -32,11 +32,11 @@ export default function KennedyUniversityPage() {
                             </div>
                             <div className="divider"></div>
                             <div className="partner-logo">
-                                <img src="/images/ehack-logo.png" alt="eHack Academy" className="partner-logo-img ehack-logo" />
+                                <img src="/ehack-black.png" alt="eHack Academy" className="partner-logo-img ehack-logo" />
                             </div>
                         </div>
 
-                        <h1 className="hero-title" style={{ color: '#FFFFFF' }}>
+                        <h1 className="hero-title">
                             Cybersecurity with <span className="text-accent">AI</span> – Industry Certifications &amp; Global Degrees
                         </h1>
 
@@ -466,7 +466,7 @@ export default function KennedyUniversityPage() {
 
                     {/* eHack Role */}
                     <div className="ehack-role-card">
-                        <img src="/images/ehack-logo.png" alt="eHack Academy" className="ehack-role-logo" />
+                        <img src="/ehack-black.png" alt="eHack Academy" className="ehack-role-logo" />
                         <div className="ehack-role-content">
                             <h4>eHack Academy - Training &amp; Facilitation Partner</h4>
                             <p>eHack Academy serves as the training and facilitation partner, providing world-class instruction, AI-powered labs, mentorship, and career support to help you succeed in your cybersecurity journey.</p>
