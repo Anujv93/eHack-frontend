@@ -382,6 +382,12 @@ export const programs = [
             "/images/partners/dell.png",
             "/images/partners/ntt.png"
         ],
+        whyEhack: [
+            { title: "Real Time Labs", desc: "Associated with EC-Council and CISCO, we ensure candidates get exposed to real time labs - how vulnerabilities are found and exploited, how pen testing is done for a network." },
+            { title: "World Class Infrastructure", desc: "Lab infrastructure built according to EC-Council and Cisco standards with dedicated high speed broadband connectivity and well stacked library resources." },
+            { title: "Certified Faculties", desc: "Our experienced instructors are duly certified by EC-Council and CISCO, providing the latest internationally practiced technological knowledge." },
+            { title: "Study Abroad Programs", desc: "International collaboration with universities and institutions worldwide to provide an enabling environment through constant engagement with global partners." }
+        ],
         programExcellence: [
             { title: "Real Time Labs", desc: "Hands-on experience with industry-standard security tools.", icon: "lab" },
             { title: "World Class Infrastructure", desc: "Modern training facilities with latest technology.", icon: "infrastructure" },
