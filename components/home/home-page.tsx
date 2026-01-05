@@ -164,25 +164,31 @@ const heroSlides = [
         title: "Master the Art of",
         highlight: "Cybersecurity Defense",
         subtitle: "Global certification programs in Ethical Hacking, VAPT, SOC Operations, and Cloud Security.",
-        image: "/hero-cybersecurity.png"
+        image: "/images/cybersecurity.jpg"
     },
     {
         title: "Unlock the Power of",
         highlight: "Data Science & AI",
         subtitle: "Transform data into insights with Analytics, Machine Learning, and AI curriculum.",
-        image: "/hero-datascience.png"
+        image: "/images/datascience.jpeg"
     },
     {
         title: "Innovate with",
         highlight: "Robotics & IoT",
         subtitle: "Design the connected world. Hands-on training in Robotics and Smart Technologies.",
-        image: "/hero-robotics.png"
+        image: "/images/robotics.jpeg"
+    },
+    {
+        title: "Grow Your Brand with",
+        highlight: "Digital Marketing",
+        subtitle: "From SEO to Social Media — learn strategies that convert clicks into customers.",
+        image: "/images/social-media-marketing.jpg"
     },
     {
         title: "Elevate Business with",
         highlight: "Corporate Security Services",
         subtitle: "Premium corporate solutions: VAPT, SOC Management, Cloud Security & Incident Response.",
-        image: "/hero-corporate.png"
+        image: "/images/corporate.jpeg"
     }
 ];
 
@@ -236,13 +242,17 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             <section className={styles.hero}>
                 <div className={styles.heroBackground}>
                     <div className={styles.heroOverlay}></div>
-                    <div
-                        className={styles.heroImage}
-                        style={{
-                            backgroundImage: `url('${heroSlides[currentSlide].image}')`,
-                            transition: 'background-image 1s ease-in-out'
-                        }}
-                    ></div>
+                    {heroSlides.map((slide, index) => (
+                        <div
+                            key={index}
+                            className={styles.heroImage}
+                            style={{
+                                backgroundImage: `url('${slide.image}')`,
+                                opacity: currentSlide === index ? 1 : 0,
+                                transition: 'opacity 1s ease-in-out'
+                            }}
+                        />
+                    ))}
                 </div>
                 <div className={styles.heroContent}>
                     {/* <div className={styles.heroBadge}>

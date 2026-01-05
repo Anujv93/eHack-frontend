@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { programs, getProgramBySlug } from '@/data/programs';
+import { BriefcaseBusiness } from 'lucide-react';
 import './program.css';
 
 export default function ProgramPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -261,21 +262,20 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         <div className="jobroles-grid">
                             <ul className="jobroles-list">
                                 {program.jobRoles.slice(0, 4).map((role, idx) => (
-                                    <li key={idx}><span className="role-icon">⊙</span> {role}</li>
+                                    <li key={idx}><span className="role-icon"><BriefcaseBusiness size={18} /></span> {role}</li>
                                 ))}
                             </ul>
                             <ul className="jobroles-list">
                                 {program.jobRoles.slice(4, 8).map((role, idx) => (
-                                    <li key={idx}><span className="role-icon">⊙</span> {role}</li>
+                                    <li key={idx}><span className="role-icon"><BriefcaseBusiness size={18} /></span> {role}</li>
                                 ))}
                             </ul>
                             <ul className="jobroles-list">
                                 {program.jobRoles.slice(8, 12).map((role, idx) => (
-                                    <li key={idx}><span className="role-icon">⊙</span> {role}</li>
+                                    <li key={idx}><span className="role-icon"><BriefcaseBusiness size={18} /></span> {role}</li>
                                 ))}
                             </ul>
                         </div>
-                        <a href="#" className="view-more-link">View More...</a>
                     </div>
                 </div>
             </section>

@@ -1,5 +1,5 @@
 .top-bar {
-    background: #FFF7ED;
+    background: #FF6B00;
     padding: 0.75rem 0;
     position: relative;
 }
@@ -15,46 +15,46 @@
     display: flex;
     align-items: center;
     gap: 0.625rem;
-    color: #1a1a1a;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.25rem;
     font-weight: 600;
     transition: color 0.2s;
 }
 
 .contact-item:hover {
-    color: #FF6B00;
+    color: #FFE4CC;
 }
 
 .contact-item svg {
     flex-shrink: 0;
-    stroke: #FF6B00;
+    stroke: #ffffff;
 }
 
 .divider {
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.5);
     font-weight: 300;
 }
 
 /* Promo Banner */
 .promo-bar {
-    background: #FFEDD5;
+    background: #E55A00;
     padding: 0.625rem 1rem;
     text-align: center;
 }
 
 .promo-text {
     margin: 0;
-    font-size: 0.9rem;
-    color: #1a1a1a;
+    font-size: 1.25rem;
+    color: #ffffff;
 }
 
 .promo-link {
     background: none;
     border: none;
-    color: #FF6B00;
+    color: #ffffff;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1.25rem;
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -63,7 +63,7 @@
 }
 
 .promo-link:hover {
-    color: #E55A00;
+    color: #FFE4CC;
     text-decoration-thickness: 2px;
     transform: scale(1.02);
 }

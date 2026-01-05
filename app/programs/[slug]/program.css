@@ -504,7 +504,7 @@
 /* Certificate Images Gallery */
 .certificates-gallery {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-4);
     margin-bottom: var(--space-10);
     padding: var(--space-4) 0;
@@ -557,8 +557,8 @@
 
 .certificate-img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
 .certificate-overlay {
@@ -571,7 +571,7 @@
 
 .credentials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-4);
     margin-bottom: var(--space-8);
 }
@@ -876,9 +876,11 @@
 }
 
 .jobroles-card {
-    background: var(--gray-900);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
     border-radius: var(--border-radius-lg);
     padding: var(--space-10);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .jobroles-grid {
@@ -896,10 +898,11 @@
 
 .jobroles-list li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-3);
-    color: var(--white);
-    font-size: 0.875rem;
+    color: var(--black);
+    font-size: 1.1rem;
+    font-weight: 500;
     margin-bottom: var(--space-4);
     line-height: 1.5;
 }
@@ -1008,11 +1011,11 @@
     border-radius: 50px;
 }
 
-/* Curriculum Section */
+/* Curriculum Section - Light Theme */
 .curriculum-section {
-    background: var(--gray-900);
+    background: var(--gray-50);
     padding: var(--space-12) 0;
-    color: var(--white);
+    color: var(--black);
 }
 
 .curriculum-container {
@@ -1046,12 +1049,12 @@
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: var(--space-4);
-    color: var(--white);
+    color: var(--black);
 }
 
 .curriculum-subtitle {
     font-size: 1rem;
-    color: var(--gray-400);
+    color: var(--gray-600);
     line-height: 1.7;
     max-width: 500px;
 }
@@ -1073,7 +1076,7 @@
 
 .curr-stat-label {
     font-size: 0.875rem;
-    color: var(--gray-400);
+    color: var(--gray-600);
 }
 
 .curriculum-modules {
@@ -1084,8 +1087,8 @@
 }
 
 .module-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
     border-radius: var(--border-radius-md);
     overflow: hidden;
     transition: all 0.3s;
@@ -1093,7 +1096,7 @@
 
 .module-card.active {
     border-color: var(--accent);
-    background: rgba(223, 103, 24, 0.1);
+    background: var(--accent-light);
 }
 
 .module-header {
@@ -1125,7 +1128,7 @@
 .module-card-title {
     font-size: 1.125rem;
     font-weight: 700;
-    color: var(--white);
+    color: var(--black);
     margin-bottom: var(--space-2);
 }
 
@@ -1140,7 +1143,7 @@
     align-items: center;
     gap: var(--space-2);
     font-size: 0.875rem;
-    color: var(--gray-400);
+    color: var(--gray-600);
 }
 
 .module-cert-badge {
@@ -1153,7 +1156,7 @@
 }
 
 .module-expand-icon {
-    color: var(--gray-400);
+    color: var(--gray-500);
     font-size: 1rem;
 }
 
@@ -1164,7 +1167,7 @@
 
 .module-description {
     font-size: 0.9375rem;
-    color: var(--gray-300);
+    color: var(--gray-600);
     line-height: 1.7;
     margin-bottom: var(--space-4);
 }
@@ -1185,8 +1188,8 @@
 }
 
 .tag {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--gray-300);
+    background: var(--gray-100);
+    color: var(--gray-700);
     font-size: 0.75rem;
     padding: 6px 12px;
     border-radius: 50px;
@@ -1197,7 +1200,7 @@
     justify-content: space-between;
     align-items: center;
     padding-top: var(--space-8);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--gray-200);
 }
 
 .curriculum-total {
@@ -1223,7 +1226,7 @@
 .total-text strong {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--white);
+    color: var(--black);
 }
 
 .total-text span {
