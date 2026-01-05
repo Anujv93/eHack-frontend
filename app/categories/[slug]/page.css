@@ -80,6 +80,16 @@
     gap: 24px;
 }
 
+.programs-grid.single-card {
+    display: flex;
+    justify-content: center;
+}
+
+.programs-grid.single-card .program-card {
+    max-width: 600px;
+    width: 100%;
+}
+
 .program-card {
     display: flex;
     flex-direction: column;

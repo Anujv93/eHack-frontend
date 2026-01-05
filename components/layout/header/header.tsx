@@ -177,37 +177,49 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     href="/categories/cybersecurity"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
+                                                    style={{ backgroundImage: `url('/images/cybersecurity.jpg')` }}
                                                 >
-                                                    <span className="mega-cat-icon">🛡️</span>
-                                                    <span className="mega-cat-name">Cybersecurity</span>
-                                                    <span className="mega-cat-count">3 Programs</span>
+                                                    <div className="mega-cat-overlay"></div>
+                                                    <div className="mega-cat-content">
+                                                        <span className="mega-cat-name">Cybersecurity with AI</span>
+                                                        <span className="mega-cat-count">3 Programs</span>
+                                                    </div>
                                                 </Link>
                                                 <Link
                                                     href="/categories/data-science"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
+                                                    style={{ backgroundImage: `url('/images/datascience.jpeg')` }}
                                                 >
-                                                    <span className="mega-cat-icon">📊</span>
-                                                    <span className="mega-cat-name">Data Science</span>
-                                                    <span className="mega-cat-count">Coming Soon</span>
+                                                    <div className="mega-cat-overlay"></div>
+                                                    <div className="mega-cat-content">
+                                                        <span className="mega-cat-name">Data Science with AI</span>
+                                                        <span className="mega-cat-count">Coming Soon</span>
+                                                    </div>
                                                 </Link>
                                                 <Link
                                                     href="/categories/robotics-iot"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
+                                                    style={{ backgroundImage: `url('/images/robotics.jpeg')` }}
                                                 >
-                                                    <span className="mega-cat-icon">🤖</span>
-                                                    <span className="mega-cat-name">Robotics & IoT</span>
-                                                    <span className="mega-cat-count">1 Program</span>
+                                                    <div className="mega-cat-overlay"></div>
+                                                    <div className="mega-cat-content">
+                                                        <span className="mega-cat-name">Robotics & IoT with AI</span>
+                                                        <span className="mega-cat-count">1 Program</span>
+                                                    </div>
                                                 </Link>
                                                 <Link
                                                     href="/categories/digital-marketing"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
+                                                    style={{ backgroundImage: `url('/images/social-media-marketing.jpg')` }}
                                                 >
-                                                    <span className="mega-cat-icon">📈</span>
-                                                    <span className="mega-cat-name">Digital Marketing</span>
-                                                    <span className="mega-cat-count">1 Program</span>
+                                                    <div className="mega-cat-overlay"></div>
+                                                    <div className="mega-cat-content">
+                                                        <span className="mega-cat-name">Digital Marketing with AI</span>
+                                                        <span className="mega-cat-count">1 Program</span>
+                                                    </div>
                                                 </Link>
                                             </div>
                                         </div>

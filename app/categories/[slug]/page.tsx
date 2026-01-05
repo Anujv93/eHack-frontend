@@ -38,7 +38,7 @@ export default function CategoryPage({ params }: PageProps) {
             <section className="category-content">
                 <div className="container">
                     {programs.length > 0 ? (
-                        <div className="programs-grid">
+                        <div className={`programs-grid ${programs.length === 1 ? 'single-card' : ''}`}>
                             {programs.map((program) => (
                                 <Link
                                     key={program.slug}
