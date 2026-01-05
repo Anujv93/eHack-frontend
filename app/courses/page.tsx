@@ -64,17 +64,12 @@ export default async function CoursesPage({ searchParams }: PageProps) {
 
     return (
         <main className="courses-page">
-            <section className="courses-hero">
+            <div className="page-header">
                 <div className="container">
-                    <div className="hero-content">
-                        <span className="hero-badge">OUR COURSES</span>
-                        <h1>Industry-Leading Certifications & Training</h1>
-                        <p>
-                            Explore our comprehensive catalog of professional courses from world-class certification partners
-                        </p>
-                    </div>
+                    <h1>Our Courses</h1>
+                    <p>Explore industry-leading certifications from world-class partners and transform your career</p>
                 </div>
-            </section>
+            </div>
 
             <section className="courses-content">
                 <div className="container">
