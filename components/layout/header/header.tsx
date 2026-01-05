@@ -166,33 +166,77 @@ export default function Header({ partners, courses }: HeaderProps) {
                                     </Link>
                                 </div>
 
-                                {/* Middle Section: Courses */}
+                                {/* Middle Section: Courses or Categories */}
                                 <div className="mega-menu-middle">
-                                    {/* Courses */}
-                                    <div className="mega-menu-right">
-                                        <h4 className="mega-menu-heading">
-                                            {activePartnerData ? (isEhackOriginals ? 'eHack Programs' : isKennedyUniversity ? 'Kennedy University Degrees' : `${activePartnerData.name} Courses`) : 'Courses'}
-                                        </h4>
-                                        <div className="mega-courses">
-                                            {filteredCourses.length > 0 ? (
-                                                filteredCourses.map((course) => (
-                                                    <Link
-                                                        key={course.id}
-                                                        href={(isEhackOriginals || isKennedyUniversity) ? `/programs/${course.slug}` : `/certificate/${course.slug}`}
-                                                        className="mega-course-item"
-                                                        onClick={() => setMegaMenuOpen(false)}
-                                                    >
-                                                        <span className="mega-course-name">{course.title}</span>
-                                                        {course.duration && (
-                                                            <span className="mega-course-duration">{course.duration}</span>
-                                                        )}
-                                                    </Link>
-                                                ))
-                                            ) : (
-                                                <p className="mega-no-courses">No courses available</p>
-                                            )}
+                                    {/* Show Categories for eHack Originals */}
+                                    {isEhackOriginals ? (
+                                        <div className="mega-menu-right">
+                                            <h4 className="mega-menu-heading">Program Categories</h4>
+                                            <div className="mega-categories-grid">
+                                                <Link
+                                                    href="/categories/cybersecurity"
+                                                    className="mega-category-card"
+                                                    onClick={() => setMegaMenuOpen(false)}
+                                                >
+                                                    <span className="mega-cat-icon">🛡️</span>
+                                                    <span className="mega-cat-name">Cybersecurity</span>
+                                                    <span className="mega-cat-count">3 Programs</span>
+                                                </Link>
+                                                <Link
+                                                    href="/categories/data-science"
+                                                    className="mega-category-card"
+                                                    onClick={() => setMegaMenuOpen(false)}
+                                                >
+                                                    <span className="mega-cat-icon">📊</span>
+                                                    <span className="mega-cat-name">Data Science</span>
+                                                    <span className="mega-cat-count">Coming Soon</span>
+                                                </Link>
+                                                <Link
+                                                    href="/categories/robotics-iot"
+                                                    className="mega-category-card"
+                                                    onClick={() => setMegaMenuOpen(false)}
+                                                >
+                                                    <span className="mega-cat-icon">🤖</span>
+                                                    <span className="mega-cat-name">Robotics & IoT</span>
+                                                    <span className="mega-cat-count">1 Program</span>
+                                                </Link>
+                                                <Link
+                                                    href="/categories/digital-marketing"
+                                                    className="mega-category-card"
+                                                    onClick={() => setMegaMenuOpen(false)}
+                                                >
+                                                    <span className="mega-cat-icon">📈</span>
+                                                    <span className="mega-cat-name">Digital Marketing</span>
+                                                    <span className="mega-cat-count">1 Program</span>
+                                                </Link>
+                                            </div>
                                         </div>
-                                    </div>
+                                    ) : (
+                                        <div className="mega-menu-right">
+                                            <h4 className="mega-menu-heading">
+                                                {activePartnerData ? (isKennedyUniversity ? 'Kennedy University Degrees' : `${activePartnerData.name} Courses`) : 'Courses'}
+                                            </h4>
+                                            <div className="mega-courses">
+                                                {filteredCourses.length > 0 ? (
+                                                    filteredCourses.map((course) => (
+                                                        <Link
+                                                            key={course.id}
+                                                            href={isKennedyUniversity ? `/programs/${course.slug}` : `/certificate/${course.slug}`}
+                                                            className="mega-course-item"
+                                                            onClick={() => setMegaMenuOpen(false)}
+                                                        >
+                                                            <span className="mega-course-name">{course.title}</span>
+                                                            {course.duration && (
+                                                                <span className="mega-course-duration">{course.duration}</span>
+                                                            )}
+                                                        </Link>
+                                                    ))
+                                                ) : (
+                                                    <p className="mega-no-courses">No courses available</p>
+                                                )}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* Kennedy University Section - Right Column */}

@@ -2,13 +2,14 @@
 export const programs = [
     {
         slug: "masters-ethical-hacking",
+        category: "cybersecurity",
         title: "Masters Program in Ethical Hacking & Cyber Security",
         subtitle: "with 6 Global Certifications",
         description: "Equip yourself with the skills to protect IT infrastructure, perform vulnerability assessments, and secure organizations against cyber threats.",
         features: "Includes real-time labs, hands-on penetration testing, network defense training, and internationally recognized certifications.",
         batchInfo: "IN JANUARY",
         partner: "EC-Council",
-        partnerLogo: "/images/ec-council-badge.png",
+        partnerLogo: "/images/ec-council-logo.png",
         ehackLogo: "/ehack-black.png",
         stats: {
             startDate: "5th of Every Month",
@@ -163,13 +164,14 @@ export const programs = [
 
     {
         slug: "graduate-cybersecurity",
+        category: "cybersecurity",
         title: "Graduate Program in Ethical Hacking & Cyber Security",
         subtitle: "with 2 Global Complimentary Certifications",
         description: "Equip yourself with skills to protect IT infrastructure, secure data, run risk analysis, architect cloud-based security, and achieve compliance.",
         features: "Includes IT Fundamentals, CSCU, CND certifications, Ethical Hacking, Penetration Testing, Digital Forensics & OWASP Top 10.",
         batchInfo: "5TH OF EVERY MONTH",
         partner: "EC-Council",
-        partnerLogo: "/images/ec-council-badge.png",
+        partnerLogo: "/images/ec-council-logo.png",
         ehackLogo: "/ehack-black.png",
         stats: {
             startDate: "5th of Every Month",
@@ -320,13 +322,14 @@ export const programs = [
 
     {
         slug: "diploma-cybersecurity",
+        category: "cybersecurity",
         title: "Diploma in Ethical Hacking & Cyber Security",
         subtitle: "with 2 Global Certifications",
         description: "A foundation-level diploma program designed to introduce you to the world of cybersecurity and ethical hacking.",
         features: "Includes practical labs, hands-on training, and industry-recognized EC-Council certifications.",
         batchInfo: "IN JANUARY",
         partner: "EC-Council",
-        partnerLogo: "/images/ec-council-badge.png",
+        partnerLogo: "/images/ec-council-logo.png",
         ehackLogo: "/ehack-black.png",
         stats: {
             startDate: "5th of Every Month",
@@ -429,6 +432,7 @@ export const programs = [
 
     {
         slug: "digital-marketing-masterprogram",
+        category: "digital-marketing",
         title: "Master's Program in Digital Marketing",
         subtitle: "Build Digital Careers - Agency Style Training",
         description: "eHack Digital Academy equips you to build your career from scratch with hands-on agency-style training to bridge the industry gap in skilled digital marketing professionals.",
@@ -610,6 +614,7 @@ export const programs = [
 
     {
         slug: "robotics-for-all",
+        category: "robotics-iot",
         title: "Robotics for Every One - Build Your First Robot",
         subtitle: "Sensors & Actuators | Line Following | Obstacle Avoidance | Bluetooth Control",
         description: "This comprehensive course is designed for absolute beginners who want to learn how to build and program their very own robots from scratch. It takes students on an exciting journey into the world of robotics, starting from basic electronics to building autonomous and remotely controlled robots.",
@@ -784,4 +789,47 @@ export function getProgramBySlug(slug: string) {
 
 export function getAllProgramSlugs() {
     return programs.map(p => p.slug);
+}
+
+export function getProgramsByCategory(category: string) {
+    return programs.filter(p => p.category === category);
+}
+
+export const programCategories = [
+    {
+        slug: 'cybersecurity',
+        name: 'Cybersecurity',
+        description: 'Master ethical hacking, network defense, and digital forensics',
+        icon: '🛡️',
+        color: '#FF6B00',
+        backgroundImage: '/images/cybersecurity.jpg'
+    },
+    {
+        slug: 'data-science',
+        name: 'Data Science',
+        description: 'Transform data into insights with analytics and AI',
+        icon: '📊',
+        color: '#3B82F6',
+        backgroundImage: '/images/datascience.jpeg'
+    },
+    {
+        slug: 'robotics-iot',
+        name: 'Robotics & IoT',
+        description: 'Build robots and smart connected devices',
+        icon: '🤖',
+        color: '#10B981',
+        backgroundImage: '/images/robotics.jpeg'
+    },
+    {
+        slug: 'digital-marketing',
+        name: 'Digital Marketing',
+        description: 'Master SEO, social media, and performance marketing',
+        icon: '📈',
+        color: '#8B5CF6',
+        backgroundImage: '/images/social-media-marketing.jpg'
+    }
+];
+
+export function getCategoryBySlug(slug: string) {
+    return programCategories.find(c => c.slug === slug);
 }
