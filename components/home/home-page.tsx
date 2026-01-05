@@ -242,13 +242,17 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             <section className={styles.hero}>
                 <div className={styles.heroBackground}>
                     <div className={styles.heroOverlay}></div>
-                    <div
-                        className={styles.heroImage}
-                        style={{
-                            backgroundImage: `url('${heroSlides[currentSlide].image}')`,
-                            transition: 'background-image 1s ease-in-out'
-                        }}
-                    ></div>
+                    {heroSlides.map((slide, index) => (
+                        <div
+                            key={index}
+                            className={styles.heroImage}
+                            style={{
+                                backgroundImage: `url('${slide.image}')`,
+                                opacity: currentSlide === index ? 1 : 0,
+                                transition: 'opacity 1s ease-in-out'
+                            }}
+                        />
+                    ))}
                 </div>
                 <div className={styles.heroContent}>
                     {/* <div className={styles.heroBadge}>
