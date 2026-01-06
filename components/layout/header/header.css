@@ -64,6 +64,8 @@
     gap: 0.25rem;
     margin-left: auto;
     padding-left: 4rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .nav-link {
