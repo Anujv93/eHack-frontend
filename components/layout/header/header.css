@@ -199,7 +199,9 @@
     visibility: hidden;
     transition: all 0.2s ease;
     padding: 1.5rem 2rem;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
     box-sizing: border-box;
     z-index: 9999;
     /* Prevent triggering from outside the menu area */
@@ -215,8 +217,9 @@
 
 .mega-menu-inner {
     display: grid;
-    grid-template-columns: 200px 1fr 280px;
+    grid-template-columns: 260px 1fr 280px;
     gap: 1.5rem;
+    overflow: visible;
 }
 
 .mega-menu-heading {
@@ -232,6 +235,8 @@
 .mega-menu-left {
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .mega-partners {
@@ -365,18 +370,26 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 0.125rem;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .partner-name {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--neutral-800);
+    line-height: 1.4;
+    display: block;
+    word-break: break-word;
+    white-space: normal;
 }
 
 .partner-count {
     font-size: 0.75rem;
     color: var(--neutral-500);
+    white-space: nowrap;
 }
 
 .partner-arrow {
@@ -413,12 +426,16 @@
 .mega-menu-middle {
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
 }
 
 /* Right Side - Courses */
 .mega-menu-right {
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .mega-courses {
@@ -427,6 +444,7 @@
     gap: 0.75rem;
     max-height: 450px;
     overflow-y: auto;
+    overflow-x: hidden;
     padding-right: 0.5rem;
 }
 
@@ -454,6 +472,7 @@
     transition: all 0.2s;
     border: 2px solid var(--neutral-200);
     background: #FAFAFA;
+    min-width: 0;
 }
 
 .mega-course-item:hover {
@@ -467,6 +486,8 @@
     font-weight: 600;
     color: var(--neutral-800);
     line-height: 1.3;
+    white-space: normal;
+    word-break: break-word;
 }
 
 .mega-course-duration {
@@ -543,12 +564,15 @@
 }
 
 .mega-cat-name {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 800;
     color: #fff;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.3;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
 }
 
 .mega-cat-count {
@@ -648,6 +672,7 @@
     display: flex;
     flex-direction: column;
     min-width: 0;
+    overflow: hidden;
 }
 
 .kennedy-partnership-card {
@@ -664,6 +689,10 @@
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     flex: 1;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .kennedy-partnership-card:hover {
@@ -684,10 +713,8 @@
 
 .kennedy-logo-img {
     height: 55px;
-    width: auto;
-    max-width: 140px;
+    max-width: 100%;
     object-fit: contain;
-    filter: brightness(0) invert(1);
 }
 
 .kennedy-logo-divider {
@@ -701,15 +728,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
     width: 100%;
-    padding-bottom: 0.75rem;
-    margin-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .kennedy-logo-row {
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -740,6 +764,9 @@
     line-height: 1.5;
     text-align: center;
     margin: 0 0 0.75rem 0;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
 }
 
 .kennedy-cta {
