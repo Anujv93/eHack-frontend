@@ -372,6 +372,33 @@
     font-weight: 500;
 }
 
+/* Read More Button */
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #FF6B00;
+    color: #FFFFFF;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: #E55F00;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+.read-more-btn svg {
+    transition: transform 0.3s ease;
+}
+
 /* Advisory Section */
 .advisory-section {
     padding: 100px 0;
