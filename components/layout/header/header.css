@@ -659,9 +659,9 @@
 }
 
 .kennedy-logo-img {
-    height: 40px;
+    height: 55px;
     width: auto;
-    max-width: 110px;
+    max-width: 140px;
     object-fit: contain;
     filter: brightness(0) invert(1);
 }
