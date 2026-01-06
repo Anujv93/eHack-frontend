@@ -38,132 +38,129 @@ export const programs = [
         curriculum: [
             {
                 number: "01",
-                title: "Security Fundamentals & CSCU",
+                title: "P|SCSPᴬᴵ - Professional | Secure Computer Systems Programᴬᴵ",
                 duration: "8 Weeks",
                 certification: "EC-Council CSCU",
                 description: "Establish a strong foundation in cybersecurity principles. Learn essential security awareness and secure computing practices for personal and professional environments.",
                 topics: [
-                    "Introduction to Data Security",
-                    "Securing Operating Systems (Windows/Mac)",
-                    "Malware & Antivirus Protection",
-                    "Internet & Browser Security",
-                    "Social Networking Security",
-                    "Securing Email Communications",
-                    "Securing Mobile Devices",
-                    "Securing Cloud Accounts",
-                    "Securing Network Connections",
-                    "Data Backup & Disaster Recovery",
-                    "Securing IoT Devices & Gaming Consoles",
-                    "Secure Remote Working Practices"
+                    "Introduction to Digital Security",
+                    "Operating System Protection Techniques",
+                    "Malicious Software and System Defense",
+                    "Internet Usage Security Practices",
+                    "Security AwarSecuring Emaeness for Social Media Platforms",
+                    "Email Communication Protection Methods",
+                    "Mobile Device Security Fundamentals",
+                    "Cloud Usage and Data Protection",
+                    "Network Connectivity and Access Security",
+                    "Data Backup and Business Continuity Planning",
+                    "Protection of Smart and Connected Devices",
+                    "Safe Digital Workspaces and Remote Access Security"
                 ]
             },
             {
                 number: "02",
-                title: "Network Defense & CND",
+                title: "P|NDPᴬᴵ - Professional | Network Defense Programᴬᴵ",
                 duration: "12 Weeks",
                 certification: "EC-Council CND",
                 description: "Master the protect, detect, respond, and predict approach to network security with enterprise-level defense strategies.",
                 topics: [
-                    "Network Attacks & Defense Strategies",
+                    "Network Attacks and Defense Approaches",
                     "Administrative Network Security",
                     "Technical Network Security",
-                    "Network Perimeter Security",
-                    "Endpoint Security - Windows Systems",
-                    "Endpoint Security - Linux Systems",
-                    "Endpoint Security - Mobile Devices",
-                    "Endpoint Security - IoT Devices",
+                    "Network Boundary and Perimeter Security",
+                    "Endpoint Protection for Windows Systems",
+                    "Endpoint Protection for Linux Systems",
+                    "Endpoint Protection for Mobile Devices",
+                    "Endpoint Protection for IoT and Smart Devices",
                     "Administrative Application Security",
-                    "Data Security & Encryption",
-                    "Enterprise Virtual Network Security",
-                    "Enterprise Cloud Network Security",
-                    "Enterprise Wireless Network Security",
-                    "Network Traffic Monitoring & Analysis",
-                    "Network Logs Monitoring & Analysis",
-                    "Incident Response & Forensic Investigation",
-                    "Business Continuity & Disaster Recovery",
-                    "Risk Management & Anticipation",
-                    "Threat Assessment & Attack Surface Analysis",
-                    "Cyber Threat Intelligence"
+                    "Data Security and Protection Controls",
+                    "Network Threat Analysis and Response",
+                    "Network Policy and Governance Management",
+                    "Secure Network Architecture Design",
+                    "Perimeter Monitoring and Defense Systems",
+                    "Windows Endpoint Hardening Techniques ",
+                    "Linux Endpoint Hardening Techniques",
+                    "IoT Security Administration",
+                    "Application Security Administration",
+                    "Enterprise Data Protection Strategies"
+
                 ]
             },
             {
                 number: "03",
-                title: "Ethical Hacking & CEH",
+                title: "P|EHCOPᴬᴵ - Professional | Ethical Hacking and Cyber Offense Programᴬᴵ",
                 duration: "12 Weeks",
                 certification: "EC-Council CEH",
                 description: "Think like an attacker to defend like a professional. Master reconnaissance, exploitation, and over 550 attack techniques.",
                 topics: [
-                    "Introduction to Ethical Hacking",
-                    "Footprinting & Reconnaissance",
-                    "Scanning Networks",
-                    "Enumeration Techniques",
-                    "Vulnerability Analysis",
-                    "System Hacking & Steganography",
-                    "Malware Threats & Analysis",
-                    "Sniffing & Packet Analysis",
-                    "Social Engineering Attacks",
-                    "Denial-of-Service (DoS/DDoS)",
-                    "Session Hijacking",
-                    "Evading IDS, Firewalls & Honeypots",
-                    "Hacking Web Servers",
-                    "Hacking Web Applications",
-                    "SQL Injection Attacks",
-                    "Hacking Wireless Networks",
-                    "Hacking Mobile Platforms",
-                    "IoT & OT Hacking",
-                    "Cloud Computing Security",
-                    "Cryptography & Cryptanalysis"
+                    "Fundamentals of Ethical Hacking",
+                    "Information Gathering and Reconnaissance",
+                    "Network Scanning Techniques",
+                    "System Enumeration Methods",
+                    "Vulnerability Identification and Analysis",
+                    "System Exploitation Techniques",
+                    "Malware Threat Analysis",
+                    "Network Traffic Monitoring and Sniffing",
+                    "Social Engineering Attack Methods",
+                    "Service Disruption Attacks",
+                    "Session HijackingSession Control and Hijacking",
+                    "Security Control Evasion Techniques",
+                    "Web Server Security Testing",
+                    "Web Application Security Assessment",
+                    "Database and Injection Attacks",
+                    "Wireless Network Exploitation",
+                    "Mobile Platform Security Testing",
+                    "IoT Security Attacks",
+                    "Cloud Infrastructure Security Risks",
+                    "Cryptography and Data Protection Basics"
                 ]
             },
             {
                 number: "04",
-                title: "Digital Forensics & CHFI",
+                title: "P|DFIPᴬᴵ - Professional | Digital Forensics and Investigation Programᴬᴵ",
                 duration: "8 Weeks",
                 certification: "EC-Council CHFI",
                 description: "Master the science of cyber investigations with evidence collection, forensic analysis, and reporting techniques.",
                 topics: [
-                    "Computer Forensics in Today's World",
-                    "Computer Forensics Investigation Process",
-                    "Understanding Hard Disks & File Systems",
-                    "Data Acquisition & Duplication",
-                    "Defeating Anti-Forensics Techniques",
-                    "Windows Forensics & Artifact Analysis",
-                    "Linux & Mac Forensics",
-                    "Network Forensics",
-                    "Investigating Web Attacks",
-                    "Dark Web Forensics",
-                    "Database Forensics",
-                    "Cloud Forensics (AWS, Azure, GCP)",
-                    "Email Crime Investigation",
-                    "Malware Forensics & Analysis",
-                    "Mobile Forensics",
-                    "IoT Forensics"
+                    "Computer Forensics Overview",
+                    "Digital Investigation Methodology",
+                    "Storage Media and File System Analysis",
+                    "Evidence Acquisition and Duplication",
+                    "Anti-Forensics and Counter Techniques",
+                    "Windows System Forensics",
+                    "Linux and macOS Forensics",
+                    "Network Forensics Analysis",
+                    "Malware Forensic Investigation",
+                    "Web Attack Investigation",
+                    "Dark Web Investigation Techniques",
+                    "Cloud Forensics and Data Analysis",
+                    "Email and Social Media Forensics",
+                    "Mobile Device Forensics",
+                    "IoT Forensic Investigation"
                 ]
             },
             {
                 number: "05",
-                title: "Advanced Penetration Testing & CPENT",
+                title: "P|APTPᴬᴵ - Professional | Advanced Penetration Testing Programᴬᴵ",
                 duration: "10 Weeks",
                 certification: "EC-Council CPENT",
                 description: "Elevate your skills with advanced red team techniques including IoT exploitation, OT/SCADA security, and live cyber range exercises.",
                 topics: [
-                    "Penetration Testing Methodologies",
-                    "Penetration Testing Scoping & Engagement",
-                    "Open-Source Intelligence (OSINT)",
-                    "Social Engineering Penetration Testing",
+                    "Penetration Testing Foundations",
+                    "Testing Scope and Engagement Planning",
+                    "Open-Source Intelligence Techniques",
+                    "Social Engineering Assessment",
+                    "External Network Penetration Testing",
+                    "Internal Network Penetration Testing",
+                    "Perimeter Network Testing",
                     "Web Application Penetration Testing",
-                    "API & JWT Penetration Testing",
-                    "Network Penetration Testing (External/Internal)",
-                    "Perimeter Defense Evasion Techniques",
-                    "Windows Exploitation & Privilege Escalation",
-                    "Active Directory Penetration Testing",
-                    "Linux Exploitation & Privilege Escalation",
-                    "Reverse Engineering & Binary Exploitation",
-                    "Lateral Movement & Double Pivoting",
+                    "Wireless Security Testing",
                     "IoT Penetration Testing",
-                    "OT/SCADA Penetration Testing",
+                    "Operational Technology and SCADA Security Testing",
                     "Cloud Penetration Testing",
-                    "Report Writing & Post-Testing Actions"
+                    "Binary Analysis and Exploitation",
+                    "Reporting, Documentation, and Post-Test Actions"
+
                 ]
             }
         ],
@@ -303,42 +300,51 @@ export const programs = [
             },
             {
                 number: "02",
-                title: "CSCU - Certified Secure Computer User",
+                title: "P|SCSPᴬᴵ - Professional | Secure Computer Systems Programᴬᴵ",
                 duration: "6 Weeks",
                 certification: "EC-Council CSCU",
                 description: "Learn essential cybersecurity awareness and secure computing practices from the official EC-Council CSCU curriculum.",
                 topics: [
-                    "Introduction to Data Security",
-                    "Securing Operating Systems",
-                    "Malware & Antivirus Protection",
-                    "Internet & Browser Security",
-                    "Social Networking Security",
-                    "Securing Email Communications",
-                    "Securing Mobile Devices",
-                    "Securing Cloud Accounts",
-                    "Securing Network Connections",
-                    "Data Backup & Recovery"
+                    "Introduction to Digital Security",
+                    "Operating System Protection Techniques",
+                    "Malicious Software and System Defense",
+                    "Internet Usage Security Practices",
+                    "Security AwarSecuring Emaeness for Social Media Platforms",
+                    "Email Communication Protection Methods",
+                    "Mobile Device Security Fundamentals",
+                    "Cloud Usage and Data Protection",
+                    "Network Connectivity and Access Security",
+                    "Data Backup and Business Continuity Planning",
+                    "Protection of Smart and Connected Devices",
+                    "Safe Digital Workspaces and Remote Access Security"
                 ]
             },
             {
                 number: "03",
-                title: "CND - Certified Network Defender",
+                title: "P|NDPᴬᴵ - Professional | Network Defense Programᴬᴵ",
                 duration: "8 Weeks",
                 certification: "EC-Council CND",
                 description: "Master the protect, detect, respond, and predict approach to network security from the official EC-Council CND v3 curriculum.",
                 topics: [
-                    "Network Attacks & Defense Strategies",
+                    "Network Attacks and Defense Approaches",
                     "Administrative Network Security",
                     "Technical Network Security",
-                    "Network Perimeter Security",
-                    "Endpoint Security - Windows/Linux",
-                    "Endpoint Security - Mobile & IoT",
-                    "Enterprise Cloud Network Security",
-                    "Network Traffic Monitoring & Analysis",
-                    "Incident Response & Forensics",
-                    "Business Continuity & Disaster Recovery",
-                    "Risk Management",
-                    "Cyber Threat Intelligence"
+                    "Network Boundary and Perimeter Security",
+                    "Endpoint Protection for Windows Systems",
+                    "Endpoint Protection for Linux Systems",
+                    "Endpoint Protection for Mobile Devices",
+                    "Endpoint Protection for IoT and Smart Devices",
+                    "Administrative Application Security",
+                    "Data Security and Protection Controls",
+                    "Network Threat Analysis and Response",
+                    "Network Policy and Governance Management",
+                    "Secure Network Architecture Design",
+                    "Perimeter Monitoring and Defense Systems",
+                    "Windows Endpoint Hardening Techniques ",
+                    "Linux Endpoint Hardening Techniques",
+                    "IoT Security Administration",
+                    "Application Security Administration",
+                    "Enterprise Data Protection Strategies",
                 ]
             },
             {
@@ -958,6 +964,177 @@ export const programs = [
                     { q: "Will I get a certificate?", a: "Yes, you'll receive a Certificate of Completion from eHack Academy after successfully completing all projects." },
                     { q: "What support is available after the course?", a: "You get lifetime access to the learning management system with all course materials, videos, and documentation. You can revisit any topic anytime." },
                     { q: "Can this help me get a job in robotics?", a: "This course provides foundational skills in robotics and electronics. It's perfect for starting a career in robotics, automation, or embedded systems." }
+                ]
+            }
+        ]
+    },
+
+    {
+        slug: "data-science-analytics",
+        category: "data-science",
+        title: "Data Science & Data Analytics Powered by AI",
+        subtitle: "with 100% Job Assistance & Industry Projects",
+        description: "Master our AI-Powered Data Science and Data Analytics certification course. Gain exceptional experience and skills while working on industrial projects with hands-on training in Python, SQL, Machine Learning, and Power BI.",
+        features: "Includes Python Programming, SQL, Advanced Excel, Machine Learning, Supervised & Unsupervised Learning, Power BI Dashboard Creation, Exploratory Data Analysis with NumPy & Pandas, and 10+ Industry Projects.",
+        batchInfo: "5TH OF EVERY MONTH",
+        partner: "eHack Academy",
+        partnerLogo: "/ehack-black.png",
+        ehackLogo: "/ehack-black.png",
+        stats: {
+            startDate: "5th of Every Month",
+            duration: "6 Months",
+            mode: "Classroom + Live Online",
+            totalHours: "240+ Hours",
+            membership: "100% Job Assistance"
+        },
+        schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
+        certifications: [
+            { code: "DSDA", name: "Data Science & Data Analytics with AI", image: "/images/data_science certificate.jpeg" }
+        ],
+        skills: [
+            { name: "Python Programming", desc: "Master Python for data analysis including syntax, data structures, functions, and libraries essential for data science workflows." },
+            { name: "SQL & Database", desc: "Learn SQL for data querying, manipulation, and database management to extract insights from structured data sources." },
+            { name: "Excel & Advanced Excel", desc: "Master spreadsheet analysis including pivot tables, VLOOKUP, complex formulas, and data visualization techniques." },
+            { name: "Machine Learning", desc: "Understand ML algorithms including supervised and unsupervised learning, model training, evaluation, and deployment." },
+            { name: "Power BI Dashboards", desc: "Create interactive dashboards and reports for business intelligence and data-driven decision making." },
+            { name: "Data Analysis with Pandas & NumPy", desc: "Perform exploratory data analysis, data cleaning, transformation, and statistical analysis using Python libraries." }
+        ],
+        curriculum: [
+            {
+                number: "01",
+                title: "Python Programming Fundamentals",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Build a strong foundation in Python programming covering syntax, data types, control structures, functions, and object-oriented concepts.",
+                topics: ["Python Basics", "Data Structures", "Functions", "OOP Concepts", "File Handling"]
+            },
+            {
+                number: "02",
+                title: "SQL & Database Management",
+                duration: "3 Weeks",
+                certification: "",
+                description: "Master SQL for data querying, joins, aggregations, and database design principles for efficient data retrieval.",
+                topics: ["SQL Fundamentals", "Joins & Subqueries", "Aggregations", "Database Design", "Query Optimization"]
+            },
+            {
+                number: "03",
+                title: "Excel & Advanced Analytics",
+                duration: "2 Weeks",
+                certification: "",
+                description: "Learn advanced Excel techniques for data analysis including pivot tables, charts, and complex formulas.",
+                topics: ["Pivot Tables", "VLOOKUP & XLOOKUP", "Data Visualization", "Statistical Functions", "Macros Basics"]
+            },
+            {
+                number: "04",
+                title: "Data Analysis with Pandas & NumPy",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Master data manipulation, cleaning, and exploratory data analysis using Python's most powerful libraries.",
+                topics: ["NumPy Arrays", "Pandas DataFrames", "Data Cleaning", "EDA Techniques", "Data Transformation"]
+            },
+            {
+                number: "05",
+                title: "Machine Learning Foundations",
+                duration: "5 Weeks",
+                certification: "",
+                description: "Learn supervised and unsupervised machine learning algorithms, model training, and evaluation techniques.",
+                topics: ["Supervised Learning", "Unsupervised Learning", "Model Evaluation", "Feature Engineering", "Model Deployment"]
+            },
+            {
+                number: "06",
+                title: "Power BI & Dashboard Creation",
+                duration: "3 Weeks",
+                certification: "",
+                description: "Create interactive business intelligence dashboards and reports for data visualization and storytelling.",
+                topics: ["Power BI Interface", "Data Modeling", "DAX Functions", "Interactive Reports", "Dashboard Design"]
+            },
+            {
+                number: "07",
+                title: "Industry Projects & Capstone",
+                duration: "3 Weeks",
+                certification: "eHack Academy",
+                description: "Apply your skills on real-world industry projects including fraud detection, price prediction, and customer analytics.",
+                topics: ["Vehicle Sales Analysis", "Credit Card Fraud Detection", "Price Prediction", "Customer Segmentation", "Final Presentation"]
+            }
+        ],
+        targetAudience: [
+            { title: "Fresh Graduates", desc: "Undergraduates or graduates wishing to start their career in Data Analytics or Data Science with hands-on training.", tag: "Entry Level" },
+            { title: "Career Transitioners", desc: "Professionals looking to switch to high-demand data science roles with comprehensive skill development.", tag: "Career Switch" },
+            { title: "Business Analysts", desc: "Working professionals who want to enhance their analytical skills with Python, ML, and advanced visualization.", tag: "Skill Enhancement" },
+            { title: "Tech Enthusiasts", desc: "Individuals passionate about data, AI, and machine learning who want to build a strong foundation.", tag: "Passion Driven" }
+        ],
+        jobRoles: [
+            "Data Scientist", "Data Analyst", "ML Engineer", "SQL Developer",
+            "Power BI Developer", "Data Science Associate", "Applied Data Scientist", "Business Intelligence Analyst"
+        ],
+        pricing: {
+            original: "₹1,50,000",
+            discounted: "₹99,000",
+            emi: "No Cost EMI available"
+        },
+        partnerLogos: [
+            "/images/partners/python.png",
+            "/images/partners/microsoft.png",
+            "/images/partners/google.png"
+        ],
+        careerROI: {
+            title: "Great Career ROI",
+            subtitle: "This program equips you with in-demand data science skills essential for transforming raw data into actionable insights. Master Python, SQL, Machine Learning, and Power BI—preparing you for high-impact roles in the rapidly growing data analytics industry.",
+            chartTitle: "Chart Your Earning Potential",
+            salaryIntro: "Data Science professionals are among the highest-paid tech specialists with starting salaries of ₹3-8 LPA.",
+            salaryLevels: [
+                { label: "₹4L", level: "Entry" },
+                { label: "₹10L", level: "Mid" },
+                { label: "₹25L+", level: "Senior" }
+            ],
+            chartDesc: "A Data Scientist's Salary Progression",
+            chartNote: "Organizations offer highly competitive salaries to recruit data professionals who can drive data-driven decision making."
+        },
+        whyEhack: [
+            { title: "Industry Projects", desc: "Work on 10+ real-world projects including fraud detection, price prediction, and customer analytics to build a strong portfolio." },
+            { title: "100% Job Assistance", desc: "Comprehensive placement support including resume building, interview preparation, and connections with hiring partners." },
+            { title: "Hands-On Training", desc: "Practical, project-based learning approach with industry-standard tools and real datasets." },
+            { title: "Expert Instructors", desc: "Learn from experienced data science professionals with industry experience in analytics and machine learning." }
+        ],
+        programExcellence: [
+            { title: "Industry Projects", desc: "Work on 10+ real-world data science projects to build a professional portfolio.", icon: "lab" },
+            { title: "Job Assistance", desc: "100% placement assistance with resume building and interview preparation.", icon: "infrastructure" },
+            { title: "Expert Faculty", desc: "Learn from experienced data scientists and industry practitioners.", icon: "certificate" },
+            { title: "Modern Tools", desc: "Hands-on experience with Python, SQL, Power BI, and ML frameworks.", icon: "global" }
+        ],
+        faq: [
+            {
+                category: "Program",
+                questions: [
+                    { q: "What is Data Science?", a: "Data Science is used to extract knowledge and insights from structured and unstructured data using scientific methods, algorithms, different processes, and systems." },
+                    { q: "What is Data Analytics?", a: "Data Analytics is the process of examining data-sets to deliver insights about the information the data contains, generally with the help of dedicated processes and software." },
+                    { q: "What will I learn in this program?", a: "You'll learn Python, SQL, Excel, Machine Learning (Supervised & Unsupervised Learning), Power BI Dashboard creation, and Exploratory Data Analysis with NumPy and Pandas." },
+                    { q: "What is the program duration?", a: "The program duration is 6 months with comprehensive hands-on training and industry projects." }
+                ]
+            },
+            {
+                category: "Career",
+                questions: [
+                    { q: "What job positions can I apply for?", a: "You can apply for roles like Data Scientist, Data Analyst, ML Engineer, SQL Developer, Power BI Developer, Data Science Associate, and Business Intelligence Analyst." },
+                    { q: "What is the minimum CTC offered?", a: "A career in Data Science or Data Analytics will fetch you 3LPA to 8LPA initially, with potential for rapid growth." },
+                    { q: "When do placements start?", a: "The placement process starts after you finish the course, which depends on your successful completion of tests and interviews. The placement drive begins towards the end of the program." },
+                    { q: "Will I get placement assistance?", a: "Yes, we provide 100% job assistance including resume building, interview preparation, and mock interviews." }
+                ]
+            },
+            {
+                category: "Eligibility",
+                questions: [
+                    { q: "Who is eligible for this course?", a: "Any undergraduate or graduate wishing to start their career in Data Analytics or Data Science can join this program." },
+                    { q: "Is coding knowledge required?", a: "No prior coding knowledge is required. We teach Python programming from scratch as part of the curriculum." },
+                    { q: "Can I apply without my degree certificate?", a: "Yes, you may apply. However, to get placement assistance, you must submit your final year's grades." }
+                ]
+            },
+            {
+                category: "Certification",
+                questions: [
+                    { q: "Will I get a certificate?", a: "Yes, once you complete the Data Science and Data Analytics Certification course, you will receive the industry-recognized certificate from eHack Academy." },
+                    { q: "Is the certificate industry-recognized?", a: "Yes, our Data Science and Data Analytics with AI certification is widely recognized for its up-to-date syllabus and practical training approach." },
+                    { q: "What projects will be included in my portfolio?", a: "Your portfolio will include projects like Vehicle Sales Analysis, Credit Card Fraud Detection, Heart Disease Prediction, Customer Pattern Matching, and more." }
                 ]
             }
         ]

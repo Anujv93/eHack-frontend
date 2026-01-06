@@ -534,12 +534,16 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <span className="invest-badge">INVEST IN YOUR FUTURE</span>
                     <h2 className="invest-title">Your Investment</h2>
 
-                    <div className="certification-cards">
+                    <div className={`certification-cards ${program.slug.includes('data-science') || program.slug.includes('digital-marketing') || program.slug.includes('robotics') ? 'single-card' : ''}`}>
                         {/* eHack Academy Card */}
                         <div className="cert-card cert-card-blue">
                             <div className="cert-image-wrapper">
                                 <img
-                                    src={program.slug === "masters-ethical-hacking" ? "/images/certificates/masters-certificate.jpg" : "/images/certificates/graduate-certificate.jpg"}
+                                    src={program.slug === "masters-ethical-hacking"
+                                        ? "/images/certificates/masters-certificate.jpg"
+                                        : program.slug === "data-science-analytics"
+                                            ? "/images/data_science certificate.jpeg"
+                                            : "/images/certificates/graduate-certificate.jpg"}
                                     alt="eHack Academy Certificate"
                                     className="cert-image"
                                 />
@@ -557,11 +561,11 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                     </li>
                                     <li>
                                         <span className="check-icon">✓</span>
-                                        Real-Time Labs Access
+                                        {program.slug.includes('data-science') ? 'Industry Projects & Portfolio' : 'Real-Time Labs Access'}
                                     </li>
                                     <li>
                                         <span className="check-icon">✓</span>
-                                        {program.slug === "masters-ethical-hacking" ? "Placement Support" : "Internship Opportunity*"}
+                                        {program.slug === "masters-ethical-hacking" ? "Placement Support" : program.slug.includes('data-science') ? "100% Job Assistance" : "Internship Opportunity*"}
                                     </li>
                                 </ul>
                                 <button className="btn-counsellor">Talk to Career Counsellor</button>
@@ -569,7 +573,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         </div>
 
                         {/* EC-Council Certifications Card - Only show for cybersecurity programs */}
-                        {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && (
+                        {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('data-science') && (
                             <div className="cert-card cert-card-dark">
                                 <div className="cert-image-wrapper">
                                     <div className="cert-stack">
