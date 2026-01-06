@@ -1,0 +1,33 @@
+[
+  {
+    "id": 2,
+    "documentId": "jflrlecrsml2inggffdm7ap2",
+    "Title": "Simple Admission Process",
+    "ContactPhone": "+91 988 6035 330",
+    "ContactEmail": "info@ehackacademy.com",
+    "Location": "Bangalore, India",
+    "createdAt": "2025-12-28T12:49:43.651Z",
+    "updatedAt": "2025-12-28T12:49:43.651Z",
+    "publishedAt": "2025-12-28T12:49:43.720Z",
+    "steps": [
+      {
+        "id": 4,
+        "stepNumber": "01",
+        "Title": "Registration",
+        "Description": "Share your basic details to get started"
+      },
+      {
+        "id": 5,
+        "stepNumber": "02",
+        "Title": "Application",
+        "Description": "Submit handwritten application details"
+      },
+      {
+        "id": 6,
+        "stepNumber": "03",
+        "Title": "Interview",
+        "Description": "Telephonic interview with industry expert"
+      }
+    ]
+  }
+]

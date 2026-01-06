@@ -1,0 +1,1079 @@
+[
+  {
+    "id": 28,
+    "documentId": "hpuvucigiom5x1fa06d5gz7g",
+    "Title": "EC-Council Certified Certified Incident Handler (ECIH)",
+    "slug": "ecc-ecih",
+    "Level": "Beginner",
+    "Duration": "40 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-29T12:11:03.186Z",
+    "updatedAt": "2025-12-29T12:20:27.516Z",
+    "publishedAt": "2025-12-29T12:20:27.885Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 28,
+        "Title": "EC-Council Certified Incident Handler (ECIH)",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 26,
+        "Heading": "Become an Incident Handling Expert",
+        "Description": "The E|CIH program provides a method-driven, holistic approach to organizational incident handling and response (IH&R). It equips professionals to effectively handle post-breach consequences while reducing financial and reputational impact."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 25,
+        "Title": "What You'll Master in ECIH"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 24,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 20,
+        "Title": "Who is ECIH for ?"
+      }
+    ],
+    "certification_partner": {
+      "id": 13,
+      "documentId": "y5xy4j5czp6eke8louz6qutp",
+      "Name": "EC Council",
+      "slug": "ec-council",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/EC_Council_200px_67ad62f46b.png",
+      "Description": null,
+      "FeaturedOrder": 1,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:39.470Z",
+      "updatedAt": "2025-12-29T12:17:47.970Z",
+      "publishedAt": "2025-12-29T12:17:48.058Z"
+    }
+  },
+  {
+    "id": 29,
+    "documentId": "te3zzu27tq64o69f0scb6407",
+    "Title": "Certified Threat Intelligence Analyst (CTIA)",
+    "slug": "ecc-ctia",
+    "Level": "Beginner",
+    "Duration": "40 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-29T05:11:29.409Z",
+    "updatedAt": "2025-12-29T12:20:37.900Z",
+    "publishedAt": "2025-12-29T12:20:38.399Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 29,
+        "Title": "Certified Threat Intelligence Analyst (CTIA)",
+        "Subtitle": "Master Threat Intelligence to Pre-empt and Mitigate Cyber Attacks"
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 27,
+        "Heading": "Become a Threat Intelligence Expert",
+        "Description": "The C|TIA program is a specialist-level certification designed for individuals involved in collecting, analyzing, and disseminating threat intelligence. It provides a method-driven approach to turning raw data into actionable intelligence."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 26,
+        "Title": "What You’ll Master in C|TIA"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 25,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Acamdemy",
+        "Subtitle": "EC-Council Authorized Training Center delivering C|TIA Certification",
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.exam-details",
+        "id": 16,
+        "Title": "Exam Details",
+        "Subtitle": null
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 21,
+        "Title": "Who is C|TIA for?"
+      }
+    ],
+    "certification_partner": {
+      "id": 13,
+      "documentId": "y5xy4j5czp6eke8louz6qutp",
+      "Name": "EC Council",
+      "slug": "ec-council",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/EC_Council_200px_67ad62f46b.png",
+      "Description": null,
+      "FeaturedOrder": 1,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:39.470Z",
+      "updatedAt": "2025-12-29T12:17:47.970Z",
+      "publishedAt": "2025-12-29T12:17:48.058Z"
+    }
+  },
+  {
+    "id": 49,
+    "documentId": "iojpmghhnd42veozbjbk2a9g",
+    "Title": "Cisco CCNA Security",
+    "slug": "cisco-ccnas",
+    "Level": "Beginner",
+    "Duration": "40-60 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-30T05:21:42.227Z",
+    "updatedAt": "2025-12-30T05:32:38.704Z",
+    "publishedAt": "2025-12-30T05:32:38.972Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 47,
+        "Title": "Cisco CCNA Security",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 45,
+        "Heading": "Become a Network Security Expert",
+        "Description": "While Cisco consolidated the CCNA, the Security path focuses on defending Cisco networks. It cover the core technologies needed to protect network devices and the data that flows thorugh them."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 43,
+        "Title": "What You'll Master in CCNA Security?"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 42,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 37,
+        "Title": "Who is CCNA Security for?"
+      }
+    ],
+    "certification_partner": {
+      "id": 6,
+      "documentId": "n759lxs3epwy3msfxlgrb6an",
+      "Name": "CISCO",
+      "slug": "cisco",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/pngwing_com_3_f210060311.png",
+      "Description": null,
+      "FeaturedOrder": null,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:07:13.489Z",
+      "updatedAt": "2025-12-28T12:07:13.489Z",
+      "publishedAt": "2025-12-28T12:07:13.534Z"
+    }
+  },
+  {
+    "id": 31,
+    "documentId": "ivf7yn9olaj5ge5ahgjv680v",
+    "Title": "Certified Secure Computer User (C|SCU)",
+    "slug": "ecc-cscu",
+    "Level": "Beginner",
+    "Duration": "24 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-29T12:29:03.454Z",
+    "updatedAt": "2025-12-29T12:35:42.379Z",
+    "publishedAt": "2025-12-29T12:35:42.607Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 31,
+        "Title": "Certified Secure Computer User (C|SCU)",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 29,
+        "Heading": "Become a Secure Computer User Expert",
+        "Description": "The C|SCU program provides the necessary knowledge and skills to protect personal and professional information assets. It is specifically designed for today's computer users who extensively use the internet.\n\n\n\n\n\n"
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 28,
+        "Title": "What You'll Master in C|SCU ?"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 27,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.exam-details",
+        "id": 18,
+        "Title": "Exam Details",
+        "Subtitle": null
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 23,
+        "Title": "Who is C|SCU for?"
+      }
+    ],
+    "certification_partner": {
+      "id": 13,
+      "documentId": "y5xy4j5czp6eke8louz6qutp",
+      "Name": "EC Council",
+      "slug": "ec-council",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/EC_Council_200px_67ad62f46b.png",
+      "Description": null,
+      "FeaturedOrder": 1,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:39.470Z",
+      "updatedAt": "2025-12-29T12:17:47.970Z",
+      "publishedAt": "2025-12-29T12:17:48.058Z"
+    }
+  },
+  {
+    "id": 33,
+    "documentId": "gnbo7nu5rgbq9y94koeacoyw",
+    "Title": "Certified Network Defender (C|ND)",
+    "slug": "ecc-cnd",
+    "Level": "Beginner",
+    "Duration": "40 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-29T12:46:40.590Z",
+    "updatedAt": "2025-12-29T12:46:40.590Z",
+    "publishedAt": "2025-12-29T12:46:40.864Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 33,
+        "Title": "Certified Network Defender (C|ND)",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 31,
+        "Heading": "Become a Network Defense Expert",
+        "Description": "C|ND is a comprehensive, vendor-neutral network security program. It focuses on a holistic approach to network defense, enabling professionals to Protect, Detect, Respond, and Predict threats."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 30,
+        "Title": null
+      },
+      {
+        "__component": "global.training-section",
+        "id": 29,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 25,
+        "Title": "Who is C|ND for?"
+      }
+    ],
+    "certification_partner": {
+      "id": 13,
+      "documentId": "y5xy4j5czp6eke8louz6qutp",
+      "Name": "EC Council",
+      "slug": "ec-council",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/EC_Council_200px_67ad62f46b.png",
+      "Description": null,
+      "FeaturedOrder": 1,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:39.470Z",
+      "updatedAt": "2025-12-29T12:17:47.970Z",
+      "publishedAt": "2025-12-29T12:17:48.058Z"
+    }
+  },
+  {
+    "id": 35,
+    "documentId": "i6xg38334t87ld9ium450j2a",
+    "Title": "Computer Hacking Forensic Investigator (C|HFI)",
+    "slug": "ecc-chfi",
+    "Level": "Beginner",
+    "Duration": "60-80 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-29T13:02:38.009Z",
+    "updatedAt": "2025-12-29T13:02:38.009Z",
+    "publishedAt": "2025-12-29T13:02:38.276Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 35,
+        "Title": "Computer Hacking Forensic Investigator (C|HFI)",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 33,
+        "Heading": "Become a Digital Forensics Expert",
+        "Description": "C|HFI presents a methodological approach to digital forensics, including evidence analysis and intruder tracing. It provides the necessary skills for legal prosecution and network integrity protection."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 32,
+        "Title": "What You’ll Master in C|HFI?"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 31,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 27,
+        "Title": "Who is C|HFI for ?"
+      }
+    ],
+    "certification_partner": {
+      "id": 13,
+      "documentId": "y5xy4j5czp6eke8louz6qutp",
+      "Name": "EC Council",
+      "slug": "ec-council",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/EC_Council_200px_67ad62f46b.png",
+      "Description": null,
+      "FeaturedOrder": 1,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:39.470Z",
+      "updatedAt": "2025-12-29T12:17:47.970Z",
+      "publishedAt": "2025-12-29T12:17:48.058Z"
+    }
+  },
+  {
+    "id": 24,
+    "documentId": "xwq3jhs7q8qlw71s0rqkj3qy",
+    "Title": "Certified SOC Analyst (C|SA)",
+    "slug": "ecc-csoc",
+    "Level": "Beginner",
+    "Duration": "40 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-29T11:56:30.454Z",
+    "updatedAt": "2025-12-29T12:16:01.303Z",
+    "publishedAt": "2025-12-29T12:16:01.676Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 24,
+        "Title": "Certified SOC Analyst (C|SA)",
+        "Subtitle": "our first step to joining a Security Operations Center (SOC)."
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 22,
+        "Heading": "Become a SOC Operations Expert",
+        "Description": "The C|SA program is the first step to joining a Security Operations Center (SOC), engineered for current and aspiring Tier I and Tier II analysts. It provides the technical skills required to dynamically contribute to a high-functioning SOC team."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 21,
+        "Title": "What You'll Master "
+      },
+      {
+        "__component": "global.training-section",
+        "id": 20,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.exam-details",
+        "id": 13,
+        "Title": "Exam Details",
+        "Subtitle": null
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 16,
+        "Title": "Who is CSA for ?"
+      }
+    ],
+    "certification_partner": {
+      "id": 13,
+      "documentId": "y5xy4j5czp6eke8louz6qutp",
+      "Name": "EC Council",
+      "slug": "ec-council",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/EC_Council_200px_67ad62f46b.png",
+      "Description": null,
+      "FeaturedOrder": 1,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:39.470Z",
+      "updatedAt": "2025-12-29T12:17:47.970Z",
+      "publishedAt": "2025-12-29T12:17:48.058Z"
+    }
+  },
+  {
+    "id": 25,
+    "documentId": "ke7nr20pcjv1h9k06997qht7",
+    "Title": "Certified Ethical Hacker (CEH AI)",
+    "slug": "ceh-v13",
+    "Level": "Beginner",
+    "Duration": "60-80 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-28T12:10:34.598Z",
+    "updatedAt": "2025-12-29T12:17:24.310Z",
+    "publishedAt": "2025-12-29T12:17:25.003Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 25,
+        "Title": "Certified Ethical Hacker (C|EH)",
+        "Subtitle": "World's No.1 ethical hacking certification, now with the power of AI"
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 23,
+        "Heading": "Gain a competitive edge with CEH AI",
+        "Description": "From the creators of Certified Ethical Hacker comes the new and evolved version 13 with added AI capabilities. Structured across 20 learning modules covering over 550 attack techniques, CEH AI provides you with the core knowledge you need to thrive as a cybersecurity professional."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 22,
+        "Title": "What's new in CEH AI"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 21,
+        "BadgeText": "10th Anniversary Offer!",
+        "Title": "Train with Ehack Academy",
+        "HighlightedText": "Ehack Academy",
+        "Subtitle": "EC-Council Authorized Training Center delivering CEH Masters (v13 AI-Powered)\n\n",
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.learning-framework",
+        "id": 5,
+        "Title": "One-of-a-kind learning framework, powered by AI"
+      },
+      {
+        "__component": "global.exam-details",
+        "id": 14,
+        "Title": "Exam Details",
+        "Subtitle": null
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 17,
+        "Title": "Who is CEH AI for?"
+      },
+      {
+        "__component": "global.accreditations-section",
+        "id": 3,
+        "Title": "Accreditations & Recognitions"
+      }
+    ],
+    "certification_partner": {
+      "id": 13,
+      "documentId": "y5xy4j5czp6eke8louz6qutp",
+      "Name": "EC Council",
+      "slug": "ec-council",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/EC_Council_200px_67ad62f46b.png",
+      "Description": null,
+      "FeaturedOrder": 1,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:39.470Z",
+      "updatedAt": "2025-12-29T12:17:47.970Z",
+      "publishedAt": "2025-12-29T12:17:48.058Z"
+    }
+  },
+  {
+    "id": 26,
+    "documentId": "if54sndrbx8jto1cn1vykq6d",
+    "Title": "Certified Cloud Security Engineer (CCSE)",
+    "slug": "ecc-csse",
+    "Level": "Beginner",
+    "Duration": "40-60 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-28T12:51:24.687Z",
+    "updatedAt": "2025-12-29T12:19:23.292Z",
+    "publishedAt": "2025-12-29T12:19:23.766Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 26,
+        "Title": "Certified Cloud Security Engineer (CCSE)",
+        "Subtitle": "Master multi cloud security across AWS,Azure & GCP with hands on expertise"
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 24,
+        "Heading": "Become a Cloud Security Expert",
+        "Description": "A Certified Cloud Security Engineer (C|CSE) is a multi cloid security certification program crafted by industry experts. Gain a holistic understanding of cloud security blending vendor-neutral and vendor-specific concepts for AWS,Azure and GCP."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 23,
+        "Title": "What You'll Master in C|CSE"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 22,
+        "BadgeText": "Special Cloud Security Offer!",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": "EC-Council Authorized Training Center delivering C|CSE Certification\n\n",
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM - 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.learning-framework",
+        "id": 6,
+        "Title": "Comprehensive Cloud Security Learning Path"
+      },
+      {
+        "__component": "global.exam-details",
+        "id": 15,
+        "Title": "Exam Details",
+        "Subtitle": null
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 18,
+        "Title": "Who is C|CSE for?"
+      }
+    ],
+    "certification_partner": {
+      "id": 13,
+      "documentId": "y5xy4j5czp6eke8louz6qutp",
+      "Name": "EC Council",
+      "slug": "ec-council",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/EC_Council_200px_67ad62f46b.png",
+      "Description": null,
+      "FeaturedOrder": 1,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:39.470Z",
+      "updatedAt": "2025-12-29T12:17:47.970Z",
+      "publishedAt": "2025-12-29T12:17:48.058Z"
+    }
+  },
+  {
+    "id": 38,
+    "documentId": "jf76f1wewpxmpr747nrbsetu",
+    "Title": "Certified Penetration Testing Professional (C|PENT)",
+    "slug": "ecc-cpent",
+    "Level": "Beginner",
+    "Duration": "60-80 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-29T13:08:51.985Z",
+    "updatedAt": "2025-12-29T13:18:19.963Z",
+    "publishedAt": "2025-12-29T13:18:20.278Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 38,
+        "Title": "Certified Penetration Testing Professional (C|PENT)",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 36,
+        "Heading": "Become a Penetration Testing Expert",
+        "Description": "CPENT is a comprehensive program that moves beyond flat networks to teach pen-testing for enterprise environments. It challenges students to attack, exploit, and evade defenses across advanced live ranges."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 34,
+        "Title": "What You'll Master ?"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 33,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 29,
+        "Title": "Who is C|PENT for ?"
+      }
+    ],
+    "certification_partner": {
+      "id": 13,
+      "documentId": "y5xy4j5czp6eke8louz6qutp",
+      "Name": "EC Council",
+      "slug": "ec-council",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/EC_Council_200px_67ad62f46b.png",
+      "Description": null,
+      "FeaturedOrder": 1,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:39.470Z",
+      "updatedAt": "2025-12-29T12:17:47.970Z",
+      "publishedAt": "2025-12-29T12:17:48.058Z"
+    }
+  },
+  {
+    "id": 52,
+    "documentId": "inohh3cfdg17s7tlf7f0jekg",
+    "Title": "CompTIA A+",
+    "slug": "comptia-a",
+    "Level": "Beginner",
+    "Duration": "20 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-30T05:48:44.261Z",
+    "updatedAt": "2025-12-30T05:50:57.244Z",
+    "publishedAt": "2025-12-30T05:50:57.708Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 50,
+        "Title": "CompTIA A+",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 48,
+        "Heading": "Become an IT Support Expert",
+        "Description": "CompTIA A+ is the industry standard for estabilishing a carrer in IT. It validates foundational skills across today's core techonolgies, from security to cloud to data mangemen and more."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 46,
+        "Title": "What You'll Master in CompTIA A+"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 45,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.exam-details",
+        "id": 23,
+        "Title": "Exam Details",
+        "Subtitle": null
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 40,
+        "Title": "Who is CompTIA A+ for ?"
+      }
+    ],
+    "certification_partner": {
+      "id": 8,
+      "documentId": "a5ljslmp3qg1b5zhxd6s0t1y",
+      "Name": "CompTia",
+      "slug": "comp-tia",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/pngwing_com_2_90bcd7c875.png",
+      "Description": null,
+      "FeaturedOrder": null,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:07:26.763Z",
+      "updatedAt": "2025-12-28T12:07:26.763Z",
+      "publishedAt": "2025-12-28T12:07:26.818Z"
+    }
+  },
+  {
+    "id": 44,
+    "documentId": "p3c4aiowrzg38xnhf2kzjp3c",
+    "Title": "Cisco Certified Network Professional (CCNP)",
+    "slug": "cisco-ccnp",
+    "Level": "Beginner",
+    "Duration": "40-60 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-30T05:02:41.405Z",
+    "updatedAt": "2025-12-30T05:17:50.350Z",
+    "publishedAt": "2025-12-30T05:17:50.685Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 43,
+        "Title": "Cisco Certified Network Professional (CCNP)",
+        "Subtitle": "Cisco CCNP Enterprise (Core+Concentration)"
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 41,
+        "Heading": "Become an Enterprise Networking Expert",
+        "Description": "Cisco Certified Network Professional (CCNP) Enterprise validates your ability to scale and maintain complex enterprise networks. This professional-level certification focuses on deep technical knowledge and architectural mastery."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 39,
+        "Title": "What you'll Master in CCNP?"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 38,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": null,
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.exam-details",
+        "id": 20,
+        "Title": "Exam Details",
+        "Subtitle": null
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 33,
+        "Title": "Who is CCNP for ?"
+      }
+    ],
+    "certification_partner": {
+      "id": 6,
+      "documentId": "n759lxs3epwy3msfxlgrb6an",
+      "Name": "CISCO",
+      "slug": "cisco",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/pngwing_com_3_f210060311.png",
+      "Description": null,
+      "FeaturedOrder": null,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:07:13.489Z",
+      "updatedAt": "2025-12-28T12:07:13.489Z",
+      "publishedAt": "2025-12-28T12:07:13.534Z"
+    }
+  },
+  {
+    "id": 46,
+    "documentId": "pothvw7b6brqurxg45y4a68d",
+    "Title": "Cisco Certified Network Associate (CCNA)",
+    "slug": "cisco-ccna",
+    "Level": "Beginner",
+    "Duration": "60-80 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-30T04:59:52.723Z",
+    "updatedAt": "2025-12-30T05:20:24.541Z",
+    "publishedAt": "2025-12-30T05:20:24.972Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 45,
+        "Title": "Cisco Certified Network Associate (CCNA)",
+        "Subtitle": "Implementing and Administering Cisco Solutions"
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 43,
+        "Heading": "Become a Networking Expert",
+        "Description": "The CCNA program is the foundation of modern networking, designed to validate your skills in installing, configuring, and operating a broad range of network technologies. It provides a comprehensive start for anyone looking to build a career in IT infrastructure."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 41,
+        "Title": "What You'll Master in CCNA?"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 40,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 35,
+        "Title": "Who is CCNA for ?"
+      }
+    ],
+    "certification_partner": {
+      "id": 6,
+      "documentId": "n759lxs3epwy3msfxlgrb6an",
+      "Name": "CISCO",
+      "slug": "cisco",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/pngwing_com_3_f210060311.png",
+      "Description": null,
+      "FeaturedOrder": null,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:07:13.489Z",
+      "updatedAt": "2025-12-28T12:07:13.489Z",
+      "publishedAt": "2025-12-28T12:07:13.534Z"
+    }
+  },
+  {
+    "id": 57,
+    "documentId": "c9dsuh08e305tmp60sclkgsb",
+    "Title": "ISACA Certified Information Systems Auditors (CISA)",
+    "slug": "isaca-cisa",
+    "Level": "Beginner",
+    "Duration": "40-60 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-30T07:34:33.768Z",
+    "updatedAt": "2025-12-30T07:34:47.436Z",
+    "publishedAt": "2025-12-30T07:34:47.890Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 55,
+        "Title": "ISACA Certified Information Systems Auditing (CISA)",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 53,
+        "Heading": "Become an Information Systems Auditing Expert",
+        "Description": "The CISA program is the global standdard for professional who audit, control, monitor, and assess an oarganization's information technology and business systems. It validates your ability to manage vulnerabilities and ensure compliance within enterprise infrastructures."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 51,
+        "Title": "What You'll Master in CISA"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 50,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 45,
+        "Title": "Who is CISA for?"
+      }
+    ],
+    "certification_partner": {
+      "id": 4,
+      "documentId": "h4gh0ytla57za7z349isb2np",
+      "Name": "ISACA",
+      "slug": "isaca",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/isaca_c2c7482b34.png",
+      "Description": null,
+      "FeaturedOrder": null,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:58.766Z",
+      "updatedAt": "2025-12-28T12:06:58.766Z",
+      "publishedAt": "2025-12-28T12:06:58.812Z"
+    }
+  },
+  {
+    "id": 59,
+    "documentId": "r96hat7gkxkcvgf1jz0dhnp1",
+    "Title": "ISACA Certified Information Security Manager (CISM)",
+    "slug": "isaca-cism",
+    "Level": "Beginner",
+    "Duration": "40-60 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-30T07:45:01.317Z",
+    "updatedAt": "2025-12-30T07:45:01.317Z",
+    "publishedAt": "2025-12-30T07:45:01.669Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 57,
+        "Title": "ISACA Certified Information Security Manger (CISM)",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 55,
+        "Heading": "Become an Information Security Management Expert ",
+        "Description": "CISM is tailored for professionals who manage, design, and oversee an enterprise's information security program. It shifts the focus from technical execution to management and strategy, aligning security with business goals."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 53,
+        "Title": "What You'll Master in CISM?"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 52,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 47,
+        "Title": "Who is CISM for ?"
+      }
+    ],
+    "certification_partner": {
+      "id": 4,
+      "documentId": "h4gh0ytla57za7z349isb2np",
+      "Name": "ISACA",
+      "slug": "isaca",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/isaca_c2c7482b34.png",
+      "Description": null,
+      "FeaturedOrder": null,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:06:58.766Z",
+      "updatedAt": "2025-12-28T12:06:58.766Z",
+      "publishedAt": "2025-12-28T12:06:58.812Z"
+    }
+  },
+  {
+    "id": 61,
+    "documentId": "b1vtxk92o5syw7niid0u49a4",
+    "Title": "ISC2 Certified Information Systems Security Professional (CISSP)",
+    "slug": "isc2-cissp",
+    "Level": "Beginner",
+    "Duration": "40-60 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-30T07:54:39.251Z",
+    "updatedAt": "2025-12-30T07:54:39.251Z",
+    "publishedAt": "2025-12-30T07:54:39.543Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 59,
+        "Title": "ISC2 Certified Information Systems Security Professional",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 57,
+        "Heading": "Become a Cybersecurity Leadership Expert",
+        "Description": "CISSP is often called the \"Gold Standard\" of cybersecurity. It covers a vast breadth of 8 domains, ensuring a professional can design, implement and manage a best-in-class cybersecurity program."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 55,
+        "Title": "What You'll Master in CISSP?"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 54,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 49,
+        "Title": "Who is CISSP for?"
+      }
+    ],
+    "certification_partner": {
+      "id": 10,
+      "documentId": "fuxb93ogy4fdn6akf00nsktp",
+      "Name": "ICS2",
+      "slug": "ics-2",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/pngwing_com_1_aadfa98e78.png",
+      "Description": null,
+      "FeaturedOrder": null,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:07:48.602Z",
+      "updatedAt": "2025-12-28T12:07:48.602Z",
+      "publishedAt": "2025-12-28T12:07:48.653Z"
+    }
+  },
+  {
+    "id": 62,
+    "documentId": "hcsmyef4tqfu8gmxcjv6rbzw",
+    "Title": "CompTIA Network+",
+    "slug": "comptia-network",
+    "Level": "Beginner",
+    "Duration": "20 Hours",
+    "ShortDescription": null,
+    "FeaturedOrder": 0,
+    "createdAt": "2025-12-30T06:06:08.751Z",
+    "updatedAt": "2025-12-30T08:20:34.539Z",
+    "publishedAt": "2025-12-30T08:20:34.976Z",
+    "pageContent": [
+      {
+        "__component": "single-certificate-section.hero-section",
+        "id": 60,
+        "Title": "CompTIA Network+",
+        "Subtitle": null
+      },
+      {
+        "__component": "single-certificate-section.certificate-summary",
+        "id": 58,
+        "Heading": "Become a Networking Operations Expert",
+        "Description": "CompTIA Network+ validates the technical skills needed to securely estabilish,maintain, and troubleshoot the essential networks that businesses rely on."
+      },
+      {
+        "__component": "global.features-grid",
+        "id": 56,
+        "Title": "What You'll Master in Network+?"
+      },
+      {
+        "__component": "global.training-section",
+        "id": 55,
+        "BadgeText": "Limited Time Offer",
+        "Title": "Train with eHack Academy",
+        "HighlightedText": "eHack Academy",
+        "Subtitle": null,
+        "BatchScheduleTitle": "Batch Schedule Options",
+        "AcademyHours": "Tuesday to Sunday, 9:30 AM – 6:30 PM (Monday Off)"
+      },
+      {
+        "__component": "global.target-audience",
+        "id": 50,
+        "Title": "Who is Network+ for ?"
+      }
+    ],
+    "certification_partner": {
+      "id": 8,
+      "documentId": "a5ljslmp3qg1b5zhxd6s0t1y",
+      "Name": "CompTia",
+      "slug": "comp-tia",
+      "LogoUrl": "https://dependable-horn-8f16f5c4da.media.strapiapp.com/pngwing_com_2_90bcd7c875.png",
+      "Description": null,
+      "FeaturedOrder": null,
+      "WebsiteUrl": null,
+      "createdAt": "2025-12-28T12:07:26.763Z",
+      "updatedAt": "2025-12-28T12:07:26.763Z",
+      "publishedAt": "2025-12-28T12:07:26.818Z"
+    }
+  }
+]
