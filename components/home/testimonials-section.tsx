@@ -120,8 +120,8 @@ export default function TestimonialsSection() {
             setTimeout(() => {
                 setCurrentSet((prev) => (prev + 1) % allCompanies.length);
                 setIsTransitioning(false);
-            }, 300);
-        }, 4000);
+            }, 500);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, []);
@@ -141,17 +141,20 @@ export default function TestimonialsSection() {
                         <div className={`company-logos-grid ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
                             {currentCompanies.map((company, index) => (
                                 <div key={`${currentSet}-${index}`} className="company-logo-card">
-                                    <img
-                                        src={company.url}
-                                        alt={company.name}
-                                        onError={(e) => {
-                                            const target = e.target as HTMLImageElement;
-                                            target.style.display = 'none';
-                                            if (target.parentElement) {
-                                                target.parentElement.innerHTML = `<span class="company-name-fallback">${company.name}</span>`;
-                                            }
-                                        }}
-                                    />
+                                    <div className="company-logo-wrapper">
+                                        <img
+                                            src={company.url}
+                                            alt={company.name}
+                                            onError={(e) => {
+                                                const target = e.target as HTMLImageElement;
+                                                target.style.display = 'none';
+                                                if (target.parentElement) {
+                                                    target.parentElement.innerHTML = `<span class="company-name-fallback">${company.name}</span>`;
+                                                }
+                                            }}
+                                        />
+                                    </div>
+                                    <span className="company-card-name">{company.name}</span>
                                 </div>
                             ))}
                         </div>

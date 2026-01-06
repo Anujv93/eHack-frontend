@@ -141,6 +141,41 @@
     background-repeat: no-repeat;
 }
 
+.navArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.navArrow:hover {
+    background: rgba(255, 107, 0, 0.8);
+    border-color: #FF6B00;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prevArrow {
+    left: 2rem;
+}
+
+.nextArrow {
+    right: 2rem;
+}
+
 .heroContent {
     position: relative;
     z-index: 2;
