@@ -6,6 +6,7 @@ import Link from 'next/link';
 import styles from '@/app/page.module.css';
 import ProgramsSection from './programs-section';
 import MasterySection from './mastery-section';
+import PlacementSection from './placement-section';
 import TestimonialsSection from './testimonials-section';
 
 // Types for props
@@ -476,6 +477,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                     </div>
                 </div>
             </section> */}
+
+
+            <PlacementSection />
 
             {/* What Our Learners Say */}
             <TestimonialsSection />

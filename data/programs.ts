@@ -798,7 +798,7 @@ export function getProgramsByCategory(category: string) {
 export const programCategories = [
     {
         slug: 'cybersecurity',
-        name: 'Cybersecurity with AI',
+        name: 'Cybersecurity Powered by AI',
         description: 'Master ethical hacking, network defense, and digital forensics',
         icon: '🛡️',
         color: '#FF6B00',
@@ -806,7 +806,7 @@ export const programCategories = [
     },
     {
         slug: 'data-science',
-        name: 'Data Science with AI',
+        name: 'Data Science Powered by AI',
         description: 'Transform data into insights with analytics and AI',
         icon: '📊',
         color: '#3B82F6',
@@ -814,7 +814,7 @@ export const programCategories = [
     },
     {
         slug: 'robotics-iot',
-        name: 'Robotics & IoT with AI',
+        name: 'Robotics & IoT Powered by AI',
         description: 'Build robots and smart connected devices',
         icon: '🤖',
         color: '#10B981',
@@ -822,7 +822,7 @@ export const programCategories = [
     },
     {
         slug: 'digital-marketing',
-        name: 'Digital Marketing with AI',
+        name: 'Digital Marketing Powered by AI',
         description: 'Master SEO, social media, and performance marketing',
         icon: '📈',
         color: '#8B5CF6',
