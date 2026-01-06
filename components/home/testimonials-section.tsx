@@ -1,27 +1,43 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import './testimonials-section.css';
 
-const row1Companies = [
-    { name: 'IBM', url: 'https://img.logo.dev/ibm.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'Cognizant', url: 'https://img.logo.dev/cognizant.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'Infosys', url: 'https://img.logo.dev/infosys.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'Wipro', url: 'https://img.logo.dev/wipro.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'TCS', url: 'https://img.logo.dev/tcs.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'Accenture', url: 'https://img.logo.dev/accenture.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'Tech Mahindra', url: 'https://img.logo.dev/techmahindra.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'Capgemini', url: 'https://img.logo.dev/capgemini.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' }
-];
-
-const row2Companies = [
-    { name: 'Deloitte', url: 'https://img.logo.dev/deloitte.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'EY', url: 'https://img.logo.dev/ey.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'PwC', url: 'https://img.logo.dev/pwc.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'KPMG', url: 'https://img.logo.dev/kpmg.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'Cisco', url: 'https://img.logo.dev/cisco.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'Fortinet', url: 'https://img.logo.dev/fortinet.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'Oracle', url: 'https://img.logo.dev/oracle.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
-    { name: 'Bosch', url: 'https://img.logo.dev/bosch.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' }
+// All companies for cycling
+const allCompanies = [
+    // Set 1
+    [
+        { name: 'Chevron', url: 'https://img.logo.dev/chevron.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'TCS', url: 'https://img.logo.dev/tcs.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'HCL Tech', url: 'https://img.logo.dev/hcltech.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Microsoft', url: 'https://img.logo.dev/microsoft.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'United Nations', url: 'https://img.logo.dev/un.org?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Aramco', url: 'https://img.logo.dev/aramco.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Shell', url: 'https://img.logo.dev/shell.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Infosys', url: 'https://img.logo.dev/infosys.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' }
+    ],
+    // Set 2
+    [
+        { name: 'IBM', url: 'https://img.logo.dev/ibm.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Cognizant', url: 'https://img.logo.dev/cognizant.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Wipro', url: 'https://img.logo.dev/wipro.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Accenture', url: 'https://img.logo.dev/accenture.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Deloitte', url: 'https://img.logo.dev/deloitte.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'EY', url: 'https://img.logo.dev/ey.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'PwC', url: 'https://img.logo.dev/pwc.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'KPMG', url: 'https://img.logo.dev/kpmg.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' }
+    ],
+    // Set 3
+    [
+        { name: 'Cisco', url: 'https://img.logo.dev/cisco.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Fortinet', url: 'https://img.logo.dev/fortinet.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Oracle', url: 'https://img.logo.dev/oracle.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Bosch', url: 'https://img.logo.dev/bosch.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Tech Mahindra', url: 'https://img.logo.dev/techmahindra.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Capgemini', url: 'https://img.logo.dev/capgemini.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'L&T', url: 'https://img.logo.dev/larsentoubro.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' },
+        { name: 'Reliance', url: 'https://img.logo.dev/ril.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ' }
+    ]
 ];
 
 const testimonials = [
@@ -94,57 +110,57 @@ const testimonials = [
 ];
 
 export default function TestimonialsSection() {
+    const [currentSet, setCurrentSet] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+
+    // Cycle through logo sets every 4 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsTransitioning(true);
+            setTimeout(() => {
+                setCurrentSet((prev) => (prev + 1) % allCompanies.length);
+                setIsTransitioning(false);
+            }, 300);
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    const currentCompanies = allCompanies[currentSet];
+
     return (
         <section className="testimonials-section">
             <div className="testimonials-container">
+                {/* Trusted By Section - Grid Layout */}
+                <div className="trusted-by-section">
+                    <div className="trusted-by-label">
+                        <span className="trusted-text">Trusted</span>
+                        <span className="trusted-text">by</span>
+                    </div>
+                    <div className="trusted-by-content">
+                        <div className={`company-logos-grid ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+                            {currentCompanies.map((company, index) => (
+                                <div key={`${currentSet}-${index}`} className="company-logo-card">
+                                    <img
+                                        src={company.url}
+                                        alt={company.name}
+                                        onError={(e) => {
+                                            const target = e.target as HTMLImageElement;
+                                            target.style.display = 'none';
+                                            if (target.parentElement) {
+                                                target.parentElement.innerHTML = `<span class="company-name-fallback">${company.name}</span>`;
+                                            }
+                                        }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
                 <div className="testimonials-header">
                     <span className="testimonials-label">Success Stories</span>
                     <h2 className="testimonials-title">What Our Learners Say</h2>
-                </div>
-
-                {/* Company Logos Marquee */}
-                <div className="logo-marquee-wrapper">
-                    {/* Row 1: Scrolls Left */}
-                    <div className="logo-marquee">
-                        <div className="logo-track">
-                            {[...row1Companies, ...row1Companies].map((company, index) => (
-                                <div key={index} className="company-logo">
-                                    <img
-                                        src={company.url}
-                                        alt={company.name}
-                                        onError={(e) => {
-                                            const target = e.target as HTMLImageElement;
-                                            target.style.display = 'none';
-                                            if (target.parentElement) {
-                                                target.parentElement.innerHTML = `<span>${company.name}</span>`;
-                                            }
-                                        }}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Row 2: Scrolls Right */}
-                    <div className="logo-marquee reverse">
-                        <div className="logo-track">
-                            {[...row2Companies, ...row2Companies].map((company, index) => (
-                                <div key={index} className="company-logo">
-                                    <img
-                                        src={company.url}
-                                        alt={company.name}
-                                        onError={(e) => {
-                                            const target = e.target as HTMLImageElement;
-                                            target.style.display = 'none';
-                                            if (target.parentElement) {
-                                                target.parentElement.innerHTML = `<span>${company.name}</span>`;
-                                            }
-                                        }}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
                 </div>
 
                 {/* Testimonials Grid */}

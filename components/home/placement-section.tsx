@@ -115,23 +115,6 @@ const PlacementSection = () => {
                         ))}
                     </div>
                 </div>
-
-                <div className="placement-stats-strip">
-                    <div className="strip-item">
-                        <span className="strip-value">500+</span>
-                        <span className="strip-label">Hiring Partners</span>
-                    </div>
-                    <div className="strip-divider"></div>
-                    <div className="strip-item">
-                        <span className="strip-value">12 LPA</span>
-                        <span className="strip-label">Avg Package</span>
-                    </div>
-                    <div className="strip-divider"></div>
-                    <div className="strip-item">
-                        <span className="strip-value">100%</span>
-                        <span className="strip-label">Career Support</span>
-                    </div>
-                </div>
             </div>
         </section>
     );
