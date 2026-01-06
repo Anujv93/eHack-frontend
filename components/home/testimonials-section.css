@@ -1,6 +1,6 @@
 /* Testimonials Section - Premium Design */
 .testimonials-section {
-    padding: 8rem 0;
+    padding: 0 0 8rem 0;
     /* Subtle contrast background */
     background: #FAFAFA;
     position: relative;
@@ -43,101 +43,137 @@
     letter-spacing: -0.5px;
 }
 
-/* Marquee Wrapper */
-.logo-marquee-wrapper {
-    margin-bottom: 6rem;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Fade masks for marquee */
-.logo-marquee-wrapper::before,
-.logo-marquee-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 150px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.logo-marquee-wrapper::before {
-    left: 0;
-    background: linear-gradient(to right, #FAFAFA, transparent);
-}
-
-.logo-marquee-wrapper::after {
-    right: 0;
-    background: linear-gradient(to left, #FAFAFA, transparent);
-}
-
-.logo-marquee {
+/* Trusted By Section */
+.trusted-by-section {
     display: flex;
-    overflow: hidden;
-    user-select: none;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-}
-
-.logo-track {
-    display: flex;
-    gap: 4rem;
     align-items: center;
-    animation: scroll-left 40s linear infinite;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    padding: 2.5rem 3rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
-.logo-marquee.reverse .logo-track {
-    animation: scroll-right 40s linear infinite;
+.trusted-by-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 120px;
 }
 
-.company-logo {
-    flex-shrink: 0;
+.trusted-text {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--neutral-800);
+    line-height: 1.1;
+}
+
+.trusted-by-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.company-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.company-logos-grid.fade-out {
+    opacity: 0;
+    transform: translateY(5px);
+}
+
+.company-logos-grid.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.company-logo-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 140px;
-    height: 70px;
-    filter: grayscale(100%);
-    opacity: 0.6;
+    background: #fff;
+    border: 1px solid var(--neutral-200);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    min-height: 85px;
     transition: all 0.3s ease;
 }
 
-.company-logo:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.1);
+.company-logo-card:hover {
+    border-color: var(--brand-primary);
+    box-shadow: 0 4px 12px rgba(223, 103, 24, 0.1);
+    transform: translateY(-2px);
 }
 
-.company-logo img {
+.company-logo-card img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 55px;
     object-fit: contain;
 }
 
-.company-logo span {
-    font-size: 1rem;
+.company-name-fallback {
+    font-size: 0.875rem;
     font-weight: 700;
-    color: var(--neutral-400);
+    color: var(--neutral-600);
+    text-align: center;
 }
 
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0);
+.show-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #fff;
+    background: #00A0DC;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.show-all-btn:hover {
+    background: #0088c0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 160, 220, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .trusted-by-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem;
     }
 
-    100% {
-        transform: translateX(-50%);
+    .trusted-by-label {
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .company-logos-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@keyframes scroll-right {
-    0% {
-        transform: translateX(-50%);
+@media (max-width: 768px) {
+    .company-logos-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    100% {
-        transform: translateX(0);
+    .trusted-text {
+        font-size: 1.75rem;
     }
 }
 
