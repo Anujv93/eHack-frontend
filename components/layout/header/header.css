@@ -163,6 +163,25 @@
     position: relative;
 }
 
+/* Bridge to connect button to dropdown - prevents gap from causing mouseout */
+.mega-menu-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -50%;
+    width: 200%;
+    height: 25px;
+    background: transparent;
+    /* Only enable pointer events when mega menu is open */
+    pointer-events: none;
+}
+
+.mega-menu-wrapper:hover::after {
+    pointer-events: auto;
+}
+
+
+
 .mega-menu {
     position: fixed;
     top: 70px;
@@ -181,12 +200,15 @@
     overflow: hidden;
     box-sizing: border-box;
     z-index: 9999;
+    /* Prevent triggering from outside the menu area */
+    pointer-events: none;
 }
 
 .mega-menu-open {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
 }
 
 .mega-menu-inner {
@@ -659,9 +681,9 @@
 }
 
 .kennedy-logo-img {
-    height: 40px;
+    height: 55px;
     width: auto;
-    max-width: 110px;
+    max-width: 140px;
     object-fit: contain;
     filter: brightness(0) invert(1);
 }

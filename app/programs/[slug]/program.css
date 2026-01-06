@@ -493,7 +493,7 @@
 .credentials-title {
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 600;
-    text-align: left;
+    text-align: center;
     color: var(--black);
     margin-bottom: var(--space-3);
     letter-spacing: -0.02em;
@@ -501,8 +501,8 @@
 
 .credentials-subtitle {
     max-width: 600px;
-    margin: 0 0 var(--space-10);
-    text-align: left;
+    margin: 0 auto var(--space-10);
+    text-align: center;
     font-size: 1rem;
     color: var(--gray-600);
     line-height: 1.6;
@@ -533,6 +533,25 @@
 .certificates-gallery.count-1 .certificate-img,
 .certificates-gallery:has(.certificate-image-card:only-child) .certificate-img {
     height: 350px;
+}
+
+/* Center align section content when there's only 1 certificate */
+.credentials-wrapper:has(.certificates-gallery.count-1) .credentials-title,
+.credentials-wrapper:has(.certificates-gallery.count-1) .credentials-subtitle {
+    text-align: center;
+}
+
+.credentials-wrapper:has(.certificates-gallery.count-1) .credentials-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.credentials-wrapper:has(.certificates-gallery.count-1) .credentials-grid {
+    justify-content: center;
+}
+
+.credentials-wrapper:has(.certificates-gallery.count-1) .credentials-cta {
+    text-align: center;
 }
 
 /* Two certificates styling - centered and larger */
@@ -649,7 +668,7 @@
 .skills-title {
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 600;
-    text-align: left;
+    text-align: center;
     color: var(--black);
     margin-bottom: var(--space-10);
     letter-spacing: -0.02em;
@@ -708,7 +727,7 @@
 .roi-title {
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 600;
-    text-align: left;
+    text-align: center;
     color: var(--black);
     margin-bottom: var(--space-4);
     letter-spacing: -0.02em;
@@ -716,8 +735,8 @@
 
 .roi-subtitle {
     max-width: 700px;
-    margin: 0 0 var(--space-10);
-    text-align: left;
+    margin: 0 auto var(--space-10);
+    text-align: center;
     font-size: 0.875rem;
     color: var(--gray-600);
     line-height: 1.6;
@@ -726,7 +745,7 @@
 .roi-section-title {
     font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     font-weight: 600;
-    text-align: left;
+    text-align: center;
     color: var(--black);
     margin-bottom: var(--space-8);
     letter-spacing: -0.01em;
@@ -2058,12 +2077,14 @@
 }
 
 /* Center single card for digital marketing program */
-.certification-cards:has(.cert-card:only-child) {
+.certification-cards:has(.cert-card:only-child),
+.certification-cards.single-card {
     grid-template-columns: 1fr;
     justify-items: center;
 }
 
-.certification-cards:has(.cert-card:only-child) .cert-card {
+.certification-cards:has(.cert-card:only-child) .cert-card,
+.certification-cards.single-card .cert-card {
     max-width: 550px;
     width: 100%;
 }

@@ -201,7 +201,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                 >
                                                     <div className="mega-cat-overlay"></div>
                                                     <div className="mega-cat-content">
-                                                        <span className="mega-cat-name">Cybersecurity with AI</span>
+                                                        <span className="mega-cat-name">Cybersecurity Powered by AI</span>
                                                         <span className="mega-cat-count">3 Programs</span>
                                                     </div>
                                                 </Link>
@@ -213,8 +213,8 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                 >
                                                     <div className="mega-cat-overlay"></div>
                                                     <div className="mega-cat-content">
-                                                        <span className="mega-cat-name">Data Science with AI</span>
-                                                        <span className="mega-cat-count">Coming Soon</span>
+                                                        <span className="mega-cat-name">Data Science Powered by AI</span>
+                                                        <span className="mega-cat-count">1 Program</span>
                                                     </div>
                                                 </Link>
                                                 <Link
@@ -225,7 +225,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                 >
                                                     <div className="mega-cat-overlay"></div>
                                                     <div className="mega-cat-content">
-                                                        <span className="mega-cat-name">Robotics & IoT with AI</span>
+                                                        <span className="mega-cat-name">Robotics & IoT Powered by AI</span>
                                                         <span className="mega-cat-count">1 Program</span>
                                                     </div>
                                                 </Link>
@@ -237,7 +237,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                 >
                                                     <div className="mega-cat-overlay"></div>
                                                     <div className="mega-cat-content">
-                                                        <span className="mega-cat-name">Digital Marketing with AI</span>
+                                                        <span className="mega-cat-name">Digital Marketing Powered by AI</span>
                                                         <span className="mega-cat-count">1 Program</span>
                                                     </div>
                                                 </Link>

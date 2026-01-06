@@ -2082,3 +2082,231 @@ textarea {
         justify-content: center;
     }
 }
+
+/* ============================================
+   MSCS Curriculum Modules Section
+   ============================================ */
+.mscs-curriculum-section {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-6);
+    padding: var(--space-6);
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--gray-200);
+}
+
+.mscs-curriculum-section>h4 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--black);
+    margin-bottom: var(--space-2);
+}
+
+.curriculum-intro {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    margin-bottom: var(--space-6);
+    line-height: 1.6;
+}
+
+.curriculum-modules-kennedy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.curriculum-module-kennedy {
+    /* Container wrapper for each curriculum module - used for spacing */
+    display: block;
+}
+
+.module-card-kennedy {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.module-card-kennedy:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.module-card-kennedy.active {
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.15);
+}
+
+.module-header-kennedy {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.module-header-kennedy:hover {
+    background: var(--gray-50);
+}
+
+.module-number-kennedy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent) 0%, #ea580c 100%);
+    color: var(--white);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    border-radius: var(--border-radius-md);
+    flex-shrink: 0;
+}
+
+.module-header-content-kennedy {
+    flex: 1;
+    min-width: 0;
+}
+
+.module-title-kennedy {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--black);
+    margin: 0 0 var(--space-1) 0;
+    line-height: 1.3;
+}
+
+.module-meta-kennedy {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.module-duration-kennedy {
+    font-size: var(--font-size-xs);
+    color: var(--gray-600);
+}
+
+.module-cert-kennedy {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    padding: 2px 8px;
+    border-radius: var(--border-radius-sm);
+}
+
+.module-expand-kennedy {
+    color: var(--gray-400);
+    font-size: var(--font-size-sm);
+    transition: transform 0.3s ease;
+}
+
+.module-card-kennedy.active .module-expand-kennedy {
+    color: var(--accent);
+}
+
+.module-details-kennedy {
+    padding: 0 var(--space-4) var(--space-4) var(--space-4);
+    padding-left: calc(48px + var(--space-4) + var(--space-4));
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.module-description-kennedy {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+}
+
+.module-topics-label-kennedy {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    color: #a67c52;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.module-topics-kennedy {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-3) var(--space-6);
+}
+
+.topic-tag-kennedy {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    background: transparent;
+    color: var(--gray-700);
+    font-size: var(--font-size-sm);
+    padding: 0;
+    border-radius: 0;
+    line-height: 1.5;
+}
+
+.topic-tag-kennedy::before {
+    content: '→';
+    color: #a67c52;
+    flex-shrink: 0;
+}
+
+.topic-tag-kennedy:hover {
+    background: transparent;
+    color: var(--accent);
+}
+
+/* Responsive Styles for Curriculum Modules */
+@media (max-width: 1024px) {
+    .module-topics-kennedy {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mscs-curriculum-section {
+        padding: var(--space-4);
+    }
+
+    .module-header-kennedy {
+        padding: var(--space-3);
+    }
+
+    .module-number-kennedy {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-base);
+    }
+
+    .module-title-kennedy {
+        font-size: var(--font-size-sm);
+    }
+
+    .module-details-kennedy {
+        padding-left: var(--space-4);
+    }
+
+    .module-topics-kennedy {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+}
