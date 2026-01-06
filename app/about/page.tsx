@@ -142,6 +142,81 @@ export default function AboutPage() {
                             </p>
                         </div>
                     </div>
+
+                    <div className="founder-card">
+                        <div className="founder-image-wrapper">
+                            <div className="founder-image-placeholder" style={{ background: '#FFF7ED', color: '#FF6B00', border: '3px solid #FFEDD5' }}>
+                                <span style={{ fontSize: '3.5rem', fontWeight: '800' }}>NK</span>
+                            </div>
+                        </div>
+                        <div className="founder-content">
+                            <h3 className="founder-name">Neel Kumar</h3>
+                            <p className="founder-role">Head Advisory & Consultant - Cyber Security Corporate Training & Services</p>
+
+                            <p className="founder-bio">
+                                With over 9+ years of extensive experience in Penetration Testing, Red Teaming, and Cyber Incident Response, Neel Kumar is a renowned expert in both offensive and defensive security credentials. He has trained law enforcement agencies globally including Interpol and CBI, and solved over 350+ cyber crime cases.
+                            </p>
+
+                            <div className="founder-education">
+                                <strong>Education:</strong> B. Tech & M. Tech in Computer Science, Cyber Law (Indian Law Institute), Diploma in Digital Forensic & Cyber Crime Investigation.
+                            </div>
+
+                            <div className="profile-section">
+                                <h4 className="profile-section-title">Professional Certifications</h4>
+                                <ul className="profile-list">
+                                    <li>Offensive Security Certified Professional (OSCP)</li>
+                                    <li>Offensive Security Wireless Professional (OSWP)</li>
+                                    <li>Licensed Penetration Tester (LPT)</li>
+                                    <li>Certified Ethical Hacker (CEH)</li>
+                                    <li>Computer Hacking Forensic Investigator (CHFI)</li>
+                                    <li>SANS Advanced Web App Pen Test</li>
+                                    <li>Certified Information System Security Expert (CISE)</li>
+                                    <li>EnCase Certified Examiner</li>
+                                    <li>Cisco Certified Network Associate (CCNA)</li>
+                                    <li>Microsoft Certified Server Expert (MCSE)</li>
+                                </ul>
+                                <p className="founder-additional" style={{ fontSize: '0.9rem', fontStyle: 'italic', marginTop: '-0.5rem' }}>
+                                    +20 more global certifications including OSSTMM, Mile2, Qualys, and IBM credentials.
+                                </p>
+                            </div>
+
+                            <div className="profile-section">
+                                <h4 className="profile-section-title">Key Assignments & Training Delivery</h4>
+                                <div className="profile-grid">
+                                    <div>
+                                        <strong style={{ display: 'block', marginBottom: '0.8rem', color: '#1a1a1a' }}>Law Enforcement & Govt</strong>
+                                        <ul className="profile-list single-col" style={{ marginBottom: 0 }}>
+                                            <li>CBI & CBI Academy (India)</li>
+                                            <li>Singapore & Nepal Police</li>
+                                            <li>NIA (National Investigation Agency)</li>
+                                            <li>Ministry of Defense & PMO Team</li>
+                                            <li>Interpol Officials</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong style={{ display: 'block', marginBottom: '0.8rem', color: '#1a1a1a' }}>Corporate Clients</strong>
+                                        <div className="profile-tags">
+                                            <span className="profile-tag">Google</span>
+                                            <span className="profile-tag">IBM</span>
+                                            <span className="profile-tag">Samsung</span>
+                                            <span className="profile-tag">Yahoo</span>
+                                            <span className="profile-tag">HCL</span>
+                                            <span className="profile-tag">MetLife</span>
+                                            <span className="profile-tag">Gemalto</span>
+                                            <span className="profile-tag">Paladion</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="profile-section">
+                                <h4 className="profile-section-title">Forensic Expertise</h4>
+                                <p className="founder-additional">
+                                    Solved more than <strong>350+ cases</strong> involving Hacking, Online Blackmailing, Banking Crimes, and Identity Theft. Expert in automated tools like FTK, Encase, Cellebrite UFED, and Oxygen Mobile Forensic Suite.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 

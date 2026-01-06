@@ -41,40 +41,130 @@ export const programs = [
                 title: "Security Fundamentals & CSCU",
                 duration: "8 Weeks",
                 certification: "EC-Council CSCU",
-                description: "Establish a strong foundation in cybersecurity principles. Learn to identify threats and implement security controls.",
-                topics: ["Security Fundamentals", "Password Management", "Social Engineering Defense", "Email Security", "Data Protection"]
+                description: "Establish a strong foundation in cybersecurity principles. Learn essential security awareness and secure computing practices for personal and professional environments.",
+                topics: [
+                    "Introduction to Data Security",
+                    "Securing Operating Systems (Windows/Mac)",
+                    "Malware & Antivirus Protection",
+                    "Internet & Browser Security",
+                    "Social Networking Security",
+                    "Securing Email Communications",
+                    "Securing Mobile Devices",
+                    "Securing Cloud Accounts",
+                    "Securing Network Connections",
+                    "Data Backup & Disaster Recovery",
+                    "Securing IoT Devices & Gaming Consoles",
+                    "Secure Remote Working Practices"
+                ]
             },
             {
                 number: "02",
                 title: "Network Defense & CND",
                 duration: "12 Weeks",
                 certification: "EC-Council CND",
-                description: "Learn to protect, detect, and respond to network security threats with enterprise-level defense strategies.",
-                topics: ["Firewall Configuration", "IDS/IPS Systems", "VPN Architecture", "Traffic Analysis", "Incident Response"]
+                description: "Master the protect, detect, respond, and predict approach to network security with enterprise-level defense strategies.",
+                topics: [
+                    "Network Attacks & Defense Strategies",
+                    "Administrative Network Security",
+                    "Technical Network Security",
+                    "Network Perimeter Security",
+                    "Endpoint Security - Windows Systems",
+                    "Endpoint Security - Linux Systems",
+                    "Endpoint Security - Mobile Devices",
+                    "Endpoint Security - IoT Devices",
+                    "Administrative Application Security",
+                    "Data Security & Encryption",
+                    "Enterprise Virtual Network Security",
+                    "Enterprise Cloud Network Security",
+                    "Enterprise Wireless Network Security",
+                    "Network Traffic Monitoring & Analysis",
+                    "Network Logs Monitoring & Analysis",
+                    "Incident Response & Forensic Investigation",
+                    "Business Continuity & Disaster Recovery",
+                    "Risk Management & Anticipation",
+                    "Threat Assessment & Attack Surface Analysis",
+                    "Cyber Threat Intelligence"
+                ]
             },
             {
                 number: "03",
                 title: "Ethical Hacking & CEH",
                 duration: "12 Weeks",
                 certification: "EC-Council CEH",
-                description: "Think like an attacker to defend like a professional. Master reconnaissance and exploitation methodologies.",
-                topics: ["Reconnaissance", "Network Scanning", "System Exploitation", "Web App Attacks", "SQL Injection"]
+                description: "Think like an attacker to defend like a professional. Master reconnaissance, exploitation, and over 550 attack techniques.",
+                topics: [
+                    "Introduction to Ethical Hacking",
+                    "Footprinting & Reconnaissance",
+                    "Scanning Networks",
+                    "Enumeration Techniques",
+                    "Vulnerability Analysis",
+                    "System Hacking & Steganography",
+                    "Malware Threats & Analysis",
+                    "Sniffing & Packet Analysis",
+                    "Social Engineering Attacks",
+                    "Denial-of-Service (DoS/DDoS)",
+                    "Session Hijacking",
+                    "Evading IDS, Firewalls & Honeypots",
+                    "Hacking Web Servers",
+                    "Hacking Web Applications",
+                    "SQL Injection Attacks",
+                    "Hacking Wireless Networks",
+                    "Hacking Mobile Platforms",
+                    "IoT & OT Hacking",
+                    "Cloud Computing Security",
+                    "Cryptography & Cryptanalysis"
+                ]
             },
             {
                 number: "04",
                 title: "Digital Forensics & CHFI",
                 duration: "8 Weeks",
                 certification: "EC-Council CHFI",
-                description: "Master the science of cyber investigations with evidence collection and forensic analysis techniques.",
-                topics: ["Evidence Acquisition", "Disk Forensics", "Memory Analysis", "Network Forensics", "Report Writing"]
+                description: "Master the science of cyber investigations with evidence collection, forensic analysis, and reporting techniques.",
+                topics: [
+                    "Computer Forensics in Today's World",
+                    "Computer Forensics Investigation Process",
+                    "Understanding Hard Disks & File Systems",
+                    "Data Acquisition & Duplication",
+                    "Defeating Anti-Forensics Techniques",
+                    "Windows Forensics & Artifact Analysis",
+                    "Linux & Mac Forensics",
+                    "Network Forensics",
+                    "Investigating Web Attacks",
+                    "Dark Web Forensics",
+                    "Database Forensics",
+                    "Cloud Forensics (AWS, Azure, GCP)",
+                    "Email Crime Investigation",
+                    "Malware Forensics & Analysis",
+                    "Mobile Forensics",
+                    "IoT Forensics"
+                ]
             },
             {
                 number: "05",
                 title: "Advanced Penetration Testing & CPENT",
                 duration: "10 Weeks",
                 certification: "EC-Council CPENT",
-                description: "Elevate your skills with advanced red team techniques including IoT exploitation and OT/SCADA security.",
-                topics: ["Advanced Exploitation", "Network Pivoting", "IoT Security", "OT/SCADA", "Red Team Ops"]
+                description: "Elevate your skills with advanced red team techniques including IoT exploitation, OT/SCADA security, and live cyber range exercises.",
+                topics: [
+                    "Penetration Testing Methodologies",
+                    "Penetration Testing Scoping & Engagement",
+                    "Open-Source Intelligence (OSINT)",
+                    "Social Engineering Penetration Testing",
+                    "Web Application Penetration Testing",
+                    "API & JWT Penetration Testing",
+                    "Network Penetration Testing (External/Internal)",
+                    "Perimeter Defense Evasion Techniques",
+                    "Windows Exploitation & Privilege Escalation",
+                    "Active Directory Penetration Testing",
+                    "Linux Exploitation & Privilege Escalation",
+                    "Reverse Engineering & Binary Exploitation",
+                    "Lateral Movement & Double Pivoting",
+                    "IoT Penetration Testing",
+                    "OT/SCADA Penetration Testing",
+                    "Cloud Penetration Testing",
+                    "Report Writing & Post-Testing Actions"
+                ]
             }
         ],
         targetAudience: [
@@ -200,23 +290,56 @@ export const programs = [
                 duration: "4 Weeks",
                 certification: "",
                 description: "Build a strong foundation in IT essentials covering hardware, operating systems, networking, servers, and cloud technologies.",
-                topics: ["Hardware", "Operating Systems", "Networking", "Servers", "Cloud"]
+                topics: [
+                    "Computer Hardware & Architecture",
+                    "Operating Systems (Windows/Linux/Mac)",
+                    "Networking Fundamentals",
+                    "TCP/IP & Network Protocols",
+                    "Server Administration Basics",
+                    "Cloud Computing Concepts",
+                    "Virtualization Technologies",
+                    "Basic Troubleshooting"
+                ]
             },
             {
                 number: "02",
                 title: "CSCU - Certified Secure Computer User",
                 duration: "6 Weeks",
                 certification: "EC-Council CSCU",
-                description: "Learn essential cybersecurity awareness and secure computing practices for personal and professional use.",
-                topics: ["Security Fundamentals", "Password Management", "Social Engineering Defense", "Data Protection"]
+                description: "Learn essential cybersecurity awareness and secure computing practices from the official EC-Council CSCU curriculum.",
+                topics: [
+                    "Introduction to Data Security",
+                    "Securing Operating Systems",
+                    "Malware & Antivirus Protection",
+                    "Internet & Browser Security",
+                    "Social Networking Security",
+                    "Securing Email Communications",
+                    "Securing Mobile Devices",
+                    "Securing Cloud Accounts",
+                    "Securing Network Connections",
+                    "Data Backup & Recovery"
+                ]
             },
             {
                 number: "03",
                 title: "CND - Certified Network Defender",
                 duration: "8 Weeks",
                 certification: "EC-Council CND",
-                description: "Master network defense strategies including firewall configuration, IDS/IPS systems, and incident response.",
-                topics: ["Firewall Configuration", "IDS/IPS Systems", "VPN Architecture", "Incident Response"]
+                description: "Master the protect, detect, respond, and predict approach to network security from the official EC-Council CND v3 curriculum.",
+                topics: [
+                    "Network Attacks & Defense Strategies",
+                    "Administrative Network Security",
+                    "Technical Network Security",
+                    "Network Perimeter Security",
+                    "Endpoint Security - Windows/Linux",
+                    "Endpoint Security - Mobile & IoT",
+                    "Enterprise Cloud Network Security",
+                    "Network Traffic Monitoring & Analysis",
+                    "Incident Response & Forensics",
+                    "Business Continuity & Disaster Recovery",
+                    "Risk Management",
+                    "Cyber Threat Intelligence"
+                ]
             },
             {
                 number: "04",
@@ -224,7 +347,17 @@ export const programs = [
                 duration: "6 Weeks",
                 certification: "",
                 description: "Think like an attacker to defend like a professional. Master reconnaissance, exploitation, and vulnerability assessment.",
-                topics: ["Reconnaissance", "Exploitation", "Vulnerability Assessment", "Counter Measures"]
+                topics: [
+                    "Footprinting & Reconnaissance",
+                    "Scanning Networks",
+                    "Enumeration Techniques",
+                    "Vulnerability Analysis",
+                    "System Hacking",
+                    "Malware Threats",
+                    "Sniffing & Packet Analysis",
+                    "Social Engineering",
+                    "Counter Measures & Defense"
+                ]
             },
             {
                 number: "05",
@@ -232,7 +365,15 @@ export const programs = [
                 duration: "6 Weeks",
                 certification: "Choose One",
                 description: "Choose between Penetration Testing or Digital Forensic Investigator track based on your career goals.",
-                topics: ["Penetration Testing", "Digital Forensics", "Evidence Collection", "Report Writing"]
+                topics: [
+                    "Penetration Testing Methodologies",
+                    "Web Application Testing",
+                    "Network Penetration Testing",
+                    "Computer Forensics Process",
+                    "Evidence Acquisition & Analysis",
+                    "Memory & Disk Forensics",
+                    "Report Writing & Documentation"
+                ]
             },
             {
                 number: "06",
@@ -240,7 +381,18 @@ export const programs = [
                 duration: "4 Weeks",
                 certification: "",
                 description: "Master the OWASP Top 10 web application security risks and learn how to identify, exploit, and mitigate them.",
-                topics: ["Injection Attacks", "Broken Authentication", "XSS", "Security Misconfigurations"]
+                topics: [
+                    "Injection Attacks (SQL, NoSQL, OS)",
+                    "Broken Authentication",
+                    "Sensitive Data Exposure",
+                    "XML External Entities (XXE)",
+                    "Broken Access Control",
+                    "Security Misconfigurations",
+                    "Cross-Site Scripting (XSS)",
+                    "Insecure Deserialization",
+                    "Using Components with Known Vulnerabilities",
+                    "Insufficient Logging & Monitoring"
+                ]
             }
         ],
         careerROI: {
@@ -354,16 +506,46 @@ export const programs = [
                 title: "Security Fundamentals & CSCU",
                 duration: "8 Weeks",
                 certification: "EC-Council CSCU",
-                description: "Learn the basics of cybersecurity and secure computing practices.",
-                topics: ["Security Basics", "Password Security", "Social Engineering", "Safe Browsing"]
+                description: "Learn the fundamentals of cybersecurity and secure computing practices from the official EC-Council CSCU curriculum.",
+                topics: [
+                    "Introduction to Data Security",
+                    "Securing Operating Systems",
+                    "Malware & Antivirus Protection",
+                    "Internet & Browser Security",
+                    "Social Networking Security",
+                    "Securing Email Communications",
+                    "Securing Mobile Devices",
+                    "Securing Cloud Accounts",
+                    "Data Backup & Recovery",
+                    "Securing IoT Devices"
+                ]
             },
             {
                 number: "02",
                 title: "Ethical Hacking & CEH",
                 duration: "12 Weeks",
                 certification: "EC-Council CEH",
-                description: "Introduction to ethical hacking methodologies and tools.",
-                topics: ["Hacking Fundamentals", "Scanning Techniques", "System Hacking", "Web Security"]
+                description: "Master ethical hacking methodologies and over 550 attack techniques from the official EC-Council CEH v13 curriculum.",
+                topics: [
+                    "Introduction to Ethical Hacking",
+                    "Footprinting & Reconnaissance",
+                    "Scanning Networks",
+                    "Enumeration Techniques",
+                    "Vulnerability Analysis",
+                    "System Hacking",
+                    "Malware Threats",
+                    "Sniffing & Packet Analysis",
+                    "Social Engineering Attacks",
+                    "Denial-of-Service (DoS/DDoS)",
+                    "Session Hijacking",
+                    "Evading IDS, Firewalls & Honeypots",
+                    "Hacking Web Servers",
+                    "Hacking Web Applications",
+                    "SQL Injection Attacks",
+                    "Hacking Wireless Networks",
+                    "Cloud Computing Security",
+                    "Cryptography"
+                ]
             }
         ],
         targetAudience: [

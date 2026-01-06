@@ -7,6 +7,26 @@ import { Handshake } from 'lucide-react';
 import './header.css';
 import './header-search.css';
 
+// Corporate Services Data for dropdown
+const corporateServices = [
+    { id: 'web-application-security', title: 'Web Application Security Assessment', icon: '🌐' },
+    { id: 'mobile-application-security', title: 'Mobile Application Security Assessment', icon: '📱' },
+    { id: 'api-security', title: 'API Security Assessment', icon: '🔌' },
+    { id: 'secure-source-code-review', title: 'Secure Source Code Review', icon: '💻' },
+    { id: 'red-team-assessment', title: 'Red Team Assessment', icon: '🎯' },
+    { id: 'infrastructure-security', title: 'Infrastructure Security Assessment', icon: '🏗️' },
+    { id: 'thick-client-security', title: 'Thick Client Security Assessment', icon: '🖥️' },
+    { id: 'firewall-security', title: 'Firewall Security Assessment', icon: '🛡️' },
+    { id: 'digital-forensics', title: 'Digital Forensics & Incident Response', icon: '🔍' },
+    { id: 'malware-analysis', title: 'Malware Analysis & Root Cause Detection', icon: '🦠' },
+];
+
+const complianceServices = [
+    { id: 'gdpr-consulting', title: 'GDPR Consulting and Audit', icon: '🇪🇺' },
+    { id: 'pci-dss-compliance', title: 'PCI DSS Compliance Audit', icon: '💳' },
+    { id: 'iso-certification', title: 'ISO Certification Advisory', icon: '📋' },
+];
+
 interface Partner {
     id: number;
     name: string;
@@ -317,6 +337,56 @@ export default function Header({ partners, courses }: HeaderProps) {
                             <Link href="/learning-options#customized" className="dropdown-item">Customized Training</Link>
                             <Link href="/learning-options#webinar" className="dropdown-item">Webinar as a Service</Link>
                             <Link href="/learning-options#upcoming" className="dropdown-item">Upcoming Webinars</Link>
+                        </div>
+                    </div>
+
+                    {/* Services Mega Menu Dropdown */}
+                    <div className="services-dropdown-wrapper">
+                        <button className="nav-link nav-dropdown-btn services-btn">
+                            Services
+                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                        <div className="services-dropdown-menu">
+                            <div className="services-dropdown-inner">
+                                {/* Security Assessment Services */}
+                                <div className="services-column">
+                                    <h4 className="services-column-title">Security Assessment</h4>
+                                    <div className="services-list">
+                                        {corporateServices.map((service) => (
+                                            <Link
+                                                key={service.id}
+                                                href={`/services#${service.id}`}
+                                                className="service-dropdown-item"
+                                            >
+                                                <span className="service-item-icon">{service.icon}</span>
+                                                <span className="service-item-title">{service.title}</span>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Compliance Services */}
+                                <div className="services-column compliance-column">
+                                    <h4 className="services-column-title">Compliance Audit</h4>
+                                    <div className="services-list">
+                                        {complianceServices.map((service) => (
+                                            <Link
+                                                key={service.id}
+                                                href={`/services#${service.id}`}
+                                                className="service-dropdown-item"
+                                            >
+                                                <span className="service-item-icon">{service.icon}</span>
+                                                <span className="service-item-title">{service.title}</span>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                    <Link href="/services" className="services-view-all">
+                                        View All Services →
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
