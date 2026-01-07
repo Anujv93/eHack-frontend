@@ -46,16 +46,9 @@ export default function CodeRedPage() {
         { title: 'Enterprise Courses' }
     ];
 
+
     return (
         <>
-            {/* Promotional Banner */}
-            <div className="codered-promo-banner">
-                <div className="promo-content">
-                    <span className="promo-badge">10th Anniversary Offer!</span>
-                    <span className="promo-text">Few Seats – Enroll Now! Batch Starts Every 5th of the Month.</span>
-                </div>
-            </div>
-
             {/* Hero Section */}
             <section className="codered-hero">
                 <div className="codered-hero-bg">
