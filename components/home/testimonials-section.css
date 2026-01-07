@@ -82,7 +82,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     width: 100%;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .company-logos-grid.fade-out {
@@ -97,14 +97,24 @@
 
 .company-logo-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: #fff;
     border: 1px solid var(--neutral-200);
     border-radius: 12px;
-    padding: 1.5rem 2rem;
-    min-height: 85px;
+    padding: 1.25rem;
+    min-height: 140px;
     transition: all 0.3s ease;
+    gap: 0.75rem;
+}
+
+.company-logo-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .company-logo-card:hover {
@@ -115,8 +125,25 @@
 
 .company-logo-card img {
     max-width: 100%;
-    max-height: 55px;
+    max-height: 65px;
     object-fit: contain;
+}
+
+.company-card-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--neutral-800);
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    padding-top: 0.75rem;
+    border-top: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.company-logo-card:hover .company-card-name {
+    color: var(--neutral-900);
+    border-top-color: var(--neutral-100);
 }
 
 .company-name-fallback {

@@ -29,7 +29,7 @@ export default function TopBar() {
             </div>
             <div className="promo-bar">
                 <p className="promo-text">
-                    🎉 We're open through the holidays to support your upskilling goals — {' '}
+                    We're open through the holidays to support your upskilling goals — {' '}
                     <button className="promo-link" onClick={() => setIsModalOpen(true)}>
                         Which training do you want to book?
                     </button>

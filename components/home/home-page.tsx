@@ -236,6 +236,15 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
         ? courses.slice(0, 4)
         : courses.slice(0, 4); // For now show first 4, can be enhanced later
 
+    // Manual Navigation
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+    };
+
     return (
         <div className={styles.page}>
 
@@ -254,6 +263,22 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                             }}
                         />
                     ))}
+
+                    {/* Navigation Arrows */}
+                    <button
+                        className={`${styles.navArrow} ${styles.prevArrow}`}
+                        onClick={prevSlide}
+                        aria-label="Previous Slide"
+                    >
+                        &#10094;
+                    </button>
+                    <button
+                        className={`${styles.navArrow} ${styles.nextArrow}`}
+                        onClick={nextSlide}
+                        aria-label="Next Slide"
+                    >
+                        &#10095;
+                    </button>
                 </div>
                 <div className={styles.heroContent}>
                     {/* <div className={styles.heroBadge}>

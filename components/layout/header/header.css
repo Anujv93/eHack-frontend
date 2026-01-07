@@ -1121,3 +1121,43 @@
         font-size: 0.8125rem;
     }
 }
+
+/* Code Red Nav Link */
+.codered-link {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.4rem 0.75rem !important;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background: rgba(220, 38, 38, 0.08);
+}
+
+.codered-link:hover {
+    background: rgba(220, 38, 38, 0.15);
+}
+
+.codered-link .code-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--neutral-800);
+    letter-spacing: 0.5px;
+}
+
+.codered-link .red-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    background: #dc2626;
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+}
+
+.codered-link:hover .code-text {
+    color: #dc2626;
+}
+
+.codered-link:hover .red-text {
+    background: #b91c1c;
+}
