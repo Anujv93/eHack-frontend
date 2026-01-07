@@ -105,9 +105,9 @@ export default function FranchisePopup() {
                     />
                     <div className="franchise-popup-image-overlay">
                         <div className="franchise-popup-image-content">
-                            <span className="franchise-badge">🚀 Franchise Opportunity</span>
-                            <h2>Partner with India&apos;s Leading Cybersecurity Training Academy</h2>
-                            <p>Join the eHack Academy network and be part of the growing cybersecurity education revolution</p>
+                            <span className="franchise-badge">Franchise Opportunity</span>
+                            <h2>Partner with India&apos;s Premier Institute for Emerging Technologies</h2>
+                            <p>eHack Academyᵀᴹ – Institute of Emerging Technologies is a next-generation Institute of Information Technology delivering industry-driven programs in Cyber Security, Data Science &amp; Analytics, Artificial Intelligence, Robotics, Digital Marketing, and IT Services, aligned with real-world job roles and employability outcomes.</p>
                         </div>
                     </div>
                 </div>
