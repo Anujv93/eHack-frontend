@@ -390,6 +390,10 @@ export default function Header({ partners, courses }: HeaderProps) {
                         </div>
                     </div>
 
+                    <Link href="/codered" className="nav-link codered-link">
+                        <span className="code-text">CODE</span>
+                        <span className="red-text">RED</span>
+                    </Link>
                     <Link href="/about" className="nav-link">About eHack</Link>
                 </nav>
 
