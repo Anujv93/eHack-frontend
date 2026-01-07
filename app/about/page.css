@@ -10,7 +10,7 @@
 /* Hero Section - Light & Clean */
 .about-hero-light {
     background: linear-gradient(180deg, #FFF7ED 0%, #FFFFFF 100%);
-    padding: 140px 0 80px;
+    padding: 40px 0 50px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -40,9 +40,9 @@
     display: inline-block;
     background: #F8FAFC;
     color: #FF6B00;
-    padding: 10px 24px;
+    padding: 14px 32px;
     border-radius: 50px;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     margin-bottom: 20px;
@@ -59,12 +59,12 @@
 }
 
 .hero-subtitle-light {
-    font-size: 1.25rem;
-    color: #475569;
+    font-size: 1.5rem;
+    color: #334155;
     line-height: 1.7;
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* Mission Section */

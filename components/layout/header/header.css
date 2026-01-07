@@ -44,7 +44,7 @@
     font-weight: 700;
     color: var(--neutral-800);
     margin-left: -6px;
-    transform: translateY(6px);
+    transform: translateY(12px);
 }
 
 .logo-subscript {

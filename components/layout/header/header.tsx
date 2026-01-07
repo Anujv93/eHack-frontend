@@ -135,9 +135,9 @@ export default function Header({ partners, courses }: HeaderProps) {
                 <Link href="/" className="logo">
                     <div className="logo-container">
                         <img src="/only-ehack-black-removebg-preview.png" alt="eHack Academy" className="logo-image" />
-                        <span className="logo-superscript">Academy</span>
+                        <span className="logo-superscript">Academy<sup>TM</sup></span>
                     </div>
-                    <span className="logo-subscript">Institute of Information Technology</span>
+                    <span className="logo-subscript">Institute of Emerging Technologies</span>
                 </Link>
 
                 <nav className="nav">
