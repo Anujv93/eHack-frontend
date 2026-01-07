@@ -317,6 +317,14 @@ export default function Header({ partners, courses }: HeaderProps) {
                                     </Link>
                                 </div>
                             </div>
+
+                            {/* Accreditation Disclaimer - Fixed at Bottom of Mega Menu */}
+                            <div className="mega-menu-disclaimer-full">
+                                <span className="disclaimer-icon">ℹ️</span>
+                                <p className="disclaimer-text">
+                                    <strong>Accredited Partner:</strong> EC-Council & Kennedy University. For other vendors, we provide training; certification is issued by the respective vendor.
+                                </p>
+                            </div>
                         </div>
                     </div>
 

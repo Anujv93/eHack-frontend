@@ -451,313 +451,126 @@ export default function KennedyUniversityPage() {
                 </div>
             </section>
 
-            {/* Programs Section */}
+            {/* Programs Section - Card Layout */}
             <section className="programs-section" id="programs">
                 <div className="section-container">
                     <span className="section-badge">OUR PROGRAMS</span>
                     <h2 className="section-title">Choose Your <span className="text-accent">Cybersecurity</span> Pathway</h2>
-                    <p className="section-subtitle">From industry certifications to global degrees, we have the right program for
-                        every career stage.</p>
+                    <p className="section-subtitle">Globally recognized degrees from Kennedy University, delivered through eHack Academy.</p>
 
-                    {/* Program Tabs */}
-                    <div className="program-tabs">
-                        <button className={`program-tab ${activeTab === 'certifications' ? 'active' : ''}`} onClick={() => handleTabClick('certifications')}>EC-Council Certifications</button>
-                        <button className={`program-tab ${activeTab === 'bscs' ? 'active' : ''}`} onClick={() => handleTabClick('bscs')}>BSCS – Fast Track (1 Year)</button>
-                        <button className={`program-tab ${activeTab === 'mscs' ? 'active' : ''}`} onClick={() => handleTabClick('mscs')}>MSCS – Fast Track (1 Year)</button>
-                        <button className={`program-tab ${activeTab === 'integrated' ? 'active' : ''}`} onClick={() => handleTabClick('integrated')}>Integrated BSCS + MSCS (15 Months)</button>
-                    </div>
-
-                    {/* Program Content */}
-                    <div className="program-contents">
-                        {/* EC-Council Certifications */}
-                        <div className={`program-content ${activeTab === 'certifications' ? 'active' : ''}`} id="certifications">
-                            <div className="program-card">
-                                <div className="program-card-header">
-                                    <span className="program-badge">Popular Choice</span>
+                    {/* Program Cards Grid */}
+                    <div className="pathway-cards-grid">
+                        {/* BSCS Card */}
+                        <a href="/kennedy-university/bscs" className="pathway-card">
+                            <div className="pathway-card-header">
+                                <div className="pathway-logos">
+                                    <img src="/images/kennedy-university-logo.png" alt="Kennedy University" className="pathway-logo kennedy" />
+                                    <span className="pathway-logo-divider"></span>
+                                    <img src="/ehack-black.png" alt="eHack Academy" className="pathway-logo" />
                                 </div>
-                                <h3 className="program-name">EC-Council Individual Cybersecurity Certifications</h3>
-                                <p className="program-description">Industry-recognized certifications that validate your expertise in ethical hacking, network defense, and incident handling.</p>
-
-                                <div className="program-details">
-                                    <div className="detail-item">
-                                        <span className="detail-label">Duration</span>
-                                        <span className="detail-value">3-6 Months per Certification</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Eligibility</span>
-                                        <span className="detail-value">Graduate / Working Professional</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Certification</span>
-                                        <span className="detail-value">EC-Council Certified</span>
-                                    </div>
+                                <span className="pathway-badge">Undergraduate</span>
+                            </div>
+                            <h3 className="pathway-title">Bachelor of Science in Cyber Security (BSCS)</h3>
+                            <p className="pathway-subtitle">Fast Track – 1 Year Program</p>
+                            <div className="pathway-meta">
+                                <div className="pathway-meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    <span>12 Months</span>
                                 </div>
-
-                                <div className="certification-list">
-                                    <h4>Available Certifications:</h4>
-                                    <ul className="cert-grid">
-                                        <li>CEH - Certified Ethical Hacker</li>
-                                        <li>CND - Certified Network Defender</li>
-                                        <li>ECIH - EC-Council Certified Incident Handler</li>
-                                        <li>CPENT - Certified Penetration Testing Professional</li>
-                                        <li>CHFI - Computer Hacking Forensic Investigator</li>
-                                    </ul>
-                                </div>
-
-                                <div className="program-actions">
-                                    <a href="/programs/ec-council-certifications" className="btn-primary">Know More</a>
-                                    <a href="#apply" className="btn-secondary">Apply Now</a>
+                                <div className="pathway-meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                    </svg>
+                                    <span>120 Credits</span>
                                 </div>
                             </div>
-                        </div>
+                            <div className="pathway-highlights">
+                                <span className="highlight-tag">IT Foundations</span>
+                                <span className="highlight-tag">Network Defense</span>
+                                <span className="highlight-tag">Ethical Hacking</span>
+                                <span className="highlight-tag">6-Month Internship</span>
+                            </div>
+                            <span className="pathway-cta">View Program Details →</span>
+                        </a>
 
-                        {/* BSCS Fast Track (1 Year) */}
-                        <div className={`program-content ${activeTab === 'bscs' ? 'active' : ''}`} id="bscs">
-                            <div className="program-card">
-                                <div className="program-card-header">
-                                    <span className="program-badge featured">Fast-Track</span>
+                        {/* MSCS Card */}
+                        <a href="/kennedy-university/mscs" className="pathway-card">
+                            <div className="pathway-card-header">
+                                <div className="pathway-logos">
+                                    <img src="/images/kennedy-university-logo.png" alt="Kennedy University" className="pathway-logo kennedy" />
+                                    <span className="pathway-logo-divider"></span>
+                                    <img src="/ehack-black.png" alt="eHack Academy" className="pathway-logo" />
                                 </div>
-                                <h3 className="program-name">Bachelor of Science in Cybersecurity (BSCS) – Fast Track (1 Year)</h3>
-                                <p className="program-description">A fast-track BSCS designed for learners with prior academic or professional exposure, delivered in collaboration with eHack Academy as the industry training partner.</p>
-
-                                <div className="program-details">
-                                    <div className="detail-item">
-                                        <span className="detail-label">Duration</span>
-                                        <span className="detail-value">12 Months</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Mode</span>
-                                        <span className="detail-value">Blended / On-Campus / Online</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Academic Ownership</span>
-                                        <span className="detail-value">Kennedy University</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Industry Delivery Partner</span>
-                                        <span className="detail-value">eHack Academy</span>
-                                    </div>
+                                <span className="pathway-badge advanced">Postgraduate</span>
+                            </div>
+                            <h3 className="pathway-title">Master of Science in Cyber Security (MSCS)</h3>
+                            <p className="pathway-subtitle">Fast Track – 1 Year Program</p>
+                            <div className="pathway-meta">
+                                <div className="pathway-meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    <span>12 Months</span>
                                 </div>
-
-                                <div className="curriculum-alignment">
-                                    <h4>Curriculum Alignment</h4>
-                                    <p>The BSCS curriculum is aligned with eHack Academy&apos;s Graduate Program in Cybersecurity and enhanced with university-level academic rigor.</p>
-                                </div>
-
-                                <div className="program-highlights">
-                                    <h4>Core Areas:</h4>
-                                    <ul>
-                                        <li>Cybersecurity Fundamentals</li>
-                                        <li>Networking &amp; OS</li>
-                                        <li>Ethical Hacking &amp; Penetration Testing</li>
-                                        <li>Digital Forensics &amp; Incident Response</li>
-                                        <li>Risk Management &amp; Governance</li>
-                                        <li>Secure Application Development</li>
-                                    </ul>
-                                </div>
-
-                                {/* Curriculum Modules Section */}
-                                <div className="mscs-curriculum-section">
-                                    <h4>Program Curriculum</h4>
-                                    <p className="curriculum-intro">A structured learning path with 6 professional modules. 34 weeks of intensive training.</p>
-
-                                    <div className="curriculum-modules-kennedy">
-                                        {bscsCurriculum.map((module, idx) => (
-                                            <div key={idx} className="curriculum-module-kennedy">
-                                                <div className={`module-card-kennedy ${bscsActiveModule === idx ? 'active' : ''}`}>
-                                                    <div className="module-header-kennedy" onClick={() => toggleBscsModule(idx)}>
-                                                        <div className="module-number-kennedy">{module.number}</div>
-                                                        <div className="module-header-content-kennedy">
-                                                            <h5 className="module-title-kennedy">{module.title}</h5>
-                                                            <div className="module-meta-kennedy">
-                                                                <span className="module-duration-kennedy">⏱️ {module.duration}</span>
-                                                                {module.certification && <span className="module-cert-kennedy">{module.certification}</span>}
-                                                            </div>
-                                                        </div>
-                                                        <div className="module-expand-kennedy">
-                                                            {bscsActiveModule === idx ? '▲' : '▼'}
-                                                        </div>
-                                                    </div>
-                                                    {bscsActiveModule === idx && (
-                                                        <div className="module-details-kennedy">
-                                                            <p className="module-description-kennedy">{module.description}</p>
-                                                            <div className="module-topics-label-kennedy">What you&apos;ll learn</div>
-                                                            <div className="module-topics-kennedy">
-                                                                {module.topics.map((topic, tidx) => (
-                                                                    <span key={tidx} className="topic-tag-kennedy">{topic}</span>
-                                                                ))}
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="internship-info">
-                                    <h4>Internship</h4>
-                                    <p>Mandatory project-based internship at eHack Academy, with industry mentors, real-world cyber projects, and internship evaluation mapped to academic credits.</p>
-                                </div>
-
-                                <div className="program-actions">
-                                    <a href="/programs/bscs-cybersecurity" className="btn-primary">Know More</a>
-                                    <a href="#apply" className="btn-secondary">Apply Now</a>
+                                <div className="pathway-meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                    </svg>
+                                    <span>90 Credits</span>
                                 </div>
                             </div>
-                        </div>
+                            <div className="pathway-highlights">
+                                <span className="highlight-tag">SOC Operations</span>
+                                <span className="highlight-tag">Cloud Security</span>
+                                <span className="highlight-tag">Executive Leadership</span>
+                                <span className="highlight-tag">Research & Thesis</span>
+                            </div>
+                            <span className="pathway-cta">View Program Details →</span>
+                        </a>
 
-                        {/* MSCS Fast Track (1 Year) */}
-                        <div className={`program-content ${activeTab === 'mscs' ? 'active' : ''}`} id="mscs">
-                            <div className="program-card">
-                                <div className="program-card-header">
-                                    <span className="program-badge featured">Advanced</span>
+                        {/* Integrated BSCS + MSCS Card */}
+                        <a href="/kennedy-university/integrated-bscs-mscs" className="pathway-card featured">
+                            <div className="featured-ribbon">Best Value</div>
+                            <div className="pathway-card-header">
+                                <div className="pathway-logos">
+                                    <img src="/images/kennedy-university-logo.png" alt="Kennedy University" className="pathway-logo kennedy" />
+                                    <span className="pathway-logo-divider"></span>
+                                    <img src="/ehack-black.png" alt="eHack Academy" className="pathway-logo" />
                                 </div>
-                                <h3 className="program-name">Master of Science in Cybersecurity (MSCS) – Fast Track (1 Year)</h3>
-                                <p className="program-description">An advanced master&apos;s program focused on strategic, technical, and managerial cybersecurity skills for aspiring security leaders.</p>
-
-                                <div className="program-details">
-                                    <div className="detail-item">
-                                        <span className="detail-label">Duration</span>
-                                        <span className="detail-value">12 Months</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Eligibility</span>
-                                        <span className="detail-value">Bachelor&apos;s Degree</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Academic Ownership</span>
-                                        <span className="detail-value">Kennedy University</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Industry Delivery Partner</span>
-                                        <span className="detail-value">eHack Academy</span>
-                                    </div>
+                                <span className="pathway-badge dual">Dual Degree</span>
+                            </div>
+                            <h3 className="pathway-title">Integrated BSCS + MSCS in Cyber Security</h3>
+                            <p className="pathway-subtitle">Accelerated – 15 Month Program</p>
+                            <div className="pathway-meta">
+                                <div className="pathway-meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    <span>15 Months</span>
                                 </div>
-
-                                <div className="curriculum-alignment">
-                                    <h4>Curriculum Mapping</h4>
-                                    <p>The MSCS curriculum is mapped to eHack Academy&apos;s Master-Level Cybersecurity Program with advanced research and capstone requirements.</p>
-                                </div>
-
-                                <div className="program-highlights">
-                                    <h4>Advanced Topics:</h4>
-                                    <ul>
-                                        <li>Advanced Network &amp; Cloud Security</li>
-                                        <li>Cyber Threat Intelligence</li>
-                                        <li>Cryptography</li>
-                                        <li>GRC (Governance, Risk &amp; Compliance)</li>
-                                        <li>Cyber Law &amp; Ethics</li>
-                                        <li>Research Methodology</li>
-                                    </ul>
-                                </div>
-
-                                {/* Curriculum Modules Section */}
-                                <div className="mscs-curriculum-section">
-                                    <h4>Program Curriculum</h4>
-                                    <p className="curriculum-intro">A structured learning path with 5 professional modules aligned with EC-Council certifications. 50 weeks of intensive training.</p>
-
-                                    <div className="curriculum-modules-kennedy">
-                                        {mscsCurriculum.map((module, idx) => (
-                                            <div key={idx} className="curriculum-module-kennedy">
-                                                <div className={`module-card-kennedy ${activeModule === idx ? 'active' : ''}`}>
-                                                    <div className="module-header-kennedy" onClick={() => toggleModule(idx)}>
-                                                        <div className="module-number-kennedy">{module.number}</div>
-                                                        <div className="module-header-content-kennedy">
-                                                            <h5 className="module-title-kennedy">{module.title}</h5>
-                                                            <div className="module-meta-kennedy">
-                                                                <span className="module-duration-kennedy">⏱️ {module.duration}</span>
-                                                                <span className="module-cert-kennedy">{module.certification}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="module-expand-kennedy">
-                                                            {activeModule === idx ? '▲' : '▼'}
-                                                        </div>
-                                                    </div>
-                                                    {activeModule === idx && (
-                                                        <div className="module-details-kennedy">
-                                                            <p className="module-description-kennedy">{module.description}</p>
-                                                            <div className="module-topics-label-kennedy">What you&apos;ll learn</div>
-                                                            <div className="module-topics-kennedy">
-                                                                {module.topics.map((topic, tidx) => (
-                                                                    <span key={tidx} className="topic-tag-kennedy">{topic}</span>
-                                                                ))}
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="internship-info">
-                                    <h4>Capstone &amp; Internship</h4>
-                                    <p>Applied research project + industry internship through eHack Academy, with evaluation by a joint academic &amp; industry defense panel.</p>
-                                </div>
-
-                                <div className="program-actions">
-                                    <a href="/programs/mscs-cybersecurity" className="btn-primary">Know More</a>
-                                    <a href="#apply" className="btn-secondary">Apply Now</a>
+                                <div className="pathway-meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                    </svg>
+                                    <span>180 Credits</span>
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Integrated BSCS + MSCS (15 Months) */}
-                        <div className={`program-content ${activeTab === 'integrated' ? 'active' : ''}`} id="integrated">
-                            <div className="program-card">
-                                <div className="program-card-header">
-                                    <span className="program-badge featured">Accelerated Pathway</span>
-                                </div>
-                                <h3 className="program-name">Integrated BSCS + MSCS – Accelerated (15 Months)</h3>
-                                <p className="program-description">An accelerated integrated pathway enabling learners to earn both bachelor&apos;s and master&apos;s qualifications through an intensive academic + industry-driven model.</p>
-
-                                <div className="program-details">
-                                    <div className="detail-item">
-                                        <span className="detail-label">Duration</span>
-                                        <span className="detail-value">15 Months</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Qualification</span>
-                                        <span className="detail-value">BSCS + MSCS Dual Degree</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Academic Ownership</span>
-                                        <span className="detail-value">Kennedy University</span>
-                                    </div>
-                                    <div className="detail-item">
-                                        <span className="detail-label">Industry Delivery Partner</span>
-                                        <span className="detail-value">eHack Academy</span>
-                                    </div>
-                                </div>
-
-                                <div className="program-highlights">
-                                    <h4>Program Structure:</h4>
-                                    <ul className="phase-list">
-                                        <li><strong>Phase 1:</strong> BSCS Foundation</li>
-                                        <li><strong>Phase 2:</strong> Advanced MSCS Coursework</li>
-                                        <li><strong>Phase 3:</strong> Industry Internship &amp; Capstone</li>
-                                    </ul>
-                                </div>
-
-                                <div className="program-highlights">
-                                    <h4>Key Benefits:</h4>
-                                    <ul>
-                                        <li>Earn both degrees in just 15 months</li>
-                                        <li>Intensive academic + industry-driven model</li>
-                                        <li>Combined BSCS &amp; MSCS curriculum</li>
-                                        <li>Industry internship through eHack Academy</li>
-                                        <li>Capstone project with joint evaluation panel</li>
-                                        <li>100% Placement Assistance</li>
-                                    </ul>
-                                </div>
-
-                                <div className="program-actions">
-                                    <a href="/programs/integrated-bscs-mscs" className="btn-primary">Know More</a>
-                                    <a href="#apply" className="btn-secondary">Apply Now</a>
-                                </div>
+                            <div className="pathway-highlights">
+                                <span className="highlight-tag">Complete UG + PG</span>
+                                <span className="highlight-tag">CISO Leadership</span>
+                                <span className="highlight-tag">2 Internships</span>
+                                <span className="highlight-tag">Dual Degree</span>
                             </div>
-                        </div>
+                            <span className="pathway-cta">View Program Details →</span>
+                        </a>
                     </div>
                 </div>
             </section>
