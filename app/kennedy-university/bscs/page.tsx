@@ -169,7 +169,7 @@ export default function BSCSPage() {
     ];
 
     return (
-        <div className="program-detail-page">
+        <div className="program-detail-bscs">
             {/* Hero Section */}
             <section className="program-hero">
                 <div className="hero-grid-bg"></div>

@@ -1,19 +1,19 @@
-/* Program Detail Page Styles */
+/* Program Detail Page Styles - BSCS (Scoped) */
 
-.program-detail-page {
+.program-detail-bscs {
     min-height: 100vh;
     background: #FFFFFF;
 }
 
 /* Hero Section */
-.program-hero {
+.program-detail-bscs .program-hero {
     position: relative;
     background: linear-gradient(180deg, #FFF7ED 0%, #FFF4E8 40%, #FFFFFF 100%);
     padding: 60px 0 80px;
     overflow: hidden;
 }
 
-.hero-grid-bg {
+.program-detail-bscs .hero-grid-bg {
     position: absolute;
     inset: 0;
     background-image:
@@ -25,7 +25,7 @@
     pointer-events: none;
 }
 
-.program-hero .hero-container {
+.program-detail-bscs .program-hero .hero-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
@@ -33,7 +33,7 @@
     z-index: 10;
 }
 
-.back-link {
+.program-detail-bscs .back-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -42,44 +42,38 @@
     font-weight: 500;
     margin-bottom: 32px;
     transition: all 0.2s;
+    text-decoration: none;
 }
 
-.back-link:hover {
+.program-detail-bscs .back-link:hover {
     color: #DF6718;
 }
 
-.hero-content {
+.program-detail-bscs .hero-content {
     display: grid;
     grid-template-columns: 1fr 400px;
     gap: 60px;
     align-items: start;
 }
 
-.program-badge-row {
+.program-detail-bscs .program-badge-row {
     display: flex;
     gap: 12px;
     margin-bottom: 20px;
 }
 
-.badge-fast-track {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
-    color: white;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 8px 16px;
-    border-radius: 100px;
-}
-
-.badge-degree {
-    background: rgba(15, 23, 42, 0.08);
-    color: #0F172A;
-    font-size: 13px;
+.program-detail-bscs .badge-plain {
+    font-size: 14px;
     font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 100px;
+    color: #475569;
 }
 
-.program-title {
+.program-detail-bscs .badge-separator {
+    color: #CBD5E1;
+    font-weight: 300;
+}
+
+.program-detail-bscs .program-title {
     font-size: 3.5rem;
     font-weight: 800;
     color: #0F172A;
@@ -87,11 +81,11 @@
     margin: 0 0 28px 0;
 }
 
-.program-title .highlight {
+.program-detail-bscs .program-title .highlight {
     color: #DF6718;
 }
 
-.program-desc {
+.program-detail-bscs .program-desc {
     font-size: 1.25rem;
     color: #475569;
     line-height: 1.7;
@@ -99,48 +93,36 @@
     max-width: 560px;
 }
 
-.partner-logos-hero {
+.program-detail-bscs .partner-logos-hero {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 24px;
 }
 
-.partner-logos-hero .partner-logo {
+.program-detail-bscs .partner-logos-hero .partner-logo {
     height: 50px;
     width: auto;
     max-width: 160px;
     object-fit: contain;
 }
 
-.partner-logos-hero .partner-logo.kennedy {
+.program-detail-bscs .partner-logos-hero .partner-logo.kennedy {
     filter: invert(1);
 }
 
-.divider-line {
+.program-detail-bscs .divider-line {
     width: 1px;
     height: 40px;
     background: #CBD5E1;
 }
 
-/* Plain Badge Styles */
-.badge-plain {
-    font-size: 14px;
-    font-weight: 600;
-    color: #475569;
-}
-
-.badge-separator {
-    color: #CBD5E1;
-    font-weight: 300;
-}
-
-.hero-ctas {
+.program-detail-bscs .hero-ctas {
     display: flex;
     gap: 16px;
 }
 
-.btn-apply-now {
+.program-detail-bscs .btn-apply-now {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     padding: 16px 36px;
@@ -148,14 +130,15 @@
     font-size: 1rem;
     font-weight: 700;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.btn-apply-now:hover {
+.program-detail-bscs .btn-apply-now:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(223, 103, 24, 0.35);
 }
 
-.btn-download {
+.program-detail-bscs .btn-download {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -167,15 +150,16 @@
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.btn-download:hover {
+.program-detail-bscs .btn-download:hover {
     border-color: #DF6718;
     color: #DF6718;
 }
 
 /* Lead Form Card */
-.lead-form-card {
+.program-detail-bscs .lead-form-card {
     background: white;
     border-radius: 20px;
     padding: 28px;
@@ -183,26 +167,26 @@
     margin-bottom: 16px;
 }
 
-.form-title {
+.program-detail-bscs .form-title {
     font-size: 1.3rem;
     font-weight: 700;
     color: #0F172A;
     margin: 0 0 6px 0;
 }
 
-.form-subtitle {
+.program-detail-bscs .form-subtitle {
     font-size: 0.9rem;
     color: #64748B;
     margin: 0 0 20px 0;
 }
 
-.lead-form {
+.program-detail-bscs .lead-form {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.form-input {
+.program-detail-bscs .form-input {
     width: 100%;
     padding: 14px 16px;
     border: 2px solid #E2E8F0;
@@ -213,23 +197,23 @@
     background: #F8FAFC;
 }
 
-.form-input:focus {
+.program-detail-bscs .form-input:focus {
     outline: none;
     border-color: #DF6718;
     background: white;
 }
 
-.form-input::placeholder {
+.program-detail-bscs .form-input::placeholder {
     color: #94A3B8;
 }
 
-.phone-input-wrapper {
+.program-detail-bscs .phone-input-wrapper {
     display: flex;
     align-items: center;
     gap: 0;
 }
 
-.country-code {
+.program-detail-bscs .country-code {
     background: #E2E8F0;
     padding: 14px 12px;
     border-radius: 10px 0 0 10px;
@@ -240,12 +224,12 @@
     white-space: nowrap;
 }
 
-.form-input.phone {
+.program-detail-bscs .form-input.phone {
     border-radius: 0 10px 10px 0;
     flex: 1;
 }
 
-.btn-submit-form {
+.program-detail-bscs .btn-submit-form {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     padding: 16px;
@@ -257,13 +241,13 @@
     transition: all 0.3s;
 }
 
-.btn-submit-form:hover {
+.program-detail-bscs .btn-submit-form:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(223, 103, 24, 0.35);
 }
 
-/* Program Stats Bar - Full Width Below Hero */
-.program-stats-bar {
+/* Program Stats Bar */
+.program-detail-bscs .program-stats-bar {
     background: white;
     border-radius: 20px;
     padding: 24px 40px;
@@ -274,7 +258,7 @@
     align-items: stretch;
 }
 
-.stat-column {
+.program-detail-bscs .stat-column {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -284,11 +268,11 @@
     border-right: 1px solid #E2E8F0;
 }
 
-.stat-column:last-child {
+.program-detail-bscs .stat-column:last-child {
     border-right: none;
 }
 
-.program-stats-bar .stat-label {
+.program-detail-bscs .program-stats-bar .stat-label {
     font-size: 11px;
     font-weight: 700;
     color: #94A3B8;
@@ -297,32 +281,32 @@
     margin-bottom: 8px;
 }
 
-.program-stats-bar .stat-value {
+.program-detail-bscs .program-stats-bar .stat-value {
     font-size: 1.1rem;
     font-weight: 700;
     color: #0F172A;
     line-height: 1.2;
 }
 
-.program-stats-bar .stat-logo {
+.program-detail-bscs .program-stats-bar .stat-logo {
     height: 40px;
     width: auto;
     max-width: 140px;
     object-fit: contain;
 }
 
-.program-stats-bar .stat-logo.kennedy {
+.program-detail-bscs .program-stats-bar .stat-logo.kennedy {
     filter: invert(1);
 }
 
 /* Section Styles */
-.section-container {
+.program-detail-bscs .section-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-.section-title {
+.program-detail-bscs .section-title {
     font-size: 2.2rem;
     font-weight: 800;
     color: #0F172A;
@@ -330,11 +314,11 @@
     margin: 0 0 16px 0;
 }
 
-.section-title .accent {
+.program-detail-bscs .section-title .accent {
     color: #DF6718;
 }
 
-.section-subtitle {
+.program-detail-bscs .section-subtitle {
     font-size: 1.1rem;
     color: #64748B;
     text-align: center;
@@ -342,18 +326,18 @@
 }
 
 /* Program Overview */
-.program-overview {
+.program-detail-bscs .program-overview {
     padding: 80px 0;
     background: #FFFFFF;
 }
 
-.overview-grid {
+.program-detail-bscs .overview-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
-.overview-card {
+.program-detail-bscs .overview-card {
     background: #F8FAFC;
     border-radius: 16px;
     padding: 28px;
@@ -361,19 +345,19 @@
     transition: all 0.3s;
 }
 
-.overview-card:hover {
+.program-detail-bscs .overview-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
-.overview-card h3 {
+.program-detail-bscs .overview-card h3 {
     font-size: 1.1rem;
     font-weight: 700;
     color: #0F172A;
     margin: 0 0 12px 0;
 }
 
-.overview-card p {
+.program-detail-bscs .overview-card p {
     font-size: 0.9rem;
     color: #64748B;
     line-height: 1.6;
@@ -381,18 +365,18 @@
 }
 
 /* Curriculum Section */
-.curriculum-section {
+.program-detail-bscs .curriculum-section {
     padding: 80px 0;
     background: linear-gradient(180deg, #FFFFFF 0%, #FFF8F0 100%);
 }
 
-.curriculum-timeline {
+.program-detail-bscs .curriculum-timeline {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.curriculum-part {
+.program-detail-bscs .curriculum-part {
     background: white;
     border: 2px solid #E2E8F0;
     border-radius: 16px;
@@ -400,12 +384,12 @@
     transition: all 0.3s;
 }
 
-.curriculum-part.expanded {
+.program-detail-bscs .curriculum-part.expanded {
     border-color: #DF6718;
     box-shadow: 0 8px 30px rgba(223, 103, 24, 0.12);
 }
 
-.part-header-clickable {
+.program-detail-bscs .part-header-clickable {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -414,11 +398,11 @@
     transition: background 0.2s;
 }
 
-.part-header-clickable:hover {
+.program-detail-bscs .part-header-clickable:hover {
     background: #FAFAFA;
 }
 
-.part-number-badge {
+.program-detail-bscs .part-number-badge {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     font-size: 14px;
@@ -428,65 +412,40 @@
     white-space: nowrap;
 }
 
-.part-info {
+.program-detail-bscs .part-info {
     flex: 1;
 }
 
-.part-info .part-title {
+.program-detail-bscs .part-info .part-title {
     font-size: 1.15rem;
     font-weight: 700;
     color: #0F172A;
     margin: 0 0 6px 0;
 }
 
-.part-meta {
+.program-detail-bscs .part-meta {
     display: flex;
     gap: 16px;
 }
 
-.meta-item {
+.program-detail-bscs .meta-item {
     font-size: 0.9rem;
     color: #64748B;
 }
 
-.expand-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #F1F5F9;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    color: #64748B;
-}
-
-.part-content {
+.program-detail-bscs .part-content {
     padding: 0 24px 24px;
     border-top: 1px solid #E2E8F0;
-    animation: slideDown 0.3s ease;
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.courses-list {
+.program-detail-bscs .courses-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-top: 20px;
 }
 
-.course-card {
+.program-detail-bscs .course-card {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -495,17 +454,17 @@
     border-radius: 12px;
 }
 
-.course-card.has-topics {
+.program-detail-bscs .course-card.has-topics {
     border: 1px solid #E2E8F0;
 }
 
-.course-header {
+.program-detail-bscs .course-header {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.course-code {
+.program-detail-bscs .course-code {
     background: #E2E8F0;
     color: #475569;
     font-size: 12px;
@@ -515,24 +474,24 @@
     white-space: nowrap;
 }
 
-.course-details {
+.program-detail-bscs .course-details {
     flex: 1;
 }
 
-.course-name {
+.program-detail-bscs .course-name {
     font-size: 0.95rem;
     font-weight: 600;
     color: #0F172A;
     margin: 0 0 4px 0;
 }
 
-.course-desc {
+.program-detail-bscs .course-desc {
     font-size: 0.85rem;
     color: #64748B;
     margin: 0;
 }
 
-.course-credits {
+.program-detail-bscs .course-credits {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     font-size: 12px;
@@ -541,63 +500,20 @@
     border-radius: 8px;
 }
 
-/* View Modules Button */
-.view-modules-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
-    color: white;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: all 0.2s ease;
-}
-
-.view-modules-btn:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(223, 103, 24, 0.3);
-}
-
-.course-card.topics-open {
+.program-detail-bscs .course-card.topics-open {
     background: #FFF7ED;
     border: 2px solid #DF6718;
 }
 
-/* Course Topics List */
-.course-topics {
+.program-detail-bscs .course-topics {
     margin-top: 16px;
     padding: 20px;
     background: white;
     border-radius: 12px;
     border: 1px solid #E2E8F0;
-    animation: slideDown 0.3s ease-out;
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.topics-heading {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #DF6718;
-    margin: 0 0 12px 0;
-}
-
-.topics-list {
+.program-detail-bscs .topics-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px 32px;
@@ -606,7 +522,7 @@
     margin: 0;
 }
 
-.topics-list li {
+.program-detail-bscs .topics-list li {
     font-size: 0.9rem;
     color: #1E293B;
     font-weight: 500;
@@ -617,12 +533,12 @@
     transition: all 0.2s ease;
 }
 
-.topics-list li:hover {
+.program-detail-bscs .topics-list li:hover {
     background: #FFF7ED;
     transform: translateX(4px);
 }
 
-.topics-list li::before {
+.program-detail-bscs .topics-list li::before {
     content: "✓";
     color: #DF6718;
     font-weight: bold;
@@ -633,7 +549,7 @@
     transform: translateY(-50%);
 }
 
-.assessment-info {
+.program-detail-bscs .assessment-info {
     margin-top: 20px;
     padding: 16px;
     background: #FFF7ED;
@@ -642,17 +558,17 @@
     color: #475569;
 }
 
-.assessment-info strong {
+.program-detail-bscs .assessment-info strong {
     color: #DF6718;
 }
 
 /* Criteria Section */
-.criteria-section {
+.program-detail-bscs .criteria-section {
     padding: 80px 0;
     background: #FFFFFF;
 }
 
-.criteria-card {
+.program-detail-bscs .criteria-card {
     background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
     border-radius: 24px;
     padding: 48px;
@@ -661,20 +577,20 @@
     margin: 0 auto;
 }
 
-.criteria-card h2 {
+.program-detail-bscs .criteria-card h2 {
     font-size: 1.8rem;
     font-weight: 700;
     color: white;
     margin: 0 0 12px 0;
 }
 
-.criteria-intro {
+.program-detail-bscs .criteria-intro {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
     margin: 0 0 28px 0;
 }
 
-.criteria-list {
+.program-detail-bscs .criteria-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -683,7 +599,7 @@
     gap: 16px;
 }
 
-.criteria-list li {
+.program-detail-bscs .criteria-list li {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -691,7 +607,7 @@
     color: rgba(255, 255, 255, 0.9);
 }
 
-.check-icon {
+.program-detail-bscs .check-icon {
     width: 28px;
     height: 28px;
     display: flex;
@@ -703,42 +619,42 @@
     font-weight: 700;
 }
 
-.criteria-list li strong {
+.program-detail-bscs .criteria-list li strong {
     color: #DF6718;
 }
 
 /* CTA Section */
-.cta-section {
+.program-detail-bscs .cta-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #FFF7ED 0%, #FFF4E8 100%);
 }
 
-.cta-content {
+.program-detail-bscs .cta-content {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
 }
 
-.cta-content h2 {
+.program-detail-bscs .cta-content h2 {
     font-size: 2rem;
     font-weight: 800;
     color: #0F172A;
     margin: 0 0 16px 0;
 }
 
-.cta-content p {
+.program-detail-bscs .cta-content p {
     font-size: 1.1rem;
     color: #64748B;
     margin: 0 0 32px 0;
 }
 
-.cta-buttons {
+.program-detail-bscs .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 16px;
 }
 
-.btn-primary-lg {
+.program-detail-bscs .btn-primary-lg {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     padding: 18px 40px;
@@ -746,14 +662,15 @@
     font-size: 1.1rem;
     font-weight: 700;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.btn-primary-lg:hover {
+.program-detail-bscs .btn-primary-lg:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(223, 103, 24, 0.35);
 }
 
-.btn-outline-lg {
+.program-detail-bscs .btn-outline-lg {
     background: transparent;
     color: #0F172A;
     border: 2px solid #0F172A;
@@ -762,81 +679,74 @@
     font-size: 1.1rem;
     font-weight: 600;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.btn-outline-lg:hover {
+.program-detail-bscs .btn-outline-lg:hover {
     background: #0F172A;
     color: white;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .hero-content {
+    .program-detail-bscs .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .program-stats-card {
-        max-width: 500px;
-    }
-
-    .overview-grid {
+    .program-detail-bscs .overview-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .program-hero {
+    .program-detail-bscs .program-hero {
         padding: 80px 0 60px;
     }
 
-    .program-title {
+    .program-detail-bscs .program-title {
         font-size: 2rem;
     }
 
-    .program-stats-card {
+    .program-detail-bscs .overview-grid {
         grid-template-columns: 1fr;
     }
 
-    .overview-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .part-header-clickable {
+    .program-detail-bscs .part-header-clickable {
         flex-wrap: wrap;
     }
 
-    .course-card {
+    .program-detail-bscs .course-card {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
     }
 
-    .criteria-card {
+    .program-detail-bscs .criteria-card {
         padding: 32px;
     }
 
-    .cta-buttons {
+    .program-detail-bscs .cta-buttons {
         flex-direction: column;
     }
 
-    .program-stats-bar {
+    .program-detail-bscs .program-stats-bar {
         flex-direction: column;
         gap: 16px;
         padding: 24px;
     }
 
-    .stat-column {
+    .program-detail-bscs .stat-column {
         border-right: none;
         border-bottom: 1px solid #E2E8F0;
         padding: 16px 0;
     }
 
-    .stat-column:last-child {
+    .program-detail-bscs .stat-column:last-child {
         border-bottom: none;
     }
 
-    .topics-list {
+    .program-detail-bscs .topics-list {
         grid-template-columns: 1fr;
     }
 }

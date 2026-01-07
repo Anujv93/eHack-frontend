@@ -193,7 +193,7 @@ export default function MSCSPage() {
     ];
 
     return (
-        <div className="program-detail-page">
+        <div className="program-detail-mscs">
             {/* Hero Section */}
             <section className="program-hero">
                 <div className="hero-grid-bg"></div>

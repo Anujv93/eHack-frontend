@@ -1,19 +1,19 @@
-/* Program Detail Page Styles - MSCS */
+/* Program Detail Page Styles - MSCS (Scoped) */
 
-.program-detail-page {
+.program-detail-mscs {
     min-height: 100vh;
     background: #FFFFFF;
 }
 
 /* Hero Section */
-.program-hero {
+.program-detail-mscs .program-hero {
     position: relative;
     background: linear-gradient(180deg, #FFF7ED 0%, #FFF4E8 40%, #FFFFFF 100%);
     padding: 60px 0 80px;
     overflow: hidden;
 }
 
-.hero-grid-bg {
+.program-detail-mscs .hero-grid-bg {
     position: absolute;
     inset: 0;
     background-image:
@@ -25,7 +25,7 @@
     pointer-events: none;
 }
 
-.program-hero .hero-container {
+.program-detail-mscs .program-hero .hero-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
@@ -33,7 +33,7 @@
     z-index: 10;
 }
 
-.back-link {
+.program-detail-mscs .back-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -42,37 +42,38 @@
     font-weight: 500;
     margin-bottom: 32px;
     transition: all 0.2s;
+    text-decoration: none;
 }
 
-.back-link:hover {
+.program-detail-mscs .back-link:hover {
     color: #DF6718;
 }
 
-.hero-content {
+.program-detail-mscs .hero-content {
     display: grid;
     grid-template-columns: 1fr 400px;
     gap: 60px;
     align-items: start;
 }
 
-.program-badge-row {
+.program-detail-mscs .program-badge-row {
     display: flex;
     gap: 12px;
     margin-bottom: 20px;
 }
 
-.badge-plain {
+.program-detail-mscs .badge-plain {
     font-size: 14px;
     font-weight: 600;
     color: #475569;
 }
 
-.badge-separator {
+.program-detail-mscs .badge-separator {
     color: #CBD5E1;
     font-weight: 300;
 }
 
-.program-title {
+.program-detail-mscs .program-title {
     font-size: 3.5rem;
     font-weight: 800;
     color: #0F172A;
@@ -80,11 +81,11 @@
     margin: 0 0 28px 0;
 }
 
-.program-title .highlight {
+.program-detail-mscs .program-title .highlight {
     color: #DF6718;
 }
 
-.program-desc {
+.program-detail-mscs .program-desc {
     font-size: 1.25rem;
     color: #475569;
     line-height: 1.7;
@@ -92,36 +93,36 @@
     max-width: 560px;
 }
 
-.partner-logos-hero {
+.program-detail-mscs .partner-logos-hero {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 24px;
 }
 
-.partner-logos-hero .partner-logo {
+.program-detail-mscs .partner-logos-hero .partner-logo {
     height: 50px;
     width: auto;
     max-width: 160px;
     object-fit: contain;
 }
 
-.partner-logos-hero .partner-logo.kennedy {
+.program-detail-mscs .partner-logos-hero .partner-logo.kennedy {
     filter: invert(1);
 }
 
-.divider-line {
+.program-detail-mscs .divider-line {
     width: 1px;
     height: 40px;
     background: #CBD5E1;
 }
 
-.hero-ctas {
+.program-detail-mscs .hero-ctas {
     display: flex;
     gap: 16px;
 }
 
-.btn-apply-now {
+.program-detail-mscs .btn-apply-now {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     padding: 16px 36px;
@@ -129,14 +130,15 @@
     font-size: 1rem;
     font-weight: 700;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.btn-apply-now:hover {
+.program-detail-mscs .btn-apply-now:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(223, 103, 24, 0.35);
 }
 
-.btn-download {
+.program-detail-mscs .btn-download {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -148,15 +150,16 @@
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.btn-download:hover {
+.program-detail-mscs .btn-download:hover {
     border-color: #DF6718;
     color: #DF6718;
 }
 
 /* Lead Form Card */
-.lead-form-card {
+.program-detail-mscs .lead-form-card {
     background: white;
     border-radius: 20px;
     padding: 28px;
@@ -164,26 +167,26 @@
     margin-bottom: 16px;
 }
 
-.form-title {
+.program-detail-mscs .form-title {
     font-size: 1.3rem;
     font-weight: 700;
     color: #0F172A;
     margin: 0 0 6px 0;
 }
 
-.form-subtitle {
+.program-detail-mscs .form-subtitle {
     font-size: 0.9rem;
     color: #64748B;
     margin: 0 0 20px 0;
 }
 
-.lead-form {
+.program-detail-mscs .lead-form {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.form-input {
+.program-detail-mscs .form-input {
     width: 100%;
     padding: 14px 16px;
     border: 2px solid #E2E8F0;
@@ -194,23 +197,23 @@
     background: #F8FAFC;
 }
 
-.form-input:focus {
+.program-detail-mscs .form-input:focus {
     outline: none;
     border-color: #DF6718;
     background: white;
 }
 
-.form-input::placeholder {
+.program-detail-mscs .form-input::placeholder {
     color: #94A3B8;
 }
 
-.phone-input-wrapper {
+.program-detail-mscs .phone-input-wrapper {
     display: flex;
     align-items: center;
     gap: 0;
 }
 
-.country-code {
+.program-detail-mscs .country-code {
     background: #E2E8F0;
     padding: 14px 12px;
     border-radius: 10px 0 0 10px;
@@ -221,12 +224,12 @@
     white-space: nowrap;
 }
 
-.form-input.phone {
+.program-detail-mscs .form-input.phone {
     border-radius: 0 10px 10px 0;
     flex: 1;
 }
 
-.btn-submit-form {
+.program-detail-mscs .btn-submit-form {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     padding: 16px;
@@ -238,13 +241,13 @@
     transition: all 0.3s;
 }
 
-.btn-submit-form:hover {
+.program-detail-mscs .btn-submit-form:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(223, 103, 24, 0.35);
 }
 
 /* Program Stats Bar */
-.program-stats-bar {
+.program-detail-mscs .program-stats-bar {
     background: white;
     border-radius: 20px;
     padding: 24px 40px;
@@ -255,7 +258,7 @@
     align-items: stretch;
 }
 
-.stat-column {
+.program-detail-mscs .stat-column {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -265,11 +268,11 @@
     border-right: 1px solid #E2E8F0;
 }
 
-.stat-column:last-child {
+.program-detail-mscs .stat-column:last-child {
     border-right: none;
 }
 
-.program-stats-bar .stat-label {
+.program-detail-mscs .program-stats-bar .stat-label {
     font-size: 11px;
     font-weight: 700;
     color: #94A3B8;
@@ -278,32 +281,32 @@
     margin-bottom: 8px;
 }
 
-.program-stats-bar .stat-value {
+.program-detail-mscs .program-stats-bar .stat-value {
     font-size: 1.1rem;
     font-weight: 700;
     color: #0F172A;
     line-height: 1.2;
 }
 
-.program-stats-bar .stat-logo {
+.program-detail-mscs .program-stats-bar .stat-logo {
     height: 40px;
     width: auto;
     max-width: 140px;
     object-fit: contain;
 }
 
-.program-stats-bar .stat-logo.kennedy {
+.program-detail-mscs .program-stats-bar .stat-logo.kennedy {
     filter: invert(1);
 }
 
 /* Section Styles */
-.section-container {
+.program-detail-mscs .section-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-.section-title {
+.program-detail-mscs .section-title {
     font-size: 2.2rem;
     font-weight: 800;
     color: #0F172A;
@@ -311,11 +314,11 @@
     margin: 0 0 16px 0;
 }
 
-.section-title .accent {
+.program-detail-mscs .section-title .accent {
     color: #DF6718;
 }
 
-.section-subtitle {
+.program-detail-mscs .section-subtitle {
     font-size: 1.1rem;
     color: #64748B;
     text-align: center;
@@ -323,18 +326,18 @@
 }
 
 /* Program Overview */
-.program-overview {
+.program-detail-mscs .program-overview {
     padding: 80px 0;
     background: #FFFFFF;
 }
 
-.overview-grid {
+.program-detail-mscs .overview-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
-.overview-card {
+.program-detail-mscs .overview-card {
     background: #F8FAFC;
     border-radius: 16px;
     padding: 28px;
@@ -342,19 +345,19 @@
     transition: all 0.3s;
 }
 
-.overview-card:hover {
+.program-detail-mscs .overview-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
-.overview-card h3 {
+.program-detail-mscs .overview-card h3 {
     font-size: 1.1rem;
     font-weight: 700;
     color: #0F172A;
     margin: 0 0 12px 0;
 }
 
-.overview-card p {
+.program-detail-mscs .overview-card p {
     font-size: 0.9rem;
     color: #64748B;
     line-height: 1.6;
@@ -362,18 +365,18 @@
 }
 
 /* Curriculum Section */
-.curriculum-section {
+.program-detail-mscs .curriculum-section {
     padding: 80px 0;
     background: linear-gradient(180deg, #FFFFFF 0%, #FFF8F0 100%);
 }
 
-.curriculum-timeline {
+.program-detail-mscs .curriculum-timeline {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.curriculum-part {
+.program-detail-mscs .curriculum-part {
     background: white;
     border: 2px solid #E2E8F0;
     border-radius: 16px;
@@ -381,12 +384,12 @@
     transition: all 0.3s;
 }
 
-.curriculum-part.expanded {
+.program-detail-mscs .curriculum-part.expanded {
     border-color: #DF6718;
     box-shadow: 0 8px 30px rgba(223, 103, 24, 0.12);
 }
 
-.part-header-clickable {
+.program-detail-mscs .part-header-clickable {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -395,11 +398,11 @@
     transition: background 0.2s;
 }
 
-.part-header-clickable:hover {
+.program-detail-mscs .part-header-clickable:hover {
     background: #FAFAFA;
 }
 
-.part-number-badge {
+.program-detail-mscs .part-number-badge {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     font-size: 14px;
@@ -409,53 +412,40 @@
     white-space: nowrap;
 }
 
-.part-info {
+.program-detail-mscs .part-info {
     flex: 1;
 }
 
-.part-info .part-title {
+.program-detail-mscs .part-info .part-title {
     font-size: 1.15rem;
     font-weight: 700;
     color: #0F172A;
     margin: 0 0 6px 0;
 }
 
-.part-meta {
+.program-detail-mscs .part-meta {
     display: flex;
     gap: 16px;
 }
 
-.meta-item {
+.program-detail-mscs .meta-item {
     font-size: 0.9rem;
     color: #64748B;
 }
 
-.part-content {
+.program-detail-mscs .part-content {
     padding: 0 24px 24px;
     border-top: 1px solid #E2E8F0;
-    animation: slideDown 0.3s ease;
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.courses-list {
+.program-detail-mscs .courses-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-top: 20px;
 }
 
-.course-card {
+.program-detail-mscs .course-card {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -464,17 +454,17 @@
     border-radius: 12px;
 }
 
-.course-card.has-topics {
+.program-detail-mscs .course-card.has-topics {
     border: 1px solid #E2E8F0;
 }
 
-.course-header {
+.program-detail-mscs .course-header {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.course-code {
+.program-detail-mscs .course-code {
     background: #E2E8F0;
     color: #475569;
     font-size: 12px;
@@ -484,24 +474,24 @@
     white-space: nowrap;
 }
 
-.course-details {
+.program-detail-mscs .course-details {
     flex: 1;
 }
 
-.course-name {
+.program-detail-mscs .course-name {
     font-size: 0.95rem;
     font-weight: 600;
     color: #0F172A;
     margin: 0 0 4px 0;
 }
 
-.course-desc {
+.program-detail-mscs .course-desc {
     font-size: 0.85rem;
     color: #64748B;
     margin: 0;
 }
 
-.course-credits {
+.program-detail-mscs .course-credits {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     font-size: 12px;
@@ -510,21 +500,20 @@
     border-radius: 8px;
 }
 
-.course-card.topics-open {
+.program-detail-mscs .course-card.topics-open {
     background: #FFF7ED;
     border: 2px solid #DF6718;
 }
 
-.course-topics {
+.program-detail-mscs .course-topics {
     margin-top: 16px;
     padding: 20px;
     background: white;
     border-radius: 12px;
     border: 1px solid #E2E8F0;
-    animation: slideDown 0.3s ease-out;
 }
 
-.topics-list {
+.program-detail-mscs .topics-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px 32px;
@@ -533,7 +522,7 @@
     margin: 0;
 }
 
-.topics-list li {
+.program-detail-mscs .topics-list li {
     font-size: 0.9rem;
     color: #1E293B;
     font-weight: 500;
@@ -544,12 +533,12 @@
     transition: all 0.2s ease;
 }
 
-.topics-list li:hover {
+.program-detail-mscs .topics-list li:hover {
     background: #FFF7ED;
     transform: translateX(4px);
 }
 
-.topics-list li::before {
+.program-detail-mscs .topics-list li::before {
     content: "✓";
     color: #DF6718;
     font-weight: bold;
@@ -560,7 +549,7 @@
     transform: translateY(-50%);
 }
 
-.assessment-info {
+.program-detail-mscs .assessment-info {
     margin-top: 20px;
     padding: 16px;
     background: #FFF7ED;
@@ -569,11 +558,11 @@
     color: #475569;
 }
 
-.assessment-info strong {
+.program-detail-mscs .assessment-info strong {
     color: #DF6718;
 }
 
-.outcome-info {
+.program-detail-mscs .outcome-info {
     margin-top: 12px;
     padding: 16px;
     background: #F0FDF4;
@@ -583,17 +572,17 @@
     border-left: 4px solid #22C55E;
 }
 
-.outcome-info strong {
+.program-detail-mscs .outcome-info strong {
     color: #166534;
 }
 
 /* Criteria Section */
-.criteria-section {
+.program-detail-mscs .criteria-section {
     padding: 80px 0;
     background: #FFFFFF;
 }
 
-.criteria-card {
+.program-detail-mscs .criteria-card {
     background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
     border-radius: 24px;
     padding: 48px;
@@ -602,20 +591,20 @@
     margin: 0 auto;
 }
 
-.criteria-card h2 {
+.program-detail-mscs .criteria-card h2 {
     font-size: 1.8rem;
     font-weight: 700;
     color: white;
     margin: 0 0 12px 0;
 }
 
-.criteria-intro {
+.program-detail-mscs .criteria-intro {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
     margin: 0 0 28px 0;
 }
 
-.criteria-list {
+.program-detail-mscs .criteria-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -624,7 +613,7 @@
     gap: 16px;
 }
 
-.criteria-list li {
+.program-detail-mscs .criteria-list li {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -632,7 +621,7 @@
     color: rgba(255, 255, 255, 0.9);
 }
 
-.check-icon {
+.program-detail-mscs .check-icon {
     width: 28px;
     height: 28px;
     display: flex;
@@ -644,42 +633,42 @@
     font-weight: 700;
 }
 
-.criteria-list li strong {
+.program-detail-mscs .criteria-list li strong {
     color: #DF6718;
 }
 
 /* CTA Section */
-.cta-section {
+.program-detail-mscs .cta-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #FFF7ED 0%, #FFF4E8 100%);
 }
 
-.cta-content {
+.program-detail-mscs .cta-content {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
 }
 
-.cta-content h2 {
+.program-detail-mscs .cta-content h2 {
     font-size: 2rem;
     font-weight: 800;
     color: #0F172A;
     margin: 0 0 16px 0;
 }
 
-.cta-content p {
+.program-detail-mscs .cta-content p {
     font-size: 1.1rem;
     color: #64748B;
     margin: 0 0 32px 0;
 }
 
-.cta-buttons {
+.program-detail-mscs .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 16px;
 }
 
-.btn-primary-lg {
+.program-detail-mscs .btn-primary-lg {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     padding: 18px 40px;
@@ -687,14 +676,15 @@
     font-size: 1.1rem;
     font-weight: 700;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.btn-primary-lg:hover {
+.program-detail-mscs .btn-primary-lg:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(223, 103, 24, 0.35);
 }
 
-.btn-outline-lg {
+.program-detail-mscs .btn-outline-lg {
     background: transparent;
     color: #0F172A;
     border: 2px solid #0F172A;
@@ -703,73 +693,74 @@
     font-size: 1.1rem;
     font-weight: 600;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.btn-outline-lg:hover {
+.program-detail-mscs .btn-outline-lg:hover {
     background: #0F172A;
     color: white;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .hero-content {
+    .program-detail-mscs .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .overview-grid {
+    .program-detail-mscs .overview-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .program-hero {
+    .program-detail-mscs .program-hero {
         padding: 80px 0 60px;
     }
 
-    .program-title {
+    .program-detail-mscs .program-title {
         font-size: 2rem;
     }
 
-    .overview-grid {
+    .program-detail-mscs .overview-grid {
         grid-template-columns: 1fr;
     }
 
-    .part-header-clickable {
+    .program-detail-mscs .part-header-clickable {
         flex-wrap: wrap;
     }
 
-    .course-card {
+    .program-detail-mscs .course-card {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
     }
 
-    .criteria-card {
+    .program-detail-mscs .criteria-card {
         padding: 32px;
     }
 
-    .cta-buttons {
+    .program-detail-mscs .cta-buttons {
         flex-direction: column;
     }
 
-    .program-stats-bar {
+    .program-detail-mscs .program-stats-bar {
         flex-direction: column;
         gap: 16px;
         padding: 24px;
     }
 
-    .stat-column {
+    .program-detail-mscs .stat-column {
         border-right: none;
         border-bottom: 1px solid #E2E8F0;
         padding: 16px 0;
     }
 
-    .stat-column:last-child {
+    .program-detail-mscs .stat-column:last-child {
         border-bottom: none;
     }
 
-    .topics-list {
+    .program-detail-mscs .topics-list {
         grid-template-columns: 1fr;
     }
 }

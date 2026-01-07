@@ -275,7 +275,7 @@ export default function IntegratedBSCSMSCSPage() {
     ];
 
     return (
-        <div className="program-detail-page">
+        <div className="program-detail-integrated">
             {/* Hero Section */}
             <section className="program-hero">
                 <div className="hero-grid-bg"></div>
