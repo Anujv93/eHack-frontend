@@ -87,67 +87,48 @@ function sleep(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// Clean data for Strapi v5 POST request
-// Remove system fields that Strapi generates automatically
-function cleanDataForCreate(item: any): any {
-    const cleaned = { ...item };
-
-    // Remove system fields
-    delete cleaned.id;
-    delete cleaned.documentId;
-    delete cleaned.createdAt;
-    delete cleaned.updatedAt;
-    delete cleaned.publishedAt;
-
-    // Handle nested relations - convert to IDs only
-    if (cleaned.certification_partner) {
-        // We'll need to match by slug or name and get the new ID
-        cleaned.certification_partner = null; // Will be linked separately
+// Recursively remove system fields from any object or array
+function deepClean(obj: any): any {
+    // Handle null/undefined
+    if (obj === null || obj === undefined) {
+        return obj;
     }
 
-    if (cleaned.certification_categories) {
-        cleaned.certification_categories = null;
+    // Handle arrays
+    if (Array.isArray(obj)) {
+        return obj.map(item => deepClean(item));
     }
 
-    // Clean pageContent items
-    if (cleaned.pageContent && Array.isArray(cleaned.pageContent)) {
-        cleaned.pageContent = cleaned.pageContent.map((section: any) => {
-            const cleanedSection = { ...section };
-            delete cleanedSection.id;
-
-            // Clean nested arrays within sections
-            Object.keys(cleanedSection).forEach(key => {
-                if (Array.isArray(cleanedSection[key])) {
-                    cleanedSection[key] = cleanedSection[key].map((item: any) => {
-                        if (typeof item === 'object' && item !== null) {
-                            const cleanedItem = { ...item };
-                            delete cleanedItem.id;
-                            return cleanedItem;
-                        }
-                        return item;
-                    });
-                }
-            });
-
-            return cleanedSection;
-        });
+    // Handle non-objects (primitives)
+    if (typeof obj !== 'object') {
+        return obj;
     }
 
-    // Clean certificates array (for partners)
-    if (cleaned.certificates) {
-        delete cleaned.certificates; // Relations will be created when certificates are added
-    }
+    // Handle objects - create a clean copy
+    const cleaned: any = {};
 
-    // Clean steps array
-    if (cleaned.steps && Array.isArray(cleaned.steps)) {
-        cleaned.steps = cleaned.steps.map((step: any) => {
-            const cleanedStep = { ...step };
-            delete cleanedStep.id;
-            return cleanedStep;
-        });
+    for (const [key, value] of Object.entries(obj)) {
+        // Skip system fields at any nesting level
+        if (['id', 'documentId', 'createdAt', 'updatedAt', 'publishedAt'].includes(key)) {
+            continue;
+        }
+
+        // Skip relation fields that reference other content types
+        if (key === 'certificates' || key === 'certification_partner' || key === 'certification_categories') {
+            continue;
+        }
+
+        // Recursively clean nested values
+        cleaned[key] = deepClean(value);
     }
 
     return cleaned;
+}
+
+// Clean data for Strapi v5 POST request
+// Remove system fields that Strapi generates automatically
+function cleanDataForCreate(item: any): any {
+    return deepClean(item);
 }
 
 // Create a single item in Strapi
