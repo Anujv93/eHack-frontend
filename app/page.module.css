@@ -397,12 +397,12 @@
 
 .partnersLabel {
     text-align: center;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #64748B;
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #0f172a;
     margin-bottom: 2.5rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .partnersGrid {
