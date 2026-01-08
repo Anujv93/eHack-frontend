@@ -212,29 +212,29 @@
 }
 
 .ec-council-badge {
-    height: 70px;
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
 
 .divider {
     width: 1px;
-    height: 40px;
+    height: 30px;
     background: var(--gray-300);
 }
 
 .hero-brand-logo {
-    height: 45px;
+    height: 35px;
     width: auto;
     object-fit: contain;
 }
 
 .hero-title {
-    font-size: clamp(3rem, 5vw, 4.5rem);
-    /* Emphasis: Swiss Bold */
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    /* Emphasis: Swiss Bold, but balanced */
     font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -0.04em;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     color: var(--black);
     margin-bottom: var(--space-6);
 }
@@ -244,21 +244,27 @@
 }
 
 .hero-title .cert-count {
-    display: block;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--gray-600);
-    margin-top: var(--space-6);
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    background: var(--accent-light);
+    border: 1px solid var(--accent);
+    padding: 6px 12px;
+    margin-top: var(--space-4);
     line-height: 1.5;
-    letter-spacing: normal;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    vertical-align: middle;
 }
 
 .hero-description {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: var(--gray-700);
-    line-height: 1.7;
+    line-height: 1.6;
     margin-bottom: var(--space-6);
-    max-width: 540px;
+    max-width: 600px;
 }
 
 .hero-features {
@@ -293,11 +299,12 @@
 .form-card {
     background: var(--white);
     border: 1px solid var(--gray-200);
-    padding: var(--space-10);
-    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.1);
-    /* Reward: Subtle Lift */
+    padding: var(--space-8);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    /* Reward: Subtle Lift & Depth */
     position: relative;
     top: -20px;
+    border-radius: 8px;
 }
 
 .form-title {
@@ -364,6 +371,7 @@
     transition: all 0.2s ease;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    border-radius: 4px;
 }
 
 /* Reward: Button hover */
@@ -419,7 +427,7 @@
 }
 
 .stat-item:not(:last-child) {
-    border-right: 1px solid var(--gray-300);
+    border-right: 1px solid var(--gray-200);
 }
 
 .stat-label {
@@ -608,12 +616,14 @@
     border-radius: var(--border-radius-md);
     text-align: center;
     border: 1px solid var(--gray-200);
-    transition: all 0.2s;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .credential-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 4px 20px rgba(223, 103, 24, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .logo-text {
@@ -677,19 +687,24 @@
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--gray-200);
-    border: 1px solid var(--gray-200);
+    gap: var(--space-6);
+    background: transparent;
+    border: none;
 }
 
 .skill-card {
     background: var(--white);
     padding: var(--space-8);
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    /* Consistent rounded corners */
 }
 
 .skill-card:hover {
-    background: var(--gray-50);
+    border-color: var(--accent);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
 }
 
 .skill-icon {
@@ -754,15 +769,19 @@
 .roi-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--gray-200);
-    border: 1px solid var(--gray-200);
+    gap: var(--space-8);
+    background: transparent;
+    border: none;
 }
 
 .salary-card,
 .testimonial-video-card {
     background: var(--white);
     padding: var(--space-8);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    /* Consistent rounded corners */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .salary-stat {
@@ -801,8 +820,9 @@
 
 .chart-bar {
     width: 100%;
-    background: var(--black);
+    background: var(--gray-800);
     transition: background 0.2s;
+    border-radius: 4px 4px 0 0;
 }
 
 .bar-1 {
@@ -999,16 +1019,17 @@
 .audience-card {
     background: var(--white);
     padding: var(--space-8);
-    border-radius: var(--border-radius-lg);
+    border-radius: 8px;
     border: 1px solid var(--gray-200);
     text-align: center;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .audience-card:hover {
     border-color: var(--accent);
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .audience-icon {
@@ -1214,13 +1235,14 @@
 }
 
 .module-cert-badge {
-    background: var(--gray-100);
-    color: var(--gray-700);
-    font-size: 0.6875rem;
-    font-weight: 600;
-    padding: 3px 8px;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    padding: 6px 12px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    border: 1px solid var(--accent);
 }
 
 .module-expand-icon {
@@ -1248,7 +1270,7 @@
 .module-description {
     font-size: 1rem;
     /* Increased readability */
-    color: var(--gray-600);
+    color: var(--gray-800);
     line-height: 1.6;
     margin-bottom: var(--space-6);
     max-width: 600px;
@@ -1275,10 +1297,10 @@
 
 .tag {
     background: transparent;
-    color: var(--gray-700);
+    color: var(--gray-900);
     font-size: 0.9375rem;
     /* Increased readability */
-    font-weight: 400;
+    font-weight: 500;
     padding: var(--space-2) 0;
     border: none;
     border-bottom: 1px solid var(--gray-200);
@@ -1290,7 +1312,7 @@
 
 .tag::before {
     content: '→';
-    color: var(--gray-400);
+    color: var(--accent);
     font-weight: 400;
     font-size: 0.75rem;
 }

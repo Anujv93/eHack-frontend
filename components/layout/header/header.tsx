@@ -135,9 +135,9 @@ export default function Header({ partners, courses }: HeaderProps) {
                 <Link href="/" className="logo">
                     <div className="logo-container">
                         <img src="/only-ehack-black-removebg-preview.png" alt="eHack Academy" className="logo-image" />
-                        <span className="logo-superscript">Academy</span>
+                        <span className="logo-superscript">Academy<sup>TM</sup></span>
                     </div>
-                    <span className="logo-subscript">Institute of Information Technology</span>
+                    <span className="logo-subscript">Institute of Emerging Technologies</span>
                 </Link>
 
                 <nav className="nav">
@@ -316,6 +316,14 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         <span className="original-subtitle">Expert Level</span>
                                     </Link>
                                 </div>
+                            </div>
+
+                            {/* Accreditation Disclaimer - Fixed at Bottom of Mega Menu */}
+                            <div className="mega-menu-disclaimer-full">
+                                <span className="disclaimer-icon">ℹ️</span>
+                                <p className="disclaimer-text">
+                                    <strong>Accredited Partner:</strong> EC-Council & Kennedy University. For other vendors, we provide training; certification is issued by the respective vendor.
+                                </p>
                             </div>
                         </div>
                     </div>

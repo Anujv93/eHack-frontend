@@ -153,11 +153,11 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div className="founder-content">
-                            <h3 className="founder-name">Neel Kumar</h3>
+                            <h3 className="founder-name">N. Kumar</h3>
                             <p className="founder-role">Head Advisory & Consultant - Cyber Security Corporate Training & Services</p>
 
                             <p className="founder-bio">
-                                With over 9+ years of extensive experience in Penetration Testing, Red Teaming, and Cyber Incident Response, Neel Kumar is a renowned expert in both offensive and defensive security credentials. He has trained law enforcement agencies globally including Interpol and CBI, and solved over 350+ cyber crime cases.
+                                With over 9+ years of extensive experience in Penetration Testing, Red Teaming, and Cyber Incident Response, N. Kumar is a renowned expert in both offensive and defensive security credentials. He has trained law enforcement agencies globally including Interpol and CBI, and solved over 350+ cyber crime cases.
                             </p>
 
                             <div className="founder-education">

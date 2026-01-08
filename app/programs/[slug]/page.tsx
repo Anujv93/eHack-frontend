@@ -368,7 +368,11 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                                 <span className="module-duration">
                                                     ⏱️ {module.duration}
                                                 </span>
-                                                <span className="module-cert-badge">{module.certification}</span>
+                                                {module.certification && (
+                                                    <span className="module-cert-badge">
+                                                        Certification: {module.certification}
+                                                    </span>
+                                                )}
                                             </div>
                                         </div>
                                         <div className="module-expand-icon">

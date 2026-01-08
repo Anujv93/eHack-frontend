@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Link from 'next/link';
 import CourseCard from '../course-card/course-card';
+import { programs } from '@/data/programs';
 import './courses-grid.css';
 
 interface Course {
@@ -38,12 +40,40 @@ interface CoursesGridProps {
     initialSearch?: string;
 }
 
+// Kennedy University programs
+const kennedyPrograms = [
+    {
+        slug: 'bscs',
+        title: 'Bachelor of Science in Computer Science (BSCS)',
+        description: 'A 4-year undergraduate degree program in Computer Science with global recognition.',
+        duration: '4 Years',
+        partner: 'Kennedy University',
+        partnerLogo: '/images/kennedy-university-logo.png'
+    },
+    {
+        slug: 'mscs',
+        title: 'Master of Science in Computer Science (MSCS)',
+        description: 'A 2-year graduate degree program for advanced Computer Science studies.',
+        duration: '2 Years',
+        partner: 'Kennedy University',
+        partnerLogo: '/images/kennedy-university-logo.png'
+    },
+    {
+        slug: 'integrated-bscs-mscs',
+        title: 'Integrated BSCS + MSCS Program',
+        description: 'A comprehensive 5-year integrated program combining undergraduate and graduate studies.',
+        duration: '5 Years',
+        partner: 'Kennedy University',
+        partnerLogo: '/images/kennedy-university-logo.png'
+    }
+];
+
 export default function CoursesGrid({ courses, partners, categories, initialSearch = '' }: CoursesGridProps) {
     const [selectedPartners, setSelectedPartners] = useState<string[]>([]);
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
     const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
     const [searchQuery, setSearchQuery] = useState(initialSearch);
-    const [activeTab, setActiveTab] = useState<'popular' | 'rated'>('popular');
+    const [activeTab, setActiveTab] = useState<'popular' | 'ehack' | 'kennedy'>('popular');
     const [sortBy, setSortBy] = useState('newest');
 
     const toggleFilter = (value: string, selected: string[], setSelected: (val: string[]) => void) => {
@@ -195,13 +225,19 @@ export default function CoursesGrid({ courses, partners, categories, initialSear
                             className={`tab ${activeTab === 'popular' ? 'active' : ''}`}
                             onClick={() => setActiveTab('popular')}
                         >
-                            Most Popular
+                            Certifications
                         </button>
                         <button
-                            className={`tab ${activeTab === 'rated' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('rated')}
+                            className={`tab ${activeTab === 'ehack' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('ehack')}
                         >
-                            Top Rated
+                            eHack Programs
+                        </button>
+                        <button
+                            className={`tab ${activeTab === 'kennedy' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('kennedy')}
+                        >
+                            Kennedy University Programs
                         </button>
                     </div>
                     <div className="sort-controls">
@@ -219,31 +255,123 @@ export default function CoursesGrid({ courses, partners, categories, initialSear
 
                 {/* Results Count */}
                 <div className="results-info">
-                    <h3>Courses</h3>
+                    <h3>
+                        {activeTab === 'popular' && 'Courses'}
+                        {activeTab === 'ehack' && 'eHack Originals'}
+                        {activeTab === 'kennedy' && 'Kennedy University Programs'}
+                    </h3>
                 </div>
 
-                {/* Courses Grid */}
-                {filteredCourses.length === 0 ? (
-                    <div className="no-results">
-                        <p>No courses found matching your criteria.</p>
-                        <button className="clear-btn" onClick={handleClearFilters}>
-                            Clear Filters
-                        </button>
-                    </div>
-                ) : (
+                {/* Most Popular Tab - Strapi Courses */}
+                {activeTab === 'popular' && (
+                    <>
+                        {filteredCourses.length === 0 ? (
+                            <div className="no-results">
+                                <p>No courses found matching your criteria.</p>
+                                <button className="clear-btn" onClick={handleClearFilters}>
+                                    Clear Filters
+                                </button>
+                            </div>
+                        ) : (
+                            <div className="courses-grid">
+                                {filteredCourses.map((course) => (
+                                    <CourseCard
+                                        key={course.id}
+                                        slug={course.slug}
+                                        title={course.title}
+                                        shortDescription={course.shortDescription}
+                                        level={course.level}
+                                        duration={course.duration}
+                                        partnerName={course.partnerName}
+                                        partnerLogo={course.partnerLogo}
+                                        categories={course.categories}
+                                    />
+                                ))}
+                            </div>
+                        )}
+                    </>
+                )}
+
+                {/* eHack Originals Tab */}
+                {activeTab === 'ehack' && (
                     <div className="courses-grid">
-                        {filteredCourses.map((course) => (
-                            <CourseCard
-                                key={course.id}
-                                slug={course.slug}
-                                title={course.title}
-                                shortDescription={course.shortDescription}
-                                level={course.level}
-                                duration={course.duration}
-                                partnerName={course.partnerName}
-                                partnerLogo={course.partnerLogo}
-                                categories={course.categories}
-                            />
+                        {programs.map((program) => (
+                            <div key={program.slug} className="course-card">
+                                <div className="card-header">
+                                    <img
+                                        src={program.ehackLogo}
+                                        alt="eHack Academy"
+                                        className="partner-logo"
+                                    />
+                                </div>
+                                <div className="card-content">
+                                    <h3 className="course-title">{program.title}</h3>
+                                    <p className="course-description">{program.description}</p>
+                                    <div className="course-meta">
+                                        {program.stats.duration && (
+                                            <span className="meta-item">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                    <circle cx="12" cy="12" r="10" />
+                                                    <path d="M12 6v6l4 2" />
+                                                </svg>
+                                                {program.stats.duration}
+                                            </span>
+                                        )}
+                                        <span className="meta-item partner-name">{program.partner}</span>
+                                    </div>
+                                </div>
+                                <div className="card-footer">
+                                    <Link href={`/programs/${program.slug}`} className="view-course-link">
+                                        View Program <span>→</span>
+                                    </Link>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {/* Kennedy University Tab */}
+                {activeTab === 'kennedy' && (
+                    <div className="courses-grid">
+                        {kennedyPrograms.map((program) => (
+                            <div key={program.slug} className="course-card kennedy-card">
+                                <div className="card-header partnership-header">
+                                    <div className="partnership-logos">
+                                        <img
+                                            src="/ehack-black.png"
+                                            alt="eHack Academy"
+                                            className="partner-logo ehack-logo"
+                                        />
+                                        <span className="partnership-separator">
+                                            X
+                                        </span>
+                                        <img
+                                            src={program.partnerLogo}
+                                            alt="Kennedy University"
+                                            className="partner-logo kennedy-logo"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="card-content">
+                                    <h3 className="course-title">{program.title}</h3>
+                                    <p className="course-description">{program.description}</p>
+                                    <div className="course-meta">
+                                        <span className="meta-item">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <path d="M12 6v6l4 2" />
+                                            </svg>
+                                            {program.duration}
+                                        </span>
+                                        <span className="meta-item partner-name">{program.partner}</span>
+                                    </div>
+                                </div>
+                                <div className="card-footer">
+                                    <Link href={`/kennedy-university/${program.slug}`} className="view-course-link">
+                                        View Program <span>→</span>
+                                    </Link>
+                                </div>
+                            </div>
                         ))}
                     </div>
                 )}

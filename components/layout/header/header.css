@@ -44,13 +44,13 @@
     font-weight: 700;
     color: var(--neutral-800);
     margin-left: -6px;
-    transform: translateY(6px);
+    transform: translateY(12px);
 }
 
 .logo-subscript {
     font-size: 0.625rem;
-    font-weight: 600;
-    color: var(--neutral-500);
+    font-weight: 700;
+    color: var(--neutral-700);
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-top: 2px;
@@ -224,8 +224,8 @@
 
 .mega-menu-heading {
     font-size: 0.6875rem;
-    font-weight: 600;
-    color: var(--neutral-400);
+    font-weight: 700;
+    color: var(--neutral-600);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 1rem;
@@ -378,8 +378,8 @@
 
 .partner-name {
     font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--neutral-800);
+    font-weight: 700;
+    color: var(--neutral-900);
     line-height: 1.4;
     display: block;
     word-break: break-word;
@@ -388,7 +388,8 @@
 
 .partner-count {
     font-size: 0.75rem;
-    color: var(--neutral-500);
+    font-weight: 600;
+    color: var(--neutral-700);
     white-space: nowrap;
 }
 
@@ -420,6 +421,70 @@
 .mega-view-all:hover {
     background: #c45815;
     color: #fff;
+}
+
+/* Accreditation Disclaimer */
+.mega-menu-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.625rem 0.75rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid var(--neutral-200);
+    border-left: 3px solid var(--brand-primary);
+    border-radius: 6px;
+}
+
+.disclaimer-icon {
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.disclaimer-text {
+    font-size: 0.6875rem;
+    color: var(--neutral-600);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.disclaimer-text strong {
+    color: var(--neutral-800);
+    font-weight: 600;
+}
+
+/* Full Width Disclaimer at Bottom of Mega Menu */
+.mega-menu-disclaimer-full {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid var(--neutral-200);
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mega-menu-disclaimer-full .disclaimer-icon {
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+.mega-menu-disclaimer-full .disclaimer-text {
+    font-size: 0.75rem;
+    color: var(--neutral-600);
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
+.mega-menu-disclaimer-full .disclaimer-text strong {
+    color: var(--neutral-800);
+    font-weight: 600;
 }
 
 /* Middle Section Wrapper */
