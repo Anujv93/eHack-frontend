@@ -427,7 +427,7 @@
 }
 
 .stat-item:not(:last-child) {
-    border-right: 1px solid var(--gray-300);
+    border-right: 1px solid var(--gray-200);
 }
 
 .stat-label {
@@ -616,12 +616,14 @@
     border-radius: var(--border-radius-md);
     text-align: center;
     border: 1px solid var(--gray-200);
-    transition: all 0.2s;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .credential-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 4px 20px rgba(223, 103, 24, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .logo-text {
@@ -685,19 +687,24 @@
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--gray-200);
-    border: 1px solid var(--gray-200);
+    gap: var(--space-6);
+    background: transparent;
+    border: none;
 }
 
 .skill-card {
     background: var(--white);
     padding: var(--space-8);
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    /* Consistent rounded corners */
 }
 
 .skill-card:hover {
-    background: var(--gray-50);
+    border-color: var(--accent);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
 }
 
 .skill-icon {
@@ -762,15 +769,19 @@
 .roi-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--gray-200);
-    border: 1px solid var(--gray-200);
+    gap: var(--space-8);
+    background: transparent;
+    border: none;
 }
 
 .salary-card,
 .testimonial-video-card {
     background: var(--white);
     padding: var(--space-8);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    /* Consistent rounded corners */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .salary-stat {
@@ -809,8 +820,9 @@
 
 .chart-bar {
     width: 100%;
-    background: var(--black);
+    background: var(--gray-800);
     transition: background 0.2s;
+    border-radius: 4px 4px 0 0;
 }
 
 .bar-1 {
@@ -1007,16 +1019,17 @@
 .audience-card {
     background: var(--white);
     padding: var(--space-8);
-    border-radius: var(--border-radius-lg);
+    border-radius: 8px;
     border: 1px solid var(--gray-200);
     text-align: center;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .audience-card:hover {
     border-color: var(--accent);
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .audience-icon {
