@@ -327,11 +327,7 @@ export default function IntegratedBSCSMSCSPage() {
                                 An accelerated 15-month integrated pathway enabling learners to earn both bachelor&apos;s and master&apos;s qualifications through an intensive academic + industry-driven model.
                             </p>
 
-                            <div className="dual-degree-badge">
-                                <span className="degree-item">BSCS</span>
-                                <span className="plus-sign">+</span>
-                                <span className="degree-item">MSCS</span>
-                            </div>
+
 
                             <div className="hero-ctas">
                                 <a href="#apply" className="btn-apply-now">Apply Now</a>
@@ -492,27 +488,27 @@ export default function IntegratedBSCSMSCSPage() {
                 <div className="section-container">
                     <h2 className="section-title">Credit <span className="accent">Summary</span></h2>
                     <div className="credit-summary-grid">
-                        <div className="credit-card">
+                        <div className="credit-summary-card">
                             <div className="credit-part">Part I</div>
                             <div className="credit-value">48</div>
                             <div className="credit-label">Credits</div>
                         </div>
-                        <div className="credit-card">
+                        <div className="credit-summary-card">
                             <div className="credit-part">Part II</div>
                             <div className="credit-value">56</div>
                             <div className="credit-label">Credits</div>
                         </div>
-                        <div className="credit-card">
+                        <div className="credit-summary-card">
                             <div className="credit-part">Part III</div>
                             <div className="credit-value">44</div>
                             <div className="credit-label">Credits</div>
                         </div>
-                        <div className="credit-card">
+                        <div className="credit-summary-card">
                             <div className="credit-part">Part IV</div>
                             <div className="credit-value">32</div>
                             <div className="credit-label">Credits</div>
                         </div>
-                        <div className="credit-card total">
+                        <div className="credit-summary-card total">
                             <div className="credit-part">Total</div>
                             <div className="credit-value">180</div>
                             <div className="credit-label">Credits</div>
@@ -529,12 +525,34 @@ export default function IntegratedBSCSMSCSPage() {
                         <p className="degrees-intro">Upon successful completion, the learner will be nominated & recommended by eHack Academy for:</p>
                         <div className="degrees-list">
                             <div className="degree-item-card">
-                                <div className="degree-badge">UG</div>
-                                <div className="degree-name">Bachelor of Science in Cyber Security (BSCS)</div>
+                                <div className="degree-icon-wrapper">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                                    </svg>
+                                </div>
+                                <div className="degree-content">
+                                    <div className="degree-meta">
+                                        <span className="degree-badge">UG</span>
+                                        <span className="degree-type">Bachelor's Degree</span>
+                                    </div>
+                                    <div className="degree-name">Bachelor of Science in Cyber Security <span className="degree-abbr">(BSCS)</span></div>
+                                </div>
                             </div>
+                            <div className="degree-connection-line"></div>
                             <div className="degree-item-card">
-                                <div className="degree-badge">PG</div>
-                                <div className="degree-name">Master of Science in Cyber Security (MSCS)</div>
+                                <div className="degree-icon-wrapper">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                    </svg>
+                                </div>
+                                <div className="degree-content">
+                                    <div className="degree-meta">
+                                        <span className="degree-badge pg">PG</span>
+                                        <span className="degree-type">Master's Degree</span>
+                                    </div>
+                                    <div className="degree-name">Master of Science in Cyber Security <span className="degree-abbr">(MSCS)</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
