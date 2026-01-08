@@ -5,57 +5,57 @@ import './placement-section.css';
 const placementStories = [
     {
         id: 1,
-        name: "Rahul Sharma",
+        name: "Ankit Verma",
         image: "/images/testimonials/person1.jpg",
         before: { role: "B.Tech Student", company: "Fresher" },
-        after: { role: "Security Analyst", company: "Deloitte", logo: "/images/companies/deloitte.svg" },
+        after: { role: "Cybersecurity Analyst", company: "Deloitte", logo: "https://img.logo.dev/deloitte.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
         hike: "150%",
-        badge: "Hackathon Winner 🏆"
+        badge: "CEH Certified 🏆"
     },
     {
         id: 2,
-        name: "Priya Patel",
+        name: "Rahul Sharma",
         image: "/images/testimonials/person2.jpg",
         before: { role: "System Admin", company: "Local IT Firm" },
-        after: { role: "Cloud Security Eng.", company: "Amazon", logo: "/images/companies/amazon.svg" },
-        hike: "200%",
-        badge: "Top Performer ⭐"
+        after: { role: "SOC Engineer", company: "PwC", logo: "https://img.logo.dev/pwc.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
+        hike: "140%",
+        badge: "CND Certified ⭐"
     },
     {
         id: 3,
-        name: "Amit Kumar",
+        name: "Vijay Kumar",
         image: "/images/testimonials/person3.jpg",
         before: { role: "Support Engineer", company: "Tech Support" },
-        after: { role: "Penetration Tester", company: "EY", logo: "/images/companies/ey.svg" },
+        after: { role: "Penetration Tester", company: "KPMG", logo: "https://img.logo.dev/kpmg.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
         hike: "180%",
-        badge: "Bug Bounty Hunter 🐞"
+        badge: "CPENT Certified 🐞"
     },
     {
         id: 4,
-        name: "Sneha Gupta",
+        name: "Priya Singh",
         image: "/images/testimonials/person4.jpg",
         before: { role: "Software Dev", company: "Startup" },
-        after: { role: "SOC Analyst", company: "KPMG", logo: "/images/companies/kpmg.svg" },
+        after: { role: "Security Consultant", company: "EY", logo: "https://img.logo.dev/ey.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
         hike: "120%",
-        badge: "Certified Et. Hacker 🛡️"
+        badge: "CHFI Certified 🛡️"
     },
     {
         id: 5,
-        name: "Vikram Singh",
+        name: "Arjun Patel",
         image: "/images/testimonials/person5.jpg",
         before: { role: "Network Admin", company: "ISP" },
-        after: { role: "Security Consultant", company: "PwC", logo: "/images/companies/pwc.png" },
+        after: { role: "Cloud Security Eng.", company: "Accenture", logo: "https://img.logo.dev/accenture.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
         hike: "160%",
-        badge: "Fast Track Promo 🚀"
+        badge: "CCSE Certified 🚀"
     },
     {
         id: 6,
-        name: "Anjali Desai",
+        name: "Sanjay Mehta",
         image: "/images/testimonials/person6.jpg",
-        before: { role: "Fresher", company: "College Grad" },
-        after: { role: "Cyber Defense", company: "Infosys", logo: "/images/companies/infosys.svg" },
-        hike: "140%",
-        badge: "Scholarship Recipient 🎓"
+        before: { role: "IT Manager", company: "Mid-size Firm" },
+        after: { role: "InfoSec Manager", company: "IBM", logo: "https://img.logo.dev/ibm.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
+        hike: "200%",
+        badge: "CISM Certified 🎓"
     }
 ];
 

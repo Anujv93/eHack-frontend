@@ -340,16 +340,19 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
                     {/* Quick Links */}
                     <div className={styles.quickLinks}>
-                        <span className={styles.quickLinksLabel}>Popular:</span>
-                        {courses.slice(0, 4).map((course) => (
-                            <Link
-                                key={course.id}
-                                href={`/certificate/${course.slug}`}
-                                className={styles.quickLink}
-                            >
-                                {course.title.length > 15 ? course.title.slice(0, 15) + '...' : course.title}
-                            </Link>
-                        ))}
+                        <span className={styles.quickLinksLabel}>Explore:</span>
+                        <Link href="/categories/cybersecurity" className={styles.quickLink}>
+                            Cybersecurity
+                        </Link>
+                        <Link href="/categories/data-science" className={styles.quickLink}>
+                            Data Science
+                        </Link>
+                        <Link href="/categories/robotics-iot" className={styles.quickLink}>
+                            Robotics
+                        </Link>
+                        <Link href="/categories/digital-marketing" className={styles.quickLink}>
+                            Digital Marketing
+                        </Link>
                     </div>
                 </div>
             </section>
