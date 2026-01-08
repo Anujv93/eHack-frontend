@@ -597,6 +597,10 @@ export default function KennedyUniversityPage() {
                                     <li>Trusted by Fortune 500 Companies</li>
                                 </ul>
                             </div>
+                            <div className="partner-authorization-certificate">
+                                <img src="/images/ec-council-authorization-certificate.png" alt="EC-Council Accredited Training Center Certificate" className="authorization-certificate-img" />
+                                <span className="authorization-label">Accredited Training Center Certificate</span>
+                            </div>
                         </div>
 
                         {/* Kennedy University */}
@@ -612,6 +616,10 @@ export default function KennedyUniversityPage() {
                                     <li>Industry-Aligned Curriculum</li>
                                     <li>Global Alumni Network</li>
                                 </ul>
+                            </div>
+                            <div className="partner-authorization-certificate">
+                                <img src="/images/kennedy-authorization-certificate.png" alt="Kennedy University Authorization Certificate" className="authorization-certificate-img" />
+                                <span className="authorization-label">Authorization Certificate of Partnership</span>
                             </div>
                         </div>
                     </div>

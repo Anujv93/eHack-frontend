@@ -1367,6 +1367,36 @@ textarea {
     font-weight: var(--font-weight-bold);
 }
 
+/* Partner Authorization Certificate */
+.partner-authorization-certificate {
+    margin-top: var(--space-6);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--gray-200);
+    text-align: center;
+}
+
+.authorization-certificate-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.authorization-certificate-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.authorization-label {
+    display: block;
+    margin-top: var(--space-3);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-600);
+}
+
 /* eHack Role Card */
 .ehack-role-card {
     background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%);
