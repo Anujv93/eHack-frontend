@@ -479,6 +479,11 @@
     border-top: 1px solid #E2E8F0;
 }
 
+.kennedyPartner .partnerLogo {
+    filter: brightness(0);
+    opacity: 0.8;
+}
+
 /* ===== Stats Section ===== */
 .statsSection {
     padding: 3rem 0;

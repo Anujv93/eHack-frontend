@@ -42,7 +42,18 @@ export default async function Page() {
             ? getStrapiMediaUrl(partner.Logo.url)
             : partner.LogoUrl || undefined,
         courseCount: courseCountByPartner[partner.slug] || 0
-    }));
+    })).sort((a, b) => {
+        // Custom sort order: EC-Council first, Kennedy University second
+        const order = ['ec-council', 'kennedy-university'];
+        const indexA = order.indexOf(a.slug);
+        const indexB = order.indexOf(b.slug);
+
+        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+        if (indexA !== -1) return -1;
+        if (indexB !== -1) return 1;
+
+        return a.name.localeCompare(b.name);
+    });
 
     // Transform categories
     const categories = categoriesData.map((category) => ({

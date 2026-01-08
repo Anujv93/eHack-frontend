@@ -360,7 +360,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                     <p className={styles.partnersLabel}>Trusted by World&apos;s Leading Certification Partners</p>
                     <div className={styles.partnersGrid}>
                         {partners.map((partner) => (
-                            <div key={partner.id} className={styles.partnerCard}>
+                            <div key={partner.id} className={`${styles.partnerCard} ${partner.slug === 'kennedy-university' ? styles.kennedyPartner : ''}`}>
                                 <div className={styles.partnerLogoWrapper}>
                                     {partner.logoUrl ? (
                                         <img
