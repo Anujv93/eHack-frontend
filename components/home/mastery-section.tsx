@@ -46,7 +46,7 @@ const programs: Program[] = [
         membership: '2 Years',
         certificateImage: '/images/certificates/graduate-certificate.jpg',
         ctaText: 'Explore Program',
-        ctaLink: '/programs/graduate-ethical-hacking',
+        ctaLink: 'programs/graduate-cybersecurity',
         featured: true
     },
     {
@@ -62,7 +62,7 @@ const programs: Program[] = [
         membership: '2 Years',
         certificateImage: '/images/certificates/masters-certificate.jpg',
         ctaText: 'Explore Program',
-        ctaLink: '/programs/masters-5-certifications',
+        ctaLink: 'programs/masters-ethical-hacking',
         featured: false
     }
 ];
