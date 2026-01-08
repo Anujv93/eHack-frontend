@@ -58,6 +58,8 @@
     overflow: hidden;
     color: #fff;
     padding-top: 4rem;
+    padding-bottom: 8rem;
+    /* Added space for trust bar */
     background: #000;
 }
 
