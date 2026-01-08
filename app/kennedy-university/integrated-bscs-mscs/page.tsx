@@ -327,11 +327,7 @@ export default function IntegratedBSCSMSCSPage() {
                                 An accelerated 15-month integrated pathway enabling learners to earn both bachelor&apos;s and master&apos;s qualifications through an intensive academic + industry-driven model.
                             </p>
 
-                            <div className="dual-degree-badge">
-                                <span className="degree-item">BSCS</span>
-                                <span className="plus-sign">+</span>
-                                <span className="degree-item">MSCS</span>
-                            </div>
+
 
                             <div className="hero-ctas">
                                 <a href="#apply" className="btn-apply-now">Apply Now</a>
