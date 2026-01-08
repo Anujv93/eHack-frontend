@@ -450,18 +450,40 @@
     flex-direction: column;
     gap: 0;
     background: #F8FAFC;
-    padding: 16px 20px;
     border-radius: 12px;
+    border: 2px solid #E2E8F0;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .program-detail-mscs .course-card.has-topics {
-    border: 1px solid #E2E8F0;
+    border-color: #CBD5E1;
+}
+
+.program-detail-mscs .course-card.has-topics:hover {
+    border-color: #DF6718;
+}
+
+.program-detail-mscs .course-card.expanded {
+    background: #FFF7ED;
+    border-color: #DF6718;
+    box-shadow: 0 8px 24px rgba(223, 103, 24, 0.15);
 }
 
 .program-detail-mscs .course-header {
     display: flex;
     align-items: center;
     gap: 16px;
+    padding: 18px 20px;
+}
+
+.program-detail-mscs .course-header.clickable {
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.program-detail-mscs .course-header.clickable:hover {
+    background: rgba(223, 103, 24, 0.05);
 }
 
 .program-detail-mscs .course-code {
@@ -469,9 +491,14 @@
     color: #475569;
     font-size: 12px;
     font-weight: 700;
-    padding: 6px 12px;
-    border-radius: 6px;
+    padding: 8px 14px;
+    border-radius: 8px;
     white-space: nowrap;
+}
+
+.program-detail-mscs .course-card.expanded .course-code {
+    background: #DF6718;
+    color: white;
 }
 
 .program-detail-mscs .course-details {
@@ -491,62 +518,100 @@
     margin: 0;
 }
 
+.program-detail-mscs .course-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .program-detail-mscs .course-credits {
     background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
     color: white;
     font-size: 12px;
     font-weight: 700;
-    padding: 6px 12px;
+    padding: 8px 14px;
     border-radius: 8px;
+    white-space: nowrap;
 }
 
-.program-detail-mscs .course-card.topics-open {
-    background: #FFF7ED;
-    border: 2px solid #DF6718;
+.program-detail-mscs .expand-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E2E8F0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #64748B;
+}
+
+.program-detail-mscs .course-card.has-topics:hover .expand-icon {
+    background: #DF6718;
+    color: white;
+}
+
+.program-detail-mscs .expand-icon.rotated {
+    background: #DF6718;
+    color: white;
+    transform: rotate(180deg);
 }
 
 .program-detail-mscs .course-topics {
-    margin-top: 16px;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.program-detail-mscs .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     background: white;
     border-radius: 12px;
+    padding: 20px;
     border: 1px solid #E2E8F0;
 }
 
-.program-detail-mscs .topics-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px 32px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.program-detail-mscs .topics-list li {
-    font-size: 0.9rem;
-    color: #1E293B;
-    font-weight: 500;
-    padding: 8px 12px 8px 28px;
-    position: relative;
+.program-detail-mscs .topic-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
     background: #F8FAFC;
     border-radius: 8px;
     transition: all 0.2s ease;
 }
 
-.program-detail-mscs .topics-list li:hover {
+.program-detail-mscs .topic-item:hover {
     background: #FFF7ED;
     transform: translateX(4px);
 }
 
-.program-detail-mscs .topics-list li::before {
-    content: "✓";
+.program-detail-mscs .topic-bullet {
     color: #DF6718;
-    font-weight: bold;
-    font-size: 12px;
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    font-weight: 600;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.program-detail-mscs .topic-text {
+    font-size: 0.9rem;
+    color: #1E293B;
+    font-weight: 500;
+    line-height: 1.4;
 }
 
 .program-detail-mscs .assessment-info {
@@ -730,10 +795,15 @@
         flex-wrap: wrap;
     }
 
-    .program-detail-mscs .course-card {
-        flex-direction: column;
-        align-items: flex-start;
+    .program-detail-mscs .course-header {
+        flex-wrap: wrap;
         gap: 12px;
+    }
+
+    .program-detail-mscs .course-right {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 8px;
     }
 
     .program-detail-mscs .criteria-card {
@@ -760,7 +830,7 @@
         border-bottom: none;
     }
 
-    .program-detail-mscs .topics-list {
+    .program-detail-mscs .topics-grid {
         grid-template-columns: 1fr;
     }
 }

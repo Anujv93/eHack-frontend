@@ -1,7 +1,23 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 import './page.css';
 
 export default function BSCSPage() {
+    const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set());
+
+    const toggleCourse = (courseCode: string) => {
+        setExpandedCourses(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(courseCode)) {
+                newSet.delete(courseCode);
+            } else {
+                newSet.add(courseCode);
+            }
+            return newSet;
+        });
+    };
 
     const curriculum = [
         {
@@ -302,27 +318,48 @@ export default function BSCSPage() {
 
                                 <div className="part-content">
                                     <div className="courses-list">
-                                        {part.courses.map((course, cidx) => (
-                                            <div key={cidx} className={`course-card ${course.topics ? 'has-topics topics-open' : ''}`}>
-                                                <div className="course-header">
-                                                    <div className="course-code">{course.code}</div>
-                                                    <div className="course-details">
-                                                        <h4 className="course-name">{course.name}</h4>
-                                                        <p className="course-desc">{course.description}</p>
+                                        {part.courses.map((course, cidx) => {
+                                            const isExpanded = expandedCourses.has(course.code);
+                                            return (
+                                                <div
+                                                    key={cidx}
+                                                    className={`course-card ${course.topics ? 'has-topics' : ''} ${isExpanded ? 'expanded' : ''}`}
+                                                >
+                                                    <div
+                                                        className={`course-header ${course.topics ? 'clickable' : ''}`}
+                                                        onClick={() => course.topics && toggleCourse(course.code)}
+                                                    >
+                                                        <div className="course-code">{course.code}</div>
+                                                        <div className="course-details">
+                                                            <h4 className="course-name">{course.name}</h4>
+                                                            <p className="course-desc">{course.description}</p>
+                                                        </div>
+                                                        <div className="course-right">
+                                                            <div className="course-credits">{course.credits} Cr</div>
+                                                            {course.topics && (
+                                                                <div className={`expand-icon ${isExpanded ? 'rotated' : ''}`}>
+                                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                                        <path d="M6 9l6 6 6-6" />
+                                                                    </svg>
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     </div>
-                                                    <div className="course-credits">{course.credits} Cr</div>
+                                                    {course.topics && isExpanded && (
+                                                        <div className="course-topics">
+                                                            <div className="topics-grid">
+                                                                {course.topics.map((topic, tidx) => (
+                                                                    <div key={tidx} className="topic-item">
+                                                                        <span className="topic-bullet">▸</span>
+                                                                        <span className="topic-text">{topic}</span>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    )}
                                                 </div>
-                                                {course.topics && (
-                                                    <div className="course-topics">
-                                                        <ul className="topics-list">
-                                                            {course.topics.map((topic, tidx) => (
-                                                                <li key={tidx}>{topic}</li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
                                     <div className="assessment-info">
                                         <strong>Assessment:</strong> {part.assessment}
