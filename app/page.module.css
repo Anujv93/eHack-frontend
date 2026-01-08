@@ -420,7 +420,8 @@
     justify-content: center;
     background: white;
     border-radius: 12px;
-    border: 1px solid #E2E8F0;
+    border: 2px solid var(--brand-primary);
+    box-shadow: 0 4px 12px rgba(223, 103, 24, 0.15);
     transition: all 0.3s ease;
     min-width: 180px;
     overflow: hidden;
@@ -428,9 +429,8 @@
 }
 
 .partnerCard:hover {
-    border-color: var(--brand-primary);
-    box-shadow: 0 4px 12px rgba(223, 103, 24, 0.15);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(223, 103, 24, 0.25);
+    transform: translateY(-4px);
 }
 
 .partnerLogoWrapper {
@@ -452,6 +452,15 @@
 .partnerCard:hover .partnerLogo {
     filter: grayscale(0%);
     opacity: 1;
+}
+
+/* Dark filter for Kennedy University logo (white logo on dark background) */
+.partnerLogoDark {
+    height: 45px;
+    max-width: 140px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: invert(1) brightness(0.2);
 }
 
 .partnerPlaceholder {
