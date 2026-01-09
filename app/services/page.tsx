@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { services, serviceCategories, ServiceItem } from '@/data/services';
 import './services.css';
@@ -8,6 +8,57 @@ import './services.css';
 export default function ServicesPage() {
     const [activeCategory, setActiveCategory] = useState('all');
     const [expandedService, setExpandedService] = useState<string | null>(null);
+    const [highlightedService, setHighlightedService] = useState<string | null>(null);
+    const serviceRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+    const hasScrolled = useRef(false);
+
+    // Effect to handle URL hash on page load
+    useEffect(() => {
+        // Function to handle hash-based navigation
+        const handleHashNavigation = () => {
+            const hash = window.location.hash.slice(1); // Remove the '#' character
+
+            if (hash && !hasScrolled.current) {
+                // Find the service that matches the hash
+                const matchedService = services.find(service => service.id === hash);
+
+                if (matchedService) {
+                    // Set the correct category filter if the service isn't in the current view
+                    if (matchedService.category !== activeCategory && activeCategory !== 'all') {
+                        setActiveCategory('all');
+                    }
+
+                    // Expand and highlight the service
+                    setExpandedService(hash);
+                    setHighlightedService(hash);
+
+                    // Small delay to ensure the DOM is updated before scrolling
+                    setTimeout(() => {
+                        const element = serviceRefs.current[hash];
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            hasScrolled.current = true;
+                        }
+                    }, 100);
+
+                    // Remove highlight after animation completes
+                    setTimeout(() => {
+                        setHighlightedService(null);
+                    }, 2500);
+                }
+            }
+        };
+
+        // Run on initial load
+        handleHashNavigation();
+
+        // Listen for hash changes (in case user navigates via browser back/forward)
+        window.addEventListener('hashchange', handleHashNavigation);
+
+        return () => {
+            window.removeEventListener('hashchange', handleHashNavigation);
+        };
+    }, [activeCategory]);
 
     const filteredServices = activeCategory === 'all'
         ? services
@@ -15,6 +66,10 @@ export default function ServicesPage() {
 
     const toggleService = (id: string) => {
         setExpandedService(expandedService === id ? null : id);
+        // Clear highlight when manually toggling
+        if (highlightedService) {
+            setHighlightedService(null);
+        }
     };
 
     return (
@@ -92,7 +147,9 @@ export default function ServicesPage() {
                                 key={service.id}
                                 service={service}
                                 isExpanded={expandedService === service.id}
+                                isHighlighted={highlightedService === service.id}
                                 onToggle={() => toggleService(service.id)}
+                                cardRef={(el) => { serviceRefs.current[service.id] = el; }}
                             />
                         ))}
                     </div>
@@ -145,12 +202,18 @@ export default function ServicesPage() {
 interface ServiceCardProps {
     service: ServiceItem;
     isExpanded: boolean;
+    isHighlighted?: boolean;
     onToggle: () => void;
+    cardRef?: (el: HTMLDivElement | null) => void;
 }
 
-function ServiceCard({ service, isExpanded, onToggle }: ServiceCardProps) {
+function ServiceCard({ service, isExpanded, isHighlighted, onToggle, cardRef }: ServiceCardProps) {
     return (
-        <div className={`service-card ${isExpanded ? 'expanded' : ''}`}>
+        <div
+            id={service.id}
+            ref={cardRef}
+            className={`service-card ${isExpanded ? 'expanded' : ''} ${isHighlighted ? 'highlighted' : ''}`}
+        >
             <div className="service-card-header" onClick={onToggle}>
                 <div className="service-icon">{service.icon}</div>
                 <div className="service-header-content">

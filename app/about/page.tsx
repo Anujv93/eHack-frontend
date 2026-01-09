@@ -283,6 +283,120 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* Contact Us Section */}
+            <section className="contact-section">
+                <div className="container">
+                    <div className="section-header">
+                        <span className="section-badge section-badge-green">GET IN TOUCH</span>
+                        <h2 className="section-title">Contact Us</h2>
+                        <p className="section-description">
+                            Have questions? We'd love to hear from you. Reach out to us through any of the channels below.
+                        </p>
+                    </div>
+
+                    <div className="contact-grid">
+                        <div className="contact-info-wrapper">
+                            {/* Phone Card */}
+                            <div className="contact-card">
+                                <div className="contact-card-icon contact-icon-phone">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </div>
+                                <div className="contact-card-content">
+                                    <h3 className="contact-card-title">Phone</h3>
+                                    <a href="tel:+919886035330" className="contact-card-link">+91-9886035330</a>
+                                </div>
+                            </div>
+
+                            {/* Email Card */}
+                            <div className="contact-card">
+                                <div className="contact-card-icon contact-icon-email">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div className="contact-card-content">
+                                    <h3 className="contact-card-title">Email</h3>
+                                    <a href="mailto:sanjeevgupta7512@gmail.com" className="contact-card-link">sanjeevgupta7512@gmail.com</a>
+                                </div>
+                            </div>
+
+                            {/* Address Card */}
+                            <div className="contact-card contact-card-address">
+                                <div className="contact-card-icon contact-icon-location">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div className="contact-card-content">
+                                    <h3 className="contact-card-title">Address</h3>
+                                    <p className="contact-card-text">
+                                        <strong>eHack Academy</strong><br />
+                                        No. 202, I Floor, New BEL Road,<br />
+                                        Opposite HP Petrol Pump,<br />
+                                        Bangalore 560094 (India)
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Working Hours Card */}
+                            <div className="contact-card contact-card-hours">
+                                <div className="contact-card-icon contact-icon-clock">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                </div>
+                                <div className="contact-card-content">
+                                    <h3 className="contact-card-title">Working Hours</h3>
+                                    <div className="working-hours-grid">
+                                        <div className="hours-row">
+                                            <span className="hours-days">Tuesday - Sunday</span>
+                                            <span className="hours-time">9:30 AM - 6:30 PM</span>
+                                        </div>
+                                        <div className="hours-row hours-closed">
+                                            <span className="hours-days">Monday</span>
+                                            <span className="hours-time">Closed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Google Map */}
+                        <div className="contact-map-wrapper">
+                            <div className="map-container">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1639088571997!2d77.55799367507656!3d13.024997387278707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d68c8000001%3A0xe7ec9d97db3fe36b!2sNew%20BEL%20Rd%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1704871234567!5m2!1sen!2sin"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="eHack Academy Location"
+                                ></iframe>
+                            </div>
+                            <div className="map-overlay">
+                                <a
+                                    href="https://www.google.com/maps/search/No.+202,+I+Floor,+New+BEL+Road,+Opposite+HP+Petrol+Pump,+Bangalore+560094"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="map-directions-btn"
+                                >
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                    </svg>
+                                    Get Directions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA Section */}
             <section className="cta-section">
                 <div className="container">
