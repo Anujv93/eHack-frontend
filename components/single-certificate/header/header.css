@@ -112,7 +112,15 @@ button {
 /* Responsive */
 @media (max-width: 768px) {
     .hero-banner {
-        padding: 120px 0 50px;
+        padding: 110px 0 40px;
+    }
+
+    .hero-banner .container {
+        padding: 0 20px;
+    }
+
+    .hero-content-wrapper {
+        max-width: 100%;
     }
 
     .hero-badge {
@@ -122,20 +130,47 @@ button {
 
     .hero-title-main {
         font-size: 1.75rem;
+        line-height: 1.2;
     }
 
     .hero-subtitle-main {
         font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .hero-underline {
+        width: 60px;
+        height: 3px;
+        margin-bottom: 16px;
     }
 }
 
 @media (max-width: 480px) {
+    .hero-banner {
+        padding: 100px 0 30px;
+    }
+
+    .hero-banner .container {
+        padding: 0 16px;
+    }
+
     .hero-title-main {
         font-size: 1.5rem;
+    }
+
+    .hero-subtitle-main {
+        font-size: 0.9375rem;
+        line-height: 1.5;
     }
 
     .hero-badge {
         padding: 6px 14px;
         font-size: 0.6rem;
+        margin-bottom: 16px;
+    }
+
+    .hero-underline {
+        width: 50px;
+        margin-bottom: 12px;
     }
 }

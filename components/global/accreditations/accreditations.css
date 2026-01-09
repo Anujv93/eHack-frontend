@@ -96,4 +96,43 @@
     .accreditations-section {
         padding: 3rem 0;
     }
+
+    .accreditations-section .section-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .accreditations-section {
+        padding: 2.5rem 0;
+    }
+
+    .accreditations-section .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .accreditations-section .section-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .accreditations-grid {
+        gap: 0.75rem;
+        justify-content: space-around;
+    }
+
+    .accreditation-item {
+        min-width: calc(50% - 0.75rem);
+        max-width: calc(50% - 0.75rem);
+        padding: 0.875rem;
+    }
+
+    .accreditation-logo,
+    .accreditation-logo-img {
+        height: 50px;
+        margin-bottom: 0.5rem;
+    }
+
+    .accreditation-name {
+        font-size: 0.75rem;
+    }
 }

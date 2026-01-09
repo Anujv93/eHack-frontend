@@ -109,13 +109,79 @@
 @media (max-width: 768px) {
     .exam-cards-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .exam-details-section {
         padding: 3rem 0;
     }
 
+    .exam-details-section .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .exam-details-section .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .exam-card {
+        padding: 1.5rem;
+    }
+
+    .exam-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .exam-description {
+        font-size: 0.875rem;
+    }
+
     .exam-stat .stat-value {
         font-size: 1.25rem;
+    }
+
+    .exam-stat {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .exam-details-section {
+        padding: 2.5rem 0;
+    }
+
+    .exam-card {
+        padding: 1.25rem;
+        border-radius: 10px;
+    }
+
+    .exam-badge {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.625rem;
+    }
+
+    .exam-card h3 {
+        font-size: 1.125rem;
+    }
+
+    .exam-description {
+        font-size: 0.8125rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .exam-stats-grid {
+        gap: 0.75rem;
+    }
+
+    .exam-stat {
+        padding: 0.875rem;
+    }
+
+    .exam-stat .stat-value {
+        font-size: 1.125rem;
+    }
+
+    .exam-stat .stat-label {
+        font-size: 0.625rem;
     }
 }

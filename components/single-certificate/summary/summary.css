@@ -191,3 +191,140 @@
     height: 100%;
     border: none;
 }
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr 350px;
+        gap: var(--space-8);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-main {
+        padding: var(--space-10) 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .hero-left h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-left p {
+        font-size: var(--font-size-base);
+    }
+
+    .hero-features-list li {
+        font-size: var(--font-size-sm);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-black,
+    .btn-outline-black {
+        width: 100%;
+        text-align: center;
+        padding: 12px 24px;
+    }
+
+    .inquiry-form-card {
+        padding: var(--space-6);
+        max-width: 100%;
+    }
+
+    .inquiry-form-card h3 {
+        font-size: var(--font-size-lg);
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 12px 14px;
+        font-size: var(--font-size-sm);
+    }
+
+    .btn-submit {
+        padding: 14px;
+    }
+
+    .video-container,
+    .video-placeholder {
+        margin-top: var(--space-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-main {
+        padding: var(--space-8) 0;
+    }
+
+    .hero-left h2 {
+        font-size: 1.375rem;
+    }
+
+    .hero-left p {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--space-4);
+    }
+
+    .red-underline {
+        width: 50px;
+        height: 3px;
+        margin-bottom: var(--space-4);
+    }
+
+    .hero-features-list {
+        margin-bottom: var(--space-6);
+    }
+
+    .hero-features-list li {
+        font-size: 0.8125rem;
+        margin-bottom: var(--space-2);
+        gap: var(--space-2);
+    }
+
+    .hero-features-list li::before {
+        font-size: var(--font-size-base);
+    }
+
+    .btn-black,
+    .btn-outline-black {
+        padding: 10px 20px;
+        font-size: var(--font-size-sm);
+    }
+
+    .inquiry-form-card {
+        padding: var(--space-5);
+    }
+
+    .inquiry-form-card h3 {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-4);
+    }
+
+    .form-group {
+        margin-bottom: var(--space-3);
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 10px 12px;
+    }
+
+    .btn-submit {
+        padding: 12px;
+        font-size: var(--font-size-sm);
+    }
+
+    .video-placeholder-content svg {
+        width: 48px;
+        height: 48px;
+    }
+}

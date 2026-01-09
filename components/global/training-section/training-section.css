@@ -432,3 +432,132 @@
         gap: var(--space-4);
     }
 }
+
+@media (max-width: 768px) {
+    .ehack-training-section {
+        padding: var(--space-12) 0;
+    }
+
+    .ehack-training-section .section-header {
+        margin-bottom: var(--space-8);
+    }
+
+    .ehack-training-section .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .ehack-pricing-card {
+        padding: var(--space-6);
+    }
+
+    .offer-price {
+        font-size: 2.5rem;
+    }
+
+    .ehack-info-card {
+        padding: var(--space-6);
+    }
+
+    .admission-process {
+        padding: var(--space-6);
+    }
+
+    .step-num {
+        width: 48px;
+        height: 48px;
+        font-size: var(--font-size-xl);
+    }
+
+    .process-step {
+        max-width: 100%;
+    }
+
+    .btn-enroll-now {
+        padding: 14px 24px;
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (max-width: 480px) {
+    .ehack-training-section {
+        padding: var(--space-10) 0;
+    }
+
+    .anniversary-badge {
+        padding: 6px 16px;
+        font-size: var(--font-size-xs);
+    }
+
+    .ehack-pricing-card {
+        padding: var(--space-5);
+        border-radius: 12px;
+    }
+
+    .ehack-pricing-card h3 {
+        font-size: var(--font-size-xl);
+    }
+
+    .offer-price {
+        font-size: 2rem;
+    }
+
+    .original-price {
+        font-size: var(--font-size-base);
+    }
+
+    .ehack-info-card {
+        padding: var(--space-5);
+    }
+
+    .ehack-info-card h4 {
+        font-size: var(--font-size-lg);
+    }
+
+    .batch-option {
+        padding: var(--space-3);
+        gap: var(--space-3);
+    }
+
+    .batch-icon {
+        font-size: 1.5rem;
+    }
+
+    .admission-process {
+        padding: var(--space-5);
+    }
+
+    .admission-process h4 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--space-6);
+    }
+
+    .step-num {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-lg);
+    }
+
+    .step-content h5 {
+        font-size: var(--font-size-sm);
+    }
+
+    .step-content p {
+        font-size: var(--font-size-xs);
+    }
+
+    .process-connector {
+        height: 30px;
+    }
+
+    .btn-enroll-now {
+        padding: 12px 20px;
+        font-size: var(--font-size-sm);
+    }
+
+    .pricing-ribbon {
+        top: 15px;
+        right: -40px;
+        padding: 6px 35px;
+        font-size: 0.6rem;
+    }
+}
