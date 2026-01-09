@@ -256,6 +256,25 @@
     box-shadow: 0 8px 32px rgba(223, 103, 24, 0.08);
 }
 
+/* Highlight animation for cards navigated to via URL hash */
+.service-card.expanded.highlighted {
+    animation: highlightPulse 2s ease-out;
+}
+
+@keyframes highlightPulse {
+    0% {
+        box-shadow: 0 0 0 4px rgba(223, 103, 24, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(223, 103, 24, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 8px 32px rgba(223, 103, 24, 0.08);
+    }
+}
+
 .service-card-header {
     display: flex;
     align-items: center;
