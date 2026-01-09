@@ -165,10 +165,10 @@ export const programs = [
             }
         ],
         targetAudience: [
-            { title: "Career Transitioners", desc: "Professionals from IT, networking, or any technical background seeking to pivot into cybersecurity.", tag: "New to Cybersecurity" },
-            { title: "Security Professionals", desc: "Cybersecurity practitioners looking to upskill, earn global certifications, and advance their careers.", tag: "Skill Enhancement" },
-            { title: "Entrepreneurs", desc: "Business owners and startup founders who want to understand security to protect their digital assets.", tag: "Business Protection" },
-            { title: "Tech Enthusiasts", desc: "Passionate individuals excited about ethical hacking, penetration testing, and cybersecurity.", tag: "Passion Driven" }
+            { title: "Fresh Graduates", desc: "Recent graduates from any stream looking to launch a high-paying career in the booming cybersecurity industry. No prior experience required.", tag: "Zero to Hero" },
+            { title: "Final Year Students", desc: "Complete your degree with job-ready cybersecurity skills and 6 global certifications. Get placed before you graduate.", tag: "Campus to Career" },
+            { title: "Career Switchers", desc: "Professionals from any background ready to transition into cybersecurity. We've trained teachers, accountants, and sales professionals.", tag: "Career Change" },
+            { title: "Tech Enthusiasts", desc: "Passionate about hacking and security? Turn your curiosity into a career with hands-on training from industry experts.", tag: "Passion Driven" }
         ],
         jobRoles: [
             "Ethical Hacker", "Information Security Analyst", "Penetration Tester", "Vulnerability Analyst",
@@ -428,10 +428,10 @@ export const programs = [
             { title: "Study Abroad Programs", desc: "International collaboration with universities and institutions worldwide to provide an enabling environment through constant engagement with global partners." }
         ],
         targetAudience: [
-            { title: "Career Transitioners", desc: "Professionals from IT, networking, or any technical background seeking to pivot into the high-demand cybersecurity field.", tag: "New to Cybersecurity" },
-            { title: "Security Professionals", desc: "Cybersecurity practitioners looking to upskill, earn global certifications, and advance their careers to senior roles.", tag: "Skill Enhancement" },
-            { title: "Entrepreneurs", desc: "Business owners and startup founders who want to understand security to protect their digital assets and customer data.", tag: "Business Protection" },
-            { title: "Tech Enthusiasts", desc: "Passionate individuals excited about ethical hacking, penetration testing, and entering the thrilling world of cybersecurity.", tag: "Passion Driven" }
+            { title: "Fresh Graduates", desc: "Just completed your degree? Start your cybersecurity journey with zero experience. Our beginner-friendly curriculum covers everything from basics to advanced concepts.", tag: "Zero Experience OK" },
+            { title: "Students (2nd-4th Year)", desc: "Building your resume while in college? Get 2 globally recognized EC-Council certifications and real-world skills that set you apart from other freshers.", tag: "Stand Out" },
+            { title: "Career Changers", desc: "Looking to switch from your current job? Our structured program helps you transition smoothly—regardless of your current field or technical background.", tag: "Any Background" },
+            { title: "Aspiring Hackers", desc: "Fascinated by ethical hacking? Learn to think like a hacker while building skills that companies are desperately hiring for—starting salaries of ₹6-8 LPA.", tag: "High Demand" }
         ],
         jobRoles: [
             "Ethical Hacker", "Information Security Analyst", "Penetration Tester",
