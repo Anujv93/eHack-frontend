@@ -1429,6 +1429,35 @@ textarea {
     line-height: 1.7;
 }
 
+/* Disclaimer Notice */
+.disclaimer-notice {
+    background: #FFF9F5;
+    border: 1px solid #E5E5E5;
+    border-left: 4px solid var(--accent);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-6);
+    margin-top: var(--space-8);
+}
+
+.disclaimer-title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--black);
+    margin: 0 0 var(--space-3) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.disclaimer-notice p {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin: 0;
+    font-style: italic;
+}
+
+
+
 /* ============================================
    Learning Experience Section
    ============================================ */

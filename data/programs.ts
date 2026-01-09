@@ -176,8 +176,8 @@ export const programs = [
             "Chief Information Security Officer", "Cybersecurity Consultant", "Incident Response Analyst", "Cloud Security Architect"
         ],
         pricing: {
-            original: "₹3,50,000",
-            discounted: "₹2,80,000",
+            original: "₹5,00,000",
+            discounted: "₹3,50,000",
             emi: "₹23,333/month"
         },
         partnerLogos: [
@@ -473,146 +473,6 @@ export const programs = [
                     { q: "Are there EMI options available?", a: "Yes, we offer flexible EMI options. EMI Option: ₹1,70,000 (30% upfront payment of ₹51,000 + 4 equal EMIs of ₹29,750)." },
                     { q: "Is there any scholarship available?", a: "Merit-based scholarships are available up to ₹20,000 for exceptional candidates. Contact our counselors for eligibility." },
                     { q: "What does the fee include?", a: "The fee covers all training materials, lab access, certification exam vouchers, and 2 years of post-training support." }
-                ]
-            }
-        ]
-    },
-
-    {
-        slug: "diploma-cybersecurity",
-        category: "cybersecurity",
-        title: "Diploma in Ethical Hacking & Cyber Security powered by AI",
-        subtitle: "with 2 Global Certifications",
-        description: "A foundation-level diploma program designed to introduce you to the world of cybersecurity and ethical hacking.",
-        features: "Includes practical labs, hands-on training, and industry-recognized EC-Council certifications.",
-        batchInfo: "IN JANUARY",
-        partner: "EC-Council",
-        partnerLogo: "/images/ec-council-logo.png",
-        ehackLogo: "/ehack-black.png",
-        stats: {
-            startDate: "5th of Every Month",
-            duration: "4-6 Months",
-            mode: "Classroom + Live Online",
-            totalHours: "120 Hours",
-            membership: "6 Months Free Support"
-        },
-        schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
-        certifications: [
-            { code: "CSCU", name: "Certified Secure Computer User", image: "/images/certifications/cert-cscu.jpg" },
-            { code: "CEH", name: "Certified Ethical Hacker", image: "/images/certifications/cert-ceh.jpg" }
-        ],
-        skills: [
-            { name: "Cybersecurity Basics", desc: "Understand fundamental security concepts and best practices." },
-            { name: "Ethical Hacking", desc: "Learn basic hacking techniques and vulnerability assessment." },
-            { name: "Security Tools", desc: "Get hands-on experience with industry security tools." }
-        ],
-        curriculum: [
-            {
-                number: "01",
-                title: "Security Fundamentals & CSCU",
-                duration: "8 Weeks",
-                certification: "EC-Council CSCU",
-                description: "Learn the fundamentals of cybersecurity and secure computing practices from the official EC-Council CSCU curriculum.",
-                topics: [
-                    "Introduction to Data Security",
-                    "Securing Operating Systems",
-                    "Malware & Antivirus Protection",
-                    "Internet & Browser Security",
-                    "Social Networking Security",
-                    "Securing Email Communications",
-                    "Securing Mobile Devices",
-                    "Securing Cloud Accounts",
-                    "Data Backup & Recovery",
-                    "Securing IoT Devices"
-                ]
-            },
-            {
-                number: "02",
-                title: "Ethical Hacking & CEH",
-                duration: "12 Weeks",
-                certification: "EC-Council CEH",
-                description: "Master ethical hacking methodologies and over 550 attack techniques from the official EC-Council CEH v13 curriculum.",
-                topics: [
-                    "Introduction to Ethical Hacking",
-                    "Footprinting & Reconnaissance",
-                    "Scanning Networks",
-                    "Enumeration Techniques",
-                    "Vulnerability Analysis",
-                    "System Hacking",
-                    "Malware Threats",
-                    "Sniffing & Packet Analysis",
-                    "Social Engineering Attacks",
-                    "Denial-of-Service (DoS/DDoS)",
-                    "Session Hijacking",
-                    "Evading IDS, Firewalls & Honeypots",
-                    "Hacking Web Servers",
-                    "Hacking Web Applications",
-                    "SQL Injection Attacks",
-                    "Hacking Wireless Networks",
-                    "Cloud Computing Security",
-                    "Cryptography"
-                ]
-            }
-        ],
-        targetAudience: [
-            { title: "Beginners", desc: "Complete beginners looking to start a career in cybersecurity.", tag: "No Experience Needed" },
-            { title: "Students", desc: "College students wanting to build cybersecurity skills.", tag: "Academic" },
-            { title: "Career Changers", desc: "Professionals from other fields exploring cybersecurity.", tag: "Career Switch" }
-        ],
-        jobRoles: [
-            "Junior Security Analyst", "IT Security Associate", "Security Operations Assistant", "Cyber Security Intern"
-        ],
-        pricing: {
-            original: "₹1,50,000",
-            discounted: "₹99,000",
-            emi: "₹8,250/month"
-        },
-        partnerLogos: [
-            "/images/partners/checkpoint.png",
-            "/images/partners/oracle.png",
-            "/images/partners/hpe.png",
-            "/images/partners/dell.png",
-            "/images/partners/ntt.png"
-        ],
-        whyEhack: [
-            { title: "Real Time Labs", desc: "Associated with EC-Council and CISCO, we ensure candidates get exposed to real time labs - how vulnerabilities are found and exploited, how pen testing is done for a network." },
-            { title: "World Class Infrastructure", desc: "Lab infrastructure built according to EC-Council and Cisco standards with dedicated high speed broadband connectivity and well stacked library resources." },
-            { title: "Certified Faculties", desc: "Our experienced instructors are duly certified by EC-Council and CISCO, providing the latest internationally practiced technological knowledge." },
-            { title: "Study Abroad Programs", desc: "International collaboration with universities and institutions worldwide to provide an enabling environment through constant engagement with global partners." }
-        ],
-        programExcellence: [
-            { title: "Real Time Labs", desc: "Hands-on experience with industry-standard security tools.", icon: "lab" },
-            { title: "World Class Infrastructure", desc: "Modern training facilities with latest technology.", icon: "infrastructure" },
-            { title: "Certified Faculties", desc: "Learn from EC-Council certified instructors.", icon: "certificate" },
-            { title: "Study Abroad Programs", desc: "International training opportunities.", icon: "global" }
-        ],
-        faq: [
-            {
-                category: "Career",
-                questions: [
-                    { q: "What jobs can I get?", a: "Entry-level roles like Junior Security Analyst, IT Security Associate, and Security Operations Assistant." },
-                    { q: "Will I get placement support?", a: "Yes, we provide placement assistance including resume building and interview prep." }
-                ]
-            },
-            {
-                category: "Certifications",
-                questions: [
-                    { q: "Are certifications included?", a: "Yes, the program includes 2 globally recognized EC-Council certifications." },
-                    { q: "What is the pass rate?", a: "Our students have a 95%+ pass rate." }
-                ]
-            },
-            {
-                category: "Fees",
-                questions: [
-                    { q: "Are EMI options available?", a: "Yes, EMI starts from ₹8,250/month." },
-                    { q: "What does the fee include?", a: "Training, lab access, and certification exam vouchers." }
-                ]
-            },
-            {
-                category: "Eligibility",
-                questions: [
-                    { q: "What is the minimum qualification?", a: "No prior experience needed. Anyone can join." },
-                    { q: "Can working professionals join?", a: "Yes, we have flexible batch timings." }
                 ]
             }
         ]

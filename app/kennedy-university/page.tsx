@@ -629,8 +629,14 @@ export default function KennedyUniversityPage() {
                         <img src="/ehack-black.png" alt="eHack Academy" className="ehack-role-logo" />
                         <div className="ehack-role-content">
                             <h4>eHack Academy - Training &amp; Facilitation Partner</h4>
-                            <p>eHack Academy serves as the training and facilitation partner, providing world-class instruction, AI-powered labs, mentorship, and career support to help you succeed in your cybersecurity journey.</p>
+                            <p>eHack Academy acts as a training and facilitation partner only. Certifications and degrees are awarded solely by EC-Council and Kennedy University respectively, as per their norms. </p>
                         </div>
+                    </div>
+
+                    {/* Disclaimer */}
+                    <div className="disclaimer-notice">
+                        <h5 className="disclaimer-title">Disclaimer</h5>
+                        <p>Students are advised to independently verify accreditation, recognition, program structure, and validity directly from the official websites of EC-Council and Kennedy University. eHack Academy shall not be responsible for any decisions made by students without conducting their own due diligence prior to enrollment.</p>
                     </div>
                 </div>
             </section>
@@ -837,20 +843,7 @@ export default function KennedyUniversityPage() {
                 </div>
             </section>
 
-            {/* Disclaimer Section */}
-            <section className="disclaimer-section">
-                <div className="section-container">
-                    <div className="disclaimer-card">
-                        <h4>⚠️ Important Disclaimer</h4>
-                        <p>eHack Academy acts as a training and facilitation partner only. Certifications and degrees are
-                            awarded solely by EC-Council and Kennedy University respectively, as per their norms. Students are
-                            advised to independently verify accreditation, recognition, program structure, and validity directly
-                            from the official websites of EC-Council and Kennedy University. eHack Academy shall not be
-                            responsible for any decisions made by students without conducting their own due diligence prior to
-                            enrollment.</p>
-                    </div>
-                </div>
-            </section>
+
 
             {/* WhatsApp Widget */}
             <a href="https://wa.me/919876543210" className="whatsapp-widget" aria-label="Chat on WhatsApp">
