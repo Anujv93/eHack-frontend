@@ -2331,236 +2331,356 @@
 }
 
 /* ============================================
-   Pricing Section - Clean Light Theme
+   Pricing Section - Professional Full-Width Design
    ============================================ */
 .pricing-section {
-    background: #f5f7fa;
-    padding: 60px 0;
-    position: relative;
+    background: #ffffff;
+    padding: 80px 0;
+    border-top: 1px solid #e5e7eb;
 }
 
-.pricing-container {
-    max-width: 600px;
+.pricing-container-full {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
+    padding: 0 24px;
 }
 
-.pricing-badge {
-    display: inline-block;
-    background: #fff5eb;
-    color: #c2410c;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 6px 12px;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    border: 1.5px solid #df6718;
+.pricing-header {
+    text-align: center;
+    margin-bottom: 48px;
 }
 
 .pricing-title {
-    font-size: 28px;
-    font-weight: 800;
-    color: #1a202c;
-    text-align: center;
-    margin-bottom: 8px;
-    line-height: 1.2;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
 }
 
 .pricing-subtitle {
-    text-align: center;
-    color: #64748b;
-    font-size: 14px;
-    margin-bottom: 32px;
-    line-height: 1.5;
-}
-
-.pricing-card {
-    display: block;
-    background: #ffffff;
-    border: 2px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 32px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    position: relative;
-}
-
-.pricing-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #df6718 0%, #f59e0b 100%);
-    border-radius: 14px 14px 0 0;
-}
-
-.offer-badge {
-    display: inline-block;
-    background: #df6718;
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 8px 16px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.price-wrapper {
-    text-align: center;
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.original-price {
     font-size: 16px;
-    color: #94a3b8;
-    text-decoration: line-through;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Two Column Layout */
+.pricing-content-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Left Column - Main Pricing */
+.pricing-main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Fee Sections */
+.fee-section {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px 24px;
+}
+
+.fee-section.primary {
+    background: #eff6ff;
+    border: 2px solid #3b82f6;
+}
+
+.fee-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 8px;
 }
 
-.current-price {
-    font-size: 42px;
-    font-weight: 900;
-    color: #df6718;
-    line-height: 1;
-    margin-bottom: 12px;
-}
-
-.current-price .currency {
-    font-size: 24px;
-    vertical-align: super;
-    font-weight: 800;
-}
-
-.savings-badge {
-    display: inline-block;
-    background: #d1fae5;
-    color: #065f46;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 14px;
-    border: 1.5px solid #10b981;
-}
-
-.emi-info {
-    text-align: center;
-    background: #eff6ff;
-    color: #1e40af;
-    font-size: 13px;
-    padding: 12px 16px;
-    border-radius: 10px;
-    margin-bottom: 24px;
-    border: 1px solid #bfdbfe;
-}
-
-.emi-info strong {
-    color: #1e3a8a;
-    font-weight: 700;
-}
-
-.pricing-benefits {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 24px 0;
-}
-
-.pricing-benefits li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    color: #334155;
+.fee-label-text {
     font-size: 14px;
-    padding: 10px 0;
-    line-height: 1.5;
-}
-
-.pricing-benefits li .benefit-icon {
-    color: #df6718;
-    font-size: 18px;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.pricing-cta {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #e2e8f0;
-}
-
-.btn-enroll {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 16px 32px;
-    background: #df6718;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 700;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 14px rgba(223, 103, 24, 0.3);
+    font-weight: 600;
+    color: #374151;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.btn-enroll:hover {
-    background: #c2410c;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(223, 103, 24, 0.4);
+.fee-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
 }
 
-.btn-enroll span {
-    font-size: 18px;
+.fee-value-large {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e40af;
 }
 
-.contact-info {
-    text-align: center;
-    margin-top: 16px;
-    color: #64748b;
+.fee-note-text {
     font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+    font-style: italic;
 }
 
-.contact-info a {
+/* Payment Plans Section */
+.payment-plans-section {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.section-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.01em;
+}
+
+.plan-option {
+    padding: 16px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.plan-option:last-child {
+    margin-bottom: 0;
+}
+
+.plan-option:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.plan-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.plan-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e40af;
+}
+
+.plan-description {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Important Notice */
+.important-notice {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 16px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #92400e;
+    line-height: 1.6;
+}
+
+.important-notice strong {
+    font-weight: 700;
+    color: #78350f;
+}
+
+/* Right Column - Financing & Benefits */
+.pricing-side-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Financing Box */
+.financing-box {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.financing-description {
+    font-size: 14px;
+    color: #166534;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+.financing-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.financing-item {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #bbf7d0;
+}
+
+.financing-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.financing-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #14532d;
+    margin: 0 0 6px 0;
+}
+
+.financing-desc {
+    font-size: 13px;
+    color: #166534;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* What's Included Box */
+.whats-included-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.included-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.included-list li {
+    padding: 10px 0;
+    padding-left: 24px;
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.6;
+    position: relative;
+}
+
+.included-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.included-list li:not(:last-child) {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* CTA Section */
+.pricing-cta-section {
+    text-align: center;
+    padding-top: 32px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.btn-enroll-primary {
+    background: #df6718;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 48px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-enroll-primary:hover {
+    background: #c2410c;
+    box-shadow: 0 4px 12px rgba(223, 103, 24, 0.3);
+    transform: translateY(-1px);
+}
+
+.cta-contact {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.cta-contact a {
     color: #df6718;
     text-decoration: none;
     font-weight: 600;
 }
 
-.contact-info a:hover {
+.cta-contact a:hover {
     text-decoration: underline;
 }
 
-/* Responsive */
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pricing-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
 @media (max-width: 768px) {
     .pricing-section {
-        padding: 40px 0;
+        padding: 60px 0;
     }
 
-    .pricing-card {
-        padding: 24px;
+    .pricing-container-full {
+        padding: 0 20px;
     }
 
-    .current-price {
-        font-size: 36px;
+    .pricing-title {
+        font-size: 26px;
     }
 
-    .current-price .currency {
-        font-size: 20px;
-    }
-
-    .btn-enroll {
+    .pricing-subtitle {
         font-size: 14px;
-        padding: 14px 28px;
+    }
+
+    .pricing-header {
+        margin-bottom: 32px;
+    }
+
+    .fee-value-large {
+        font-size: 24px;
+    }
+
+    .plan-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .plan-price {
+        font-size: 18px;
+    }
+
+    .btn-enroll-primary {
+        width: 100%;
+        padding: 16px 32px;
     }
 }
 

@@ -178,7 +178,14 @@ export const programs = [
         pricing: {
             original: "₹5,00,000",
             discounted: "₹3,50,000",
-            emi: "₹23,333/month"
+            emi: "₹23,333/month",
+            applicationFee: "₹1,000",
+            admissionFee: "₹3,50,000",
+            companyEMI: "₹4,00,000",
+            upfrontPercentage: "50%",
+            upfrontAmount: "₹2,00,000",
+            emiCount: 4,
+            emiAmount: "₹50,000"
         },
         partnerLogos: [
             "/images/partners/checkpoint.png",
@@ -434,7 +441,14 @@ export const programs = [
         pricing: {
             original: "₹2,05,000",
             discounted: "₹1,50,000",
-            emi: "₹29,750/month (4 EMIs after 30% upfront)"
+            emi: "₹29,750/month (4 EMIs after 30% upfront)",
+            applicationFee: "₹1,000",
+            admissionFee: "₹1,50,000",
+            companyEMI: "₹1,70,000",
+            upfrontPercentage: "30%",
+            upfrontAmount: "₹51,000",
+            emiCount: 4,
+            emiAmount: "₹29,750"
         },
         partnerLogos: [
             "/images/partners/checkpoint.png",
