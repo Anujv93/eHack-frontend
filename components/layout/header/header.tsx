@@ -285,7 +285,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         <div className="kennedy-logos-vertical">
                                             {/* EC-Council on top */}
                                             <div className="kennedy-logo-row">
-                                                <img src="/images/ec-council-logo.png" alt="EC-Council" className="kennedy-logo-img ec-council" />
+                                                <img src="/images/ehack-logo.png" alt="EC-Council" className="kennedy-logo-img ec-council" />
                                             </div>
                                             {/* Handshake divider */}
                                             <div className="kennedy-handshake-divider">
@@ -299,7 +299,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                             </div>
                                         </div>
                                         <p className="kennedy-text">
-                                            Earn internationally accredited degrees in collaboration with EC-Council certifications
+                                            Earn internationally accredited degrees in collaboration with Kennedy University
                                         </p>
                                         <span className="kennedy-cta">Learn More →</span>
                                     </Link>
@@ -310,10 +310,6 @@ export default function Header({ partners, courses }: HeaderProps) {
                             <div className="mega-menu-originals-full">
                                 <h4 className="mega-menu-heading">eHack Signature Programs</h4>
                                 <div className="mega-originals-grid">
-                                    <Link href="/programs/diploma-cybersecurity" className="mega-original-card" onClick={() => setMegaMenuOpen(false)}>
-                                        <span className="original-title">Diploma in Cybersecurity</span>
-                                        <span className="original-subtitle">Foundation Program</span>
-                                    </Link>
                                     <Link href="/programs/graduate-cybersecurity" className="mega-original-card" onClick={() => setMegaMenuOpen(false)}>
                                         <span className="original-title">Graduate Program</span>
                                         <span className="original-subtitle">Advanced Training</span>
