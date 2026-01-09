@@ -70,10 +70,52 @@
 
 @media (max-width: 768px) {
     .top-bar {
+        padding: 0.5rem 0;
+    }
+
+    .top-bar-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .contact-item {
+        font-size: 0.875rem;
+    }
+
+    .divider {
         display: none;
     }
 
     .promo-bar {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .promo-text {
+        font-size: 14px !important;
+        line-height: 1.4;
+    }
+
+    .promo-link {
+        font-size: 14px;
+        display: inline;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
         display: none;
+    }
+
+    .promo-bar {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .promo-text {
+        font-size: 12px !important;
+    }
+
+    .promo-link {
+        font-size: 12px;
     }
 }

@@ -1,46 +1,98 @@
 /* Testimonials Section - Premium Design */
 .testimonials-section {
-    padding: 0 0 8rem 0;
-    /* Subtle contrast background */
+    padding: 0 0 4rem 0;
     background: #FAFAFA;
     position: relative;
     overflow: hidden;
 }
 
+@media (min-width: 481px) {
+    .testimonials-section {
+        padding: 0 0 6rem 0;
+    }
+}
+
+@media (min-width: 1025px) {
+    .testimonials-section {
+        padding: 0 0 8rem 0;
+    }
+}
+
 .testimonials-container {
-    max-width: 1200px;
+    max-width: var(--container-max-width, 1200px);
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 var(--container-padding, 1rem);
     position: relative;
     z-index: 2;
 }
 
 .testimonials-header {
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 481px) {
+    .testimonials-header {
+        margin-bottom: 3.5rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .testimonials-header {
+        margin-bottom: 5rem;
+    }
 }
 
 .testimonials-label {
     display: inline-flex;
     align-items: center;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--brand-primary);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 1.5rem;
-    padding: 0.6rem 1.25rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
     background: #FFF;
     border-radius: 100px;
     border: 1px solid rgba(255, 107, 0, 0.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
+@media (min-width: 481px) {
+    .testimonials-label {
+        font-size: 0.8125rem;
+        padding: 0.5rem 1.125rem;
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .testimonials-label {
+        font-size: 0.875rem;
+        letter-spacing: 2px;
+        margin-bottom: 1.5rem;
+        padding: 0.6rem 1.25rem;
+    }
+}
+
 .testimonials-title {
-    font-size: 3rem;
+    font-size: 1.75rem;
     font-weight: 800;
     color: var(--neutral-900);
     letter-spacing: -0.5px;
+}
+
+@media (min-width: 481px) {
+    .testimonials-title {
+        font-size: 2.25rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .testimonials-title {
+        font-size: 3rem;
+    }
 }
 
 /* Trusted By Section - Premium Redesign */
