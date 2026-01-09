@@ -627,75 +627,115 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
             {/* Pricing Section */}
             <section className="pricing-section">
-                <div className="pricing-container">
-                    <span className="pricing-badge">LIMITED TIME OFFER</span>
-                    <h2 className="pricing-title">Program Investment</h2>
-                    <p className="pricing-subtitle">
-                        Transform your career with industry-leading {program.slug.includes('digital-marketing') ? 'digital marketing' : 'cybersecurity'} training. Flexible payment options available.
-                    </p>
+                <div className="pricing-container-full">
+                    <div className="pricing-header">
+                        <h2 className="pricing-title">Program Investment & Financing</h2>
+                        <p className="pricing-subtitle">
+                            Flexible payment options designed to make quality education accessible
+                        </p>
+                    </div>
 
-                    <div className="pricing-card">
-                        <span className="offer-badge">🎉 10th Anniversary Special</span>
+                    <div className="pricing-content-wrapper">
+                        {/* Left Column - Main Pricing */}
+                        <div className="pricing-main-column">
+                            {/* Application Fee */}
+                            {program.pricing.applicationFee && (
+                                <div className="fee-section">
+                                    <div className="fee-row">
+                                        <span className="fee-label-text">Application Fee</span>
+                                        <span className="fee-value">{program.pricing.applicationFee}</span>
+                                    </div>
+                                    <p className="fee-note-text">Will be adjusted in the program fee. *GST as applicable</p>
+                                </div>
+                            )}
 
-                        <div className="price-wrapper">
-                            <div className="original-price">{program.pricing.original}</div>
-                            <div className="current-price">
-                                <span className="currency">₹</span>
-                                {program.pricing.discounted.replace('₹', '').replace(',', '')}
+                            {/* Admission Fee */}
+                            {program.pricing.admissionFee && (
+                                <div className="fee-section primary">
+                                    <div className="fee-row">
+                                        <span className="fee-label-text">Program Admission Fee</span>
+                                        <span className="fee-value-large">{program.pricing.admissionFee}</span>
+                                    </div>
+                                    <p className="fee-note-text">*GST as applicable</p>
+                                </div>
+                            )}
+
+                            {/* Payment Plans */}
+                            {(program.pricing.companyEMI || program.pricing.upfrontAmount) && (
+                                <div className="payment-plans-section">
+                                    <h3 className="section-heading">Payment Plans</h3>
+
+                                    {program.pricing.companyEMI && (
+                                        <div className="plan-option">
+                                            <div className="plan-header">
+                                                <h4 className="plan-name">Company EMI Plan</h4>
+                                                <span className="plan-price">{program.pricing.companyEMI}</span>
+                                            </div>
+                                            <p className="plan-description">Complete flexibility with company-sponsored EMI option</p>
+                                        </div>
+                                    )}
+
+                                    {program.pricing.upfrontAmount && (
+                                        <div className="plan-option">
+                                            <div className="plan-header">
+                                                <h4 className="plan-name">{program.pricing.upfrontPercentage} Upfront Payment</h4>
+                                                <span className="plan-price">{program.pricing.upfrontAmount}</span>
+                                            </div>
+                                            <p className="plan-description">
+                                                Balance payable in {program.pricing.emiCount} equal EMIs of {program.pricing.emiAmount} each
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {/* Important Notice */}
+                            <div className="important-notice">
+                                <strong>Placement Support:</strong> Students requiring placement assistance need to pay a separate fee.
                             </div>
-                            {(() => {
-                                const original = parseInt(program.pricing.original.replace(/[₹,]/g, ''));
-                                const discounted = parseInt(program.pricing.discounted.replace(/[₹,]/g, ''));
-                                const savings = original - discounted;
-                                const percentage = Math.round((savings / original) * 100);
-                                return (
-                                    <span className="savings-badge">
-                                        Save ₹{savings.toLocaleString('en-IN')} ({percentage}% OFF)
-                                    </span>
-                                );
-                            })()}
                         </div>
 
-                        <div className="emi-info">
-                            💳 <strong>EMI Available:</strong> {program.pricing.emi}
-                        </div>
+                        {/* Right Column - Financing & Benefits */}
+                        <div className="pricing-side-column">
+                            {/* Financing Options */}
+                            <div className="financing-box">
+                                <h3 className="section-heading">Financing Options</h3>
+                                <p className="financing-description">
+                                    We offer multiple financing solutions to make our programs accessible to all students.
+                                </p>
 
-                        <ul className="pricing-benefits">
-                            <li>
-                                <span className="benefit-icon">✓</span>
-                                <span>{program.certifications.length} {program.slug.includes('digital-marketing') ? 'Professional' : 'Global EC-Council'} Certifications</span>
-                            </li>
-                            <li>
-                                <span className="benefit-icon">✓</span>
-                                <span>{program.stats.totalHours} of Hands-on Training</span>
-                            </li>
-                            <li>
-                                <span className="benefit-icon">✓</span>
-                                <span>Real-Time Labs & Practice Environment</span>
-                            </li>
-                            <li>
-                                <span className="benefit-icon">✓</span>
-                                <span>{program.stats.membership} Post-Training Support</span>
-                            </li>
-                            <li>
-                                <span className="benefit-icon">✓</span>
-                                <span>Program Completion Certificate</span>
-                            </li>
-                            <li>
-                                <span className="benefit-icon">✓</span>
-                                <span>{program.slug === "masters-ethical-hacking" ? "100% Placement Assistance" : "Internship Opportunities"}</span>
-                            </li>
-                        </ul>
+                                <div className="financing-list">
+                                    <div className="financing-item">
+                                        <h4 className="financing-name">No Cost EMI (Internal)</h4>
+                                        <p className="financing-desc">Zero interest installments through our internal program</p>
+                                    </div>
 
-                        <div className="pricing-cta">
-                            <button className="btn-enroll">
-                                Enroll Now - Secure Your Spot
-                                <span>→</span>
-                            </button>
-                            <p className="contact-info">
-                                Have questions? Call us at <a href="tel:+919886035330">+91-9886035330</a>
-                            </p>
+                                    <div className="financing-item">
+                                        <h4 className="financing-name">Bank/NBFC Financing</h4>
+                                        <p className="financing-desc">Flexible payment plans through partner banks and NBFCs</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* What's Included */}
+                            <div className="whats-included-box">
+                                <h3 className="section-heading">What's Included</h3>
+                                <ul className="included-list">
+                                    <li>{program.certifications.length} {program.slug.includes('digital-marketing') ? 'Professional' : 'Global EC-Council'} Certifications</li>
+                                    <li>{program.stats.totalHours} of Hands-on Training</li>
+                                    <li>Real-Time Labs & Practice Environment</li>
+                                    <li>{program.stats.membership} Post-Training Support</li>
+                                    <li>Program Completion Certificate</li>
+                                    <li>{program.slug === "masters-ethical-hacking" ? "100% Placement Assistance" : "Internship Opportunities"}</li>
+                                </ul>
+                            </div>
                         </div>
+                    </div>
+
+                    {/* CTA Section */}
+                    <div className="pricing-cta-section">
+                        <button className="btn-enroll-primary">Enroll Now</button>
+                        <p className="cta-contact">Questions? Call us at <a href="tel:+919886035330">+91-9886035330</a></p>
                     </div>
                 </div>
             </section>
