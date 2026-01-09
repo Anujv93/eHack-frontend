@@ -351,43 +351,97 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </section>
 
-            {/* 12. CURRICULUM SECTION */}
-            <section className="curriculum-section" id="curriculum">
-                <div className="curriculum-container">
-                    <div className="curriculum-header">
-                        <div className="curriculum-header-left">
-                            <span className="curriculum-badge">Program Curriculum</span>
-                            <h2 className="curriculum-title">Master {programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'}<br />Through Practice</h2>
-                            <p className="curriculum-subtitle">{programType === 'digital-marketing' ? 'A structured learning path designed by industry experts.' : programType === 'robotics' ? 'A hands-on learning journey designed for beginners.' : 'A structured learning path taking you from fundamentals to advanced penetration testing.'}</p>
+            {/* 12. CURRICULUM SECTION - Modern Redesign */}
+            <section className="curriculum-section-modern" id="curriculum">
+                <div className="curriculum-container-modern">
+                    {/* Header */}
+                    <div className="curriculum-header-modern">
+                        <div className="curriculum-header-content">
+                            <span className="curriculum-eyebrow">LEARNING PATH</span>
+                            <h2 className="curriculum-title-modern">
+                                Your Journey to Becoming a<br />
+                                <span className="text-accent">{programType === 'digital-marketing' ? 'Digital Marketing Expert' : programType === 'robotics' ? 'Robotics Engineer' : 'Cybersecurity Professional'}</span>
+                            </h2>
+                            <p className="curriculum-subtitle-modern">
+                                {programType === 'digital-marketing'
+                                    ? 'A structured learning path designed by industry experts to take you from beginner to job-ready.'
+                                    : programType === 'robotics'
+                                        ? 'A hands-on learning journey designed for absolute beginners.'
+                                        : 'A structured learning path taking you from fundamentals to advanced penetration testing with globally recognized certifications.'
+                                }
+                            </p>
                         </div>
-                        <div className="curriculum-stats">
-                            <div className="curr-stat"><div className="curr-stat-value">{program.curriculum.length}</div><div className="curr-stat-label">Modules</div></div>
-                            <div className="curr-stat"><div className="curr-stat-value">{program.stats.totalHours}</div><div className="curr-stat-label">Hours</div></div>
-                            <div className="curr-stat"><div className="curr-stat-value">{program.certifications.length}</div><div className="curr-stat-label">Certifications</div></div>
+                        <div className="curriculum-stats-modern">
+                            <div className="curr-stat-modern">
+
+                                <div className="curr-stat-value-modern">{program.curriculum.length}</div>
+                                <div className="curr-stat-label-modern">Modules</div>
+                            </div>
+                            <div className="curr-stat-modern">
+
+                                <div className="curr-stat-value-modern">{program.stats.totalHours}</div>
+                                <div className="curr-stat-label-modern">Hours</div>
+                            </div>
+                            <div className="curr-stat-modern">
+
+                                <div className="curr-stat-value-modern">{program.certifications.length}</div>
+                                <div className="curr-stat-label-modern">Certifications</div>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="curriculum-modules">
+                    {/* Timeline Modules */}
+                    <div className="curriculum-timeline">
                         {program.curriculum.map((module, idx) => (
-                            <div key={idx} className="curriculum-module">
-                                <div className={`module-card ${activeModule === idx ? 'active' : ''}`}>
-                                    <div className="module-header" onClick={() => toggleModule(idx)}>
-                                        <div className="module-number-box">{module.number}</div>
-                                        <div className="module-header-content">
-                                            <h4 className="module-card-title">{module.title}</h4>
-                                            <div className="module-meta">
-                                                <span className="module-duration">⏱️ {module.duration}</span>
-                                                {module.certification && <span className="module-cert-badge">Certification: {module.certification}</span>}
+                            <div key={idx} className={`curriculum-module-modern ${activeModule === idx ? 'active' : ''}`}>
+                                {/* Timeline Connector */}
+                                <div className="timeline-connector">
+                                    <div className={`timeline-dot ${module.certification ? 'has-cert' : ''}`}>
+                                        {module.certification ? '🏅' : module.number}
+                                    </div>
+                                    {idx < program.curriculum.length - 1 && <div className="timeline-line"></div>}
+                                </div>
+
+                                {/* Module Card */}
+                                <div className="module-card-modern" onClick={() => toggleModule(idx)}>
+                                    <div className="module-card-header">
+                                        <div className="module-info">
+                                            <span className="module-number-label">Module {module.number}</span>
+                                            <h4 className="module-title-modern">{module.title}</h4>
+                                            <div className="module-meta-modern">
+                                                <span className="module-duration-modern">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                                    {module.duration}
+                                                </span>
+                                                {module.certification && (
+                                                    <span className="module-cert-modern">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                                                        {module.certification}
+                                                    </span>
+                                                )}
                                             </div>
                                         </div>
-                                        <div className="module-expand-icon">{activeModule === idx ? '▲' : '▼'}</div>
+                                        <div className="module-expand-modern">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={activeModule === idx ? 'rotated' : ''}>
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </div>
                                     </div>
+
+                                    {/* Expanded Content */}
                                     {activeModule === idx && (
-                                        <div className="module-details">
-                                            <p className="module-description">{module.description}</p>
-                                            <div className="module-topics-label">What you'll learn</div>
-                                            <div className="module-tags">
-                                                {module.topics.map((topic, tidx) => <span key={tidx} className="tag">{topic}</span>)}
+                                        <div className="module-content-modern">
+                                            <p className="module-description-modern">{module.description}</p>
+                                            <div className="module-topics-modern">
+                                                <span className="topics-label">What you'll learn:</span>
+                                                <div className="topics-grid">
+                                                    {module.topics.map((topic, tidx) => (
+                                                        <span key={tidx} className="topic-item">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                            {topic}
+                                                        </span>
+                                                    ))}
+                                                </div>
                                             </div>
                                         </div>
                                     )}
@@ -396,12 +450,18 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         ))}
                     </div>
 
-                    <div className="curriculum-footer">
-                        <div className="curriculum-total">
-                            <div className="total-item"><div className="total-icon">⏱️</div><div className="total-text"><strong>300+ Hours</strong><span>Hands-on Training</span></div></div>
-                            <div className="total-item"><div className="total-icon">🛡️</div><div className="total-text"><strong>{program.certifications.length} Certifications</strong><span>{programType === 'cybersecurity' ? 'EC-Council Accredited' : 'Industry Recognized'}</span></div></div>
+                    {/* Footer CTA */}
+                    <div className="curriculum-footer-modern">
+                        <div className="footer-content">
+                            <div className="footer-info">
+                                <h3>Want the complete curriculum details?</h3>
+                                <p>Download the detailed syllabus with module breakdowns, project details, and certification information.</p>
+                            </div>
+                            <button className="btn-download-modern">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                Download Curriculum PDF
+                            </button>
                         </div>
-                        <button className="btn-download-brochure">📥 Download Curriculum</button>
                     </div>
                 </div>
             </section>
