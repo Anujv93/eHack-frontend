@@ -512,7 +512,7 @@ export const programs = [
         },
         schedule: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off)",
         certifications: [
-            { code: "DIGITAL", name: "eHack Digital Academy Certificate", image: "/images/certificates/digital-marketing-certificate.jpg" }
+            { code: "DIGITAL", name: "eHack Digital Academy Certificate", image: "/images/certificates/digital-marketing-certificate.jpeg" }
         ],
         skills: [
             { name: "Website Design", desc: "Create and design websites from scratch with zero-code knowledge using modern website builders and design tools." },
@@ -694,7 +694,7 @@ export const programs = [
         },
         schedule: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off)",
         certifications: [
-            { code: "ROBOTICS", name: "eHack Academy Robotics Certificate", image: "/images/certificates/robotics-certificate.jpg" }
+            { code: "ROBOTICS", name: "eHack Academy Robotics Certificate", image: "/images/certificates/robotics-image.jpeg" }
         ],
         skills: [
             { name: "Introduction to Robotics", desc: "Learn the fundamentals of robotics and control systems, understanding how robots work and interact with their environment." },

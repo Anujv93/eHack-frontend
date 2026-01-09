@@ -694,23 +694,16 @@
 
 .skill-card {
     background: var(--white);
-    padding: var(--space-8);
+    padding: var(--space-6);
     transition: all 0.2s ease;
-    border: 1px solid var(--gray-200);
+    border: 1px solid var(--accent);
     border-radius: 8px;
-    /* Consistent rounded corners */
+    height: 100%;
 }
 
 .skill-card:hover {
-    border-color: var(--accent);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     transform: translateY(-4px);
-}
-
-.skill-icon {
-    font-size: 1.5rem;
-    margin-bottom: var(--space-4);
-    opacity: 0.6;
 }
 
 .skill-name {

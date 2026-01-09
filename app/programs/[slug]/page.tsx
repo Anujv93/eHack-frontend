@@ -194,9 +194,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <div className="skills-grid">
                         {program.skills.map((skill, idx) => (
                             <div key={idx} className="skill-card">
-                                <div className="skill-icon">
-                                    {['🛡️', '🔐', '⏱️', '💻', '📊', '🗄️'][idx % 6]}
-                                </div>
+
                                 <h3 className="skill-name">{skill.name}</h3>
                                 <p className="skill-desc">{skill.desc}</p>
                             </div>
