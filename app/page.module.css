@@ -401,15 +401,23 @@
 }
 
 .partnersLabel {
-    display: block;
-    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 1.5rem auto 2.5rem;
     text-align: center;
-    font-size: 1.125rem;
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 2.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--brand-primary);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    padding: 0.6rem 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 100px;
+    border: 1px solid rgba(255, 107, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(255, 107, 0, 0.08);
 }
 
 .partnersGrid {

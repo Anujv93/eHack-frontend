@@ -360,7 +360,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             {/* Partners Section */}
             <section className={styles.partners}>
                 <div className={styles.container}>
-                    <p className={styles.partnersLabel}>Trusted by World&apos;s Leading Certification Partners</p>
+                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                        <span className={styles.partnersLabel}>Trusted by World&apos;s Leading Certification Partners</span>
+                    </div>
                     <div className={styles.partnersGrid}>
                         {/* Reorder partners: EC-Council first, Kennedy University second */}
                         {(() => {
