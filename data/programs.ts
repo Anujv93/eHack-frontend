@@ -15,7 +15,7 @@ export const programs = [
             startDate: "5th of Every Month",
             duration: "9-12 Months",
             mode: "Classroom + Live Online",
-            totalHours: "300 Hours",
+            totalHours: "300 ",
             membership: "2 Years Free Support"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
@@ -271,7 +271,7 @@ export const programs = [
             startDate: "5th of Every Month",
             duration: "7-9 Months",
             mode: "Classroom + Live Online",
-            totalHours: "200+ Hours",
+            totalHours: "200+ ",
             membership: "2 Years Free Support"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
@@ -507,7 +507,7 @@ export const programs = [
             startDate: "5th of Every Month",
             duration: "4 Months",
             mode: "Classroom + Live Online",
-            totalHours: "160+ Hours",
+            totalHours: "160+ ",
             membership: "Working Hours: Tue-Sun, 9:30 AM - 6:30 PM"
         },
         schedule: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off)",
@@ -689,7 +689,7 @@ export const programs = [
             startDate: "5th of Every Month",
             duration: "60 Days",
             mode: "Live Sessions + LMS Access",
-            totalHours: "120+ Hours",
+            totalHours: "120+ ",
             membership: "Lifetime Access to LMS"
         },
         schedule: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off)",
@@ -858,7 +858,7 @@ export const programs = [
             startDate: "5th of Every Month",
             duration: "6 Months",
             mode: "Classroom + Live Online",
-            totalHours: "240+ Hours",
+            totalHours: "240+",
             membership: "100% Job Assistance"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
