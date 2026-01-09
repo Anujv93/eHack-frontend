@@ -604,7 +604,9 @@ export const programs = [
         pricing: {
             original: "₹75,000",
             discounted: "₹45,000",
-            emi: "Contact for EMI options"
+            emi: "Contact for EMI options",
+            applicationFee: "₹1,000",
+            admissionFee: "₹45,000"
         },
         partnerLogos: [
             "/images/partners/google.png",
@@ -775,7 +777,9 @@ export const programs = [
         pricing: {
             original: "₹30,000",
             discounted: "₹20,000",
-            emi: "Contact for EMI options"
+            emi: "Contact for EMI options",
+            applicationFee: "₹1,000",
+            admissionFee: "₹20,000"
         },
         partnerLogos: [
             "/images/partners/arduino.png",
