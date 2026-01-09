@@ -154,7 +154,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 <div className="credentials-wrapper">
                     <div className="section-container">
                         <h2 className="credentials-title">Earn <span className="text-accent">{program.certifications.length} Global Certifications</span></h2>
-                        <p className="credentials-subtitle">Graduate with internationally recognized certifications from {program.partner}{program.slug.includes('digital-marketing') ? ', building your expertise in digital marketing' : ', the world\'s leading cybersecurity certification body'}.</p>
+                        <p className="credentials-subtitle">Graduate with internationally recognized certifications from {program.partner}{program.slug.includes('digital-marketing') ? ', building your expertise in digital marketing' : program.slug.includes('robotics') ? ', building your practical robotics skills' : ', the world\'s leading cybersecurity certification body'}.</p>
 
                         {/* Certificate Images Gallery */}
                         <div className={`certificates-gallery count-${program.certifications.length}`}>
@@ -189,14 +189,12 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {/* Skills Section */}
             <section className="skills-section">
                 <div className="section-container">
-                    <h2 className="skills-title">Master <span className="text-accent">{program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'}</span> Skills</h2>
+                    <h2 className="skills-title">Master <span className="text-accent">{program.slug.includes('digital-marketing') ? 'Digital Marketing' : program.slug.includes('robotics') ? 'Robotics' : 'Cybersecurity'}</span> Skills</h2>
 
                     <div className="skills-grid">
                         {program.skills.map((skill, idx) => (
                             <div key={idx} className="skill-card">
-                                <div className="skill-icon">
-                                    {['🛡️', '🔐', '⏱️', '💻', '📊', '🗄️'][idx % 6]}
-                                </div>
+
                                 <h3 className="skill-name">{skill.name}</h3>
                                 <p className="skill-desc">{skill.desc}</p>
                             </div>
@@ -208,39 +206,48 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {/* ROI Section */}
             <section className="roi-section">
                 <div className="section-container">
-                    <h2 className="roi-title">Great <span className="text-accent">Career ROI</span></h2>
+                    <h2 className="roi-title">{program.careerROI?.title || 'Great'} <span className="text-accent">Career ROI</span></h2>
                     <p className="roi-subtitle">
-                        {program.careerROI?.subtitle || "This program equips you with advanced cybersecurity skills essential for protecting organizations from cyber threats. Master ethical hacking, network defense, digital forensics, and penetration testing—preparing you for high-impact roles in the rapidly growing cybersecurity industry."}
+                        {program.careerROI?.subtitle || "This program equips you with advanced skills essential for protecting organizations. Master key competencies preparing you for high-impact roles in the rapidly growing industry."}
                     </p>
 
-                    <h3 className="roi-section-title">Chart Your Earning Potential</h3>
+                    <h3 className="roi-section-title">{program.careerROI?.chartTitle || 'Chart Your Earning Potential'}</h3>
 
                     <div className="roi-grid">
                         <div className="salary-card">
                             <p className="salary-stat">
-                                <span className="text-accent">{program.slug.includes('digital-marketing') ? 'Digital marketing professionals' : 'Cybersecurity professionals'}</span> are {program.slug.includes('digital-marketing') ? 'in high demand with competitive salaries averaging ₹6,00,000 annually' : 'among the highest-paid IT specialists with average salaries exceeding ₹12,00,000 annually'}.
+                                {program.careerROI?.salaryIntro || 'Professionals in this field are in high demand with competitive salaries.'}
                             </p>
                             <div className="salary-chart">
                                 <div className="chart-bars">
-                                    <div className="chart-bar-group">
-                                        <span className="bar-label">₹8L</span>
-                                        <div className="chart-bar bar-1"></div>
-                                    </div>
-                                    <div className="chart-bar-group">
-                                        <span className="bar-label">₹18L</span>
-                                        <div className="chart-bar bar-2"></div>
-                                    </div>
-                                    <div className="chart-bar-group">
-                                        <span className="bar-label">₹35L+</span>
-                                        <div className="chart-bar bar-3"></div>
-                                    </div>
+                                    {program.careerROI?.salaryLevels?.map((level, idx) => (
+                                        <div key={idx} className="chart-bar-group">
+                                            <span className="bar-label">{level.label}</span>
+                                            <div className={`chart-bar bar-${idx + 1}`}></div>
+                                        </div>
+                                    )) || (
+                                            <>
+                                                <div className="chart-bar-group">
+                                                    <span className="bar-label">₹8L</span>
+                                                    <div className="chart-bar bar-1"></div>
+                                                </div>
+                                                <div className="chart-bar-group">
+                                                    <span className="bar-label">₹18L</span>
+                                                    <div className="chart-bar bar-2"></div>
+                                                </div>
+                                                <div className="chart-bar-group">
+                                                    <span className="bar-label">₹35L+</span>
+                                                    <div className="chart-bar bar-3"></div>
+                                                </div>
+                                            </>
+                                        )}
                                 </div>
                             </div>
-                            <h4 className="chart-title">A {program.slug.includes('digital-marketing') ? 'Digital Marketing Professional\'s' : 'Cybersecurity Expert\'s'} Salary Progression</h4>
-                            <p className="chart-desc">{program.slug.includes('digital-marketing') ? 'Companies offer competitive salaries to skilled digital marketers who can drive measurable business growth through online channels.' : 'Organizations offer highly competitive salaries to recruit and retain qualified cybersecurity professionals who can protect their digital assets.'}</p>
+                            <h4 className="chart-title">{program.careerROI?.chartDesc || 'Salary Progression'}</h4>
+                            <p className="chart-desc">{program.careerROI?.chartNote || 'Companies offer competitive salaries to skilled professionals.'}</p>
                         </div>
                         <div className="testimonial-video-card">
-                            <p className="testimonial-intro">Watch how our graduates transformed their careers in {program.slug.includes('digital-marketing') ? 'digital marketing' : 'cybersecurity'}.</p>
+                            <p className="testimonial-intro">Watch how our graduates transformed their careers in {program.slug.includes('digital-marketing') ? 'digital marketing' : program.slug.includes('robotics') ? 'robotics and automation' : 'cybersecurity'}.</p>
                             <div className="video-container">
                                 <div className="video-placeholder">
                                     <div className="play-button">
@@ -256,7 +263,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {/* Job Roles Section */}
             <section className="jobroles-section">
                 <div className="section-container">
-                    <h2 className="jobroles-title"><span className="text-accent">{program.jobRoles.length}+</span> {program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'} Roles</h2>
+                    <h2 className="jobroles-title"><span className="text-accent">{program.jobRoles.length}+</span> {program.slug.includes('digital-marketing') ? 'Digital Marketing' : program.slug.includes('robotics') ? 'Robotics & Automation' : 'Cybersecurity'} Roles</h2>
 
                     <div className="jobroles-card">
                         <div className="jobroles-grid">
@@ -313,7 +320,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <div className="audience-header">
                         <span className="audience-badge">IDEAL CANDIDATES</span>
                         <h2 className="audience-title">Who is this <span className="text-accent">Program</span> for?</h2>
-                        <p className="audience-subtitle">This program is designed for ambitious individuals ready to master {program.slug.includes('digital-marketing') ? 'digital marketing' : 'cybersecurity'}</p>
+                        <p className="audience-subtitle">This program is designed for ambitious individuals ready to master {program.slug.includes('digital-marketing') ? 'digital marketing' : program.slug.includes('robotics') ? 'robotics and electronics' : 'cybersecurity'}</p>
                     </div>
 
                     <div className="audience-grid">
@@ -337,8 +344,24 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <div className="curriculum-header">
                         <div className="curriculum-header-left">
                             <span className="curriculum-badge">Program Curriculum</span>
-                            <h2 className="curriculum-title">Master {program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'}<br />Through Practice</h2>
-                            <p className="curriculum-subtitle">{program.slug.includes('digital-marketing') ? 'A structured learning path designed by industry experts. Each module builds upon the previous, taking you from fundamentals to advanced digital marketing strategies.' : 'A structured learning path designed by industry experts. Each module builds upon the previous, taking you from fundamentals to advanced penetration testing.'}</p>
+                            <h2 className="curriculum-title">
+                                Master {
+                                    program.slug.includes('digital-marketing')
+                                        ? 'Digital Marketing'
+                                        : program.slug.includes('robotics')
+                                            ? 'Robotics'
+                                            : 'Cybersecurity'
+                                }<br />Through Practice
+                            </h2>
+                            <p className="curriculum-subtitle">
+                                {
+                                    program.slug.includes('digital-marketing')
+                                        ? 'A structured learning path designed by industry experts. Each module builds upon the previous, taking you from fundamentals to advanced digital marketing strategies.'
+                                        : program.slug.includes('robotics')
+                                            ? 'A hands-on learning journey designed for beginners. Build real robots step by step, from basic electronics to autonomous and remote-controlled systems.'
+                                            : 'A structured learning path designed by industry experts. Each module builds upon the previous, taking you from fundamentals to advanced penetration testing.'
+                                }
+                            </p>
                         </div>
                         <div className="curriculum-stats">
                             <div className="curr-stat">
@@ -346,7 +369,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 <div className="curr-stat-label">Modules</div>
                             </div>
                             <div className="curr-stat">
-                                <div className="curr-stat-value">300+</div>
+                                <div className="curr-stat-value">{program.stats.totalHours}</div>
                                 <div className="curr-stat-label">Hours</div>
                             </div>
                             <div className="curr-stat">
@@ -741,7 +764,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* Cyber Threats News Section */}
-            {!program.slug.includes('digital-marketing') && <section className="news-section">
+            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && <section className="news-section">
                 <div className="news-container">
                     <span className="news-badge">{program.slug.includes('digital-marketing') ? 'DIGITAL MARKETING IS BOOMING' : 'CYBER THREATS ARE RISING'}</span>
                     <h2 className="news-title">Why {program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'} Skills Matter Now</h2>
@@ -786,7 +809,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {/* Final CTA Section */}
             <section className="program-cta-section">
                 <div className="section-container">
-                    <h2>Ready to Start Your {program.slug.includes('digital-marketing') ? 'Digital Marketing' : 'Cybersecurity'} Journey?</h2>
+                    <h2>Ready to Start Your {program.slug.includes('digital-marketing') ? 'Digital Marketing' : program.slug.includes('robotics') ? 'Robotics' : 'Cybersecurity'} Journey?</h2>
                     <p>Join thousands of professionals who have transformed their careers with eHack Academy</p>
                     <div className="cta-buttons">
                         <a href="tel:+919886035330" className="btn-primary btn-large">

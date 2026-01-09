@@ -555,7 +555,10 @@
 }
 
 .credentials-wrapper:has(.certificates-gallery.count-1) .credentials-grid {
-    justify-content: center;
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .credentials-wrapper:has(.certificates-gallery.count-1) .credentials-cta {
@@ -580,6 +583,28 @@
 .certificates-gallery.count-2 .certificate-img,
 .certificates-gallery:has(.certificate-image-card:nth-child(2):last-child) .certificate-img {
     height: 280px;
+}
+
+/* Center align section content when there are 2 certificates */
+.credentials-wrapper:has(.certificates-gallery.count-2) .credentials-title,
+.credentials-wrapper:has(.certificates-gallery.count-2) .credentials-subtitle {
+    text-align: center;
+}
+
+.credentials-wrapper:has(.certificates-gallery.count-2) .credentials-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.credentials-wrapper:has(.certificates-gallery.count-2) .credentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.credentials-wrapper:has(.certificates-gallery.count-2) .credentials-cta {
+    text-align: center;
 }
 
 .certificate-image-card {
@@ -694,23 +719,16 @@
 
 .skill-card {
     background: var(--white);
-    padding: var(--space-8);
+    padding: var(--space-6);
     transition: all 0.2s ease;
-    border: 1px solid var(--gray-200);
+    border: 1px solid var(--accent);
     border-radius: 8px;
-    /* Consistent rounded corners */
+    height: 100%;
 }
 
 .skill-card:hover {
-    border-color: var(--accent);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     transform: translateY(-4px);
-}
-
-.skill-icon {
-    font-size: 1.5rem;
-    margin-bottom: var(--space-4);
-    opacity: 0.6;
 }
 
 .skill-name {
@@ -797,7 +815,7 @@
 
 .chart-bars {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-end;
     height: 140px;
     gap: var(--space-6);
@@ -820,7 +838,7 @@
 
 .chart-bar {
     width: 100%;
-    background: var(--gray-800);
+    background: var(--accent);
     transition: background 0.2s;
     border-radius: 4px 4px 0 0;
 }
