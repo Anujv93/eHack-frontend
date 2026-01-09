@@ -133,31 +133,28 @@ export default function TestimonialsSection() {
             <div className="testimonials-container">
                 {/* Trusted By Section - Grid Layout */}
                 <div className="trusted-by-section">
-                    <div className="trusted-by-label">
-                        <span className="trusted-text">Trusted</span>
-                        <span className="trusted-text">by</span>
+                    <div className="trusted-by-header">
+                        <span className="trusted-text">Trusted by</span>
                     </div>
-                    <div className="trusted-by-content">
-                        <div className={`company-logos-grid ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
-                            {currentCompanies.map((company, index) => (
-                                <div key={`${currentSet}-${index}`} className="company-logo-card">
-                                    <div className="company-logo-wrapper">
-                                        <img
-                                            src={company.url}
-                                            alt={company.name}
-                                            onError={(e) => {
-                                                const target = e.target as HTMLImageElement;
-                                                target.style.display = 'none';
-                                                if (target.parentElement) {
-                                                    target.parentElement.innerHTML = `<span class="company-name-fallback">${company.name}</span>`;
-                                                }
-                                            }}
-                                        />
-                                    </div>
-                                    <span className="company-card-name">{company.name}</span>
+                    <div className={`company-logos-grid ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+                        {currentCompanies.map((company, index) => (
+                            <div key={`${currentSet}-${index}`} className="company-logo-card">
+                                <div className="company-logo-wrapper">
+                                    <img
+                                        src={company.url}
+                                        alt={company.name}
+                                        onError={(e) => {
+                                            const target = e.target as HTMLImageElement;
+                                            target.style.display = 'none';
+                                            if (target.parentElement) {
+                                                target.parentElement.innerHTML = `<span class="company-name-fallback">${company.name}</span>`;
+                                            }
+                                        }}
+                                    />
                                 </div>
-                            ))}
-                        </div>
+                                <span className="company-card-name">{company.name}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
