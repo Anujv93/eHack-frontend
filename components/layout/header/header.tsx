@@ -87,6 +87,7 @@ export default function Header({ partners, courses }: HeaderProps) {
 
     const [megaMenuOpen, setMegaMenuOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mobileMegaMenuOpen, setMobileMegaMenuOpen] = useState(false);
     const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
     const [activePartner, setActivePartner] = useState<string | null>(
         allPartners.length > 0 ? allPartners[0].slug : null
@@ -110,6 +111,17 @@ export default function Header({ partners, courses }: HeaderProps) {
     const closeMobileMenu = () => {
         setMobileMenuOpen(false);
         setMobileDropdown(null);
+        setMobileMegaMenuOpen(false);
+    };
+
+    // Open mobile mega menu
+    const openMobileMegaMenu = () => {
+        setMobileMegaMenuOpen(true);
+    };
+
+    // Close mobile mega menu and go back to main menu
+    const closeMobileMegaMenu = () => {
+        setMobileMegaMenuOpen(false);
     };
 
     const toggleMobileDropdown = (id: string) => {
@@ -504,38 +516,16 @@ export default function Header({ partners, courses }: HeaderProps) {
                         Home
                     </Link>
 
-                    {/* Courses Dropdown */}
-                    <div className={`mobile-nav-dropdown ${mobileDropdown === 'courses' ? 'open' : ''}`}>
-                        <button
-                            className="mobile-nav-dropdown-btn"
-                            onClick={() => toggleMobileDropdown('courses')}
-                        >
-                            Courses & Certifications
-                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
-                        <div className="mobile-nav-dropdown-content">
-                            <Link href="/courses" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                All Courses
-                            </Link>
-                            <Link href="/categories/cybersecurity" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Cybersecurity
-                            </Link>
-                            <Link href="/categories/data-science" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Data Science
-                            </Link>
-                            <Link href="/categories/digital-marketing" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Digital Marketing
-                            </Link>
-                            <Link href="/categories/robotics-iot" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Robotics & IoT
-                            </Link>
-                            <Link href="/kennedy-university" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Kennedy University Degrees
-                            </Link>
-                        </div>
-                    </div>
+                    {/* Courses & Certifications - Opens Mobile Mega Menu */}
+                    <button
+                        className="mobile-nav-item mobile-mega-menu-trigger"
+                        onClick={openMobileMegaMenu}
+                    >
+                        <span>All Courses & Certifications</span>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M4.5 2L8.5 6L4.5 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </button>
 
                     {/* Learning Options Dropdown */}
                     <div className={`mobile-nav-dropdown ${mobileDropdown === 'learning' ? 'open' : ''}`}>
@@ -607,6 +597,126 @@ export default function Header({ partners, courses }: HeaderProps) {
                     <Link href="/courses" className="mobile-cta-btn" onClick={closeMobileMenu}>
                         Explore Courses
                     </Link>
+                </div>
+            </div>
+
+            {/* Mobile Mega Menu - Full Screen Overlay */}
+            <div className={`mobile-mega-menu ${mobileMegaMenuOpen ? 'open' : ''}`}>
+                <div className="mobile-mega-menu-header">
+                    <button className="mobile-mega-back" onClick={closeMobileMegaMenu}>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        Back
+                    </button>
+                    <span className="mobile-mega-title">Courses & Certifications</span>
+                    <button className="mobile-menu-close" onClick={closeMobileMenu} aria-label="Close menu">
+                        ✕
+                    </button>
+                </div>
+
+                <div className="mobile-mega-menu-content">
+                    {/* Partners Section */}
+                    <div className="mobile-mega-section">
+                        <h4 className="mobile-mega-section-title">Our Partners & Programs</h4>
+                        <div className="mobile-mega-partners">
+                            {allPartners.map((partner) => (
+                                <div
+                                    key={partner.id}
+                                    className={`mobile-mega-partner-card ${activePartner === partner.slug ? 'active' : ''}`}
+                                    onClick={() => setActivePartner(partner.slug)}
+                                >
+                                    {partner.logoUrl ? (
+                                        <img src={partner.logoUrl} alt={partner.name} className="mobile-partner-logo" />
+                                    ) : (
+                                        <span className="mobile-partner-placeholder">{partner.name[0]}</span>
+                                    )}
+                                    <div className="mobile-partner-info">
+                                        <span className="mobile-partner-name">{partner.name}</span>
+                                        <span className="mobile-partner-count">
+                                            {partner.courseCount} {partner.slug === 'ehack-originals' ? 'Programs' : partner.slug === 'kennedy-university' ? 'Degrees' : 'Courses'}
+                                        </span>
+                                    </div>
+                                    <span className="mobile-partner-arrow">→</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Courses Section for Selected Partner */}
+                    {activePartner && (
+                        <div className="mobile-mega-section">
+                            <h4 className="mobile-mega-section-title">
+                                {activePartnerData ? (isKennedyUniversity ? 'Kennedy University Degrees' : `${activePartnerData.name} Courses`) : 'Courses'}
+                            </h4>
+                            <div className="mobile-mega-courses">
+                                {filteredCourses.length > 0 ? (
+                                    filteredCourses.map((course) => (
+                                        <Link
+                                            key={course.id}
+                                            href={isKennedyUniversity ? `/kennedy-university/${course.slug}` : isEhackOriginals ? `/programs/${course.slug}` : `/certificate/${course.slug}`}
+                                            className="mobile-mega-course-item"
+                                            onClick={closeMobileMenu}
+                                        >
+                                            <span className="mobile-course-name">{course.title}</span>
+                                            {course.duration && (
+                                                <span className="mobile-course-duration">{course.duration}</span>
+                                            )}
+                                        </Link>
+                                    ))
+                                ) : (
+                                    <p className="mobile-no-courses">No courses available</p>
+                                )}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* eHack Categories */}
+                    {isEhackOriginals && (
+                        <div className="mobile-mega-section">
+                            <h4 className="mobile-mega-section-title">Program Categories</h4>
+                            <div className="mobile-mega-categories">
+                                <Link href="/categories/cybersecurity" className="mobile-category-card" onClick={closeMobileMenu}>
+                                    <span className="cat-icon">🛡️</span>
+                                    <span className="cat-name">Cybersecurity Powered by AI</span>
+                                </Link>
+                                <Link href="/categories/data-science" className="mobile-category-card" onClick={closeMobileMenu}>
+                                    <span className="cat-icon">📊</span>
+                                    <span className="cat-name">Data Science Powered by AI</span>
+                                </Link>
+                                <Link href="/categories/robotics-iot" className="mobile-category-card" onClick={closeMobileMenu}>
+                                    <span className="cat-icon">🤖</span>
+                                    <span className="cat-name">Robotics & IoT Powered by AI</span>
+                                </Link>
+                                <Link href="/categories/digital-marketing" className="mobile-category-card" onClick={closeMobileMenu}>
+                                    <span className="cat-icon">📈</span>
+                                    <span className="cat-name">Digital Marketing Powered by AI</span>
+                                </Link>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Kennedy University CTA */}
+                    {!isKennedyUniversity && (
+                        <div className="mobile-mega-section mobile-kennedy-cta">
+                            <Link href="/kennedy-university" className="mobile-kennedy-card" onClick={closeMobileMenu}>
+                                <div className="kennedy-logos-mobile">
+                                    <img src="/images/ehack-logo.png" alt="eHack" className="kennedy-logo-small" />
+                                    <Handshake className="handshake-icon-mobile" size={20} />
+                                    <img src="/images/kennedy-university-logo.png" alt="Kennedy University" className="kennedy-logo-small" />
+                                </div>
+                                <p className="kennedy-cta-text">Get globally accredited degrees with Kennedy University</p>
+                                <span className="kennedy-cta-link">Learn More →</span>
+                            </Link>
+                        </div>
+                    )}
+
+                    {/* View All CTA */}
+                    <div className="mobile-mega-footer">
+                        <Link href="/courses" className="mobile-view-all-btn" onClick={closeMobileMenu}>
+                            View All Courses & Certifications
+                        </Link>
+                    </div>
                 </div>
             </div>
         </header>
