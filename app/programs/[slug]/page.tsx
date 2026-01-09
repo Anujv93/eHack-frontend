@@ -389,7 +389,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                             </div>
                         </div>
                     </div>
-
+                    {/* Commit changes comment */}
                     {/* Timeline Modules */}
                     <div className="curriculum-timeline">
                         {program.curriculum.map((module, idx) => (
