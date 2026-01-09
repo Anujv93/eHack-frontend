@@ -108,12 +108,12 @@
 
 .marquee-container::before {
     left: 0;
-    background: linear-gradient(to right, #FFF7ED, transparent);
+    background: linear-gradient(to right, #ffffff, transparent);
 }
 
 .marquee-container::after {
     right: 0;
-    background: linear-gradient(to left, #FFF7ED, transparent);
+    background: linear-gradient(to left, #ffffff, transparent);
 }
 
 /* Track Animation */

@@ -31,11 +31,56 @@ export default function CodeRedPage() {
     ];
 
     const microdegrees = [
-        { title: 'Python Security', status: 'available' },
-        { title: 'PHP Security', status: 'available' },
-        { title: 'Hands-On Android Security', status: 'available' },
-        { title: 'Cloud Security', status: 'coming-soon' },
-        { title: 'AI for Cybersecurity', status: 'coming-soon' }
+        {
+            title: 'Python Security',
+            description: 'Master secure coding practices in Python with hands-on vulnerability analysis and exploitation techniques',
+            status: 'available',
+            duration: '12 hours',
+            modules: 8,
+            level: 'Intermediate',
+            hasLabs: true,
+            category: 'Application Security'
+        },
+        {
+            title: 'PHP Security',
+            description: 'Learn to identify and mitigate common PHP vulnerabilities including SQL injection and XSS attacks',
+            status: 'available',
+            duration: '10 hours',
+            modules: 6,
+            level: 'Intermediate',
+            hasLabs: true,
+            category: 'Web Security'
+        },
+        {
+            title: 'Hands-On Android Security',
+            description: 'Deep dive into Android app security, reverse engineering, and mobile penetration testing',
+            status: 'available',
+            duration: '15 hours',
+            modules: 10,
+            level: 'Advanced',
+            hasLabs: true,
+            category: 'Mobile Security'
+        },
+        {
+            title: 'Cloud Security',
+            description: 'Secure cloud infrastructures across AWS, Azure, and GCP with industry best practices',
+            status: 'coming-soon',
+            duration: '14 hours',
+            modules: 9,
+            level: 'Advanced',
+            hasLabs: true,
+            category: 'Cloud Security'
+        },
+        {
+            title: 'AI for Cybersecurity',
+            description: 'Leverage machine learning for threat detection, anomaly analysis, and automated response',
+            status: 'coming-soon',
+            duration: '16 hours',
+            modules: 11,
+            level: 'Expert',
+            hasLabs: true,
+            category: 'AI & Security'
+        }
     ];
 
     const pillars = [
@@ -50,58 +95,50 @@ export default function CodeRedPage() {
     return (
         <>
             {/* Hero Section */}
-            <section className="codered-hero">
-                <div className="codered-hero-bg">
-                    <div className="hero-gradient-overlay"></div>
-                    <div className="hero-particles"></div>
+            <section className="codered-hero-clean">
+                <div className="hero-clean-bg">
+                    <img src="/images/codered-hero-new.jpg" alt="Background" className="hero-bg-img" />
+                    <div className="hero-overlay-gradient"></div>
                 </div>
-                <div className="container">
-                    <div className="hero-content">
-                        <div className="codered-logo-wrapper">
-                            <span className="code-text">CODE</span>
-                            <span className="red-box">RED</span>
-                        </div>
-                        <p className="codered-tagline">Empowering Cyber Professionals</p>
 
-                        <h1 className="hero-title">
-                            EC-Council's Continuous Learning Platform
+                <div className="container">
+                    <div className="hero-content-clean">
+                        <div className="clean-brand-header">
+                            <span className="clean-code">CODE</span>
+                            <span className="clean-red">RED</span>
+                        </div>
+
+                        <h1 className="hero-title-clean">
+                            Cybersecurity courses
                             <br />
-                            <span className="highlight">For Busy Cyber Professionals</span>
+                            for the real world
                         </h1>
 
-                        <div className="fastest-badge">
-                            <span>One of The Fastest Growing Platforms</span>
-                        </div>
-
-                        <p className="hero-description">
-                            Help busy professionals and career starters stay up-to-date with cutting edge
-                            solutions through world-class courses and videos that span every topic in
-                            cybersecurity and beyond.
+                        <p className="hero-subtitle-clean">
+                            Get certified with the industry leaders in
+                            <br />
+                            cybersecurity training
                         </p>
 
-                        <div className="hero-actions">
-                            <a href="#register" className="btn-unlock">
-                                Unlock your 30-Days Free Access
+                        <div className="hero-actions-clean">
+                            <a href="#register" className="btn-clean-primary">
+                                GET TRAINING!
                             </a>
-                            <a href="https://codered.eccouncil.org" target="_blank" rel="noopener noreferrer" className="btn-secondary-cta">
-                                Visit CodeRed Platform →
+                            <a href="https://codered.eccouncil.org" target="_blank" rel="noopener noreferrer" className="btn-clean-outline">
+                                View Platform
                             </a>
                         </div>
+                    </div>
+                </div>
 
-                        <div className="hero-stats">
-                            <div className="stat-item">
-                                <span className="stat-number">2500+</span>
-                                <span className="stat-label">Videos</span>
-                            </div>
-                            <div className="stat-divider"></div>
-                            <div className="stat-item">
-                                <span className="stat-number">45+</span>
-                                <span className="stat-label">Courses</span>
-                            </div>
-                            <div className="stat-divider"></div>
-                            <div className="stat-item">
-                                <span className="stat-number">100+</span>
-                                <span className="stat-label">Expert Authors</span>
+                <div className="hero-trust-bar">
+                    <div className="container">
+                        <div className="trust-bar-content">
+                            <span className="trust-text">Trusted by 400,000+ Certified Professionals Worldwide</span>
+                            <div className="trust-rating">
+                                <span className="rating-score">4.7</span>
+                                <div className="stars">★★★★★</div>
+                                <span className="rating-platform">Trustpilot</span>
                             </div>
                         </div>
                     </div>
@@ -190,27 +227,120 @@ export default function CodeRedPage() {
                 </div>
             </section>
 
-            {/* Microdegrees Section */}
+            {/* Microdegrees Section - Redesigned */}
             <section className="codered-microdegrees">
                 <div className="container">
                     <div className="microdegrees-header">
                         <span className="section-badge">MICRODEGREES</span>
                         <h2 className="section-title">Specialized Learning Paths</h2>
-                        <p className="section-subtitle">Deep dive into specific domains with comprehensive microdegrees</p>
+                        <p className="section-subtitle">
+                            Deep dive into specific security domains with comprehensive, hands-on microdegrees
+                            <br />
+                            <span className="subtitle-accent">Earn certificates of completion and build real-world skills</span>
+                        </p>
                     </div>
 
-                    <div className="microdegrees-grid">
+                    <div className="microdegrees-grid-new">
                         {microdegrees.map((course, index) => (
-                            <div key={index} className={`microdegree-card ${course.status}`}>
-                                <div className="microdegree-content">
-                                    <h3>{course.title}</h3>
-                                    {course.status === 'coming-soon' && (
-                                        <span className="coming-soon-badge">Coming Soon</span>
+                            <div
+                                key={index}
+                                className={`microdegree-card-new ${course.status}`}
+                                style={{ '--card-index': index } as React.CSSProperties}
+                            >
+                                {/* Status Badge */}
+                                {course.status === 'coming-soon' ? (
+                                    <div className="card-status-badge coming-soon">
+                                        <span className="pulse-dot"></span>
+                                        Coming Soon
+                                    </div>
+                                ) : (
+                                    <div className="card-status-badge available">
+                                        Available Now
+                                    </div>
+                                )}
+
+                                {/* Category Tag */}
+                                <div className="card-category">{course.category}</div>
+
+                                {/* Main Content */}
+                                <div className="card-main-content">
+                                    <h3 className="card-title">{course.title}</h3>
+                                    <p className="card-description">{course.description}</p>
+                                </div>
+
+                                {/* Stats Row */}
+                                <div className="card-stats">
+                                    <div className="stat">
+                                        <span className="stat-value">{course.duration}</span>
+                                        <span className="stat-label">Duration</span>
+                                    </div>
+                                    <div className="stat-divider"></div>
+                                    <div className="stat">
+                                        <span className="stat-value">{course.modules}</span>
+                                        <span className="stat-label">Modules</span>
+                                    </div>
+                                    <div className="stat-divider"></div>
+                                    <div className="stat">
+                                        <span className="stat-value">{course.level}</span>
+                                        <span className="stat-label">Level</span>
+                                    </div>
+                                </div>
+
+                                {/* Features Row */}
+                                <div className="card-features">
+                                    {course.hasLabs && (
+                                        <span className="feature-tag labs">
+                                            <span className="feature-dot"></span>
+                                            Hands-on Labs
+                                        </span>
+                                    )}
+                                    <span className="feature-tag cert">
+                                        <span className="feature-dot"></span>
+                                        Certificate
+                                    </span>
+                                </div>
+
+                                {/* CTA */}
+                                <div className="card-cta">
+                                    {course.status === 'available' ? (
+                                        <button className="cta-button">
+                                            <span>Start Learning</span>
+                                            <span className="cta-arrow">→</span>
+                                        </button>
+                                    ) : (
+                                        <button className="cta-button notify">
+                                            <span>Notify Me</span>
+                                            <span className="cta-icon">🔔</span>
+                                        </button>
                                     )}
                                 </div>
-                                <div className="microdegree-arrow">→</div>
+
+                                {/* Decorative Elements */}
+                                <div className="card-glow"></div>
+                                <div className="card-corner-accent"></div>
                             </div>
                         ))}
+                    </div>
+
+                    {/* Section Footer */}
+                    <div className="microdegrees-footer">
+                        <div className="footer-stats">
+                            <div className="footer-stat">
+                                <span className="footer-stat-number">5+</span>
+                                <span className="footer-stat-label">Microdegrees</span>
+                            </div>
+                            <div className="footer-stat">
+                                <span className="footer-stat-number">44+</span>
+                                <span className="footer-stat-label">Total Modules</span>
+                            </div>
+                            <div className="footer-stat">
+                                <span className="footer-stat-number">67+</span>
+                                <span className="footer-stat-label">Hours of Content</span>
+                            </div>
+                        </div>
+                        <p className="footer-note">
+                            All microdegrees include iLabs access, eCourseware, and certificate of completion
+                        </p>
                     </div>
                 </div>
             </section>
@@ -235,17 +365,13 @@ export default function CodeRedPage() {
                             </ul>
                         </div>
                         <div className="certificate-preview">
-                            <div className="certificate-frame">
-                                <div className="cert-header">
-                                    <span className="code-text-small">CODE</span>
-                                    <span className="red-box-small">RED</span>
-                                    <p className="cert-tagline">Empowering Cyber Professionals</p>
-                                </div>
-                                <h3 className="cert-title">CERTIFICATE OF ATTENDANCE</h3>
-                                <p className="cert-text">THIS IS TO CERTIFY THAT</p>
-                                <div className="cert-name">[Your Name]</div>
-                                <p className="cert-completion">HAS ATTENDED AND SUCCESSFULLY COMPLETED THE COURSE</p>
-                                <h4 className="cert-course">Hands-On Android Security</h4>
+                            <div className="certificate-image-wrapper">
+                                <img
+                                    src="/images/codered-certificate.jpg"
+                                    alt="CodeRed Certificate of Attendance"
+                                    className="cert-img"
+                                />
+                                <div className="cert-glow"></div>
                             </div>
                         </div>
                     </div>

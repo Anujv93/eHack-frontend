@@ -67,8 +67,8 @@ const ehackOriginalPartner: Partner = {
 
 // Kennedy University degree programs
 const kennedyPrograms = [
-    { id: 201, slug: 'bscs-fast-track', title: 'Bachelor of Science in Cybersecurity (BSCS) – Fast Track', duration: '1 Year', partnerSlug: 'kennedy-university' },
-    { id: 202, slug: 'mscs-fast-track', title: 'Master of Science in Cybersecurity (MSCS) – Fast Track', duration: '1 Year', partnerSlug: 'kennedy-university' },
+    { id: 201, slug: 'bscs', title: 'Bachelor of Science in Cybersecurity (BSCS) – Fast Track', duration: '1 Year', partnerSlug: 'kennedy-university' },
+    { id: 202, slug: 'mscs', title: 'Master of Science in Cybersecurity (MSCS) – Fast Track', duration: '1 Year', partnerSlug: 'kennedy-university' },
     { id: 203, slug: 'integrated-bscs-mscs', title: 'Integrated BSCS + MSCS – Accelerated', duration: '15 Months', partnerSlug: 'kennedy-university' },
 ];
 
@@ -126,7 +126,14 @@ export default function Header({ partners, courses }: HeaderProps) {
         // Check if it's an eHack program or Kennedy program to route correctly
         const isEhack = ehackPrograms.some(p => p.slug === slug);
         const isKennedy = kennedyPrograms.some(p => p.slug === slug);
-        router.push((isEhack || isKennedy) ? `/programs/${slug}` : `/certificate/${slug}`);
+
+        if (isKennedy) {
+            router.push(`/kennedy-university/${slug}`);
+        } else if (isEhack) {
+            router.push(`/programs/${slug}`);
+        } else {
+            router.push(`/certificate/${slug}`);
+        }
     };
 
     return (
@@ -253,7 +260,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     filteredCourses.map((course) => (
                                                         <Link
                                                             key={course.id}
-                                                            href={isKennedyUniversity ? `/programs/${course.slug}` : `/certificate/${course.slug}`}
+                                                            href={isKennedyUniversity ? `/kennedy-university/${course.slug}` : `/certificate/${course.slug}`}
                                                             className="mega-course-item"
                                                             onClick={() => setMegaMenuOpen(false)}
                                                         >
@@ -316,6 +323,14 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         <span className="original-subtitle">Expert Level</span>
                                     </Link>
                                 </div>
+                            </div>
+
+                            {/* Accreditation Disclaimer - Fixed at Bottom of Mega Menu */}
+                            <div className="mega-menu-disclaimer-full">
+                                <span className="disclaimer-icon">ℹ️</span>
+                                <p className="disclaimer-text">
+                                    <strong>Accredited Partner:</strong> EC-Council & Kennedy University. For other vendors, we provide training; certification is issued by the respective vendor.
+                                </p>
                             </div>
                         </div>
                     </div>
