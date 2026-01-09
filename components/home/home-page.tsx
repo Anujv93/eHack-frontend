@@ -353,6 +353,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         <Link href="/categories/digital-marketing" className={styles.quickLink}>
                             Digital Marketing
                         </Link>
+                        <Link href="/services" className={styles.quickLink}>
+                            Services
+                        </Link>
                     </div>
                 </div>
             </section>

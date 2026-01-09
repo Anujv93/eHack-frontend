@@ -360,8 +360,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
 }
 
 .quickLinksLabel {
@@ -370,8 +370,8 @@
 }
 
 .quickLink {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: white;
     background: rgba(255, 107, 0, 0.25);
@@ -382,6 +382,7 @@
     backdrop-filter: blur(10px);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     letter-spacing: 0.02em;
+    white-space: nowrap;
 }
 
 .quickLink:hover {
