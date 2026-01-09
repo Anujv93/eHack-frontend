@@ -362,22 +362,54 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                 <div className={styles.container}>
                     <p className={styles.partnersLabel}>Trusted by World&apos;s Leading Certification Partners</p>
                     <div className={styles.partnersGrid}>
-                        {partners.map((partner) => (
-                            <div key={partner.id} className={`${styles.partnerCard} ${partner.slug === 'kennedy-university' ? styles.kennedyPartner : ''}`}>
-                                <div className={styles.partnerLogoWrapper}>
-                                    {partner.logoUrl ? (
-                                        <img
-                                            src={partner.logoUrl}
-                                            alt={partner.name}
-                                            className={styles.partnerLogo}
-                                        />
-                                    ) : (
-                                        <span className={styles.partnerPlaceholder}>{partner.name[0]}</span>
-                                    )}
-                                </div>
-                                <span className={styles.partnerName}>{partner.name}</span>
-                            </div>
-                        ))}
+                        {/* Reorder partners: EC-Council first, Kennedy University second */}
+                        {(() => {
+                            // Kennedy University partner (manually added if not present)
+                            const kennedyPartner: Partner = {
+                                id: 999,
+                                name: 'Kennedy University',
+                                slug: 'kennedy-university',
+                                logoUrl: '/images/kennedy-university-logo.png',
+                                courseCount: 3
+                            };
+
+                            // Check if Kennedy University already exists in partners
+                            const hasKennedy = partners.some(p => p.slug === 'kennedy-university');
+
+                            // Create final partners list with Kennedy University added if not present
+                            const allPartners = hasKennedy ? [...partners] : [...partners, kennedyPartner];
+
+                            // Sort partners: EC-Council first, Kennedy University second, others after
+                            const sortedPartners = allPartners.sort((a, b) => {
+                                const order: Record<string, number> = {
+                                    'ec-council': 1,
+                                    'kennedy-university': 2
+                                };
+                                const orderA = order[a.slug] || 99;
+                                const orderB = order[b.slug] || 99;
+                                return orderA - orderB;
+                            });
+
+                            return sortedPartners.map((partner) => {
+                                const isKennedy = partner.slug === 'kennedy-university';
+                                return (
+                                    <div key={partner.id} className={styles.partnerCard}>
+                                        <div className={styles.partnerLogoWrapper}>
+                                            {partner.logoUrl ? (
+                                                <img
+                                                    src={partner.logoUrl}
+                                                    alt={partner.name}
+                                                    className={isKennedy ? styles.partnerLogoDark : styles.partnerLogo}
+                                                />
+                                            ) : (
+                                                <span className={styles.partnerPlaceholder}>{partner.name[0]}</span>
+                                            )}
+                                        </div>
+                                        <span className={styles.partnerName}>{partner.name}</span>
+                                    </div>
+                                );
+                            });
+                        })()}
                     </div>
                 </div>
             </section >
