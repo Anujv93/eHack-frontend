@@ -1,43 +1,100 @@
 .mastery-section {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background: linear-gradient(180deg, #FFF7F0 0%, #fff 100%);
 }
 
+@media (min-width: 481px) {
+    .mastery-section {
+        padding: 4rem 0;
+    }
+}
+
+@media (min-width: 1025px) {
+    .mastery-section {
+        padding: 5rem 0;
+    }
+}
+
 .mastery-container {
-    max-width: 1200px;
+    max-width: var(--container-max-width, 1200px);
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 var(--container-padding, 1rem);
 }
 
 .mastery-header {
     text-align: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 481px) {
+    .mastery-header {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .mastery-header {
+        margin-bottom: 3.5rem;
+    }
 }
 
 .mastery-label {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 700;
     color: var(--brand-primary);
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 481px) {
+    .mastery-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        margin-bottom: 1rem;
+    }
 }
 
 .mastery-title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: #0a0a1a;
     letter-spacing: -0.02em;
     line-height: 1.2;
 }
 
-/* Programs Grid */
+@media (min-width: 481px) {
+    .mastery-title {
+        font-size: 1.875rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .mastery-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Programs Grid - Mobile First */
 .programs-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
     align-items: start;
+}
+
+@media (min-width: 768px) {
+    .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .programs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* Program Card */

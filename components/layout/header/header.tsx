@@ -86,6 +86,8 @@ export default function Header({ partners, courses }: HeaderProps) {
     const allCourses = [...courses, ...ehackPrograms, ...kennedyPrograms];
 
     const [megaMenuOpen, setMegaMenuOpen] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
     const [activePartner, setActivePartner] = useState<string | null>(
         allPartners.length > 0 ? allPartners[0].slug : null
     );
@@ -103,6 +105,16 @@ export default function Header({ partners, courses }: HeaderProps) {
     const router = useRouter();
     const [searchQuery, setSearchQuery] = useState('');
     const [showSuggestions, setShowSuggestions] = useState(false);
+
+    // Close mobile menu on route change or body scroll lock
+    const closeMobileMenu = () => {
+        setMobileMenuOpen(false);
+        setMobileDropdown(null);
+    };
+
+    const toggleMobileDropdown = (id: string) => {
+        setMobileDropdown(prev => prev === id ? null : id);
+    };
 
     // Filter courses for suggestions
     const searchSuggestions = searchQuery.length >= 2
@@ -455,6 +467,146 @@ export default function Header({ partners, courses }: HeaderProps) {
                             </div>
                         )}
                     </form>
+                </div>
+
+                {/* Mobile Hamburger Button */}
+                <button
+                    className={`hamburger-btn ${mobileMenuOpen ? 'open' : ''}`}
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle mobile menu"
+                    aria-expanded={mobileMenuOpen}
+                >
+                    <div className="hamburger-icon">
+                        <span className="hamburger-line"></span>
+                        <span className="hamburger-line"></span>
+                        <span className="hamburger-line"></span>
+                    </div>
+                </button>
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            <div
+                className={`mobile-menu-overlay ${mobileMenuOpen ? 'active' : ''}`}
+                onClick={closeMobileMenu}
+            />
+
+            {/* Mobile Menu Drawer */}
+            <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+                <div className="mobile-menu-header">
+                    <img src="/images/new-eHACK.png" alt="eHack Academy" className="mobile-menu-logo" />
+                    <button className="mobile-menu-close" onClick={closeMobileMenu} aria-label="Close menu">
+                        ✕
+                    </button>
+                </div>
+
+                <nav className="mobile-nav">
+                    <Link href="/" className="mobile-nav-item" onClick={closeMobileMenu}>
+                        Home
+                    </Link>
+
+                    {/* Courses Dropdown */}
+                    <div className={`mobile-nav-dropdown ${mobileDropdown === 'courses' ? 'open' : ''}`}>
+                        <button
+                            className="mobile-nav-dropdown-btn"
+                            onClick={() => toggleMobileDropdown('courses')}
+                        >
+                            Courses & Certifications
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                        <div className="mobile-nav-dropdown-content">
+                            <Link href="/courses" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                All Courses
+                            </Link>
+                            <Link href="/categories/cybersecurity" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Cybersecurity
+                            </Link>
+                            <Link href="/categories/data-science" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Data Science
+                            </Link>
+                            <Link href="/categories/digital-marketing" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Digital Marketing
+                            </Link>
+                            <Link href="/categories/robotics-iot" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Robotics & IoT
+                            </Link>
+                            <Link href="/kennedy-university" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Kennedy University Degrees
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Learning Options Dropdown */}
+                    <div className={`mobile-nav-dropdown ${mobileDropdown === 'learning' ? 'open' : ''}`}>
+                        <button
+                            className="mobile-nav-dropdown-btn"
+                            onClick={() => toggleMobileDropdown('learning')}
+                        >
+                            Learning Options
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                        <div className="mobile-nav-dropdown-content">
+                            <Link href="/learning-options#live-online" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Live Online Training
+                            </Link>
+                            <Link href="/learning-options#classroom" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Classroom Training
+                            </Link>
+                            <Link href="/learning-options#one-on-one" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                1-on-1 Training
+                            </Link>
+                            <Link href="/learning-options#fly-trainer" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Fly-Me-a-Trainer
+                            </Link>
+                            <Link href="/learning-options#flexi" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Flexi
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Services Dropdown */}
+                    <div className={`mobile-nav-dropdown ${mobileDropdown === 'services' ? 'open' : ''}`}>
+                        <button
+                            className="mobile-nav-dropdown-btn"
+                            onClick={() => toggleMobileDropdown('services')}
+                        >
+                            Services
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                        <div className="mobile-nav-dropdown-content">
+                            <Link href="/services" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                All Services
+                            </Link>
+                            <Link href="/services#web-application-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Web Application Security
+                            </Link>
+                            <Link href="/services#infrastructure-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Infrastructure Security
+                            </Link>
+                            <Link href="/services#digital-forensics" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Digital Forensics
+                            </Link>
+                        </div>
+                    </div>
+
+                    <Link href="/codered" className="mobile-nav-item codered-mobile" onClick={closeMobileMenu}>
+                        CODE<span className="red-badge">RED</span>
+                    </Link>
+
+                    <Link href="/about" className="mobile-nav-item" onClick={closeMobileMenu}>
+                        About eHack
+                    </Link>
+                </nav>
+
+                <div className="mobile-menu-cta">
+                    <Link href="/courses" className="mobile-cta-btn" onClick={closeMobileMenu}>
+                        Explore Courses
+                    </Link>
                 </div>
             </div>
         </header>
