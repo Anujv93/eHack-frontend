@@ -319,6 +319,18 @@
     border-radius: 8px;
 }
 
+.form-urgency-badge {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: var(--space-4);
+    display: inline-block;
+}
+
 .form-title {
     font-size: 1.75rem;
     font-weight: 700;
@@ -1827,6 +1839,12 @@
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
+    }
+
+    /* Fix form-card overlap on tablet/mobile when grid stacks */
+    .form-card {
+        top: 0;
+        margin-top: var(--space-6);
     }
 
     .stats-container {
@@ -3812,6 +3830,21 @@
     .form-card {
         padding: var(--space-5);
         max-width: 100%;
+        top: 0;
+        /* Reset negative top position on mobile */
+        margin-top: var(--space-6);
+        /* Add margin to separate from batch-info */
+    }
+
+    .form-urgency-badge {
+        background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+        color: white;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 8px 16px;
+        border-radius: 4px;
+        text-align: center;
+        margin-bottom: var(--space-4);
     }
 
     .form-title {
@@ -3821,6 +3854,19 @@
     .btn-continue {
         padding: 14px;
         font-size: 0.9375rem;
+    }
+
+    /* Batch Info on mobile */
+    .batch-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        margin-bottom: var(--space-4);
+    }
+
+    .batch-label,
+    .batch-date {
+        font-size: 0.75rem;
     }
 
     /* Stats Bar */
