@@ -8,9 +8,9 @@
 }
 
 .header-container {
-    max-width: 1280px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 1.25rem 1.5rem;
+    padding: 0.5rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,17 +26,19 @@
 
 .logo-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .logo-image {
-    height: 42px;
-    width: auto;
+    height: auto;
+    width: 200px;
+    min-width: 200px;
+    max-height: none;
     transition: transform 0.2s ease;
 }
 
 .logo:hover .logo-image {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .logo-superscript {
