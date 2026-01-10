@@ -1,13 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Phone } from 'lucide-react';
 import styles from '@/app/page.module.css';
 import ProgramsSection from './programs-section';
 import MasterySection from './mastery-section';
 import PlacementSection from './placement-section';
 import TestimonialsSection from './testimonials-section';
+import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 
 // Types for props
 interface Partner {
@@ -245,8 +247,23 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
         setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
     };
 
+    // Homepage navigation sections
+    const homeNavSections = [
+        { id: 'partners', label: 'Partners' },
+        { id: 'courses', label: 'Courses' },
+        { id: 'programs', label: 'Programs' },
+        { id: 'learning', label: 'Learning Options' },
+        { id: 'placements', label: 'Placements' },
+        { id: 'testimonials', label: 'Success Stories' },
+    ];
+
     return (
         <div className={styles.page}>
+            {/* Sticky Section Navigation */}
+            <StickySectionNav
+                sections={homeNavSections}
+                scrollThreshold={600}
+            />
 
             {/* Hero Section */}
             <section className={styles.hero}>
@@ -361,7 +378,8 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             </section>
 
             {/* Partners Section */}
-            <section className={styles.partners}>
+            {/* @ts-ignore */}
+            <section className={styles.partners} id="partners">
                 <div className={styles.container}>
                     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                         <span className={styles.partnersLabel}>Trusted by World&apos;s Leading Certification Partners</span>
@@ -487,7 +505,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             < MasterySection />
 
             {/* Learning Options */}
-            < section className={styles.learningSection} >
+            <section className={styles.learningSection} id="learning">
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
                         <h2 className={styles.sectionTitle}>Flexible Learning Options</h2>
@@ -505,10 +523,10 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         ))}
                     </div>
                 </div>
-            </section >
+            </section>
 
             {/* Stats Section */}
-            < section className={styles.statsSection} >
+            <section className={styles.statsSection} id="stats">
                 <div className={styles.container}>
                     <div className={styles.statsGrid}>
                         {stats.map((stat, index) => (
@@ -519,7 +537,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         ))}
                     </div>
                 </div>
-            </section >
+            </section>
             {/* 
             Unique Offerings
             <section className={styles.offeringsSection}>

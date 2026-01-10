@@ -61,7 +61,7 @@ const placementStories = [
 
 const PlacementSection = () => {
     return (
-        <section className="placement-section">
+        <section className="placement-section" id="placements">
             <div className="container">
                 <div className="placement-header">
                     <span className="placement-label">Career Transformations</span>

@@ -69,7 +69,7 @@ const programs: Program[] = [
 
 export default function MasterySection() {
     return (
-        <section className="mastery-section">
+        <section className="mastery-section" id="programs">
             <div className="mastery-container">
                 <div className="mastery-header">
                     <span className="mastery-label">Comprehensive Curriculum</span>
