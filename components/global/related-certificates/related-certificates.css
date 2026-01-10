@@ -1,0 +1,132 @@
+.related-certificates {
+    padding: 5rem 1.5rem;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.related-certificates::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E5E7EB, transparent);
+}
+
+.related-certificates-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.related-certificates-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+    border: 1px solid #FDBA74;
+    border-radius: 100px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #EA580C;
+    margin-bottom: 1rem;
+}
+
+.header-badge svg {
+    color: #F97316;
+}
+
+.related-certificates-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+.related-certificates-subtitle {
+    font-size: 1.0625rem;
+    color: #6B7280;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.related-certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.related-certificates-cta {
+    text-align: center;
+}
+
+.view-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    background: #111827;
+    color: #FFFFFF;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.view-all-link:hover {
+    background: #FF6B00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.3);
+}
+
+.view-all-link svg {
+    transition: transform 0.3s ease;
+}
+
+.view-all-link:hover svg {
+    transform: translateX(4px);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .related-certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .related-certificates {
+        padding: 3rem 1rem;
+    }
+
+    .related-certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .related-certificates-header {
+        margin-bottom: 2rem;
+    }
+
+    .header-badge {
+        font-size: 0.75rem;
+        padding: 0.375rem 0.75rem;
+    }
+
+    .view-all-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
