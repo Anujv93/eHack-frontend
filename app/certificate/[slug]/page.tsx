@@ -7,6 +7,7 @@ import TargetAudience from "@/components/global/target-audience/target-audience"
 import Accreditations from "@/components/global/accreditations/accreditations";
 import CTASection from "@/components/global/cta-section/cta-section";
 import ExamDetails from "@/components/global/exam-details/exam-details";
+import StickySectionNav from "@/components/global/sticky-section-nav/sticky-section-nav";
 import {
     getCertificateBySlug,
     getAdmissionProcess,
@@ -76,8 +77,48 @@ export default async function CertificatePage({ params }: PageProps) {
         (item): item is ExamDetailsSection => item.__component === 'global.exam-details'
     );
 
+    // Build dynamic navigation sections based on available content
+    const dynamicNavSections = [];
+
+    // Check each section and add to navigation if it has content
+    if (summarySection?.Heading || summarySection?.Description || (summarySection?.Features && summarySection.Features.length > 0)) {
+        dynamicNavSections.push({ id: 'summary', label: 'Overview' });
+    }
+
+    if (featuresGridSection?.Features && featuresGridSection.Features.length > 0) {
+        dynamicNavSections.push({ id: 'whats-new', label: "What's New" });
+    }
+
+    if (trainingSection?.Title || trainingSection?.pricing) {
+        dynamicNavSections.push({ id: 'ehack-training', label: 'Training' });
+    }
+
+    if (learningFrameworkSection?.Steps && learningFrameworkSection.Steps.length > 0) {
+        dynamicNavSections.push({ id: 'learning-framework', label: 'Learning Path' });
+    }
+
+    if (examDetailsSection?.ExamCards && examDetailsSection.ExamCards.length > 0) {
+        dynamicNavSections.push({ id: 'exam-details', label: 'Exam Details' });
+    }
+
+    if (targetAudienceSection?.Audiences && targetAudienceSection.Audiences.length > 0) {
+        dynamicNavSections.push({ id: 'target-audience', label: 'Who Should Enroll' });
+    }
+
+    if (accreditationsSection?.Accreditations && accreditationsSection.Accreditations.length > 0) {
+        dynamicNavSections.push({ id: 'accreditations', label: 'Accreditations' });
+    }
+
     return (
         <div>
+            {/* Sticky Section Navigation - Only shows sections that exist */}
+            {dynamicNavSections.length > 1 && (
+                <StickySectionNav
+                    sections={dynamicNavSections}
+                    scrollThreshold={350}
+                />
+            )}
+
             <CertificateHeader
                 title={heroSection?.Title || certificate.Title}
                 subtitle={heroSection?.Subtitle || certificate.Subtitle}
@@ -130,3 +171,5 @@ export default async function CertificatePage({ params }: PageProps) {
         </div>
     );
 }
+
+
