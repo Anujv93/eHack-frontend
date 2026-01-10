@@ -1016,6 +1016,237 @@ export const programs = [
                 ]
             }
         ]
+    },
+
+    {
+        slug: "masterclass-ethical-hacking-ceh-v13",
+        category: "cybersecurity",
+        title: "Master Class Program in Ethical Hacking (CEH v13)",
+        subtitle: "with 3 Global EC-Council Certifications",
+        description: "A best-in-class program designed to equip students with skills to become experts in cybersecurity. It covers comprehensive approaches to protecting IT infrastructure, securing data and information, running risk analysis and mitigation, architecting cloud-based security, and achieving compliance.",
+        features: "Includes Real Time Labs with EC-Council tools, Ethical Hacking Phases and Attack Vectors, Preventative Countermeasures, Penetration Testing for Networks, and 6 Months Free Membership for practice.",
+        batchInfo: "5TH OF EVERY MONTH",
+        partner: "EC-Council",
+        partnerLogo: "/images/ec-council-logo.png",
+        ehackLogo: "/ehack-black.png",
+        stats: {
+            startDate: "5th of Every Month",
+            duration: "4 Months",
+            mode: "Classroom + Live Online",
+            totalHours: "100",
+            membership: "6 Months Free Practice Membership"
+        },
+        schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
+        certifications: [
+            { code: "CEH", name: "Certified Ethical Hacker v13", image: "/images/certificates/masterclass-1.jpeg" },
+            { code: "CEH Practical", name: "Certified Ethical Hacker Practical", image: "/images/certificates/masterclass-2.jpeg" },
+            { code: "CEH Master", name: "Certified Ethical Hacker Master", image: "/images/certificates/masterclass-3.jpeg" }
+        ],
+        skills: [
+            { name: "Ethical Hacking", desc: "Master the phases and attack vectors of ethical hacking, learning to think like an attacker to defend like a professional." },
+            { name: "Vulnerability Assessment", desc: "Learn to identify, analyze, and assess vulnerabilities in IT systems using industry-standard methodologies and tools." },
+            { name: "Network Penetration Testing", desc: "Develop skills to conduct comprehensive penetration tests on network infrastructure using EC-Council tools and techniques." },
+            { name: "Risk Analysis & Mitigation", desc: "Understand how to analyze security risks and implement effective mitigation strategies to protect organizations." },
+            { name: "Cloud Security", desc: "Learn to architect and implement cloud-based security solutions with proper controls and compliance measures." },
+            { name: "Countermeasures", desc: "Master preventative countermeasures to defend against various types of cyber attacks and threats." }
+        ],
+        curriculum: [
+            {
+                number: "01",
+                title: "Introduction to Ethical Hacking",
+                duration: "1 Week",
+                certification: "",
+                description: "Understand the fundamentals of ethical hacking, including attack vectors, hacking phases, and the legal/ethical aspects of penetration testing.",
+                topics: [
+                    "Hacking Phases Overview",
+                    "Attack Vectors",
+                    "Legal & Ethical Considerations",
+                    "Information Security Fundamentals",
+                    "Cyber Kill Chain"
+                ]
+            },
+            {
+                number: "02",
+                title: "Footprinting & Reconnaissance",
+                duration: "1 Week",
+                certification: "",
+                description: "Learn to gather information about target systems using various reconnaissance techniques and tools.",
+                topics: [
+                    "Passive Reconnaissance",
+                    "Active Reconnaissance",
+                    "OSINT Techniques",
+                    "Search Engine Hacking",
+                    "Footprinting Tools"
+                ]
+            },
+            {
+                number: "03",
+                title: "Scanning & Enumeration",
+                duration: "2 Weeks",
+                certification: "",
+                description: "Master network scanning and enumeration techniques to identify live hosts, open ports, and system vulnerabilities.",
+                topics: [
+                    "Network Scanning",
+                    "Port Scanning",
+                    "Vulnerability Scanning",
+                    "NetBIOS, SNMP Enumeration",
+                    "LDAP & DNS Enumeration"
+                ]
+            },
+            {
+                number: "04",
+                title: "System Hacking & Malware Threats",
+                duration: "2 Weeks",
+                certification: "",
+                description: "Understand how attackers compromise systems, escalate privileges, and deploy malware for persistence.",
+                topics: [
+                    "Password Cracking",
+                    "Privilege Escalation",
+                    "Maintaining Access",
+                    "Covering Tracks",
+                    "Malware Analysis"
+                ]
+            },
+            {
+                number: "05",
+                title: "Sniffing, Social Engineering & DoS",
+                duration: "2 Weeks",
+                certification: "",
+                description: "Learn about network sniffing attacks, social engineering tactics, and denial-of-service attack techniques.",
+                topics: [
+                    "Packet Sniffing",
+                    "ARP Poisoning",
+                    "Social Engineering Techniques",
+                    "Phishing Attacks",
+                    "DoS/DDoS Attacks"
+                ]
+            },
+            {
+                number: "06",
+                title: "Session Hijacking & Web Hacking",
+                duration: "2 Weeks",
+                certification: "",
+                description: "Master session hijacking techniques and web application security testing methodologies.",
+                topics: [
+                    "Session Hijacking",
+                    "Web Server Attacks",
+                    "Web Application Vulnerabilities",
+                    "SQL Injection",
+                    "XSS Attacks"
+                ]
+            },
+            {
+                number: "07",
+                title: "Wireless, Mobile & IoT Hacking",
+                duration: "2 Weeks",
+                certification: "",
+                description: "Explore security vulnerabilities in wireless networks, mobile devices, and IoT systems.",
+                topics: [
+                    "Wireless Network Hacking",
+                    "WPA/WPA2 Cracking",
+                    "Mobile Platform Attacks",
+                    "IoT Vulnerabilities",
+                    "Bluetooth Hacking"
+                ]
+            },
+            {
+                number: "08",
+                title: "Cloud Security & Cryptography",
+                duration: "2 Weeks",
+                certification: "EC-Council CEH",
+                description: "Understand cloud infrastructure security, cryptographic techniques, and countermeasures against cyber threats.",
+                topics: [
+                    "Cloud Computing Threats",
+                    "Cloud Security Controls",
+                    "Cryptography Fundamentals",
+                    "PKI & Encryption",
+                    "Countermeasures & Defense"
+                ]
+            }
+        ],
+        targetAudience: [
+            { title: "Career Transitioners", desc: "Professionals seeking a transition to the Cybersecurity domain from any background with hands-on ethical hacking training.", tag: "Career Switch" },
+            { title: "Cybersecurity Professionals", desc: "Existing cybersecurity professionals looking to enhance their skill sets with the latest CEH v13 certification.", tag: "Skill Enhancement" },
+            { title: "Entrepreneurs", desc: "Business owners wanting to learn Cybersecurity to safeguard their ventures and understand security risks.", tag: "Business Protection" },
+            { title: "Security Enthusiasts", desc: "Passionate individuals looking to enter the world of Cybersecurity with a globally recognized certification.", tag: "Entry Level" }
+        ],
+        jobRoles: [
+            "Ethical Hacker", "Information Security Analyst", "Penetration Tester",
+            "Vulnerability Analyst", "Digital Forensic Analyst", "Security Software Developer",
+            "Chief Information Security Officer", "Network Engineer/Security Architect", "Incident Handler"
+        ],
+        pricing: {
+            original: "₹1,20,000",
+            discounted: "₹95,000",
+            emi: "No Cost EMI Available",
+            applicationFee: "₹1,000",
+            admissionFee: "₹95,000"
+        },
+        partnerLogos: [
+            "/images/partners/checkpoint.png",
+            "/images/partners/cisco.png",
+            "/images/partners/ec-council.png"
+        ],
+        careerROI: {
+            title: "Great Career ROI",
+            subtitle: "This program equips you with world-class expertise in ethical hacking using the globally recognized CEH v13 certification. Master vulnerability assessment, penetration testing, and countermeasures—preparing you for high-demand cybersecurity roles.",
+            chartTitle: "Chart Your Earning Potential",
+            salaryIntro: "CEH certified professionals are highly sought after with competitive salaries starting from ₹6,00,000 annually.",
+            salaryLevels: [
+                { label: "₹6L", level: "Entry" },
+                { label: "₹12L", level: "Mid" },
+                { label: "₹25L+", level: "Senior" }
+            ],
+            chartDesc: "A CEH Professional's Salary Progression",
+            chartNote: "The CEH certification is ranked #1 Ethical Hacking Certification by ZDNet, making certified professionals highly valued in the industry."
+        },
+        whyEhack: [
+            { title: "Real Time Labs", desc: "Associated with EC-Council and CISCO, candidates get exposure to real-time labs - how vulnerabilities are found and exploited, how pen testing is done for a network." },
+            { title: "World Class Infrastructure", desc: "Lab infrastructure built according to EC-Council and Cisco standards with dedicated high-speed broadband connectivity and well-stacked library resources." },
+            { title: "Certified Faculties", desc: "Our experienced instructors are duly certified by EC-Council and CISCO, providing the latest internationally practiced technological knowledge." },
+            { title: "Internship Opportunities", desc: "Internship opportunities available for deserving candidates at the academy's discretion to gain real-world experience." }
+        ],
+        programExcellence: [
+            { title: "Real Time Labs", desc: "Hands-on experience with EC-Council tools and live security environments.", icon: "lab" },
+            { title: "World Class Infrastructure", desc: "State-of-the-art training facilities built to global standards.", icon: "infrastructure" },
+            { title: "Certified Faculties", desc: "Learn from EC-Council and CISCO certified instructors.", icon: "certificate" },
+            { title: "6 Months Membership", desc: "Free practice membership for soft skill development.", icon: "global" }
+        ],
+        faq: [
+            {
+                category: "Program",
+                questions: [
+                    { q: "What is the Master Class Program in Ethical Hacking?", a: "A 4-month intensive program covering CEH v13 curriculum with 100 hours of comprehensive training, real-time labs, and hands-on penetration testing experience." },
+                    { q: "What certification will I receive?", a: "You will receive the globally recognized Certified Ethical Hacker (CEH) certification from EC-Council, ranked #1 by ZDNet." },
+                    { q: "What are the schedule options?", a: "Weekday (Tuesday to Friday): 2 hrs/day OR Weekend (Saturday & Sunday): 4 hrs/day. New batches start on the 5th of every month." },
+                    { q: "What is included in the program?", a: "100 hours of training, real-time labs with EC-Council tools, 6 months free membership, quizzes and assessments after each module, and internship opportunities." }
+                ]
+            },
+            {
+                category: "Eligibility",
+                questions: [
+                    { q: "Who can enroll in this program?", a: "Professionals seeking career transition, cybersecurity professionals, entrepreneurs, and enthusiasts looking to enter the cybersecurity domain can enroll." },
+                    { q: "Is prior experience required?", a: "Basic understanding of IT concepts is helpful but not mandatory. We cover fundamentals before diving into advanced ethical hacking techniques." },
+                    { q: "Can working professionals join?", a: "Yes! We offer flexible weekday evening and weekend batches designed for working professionals." }
+                ]
+            },
+            {
+                category: "Fees & Admission",
+                questions: [
+                    { q: "What is the program fee?", a: "Standard Fee: ₹1,20,000 | Offer Price: ₹95,000 (plus GST). Application fee of ₹1,000 is adjustable in the program fee." },
+                    { q: "Are scholarships available?", a: "Yes, scholarships up to ₹10,000 are available for deserving candidates based on merit and eligibility." },
+                    { q: "What are the financing options?", a: "We offer No Cost EMI (Internal) and additional financing options through Bank/NBFCs for flexible payments." }
+                ]
+            },
+            {
+                category: "Admission Process",
+                questions: [
+                    { q: "What is the admission process?", a: "1) Register via the form 2) Submit handwritten application on white paper 3) Telephonic interview with industry expert 4) Receive offer letter and apply for scholarship." },
+                    { q: "When can I start?", a: "New batches start on the 5th of every month. You can begin the admission process anytime." },
+                    { q: "Is there an interview?", a: "Yes, a telephonic interview with an industry expert is conducted to gauge your passion and eligibility for the program." }
+                ]
+            }
+        ]
     }
 ];
 

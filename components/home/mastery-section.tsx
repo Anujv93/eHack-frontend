@@ -18,19 +18,19 @@ interface Program {
 
 const programs: Program[] = [
     {
-        title: 'Master Class Program in Ethical Hacking',
+        title: 'Master Class Program in Ethical Hacking (CEH v13)',
         features: [
             "Build expertise in ethical hacking with the world's #1 certification (CEH v13)",
-            'Perfect for professionals looking to master attack strategies',
-            'Defensive countermeasures training'
+            '3 Global EC-Council Certifications: CEH, CEH Practical, CEH Master',
+            'Real-time labs with EC-Council tools & 6 months free membership'
         ],
         duration: '4 Months',
         trainingHours: '100 Hours',
-        certifications: 'CEH v13',
+        certifications: '3 Global Certs',
         membership: '6 Months',
-        certificateImage: '/images/certificates/ceh-certificate.jpg',
+        certificateImage: '/images/certificates/masterclass-1.jpeg',
         ctaText: 'Explore Program',
-        ctaLink: '/programs/masterclass-ethical-hacking',
+        ctaLink: '/programs/masterclass-ethical-hacking-ceh-v13',
         featured: false
     },
     {
