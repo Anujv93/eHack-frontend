@@ -699,3 +699,178 @@
         padding: 20px;
     }
 }
+
+/* Dynamic CTA Badges */
+.cta-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.15), rgba(255, 107, 0, 0.08));
+    color: #FF6B00;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.cta-badge-blue {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.08));
+    color: #3B82F6;
+}
+
+.cta-badge-purple {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(139, 92, 246, 0.08));
+    color: #8B5CF6;
+}
+
+.cta-badge-green {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.08));
+    color: #10B981;
+}
+
+.cta-badge-yellow {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.08));
+    color: #D97706;
+}
+
+.cta-badge-cyan {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(6, 182, 212, 0.08));
+    color: #0891B2;
+}
+
+.cta-badge-red {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.08));
+    color: #DC2626;
+}
+
+/* CTA Box Color Variants */
+.contact-cta-box.cta-blue {
+    border-color: rgba(59, 130, 246, 0.2);
+    background: linear-gradient(135deg, #FFFFFF 0%, rgba(59, 130, 246, 0.03) 100%);
+}
+
+.contact-cta-box.cta-blue .btn-contact-primary {
+    background: linear-gradient(135deg, #3B82F6, #60A5FA);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.contact-cta-box.cta-blue .btn-contact-primary:hover {
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.contact-cta-box.cta-blue .btn-contact-secondary:hover {
+    border-color: #3B82F6;
+    color: #3B82F6;
+}
+
+.contact-cta-box.cta-purple {
+    border-color: rgba(139, 92, 246, 0.2);
+    background: linear-gradient(135deg, #FFFFFF 0%, rgba(139, 92, 246, 0.03) 100%);
+}
+
+.contact-cta-box.cta-purple .btn-contact-primary {
+    background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.contact-cta-box.cta-purple .btn-contact-primary:hover {
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.contact-cta-box.cta-purple .btn-contact-secondary:hover {
+    border-color: #8B5CF6;
+    color: #8B5CF6;
+}
+
+.contact-cta-box.cta-green {
+    border-color: rgba(16, 185, 129, 0.2);
+    background: linear-gradient(135deg, #FFFFFF 0%, rgba(16, 185, 129, 0.03) 100%);
+}
+
+.contact-cta-box.cta-green .btn-contact-primary {
+    background: linear-gradient(135deg, #10B981, #34D399);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.contact-cta-box.cta-green .btn-contact-primary:hover {
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.contact-cta-box.cta-green .btn-contact-secondary:hover {
+    border-color: #10B981;
+    color: #10B981;
+}
+
+.contact-cta-box.cta-yellow {
+    border-color: rgba(245, 158, 11, 0.2);
+    background: linear-gradient(135deg, #FFFFFF 0%, rgba(245, 158, 11, 0.03) 100%);
+}
+
+.contact-cta-box.cta-yellow .btn-contact-primary {
+    background: linear-gradient(135deg, #F59E0B, #FBBF24);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.contact-cta-box.cta-yellow .btn-contact-primary:hover {
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+.contact-cta-box.cta-yellow .btn-contact-secondary:hover {
+    border-color: #F59E0B;
+    color: #D97706;
+}
+
+.contact-cta-box.cta-cyan {
+    border-color: rgba(6, 182, 212, 0.2);
+    background: linear-gradient(135deg, #FFFFFF 0%, rgba(6, 182, 212, 0.03) 100%);
+}
+
+.contact-cta-box.cta-cyan .btn-contact-primary {
+    background: linear-gradient(135deg, #06B6D4, #22D3EE);
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+}
+
+.contact-cta-box.cta-cyan .btn-contact-primary:hover {
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+}
+
+.contact-cta-box.cta-cyan .btn-contact-secondary:hover {
+    border-color: #06B6D4;
+    color: #0891B2;
+}
+
+.contact-cta-box.cta-red {
+    border-color: rgba(239, 68, 68, 0.2);
+    background: linear-gradient(135deg, #FFFFFF 0%, rgba(239, 68, 68, 0.03) 100%);
+}
+
+.contact-cta-box.cta-red .btn-contact-primary {
+    background: linear-gradient(135deg, #EF4444, #F87171);
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.contact-cta-box.cta-red .btn-contact-primary:hover {
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.contact-cta-box.cta-red .btn-contact-secondary:hover {
+    border-color: #EF4444;
+    color: #DC2626;
+}
+
+/* CTA Content Animation */
+.cta-content {
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

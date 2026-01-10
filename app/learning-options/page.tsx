@@ -595,22 +595,159 @@ export default function LearningOptionsPage() {
                 </div>
             </section>
 
-            {/* Contact CTA */}
+            {/* Dynamic Contact CTA based on selected learning option */}
             <section className="contact-cta-section">
                 <div className="container">
-                    <div className="contact-cta-box">
+                    <div className={`contact-cta-box ${activeTab === 'classroom' ? 'cta-blue' : activeTab === 'one-on-one' ? 'cta-purple' : activeTab === 'fly-trainer' ? 'cta-green' : activeTab === 'flexi' ? 'cta-yellow' : activeTab === 'webinar-service' ? 'cta-cyan' : activeTab === 'upcoming-webinars' ? 'cta-red' : ''}`}>
                         <div className="cta-content">
-                            <h3>Need Help Choosing the Right Learning Mode?</h3>
-                            <p>Our counselors are here to guide you. Get personalized recommendations based on your goals.</p>
+                            {activeTab === 'live-online' && (
+                                <>
+                                    <span className="cta-badge">LIVE ONLINE</span>
+                                    <h3>Ready to Start Learning from Home?</h3>
+                                    <p>Join our next live online batch and learn from expert instructors in real-time. Get instant access to virtual labs and recorded sessions.</p>
+                                </>
+                            )}
+                            {activeTab === 'classroom' && (
+                                <>
+                                    <span className="cta-badge cta-badge-blue">CLASSROOM</span>
+                                    <h3>Experience In-Person Training at Our Campus</h3>
+                                    <p>Visit our state-of-the-art training center in Bangalore. Get hands-on experience with industry-standard infrastructure.</p>
+                                </>
+                            )}
+                            {activeTab === 'one-on-one' && (
+                                <>
+                                    <span className="cta-badge cta-badge-purple">1-ON-1 TRAINING</span>
+                                    <h3>Get Personalized Training from an Expert</h3>
+                                    <p>Schedule a free consultation to discuss your learning goals and get a customized training plan tailored just for you.</p>
+                                </>
+                            )}
+                            {activeTab === 'fly-trainer' && (
+                                <>
+                                    <span className="cta-badge cta-badge-green">CORPORATE</span>
+                                    <h3>Bring Expert Training to Your Office</h3>
+                                    <p>Get a customized quote for on-site training at your premises. Minimum batch of 5+ employees. Pan-India coverage.</p>
+                                </>
+                            )}
+                            {activeTab === 'flexi' && (
+                                <>
+                                    <span className="cta-badge cta-badge-yellow">SELF-PACED</span>
+                                    <h3>Start Learning at Your Own Pace Today</h3>
+                                    <p>Get instant access to HD video content and weekly live mentor sessions. Learn anytime, anywhere, on any device.</p>
+                                </>
+                            )}
+                            {activeTab === 'customized' && (
+                                <>
+                                    <span className="cta-badge">ENTERPRISE</span>
+                                    <h3>Let&apos;s Design Your Custom Training Program</h3>
+                                    <p>Schedule a consultation with our training architects to create a tailored curriculum for your organization&apos;s unique needs.</p>
+                                </>
+                            )}
+                            {activeTab === 'webinar-service' && (
+                                <>
+                                    <span className="cta-badge cta-badge-cyan">B2B SERVICE</span>
+                                    <h3>Host a Professional Webinar for Your Audience</h3>
+                                    <p>Partner with us to deliver expert-led webinars for your employees, students, or community. Full production support included.</p>
+                                </>
+                            )}
+                            {activeTab === 'upcoming-webinars' && (
+                                <>
+                                    <span className="cta-badge cta-badge-red">FREE WEBINAR</span>
+                                    <h3>Don&apos;t Miss Our Upcoming Free Webinars!</h3>
+                                    <p>Register now to secure your spot in our expert-led sessions. Get notified about new webinars and receive recordings.</p>
+                                </>
+                            )}
                         </div>
                         <div className="cta-actions">
-                            <a href="tel:+919886035330" className="btn-contact-primary">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                                Call Us Now
-                            </a>
-                            <a href="mailto:info@ehackacademy.com" className="btn-contact-secondary">Email Us</a>
+                            {activeTab === 'live-online' && (
+                                <>
+                                    <Link href="/courses" className="btn-contact-primary">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        View Live Batches
+                                    </Link>
+                                    <a href="tel:+919886035330" className="btn-contact-secondary">Talk to Counselor</a>
+                                </>
+                            )}
+                            {activeTab === 'classroom' && (
+                                <>
+                                    <Link href="/contact" className="btn-contact-primary">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        Book Campus Visit
+                                    </Link>
+                                    <a href="tel:+919886035330" className="btn-contact-secondary">Call for Directions</a>
+                                </>
+                            )}
+                            {activeTab === 'one-on-one' && (
+                                <>
+                                    <Link href="/contact" className="btn-contact-primary">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        Schedule Free Consultation
+                                    </Link>
+                                    <a href="tel:+919886035330" className="btn-contact-secondary">Call Now</a>
+                                </>
+                            )}
+                            {activeTab === 'fly-trainer' && (
+                                <>
+                                    <Link href="/services" className="btn-contact-primary">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        Request Corporate Quote
+                                    </Link>
+                                    <a href="mailto:info@ehackacademy.com" className="btn-contact-secondary">Email Proposal</a>
+                                </>
+                            )}
+                            {activeTab === 'flexi' && (
+                                <>
+                                    <Link href="/courses" className="btn-contact-primary">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        Start Self-Paced Course
+                                    </Link>
+                                    <a href="tel:+919886035330" className="btn-contact-secondary">Ask Questions</a>
+                                </>
+                            )}
+                            {activeTab === 'customized' && (
+                                <>
+                                    <Link href="/services" className="btn-contact-primary">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        Schedule Consultation
+                                    </Link>
+                                    <a href="mailto:info@ehackacademy.com" className="btn-contact-secondary">Send Requirements</a>
+                                </>
+                            )}
+                            {activeTab === 'webinar-service' && (
+                                <>
+                                    <Link href="/services" className="btn-contact-primary">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        Request Webinar Partnership
+                                    </Link>
+                                    <a href="mailto:info@ehackacademy.com" className="btn-contact-secondary">Discuss Requirements</a>
+                                </>
+                            )}
+                            {activeTab === 'upcoming-webinars' && (
+                                <>
+                                    <Link href="/contact" className="btn-contact-primary">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        Register for Free Webinar
+                                    </Link>
+                                    <Link href="/courses" className="btn-contact-secondary">Explore Full Courses</Link>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
