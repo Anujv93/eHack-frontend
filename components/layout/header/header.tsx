@@ -616,36 +616,37 @@ export default function Header({ partners, courses }: HeaderProps) {
                 </div>
 
                 <div className="mobile-mega-menu-content">
-                    {/* Partners Section */}
-                    <div className="mobile-mega-section">
+                    {/* Partners Section - Grid Layout with Scrollbar (FIRST) */}
+                    <div className="mobile-mega-section mobile-mega-partners-section">
                         <h4 className="mobile-mega-section-title">Our Partners & Programs</h4>
-                        <div className="mobile-mega-partners">
-                            {allPartners.map((partner) => (
-                                <div
-                                    key={partner.id}
-                                    className={`mobile-mega-partner-card ${activePartner === partner.slug ? 'active' : ''}`}
-                                    onClick={() => setActivePartner(partner.slug)}
-                                >
-                                    {partner.logoUrl ? (
-                                        <img src={partner.logoUrl} alt={partner.name} className="mobile-partner-logo" />
-                                    ) : (
-                                        <span className="mobile-partner-placeholder">{partner.name[0]}</span>
-                                    )}
-                                    <div className="mobile-partner-info">
-                                        <span className="mobile-partner-name">{partner.name}</span>
-                                        <span className="mobile-partner-count">
+                        <div className="mobile-mega-partners-grid-scroll">
+                            <div className="mobile-mega-partners-grid">
+                                {allPartners.map((partner) => (
+                                    <div
+                                        key={partner.id}
+                                        className={`mobile-mega-partner-box ${activePartner === partner.slug ? 'active' : ''}`}
+                                        onClick={() => setActivePartner(partner.slug)}
+                                    >
+                                        <div className="partner-box-logo">
+                                            {partner.logoUrl ? (
+                                                <img src={partner.logoUrl} alt={partner.name} className="mobile-partner-logo-square" />
+                                            ) : (
+                                                <span className="mobile-partner-placeholder-square">{partner.name[0]}</span>
+                                            )}
+                                        </div>
+                                        <span className="partner-box-name">{partner.name}</span>
+                                        <span className="partner-box-count">
                                             {partner.courseCount} {partner.slug === 'ehack-originals' ? 'Programs' : partner.slug === 'kennedy-university' ? 'Degrees' : 'Courses'}
                                         </span>
                                     </div>
-                                    <span className="mobile-partner-arrow">→</span>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    {/* Courses Section for Selected Partner */}
+                    {/* Courses Section for Selected Partner (BELOW Partners) */}
                     {activePartner && (
-                        <div className="mobile-mega-section">
+                        <div className="mobile-mega-section mobile-mega-courses-section">
                             <h4 className="mobile-mega-section-title">
                                 {activePartnerData ? (isKennedyUniversity ? 'Kennedy University Degrees' : `${activePartnerData.name} Courses`) : 'Courses'}
                             </h4>
