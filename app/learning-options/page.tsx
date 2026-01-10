@@ -252,6 +252,21 @@ export default function LearningOptionsPage() {
                                         </div>
                                     </div>
                                     <div className="panel-sidebar">
+                                        <div className="pricing-info-card purple">
+                                            <div className="pricing-info-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                    <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
+                                            </div>
+                                            <h4>Customized Pricing</h4>
+                                            <p>1-on-1 training pricing is tailored to your specific requirements, duration, and learning objectives.</p>
+                                            <Link href="/contact" className="pricing-cta-btn purple">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
+                                                Get Custom Quote
+                                            </Link>
+                                        </div>
                                         <div className="info-card">
                                             <h4>Quick Info</h4>
                                             <div className="info-row"><span>Mode</span><strong>Online / In-Person</strong></div>
@@ -305,6 +320,21 @@ export default function LearningOptionsPage() {
                                         </div>
                                     </div>
                                     <div className="panel-sidebar">
+                                        <div className="pricing-info-card green">
+                                            <div className="pricing-info-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                    <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
+                                            </div>
+                                            <h4>Corporate Pricing</h4>
+                                            <p>On-site training pricing depends on location, batch size, duration, and specific requirements.</p>
+                                            <Link href="/contact" className="pricing-cta-btn green">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
+                                                Request Corporate Quote
+                                            </Link>
+                                        </div>
                                         <div className="info-card">
                                             <h4>Quick Info</h4>
                                             <div className="info-row"><span>Mode</span><strong>Your Location</strong></div>
