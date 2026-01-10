@@ -984,7 +984,7 @@ textarea {
    Programs Section
    ============================================ */
 .programs-section {
-    padding: var(--space-16) 0;
+    padding: var(--space-12) 0;
     background: var(--white);
 }
 
@@ -1284,7 +1284,7 @@ textarea {
    Partners Section
    ============================================ */
 .partners-section {
-    padding: var(--space-24) 0;
+    padding: var(--space-12) 0;
     background: var(--gray-50);
 }
 
@@ -1462,7 +1462,7 @@ textarea {
    Learning Experience Section
    ============================================ */
 .experience-section {
-    padding: var(--space-16) 0;
+    padding: var(--space-12) 0;
     background: var(--white);
 }
 
@@ -1524,7 +1524,7 @@ textarea {
    Careers Section
    ============================================ */
 .careers-section {
-    padding: var(--space-16) 0;
+    padding: var(--space-12) 0;
     background: var(--gray-50);
 }
 
@@ -1616,7 +1616,7 @@ textarea {
    Apply Section
    ============================================ */
 .apply-section {
-    padding: var(--space-16) 0;
+    padding: var(--space-12) 0;
     background: var(--white);
 }
 
@@ -2976,5 +2976,173 @@ textarea {
     .pathway-meta {
         flex-direction: column;
         gap: 8px;
+    }
+}
+
+/* ============================================
+   Hero Section Responsive Styles
+   ============================================ */
+@media (max-width: 1024px) {
+    .stats-container {
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: -60px;
+        padding: var(--space-6);
+        gap: var(--space-6);
+    }
+
+    .stat-item:not(:last-child)::after {
+        display: none;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .hero-section {
+        padding: var(--space-8) var(--space-4) var(--space-10);
+    }
+
+    /* Reduce section padding for tighter spacing */
+    .programs-section,
+    .experience-section,
+    .careers-section,
+    .partnership-section,
+    .partners-section,
+    .apply-section {
+        padding: var(--space-12) 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+        margin-top: -40px;
+        padding: var(--space-4);
+        gap: var(--space-3);
+    }
+
+    .stat-item {
+        padding: var(--space-3);
+        border: 1px solid var(--gray-100);
+        border-radius: var(--border-radius-sm);
+    }
+
+    .stats-container .stat-item:last-child {
+        grid-column: 1 / -1;
+        border-color: var(--gray-200);
+        margin-top: 4px;
+    }
+
+    .hero-section {
+        padding: var(--space-6) var(--space-4) var(--space-10);
+        /* Increased bottom padding to account for stats overlap */
+    }
+
+    .hero-container {
+        gap: var(--space-6);
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        margin-bottom: var(--space-4);
+    }
+
+    .hero-description {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-6);
+        line-height: 1.6;
+    }
+
+    .form-card {
+        padding: var(--space-6);
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+    }
+
+    .partner-logos {
+        flex-wrap: wrap;
+        gap: var(--space-4);
+        margin-bottom: var(--space-4);
+    }
+
+
+
+    /* Reduce section padding for tighter mobile */
+    .programs-section,
+    .experience-section,
+    .careers-section,
+    .partnership-section,
+    .partners-section,
+    .apply-section {
+        padding: var(--space-8) 0;
+    }
+
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .section-subtitle {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-container {
+        margin-top: -30px;
+        width: 95%;
+        /* Wider on small screens */
+    }
+
+    .stat-value strong {
+        font-size: 1.25rem;
+    }
+
+    .stat-logo.kennedy {
+        height: 32px;
+    }
+
+    .hero-section {
+        padding: var(--space-4) var(--space-3) var(--space-8);
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.9375rem;
+    }
+
+    .form-card {
+        padding: var(--space-4);
+        margin-top: var(--space-2);
+    }
+
+    /* Even tighter section spacing on small mobile */
+    .programs-section,
+    .experience-section,
+    .careers-section,
+    .partnership-section,
+    .partners-section,
+    .apply-section {
+        padding: var(--space-6) 0;
     }
 }
