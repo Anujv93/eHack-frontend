@@ -1085,15 +1085,17 @@
 
 .program-detail-integrated .criteria-list li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
 }
 
 .program-detail-integrated .check-icon {
     width: 28px;
     height: 28px;
+    min-width: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1101,6 +1103,8 @@
     border-radius: 50%;
     font-size: 14px;
     font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .program-detail-integrated .criteria-list li strong {
@@ -1402,6 +1406,24 @@
 
     .program-detail-integrated .criteria-card h2 {
         font-size: 1.25rem;
+    }
+
+    .program-detail-integrated .criteria-intro {
+        font-size: 0.9rem;
+    }
+
+    .program-detail-integrated .criteria-list li {
+        font-size: 0.9rem;
+        align-items: flex-start;
+        line-height: 1.5;
+    }
+
+    .program-detail-integrated .check-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+        flex-shrink: 0;
+        margin-top: 2px;
     }
 
     .program-detail-integrated .cta-content h2 {

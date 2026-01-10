@@ -380,19 +380,19 @@ export default function BSCSPage() {
                         <ul className="criteria-list">
                             <li>
                                 <span className="check-icon">✓</span>
-                                Earn a minimum of <strong>120 credits</strong>
+                                <span>Earn a minimum of <strong>120 credits</strong></span>
                             </li>
                             <li>
                                 <span className="check-icon">✓</span>
-                                Complete all <strong>mandatory courses</strong>
+                                <span>Complete all <strong>mandatory courses</strong></span>
                             </li>
                             <li>
                                 <span className="check-icon">✓</span>
-                                Successfully finish the <strong>6-month internship</strong> / industrial project
+                                <span>Successfully finish the <strong>6-month internship</strong> / industrial project</span>
                             </li>
                             <li>
                                 <span className="check-icon">✓</span>
-                                Clear <strong>final evaluation</strong> and viva voce
+                                <span>Clear <strong>final evaluation</strong> and viva voce</span>
                             </li>
                         </ul>
                     </div>

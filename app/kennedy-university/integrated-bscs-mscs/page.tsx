@@ -568,19 +568,19 @@ export default function IntegratedBSCSMSCSPage() {
                         <ul className="criteria-list">
                             <li>
                                 <span className="check-icon">✓</span>
-                                Earn a total of <strong>180 credits</strong>
+                                <span>Earn a total of <strong>180 credits</strong></span>
                             </li>
                             <li>
                                 <span className="check-icon">✓</span>
-                                Complete all <strong>UG + PG core, SOC, cloud, specialisation & P|HISOᴬᴵ modules</strong>
+                                <span>Complete all <strong>UG + PG core, SOC, cloud, specialisation &amp; P|HISOᴬᴵ modules</strong></span>
                             </li>
                             <li>
                                 <span className="check-icon">✓</span>
-                                Successfully complete <strong>internships/projects</strong>
+                                <span>Successfully complete <strong>internships/projects</strong></span>
                             </li>
                             <li>
                                 <span className="check-icon">✓</span>
-                                Clear <strong>final evaluation</strong> & viva voce
+                                <span>Clear <strong>final evaluation</strong> &amp; viva voce</span>
                             </li>
                         </ul>
                     </div>

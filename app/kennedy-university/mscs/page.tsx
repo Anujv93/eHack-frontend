@@ -409,19 +409,19 @@ export default function MSCSPage() {
                         <ul className="criteria-list">
                             <li>
                                 <span className="check-icon">✓</span>
-                                Earn a minimum of <strong>90 credits</strong>
+                                <span>Earn a minimum of <strong>90 credits</strong></span>
                             </li>
                             <li>
                                 <span className="check-icon">✓</span>
-                                Complete all <strong>core, SOC, cloud, specialisation, research, and P|HISOᴬᴵ modules</strong>
+                                <span>Complete all <strong>core, SOC, cloud, specialisation, research, and P|HISOᴬᴵ modules</strong></span>
                             </li>
                             <li>
                                 <span className="check-icon">✓</span>
-                                Successfully complete the <strong>6-month internship / project / thesis</strong>
+                                <span>Successfully complete the <strong>6-month internship / project / thesis</strong></span>
                             </li>
                             <li>
                                 <span className="check-icon">✓</span>
-                                Clear <strong>final evaluation</strong> and viva voce
+                                <span>Clear <strong>final evaluation</strong> and viva voce</span>
                             </li>
                         </ul>
                     </div>
