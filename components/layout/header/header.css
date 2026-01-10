@@ -1245,6 +1245,11 @@
     transform: translateY(-7.5px) rotate(-45deg);
 }
 
+/* Hide hamburger when mobile menu is open since there's a close button inside */
+.hamburger-btn.open {
+    display: none;
+}
+
 /* Mobile Menu Overlay */
 .mobile-menu-overlay {
     position: fixed;

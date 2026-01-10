@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Handshake } from 'lucide-react';
@@ -127,6 +127,19 @@ export default function Header({ partners, courses }: HeaderProps) {
     const toggleMobileDropdown = (id: string) => {
         setMobileDropdown(prev => prev === id ? null : id);
     };
+
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        // Cleanup on unmount
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [mobileMenuOpen]);
 
     // Filter courses for suggestions
     const searchSuggestions = searchQuery.length >= 2
