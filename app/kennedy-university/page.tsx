@@ -1,6 +1,15 @@
 'use client'
 import './page.css';
+import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 
+// Navigation sections for Kennedy University page
+const KENNEDY_NAV_SECTIONS = [
+    { id: 'programs', label: 'Programs' },
+    { id: 'partners', label: 'Partners' },
+    { id: 'experience', label: 'Learning Experience' },
+    { id: 'careers', label: 'Careers' },
+    { id: 'apply', label: 'Apply Now' },
+];
 
 export default function KennedyUniversityPage() {
 
@@ -12,8 +21,15 @@ export default function KennedyUniversityPage() {
 
     return (
         <>
+            {/* Sticky Section Navigation */}
+            <StickySectionNav
+                sections={KENNEDY_NAV_SECTIONS}
+                scrollThreshold={500}
+            />
+
             {/* Hero Section */}
             <section className="hero-section">
+
                 <div className="hero-container">
                     {/* Left Content */}
                     <div className="hero-content">

@@ -418,3 +418,67 @@ export async function getCoursesForListing(): Promise<CourseListItem[]> {
         return [];
     }
 }
+
+// ============================================
+// Related Certificates
+// ============================================
+export async function getRelatedCertificates(
+    currentSlug: string,
+    categoryIds?: number[],
+    partnerId?: number,
+    limit: number = 4
+): Promise<CourseListItem[]> {
+    try {
+        // Fetch all certificates with their relationships
+        const url = `${STRAPI_URL}/api/certificates?populate=*&sort=FeaturedOrder:asc`;
+
+        const res = await fetch(url, {
+            headers: getHeaders(),
+            next: { revalidate: 60 }
+        });
+
+        if (!res.ok) {
+            throw new Error(`Failed to fetch related certificates: ${res.status}`);
+        }
+
+        const data = await res.json();
+        const allCertificates: CourseListItem[] = data.data || [];
+
+        // Filter out current certificate and find related ones
+        const relatedCertificates = allCertificates
+            .filter((cert) => cert.slug !== currentSlug)
+            .filter((cert) => {
+                // Check if shares a category
+                if (categoryIds && categoryIds.length > 0 && cert.certification_categories) {
+                    const certCategoryIds = cert.certification_categories.map(cat => cat.id);
+                    const hasMatchingCategory = categoryIds.some(id => certCategoryIds.includes(id));
+                    if (hasMatchingCategory) return true;
+                }
+
+                // Check if shares the same partner
+                if (partnerId && cert.certification_partner?.id === partnerId) {
+                    return true;
+                }
+
+                return false;
+            })
+            .slice(0, limit);
+
+        // If not enough related certificates found, fill with other top certificates
+        if (relatedCertificates.length < limit) {
+            const additionalCerts = allCertificates
+                .filter((cert) =>
+                    cert.slug !== currentSlug &&
+                    !relatedCertificates.some(r => r.slug === cert.slug)
+                )
+                .slice(0, limit - relatedCertificates.length);
+
+            relatedCertificates.push(...additionalCerts);
+        }
+
+        return relatedCertificates;
+    } catch (error) {
+        console.error('Error fetching related certificates:', error);
+        return [];
+    }
+}

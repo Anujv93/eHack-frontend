@@ -8,9 +8,11 @@ import Accreditations from "@/components/global/accreditations/accreditations";
 import CTASection from "@/components/global/cta-section/cta-section";
 import ExamDetails from "@/components/global/exam-details/exam-details";
 import StickySectionNav from "@/components/global/sticky-section-nav/sticky-section-nav";
+import RelatedCertificates from "@/components/global/related-certificates/related-certificates";
 import {
     getCertificateBySlug,
     getAdmissionProcess,
+    getRelatedCertificates,
     HeroSection,
     CertificateSummarySection,
     FeaturesGridSection,
@@ -39,6 +41,15 @@ export default async function CertificatePage({ params }: PageProps) {
     if (!certificate) {
         notFound();
     }
+
+    // Extract category IDs and partner ID for related certificates
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const certWithRelations = certificate as any;
+    const categoryIds = certWithRelations.certification_categories?.map((cat: { id: number }) => cat.id) || [];
+    const partnerId = certWithRelations.certification_partner?.id;
+
+    // Fetch related certificates
+    const relatedCertificates = await getRelatedCertificates(slug, categoryIds, partnerId, 4);
 
     // Extract pageContent components
     const heroSection = certificate.pageContent?.find(
@@ -167,6 +178,13 @@ export default async function CertificatePage({ params }: PageProps) {
                 subtitle={ctaSection?.Subtitle}
                 buttonText={ctaSection?.ButtonText}
                 buttonLink={ctaSection?.ButtonLink}
+            />
+
+            {/* Related Certificates Section */}
+            <RelatedCertificates
+                title="Explore More Certifications"
+                subtitle="Discover other certifications that can help advance your career"
+                certificates={relatedCertificates}
             />
         </div>
     );

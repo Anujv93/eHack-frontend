@@ -81,7 +81,7 @@
 /* Tab Section */
 .learning-tabs-section {
     background: #FFFFFF;
-    padding: 60px 0 80px;
+    padding: 60px 0 5px;
 }
 
 /* Tabs Navigation */
@@ -872,5 +872,138 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Pricing Info Card - Custom Pricing CTA */
+.pricing-info-card {
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+    border: 1px solid #FDBA74;
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6B00, #FF8533);
+}
+
+.pricing-info-card.purple {
+    background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%);
+    border-color: #C4B5FD;
+}
+
+.pricing-info-card.purple::before {
+    background: linear-gradient(90deg, #8B5CF6, #A78BFA);
+}
+
+.pricing-info-card.green {
+    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+    border-color: #6EE7B7;
+}
+
+.pricing-info-card.green::before {
+    background: linear-gradient(90deg, #10B981, #34D399);
+}
+
+.pricing-info-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.15), rgba(255, 107, 0, 0.08));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    color: #FF6B00;
+}
+
+.pricing-info-card.purple .pricing-info-icon {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(139, 92, 246, 0.08));
+    color: #8B5CF6;
+}
+
+.pricing-info-card.green .pricing-info-icon {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.08));
+    color: #10B981;
+}
+
+.pricing-info-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0a0a1a;
+    margin-bottom: 8px;
+}
+
+.pricing-info-card p {
+    font-size: 0.85rem;
+    color: #111;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.pricing-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #FF6B00, #FF8533);
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.25);
+}
+
+.pricing-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 0, 0.35);
+}
+
+.pricing-cta-btn.purple {
+    background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+}
+
+.pricing-cta-btn.purple:hover {
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.35);
+}
+
+.pricing-cta-btn.green {
+    background: linear-gradient(135deg, #10B981, #34D399);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.pricing-cta-btn.green:hover {
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+}
+
+/* Responsive for pricing card */
+@media (max-width: 1024px) {
+    .pricing-info-card {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-info-card {
+        padding: 20px;
+    }
+
+    .pricing-info-icon {
+        width: 44px;
+        height: 44px;
     }
 }
