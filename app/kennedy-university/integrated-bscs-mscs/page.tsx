@@ -3,6 +3,17 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import './page.css';
+import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
+
+// Navigation sections for Integrated BSCS+MSCS page
+const INTEGRATED_NAV_SECTIONS = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'curriculum', label: 'Curriculum' },
+    { id: 'credits', label: 'Credits' },
+    { id: 'degrees', label: 'Degrees' },
+    { id: 'criteria', label: 'Criteria' },
+    { id: 'apply', label: 'Apply Now' },
+];
 
 export default function IntegratedBSCSMSCSPage() {
     const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set());
@@ -292,6 +303,12 @@ export default function IntegratedBSCSMSCSPage() {
 
     return (
         <div className="program-detail-integrated">
+            {/* Sticky Section Navigation */}
+            <StickySectionNav
+                sections={INTEGRATED_NAV_SECTIONS}
+                scrollThreshold={400}
+            />
+
             {/* Hero Section */}
             <section className="program-hero">
                 <div className="hero-grid-bg"></div>
@@ -379,7 +396,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* Program Overview */}
-            <section className="program-overview">
+            <section className="program-overview" id="overview">
                 <div className="section-container">
                     <h2 className="section-title">Program <span className="accent">Overview</span></h2>
                     <div className="overview-grid">
@@ -404,7 +421,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* Curriculum Section */}
-            <section className="curriculum-section">
+            <section className="curriculum-section" id="curriculum">
                 <div className="section-container">
                     <h2 className="section-title">Program <span className="accent">Curriculum</span></h2>
                     <p className="section-subtitle">A comprehensive 4-part learning path covering 180 credits over 15 months.</p>
@@ -484,7 +501,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* Credit Summary */}
-            <section className="credit-summary-section">
+            <section className="credit-summary-section" id="credits">
                 <div className="section-container">
                     <h2 className="section-title">Credit <span className="accent">Summary</span></h2>
                     <div className="credit-summary-grid">
@@ -518,7 +535,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* Degrees Awarded Section */}
-            <section className="degrees-awarded-section">
+            <section className="degrees-awarded-section" id="degrees">
                 <div className="section-container">
                     <div className="degrees-card">
                         <h2>Degrees Awarded – Kennedy University</h2>
@@ -560,7 +577,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* Degree Award Criteria */}
-            <section className="criteria-section">
+            <section className="criteria-section" id="criteria">
                 <div className="section-container">
                     <div className="criteria-card">
                         <h2>Degree Award Criteria</h2>
