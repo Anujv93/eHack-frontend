@@ -624,12 +624,12 @@ export default function Header({ partners, courses }: HeaderProps) {
                                 {allPartners.map((partner) => (
                                     <div
                                         key={partner.id}
-                                        className={`mobile-mega-partner-box ${activePartner === partner.slug ? 'active' : ''}`}
+                                        className={`mobile-mega-partner-box ${activePartner === partner.slug ? 'active' : ''} ${partner.slug === 'kennedy-university' ? 'kennedy-university-mobile' : ''}`}
                                         onClick={() => setActivePartner(partner.slug)}
                                     >
                                         <div className="partner-box-logo">
                                             {partner.logoUrl ? (
-                                                <img src={partner.logoUrl} alt={partner.name} className="mobile-partner-logo-square" />
+                                                <img src={partner.logoUrl} alt={partner.name} className={`mobile-partner-logo-square ${partner.slug === 'kennedy-university' ? 'kennedy-logo' : ''}`} />
                                             ) : (
                                                 <span className="mobile-partner-placeholder-square">{partner.name[0]}</span>
                                             )}

@@ -1762,6 +1762,11 @@
     color: var(--brand-primary);
 }
 
+/* Kennedy University Mobile Logo - Apply black filter */
+.mobile-mega-partner-box.kennedy-university-mobile .kennedy-logo {
+    filter: brightness(0);
+}
+
 /* Mobile Mega Courses */
 .mobile-mega-courses {
     display: flex;
