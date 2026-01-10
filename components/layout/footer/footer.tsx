@@ -187,12 +187,6 @@ export default function Footer() {
                                     <span>Academic Partner</span>
                                 </div>
                             </div>
-                            <ul className="footer-links-list partner-certs">
-                                <li><Link href="/certificate/ceh-v13">EC-Council CEH</Link></li>
-                                <li><Link href="/certificate/ecc-cnd">EC-Council CND</Link></li>
-                                <li><Link href="/certificate/ecc-cpent">EC-Council CPENT</Link></li>
-                                <li><Link href="/certificate/ecc-chfi">EC-Council CHFI</Link></li>
-                            </ul>
                         </div>
 
                         {/* Company & Resources */}
@@ -203,6 +197,13 @@ export default function Footer() {
                             <ul className="footer-links-list">
                                 <li><Link href="/about">About Us</Link></li>
                                 <li><Link href="/services">Corporate Training</Link></li>
+                            </ul>
+                            <h5 className="footer-subheading">Most Popular Certifications</h5>
+                            <ul className="footer-links-list partner-certs">
+                                <li><Link href="/certificate/ceh-v13">EC-Council CEH</Link></li>
+                                <li><Link href="/certificate/ecc-cnd">EC-Council CND</Link></li>
+                                <li><Link href="/certificate/ecc-cpent">EC-Council CPENT</Link></li>
+                                <li><Link href="/certificate/ecc-chfi">EC-Council CHFI</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -258,13 +259,6 @@ export default function Footer() {
                         </div>
                         <div className="footer-bottom-right">
                             <div className="footer-trust-badges">
-                                <div className="trust-badge">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" />
-                                        <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                    <span>ISO Certified</span>
-                                </div>
                                 <div className="trust-badge">
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

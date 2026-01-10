@@ -29,7 +29,7 @@ export default function LearningFramework({ title, steps }: LearningFrameworkPro
     if (!steps || steps.length === 0) return null;
 
     return (
-        <section className="framework-section">
+        <section className="framework-section" id="learning-framework">
             <div className="container">
                 {title && (
                     <div className="section-header">
