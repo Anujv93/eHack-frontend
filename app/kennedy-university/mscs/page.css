@@ -773,6 +773,11 @@
         gap: 40px;
     }
 
+    .program-detail-mscs .lead-form-card {
+        max-width: 480px;
+        margin: 0 auto 16px;
+    }
+
     .program-detail-mscs .overview-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -780,19 +785,68 @@
 
 @media (max-width: 768px) {
     .program-detail-mscs .program-hero {
-        padding: 80px 0 60px;
+        padding: 40px 0 60px;
+    }
+
+    .program-detail-mscs .program-hero .hero-container {
+        padding: 0 16px;
     }
 
     .program-detail-mscs .program-title {
         font-size: 2rem;
     }
 
+    .program-detail-mscs .program-desc {
+        font-size: 1rem;
+    }
+
+    .program-detail-mscs .partner-logos-hero {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .program-detail-mscs .partner-logos-hero .partner-logo {
+        height: 36px;
+    }
+
+    .program-detail-mscs .hero-ctas {
+        flex-direction: column;
+    }
+
+    .program-detail-mscs .btn-apply-now,
+    .program-detail-mscs .btn-download {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .program-detail-mscs .lead-form-card {
+        max-width: 100%;
+        padding: 24px;
+    }
+
     .program-detail-mscs .overview-grid {
         grid-template-columns: 1fr;
     }
 
+    .program-detail-mscs .section-container {
+        padding: 0 16px;
+    }
+
+    .program-detail-mscs .section-title {
+        font-size: 1.75rem;
+    }
+
+    .program-detail-mscs .program-overview,
+    .program-detail-mscs .curriculum-section,
+    .program-detail-mscs .criteria-section,
+    .program-detail-mscs .cta-section {
+        padding: 60px 0;
+    }
+
     .program-detail-mscs .part-header-clickable {
         flex-wrap: wrap;
+        padding: 20px;
     }
 
     .program-detail-mscs .course-header {
@@ -806,6 +860,11 @@
         margin-top: 8px;
     }
 
+    .program-detail-mscs .topics-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
     .program-detail-mscs .criteria-card {
         padding: 32px;
     }
@@ -814,23 +873,127 @@
         flex-direction: column;
     }
 
+    .program-detail-mscs .btn-primary-lg,
+    .program-detail-mscs .btn-outline-lg {
+        width: 100%;
+        text-align: center;
+    }
+
     .program-detail-mscs .program-stats-bar {
         flex-direction: column;
-        gap: 16px;
+        gap: 0;
         padding: 24px;
+        margin-top: 32px;
     }
 
     .program-detail-mscs .stat-column {
         border-right: none;
         border-bottom: 1px solid #E2E8F0;
         padding: 16px 0;
+        width: 100%;
     }
 
     .program-detail-mscs .stat-column:last-child {
         border-bottom: none;
     }
+}
 
-    .program-detail-mscs .topics-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 576px) {
+    .program-detail-mscs .program-hero {
+        padding: 24px 0 40px;
+    }
+
+    .program-detail-mscs .back-link {
+        margin-bottom: 20px;
+        font-size: 13px;
+    }
+
+    .program-detail-mscs .program-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .program-detail-mscs .program-desc {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+
+    .program-detail-mscs .partner-logos-hero .partner-logo {
+        height: 30px;
+    }
+
+    .program-detail-mscs .lead-form-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .program-detail-mscs .form-title {
+        font-size: 1.1rem;
+    }
+
+    .program-detail-mscs .btn-apply-now,
+    .program-detail-mscs .btn-download {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+    }
+
+    .program-detail-mscs .program-overview,
+    .program-detail-mscs .curriculum-section,
+    .program-detail-mscs .criteria-section,
+    .program-detail-mscs .cta-section {
+        padding: 48px 0;
+    }
+
+    .program-detail-mscs .section-title {
+        font-size: 1.5rem;
+    }
+
+    .program-detail-mscs .overview-card {
+        padding: 20px;
+    }
+
+    .program-detail-mscs .part-header-clickable {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .program-detail-mscs .course-header {
+        padding: 14px 16px;
+    }
+
+    .program-detail-mscs .course-name {
+        font-size: 0.9rem;
+    }
+
+    .program-detail-mscs .criteria-card {
+        padding: 24px;
+    }
+
+    .program-detail-mscs .criteria-card h2 {
+        font-size: 1.25rem;
+    }
+
+    .program-detail-mscs .cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .program-detail-mscs .btn-primary-lg,
+    .program-detail-mscs .btn-outline-lg {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+
+    .program-detail-mscs .program-stats-bar {
+        padding: 16px;
+        margin-top: 24px;
+        border-radius: 16px;
+    }
+
+    .program-detail-mscs .program-stats-bar .stat-label {
+        font-size: 10px;
+    }
+
+    .program-detail-mscs .program-stats-bar .stat-value {
+        font-size: 1rem;
     }
 }

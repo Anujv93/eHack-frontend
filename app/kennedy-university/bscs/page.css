@@ -759,26 +759,117 @@
         gap: 40px;
     }
 
+    .program-detail-bscs .lead-form-card {
+        max-width: 480px;
+        margin: 0 auto 16px;
+    }
+
     .program-detail-bscs .overview-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .program-detail-bscs .program-stats-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .program-detail-bscs .stat-column {
+        flex: 1 1 33%;
+        min-width: 140px;
+    }
+
+    .program-detail-bscs .stat-column:nth-child(3) {
+        border-right: none;
     }
 }
 
 @media (max-width: 768px) {
     .program-detail-bscs .program-hero {
-        padding: 80px 0 60px;
+        padding: 40px 0 60px;
+    }
+
+    .program-detail-bscs .program-hero .hero-container {
+        padding: 0 16px;
     }
 
     .program-detail-bscs .program-title {
         font-size: 2rem;
     }
 
+    .program-detail-bscs .program-desc {
+        font-size: 1rem;
+    }
+
+    .program-detail-bscs .partner-logos-hero {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .program-detail-bscs .partner-logos-hero .partner-logo {
+        height: 36px;
+    }
+
+    .program-detail-bscs .hero-ctas {
+        flex-direction: column;
+    }
+
+    .program-detail-bscs .btn-apply-now,
+    .program-detail-bscs .btn-download {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .program-detail-bscs .lead-form-card {
+        max-width: 100%;
+        padding: 24px;
+    }
+
     .program-detail-bscs .overview-grid {
         grid-template-columns: 1fr;
     }
 
+    .program-detail-bscs .overview-card {
+        padding: 24px;
+    }
+
+    .program-detail-bscs .section-container {
+        padding: 0 16px;
+    }
+
+    .program-detail-bscs .section-title {
+        font-size: 1.75rem;
+    }
+
+    .program-detail-bscs .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .program-detail-bscs .program-overview,
+    .program-detail-bscs .curriculum-section,
+    .program-detail-bscs .criteria-section,
+    .program-detail-bscs .cta-section {
+        padding: 60px 0;
+    }
+
     .program-detail-bscs .part-header-clickable {
         flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .program-detail-bscs .part-number-badge {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+
+    .program-detail-bscs .part-info .part-title {
+        font-size: 1rem;
+    }
+
+    .program-detail-bscs .part-meta {
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
     .program-detail-bscs .course-header {
@@ -792,31 +883,200 @@
         margin-top: 8px;
     }
 
+    .program-detail-bscs .topics-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
     .program-detail-bscs .criteria-card {
         padding: 32px;
+        border-radius: 16px;
+    }
+
+    .program-detail-bscs .criteria-card h2 {
+        font-size: 1.5rem;
     }
 
     .program-detail-bscs .cta-buttons {
         flex-direction: column;
     }
 
+    .program-detail-bscs .btn-primary-lg,
+    .program-detail-bscs .btn-outline-lg {
+        width: 100%;
+        text-align: center;
+    }
+
     .program-detail-bscs .program-stats-bar {
         flex-direction: column;
-        gap: 16px;
+        gap: 0;
         padding: 24px;
+        margin-top: 32px;
     }
 
     .program-detail-bscs .stat-column {
         border-right: none;
         border-bottom: 1px solid #E2E8F0;
         padding: 16px 0;
+        flex: none;
+        width: 100%;
     }
 
     .program-detail-bscs .stat-column:last-child {
         border-bottom: none;
     }
+}
 
-    .program-detail-bscs .topics-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 576px) {
+    .program-detail-bscs .program-hero {
+        padding: 24px 0 40px;
+    }
+
+    .program-detail-bscs .back-link {
+        margin-bottom: 20px;
+        font-size: 13px;
+    }
+
+    .program-detail-bscs .program-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .program-detail-bscs .program-desc {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+
+    .program-detail-bscs .partner-logos-hero .partner-logo {
+        height: 30px;
+    }
+
+    .program-detail-bscs .divider-line {
+        height: 30px;
+    }
+
+    .program-detail-bscs .lead-form-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .program-detail-bscs .form-title {
+        font-size: 1.1rem;
+    }
+
+    .program-detail-bscs .form-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .program-detail-bscs .btn-apply-now,
+    .program-detail-bscs .btn-download {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+    }
+
+    .program-detail-bscs .program-overview,
+    .program-detail-bscs .curriculum-section,
+    .program-detail-bscs .criteria-section,
+    .program-detail-bscs .cta-section {
+        padding: 48px 0;
+    }
+
+    .program-detail-bscs .section-title {
+        font-size: 1.5rem;
+    }
+
+    .program-detail-bscs .overview-card {
+        padding: 20px;
+    }
+
+    .program-detail-bscs .overview-card h3 {
+        font-size: 1rem;
+    }
+
+    .program-detail-bscs .part-header-clickable {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .program-detail-bscs .part-content {
+        padding: 0 16px 16px;
+    }
+
+    .program-detail-bscs .course-header {
+        padding: 14px 16px;
+    }
+
+    .program-detail-bscs .course-name {
+        font-size: 0.9rem;
+    }
+
+    .program-detail-bscs .course-desc {
+        font-size: 0.8rem;
+    }
+
+    .program-detail-bscs .course-topics {
+        padding: 0 16px 16px;
+    }
+
+    .program-detail-bscs .topic-item {
+        padding: 8px 12px;
+    }
+
+    .program-detail-bscs .topic-text {
+        font-size: 0.85rem;
+    }
+
+    .program-detail-bscs .criteria-card {
+        padding: 24px;
+    }
+
+    .program-detail-bscs .criteria-card h2 {
+        font-size: 1.25rem;
+    }
+
+    .program-detail-bscs .criteria-intro {
+        font-size: 0.9rem;
+    }
+
+    .program-detail-bscs .criteria-list li {
+        font-size: 0.9rem;
+    }
+
+    .program-detail-bscs .check-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+
+    .program-detail-bscs .cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .program-detail-bscs .cta-content p {
+        font-size: 1rem;
+    }
+
+    .program-detail-bscs .btn-primary-lg,
+    .program-detail-bscs .btn-outline-lg {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+
+    .program-detail-bscs .program-stats-bar {
+        padding: 16px;
+        margin-top: 24px;
+        border-radius: 16px;
+    }
+
+    .program-detail-bscs .program-stats-bar .stat-label {
+        font-size: 10px;
+    }
+
+    .program-detail-bscs .program-stats-bar .stat-value {
+        font-size: 1rem;
+    }
+
+    .program-detail-bscs .program-stats-bar .stat-logo {
+        height: 30px;
     }
 }

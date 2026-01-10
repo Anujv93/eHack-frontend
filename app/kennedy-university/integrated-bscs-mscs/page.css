@@ -1178,6 +1178,11 @@
         gap: 40px;
     }
 
+    .program-detail-integrated .lead-form-card {
+        max-width: 480px;
+        margin: 0 auto 16px;
+    }
+
     .program-detail-integrated .overview-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1189,11 +1194,44 @@
 
 @media (max-width: 768px) {
     .program-detail-integrated .program-hero {
-        padding: 80px 0 60px;
+        padding: 40px 0 60px;
+    }
+
+    .program-detail-integrated .program-hero .hero-container {
+        padding: 0 16px;
     }
 
     .program-detail-integrated .program-title {
         font-size: 2rem;
+    }
+
+    .program-detail-integrated .program-desc {
+        font-size: 1rem;
+    }
+
+    .program-detail-integrated .partner-logos-hero {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .program-detail-integrated .partner-logos-hero .partner-logo {
+        height: 36px;
+    }
+
+    .program-detail-integrated .hero-ctas {
+        flex-direction: column;
+    }
+
+    .program-detail-integrated .btn-apply-now,
+    .program-detail-integrated .btn-download {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .program-detail-integrated .lead-form-card {
+        max-width: 100%;
+        padding: 24px;
     }
 
     .program-detail-integrated .overview-grid {
@@ -1208,8 +1246,25 @@
         grid-template-columns: 1fr;
     }
 
+    .program-detail-integrated .section-container {
+        padding: 0 16px;
+    }
+
+    .program-detail-integrated .section-title {
+        font-size: 1.75rem;
+    }
+
+    .program-detail-integrated .program-overview,
+    .program-detail-integrated .curriculum-section,
+    .program-detail-integrated .criteria-section,
+    .program-detail-integrated .cta-section,
+    .program-detail-integrated .degrees-awarded-section {
+        padding: 60px 0;
+    }
+
     .program-detail-integrated .part-header-clickable {
         flex-wrap: wrap;
+        padding: 20px;
     }
 
     .program-detail-integrated .course-header {
@@ -1223,6 +1278,11 @@
         margin-top: 8px;
     }
 
+    .program-detail-integrated .topics-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
     .program-detail-integrated .criteria-card {
         padding: 32px;
     }
@@ -1231,23 +1291,172 @@
         flex-direction: column;
     }
 
+    .program-detail-integrated .btn-primary-lg,
+    .program-detail-integrated .btn-outline-lg {
+        width: 100%;
+        text-align: center;
+    }
+
     .program-detail-integrated .program-stats-bar {
         flex-direction: column;
-        gap: 16px;
+        gap: 0;
         padding: 24px;
+        margin-top: 32px;
     }
 
     .program-detail-integrated .stat-column {
         border-right: none;
         border-bottom: 1px solid #E2E8F0;
         padding: 16px 0;
+        width: 100%;
     }
 
     .program-detail-integrated .stat-column:last-child {
         border-bottom: none;
     }
 
-    .program-detail-integrated .topics-grid {
-        grid-template-columns: 1fr;
+    .program-detail-integrated .degrees-card h2 {
+        font-size: 2rem;
+    }
+
+    .program-detail-integrated .degrees-intro {
+        font-size: 1rem;
+    }
+
+    .program-detail-integrated .degree-item-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .program-detail-integrated .program-hero {
+        padding: 24px 0 40px;
+    }
+
+    .program-detail-integrated .back-link {
+        margin-bottom: 20px;
+        font-size: 13px;
+    }
+
+    .program-detail-integrated .program-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .program-detail-integrated .program-desc {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+
+    .program-detail-integrated .partner-logos-hero .partner-logo {
+        height: 30px;
+    }
+
+    .program-detail-integrated .lead-form-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .program-detail-integrated .form-title {
+        font-size: 1.1rem;
+    }
+
+    .program-detail-integrated .btn-apply-now,
+    .program-detail-integrated .btn-download {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+    }
+
+    .program-detail-integrated .program-overview,
+    .program-detail-integrated .curriculum-section,
+    .program-detail-integrated .criteria-section,
+    .program-detail-integrated .cta-section,
+    .program-detail-integrated .degrees-awarded-section {
+        padding: 48px 0;
+    }
+
+    .program-detail-integrated .section-title {
+        font-size: 1.5rem;
+    }
+
+    .program-detail-integrated .overview-card {
+        padding: 20px;
+    }
+
+    .program-detail-integrated .part-header-clickable {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .program-detail-integrated .course-header {
+        padding: 14px 16px;
+    }
+
+    .program-detail-integrated .course-name {
+        font-size: 0.9rem;
+    }
+
+    .program-detail-integrated .criteria-card {
+        padding: 24px;
+    }
+
+    .program-detail-integrated .criteria-card h2 {
+        font-size: 1.25rem;
+    }
+
+    .program-detail-integrated .cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .program-detail-integrated .btn-primary-lg,
+    .program-detail-integrated .btn-outline-lg {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+
+    .program-detail-integrated .program-stats-bar {
+        padding: 16px;
+        margin-top: 24px;
+        border-radius: 16px;
+    }
+
+    .program-detail-integrated .program-stats-bar .stat-label {
+        font-size: 10px;
+    }
+
+    .program-detail-integrated .program-stats-bar .stat-value {
+        font-size: 1rem;
+    }
+
+    .program-detail-integrated .degrees-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .program-detail-integrated .degrees-intro {
+        font-size: 0.9rem;
+        margin-bottom: 40px;
+    }
+
+    .program-detail-integrated .degree-item-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .program-detail-integrated .degree-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 16px;
+    }
+
+    .program-detail-integrated .degree-name {
+        font-size: 1.1rem;
+    }
+
+    .program-detail-integrated .credit-summary-card {
+        padding: 24px 20px;
+    }
+
+    .program-detail-integrated .credit-summary-card .summary-value {
+        font-size: 2rem;
     }
 }
