@@ -728,7 +728,7 @@
 
 /* ===== Stats Section ===== */
 .statsSection {
-    padding: 3rem 0;
+    padding: 2rem 0;
     background: #FFF7F0;
     width: 80%;
     margin: 0 auto;
@@ -788,7 +788,7 @@
 
 /* ===== Courses Section ===== */
 .coursesSection {
-    padding: 5rem 0;
+    padding: 3.5rem 0;
     background: #fff;
 }
 
@@ -926,7 +926,7 @@
 
 /* ===== Programs Section ===== */
 .programsSection {
-    padding: 5rem 0;
+    padding: 3.5rem 0;
     background: white;
 }
 
@@ -1005,7 +1005,7 @@
 
 /* ===== Learning Section ===== */
 .learningSection {
-    padding: 5rem 0;
+    padding: 3.5rem 0;
     background: #fff;
 }
 
@@ -1055,7 +1055,7 @@
 
 /* ===== Offerings Section ===== */
 .offeringsSection {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: linear-gradient(180deg, #fff 0%, #FFF9F5 100%);
 }
 
@@ -1127,7 +1127,7 @@
 
 /* ===== CTA Section ===== */
 .ctaSection {
-    padding: 5rem 0;
+    padding: 3.5rem 0;
     background: linear-gradient(135deg, var(--brand-primary-100) 0%, var(--brand-primary-200) 100%);
 }
 
