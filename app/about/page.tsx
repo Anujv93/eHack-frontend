@@ -129,10 +129,10 @@ export default function AboutPage() {
 
                     <div className="founder-card">
                         <div className="founder-image-wrapper">
-                            <img src="/images/about-us/manager.jpeg" alt="Mr. Sanjeev Gupta" className="founder-image" />
+                            <img src="/images/about-us/manager.jpeg" alt="Sanjeev Gupta" className="founder-image" />
                         </div>
                         <div className="founder-content">
-                            <h3 className="founder-name">Mr. Sanjeev Gupta</h3>
+                            <h3 className="founder-name"> Sanjeev Gupta</h3>
                             <p className="founder-role">Founder & CEO</p>
                             <p className="founder-bio">
                                 With over 30+ years of experience spanning Banking, Finance, Leasing, and Cyber Security, Mr. Sanjeev Gupta is a visionary leader dedicated to shaping the next generation of cyber security professionals.
@@ -318,7 +318,7 @@ export default function AboutPage() {
                                 </div>
                                 <div className="contact-card-content">
                                     <h3 className="contact-card-title">Email</h3>
-                                    <a href="mailto:sanjeevgupta7512@gmail.com" className="contact-card-link">sanjeevgupta7512@gmail.com</a>
+                                    <a href="mailto:info@ehackacademy.com" className="contact-card-link">info@ehackacademy.com</a>
                                 </div>
                             </div>
 
