@@ -103,7 +103,24 @@
 
 @media (max-width: 480px) {
     .top-bar {
-        display: none;
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .top-bar-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+
+    .divider {
+        display: inline;
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    .contact-item {
+        font-size: 0.75rem;
     }
 
     .promo-bar {
