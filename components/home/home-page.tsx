@@ -85,10 +85,10 @@ const programs = [
 
 // Stats
 const stats = [
-    { value: '15+', label: 'Years of Excellence' },
+    { value: '11+', label: 'Years of Excellence' },
     { value: '50,000+', label: 'Students Trained' },
     { value: '98%', label: 'Placement Rate' },
-    { value: '200+', label: 'Expert Trainers' },
+    { value: '10+', label: 'Expert Trainers' },
 ];
 
 // Learning options

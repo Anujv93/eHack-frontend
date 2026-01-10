@@ -16,7 +16,7 @@ export default function CTASection({
     if (!title) return null;
 
     return (
-        <section className="cta-section">
+        <section className="cta-section" id="cta">
             <div className="container">
                 <h2>{title}</h2>
                 {subtitle && <p>{subtitle}</p>}

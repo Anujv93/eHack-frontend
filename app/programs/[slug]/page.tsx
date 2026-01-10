@@ -2,16 +2,80 @@
 
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { programs, getProgramBySlug } from '@/data/programs';
 import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star } from 'lucide-react';
 import './program.css';
+
+// Navigation sections configuration
+const NAV_SECTIONS = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'reviews', label: 'Reviews' },
+    { id: 'career', label: 'Career' },
+    { id: 'certifications', label: 'Certifications' },
+    { id: 'structure', label: 'Who Should Enroll' },
+    { id: 'curriculum', label: 'Curriculum' },
+    { id: 'pricing', label: 'Investment' },
+    { id: 'faq', label: 'FAQ' },
+];
 
 export default function ProgramPage({ params }: { params: Promise<{ slug: string }> }) {
     const [program, setProgram] = useState<typeof programs[0] | null>(null);
     const [activeCategory, setActiveCategory] = useState(0);
     const [openQuestion, setOpenQuestion] = useState<number | null>(0);
     const [activeModule, setActiveModule] = useState(0);
+    const [activeSection, setActiveSection] = useState('overview');
+    const [showStickyNav, setShowStickyNav] = useState(false);
+    const stickyNavRef = useRef<HTMLDivElement>(null);
+
+    // Handle scroll to update active section and sticky nav visibility
+    useEffect(() => {
+        const handleScroll = () => {
+            // Show sticky nav after scrolling past the stats bar (approximately 500px)
+            const scrollY = window.scrollY;
+            setShowStickyNav(scrollY > 500);
+
+            // Find which section is currently in view
+            const sectionElements = NAV_SECTIONS.map(section => ({
+                id: section.id,
+                element: document.getElementById(section.id),
+            })).filter(s => s.element);
+
+            const viewportHeight = window.innerHeight;
+            const offset = 150; // Account for sticky nav height
+
+            for (let i = sectionElements.length - 1; i >= 0; i--) {
+                const { id, element } = sectionElements[i];
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= offset + viewportHeight * 0.3) {
+                        setActiveSection(id);
+                        break;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Initial check
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Smooth scroll to section
+    const scrollToSection = useCallback((sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const offset = 80; // Height of sticky nav
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }, []);
 
     useEffect(() => {
         params.then(p => {
@@ -142,6 +206,32 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <span className="cert-text">{program.schedule}</span>
                 </div>
             </section>
+
+            {/* STICKY SECTION NAVIGATION */}
+            <nav
+                ref={stickyNavRef}
+                className={`sticky-section-nav ${showStickyNav ? 'visible' : ''}`}
+            >
+                <div className="sticky-nav-container">
+                    <div className="sticky-nav-links">
+                        {NAV_SECTIONS.map((section) => (
+                            <button
+                                key={section.id}
+                                className={`sticky-nav-link ${activeSection === section.id ? 'active' : ''}`}
+                                onClick={() => scrollToSection(section.id)}
+                            >
+                                {section.label}
+                            </button>
+                        ))}
+                    </div>
+                    <div className="sticky-nav-cta">
+                        <a href="tel:+919886035330" className="sticky-nav-call-btn">
+                            <Phone size={16} />
+                            <span>Call Now</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
 
             {/* 4. SUCCESS STORIES - Social Proof EARLY (Trust Builder) */}
             <section className="learners-section" id="reviews">
