@@ -3,6 +3,15 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import './page.css';
+import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
+
+// Navigation sections for BSCS page
+const BSCS_NAV_SECTIONS = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'curriculum', label: 'Curriculum' },
+    { id: 'criteria', label: 'Criteria' },
+    { id: 'apply', label: 'Apply Now' },
+];
 
 export default function BSCSPage() {
     const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set());
@@ -186,8 +195,15 @@ export default function BSCSPage() {
 
     return (
         <div className="program-detail-bscs">
+            {/* Sticky Section Navigation */}
+            <StickySectionNav
+                sections={BSCS_NAV_SECTIONS}
+                scrollThreshold={400}
+            />
+
             {/* Hero Section */}
             <section className="program-hero">
+
                 <div className="hero-grid-bg"></div>
                 <div className="hero-container">
                     <Link href="/kennedy-university" className="back-link">
@@ -272,7 +288,7 @@ export default function BSCSPage() {
             </section>
 
             {/* Program Overview */}
-            <section className="program-overview">
+            <section className="program-overview" id="overview">
                 <div className="section-container">
                     <h2 className="section-title">Program <span className="accent">Overview</span></h2>
                     <div className="overview-grid">
@@ -297,7 +313,7 @@ export default function BSCSPage() {
             </section>
 
             {/* Curriculum Section */}
-            <section className="curriculum-section">
+            <section className="curriculum-section" id="curriculum">
                 <div className="section-container">
                     <h2 className="section-title">Program <span className="accent">Curriculum</span></h2>
                     <p className="section-subtitle">A structured learning path across 3 parts, covering 120 credits over 12 months.</p>
@@ -372,7 +388,7 @@ export default function BSCSPage() {
             </section>
 
             {/* Degree Award Criteria */}
-            <section className="criteria-section">
+            <section className="criteria-section" id="criteria">
                 <div className="section-container">
                     <div className="criteria-card">
                         <h2>Degree Award Criteria – Kennedy University</h2>
