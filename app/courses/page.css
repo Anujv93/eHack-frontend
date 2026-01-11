@@ -70,3 +70,18 @@
         padding: 40px 0 80px;
     }
 }
+
+@media (max-width: 380px) {
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .page-header .container,
+    .courses-content .container {
+        padding: 0 1rem;
+    }
+}
