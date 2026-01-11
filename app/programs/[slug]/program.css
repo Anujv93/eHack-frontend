@@ -2430,11 +2430,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Ensure no overflow from stack */
+    overflow: visible;
 }
 
 .cert-stack-img {
     position: absolute;
-    width: 180px;
+    width: 160px;
+    /* Reduced base width */
+    max-width: 45%;
+    /* Ensure it doesn't get too wide relative to container */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
@@ -2442,12 +2447,12 @@
 }
 
 .cert-stack-5 {
-    transform: rotate(-12deg) translateX(-50px) translateY(20px);
+    transform: rotate(-10deg) translateX(-40px) translateY(15px);
     z-index: 1;
 }
 
 .cert-stack-4 {
-    transform: rotate(-6deg) translateX(-25px) translateY(10px);
+    transform: rotate(-5deg) translateX(-20px) translateY(8px);
     z-index: 2;
 }
 
@@ -2457,12 +2462,12 @@
 }
 
 .cert-stack-2 {
-    transform: rotate(6deg) translateX(25px) translateY(10px);
+    transform: rotate(5deg) translateX(20px) translateY(8px);
     z-index: 4;
 }
 
 .cert-stack-1 {
-    transform: rotate(12deg) translateX(50px) translateY(20px);
+    transform: rotate(10deg) translateX(40px) translateY(15px);
     z-index: 5;
 }
 
@@ -2471,11 +2476,11 @@
 }
 
 .cert-card:hover .cert-stack-5 {
-    transform: rotate(-15deg) translateX(-60px) translateY(15px);
+    transform: rotate(-12deg) translateX(-50px) translateY(10px);
 }
 
 .cert-card:hover .cert-stack-4 {
-    transform: rotate(-8deg) translateX(-30px) translateY(5px);
+    transform: rotate(-6deg) translateX(-25px) translateY(5px);
 }
 
 .cert-card:hover .cert-stack-3 {
@@ -2483,11 +2488,11 @@
 }
 
 .cert-card:hover .cert-stack-2 {
-    transform: rotate(8deg) translateX(30px) translateY(5px);
+    transform: rotate(6deg) translateX(25px) translateY(5px);
 }
 
 .cert-card:hover .cert-stack-1 {
-    transform: rotate(15deg) translateX(60px) translateY(15px);
+    transform: rotate(12deg) translateX(50px) translateY(10px);
 }
 
 .cert-content {
@@ -4368,5 +4373,64 @@
 
     .pricing-content-wrapper {
         flex-direction: column;
+    }
+
+    /* Fix Certificate Stack on Mobile */
+    .cert-image-wrapper {
+        min-height: 180px;
+        padding: var(--space-6) var(--space-4) 0;
+        overflow: hidden;
+        /* Ensure content stays within */
+    }
+
+    .cert-stack {
+        height: 160px;
+    }
+
+    .cert-stack-img {
+        width: 120px;
+        max-width: 40%;
+    }
+
+    /* Reduce spread for mobile */
+    .cert-stack-5 {
+        transform: rotate(-8deg) translateX(-30px) translateY(10px);
+    }
+
+    .cert-stack-4 {
+        transform: rotate(-4deg) translateX(-15px) translateY(5px);
+    }
+
+    .cert-stack-3 {
+        transform: rotate(0deg) translateX(0) translateY(0);
+    }
+
+    .cert-stack-2 {
+        transform: rotate(4deg) translateX(15px) translateY(5px);
+    }
+
+    .cert-stack-1 {
+        transform: rotate(8deg) translateX(30px) translateY(10px);
+    }
+
+    /* Reduce hover spread for mobile */
+    .cert-card:hover .cert-stack-5 {
+        transform: rotate(-10deg) translateX(-35px) translateY(8px);
+    }
+
+    .cert-card:hover .cert-stack-4 {
+        transform: rotate(-5deg) translateX(-18px) translateY(4px);
+    }
+
+    .cert-card:hover .cert-stack-3 {
+        transform: rotate(0deg) translateX(0) translateY(-4px) scale(1.02);
+    }
+
+    .cert-card:hover .cert-stack-2 {
+        transform: rotate(5deg) translateX(18px) translateY(4px);
+    }
+
+    .cert-card:hover .cert-stack-1 {
+        transform: rotate(10deg) translateX(35px) translateY(8px);
     }
 }
