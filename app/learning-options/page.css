@@ -110,7 +110,8 @@
 .tabs-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 4px;
+    /* Reduced gap */
     justify-content: center;
     /* Removed background relative to wrapper to avoid box-in-box look */
     padding: 5px;
@@ -119,8 +120,9 @@
 .tab-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 20px;
+    gap: 6px;
+    padding: 10px 14px;
+    /* Compact padding */
     background: transparent;
     border: none;
     border-radius: 10px;
