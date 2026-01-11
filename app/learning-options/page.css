@@ -81,12 +81,30 @@
 /* Tab Section */
 .learning-tabs-section {
     background: #FFFFFF;
-    padding: 60px 0 5px;
+    padding: 0 0 60px;
+    /* Removed top padding as wrapper handles spacing */
+    overflow: visible;
+    /* Crucial for sticky children */
 }
 
 /* Tabs Navigation */
 .tabs-wrapper {
-    margin-bottom: 40px;
+    position: -webkit-sticky;
+    /* For Safari */
+    position: sticky;
+    top: 75px;
+    /* Matches approximate header height */
+    z-index: 50;
+    /* Above content, below header (999) */
+    padding: 15px 0;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.85);
+    /* Proper backdrop */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* Subtle separation */
+    transition: all 0.3s ease;
 }
 
 .tabs-nav {
@@ -94,10 +112,8 @@
     flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
-    background: #F8FAFC;
-    padding: 12px;
-    border-radius: 16px;
-    border: 1px solid #E2E8F0;
+    /* Removed background relative to wrapper to avoid box-in-box look */
+    padding: 5px;
 }
 
 .tab-btn {
