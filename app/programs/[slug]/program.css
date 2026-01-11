@@ -4274,26 +4274,89 @@
 }
 
 /* Extra small screens (below 360px) */
-@media (max-width: 360px) {
+/* Extra small screens (covers 366px devices) */
+@media (max-width: 380px) {
+    .program-page {
+        overflow-x: hidden;
+    }
+
+    .hero-section {
+        padding: var(--space-4) var(--space-3) var(--space-8);
+    }
+
+    .hero-container {
+        gap: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .partner-logos {
+        gap: var(--space-3);
+        flex-wrap: wrap;
+    }
+
+    .ec-council-badge {
+        height: 35px;
+    }
+
+    .hero-brand-logo {
+        height: 25px;
+    }
+
     .hero-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        word-break: break-word;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .form-card {
+        margin-top: var(--space-4);
+        padding: var(--space-4);
+        width: 100%;
+        top: 0;
     }
 
     .form-title {
         font-size: 1.25rem;
     }
 
+    .phone-input {
+        padding: 0;
+    }
+
+    .phone-field {
+        padding: var(--space-3);
+        font-size: 0.9rem;
+    }
+
     .stats-container {
         grid-template-columns: 1fr;
+        padding: var(--space-4);
+        gap: var(--space-3);
     }
 
     .stat-item {
         border-right: none !important;
         border-bottom: 1px solid var(--gray-200);
+        padding-bottom: var(--space-3);
+        margin-bottom: var(--space-3);
     }
 
     .stat-item:last-child {
         border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     .btn-continue,
@@ -4301,5 +4364,9 @@
     .btn-apply {
         padding: 12px 20px;
         font-size: 0.875rem;
+    }
+
+    .pricing-content-wrapper {
+        flex-direction: column;
     }
 }
