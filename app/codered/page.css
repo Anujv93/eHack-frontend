@@ -1727,6 +1727,31 @@
     .codered-cta h2 {
         font-size: 1.75rem;
     }
+
+    /* Clean Hero Tablet Adjustments */
+    .hero-title-clean {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .clean-brand-header {
+        justify-content: center;
+    }
+
+    .hero-content-clean {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .hero-actions-clean {
+        justify-content: center;
+    }
+
+    .hero-subtitle-clean {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1756,5 +1781,178 @@
     .btn-explore {
         width: 100%;
         text-align: center;
+    }
+}
+
+/* Specific fix for wider mobile devices (covers 382px - 520px range) */
+@media (max-width: 520px) {
+    .codered-hero-clean {
+        padding-top: 2rem;
+        padding-bottom: 6rem;
+        min-height: auto;
+    }
+
+    .hero-content-clean {
+        padding: 1.5rem 0;
+    }
+
+    .clean-brand-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .clean-code {
+        font-size: 1.75rem;
+        letter-spacing: 2px;
+    }
+
+    .clean-red {
+        font-size: 1.5rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .hero-title-clean {
+        font-size: 2.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle-clean {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 2rem;
+    }
+
+    .hero-actions-clean {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .btn-clean-primary,
+    .btn-clean-outline {
+        width: 100%;
+        text-align: center;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .trust-bar-content {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .trust-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .trust-rating {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Highlights Section */
+    .highlights-title {
+        font-size: 1.75rem;
+    }
+
+    .highlight-item {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* Features Section */
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .feature-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .feature-icon {
+        font-size: 1.75rem;
+    }
+
+    /* Offerings Section */
+    .offerings-header .section-title {
+        font-size: 1.75rem;
+    }
+
+    .offering-card {
+        padding: 1.5rem;
+    }
+
+    /* Microdegrees Section */
+    .microdegree-card-new {
+        padding: 1.25rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-stats {
+        flex-wrap: wrap;
+    }
+
+    .card-stats .stat-divider {
+        display: none;
+    }
+
+    .card-stats .stat {
+        flex: 1 1 40%;
+        box-sizing: border-box;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-stats {
+        gap: 2rem;
+    }
+
+    .footer-stat-number {
+        font-size: 1.75rem;
+    }
+
+    /* Certificate Section */
+    .certificate-info .section-title {
+        font-size: 1.75rem;
+    }
+
+    .certificate-image-wrapper {
+        border-width: 4px;
+    }
+
+    /* Pricing Section */
+    .pricing-content {
+        padding: 1.5rem;
+    }
+
+    .pricing-header .section-title {
+        font-size: 1.75rem;
+    }
+
+    .pricing-cta {
+        width: 100%;
+        justify-content: center;
+        padding: 0.9rem 1.5rem;
+    }
+
+    /* Feature/Highlight Grids */
+    .features-grid,
+    .offerings-grid,
+    .microdegrees-grid-new,
+    .highlights-grid {
+        gap: 1.5rem;
+    }
+
+    /* Common */
+    .section-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
     }
 }

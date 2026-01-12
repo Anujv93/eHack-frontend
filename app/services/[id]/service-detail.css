@@ -1,0 +1,301 @@
+/* Service Detail Page Styles */
+
+.service-detail-page {
+    background: #ffffff;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #111;
+}
+
+/* Hero Section */
+.service-hero {
+    height: 50vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    /* Changed from fixed to scroll for static behavior */
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #fff;
+}
+
+.service-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Back Link in Content Area */
+.back-link-content {
+    display: inline-flex;
+    align-items: center;
+    color: #df6718;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.back-link-content:hover {
+    transform: translateX(-4px);
+    text-decoration: underline;
+}
+
+/* Page Title in Hero */
+.service-detail-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: -1px;
+    color: #ffffff !important;
+    /* Enforcing white color */
+}
+
+.service-detail-subtitle {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 800px;
+    font-weight: 300;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Content Layout */
+.service-content-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5rem;
+}
+
+/* Main Column */
+.detail-section {
+    margin-bottom: 5rem;
+}
+
+/* Enhanced Section Headings */
+.detail-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    color: #111;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 6px solid #df6718;
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+
+.detail-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #333;
+    font-weight: 400;
+}
+
+/* Interactive Offer Grid */
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.offer-card {
+    background: #fff;
+    border: 1px solid #df6718;
+    /* Default orange border */
+    padding: 2rem;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.offer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    background: #fffafa;
+}
+
+.offer-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #f5f5f5;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    line-height: 1;
+    z-index: 0;
+    transition: color 0.3s;
+}
+
+.offer-card:hover .offer-number {
+    color: #ffe0d0;
+}
+
+.offer-text {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    color: #333;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Professional Coverage Grid */
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.coverage-card {
+    display: flex;
+    align-items: flex-start;
+    /* Align to top for multi-line text */
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border: 1px solid #df6718;
+    /* Default orange border */
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.coverage-card:hover {
+    background: #fffcfb;
+    /* Very subtle warm tint */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transform: translateY(-2px);
+}
+
+.coverage-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+    /* Visual alignment with text line-height */
+    color: #df6718;
+    /* Brand color checkmark/icon */
+    flex-shrink: 0;
+}
+
+/* Remove SVG transforms */
+.coverage-card:hover .coverage-icon-box,
+.coverage-card:hover .coverage-icon-box svg {
+    transform: none;
+    background: transparent;
+    color: #df6718;
+}
+
+.coverage-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #374151;
+    /* Dark gray for text */
+    line-height: 1.5;
+}
+
+.coverage-card:hover .coverage-text {
+    color: #111827;
+    /* Near black on hover */
+}
+
+/* Sidebar */
+.service-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.sidebar-widget {
+    padding: 2.5rem;
+    border-radius: 12px;
+}
+
+.sidebar-widget.bg-dark {
+    /* Keep light theme sidebar for consistency with body, but slightly distinct */
+    background: #f8f9fa;
+    color: #111;
+    border: 1px solid #e5e5e5;
+}
+
+.sidebar-widget.bg-light {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.widget-title {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    color: #111;
+}
+
+.sidebar-widget.bg-dark .widget-title {
+    color: #df6718;
+}
+
+.widget-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.sidebar-cta-btn {
+    display: block;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 1.25rem;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.sidebar-cta-btn:hover {
+    background: #df6718;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .service-content-container {
+        grid-template-columns: 1fr;
+    }
+
+    .coverage-list-interactive {
+        grid-template-columns: 1fr;
+    }
+
+    .service-detail-title {
+        font-size: 2.5rem;
+    }
+
+    .offer-grid {
+        grid-template-columns: 1fr;
+    }
+}

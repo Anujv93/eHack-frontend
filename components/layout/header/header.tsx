@@ -89,6 +89,7 @@ export default function Header({ partners, courses }: HeaderProps) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mobileMegaMenuOpen, setMobileMegaMenuOpen] = useState(false);
     const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+    const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
     const [activePartner, setActivePartner] = useState<string | null>(
         allPartners.length > 0 ? allPartners[0].slug : null
     );
@@ -386,10 +387,14 @@ export default function Header({ partners, courses }: HeaderProps) {
                         </div>
                     </div>
 
-                    {/* Services Mega Menu Dropdown */}
-                    <div className="services-dropdown-wrapper">
+                    {/* Corporate Services Mega Menu Dropdown */}
+                    <div
+                        className={`services-dropdown-wrapper ${servicesMenuOpen ? 'open' : ''}`}
+                        onMouseEnter={() => setServicesMenuOpen(true)}
+                        onMouseLeave={() => setServicesMenuOpen(false)}
+                    >
                         <button className="nav-link nav-dropdown-btn services-btn">
-                            Services
+                            Corporate Services
                             <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
                                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -403,8 +408,9 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         {corporateServices.map((service) => (
                                             <Link
                                                 key={service.id}
-                                                href={`/services#${service.id}`}
+                                                href={`/services/${service.id}`}
                                                 className="service-dropdown-item"
+                                                onClick={() => setServicesMenuOpen(false)}
                                             >
                                                 <span className="service-item-icon">{service.icon}</span>
                                                 <span className="service-item-title">{service.title}</span>
@@ -420,15 +426,20 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         {complianceServices.map((service) => (
                                             <Link
                                                 key={service.id}
-                                                href={`/services#${service.id}`}
+                                                href={`/services/${service.id}`}
                                                 className="service-dropdown-item"
+                                                onClick={() => setServicesMenuOpen(false)}
                                             >
                                                 <span className="service-item-icon">{service.icon}</span>
                                                 <span className="service-item-title">{service.title}</span>
                                             </Link>
                                         ))}
                                     </div>
-                                    <Link href="/services" className="services-view-all">
+                                    <Link
+                                        href="/services"
+                                        className="services-view-all"
+                                        onClick={() => setServicesMenuOpen(false)}
+                                    >
                                         View All Services →
                                     </Link>
                                 </div>
@@ -576,22 +587,23 @@ export default function Header({ partners, courses }: HeaderProps) {
                             className="mobile-nav-dropdown-btn"
                             onClick={() => toggleMobileDropdown('services')}
                         >
-                            Services
+                            Corporate Services
                             <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
                                 <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
+
                         <div className="mobile-nav-dropdown-content">
                             <Link href="/services" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 All Services
                             </Link>
-                            <Link href="/services#web-application-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="/services/web-application-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Web Application Security
                             </Link>
-                            <Link href="/services#infrastructure-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="/services/infrastructure-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Infrastructure Security
                             </Link>
-                            <Link href="/services#digital-forensics" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="/services/digital-forensics" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Digital Forensics
                             </Link>
                         </div>
