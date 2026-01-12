@@ -7,89 +7,25 @@ import './services.css';
 
 export default function ServicesPage() {
     const [activeCategory, setActiveCategory] = useState('all');
-    const [expandedService, setExpandedService] = useState<string | null>(null);
-    const [highlightedService, setHighlightedService] = useState<string | null>(null);
-    const serviceRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
-    const hasScrolled = useRef(false);
 
-    // Effect to handle URL hash on page load
-    useEffect(() => {
-        // Function to handle hash-based navigation
-        const handleHashNavigation = () => {
-            const hash = window.location.hash.slice(1); // Remove the '#' character
-
-            if (hash && !hasScrolled.current) {
-                // Find the service that matches the hash
-                const matchedService = services.find(service => service.id === hash);
-
-                if (matchedService) {
-                    // Set the correct category filter if the service isn't in the current view
-                    if (matchedService.category !== activeCategory && activeCategory !== 'all') {
-                        setActiveCategory('all');
-                    }
-
-                    // Expand and highlight the service
-                    setExpandedService(hash);
-                    setHighlightedService(hash);
-
-                    // Small delay to ensure the DOM is updated before scrolling
-                    setTimeout(() => {
-                        const element = serviceRefs.current[hash];
-                        if (element) {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                            hasScrolled.current = true;
-                        }
-                    }, 100);
-
-                    // Remove highlight after animation completes
-                    setTimeout(() => {
-                        setHighlightedService(null);
-                    }, 2500);
-                }
-            }
-        };
-
-        // Run on initial load
-        handleHashNavigation();
-
-        // Listen for hash changes (in case user navigates via browser back/forward)
-        window.addEventListener('hashchange', handleHashNavigation);
-
-        return () => {
-            window.removeEventListener('hashchange', handleHashNavigation);
-        };
-    }, [activeCategory]);
-
+    // Filter services based on active category
     const filteredServices = activeCategory === 'all'
         ? services
         : services.filter(service => service.category === activeCategory);
-
-    const toggleService = (id: string) => {
-        setExpandedService(expandedService === id ? null : id);
-        // Clear highlight when manually toggling
-        if (highlightedService) {
-            setHighlightedService(null);
-        }
-    };
 
     return (
         <main className="services-page">
             {/* Hero Section */}
             <section className="services-hero">
-                <div className="services-hero-bg">
-                    <div className="hero-gradient-orb hero-orb-1"></div>
-                    <div className="hero-gradient-orb hero-orb-2"></div>
-                    <div className="hero-gradient-orb hero-orb-3"></div>
-                </div>
                 <div className="services-hero-content">
                     <span className="services-hero-badge">Corporate Security Solutions</span>
                     <h1 className="services-hero-title">
-                        Protect Your Business with
-                        <span className="highlight"> World-Class Security</span>
+                        Protect Your Business with<br />
+                        <strong>World-Class Security</strong>
                     </h1>
                     <p className="services-hero-subtitle">
                         Comprehensive cybersecurity services including penetration testing, compliance audits,
-                        digital forensics, and malware analysis to safeguard your organization.
+                        digital forensics, and malware analysis.
                     </p>
                     <div className="services-hero-actions">
                         <a href="#services-list" className="hero-btn hero-btn-primary">
@@ -146,10 +82,6 @@ export default function ServicesPage() {
                             <ServiceCard
                                 key={service.id}
                                 service={service}
-                                isExpanded={expandedService === service.id}
-                                isHighlighted={highlightedService === service.id}
-                                onToggle={() => toggleService(service.id)}
-                                cardRef={(el) => { serviceRefs.current[service.id] = el; }}
                             />
                         ))}
                     </div>
@@ -201,97 +133,35 @@ export default function ServicesPage() {
 // Service Card Component
 interface ServiceCardProps {
     service: ServiceItem;
-    isExpanded: boolean;
-    isHighlighted?: boolean;
-    onToggle: () => void;
-    cardRef?: (el: HTMLDivElement | null) => void;
+    // Removed unused props
 }
 
-function ServiceCard({ service, isExpanded, isHighlighted, onToggle, cardRef }: ServiceCardProps) {
+function ServiceCard({ service }: ServiceCardProps) {
     return (
-        <div
+        <Link
+            href={`/services/${service.id}`}
             id={service.id}
-            ref={cardRef}
-            className={`service-card ${isExpanded ? 'expanded' : ''} ${isHighlighted ? 'highlighted' : ''}`}
+            className="service-card"
         >
-            <div className="service-card-header" onClick={onToggle}>
-                <div className="service-icon">{service.icon}</div>
-                <div className="service-header-content">
-                    <h3 className="service-title">{service.title}</h3>
-                    <p className="service-short-desc">{service.shortDescription}</p>
-                </div>
-                <button className="service-toggle-btn">
-                    <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                    >
-                        <path d="M6 9l6 6 6-6" />
-                    </svg>
-                </button>
+            <div className="service-card-image">
+                <img
+                    src={service.image || '/images/services/general.png'}
+                    alt={service.title}
+                />
             </div>
 
-            {isExpanded && (
-                <div className="service-card-body">
-                    {/* Full Description */}
-                    <div className="service-section">
-                        <h4 className="section-title">About This Service</h4>
-                        <p className="section-content">{service.fullDescription}</p>
-                    </div>
+            <div className="service-card-content">
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-desc">{service.shortDescription}</p>
 
-                    {/* What We Offer */}
-                    <div className="service-section">
-                        <h4 className="section-title">What We Offer</h4>
-                        <ul className="service-list offer-list">
-                            {service.whatWeOffer.map((item, index) => (
-                                <li key={index}>
-                                    <span className="list-icon">→</span>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* What We Cover */}
-                    <div className="service-section">
-                        <h4 className="section-title">What We Cover</h4>
-                        <ul className="service-list cover-list">
-                            {service.whatWeCover.map((item, index) => (
-                                <li key={index}>
-                                    <span className="list-check">✓</span>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Why This Service */}
-                    <div className="service-section">
-                        <h4 className="section-title">Why {service.title}?</h4>
-                        <p className="section-content">{service.whyThisService}</p>
-                    </div>
-
-                    {/* Why Choose Us */}
-                    <div className="service-section why-choose-us">
-                        <h4 className="section-title">Why Choose Us</h4>
-                        <p className="section-content">{service.whyChooseUs}</p>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="service-cta">
-                        <a href={`mailto:info@ehack.in?subject=Inquiry about ${service.title}`} className="service-cta-btn primary">
-                            Request Quote
-                        </a>
-                        <a href="tel:+919876543210" className="service-cta-btn secondary">
-                            Call for Details
-                        </a>
-                    </div>
-                </div>
-            )}
-        </div>
+                <span className="service-link-text">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </span>
+            </div>
+        </Link>
     );
 }
