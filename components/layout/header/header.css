@@ -898,13 +898,14 @@
     position: relative;
 }
 
-.services-dropdown-wrapper:hover .services-dropdown-menu {
+.services-dropdown-wrapper.open .services-dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
 }
 
-.services-dropdown-wrapper:hover .nav-dropdown-btn svg {
+.services-dropdown-wrapper.open .nav-dropdown-btn svg {
     transform: rotate(180deg);
 }
 

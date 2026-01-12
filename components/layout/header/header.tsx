@@ -89,6 +89,7 @@ export default function Header({ partners, courses }: HeaderProps) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mobileMegaMenuOpen, setMobileMegaMenuOpen] = useState(false);
     const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+    const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
     const [activePartner, setActivePartner] = useState<string | null>(
         allPartners.length > 0 ? allPartners[0].slug : null
     );
@@ -387,7 +388,11 @@ export default function Header({ partners, courses }: HeaderProps) {
                     </div>
 
                     {/* Corporate Services Mega Menu Dropdown */}
-                    <div className="services-dropdown-wrapper">
+                    <div
+                        className={`services-dropdown-wrapper ${servicesMenuOpen ? 'open' : ''}`}
+                        onMouseEnter={() => setServicesMenuOpen(true)}
+                        onMouseLeave={() => setServicesMenuOpen(false)}
+                    >
                         <button className="nav-link nav-dropdown-btn services-btn">
                             Corporate Services
                             <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
@@ -403,8 +408,9 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         {corporateServices.map((service) => (
                                             <Link
                                                 key={service.id}
-                                                href={`/services#${service.id}`}
+                                                href={`/services/${service.id}`}
                                                 className="service-dropdown-item"
+                                                onClick={() => setServicesMenuOpen(false)}
                                             >
                                                 <span className="service-item-icon">{service.icon}</span>
                                                 <span className="service-item-title">{service.title}</span>
@@ -420,15 +426,20 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         {complianceServices.map((service) => (
                                             <Link
                                                 key={service.id}
-                                                href={`/services#${service.id}`}
+                                                href={`/services/${service.id}`}
                                                 className="service-dropdown-item"
+                                                onClick={() => setServicesMenuOpen(false)}
                                             >
                                                 <span className="service-item-icon">{service.icon}</span>
                                                 <span className="service-item-title">{service.title}</span>
                                             </Link>
                                         ))}
                                     </div>
-                                    <Link href="/services" className="services-view-all">
+                                    <Link
+                                        href="/services"
+                                        className="services-view-all"
+                                        onClick={() => setServicesMenuOpen(false)}
+                                    >
                                         View All Services →
                                     </Link>
                                 </div>
@@ -586,13 +597,13 @@ export default function Header({ partners, courses }: HeaderProps) {
                             <Link href="/services" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 All Services
                             </Link>
-                            <Link href="/services#web-application-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="/services/web-application-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Web Application Security
                             </Link>
-                            <Link href="/services#infrastructure-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="/services/infrastructure-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Infrastructure Security
                             </Link>
-                            <Link href="/services#digital-forensics" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="/services/digital-forensics" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Digital Forensics
                             </Link>
                         </div>
