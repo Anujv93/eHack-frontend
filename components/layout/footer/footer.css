@@ -409,28 +409,28 @@
     border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.contact-item {
+.footer-contact-bar .contact-item {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-.contact-item svg {
+.footer-contact-bar .contact-item svg {
     width: 18px;
     height: 18px;
     color: var(--brand-primary);
     flex-shrink: 0;
 }
 
-.contact-item a,
-.contact-item span {
+.footer-contact-bar .contact-item a,
+.footer-contact-bar .contact-item span {
     font-size: 0.9375rem;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.contact-item a:hover {
+.footer-contact-bar .contact-item a:hover {
     color: var(--brand-primary);
 }
 
