@@ -395,7 +395,7 @@ export interface CourseListItem {
 
 export async function getCoursesForListing(): Promise<CourseListItem[]> {
     try {
-        // Strapi v5 populate syntax
+        // Strapi v5 populate syntax - sort by FeaturedOrder in API
         const url = `${STRAPI_URL}/api/certificates?populate=*&sort=FeaturedOrder:asc`;
         console.log('Fetching courses from:', url);
 
@@ -411,8 +411,29 @@ export async function getCoursesForListing(): Promise<CourseListItem[]> {
         }
 
         const data = await res.json();
-        console.log('Courses fetched:', data.data?.length || 0);
-        return data.data || [];
+        const courses: CourseListItem[] = data.data || [];
+
+        // Debug: Log FeaturedOrder values
+        console.log('Courses fetched:', courses.length);
+        console.log('FeaturedOrder values:', courses.slice(0, 10).map(c => ({ title: c.Title, order: c.FeaturedOrder })));
+
+        // Explicit client-side sort by FeaturedOrder (lower values first, then by title)
+        // This ensures proper ordering even if Strapi API sort doesn't work as expected
+        const sortedCourses = courses.sort((a, b) => {
+            // Primary sort: by FeaturedOrder (lower values first)
+            // Treat null/undefined/0 as high value to push them to the end
+            const orderA = a.FeaturedOrder || 999;
+            const orderB = b.FeaturedOrder || 999;
+
+            if (orderA !== orderB) {
+                return orderA - orderB;
+            }
+
+            // Secondary sort: alphabetically by title
+            return a.Title.localeCompare(b.Title);
+        });
+
+        return sortedCourses;
     } catch (error) {
         console.error('Error fetching courses:', error);
         return [];

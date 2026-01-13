@@ -28,6 +28,7 @@ interface Course {
     duration?: string;
     partnerSlug?: string;
     partnerName?: string;
+    featuredOrder?: number;
 }
 
 interface Category {

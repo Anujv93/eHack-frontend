@@ -15,6 +15,7 @@ export default async function Page() {
     ]);
 
     // Transform courses first to count per partner
+    // Courses are already sorted by FeaturedOrder from Strapi API
     const coursesTransformed = coursesData.map((course) => ({
         id: course.id,
         slug: course.slug,
@@ -22,7 +23,8 @@ export default async function Page() {
         level: course.Level,
         duration: course.Duration || undefined,
         partnerSlug: course.certification_partner?.slug,
-        partnerName: course.certification_partner?.Name
+        partnerName: course.certification_partner?.Name,
+        featuredOrder: course.FeaturedOrder || 999 // Include featured order for verification
     }));
 
     // Count courses per partner
