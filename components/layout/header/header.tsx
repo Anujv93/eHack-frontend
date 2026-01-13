@@ -748,3 +748,4 @@ export default function Header({ partners, courses }: HeaderProps) {
         </header>
     );
 }
+// commit

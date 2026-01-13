@@ -10,10 +10,7 @@
 .services-hero {
     position: relative;
     padding: 8rem 2rem 6rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/images/certificates/services.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     color: #fff;
     overflow: hidden;
     display: flex;
@@ -405,21 +402,25 @@
     }
 }
 
-/* Responsive */
+/* ====== Responsive Styles ====== */
+
+/* Large Tablets / Small Desktops */
 @media (max-width: 1024px) {
-    .service-card.expanded {
-        grid-template-columns: 1fr;
+    .services-hero {
+        padding: 6rem 1.5rem 4rem;
     }
 
-    .service-card.expanded .service-card-header {
-        border-right: none;
-        border-bottom: 1px solid #f0f0f0;
-        flex-direction: row;
-        align-items: center;
+    .services-hero-title {
+        font-size: 2.75rem;
+    }
+
+    .services-hero-subtitle {
+        font-size: 1.1rem;
     }
 
     .stats-container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .stat-item:nth-child(2) {
@@ -433,27 +434,305 @@
     .stat-item:nth-last-child(-n+2) {
         border-bottom: none;
     }
+
+    .services-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .services-list-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+    }
+
+    .cta-description {
+        font-size: 1.1rem;
+    }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
+    .services-hero {
+        padding: 5rem 1rem 3rem;
+        background-attachment: scroll;
+    }
+
+    .services-hero-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+
     .services-hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .services-hero-title br {
+        display: none;
+    }
+
+    .services-hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .services-hero-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .hero-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 0.875rem 1.5rem;
+    }
+
+    .services-stats {
+        margin-top: -2rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .stats-container {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    .services-list-section {
+        padding: 2.5rem 1rem;
+    }
+
+    .category-filters {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .service-card-image {
+        height: 180px;
+    }
+
+    .service-card-content {
+        padding: 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.15rem;
+    }
+
+    .service-desc {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .services-cta {
+        padding: 3rem 1rem;
+    }
+
+    .cta-title {
+        font-size: 1.75rem;
+    }
+
+    .cta-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        padding: 0.875rem 1.5rem;
+    }
+
+    .cta-features {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .cta-feature {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .services-hero {
+        padding: 4rem 1rem 2.5rem;
+        min-height: auto;
+    }
+
+    .services-hero-badge {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .services-hero-title {
+        font-size: 1.65rem;
+        letter-spacing: -0.01em;
+    }
+
+    .services-hero-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .hero-btn {
+        font-size: 0.9rem;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .services-stats {
+        margin-top: -1.5rem;
+        padding: 1rem 0.75rem;
     }
 
     .stats-container {
         padding: 1rem;
+        border-radius: 12px;
+        gap: 0.75rem;
     }
 
     .stat-item {
-        padding: 0.5rem;
+        padding: 0.75rem 0.5rem;
     }
 
-    .service-card-header {
-        align-items: center;
-        text-align: center;
+    .stat-number {
+        font-size: 1.65rem;
+        margin-bottom: 0.25rem;
     }
 
-    .service-toggle-btn {
-        margin-top: 1rem;
+    .stat-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.3px;
+    }
+
+    .services-list-section {
+        padding: 2rem 0.75rem;
+    }
+
+    .category-filters {
+        margin-bottom: 1.5rem;
+        gap: 0.4rem;
+    }
+
+    .category-btn {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8rem;
+    }
+
+    .services-grid {
+        gap: 1rem;
+    }
+
+    .service-card {
+        border-radius: 10px;
+    }
+
+    .service-card-image {
+        height: 160px;
+    }
+
+    .service-card-content {
+        padding: 1.25rem;
+    }
+
+    .service-title {
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .service-desc {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .service-link-text {
+        font-size: 0.8rem;
+    }
+
+    .services-cta {
+        padding: 2.5rem 0.75rem;
+    }
+
+    .cta-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .cta-btn {
+        font-size: 0.9rem;
+    }
+
+    .cta-feature {
+        font-size: 0.85rem;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .services-hero-title {
+        font-size: 1.45rem;
+    }
+
+    .services-hero-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .stat-number {
+        font-size: 1.4rem;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+    }
+
+    .service-title {
+        font-size: 1rem;
+    }
+
+    .cta-title {
+        font-size: 1.35rem;
     }
 }

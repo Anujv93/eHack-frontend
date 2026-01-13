@@ -82,39 +82,58 @@
 .learning-tabs-section {
     background: #FFFFFF;
     padding: 0 0 60px;
-    /* Removed top padding as wrapper handles spacing */
     overflow: visible;
-    /* Crucial for sticky children */
 }
 
-/* Tabs Navigation */
+/* Placeholder to maintain layout when tabs become fixed */
+.tabs-placeholder {
+    height: 70px;
+}
+
+/* Tabs Navigation - Normal state */
 .tabs-wrapper {
-    position: -webkit-sticky;
-    /* For Safari */
-    position: sticky;
-    top: 75px;
-    /* Matches approximate header height */
-    z-index: 50;
-    /* Above content, below header (999) */
-    padding: 15px 0;
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    padding: 12px 0;
     margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.85);
-    /* Proper backdrop */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    /* Subtle separation */
-    transition: all 0.3s ease;
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Tabs Navigation - Fixed state when scrolling */
+.tabs-wrapper.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .tabs-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
-    /* Reduced gap */
+    gap: 6px;
     justify-content: center;
-    /* Removed background relative to wrapper to avoid box-in-box look */
-    padding: 5px;
+    padding: 5px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .tab-btn {
@@ -561,6 +580,19 @@
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
+    .tabs-placeholder {
+        height: 65px;
+    }
+
+    .tabs-wrapper.is-fixed {
+        top: 0;
+    }
+
+    .tabs-wrapper {
+        padding: 10px 0;
+        margin-bottom: 24px;
+    }
+
     .tabs-nav {
         gap: 6px;
         padding: 10px;
@@ -611,7 +643,21 @@
     }
 
     .learning-tabs-section {
-        padding: 40px 0 60px;
+        padding: 0 0 60px;
+        overflow: visible;
+    }
+
+    .tabs-placeholder {
+        height: 60px;
+    }
+
+    .tabs-wrapper.is-fixed {
+        top: 0;
+    }
+
+    .tabs-wrapper {
+        padding: 8px 0;
+        margin-bottom: 20px;
     }
 
     .tabs-nav {
@@ -620,6 +666,7 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         flex-wrap: nowrap;
+        padding: 8px 16px;
     }
 
     .tabs-nav::-webkit-scrollbar {
@@ -690,6 +737,33 @@
 }
 
 @media (max-width: 480px) {
+    .tabs-placeholder {
+        height: 55px;
+    }
+
+    .tabs-wrapper.is-fixed {
+        top: 0;
+    }
+
+    .tabs-wrapper {
+        padding: 6px 0;
+        margin-bottom: 16px;
+    }
+
+    .tabs-nav {
+        padding: 6px 12px;
+        gap: 4px;
+    }
+
+    .tab-btn {
+        padding: 10px 12px;
+    }
+
+    .tab-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
     .hero-title-light {
         font-size: 1.5rem;
     }
