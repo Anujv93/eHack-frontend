@@ -197,6 +197,12 @@ export default function Footer() {
                             <ul className="footer-links-list">
                                 <li><Link href="/about">About Us</Link></li>
                                 <li><Link href="/services">Corporate Training</Link></li>
+                                <li>
+                                    <Link href="/franchise">
+                                        <span className="link-badge new">New</span>
+                                        Franchise Opportunity
+                                    </Link>
+                                </li>
                             </ul>
                             <h5 className="footer-subheading">Most Popular Certifications</h5>
                             <ul className="footer-links-list partner-certs">

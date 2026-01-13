@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import './franchise-popup.css';
 
 export default function FranchisePopup() {
@@ -140,6 +141,9 @@ export default function FranchisePopup() {
                                 </div>
                                 <h3>Franchise <span className="text-accent">Enquiry</span></h3>
                                 <p>Fill in your details and we&apos;ll get back to you shortly</p>
+                                <Link href="/franchise" className="franchise-learn-more" onClick={handleClose}>
+                                    View Franchise Details →
+                                </Link>
                             </div>
 
                             <form className="franchise-popup-form" onSubmit={handleSubmit}>
