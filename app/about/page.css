@@ -79,14 +79,32 @@
 
 /* Mission Section */
 .mission-section {
-    padding: 60px 0;
-    background: #F8FAFC;
+    padding: 50px 0;
+    background: url('/our_mission.png') center center / cover no-repeat;
+    position: relative;
+}
+
+.mission-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(248, 250, 252, 0.7) 0%,
+            rgba(248, 250, 252, 0.6) 50%,
+            rgba(248, 250, 252, 0.65) 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .mission-content {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .section-badge {
@@ -100,6 +118,18 @@
     letter-spacing: 0.12em;
     margin-bottom: 20px;
     border: 1px solid #E2E8F0;
+}
+
+/* Mission Badge */
+.mission-section .section-badge {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0 4px 16px rgba(255, 107, 0, 0.25);
 }
 
 .section-badge-blue {
@@ -130,10 +160,11 @@
 
 .mission-text {
     font-size: 1.25rem;
-    color: #334155;
+    color: #1e293b;
     line-height: 1.8;
     margin-bottom: 24px;
-    font-weight: 400;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .mission-text:last-child {
@@ -221,7 +252,7 @@
 
 /* Leadership Section */
 .leadership-section {
-    padding: 100px 0;
+    padding: 50px 0;
     background: #F8FAFC;
 }
 
