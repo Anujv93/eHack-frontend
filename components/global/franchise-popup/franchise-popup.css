@@ -441,27 +441,50 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .franchise-popup-overlay {
+        padding: 10px;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
     .franchise-popup-container {
         flex-direction: column;
-        max-height: 95vh;
+        max-height: none;
+        height: auto;
+        margin: 10px 0;
+        overflow: visible;
     }
 
     .franchise-popup-image {
         width: 100%;
-        min-height: 200px;
-        max-height: 200px;
+        min-height: 160px;
+        max-height: 160px;
+        flex-shrink: 0;
+    }
+
+    .franchise-popup-image-overlay {
+        padding: 20px;
     }
 
     .franchise-popup-image-content h2 {
         font-size: 1.25rem;
+        margin-bottom: 8px;
     }
 
     .franchise-popup-image-content p {
         display: none;
     }
 
+    .franchise-badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        margin-bottom: 10px;
+    }
+
     .franchise-popup-form-section {
         padding: 24px;
+        overflow-y: visible;
+        flex: none;
     }
 
     .form-row {
@@ -483,7 +506,24 @@
 
 @media (max-width: 480px) {
     .franchise-popup-overlay {
-        padding: 12px;
+        padding: 8px;
+        align-items: flex-start;
+    }
+
+    .franchise-popup-container {
+        margin: 8px 0;
+        border-radius: 16px;
+    }
+
+    .franchise-popup-image {
+        min-height: 130px;
+        max-height: 130px;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .franchise-popup-image-overlay {
+        padding: 16px;
+        border-radius: 16px 16px 0 0;
     }
 
     .franchise-popup-form-section {
@@ -494,7 +534,106 @@
         margin-bottom: 20px;
     }
 
+    .franchise-popup-header h3 {
+        font-size: 1.25rem;
+    }
+
     .franchise-popup-logo img {
         height: 32px !important;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    .form-group input {
+        height: 48px;
+    }
+
+    .phone-input-wrapper {
+        height: 48px;
+    }
+
+    .phone-prefix {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+
+    .franchise-submit-btn {
+        padding: 14px 20px;
+        font-size: 0.95rem;
+    }
+
+    .franchise-popup-footer {
+        margin-top: 16px;
+        padding-top: 16px;
+    }
+
+    .franchise-popup-footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Very small screens - ensure everything fits */
+@media (max-height: 700px) {
+    .franchise-popup-overlay {
+        align-items: flex-start;
+        padding: 5px;
+    }
+
+    .franchise-popup-container {
+        margin: 5px 0;
+    }
+
+    .franchise-popup-image {
+        min-height: 100px;
+        max-height: 100px;
+    }
+
+    .franchise-popup-image-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .franchise-badge {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        margin-bottom: 6px;
+    }
+
+    .franchise-popup-header {
+        margin-bottom: 16px;
+    }
+
+    .franchise-popup-header h3 {
+        font-size: 1.15rem;
+        margin-bottom: 4px;
+    }
+
+    .franchise-popup-header p {
+        font-size: 0.8rem;
+    }
+
+    .franchise-popup-form {
+        gap: 14px;
+    }
+
+    .form-group label {
+        font-size: 0.7rem;
+    }
+
+    .form-group input {
+        height: 44px;
+        padding: 10px 12px;
+    }
+
+    .phone-input-wrapper {
+        height: 44px;
+    }
+
+    .franchise-popup-footer {
+        margin-top: 12px;
+        padding-top: 12px;
     }
 }
