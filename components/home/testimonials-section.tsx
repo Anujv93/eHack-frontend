@@ -40,7 +40,16 @@ const allCompanies = [
     ]
 ];
 
+// Highlighted Testimonial
+const highlightedTestimonial = {
+    name: 'Shri Rajashekara N., IPS',
+    role: 'DIG of Police / Director, CDTI, Hyderabad',
+    image: '/images/testimonials/pp_person9.jpg',
+    text: "eHack Academy's commitment to practical cybersecurity training is commendable. Their comprehensive curriculum in ethical hacking and digital forensics plays a vital role in empowering the next generation of cyber defenders and strengthening our national security infrastructure."
+};
+
 const testimonials = [
+
     {
         name: 'Anmol Gupta',
         role: 'APV-DELIVERY',
@@ -77,7 +86,7 @@ const testimonials = [
     {
         name: 'Damini Settappa Ranganath',
         role: 'Cybersecurity Engineer',
-        company: 'EY',
+        company: 'anuvu',
         companyLogo: 'images/anuvu.png',
         companyColor: '#FFD100',
         image: '/images/testimonials/person4.jpg',
@@ -178,23 +187,50 @@ export default function TestimonialsSection() {
                                     <p className="testimonial-role">{testimonial.role}</p>
                                 </div>
                             </div>
-                            <div className="testimonial-badges">
-                                <span className="badge certification-badge">{testimonial.certification}</span>
-                                <span className="badge course-badge">{testimonial.course}</span>
-                            </div>
+
+                            {(testimonial.certification || testimonial.course) && (
+                                <div className="testimonial-badges">
+                                    {testimonial.certification && <span className="badge certification-badge">{testimonial.certification}</span>}
+                                    {testimonial.course && <span className="badge course-badge">{testimonial.course}</span>}
+                                </div>
+                            )}
                             <p className="testimonial-text">"{testimonial.text}"</p>
-                            <div className="testimonial-company-footer">
-                                <img
-                                    src={testimonial.companyLogo}
-                                    alt={testimonial.company}
-                                    className="company-logo-large"
-                                />
-                                <span className="company-name-footer">{testimonial.company}</span>
-                            </div>
+                            {(testimonial.companyLogo || testimonial.company) ? (
+                                <div className="testimonial-company-footer">
+                                    <img
+                                        src={testimonial.companyLogo}
+                                        alt={testimonial.company}
+                                        className="company-logo-large"
+                                    />
+                                    <span className="company-name-footer">{testimonial.company}</span>
+                                </div>
+                            ) : (
+                                <div className="testimonial-company-footer spacer" style={{ minHeight: '24px' }}></div>
+                            )}
                         </div>
                     ))}
                 </div>
+
+                {/* Highlighted Testimonial - Horizontal Card */}
+                <div className="highlighted-testimonial-container">
+                    <div className="testimonial-card testimonial-card-horizontal">
+                        <div className="testimonial-header horizontal-header">
+                            <img
+                                src={highlightedTestimonial.image}
+                                alt={highlightedTestimonial.name}
+                                className="testimonial-avatar large-avatar"
+                            />
+                            <div className="testimonial-info">
+                                <h3 className="testimonial-name">{highlightedTestimonial.name}</h3>
+                                <p className="testimonial-role">{highlightedTestimonial.role}</p>
+                            </div>
+                        </div>
+                        <div className="testimonial-content-wrapper">
+                            <p className="testimonial-text">"{highlightedTestimonial.text}"</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </section >
     );
 }
