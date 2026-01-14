@@ -5,6 +5,7 @@ import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
 import BackToTop from "@/components/back-to-top/back-to-top";
 import { FranchisePopup } from "@/components/global";
+import { OfferAnnouncementBar } from "@/components/global/offer-banner";
 import {
   getCertificationPartners,
   getCoursesForListing,
@@ -81,6 +82,7 @@ export default async function RootLayout({
         className={`${montserrat.variable} ${openSans.variable}`}
         style={{ fontFamily: 'var(--font-montserrat), var(--font-open-sans), sans-serif' }}
       >
+        <OfferAnnouncementBar />
         <TopBar />
         <Header partners={partners} courses={coursesTransformed} />
         {children}
