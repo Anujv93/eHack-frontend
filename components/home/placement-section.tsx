@@ -5,7 +5,7 @@ import './placement-section.css';
 const placementStories = [
     {
         id: 1,
-        name: "Ankit Verma",
+        name: "Anmol Gupta",
         image: "/images/testimonials/person1.jpg",
         before: { role: "B.Tech Student", company: "Fresher" },
         after: { role: "Cybersecurity Analyst", company: "Deloitte", logo: "https://img.logo.dev/deloitte.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
@@ -14,7 +14,7 @@ const placementStories = [
     },
     {
         id: 2,
-        name: "Rahul Sharma",
+        name: "Rajiv Govind",
         image: "/images/testimonials/person2.jpg",
         before: { role: "System Admin", company: "Local IT Firm" },
         after: { role: "SOC Engineer", company: "PwC", logo: "https://img.logo.dev/pwc.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
@@ -23,7 +23,7 @@ const placementStories = [
     },
     {
         id: 3,
-        name: "Vijay Kumar",
+        name: "Vaddi . Paneendar",
         image: "/images/testimonials/person3.jpg",
         before: { role: "Support Engineer", company: "Tech Support" },
         after: { role: "Penetration Tester", company: "KPMG", logo: "https://img.logo.dev/kpmg.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
@@ -32,7 +32,7 @@ const placementStories = [
     },
     {
         id: 4,
-        name: "Priya Singh",
+        name: "Damini Settappa Ranganath",
         image: "/images/testimonials/person4.jpg",
         before: { role: "Software Dev", company: "Startup" },
         after: { role: "Security Consultant", company: "EY", logo: "https://img.logo.dev/ey.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
@@ -41,7 +41,7 @@ const placementStories = [
     },
     {
         id: 5,
-        name: "Arjun Patel",
+        name: "Pranshu Tiwari",
         image: "/images/testimonials/person5.jpg",
         before: { role: "Network Admin", company: "ISP" },
         after: { role: "Cloud Security Eng.", company: "Accenture", logo: "https://img.logo.dev/accenture.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
@@ -50,7 +50,7 @@ const placementStories = [
     },
     {
         id: 6,
-        name: "Sanjay Mehta",
+        name: "Abhinav Choubey",
         image: "/images/testimonials/person6.jpg",
         before: { role: "IT Manager", company: "Mid-size Firm" },
         after: { role: "InfoSec Manager", company: "IBM", logo: "https://img.logo.dev/ibm.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
