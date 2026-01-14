@@ -489,6 +489,22 @@
     }
 }
 
+@media (max-width: 768px) {
+    .benefit-card {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .why-choose-description {
+        font-size: 1.1rem !important;
+        line-height: 1.6;
+    }
+
+    .why-choose-header {
+        padding-top: 2rem;
+    }
+}
+
 @media (max-width: 640px) {
     .program-image-card {
         flex: 0 0 100%;
@@ -497,11 +513,6 @@
 
     .program-image-wrapper {
         height: 180px;
-    }
-
-    .benefit-card {
-        flex: 0 0 100%;
-        max-width: 100%;
     }
 }
 
