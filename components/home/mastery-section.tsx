@@ -18,7 +18,7 @@ interface Program {
 
 const programs: Program[] = [
     {
-        title: 'Master Class Program in Ethical Hacking (CEH v13)',
+        title: '(CEH v13) Masters powered by AI',
         features: [
             "Build expertise in ethical hacking with the world's #1 certification (CEH v13)",
             '3 Global EC-Council Certifications: CEH, CEH Practical, CEH Master',
@@ -34,7 +34,7 @@ const programs: Program[] = [
         featured: false
     },
     {
-        title: 'Graduate Program in Ethical Hacking & Cyber Security',
+        title: 'Graduate Program in Ethical Hacking powered by AI',
         features: [
             'Comprehensive program covering IT fundamentals',
             'Ethical hacking, penetration testing, and digital forensics',
@@ -50,7 +50,7 @@ const programs: Program[] = [
         featured: true
     },
     {
-        title: 'Masters Program with 5 Global Certifications',
+        title: 'Masters Program powered by AI (5 Global Certifications)',
         features: [
             'Ultimate cybersecurity mastery program',
             '5 EC-Council certifications: CSCU, CND, CEH, CPENT, CHFI',
@@ -87,10 +87,6 @@ export default function MasterySection() {
                             <ul className="program-features">
                                 {program.features.map((feature, idx) => (
                                     <li key={idx} className="program-feature">
-                                        <svg className="feature-check" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="10" fill="#FFF7F0" />
-                                            <path d="M6 10l3 3 5-6" stroke="#df6718" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
                                         <span>{feature}</span>
                                     </li>
                                 ))}
