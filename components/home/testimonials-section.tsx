@@ -172,43 +172,82 @@ export default function TestimonialsSection() {
                     <h2 className="testimonials-title">What Our Learners Say</h2>
                 </div>
 
-                {/* Testimonials Grid */}
-                <div className="testimonials-grid">
-                    {testimonials.map((testimonial, index) => (
-                        <div key={index} className="testimonial-card">
-                            <div className="testimonial-header">
-                                <img
-                                    src={testimonial.image}
-                                    alt={testimonial.name}
-                                    className="testimonial-avatar"
-                                />
-                                <div className="testimonial-info">
-                                    <h3 className="testimonial-name">{testimonial.name}</h3>
-                                    <p className="testimonial-role">{testimonial.role}</p>
-                                </div>
-                            </div>
-
-                            {(testimonial.certification || testimonial.course) && (
-                                <div className="testimonial-badges">
-                                    {testimonial.certification && <span className="badge certification-badge">{testimonial.certification}</span>}
-                                    {testimonial.course && <span className="badge course-badge">{testimonial.course}</span>}
-                                </div>
-                            )}
-                            <p className="testimonial-text">"{testimonial.text}"</p>
-                            {(testimonial.companyLogo || testimonial.company) ? (
-                                <div className="testimonial-company-footer">
+                {/* Testimonials Marquee - Moving Left to Right */}
+                <div className="testimonials-marquee-wrapper">
+                    <div className="testimonials-marquee">
+                        {/* First set of cards */}
+                        {testimonials.map((testimonial, index) => (
+                            <div key={`first-${index}`} className="testimonial-card">
+                                <div className="testimonial-header">
                                     <img
-                                        src={testimonial.companyLogo}
-                                        alt={testimonial.company}
-                                        className="company-logo-large"
+                                        src={testimonial.image}
+                                        alt={testimonial.name}
+                                        className="testimonial-avatar"
                                     />
-                                    <span className="company-name-footer">{testimonial.company}</span>
+                                    <div className="testimonial-info">
+                                        <h3 className="testimonial-name">{testimonial.name}</h3>
+                                        <p className="testimonial-role">{testimonial.role}</p>
+                                    </div>
                                 </div>
-                            ) : (
-                                <div className="testimonial-company-footer spacer" style={{ minHeight: '24px' }}></div>
-                            )}
-                        </div>
-                    ))}
+
+                                {(testimonial.certification || testimonial.course) && (
+                                    <div className="testimonial-badges">
+                                        {testimonial.certification && <span className="badge certification-badge">{testimonial.certification}</span>}
+                                        {testimonial.course && <span className="badge course-badge">{testimonial.course}</span>}
+                                    </div>
+                                )}
+                                <p className="testimonial-text">"{testimonial.text}"</p>
+                                {(testimonial.companyLogo || testimonial.company) ? (
+                                    <div className="testimonial-company-footer">
+                                        <img
+                                            src={testimonial.companyLogo}
+                                            alt={testimonial.company}
+                                            className="company-logo-large"
+                                        />
+                                        <span className="company-name-footer">{testimonial.company}</span>
+                                    </div>
+                                ) : (
+                                    <div className="testimonial-company-footer spacer" style={{ minHeight: '24px' }}></div>
+                                )}
+                            </div>
+                        ))}
+                        {/* Duplicate set for seamless loop */}
+                        {testimonials.map((testimonial, index) => (
+                            <div key={`second-${index}`} className="testimonial-card">
+                                <div className="testimonial-header">
+                                    <img
+                                        src={testimonial.image}
+                                        alt={testimonial.name}
+                                        className="testimonial-avatar"
+                                    />
+                                    <div className="testimonial-info">
+                                        <h3 className="testimonial-name">{testimonial.name}</h3>
+                                        <p className="testimonial-role">{testimonial.role}</p>
+                                    </div>
+                                </div>
+
+                                {(testimonial.certification || testimonial.course) && (
+                                    <div className="testimonial-badges">
+                                        {testimonial.certification && <span className="badge certification-badge">{testimonial.certification}</span>}
+                                        {testimonial.course && <span className="badge course-badge">{testimonial.course}</span>}
+                                    </div>
+                                )}
+                                <p className="testimonial-text">"{testimonial.text}"</p>
+                                {(testimonial.companyLogo || testimonial.company) ? (
+                                    <div className="testimonial-company-footer">
+                                        <img
+                                            src={testimonial.companyLogo}
+                                            alt={testimonial.company}
+                                            className="company-logo-large"
+                                        />
+                                        <span className="company-name-footer">{testimonial.company}</span>
+                                    </div>
+                                ) : (
+                                    <div className="testimonial-company-footer spacer" style={{ minHeight: '24px' }}></div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Highlighted Testimonial - Horizontal Card */}
