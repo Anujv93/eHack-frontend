@@ -40,12 +40,21 @@ const allCompanies = [
     ]
 ];
 
+// Highlighted Testimonial
+const highlightedTestimonial = {
+    name: 'Shri Rajashekara N., IPS',
+    role: 'DIG of Police / Director, CDTI, Hyderabad',
+    image: '/images/testimonials/pp_person9.jpg',
+    text: "eHack Academy's commitment to practical cybersecurity training is commendable. Their comprehensive curriculum in ethical hacking and digital forensics plays a vital role in empowering the next generation of cyber defenders and strengthening our national security infrastructure."
+};
+
 const testimonials = [
+
     {
-        name: 'Ankit Verma',
-        role: 'Cybersecurity Analyst',
-        company: 'Deloitte',
-        companyLogo: 'https://img.logo.dev/deloitte.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        name: 'Anmol Gupta',
+        role: 'APV-DELIVERY',
+        company: 'ampcuscyber',
+        companyLogo: 'images/ampcuscyber.png',
         companyColor: '#86BC25',
         image: '/images/testimonials/person1.jpg',
         certification: 'CEH Certified',
@@ -53,10 +62,10 @@ const testimonials = [
         text: "The hands-on labs and real-world scenarios helped me understand actual attack patterns. The CEH certification from eHack Academy was instrumental in landing my dream job at Deloitte."
     },
     {
-        name: 'Rahul Sharma',
-        role: 'SOC Engineer',
-        company: 'PwC',
-        companyLogo: 'https://img.logo.dev/pwc.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        name: 'Rajiv Govind',
+        role: 'Head Teaching Assistant',
+        company: 'GT',
+        companyLogo: 'images/gtlogo.jpg',
         companyColor: '#D04A02',
         image: '/images/testimonials/person2.jpg',
         certification: 'CND Certified',
@@ -64,10 +73,10 @@ const testimonials = [
         text: "eHack's structured curriculum took me from a complete beginner to a certified SOC professional. The practical training and mentorship were invaluable for my career growth."
     },
     {
-        name: 'Vijay Kumar',
+        name: 'Vaddi . Paneendar',
         role: 'Penetration Tester',
-        company: 'KPMG',
-        companyLogo: 'https://img.logo.dev/kpmg.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        company: 'sisa',
+        companyLogo: 'images/sisa.webp',
         companyColor: '#00338D',
         image: '/images/testimonials/person3.jpg',
         certification: 'CPENT Certified',
@@ -75,10 +84,10 @@ const testimonials = [
         text: "The VAPT training was exactly what I needed to transition into offensive security. The live hacking labs and instructor-led sessions gave me real-world skills."
     },
     {
-        name: 'Priya Singh',
-        role: 'Security Consultant',
-        company: 'EY',
-        companyLogo: 'https://img.logo.dev/ey.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        name: 'Damini Settappa Ranganath',
+        role: 'Cybersecurity Engineer',
+        company: 'anuvu',
+        companyLogo: 'images/anuvu.png',
         companyColor: '#FFD100',
         image: '/images/testimonials/person4.jpg',
         certification: 'CHFI Certified',
@@ -86,10 +95,10 @@ const testimonials = [
         text: "As a woman in cybersecurity, eHack provided an inclusive learning environment. The forensics training helped me specialize in incident response at EY."
     },
     {
-        name: 'Arjun Patel',
-        role: 'Cloud Security Engineer',
-        company: 'Accenture',
-        companyLogo: 'https://img.logo.dev/accenture.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        name: 'Pranshu Tiwari',
+        role: 'Director Security Services',
+        company: 'ampcuscyber',
+        companyLogo: 'images/ampcuscyber.png',
         companyColor: '#A100FF',
         image: '/images/testimonials/person5.jpg',
         certification: 'CCSE Certified',
@@ -97,10 +106,10 @@ const testimonials = [
         text: "The cloud security modules were cutting-edge. eHack prepared me perfectly for securing enterprise cloud environments at Accenture."
     },
     {
-        name: 'Sanjay Mehta',
+        name: 'Abhinav Choubey',
         role: 'Information Security Manager',
-        company: 'IBM',
-        companyLogo: 'https://img.logo.dev/ibm.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        company: 'sisa',
+        companyLogo: 'images/sisa.webp',
         companyColor: '#0530AD',
         image: '/images/testimonials/person6.jpg',
         certification: 'CISM Certified',
@@ -178,23 +187,50 @@ export default function TestimonialsSection() {
                                     <p className="testimonial-role">{testimonial.role}</p>
                                 </div>
                             </div>
-                            <div className="testimonial-badges">
-                                <span className="badge certification-badge">{testimonial.certification}</span>
-                                <span className="badge course-badge">{testimonial.course}</span>
-                            </div>
+
+                            {(testimonial.certification || testimonial.course) && (
+                                <div className="testimonial-badges">
+                                    {testimonial.certification && <span className="badge certification-badge">{testimonial.certification}</span>}
+                                    {testimonial.course && <span className="badge course-badge">{testimonial.course}</span>}
+                                </div>
+                            )}
                             <p className="testimonial-text">"{testimonial.text}"</p>
-                            <div className="testimonial-company-footer">
-                                <img
-                                    src={testimonial.companyLogo}
-                                    alt={testimonial.company}
-                                    className="company-logo-large"
-                                />
-                                <span className="company-name-footer">{testimonial.company}</span>
-                            </div>
+                            {(testimonial.companyLogo || testimonial.company) ? (
+                                <div className="testimonial-company-footer">
+                                    <img
+                                        src={testimonial.companyLogo}
+                                        alt={testimonial.company}
+                                        className="company-logo-large"
+                                    />
+                                    <span className="company-name-footer">{testimonial.company}</span>
+                                </div>
+                            ) : (
+                                <div className="testimonial-company-footer spacer" style={{ minHeight: '24px' }}></div>
+                            )}
                         </div>
                     ))}
                 </div>
+
+                {/* Highlighted Testimonial - Horizontal Card */}
+                <div className="highlighted-testimonial-container">
+                    <div className="testimonial-card testimonial-card-horizontal">
+                        <div className="testimonial-header horizontal-header">
+                            <img
+                                src={highlightedTestimonial.image}
+                                alt={highlightedTestimonial.name}
+                                className="testimonial-avatar large-avatar"
+                            />
+                            <div className="testimonial-info">
+                                <h3 className="testimonial-name">{highlightedTestimonial.name}</h3>
+                                <p className="testimonial-role">{highlightedTestimonial.role}</p>
+                            </div>
+                        </div>
+                        <div className="testimonial-content-wrapper">
+                            <p className="testimonial-text">"{highlightedTestimonial.text}"</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </section >
     );
 }

@@ -81,8 +81,17 @@ const kennedyPartner: Partner = {
 };
 
 export default function Header({ partners, courses }: HeaderProps) {
-    // Add eHack Originals and Kennedy University to partners list - eHack first
-    const allPartners = [ehackOriginalPartner, kennedyPartner, ...partners];
+    // Separate EC-Council if present
+    const ecCouncilPartner = partners.find(p => p.slug === 'ec-council');
+    const otherPartners = partners.filter(p => p.slug !== 'ec-council');
+
+    // Add eHack Originals and Kennedy University to partners list - eHack first, then Kennedy, then EC-Council
+    const allPartners = [
+        ehackOriginalPartner,
+        kennedyPartner,
+        ...(ecCouncilPartner ? [ecCouncilPartner] : []),
+        ...otherPartners
+    ];
     const allCourses = [...courses, ...ehackPrograms, ...kennedyPrograms];
 
     const [megaMenuOpen, setMegaMenuOpen] = useState(false);

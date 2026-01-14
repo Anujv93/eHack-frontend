@@ -8,7 +8,7 @@ const placementStories = [
         name: "Anmol Gupta",
         image: "/images/testimonials/person1.jpg",
         before: { role: "B.Tech Student", company: "Fresher" },
-        after: { role: "Cybersecurity Analyst", company: "Deloitte", logo: "https://img.logo.dev/deloitte.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
+        after: { role: "APV-DELIVERY", company: "Ampcuscyber", logo: "images/ampcuscyber.png" },
         hike: "150%",
         badge: "CEH Certified 🏆"
     },
@@ -17,7 +17,7 @@ const placementStories = [
         name: "Rajiv Govind",
         image: "/images/testimonials/person2.jpg",
         before: { role: "System Admin", company: "Local IT Firm" },
-        after: { role: "SOC Engineer", company: "PwC", logo: "https://img.logo.dev/pwc.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
+        after: { role: "Head Teaching Assistant", company: "GTL", logo: "images/gtlogo.jpg" },
         hike: "140%",
         badge: "CND Certified ⭐"
     },
@@ -26,16 +26,16 @@ const placementStories = [
         name: "Vaddi . Paneendar",
         image: "/images/testimonials/person3.jpg",
         before: { role: "Support Engineer", company: "Tech Support" },
-        after: { role: "Penetration Tester", company: "KPMG", logo: "https://img.logo.dev/kpmg.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
+        after: { role: "Red Teamer", company: "SISA", logo: "images/sisa.webp" },
         hike: "180%",
         badge: "CPENT Certified 🐞"
     },
     {
         id: 4,
-        name: "Damini Settappa Ranganath",
+        name: "Damini Ranganath",
         image: "/images/testimonials/person4.jpg",
         before: { role: "Software Dev", company: "Startup" },
-        after: { role: "Security Consultant", company: "EY", logo: "https://img.logo.dev/ey.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
+        after: { role: "Cybersecurity Engineer", company: "Anuvu", logo: "images/anuvu.png" },
         hike: "120%",
         badge: "CHFI Certified 🛡️"
     },
@@ -44,7 +44,7 @@ const placementStories = [
         name: "Pranshu Tiwari",
         image: "/images/testimonials/person5.jpg",
         before: { role: "Network Admin", company: "ISP" },
-        after: { role: "Cloud Security Eng.", company: "Accenture", logo: "https://img.logo.dev/accenture.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
+        after: { role: "Director Security Services", company: "Ampcuscyber", logo: "images/ampcuscyber.png" },
         hike: "160%",
         badge: "CCSE Certified 🚀"
     },
@@ -53,7 +53,25 @@ const placementStories = [
         name: "Abhinav Choubey",
         image: "/images/testimonials/person6.jpg",
         before: { role: "IT Manager", company: "Mid-size Firm" },
-        after: { role: "InfoSec Manager", company: "IBM", logo: "https://img.logo.dev/ibm.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ" },
+        after: { role: "Associate Director", company: "SISA", logo: "images/sisa.webp" },
+        hike: "200%",
+        badge: "CISM Certified 🎓"
+    },
+    {
+        id: 7,
+        name: "Snigdha Suresh Poonghat ",
+        image: "/images/testimonials/person7.jpg",
+        before: { role: "IT Manager", company: "Mid-size Firm" },
+        after: { role: "Technical Support Engineer", company: "ASK4", logo: "images/ask4_limited_logo.jpg" },
+        hike: "200%",
+        badge: "CISM Certified 🎓"
+    },
+    {
+        id: 8,
+        name: "Snigdha Suresh Poonghat ",
+        image: "/images/testimonials/person8.jpg",
+        before: { role: "IT Manager", company: "Mid-size Firm" },
+        after: { role: "Advisor", company: "Fiserv", logo: "images/fiserv.png" },
         hike: "200%",
         badge: "CISM Certified 🎓"
     }
