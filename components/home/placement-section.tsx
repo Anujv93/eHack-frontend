@@ -32,7 +32,7 @@ const placementStories = [
     },
     {
         id: 4,
-        name: "Damini Settappa Ranganath",
+        name: "Damini Ranganath",
         image: "/images/testimonials/person4.jpg",
         before: { role: "Software Dev", company: "Startup" },
         after: { role: "Cybersecurity Engineer", company: "Anuvu", logo: "images/anuvu.png" },
