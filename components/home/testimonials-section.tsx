@@ -42,10 +42,10 @@ const allCompanies = [
 
 const testimonials = [
     {
-        name: 'Ankit Verma',
-        role: 'Cybersecurity Analyst',
-        company: 'Deloitte',
-        companyLogo: 'https://img.logo.dev/deloitte.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        name: 'Anmol Gupta',
+        role: 'APV-DELIVERY',
+        company: 'ampcuscyber',
+        companyLogo: 'images/ampcuscyber.png',
         companyColor: '#86BC25',
         image: '/images/testimonials/person1.jpg',
         certification: 'CEH Certified',
@@ -53,10 +53,10 @@ const testimonials = [
         text: "The hands-on labs and real-world scenarios helped me understand actual attack patterns. The CEH certification from eHack Academy was instrumental in landing my dream job at Deloitte."
     },
     {
-        name: 'Rahul Sharma',
-        role: 'SOC Engineer',
-        company: 'PwC',
-        companyLogo: 'https://img.logo.dev/pwc.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        name: 'Rajiv Govind',
+        role: 'Head Teaching Assistant',
+        company: 'GT',
+        companyLogo: 'images/gtlogo.jpg',
         companyColor: '#D04A02',
         image: '/images/testimonials/person2.jpg',
         certification: 'CND Certified',
@@ -64,10 +64,10 @@ const testimonials = [
         text: "eHack's structured curriculum took me from a complete beginner to a certified SOC professional. The practical training and mentorship were invaluable for my career growth."
     },
     {
-        name: 'Vijay Kumar',
+        name: 'Vaddi . Paneendar',
         role: 'Penetration Tester',
-        company: 'KPMG',
-        companyLogo: 'https://img.logo.dev/kpmg.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        company: 'sisa',
+        companyLogo: 'images/sisa.webp',
         companyColor: '#00338D',
         image: '/images/testimonials/person3.jpg',
         certification: 'CPENT Certified',
@@ -75,10 +75,10 @@ const testimonials = [
         text: "The VAPT training was exactly what I needed to transition into offensive security. The live hacking labs and instructor-led sessions gave me real-world skills."
     },
     {
-        name: 'Priya Singh',
-        role: 'Security Consultant',
+        name: 'Damini Settappa Ranganath',
+        role: 'Cybersecurity Engineer',
         company: 'EY',
-        companyLogo: 'https://img.logo.dev/ey.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        companyLogo: 'images/anuvu.png',
         companyColor: '#FFD100',
         image: '/images/testimonials/person4.jpg',
         certification: 'CHFI Certified',
@@ -86,10 +86,10 @@ const testimonials = [
         text: "As a woman in cybersecurity, eHack provided an inclusive learning environment. The forensics training helped me specialize in incident response at EY."
     },
     {
-        name: 'Arjun Patel',
-        role: 'Cloud Security Engineer',
-        company: 'Accenture',
-        companyLogo: 'https://img.logo.dev/accenture.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        name: 'Pranshu Tiwari',
+        role: 'Director Security Services',
+        company: 'ampcuscyber',
+        companyLogo: 'images/ampcuscyber.png',
         companyColor: '#A100FF',
         image: '/images/testimonials/person5.jpg',
         certification: 'CCSE Certified',
@@ -97,10 +97,10 @@ const testimonials = [
         text: "The cloud security modules were cutting-edge. eHack prepared me perfectly for securing enterprise cloud environments at Accenture."
     },
     {
-        name: 'Sanjay Mehta',
+        name: 'Abhinav Choubey',
         role: 'Information Security Manager',
-        company: 'IBM',
-        companyLogo: 'https://img.logo.dev/ibm.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
+        company: 'sisa',
+        companyLogo: 'images/sisa.webp',
         companyColor: '#0530AD',
         image: '/images/testimonials/person6.jpg',
         certification: 'CISM Certified',
