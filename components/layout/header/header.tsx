@@ -17,8 +17,11 @@ const corporateServices = [
     { id: 'infrastructure-security', title: 'Infrastructure Security Assessment', icon: '🏗️' },
     { id: 'thick-client-security', title: 'Thick Client Security Assessment', icon: '🖥️' },
     { id: 'firewall-security', title: 'Firewall Security Assessment', icon: '🛡️' },
-    { id: 'digital-forensics', title: 'Digital Forensics & Incident Response', icon: '🔍' },
+];
+
+const forensicsServices = [
     { id: 'malware-analysis', title: 'Malware Analysis & Root Cause Detection', icon: '🦠' },
+    { id: 'digital-forensics', title: 'Digital Forensics & Incident Response', icon: '🔍' },
 ];
 
 const complianceServices = [
@@ -428,6 +431,24 @@ export default function Header({ partners, courses }: HeaderProps) {
                                     </div>
                                 </div>
 
+                                {/* Forensics & Malware Services */}
+                                <div className="services-column">
+                                    <h4 className="services-column-title">Forensics & Malware</h4>
+                                    <div className="services-list">
+                                        {forensicsServices.map((service) => (
+                                            <Link
+                                                key={service.id}
+                                                href={`/services/${service.id}`}
+                                                className="service-dropdown-item"
+                                                onClick={() => setServicesMenuOpen(false)}
+                                            >
+                                                <span className="service-item-icon">{service.icon}</span>
+                                                <span className="service-item-title">{service.title}</span>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+
                                 {/* Compliance Services */}
                                 <div className="services-column compliance-column">
                                     <h4 className="services-column-title">Compliance Audit</h4>
@@ -611,6 +632,9 @@ export default function Header({ partners, courses }: HeaderProps) {
                             </Link>
                             <Link href="/services/infrastructure-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Infrastructure Security
+                            </Link>
+                            <Link href="/services/malware-analysis" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Malware Analysis
                             </Link>
                             <Link href="/services/digital-forensics" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Digital Forensics

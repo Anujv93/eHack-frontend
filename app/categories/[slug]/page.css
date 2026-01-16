@@ -260,35 +260,16 @@
 }
 
 .explore-categories-scroll {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 24px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    scroll-snap-type: x mandatory;
-}
-
-.explore-categories-scroll::-webkit-scrollbar {
-    height: 6px;
-}
-
-.explore-categories-scroll::-webkit-scrollbar-track {
-    background: #E2E8F0;
-    border-radius: 3px;
-}
-
-.explore-categories-scroll::-webkit-scrollbar-thumb {
-    background: #94A3B8;
-    border-radius: 3px;
 }
 
 .explore-category-block {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    min-width: 400px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
+    width: 100%;
 }
 
 .explore-category-title {
@@ -319,9 +300,10 @@
 }
 
 .explore-programs-row {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 12px;
+    width: 100%;
 }
 
 .explore-program-card {
@@ -329,13 +311,15 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: 220px;
+    height: 260px;
+    width: 100%;
     border-radius: 16px;
     overflow: hidden;
     background-size: cover;
     background-position: center;
     text-decoration: none;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .explore-program-card:hover {
@@ -377,6 +361,13 @@
     color: #fff;
     margin: 0;
     line-height: 1.3;
+    min-height: 2.6em;
+    max-height: 3.9em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .explore-card-meta {
@@ -413,11 +404,15 @@
         grid-template-columns: 1fr;
     }
 
+    .explore-categories-scroll {
+        grid-template-columns: 1fr;
+    }
+
     .explore-programs-row {
         grid-template-columns: 1fr;
     }
 
     .explore-program-card {
-        min-height: 180px;
+        height: 200px;
     }
 }
