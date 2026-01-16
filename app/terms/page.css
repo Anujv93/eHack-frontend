@@ -1,0 +1,131 @@
+.terms-page {
+    padding-top: 120px;
+    /* Account for fixed navbar */
+    padding-bottom: 80px;
+    background-color: #f9fafb;
+    min-height: 100vh;
+}
+
+.terms-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.terms-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.terms-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.terms-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #FF6B00;
+    border-radius: 2px;
+}
+
+.terms-content {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.terms-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.terms-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-title::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 24px;
+    background: #FF6B00;
+    border-radius: 3px;
+}
+
+.terms-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.terms-highlight {
+    background-color: #fff7ed;
+    border-left: 4px solid #FF6B00;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #555;
+}
+
+.last-updated {
+    text-align: center;
+    margin-top: 3rem;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .terms-page {
+        padding-top: 100px;
+    }
+
+    .terms-content {
+        padding: 2rem;
+    }
+
+    .terms-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .terms-content {
+        padding: 1.5rem;
+    }
+
+    .terms-title {
+        font-size: 1.75rem;
+    }
+}

@@ -260,7 +260,7 @@ export default function Footer() {
                                 <span className="separator">•</span>
                                 <Link href="/privacy">Privacy Policy</Link>
                                 <span className="separator">•</span>
-                                <Link href="/refund">Refund Policy</Link>
+                                <Link href="/terms#refund">Refund Policy</Link>
                             </div>
                         </div>
                         <div className="footer-bottom-right">
