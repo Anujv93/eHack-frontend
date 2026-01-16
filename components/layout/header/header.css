@@ -924,7 +924,7 @@ body {
     position: absolute;
     top: 100%;
     right: -180px;
-    width: 920px;
+    width: 1100px;
     max-width: calc(100vw - 40px);
     background: #fff;
     border-radius: 12px;
@@ -940,7 +940,7 @@ body {
 
 .services-dropdown-inner {
     display: grid;
-    grid-template-columns: 1fr 260px;
+    grid-template-columns: 1fr 1fr 260px;
     gap: 1.5rem;
 }
 
