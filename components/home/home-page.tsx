@@ -10,7 +10,6 @@ import MasterySection from './mastery-section';
 import PlacementSection from './placement-section';
 import TestimonialsSection from './testimonials-section';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
-import { ComboOfferBanner } from '@/components/global/offer-banner';
 
 // Types for props
 interface Partner {
@@ -378,9 +377,6 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                     </div>
                 </div>
             </section>
-
-            {/* Combo Offer Banner */}
-            <ComboOfferBanner />
 
             {/* Partners Section */}
             {/* @ts-ignore */}
