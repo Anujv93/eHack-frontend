@@ -1,0 +1,678 @@
+/* CSR Page Styles - Matching Homepage Design */
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.csr-hero {
+    background: linear-gradient(135deg,
+            rgba(10, 10, 26, 0.95) 0%,
+            rgba(26, 26, 46, 0.9) 50%,
+            rgba(10, 10, 26, 0.95) 100%),
+        url('/images/cybersecurity.jpg') center center / cover no-repeat;
+    padding: 120px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.csr-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 107, 0, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content-compact {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.hero-badge-light {
+    display: inline-block;
+    background: rgba(255, 107, 0, 0.2);
+    backdrop-filter: blur(10px);
+    color: #FFFFFF;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+    border: 2px solid rgba(255, 107, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(255, 107, 0, 0.3);
+}
+
+.hero-title-light {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-highlight {
+    color: #FF6B00;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.hero-subtitle-light {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Mission Section */
+.csr-mission-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    text-align: center;
+}
+
+.mission-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-badge {
+    display: inline-block;
+    background: #FFF7ED;
+    color: #FF6B00;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 20px;
+    border: 1px solid #FFEDD5;
+}
+
+.section-badge-blue {
+    color: #3B82F6;
+    background: #EFF6FF;
+    border-color: #DBEAFE;
+}
+
+.section-badge-purple {
+    color: #8B5CF6;
+    background: #F5F3FF;
+    border-color: #E9D5FF;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: #0a0a1a;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: #64748B;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.mission-text {
+    font-size: 1.25rem;
+    color: #334155;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+/* Impact Stats Section */
+.impact-stats-section {
+    padding: 80px 0;
+    background: #FFFFFF;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%);
+    border-radius: 20px;
+    border: 2px solid #FFEDD5;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(255, 107, 0, 0.15);
+    border-color: #FF6B00;
+}
+
+.stat-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: grayscale(0.2);
+}
+
+.stat-value {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #FF6B00;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.stat-label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #334155;
+    line-height: 1.4;
+}
+
+/* Focus Areas Section */
+.focus-areas-section {
+    padding: 80px 0;
+    background: #F8FAFC;
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.focus-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    border: 2px solid #E2E8F0;
+    transition: all 0.3s ease;
+}
+
+.focus-card:hover {
+    border-color: #FF6B00;
+    box-shadow: 0 12px 32px rgba(255, 107, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+.focus-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    filter: grayscale(0.2);
+}
+
+.focus-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0a0a1a;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.focus-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.focus-list li {
+    font-size: 1.0625rem;
+    color: #475569;
+    line-height: 1.8;
+    padding-left: 1.75rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.focus-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #10B981;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* Institutions Section */
+.institutions-section {
+    padding: 80px 0;
+    background: #FFFFFF;
+}
+
+.institutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.institution-card {
+    background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    text-align: center;
+    border: 2px solid #E2E8F0;
+    transition: all 0.3s ease;
+}
+
+.institution-card:hover {
+    border-color: #3B82F6;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12);
+    transform: translateY(-4px);
+}
+
+.institution-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.institution-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0a0a1a;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.institution-desc {
+    font-size: 0.9375rem;
+    color: #64748B;
+    line-height: 1.5;
+}
+
+.institutions-more {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%);
+    border-radius: 16px;
+    border: 2px dashed #FFEDD5;
+}
+
+.institutions-more p {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #FF6B00;
+    margin: 0;
+}
+
+/* Corporate Section */
+.corporate-section {
+    padding: 80px 0;
+    background: #F8FAFC;
+}
+
+.corporate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.corporate-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    border: 2px solid #E2E8F0;
+    transition: all 0.3s ease;
+}
+
+.corporate-card:hover {
+    border-color: #10B981;
+    box-shadow: 0 12px 32px rgba(16, 185, 129, 0.12);
+    transform: translateY(-4px);
+}
+
+.corporate-logo {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.corporate-name {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #0a0a1a;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.corporate-desc {
+    font-size: 1rem;
+    color: #64748B;
+    line-height: 1.6;
+}
+
+/* Roadmap Section */
+.roadmap-section {
+    padding: 80px 0;
+    background: #FFFFFF;
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.roadmap-card {
+    background: linear-gradient(135deg, #F5F3FF 0%, #FFFFFF 100%);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    border: 2px solid #E9D5FF;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.roadmap-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #8B5CF6 0%, #A78BFA 100%);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.roadmap-card:hover::before {
+    transform: scaleY(1);
+}
+
+.roadmap-card:hover {
+    border-color: #8B5CF6;
+    box-shadow: 0 12px 32px rgba(139, 92, 246, 0.15);
+    transform: translateY(-4px);
+}
+
+.roadmap-number {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #8B5CF6;
+    margin-bottom: 1rem;
+    opacity: 0.3;
+}
+
+.roadmap-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0a0a1a;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.roadmap-desc {
+    font-size: 1rem;
+    color: #64748B;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.csr-cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.csr-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 50%, rgba(255, 107, 0, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.cta-box {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cta-badge {
+    display: inline-block;
+    background: rgba(255, 107, 0, 0.2);
+    backdrop-filter: blur(10px);
+    color: #FF6B00;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 107, 0, 0.3);
+}
+
+.cta-content {
+    margin-bottom: 3rem;
+}
+
+.cta-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.cta-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 107, 0, 0.3);
+}
+
+.cta-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 107, 0, 0.4);
+}
+
+.cta-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: white;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cta-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Quote Section */
+.quote-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%);
+}
+
+.quote-card {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4rem 3rem;
+    background: #FFFFFF;
+    border-radius: 24px;
+    border: 2px solid #FFEDD5;
+    box-shadow: 0 8px 32px rgba(255, 107, 0, 0.08);
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 6rem;
+    font-weight: 800;
+    color: #FFEDD5;
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-family: Georgia, serif;
+}
+
+.quote-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0a0a1a;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.quote-author {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #FF6B00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .csr-hero {
+        padding: 80px 0 60px;
+        min-height: 400px;
+    }
+
+    .hero-title-light {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle-light {
+        font-size: 1.0625rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .stats-grid,
+    .focus-grid,
+    .institutions-grid,
+    .corporate-grid,
+    .roadmap-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-btn-primary,
+    .cta-btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .quote-card {
+        padding: 2.5rem 2rem;
+    }
+
+    .quote-text {
+        font-size: 1.25rem;
+    }
+
+    .roadmap-grid {
+        gap: 1.25rem;
+    }
+
+    .focus-card,
+    .roadmap-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-badge-light {
+        font-size: 0.75rem;
+        padding: 10px 20px;
+    }
+
+    .stat-value {
+        font-size: 2.5rem;
+    }
+
+    .stat-icon,
+    .focus-icon {
+        font-size: 2.5rem;
+    }
+
+    .institution-card,
+    .corporate-card {
+        padding: 1.5rem 1.25rem;
+    }
+}
