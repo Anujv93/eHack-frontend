@@ -68,7 +68,7 @@ const placementStories = [
     },
     {
         id: 8,
-        name: "Snigdha Suresh Poonghat ",
+        name: "Rohit Prasad",
         image: "/images/testimonials/person8.jpg",
         before: { role: "IT Manager", company: "Mid-size Firm" },
         after: { role: "Advisor", company: "Fiserv", logo: "images/fiserv.png" },

@@ -959,15 +959,91 @@
 }
 
 @media (max-width: 480px) {
+    .offer-hero {
+        padding: 3rem 1rem 2rem;
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%), url('/images/Gemini_Generated_Image_xisp22xisp22xisp.png');
+        background-position: 65% center;
+        background-blend-mode: overlay;
+        /* Adjust image focal point for mobile */
+    }
+
     .offer-hero h1 {
-        font-size: 1.6rem;
+        font-size: 1.75rem;
+    }
+
+    .offer-hero-container {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .offer-hero h1,
+    .offer-hero h1 span {
+        color: white;
+    }
+
+    .offer-hero-subtitle {
+        margin: 0 auto;
+        color: rgba(255, 255, 255, 0.95);
     }
 
     .program-card-price {
         font-size: 1.6rem;
     }
 
+    .offer-section {
+        padding: 2.5rem 1rem;
+    }
+
     .offer-section-title {
+        font-size: 1.5rem;
+    }
+
+    .bundle-upsell {
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+
+    .bundle-upsell-title {
+        font-size: 1.25rem;
+    }
+
+    .bundle-calc-card,
+    .bundle-details {
+        padding: 1rem;
+    }
+
+    /* Force tables to scroll */
+    .value-table th,
+    .value-table td,
+    .savings-table th,
+    .savings-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        /* Prevent awkward wrapping */
+    }
+}
+
+@media (max-width: 360px) {
+    .offer-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .offer-hero-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .program-card {
+        padding: 1.25rem;
+    }
+
+    .program-card-price {
         font-size: 1.4rem;
+    }
+
+    .cta-btn {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
