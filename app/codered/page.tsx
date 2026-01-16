@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { Award, Target, TrendingUp, Users, Building2 } from 'lucide-react';
 import './page.css';
 
 export default function CodeRedPage() {
@@ -30,66 +31,227 @@ export default function CodeRedPage() {
         'Practical Labs Included in Microdegrees (selected courses)'
     ];
 
-    const microdegrees = [
+    const courses = [
         {
-            title: 'Python Security',
-            description: 'Master secure coding practices in Python with hands-on vulnerability analysis and exploitation techniques',
-            status: 'available',
-            duration: '12 hours',
-            modules: 8,
-            level: 'Intermediate',
-            hasLabs: true,
-            category: 'Application Security'
+            title: 'Capture the Flag',
+            description: 'Strengthen your pentesting skills through capture the flag exercises with walkthroughs',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/8Z8QkXF5/4yFBnkZGVaDbxF6f',
+            category: 'Ethical Hacking',
+            level: 'Intermediate'
         },
         {
-            title: 'PHP Security',
-            description: 'Learn to identify and mitigate common PHP vulnerabilities including SQL injection and XSS attacks',
-            status: 'available',
-            duration: '10 hours',
-            modules: 6,
-            level: 'Intermediate',
-            hasLabs: true,
-            category: 'Web Security'
+            title: 'Bug Bounty Hunting Essentials',
+            description: 'Practical bug bounty hunting for hackers and pentesters with top tools and tricks',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/Us775v10/4yFBnkZGVaDbxF6f',
+            category: 'Bug Bounty',
+            level: 'Intermediate'
         },
         {
-            title: 'Hands-On Android Security',
-            description: 'Deep dive into Android app security, reverse engineering, and mobile penetration testing',
-            status: 'available',
-            duration: '15 hours',
-            modules: 10,
-            level: 'Advanced',
-            hasLabs: true,
-            category: 'Mobile Security'
+            title: 'The Ultimate JavaScript Bundle',
+            description: 'Complete JavaScript learning path from HTML, CSS to full-stack development',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/GREtvqs8/4yFBnkZGVaDbxF6f',
+            category: 'Web Development',
+            level: 'Beginner'
         },
         {
-            title: 'Cloud Security',
-            description: 'Secure cloud infrastructures across AWS, Azure, and GCP with industry best practices',
-            status: 'coming-soon',
-            duration: '14 hours',
-            modules: 9,
-            level: 'Advanced',
-            hasLabs: true,
-            category: 'Cloud Security'
+            title: 'Master Open-Source Intelligence',
+            description: 'Advanced OSINT techniques for hackers and penetration testers',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/KtG5Oefw/4yFBnkZGVaDbxF6f',
+            category: 'OSINT',
+            level: 'Advanced'
         },
         {
-            title: 'AI for Cybersecurity',
-            description: 'Leverage machine learning for threat detection, anomaly analysis, and automated response',
-            status: 'coming-soon',
-            duration: '16 hours',
-            modules: 11,
-            level: 'Expert',
-            hasLabs: true,
-            category: 'AI & Security'
+            title: 'Mastering Digital Forensics',
+            description: 'Linux forensics, digital forensics for pentesters, and computer forensics best practices',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/exNKMTJD/4yFBnkZGVaDbxF6f',
+            category: 'Digital Forensics',
+            level: 'Advanced'
+        },
+        {
+            title: 'EC-Council Pro',
+            description: 'Get access to the world\'s largest online cybersecurity course library of 500+ courses',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/qYBOo7gz/4yFBnkZGVaDbxF6f',
+            category: 'All-Access',
+            level: 'All Levels'
+        },
+        {
+            title: 'Ultimate Red Team Cyber Suite',
+            description: 'Build new skills with comprehensive red team operations and offensive security',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/cOXfXsOF/4yFBnkZGVaDbxF6f',
+            category: 'Red Team',
+            level: 'Advanced'
+        },
+        {
+            title: 'Unleash the Power of Linux',
+            description: 'Master app development, server configuration, and networking with Linux',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/drAJcC5r/4yFBnkZGVaDbxF6f',
+            category: 'Linux',
+            level: 'Intermediate'
+        },
+        {
+            title: 'Protecting Data in Microsoft Azure',
+            description: 'Master data protection techniques and leverage Microsoft\'s robust security features in Azure',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/XavEAgzZ/4yFBnkZGVaDbxF6f',
+            category: 'Cloud Security',
+            level: 'Advanced'
+        },
+        {
+            title: 'Adopting Security and Privacy in Data',
+            description: 'Become a data protection expert with GDPR compliance and privacy by design',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/jXN1lRJI/4yFBnkZGVaDbxF6f',
+            category: 'Data Privacy',
+            level: 'Advanced'
+        },
+        {
+            title: 'Practical Linux for Security Professionals',
+            description: 'Essential Linux skills tailored for cybersecurity and security professionals',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/t8OKNu7M/4yFBnkZGVaDbxF6f',
+            category: 'Linux Security',
+            level: 'Intermediate'
+        },
+        {
+            title: 'Becoming a Digital Imaging Professional',
+            description: 'Master digital imaging techniques and professional image processing',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/2nAm7Z25/4yFBnkZGVaDbxF6f',
+            category: 'Digital Imaging',
+            level: 'Intermediate'
+        },
+        {
+            title: 'Become a Full Stack Developer',
+            description: 'Complete full-stack development training from frontend to backend',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/SV1zRMWk/4yFBnkZGVaDbxF6f',
+            category: 'Web Development',
+            level: 'Intermediate'
+        },
+        {
+            title: 'Practical Artificial Intelligence for Professionals',
+            description: 'Hands-on AI and machine learning for cybersecurity professionals',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/Aydst144/4yFBnkZGVaDbxF6f',
+            category: 'AI & ML',
+            level: 'Advanced'
+        },
+        {
+            title: 'Cybersecurity Project Manager',
+            description: 'Master project management skills specific to cybersecurity initiatives',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/X24n021f/4yFBnkZGVaDbxF6f',
+            category: 'Management',
+            level: 'Intermediate'
+        },
+        {
+            title: 'Integrating Security into IoT',
+            description: 'Secure Internet of Things devices and implement IoT security best practices',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/nEnsKy1N/4yFBnkZGVaDbxF6f',
+            category: 'IoT Security',
+            level: 'Advanced'
+        },
+        {
+            title: 'Becoming a DevOps Professional',
+            description: 'Master DevOps practices, tools, and automation for modern infrastructure',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/Lv8zzscM/4yFBnkZGVaDbxF6f',
+            category: 'DevOps',
+            level: 'Intermediate'
+        },
+        {
+            title: 'Becoming a Network Security Engineer',
+            description: 'Comprehensive network security engineering and defense strategies',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/RedV2cky/4yFBnkZGVaDbxF6f',
+            category: 'Network Security',
+            level: 'Advanced'
+        },
+        {
+            title: 'Cybersecurity Fundamentals for Beginners',
+            description: 'Introduction to cybersecurity with hands-on learning covering malware, attacks, and OWASP Top 10',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/kZ3W4tGD/4yFBnkZGVaDbxF6f',
+            category: 'Fundamentals',
+            level: 'Beginner'
+        },
+        {
+            title: 'Programming Fundamentals and Security',
+            description: 'Secure programming with C, C++, and Java for high-level developers',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/miFznW0d/4yFBnkZGVaDbxF6f',
+            category: 'Secure Coding',
+            level: 'Intermediate'
+        },
+        {
+            title: 'Cybersecurity Super Sale',
+            description: 'Get premium cybersecurity courses at special pricing',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/YMBjh8vp/4yFBnkZGVaDbxF6f',
+            category: 'Special Offer',
+            level: 'All Levels'
+        },
+        {
+            title: 'EC-Council Learning Platform',
+            description: 'Access the complete EC-Council learning platform with flexible plans',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/fAlnap6P/4yFBnkZGVaDbxF6f',
+            category: 'Platform Access',
+            level: 'All Levels'
+        },
+        {
+            title: 'EC-Council Pro - Premium Access',
+            description: 'Get access to 500+ courses covering all cybersecurity domains',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/aFTKoM4O/4yFBnkZGVaDbxF6f',
+            category: 'All-Access',
+            level: 'All Levels'
+        },
+        {
+            title: 'ChatGPT for Ethical Hackers',
+            description: 'Learn to leverage ChatGPT and AI tools for ethical hacking and penetration testing',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/gzESbpRe/4yFBnkZGVaDbxF6f',
+            category: 'AI for Hacking',
+            level: 'Intermediate'
+        },
+        {
+            title: 'Full Stack Development Specialist',
+            description: 'Advanced full-stack development with modern frameworks and technologies',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/Iq2xwZf4/4yFBnkZGVaDbxF6f',
+            category: 'Web Development',
+            level: 'Advanced'
+        },
+        {
+            title: 'Practical Linux for Security Professionals',
+            description: 'Advanced Linux administration and security for cybersecurity professionals',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/Ud41TTh2/4yFBnkZGVaDbxF6f',
+            category: 'Linux Security',
+            level: 'Advanced'
+        },
+        {
+            title: 'Practical Information Security Risk Management',
+            description: 'Master information security risk assessment and management frameworks',
+            affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/zd8IqN9W/4yFBnkZGVaDbxF6f',
+            category: 'Risk Management',
+            level: 'Advanced'
         }
     ];
 
     const pillars = [
-        { title: 'Ultra High-Quality Content' },
-        { title: 'Skill Oriented' },
-        { title: 'Build Perpetual Skill Sets' },
-        { title: 'Experts Only' },
-        { title: 'Enterprise Courses' }
+        {
+            title: 'Ultra High-Quality Content',
+            icon: Award,
+            description: 'Premium courses from industry leaders'
+        },
+        {
+            title: 'Skill Oriented',
+            icon: Target,
+            description: 'Practical, hands-on learning approach'
+        },
+        {
+            title: 'Build Perpetual Skill Sets',
+            icon: TrendingUp,
+            description: 'Future-proof your career'
+        },
+        {
+            title: 'Experts Only',
+            icon: Users,
+            description: 'Learn from certified professionals'
+        },
+        {
+            title: 'Enterprise Courses',
+            icon: Building2,
+            description: 'Industry-standard training'
+        }
     ];
+
+
 
 
     return (
@@ -149,11 +311,18 @@ export default function CodeRedPage() {
             <section className="codered-pillars">
                 <div className="container">
                     <div className="pillars-grid">
-                        {pillars.map((pillar, index) => (
-                            <div key={index} className="pillar-item">
-                                <span className="pillar-title">{pillar.title}</span>
-                            </div>
-                        ))}
+                        {pillars.map((pillar, index) => {
+                            const IconComponent = pillar.icon;
+                            return (
+                                <div key={index} className="pillar-item">
+                                    <div className="pillar-icon">
+                                        <IconComponent size={32} strokeWidth={2} />
+                                    </div>
+                                    <h3 className="pillar-title">{pillar.title}</h3>
+                                    <p className="pillar-description">{pillar.description}</p>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
@@ -198,67 +367,26 @@ export default function CodeRedPage() {
                 </div>
             </section>
 
-            {/* Offerings Section */}
-            <section className="codered-offerings">
-                <div className="container">
-                    <div className="offerings-header">
-                        <span className="section-badge">WHAT YOU GET</span>
-                        <h2 className="section-title">Offerings Snapshot</h2>
-                    </div>
-
-                    <div className="offerings-grid">
-                        <div className="offering-card">
-                            <h3>Video Library</h3>
-                            <p>9000+ videos, 200+ courses curated by leading industry experts</p>
-                            <span className="offering-stat">Updated Monthly</span>
-                        </div>
-                        <div className="offering-card featured">
-                            <div className="offering-badge">POPULAR</div>
-                            <h3>Microdegrees</h3>
-                            <p>Comprehensive learning with eCourseware, hands-on videos, and iLabs</p>
-                            <span className="offering-stat">With Certification</span>
-                        </div>
-                        <div className="offering-card">
-                            <h3>Resources</h3>
-                            <p>Research papers, blogs, and webinars for continuous learning</p>
-                            <span className="offering-stat">Free Access</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Microdegrees Section - Redesigned */}
-            <section className="codered-microdegrees">
+            {/* Courses Section */}
+            <section id='courses-grid' className="codered-microdegrees">
                 <div className="container">
                     <div className="microdegrees-header">
-                        <span className="section-badge">MICRODEGREES</span>
-                        <h2 className="section-title">Specialized Learning Paths</h2>
+                        <span className="section-badge">AVAILABLE COURSES</span>
+                        <h2 className="section-title">EC-Council CodeRed Certifications</h2>
                         <p className="section-subtitle">
-                            Deep dive into specific security domains with comprehensive, hands-on microdegrees
+                            Choose from 27 industry-recognized cybersecurity certifications
                             <br />
-                            <span className="subtitle-accent">Earn certificates of completion and build real-world skills</span>
+                            <span className="subtitle-accent">Access world-class training with CodeRed subscription</span>
                         </p>
                     </div>
 
                     <div className="microdegrees-grid-new">
-                        {microdegrees.map((course, index) => (
+                        {courses.map((course, index) => (
                             <div
                                 key={index}
-                                className={`microdegree-card-new ${course.status}`}
+                                className="microdegree-card-new available"
                                 style={{ '--card-index': index } as React.CSSProperties}
                             >
-                                {/* Status Badge */}
-                                {course.status === 'coming-soon' ? (
-                                    <div className="card-status-badge coming-soon">
-                                        <span className="pulse-dot"></span>
-                                        Coming Soon
-                                    </div>
-                                ) : (
-                                    <div className="card-status-badge available">
-                                        Available Now
-                                    </div>
-                                )}
-
                                 {/* Category Tag */}
                                 <div className="card-category">{course.category}</div>
 
@@ -271,48 +399,39 @@ export default function CodeRedPage() {
                                 {/* Stats Row */}
                                 <div className="card-stats">
                                     <div className="stat">
-                                        <span className="stat-value">{course.duration}</span>
-                                        <span className="stat-label">Duration</span>
-                                    </div>
-                                    <div className="stat-divider"></div>
-                                    <div className="stat">
-                                        <span className="stat-value">{course.modules}</span>
-                                        <span className="stat-label">Modules</span>
-                                    </div>
-                                    <div className="stat-divider"></div>
-                                    <div className="stat">
                                         <span className="stat-value">{course.level}</span>
                                         <span className="stat-label">Level</span>
+                                    </div>
+                                    <div className="stat-divider"></div>
+                                    <div className="stat">
+                                        <span className="stat-value">EC-Council</span>
+                                        <span className="stat-label">Provider</span>
                                     </div>
                                 </div>
 
                                 {/* Features Row */}
                                 <div className="card-features">
-                                    {course.hasLabs && (
-                                        <span className="feature-tag labs">
-                                            <span className="feature-dot"></span>
-                                            Hands-on Labs
-                                        </span>
-                                    )}
                                     <span className="feature-tag cert">
                                         <span className="feature-dot"></span>
                                         Certificate
+                                    </span>
+                                    <span className="feature-tag labs">
+                                        <span className="feature-dot"></span>
+                                        Online Access
                                     </span>
                                 </div>
 
                                 {/* CTA */}
                                 <div className="card-cta">
-                                    {course.status === 'available' ? (
-                                        <button className="cta-button">
-                                            <span>Start Learning</span>
-                                            <span className="cta-arrow">→</span>
-                                        </button>
-                                    ) : (
-                                        <button className="cta-button notify">
-                                            <span>Notify Me</span>
-                                            <span className="cta-icon">🔔</span>
-                                        </button>
-                                    )}
+                                    <a
+                                        href={course.affiliateLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="cta-button"
+                                    >
+                                        <span>Enroll Now</span>
+                                        <span className="cta-arrow">→</span>
+                                    </a>
                                 </div>
 
                                 {/* Decorative Elements */}
@@ -326,20 +445,20 @@ export default function CodeRedPage() {
                     <div className="microdegrees-footer">
                         <div className="footer-stats">
                             <div className="footer-stat">
-                                <span className="footer-stat-number">5+</span>
-                                <span className="footer-stat-label">Microdegrees</span>
+                                <span className="footer-stat-number">27</span>
+                                <span className="footer-stat-label">Certifications</span>
                             </div>
                             <div className="footer-stat">
-                                <span className="footer-stat-number">44+</span>
-                                <span className="footer-stat-label">Total Modules</span>
+                                <span className="footer-stat-number">400K+</span>
+                                <span className="footer-stat-label">Certified Professionals</span>
                             </div>
                             <div className="footer-stat">
-                                <span className="footer-stat-number">67+</span>
-                                <span className="footer-stat-label">Hours of Content</span>
+                                <span className="footer-stat-number">9000+</span>
+                                <span className="footer-stat-label">Training Videos</span>
                             </div>
                         </div>
                         <p className="footer-note">
-                            All microdegrees include iLabs access, eCourseware, and certificate of completion
+                            All courses include access to CodeRed platform with certificates of attendance
                         </p>
                     </div>
                 </div>
@@ -378,37 +497,6 @@ export default function CodeRedPage() {
                 </div>
             </section>
 
-            {/* Pricing Section */}
-            <section className="codered-pricing" id="register">
-                <div className="container">
-                    <div className="pricing-header">
-                        <span className="section-badge">GET STARTED</span>
-                        <h2 className="section-title">All in a Single Fee for One Whole Year</h2>
-                        <p className="section-subtitle">Start with 30 days free access to explore comprehensive courses</p>
-                    </div>
-
-                    <div className="pricing-card">
-                        <div className="pricing-highlight">
-                            30-Days Free Access
-                        </div>
-                        <div className="pricing-content">
-                            <h3>Explore the Platform</h3>
-                            <p>Get full access to the entire content library for 30 days</p>
-                            <ul className="pricing-features">
-                                <li>✓ 2500+ cybersecurity videos</li>
-                                <li>✓ 45+ curated courses</li>
-                                <li>✓ Certificate of Attendance</li>
-                                <li>✓ New content every month</li>
-                                <li>✓ Access on any device</li>
-                            </ul>
-                            <a href="https://codered.eccouncil.org/register" target="_blank" rel="noopener noreferrer" className="pricing-cta">
-                                Click to Register
-                                <span className="cta-arrow">→</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* CTA Section */}
             <section className="codered-cta">
@@ -417,12 +505,9 @@ export default function CodeRedPage() {
                         <h2>Ready to Elevate Your Cybersecurity Skills?</h2>
                         <p>Join thousands of cyber professionals who are staying ahead with CodeRed</p>
                         <div className="cta-buttons">
-                            <a href="https://codered.eccouncil.org" target="_blank" rel="noopener noreferrer" className="btn-primary-cta">
+                            <a href="#courses-grid" className="btn-primary-cta">
                                 Start Learning Today
                             </a>
-                            <Link href="/courses" className="btn-explore">
-                                Explore Other Courses
-                            </Link>
                         </div>
                     </div>
                 </div>
