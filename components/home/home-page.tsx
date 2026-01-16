@@ -9,6 +9,7 @@ import ProgramsSection from './programs-section';
 import MasterySection from './mastery-section';
 import PlacementSection from './placement-section';
 import TestimonialsSection from './testimonials-section';
+import OfferBanner from './offer-banner';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 
 // Types for props
@@ -377,6 +378,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                     </div>
                 </div>
             </section>
+
+            {/* Offer Banner Section */}
+            <OfferBanner />
 
             {/* Partners Section */}
             {/* @ts-ignore */}

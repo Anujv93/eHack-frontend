@@ -1,0 +1,274 @@
+/* ===== Offer Banner Section ===== */
+.offer-banner {
+    position: relative;
+    padding: 3.5rem 2rem;
+    background: linear-gradient(135deg, #FFF8F0 0%, #FFEFE0 30%, #FFE8D4 60%, #FFF5ED 100%);
+    overflow: hidden;
+}
+
+/* Horizontal Dot Pattern - Left Side */
+.offer-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-image:
+        radial-gradient(circle, rgba(255, 140, 0, 0.12) 2px, transparent 2px),
+        linear-gradient(90deg, transparent 0%, transparent 45%, rgba(255, 140, 0, 0.08) 50%, transparent 55%, transparent 100%);
+    background-size: 30px 30px, 30px 30px;
+    background-position: 0 0, 15px 15px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Horizontal Dot Pattern - Right Side */
+.offer-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-image:
+        radial-gradient(circle, rgba(255, 140, 0, 0.1) 2px, transparent 2px),
+        linear-gradient(90deg, transparent 0%, transparent 45%, rgba(255, 140, 0, 0.06) 50%, transparent 55%, transparent 100%);
+    background-size: 30px 30px, 30px 30px;
+    background-position: 0 0, 15px 15px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.offer-banner-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Left Content */
+.offer-banner-content {
+    flex: 1;
+    max-width: 580px;
+}
+
+.offer-banner-pretitle {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.offer-banner-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #FF6B00;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.875rem;
+    line-height: 1.15;
+}
+
+.offer-banner-title span {
+    color: #1a1a1a;
+}
+
+.offer-banner-description {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.offer-banner-certifications {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1.25rem;
+}
+
+.offer-banner-certifications strong {
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+.offer-banner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(180deg, #FF8C00 0%, #E67700 100%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 107, 0, 0.3);
+}
+
+.offer-banner-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+    background: linear-gradient(180deg, #FFA033 0%, #FF8000 100%);
+}
+
+/* Right Image Area */
+.offer-banner-image {
+    position: absolute;
+    top: -3.5rem;
+    right: -4rem;
+    bottom: -3.5rem;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: visible;
+    z-index: 2;
+}
+
+/* Placeholder styling - when no image */
+.offer-banner-image-placeholder {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed rgba(255, 107, 0, 0.3);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: rgba(255, 247, 237, 0.5);
+    color: #FF6B00;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.offer-banner-image-placeholder svg {
+    width: 48px;
+    height: 48px;
+    opacity: 0.6;
+}
+
+.offer-banner-image-placeholder span {
+    opacity: 0.7;
+}
+
+/* Actual image styling */
+.offer-banner-image img {
+    height: 100%;
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+    object-position: right center;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .offer-banner {
+        padding: 2rem 1.5rem;
+    }
+
+    .offer-banner-container {
+        gap: 1.5rem;
+    }
+
+    .offer-banner-pretitle {
+        font-size: 1.4rem;
+    }
+
+    .offer-banner-title {
+        font-size: 1.9rem;
+    }
+
+    .offer-banner-image {
+        width: 280px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .offer-banner {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .offer-banner::before,
+    .offer-banner::after {
+        width: 100px;
+        opacity: 0.7;
+    }
+
+    .offer-banner-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .offer-banner-content {
+        max-width: 100%;
+    }
+
+    .offer-banner-pretitle {
+        font-size: 1.2rem;
+    }
+
+    .offer-banner-title {
+        font-size: 1.6rem;
+    }
+
+    .offer-banner-description {
+        font-size: 0.95rem;
+    }
+
+    .offer-banner-certifications {
+        font-size: 0.85rem;
+    }
+
+    .offer-banner-image {
+        width: 100%;
+        max-width: 320px;
+        height: 200px;
+    }
+
+    .offer-banner-cta {
+        padding: 0.7rem 1.25rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .offer-banner {
+        padding: 1.5rem 1rem;
+    }
+
+    .offer-banner-pretitle {
+        font-size: 1rem;
+    }
+
+    .offer-banner-title {
+        font-size: 1.35rem;
+    }
+
+    .offer-banner-description {
+        font-size: 0.875rem;
+    }
+
+    .offer-banner-certifications {
+        font-size: 0.8rem;
+    }
+
+    .offer-banner-image {
+        height: 170px;
+    }
+}
