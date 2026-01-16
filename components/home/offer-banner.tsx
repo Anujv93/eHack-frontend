@@ -1,13 +1,29 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import './offer-banner.css';
 
 export default function OfferBanner() {
+    const ribbonTexts = ['Special Offer', 'Free Laptop!', 'Limited Time', '₹50K Value'];
+    const [currentTextIndex, setCurrentTextIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentTextIndex((prevIndex) => (prevIndex + 1) % ribbonTexts.length);
+        }, 2500);
+        return () => clearInterval(interval);
+    }, [ribbonTexts.length]);
+
     return (
         <section className="offer-banner">
+            {/* Tilted Special Offer Ribbon */}
+            <div className="offer-ribbon">
+                <span key={currentTextIndex} className="ribbon-text">
+                    {ribbonTexts[currentTextIndex]}
+                </span>
+            </div>
             <div className="offer-banner-container">
                 {/* Left Content */}
                 <div className="offer-banner-content">

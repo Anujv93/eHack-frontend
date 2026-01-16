@@ -6,6 +6,43 @@
     overflow: hidden;
 }
 
+/* Tilted Special Offer Ribbon */
+.offer-ribbon {
+    position: absolute;
+    top: 55px;
+    left: -55px;
+    width: 250px;
+    padding: 8px 0;
+    background: linear-gradient(180deg, #FF8C00 0%, #E65100 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+    transform: rotate(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 107, 0, 0.4);
+    z-index: 10;
+    overflow: hidden;
+}
+
+.ribbon-text {
+    display: inline-block;
+    animation: fadeInOut 0.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Horizontal Dot Pattern - Left Side */
 .offer-banner::before {
     content: '';
@@ -181,27 +218,45 @@
         padding: 2rem 1.5rem;
     }
 
+    .offer-ribbon {
+        top: 45px;
+        left: -50px;
+        width: 220px;
+        font-size: 0.7rem;
+    }
+
     .offer-banner-container {
         gap: 1.5rem;
     }
 
     .offer-banner-pretitle {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
     }
 
     .offer-banner-title {
-        font-size: 1.9rem;
+        font-size: 1.85rem;
     }
 
     .offer-banner-image {
         width: 280px;
-        height: 200px;
+        right: -2rem;
     }
 }
 
 @media (max-width: 768px) {
     .offer-banner {
-        padding: 1.75rem 1.25rem;
+        padding: 2.5rem 1.25rem 0;
+        padding-bottom: 0;
+    }
+
+    .offer-ribbon {
+        display: block;
+        top: 20px;
+        left: -45px;
+        width: 180px;
+        font-size: 0.65rem;
+        padding: 6px 0;
+        z-index: 10;
     }
 
     .offer-banner::before,
@@ -217,14 +272,18 @@
 
     .offer-banner-content {
         max-width: 100%;
+        position: relative;
+        z-index: 2;
+        padding-top: 1rem;
+        /* Add padding to prevent text overlap with ribbon */
     }
 
     .offer-banner-pretitle {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
 
     .offer-banner-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .offer-banner-description {
@@ -236,9 +295,28 @@
     }
 
     .offer-banner-image {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: 0;
         width: 100%;
-        max-width: 320px;
-        height: 200px;
+        max-width: 300px;
+        height: auto;
+        margin: 1.5rem auto 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        margin-bottom: -10px;
+        /* Pull image flush bottom */
+    }
+
+    .offer-banner-image img {
+        height: auto;
+        width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+        object-position: bottom center;
+        display: block;
     }
 
     .offer-banner-cta {
@@ -249,7 +327,22 @@
 
 @media (max-width: 480px) {
     .offer-banner {
-        padding: 1.5rem 1rem;
+        padding: 2rem 1rem 0;
+        /* Ensure overflow allows ribbon to show but crop correctly */
+        overflow: hidden;
+    }
+
+    /* Adjust ribbon specifically for mobile to sit strictly in corner */
+    .offer-ribbon {
+        top: 12px;
+        left: -42px;
+        width: 160px;
+        font-size: 0.6rem;
+        padding: 5px 0;
+    }
+
+    .offer-banner-content {
+        padding-top: 0.5rem;
     }
 
     .offer-banner-pretitle {
@@ -257,7 +350,7 @@
     }
 
     .offer-banner-title {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
     }
 
     .offer-banner-description {
@@ -269,6 +362,56 @@
     }
 
     .offer-banner-image {
-        height: 170px;
+        max-width: 240px;
+        margin-top: 1rem;
+        margin-bottom: -8px;
+        /* Adjustment for mobile */
+    }
+
+    .offer-banner-image img {
+        max-height: 160px;
+    }
+
+    .offer-banner-cta {
+        padding: 0.65rem 1rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .offer-ribbon {
+        top: 8px;
+        left: -40px;
+        width: 140px;
+        font-size: 0.55rem;
+    }
+
+    .offer-banner {
+        padding: 1.5rem 0.75rem 0;
+    }
+
+    .offer-banner-pretitle {
+        font-size: 0.9rem;
+    }
+
+    .offer-banner-title {
+        font-size: 1.15rem;
+    }
+
+    .offer-banner-description {
+        font-size: 0.8rem;
+    }
+
+    .offer-banner-certifications {
+        font-size: 0.75rem;
+    }
+
+    .offer-banner-image {
+        max-width: 180px;
+        margin-bottom: -5px;
+    }
+
+    .offer-banner-image img {
+        max-height: 120px;
     }
 }
