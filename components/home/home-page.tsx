@@ -483,9 +483,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                                         </div>
                                     )}
                                     <h3 className={styles.courseCardTitle}>{course.title}</h3>
-                                    <p className={styles.courseCardMeta}>
+                                    {/* <p className={styles.courseCardMeta}>
                                         {course.partnerName || 'Professional Certification'} • {course.level}
-                                    </p>
+                                    </p> */}
                                     <span className={styles.courseCardLink}>
                                         View Details →
                                     </span>

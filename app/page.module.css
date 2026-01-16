@@ -711,10 +711,10 @@
 .partnerName {
     font-size: 0.875rem;
     font-weight: 600;
-    color: #FFF;
+    color: #111;
     text-align: center;
     line-height: 1.3;
-    background-color: #ff6b00d1;
+    background-color: #ffdac0;
     width: 100%;
     padding: 0.875rem 1rem;
     border-top: 1px solid #E2E8F0;

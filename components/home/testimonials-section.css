@@ -100,24 +100,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    padding: 2rem 2rem;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
     position: relative;
-    background: linear-gradient(180deg, #FFF7F0 0%, #FFECD9 100%);
+    background: linear-gradient(180deg, #FFFBF7 0%, #FFF9F4 100%);
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    border-top: 1px solid rgba(255, 107, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 107, 0, 0.2);
 }
 
 .trusted-by-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.2), transparent);
+    display: none;
 }
 
 .trusted-by-header {
@@ -128,13 +123,13 @@
 .trusted-text {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
+    gap: 0.75rem;
+    font-size: 1.125rem;
     font-weight: 700;
     color: var(--brand-primary);
     text-transform: uppercase;
     letter-spacing: 3px;
-    padding: 0.75rem 1.75rem;
+    padding: 1rem 2.5rem;
     background: linear-gradient(135deg, #FFF9F5 0%, #FFFFFF 100%);
     border-radius: 100px;
     border: 1.5px solid rgba(255, 107, 0, 0.2);
@@ -145,22 +140,22 @@
 
 .trusted-text::before {
     content: '✦';
-    font-size: 0.75rem;
+    font-size: 1rem;
     opacity: 0.7;
 }
 
 .trusted-text::after {
     content: '✦';
-    font-size: 0.75rem;
+    font-size: 1rem;
     opacity: 0.7;
 }
 
 .company-logos-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+    gap: 0.5rem;
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
@@ -177,36 +172,31 @@
 .company-logo-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(145deg, #FFFFFF 0%, #FAFAFA 100%);
-    border: 2px solid var(--brand-primary);
-    border-radius: 16px;
-    padding: 1.75rem 1.5rem;
-    gap: 1rem;
+    align-items: stretch;
+    justify-content: flex-start;
+    background: #FFFFFF;
+    border: 3px solid var(--brand-primary);
+    border-radius: 20px;
+    padding: 0;
+    gap: 0;
     transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.15);
 }
 
 .company-logo-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 107, 0, 0.03) 0%, transparent 100%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
+    display: none;
 }
 
 .company-logo-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(255, 107, 0, 0.18);
+    box-shadow: 0 8px 24px rgba(255, 107, 0, 0.25);
 }
 
 .company-logo-card:hover::before {
-    opacity: 1;
+    opacity: 0;
 }
 
 .company-logo-wrapper {
@@ -214,7 +204,9 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 80px;
+    height: 100px;
+    padding: 1.5rem 1rem;
+    background: #FFFFFF;
     position: relative;
     z-index: 1;
 }
@@ -223,34 +215,36 @@
     max-width: 100%;
     max-height: 70px;
     object-fit: contain;
-    filter: grayscale(10%);
-    opacity: 0.95;
+    filter: grayscale(0%);
+    opacity: 1;
     transition: all 0.35s ease;
 }
 
 .company-logo-card:hover img {
     filter: grayscale(0%);
     opacity: 1;
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 .company-card-name {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 700;
-    color: var(--neutral-600);
+    color: #1F2937;
     text-align: center;
     width: 100%;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
-    padding-top: 0.875rem;
-    border-top: 1px solid rgba(223, 103, 24, 0.2);
+    padding: 0.875rem 1rem;
+    background: linear-gradient(180deg, #FFECD9 0%, #FFE4CC 100%);
+    border-top: none;
+    margin: 0;
 }
 
 .company-logo-card:hover .company-card-name {
-    color: var(--brand-primary);
-    font-weight: 800;
+    background: linear-gradient(180deg, #FFE4CC 0%, #FFDAB8 100%);
+    color: #111827;
 }
 
 .company-name-fallback {
@@ -285,22 +279,23 @@
 @media (max-width: 1200px) {
     .company-logos-grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
+        gap: 0.5rem;
     }
 }
 
 @media (max-width: 1024px) {
     .trusted-by-section {
-        padding: 2rem 1rem;
+        padding: 1rem 1rem;
     }
 
     .company-logos-grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
     .company-logo-wrapper {
-        height: 70px;
+        height: 90px;
+        padding: 1.25rem 0.875rem;
     }
 
     .company-logo-card img {
@@ -308,34 +303,41 @@
     }
 
     .company-logo-card {
-        padding: 1.5rem 1rem;
+        border-radius: 16px;
+        border-width: 2.5px;
+    }
+
+    .company-card-name {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.8125rem;
     }
 }
 
 @media (max-width: 768px) {
     .company-logos-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.875rem;
+        gap: 0.5rem;
     }
 
     .trusted-text {
-        font-size: 0.75rem;
-        padding: 0.625rem 1.25rem;
-        letter-spacing: 2px;
+        font-size: 0.6875rem;
+        padding: 0.5rem 1rem;
+        letter-spacing: 1.5px;
     }
 
     .trusted-text::before,
     .trusted-text::after {
-        font-size: 0.625rem;
+        font-size: 0.5625rem;
     }
 
     .company-logo-card {
-        padding: 1.25rem 1rem;
-        border-radius: 12px;
+        border-radius: 14px;
+        border-width: 2.5px;
     }
 
     .company-logo-wrapper {
-        height: 60px;
+        height: 80px;
+        padding: 1rem 0.75rem;
     }
 
     .company-logo-card img {
@@ -343,30 +345,34 @@
     }
 
     .company-card-name {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
+        padding: 0.75rem 0.75rem;
     }
 }
 
 @media (max-width: 480px) {
     .company-logos-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
+        gap: 0.375rem;
     }
 
     .company-logo-card {
-        padding: 1rem 0.75rem;
+        border-radius: 12px;
+        border-width: 2px;
     }
 
     .company-logo-wrapper {
-        height: 50px;
+        height: 70px;
+        padding: 0.875rem 0.625rem;
     }
 
     .company-logo-card img {
-        max-height: 40px;
+        max-height: 42px;
     }
 
     .company-card-name {
-        font-size: 0.75rem;
+        font-size: 0.6875rem;
+        padding: 0.625rem 0.625rem;
     }
 }
 
@@ -645,22 +651,11 @@
     content: '';
     position: absolute;
     inset: -3px;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 50%, #FFB366 100%);
+
     border-radius: 26px;
     z-index: -1;
 }
 
-.testimonial-card-horizontal:hover {
-    transform: translateY(-6px);
-    box-shadow:
-        0 15px 50px rgba(255, 107, 0, 0.25),
-        0 6px 20px rgba(0, 0, 0, 0.08);
-    background: linear-gradient(135deg, #FFFFFF 0%, #FFF5EB 50%, #FFE4C8 100%);
-}
-
-.testimonial-card-horizontal:hover::after {
-    background: linear-gradient(135deg, #FF5500 0%, #FF6B00 50%, #FF8533 100%);
-}
 
 .horizontal-header {
     margin-bottom: 1.5rem;

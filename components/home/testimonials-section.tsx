@@ -59,7 +59,7 @@ const testimonials = [
         image: '/images/testimonials/person1.jpg',
         certification: 'CEH Certified',
         course: 'Masters in Ethical Hacking',
-        text: "The hands-on labs and real-world scenarios helped me understand actual attack patterns. The CEH certification from eHack Academy was instrumental in landing my dream job at Deloitte."
+        text: "I joined eHackAcademy with just one year of experience and no cybersecurity background… Today, as Director at Ampcus, I proudly recommend eHack."
     },
     {
         name: 'Rajiv Govind',
@@ -70,7 +70,7 @@ const testimonials = [
         image: '/images/testimonials/person2.jpg',
         certification: 'CND Certified',
         course: 'Graduate Program in Cybersecurity',
-        text: "eHack's structured curriculum took me from a complete beginner to a certified SOC professional. The practical training and mentorship were invaluable for my career growth."
+        text: "I joined eHack in 8th grade, driven by curiosity for coding and cybersecurity… Today, working in a senior role in the US, I proudly credit eHack."
     },
     {
         name: 'Vaddi . Paneendar',
@@ -81,7 +81,7 @@ const testimonials = [
         image: '/images/testimonials/person3.jpg',
         certification: 'CPENT Certified',
         course: 'Graduate Program in Ethical Hacking',
-        text: "The VAPT training was exactly what I needed to transition into offensive security. The live hacking labs and instructor-led sessions gave me real-world skills."
+        text: "I came from Vijayawada while pursuing my BCA and joined eHack's Masters program. Today, as a Senior Penetration Tester at SISA Security, I proudly recommend eHack"
     },
     {
         name: 'Damini Settappa Ranganath',
@@ -92,7 +92,7 @@ const testimonials = [
         image: '/images/testimonials/person4.jpg',
         certification: 'CHFI Certified',
         course: 'Graduate Program in Ethical Hacking',
-        text: "As a woman in cybersecurity, eHack provided an inclusive learning environment. The forensics training helped me specialize in incident response at EY."
+        text: "I joined eHack right after my BTech with no prior experience. Today, I’m proud to say eHack helped me grow, build my career, and achieve my dreams."
     },
     {
         name: 'Pranshu Tiwari',
@@ -103,7 +103,7 @@ const testimonials = [
         image: '/images/testimonials/person5.jpg',
         certification: 'CCSE Certified',
         course: 'Masters in Ethical Hacking',
-        text: "The cloud security modules were cutting-edge. eHack prepared me perfectly for securing enterprise cloud environments at Accenture."
+        text: "I joined eHack for CEH to enter a top MNC… Today, as Director in Pentesting at Ampcus, I proudly say strong foundations and continuous learning are the keys to success."
     },
     {
         name: 'Abhinav Choubey',
@@ -114,7 +114,7 @@ const testimonials = [
         image: '/images/testimonials/person6.jpg',
         certification: 'CISM Certified',
         course: 'Masters in Ethical Hacking',
-        text: "After 10+ years in IT, eHack Academy helped me transition into cybersecurity leadership. The comprehensive curriculum and industry connections opened new career opportunities at IBM."
+        text: "I served in the Indian Air Force for 20 years before joining eHack… Today, as Director at SISA Security, I’m proud to say age is no barrier."
     }
 ];
 
