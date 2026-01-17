@@ -100,44 +100,53 @@ const learningOptions = [
     {
         title: 'Live Online Training',
         description: 'Interactive virtual sessions with real-time instructor engagement',
-        link: '/learning-options#live-online'
+        link: '/learning-options#live-online',
+        image: '/images/live-online-traning.png'
     },
     {
         title: 'Classroom Training',
         description: 'Traditional instructor-led learning in modern facilities',
-        link: '/learning-options#classroom'
+        link: '/learning-options#classroom',
+        image: '/images/classroom-traning.png'
     },
     {
         title: '1-on-1 Training',
         description: 'Personalized sessions tailored to your schedule and learning goals',
-        link: '/learning-options#one-on-one'
+        link: '/learning-options#one-on-one',
+        image: '/images/1-0n-1-traning.png'
     },
     {
         title: 'Fly-Me-a-Trainer',
         description: 'Bring expert trainers directly to your location',
-        link: '/learning-options#fly-trainer'
+        link: '/learning-options#fly-trainer',
+        image: '/images/fly-me-a-traniner.png'
     },
     {
         title: 'Flexi',
         description: 'Flexible learning that adapts to your schedule and pace',
-        link: '/learning-options#flexi'
+        link: '/learning-options#flexi',
+        image: '/images/flexi.png'
     },
     {
         title: 'Customized Training',
         description: 'Tailored training programs designed for your specific needs',
-        link: '/learning-options#customized'
+        link: '/learning-options#customized',
+        image: '/images/customized-traning.png'
     },
     {
         title: 'Webinar as a Service',
         description: 'Professional webinar hosting and management solutions',
-        link: '/learning-options#webinar'
+        link: '/learning-options#webinar',
+        image: '/images/webinar-as-a-service.png'
     },
     {
         title: 'Upcoming Webinars',
         description: 'Join our scheduled live sessions and interactive workshops',
-        link: '/learning-options#upcoming'
+        link: '/learning-options#upcoming',
+        image: '/images/upcoming-webinars.png'
     }
 ];
+
 
 // Unique offerings
 const uniqueOfferings = [
@@ -521,9 +530,16 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
                     <div className={styles.learningGrid}>
                         {learningOptions.map((option, index) => (
-                            <Link key={index} href={option.link} className={styles.learningCard}>
-                                <h3 className={styles.learningTitle}>{option.title}</h3>
-                                <p className={styles.learningDescription}>{option.description}</p>
+                            <Link
+                                key={index}
+                                href={option.link}
+                                className={styles.learningCard}
+                                style={option.image ? { '--card-bg-image': `url('${option.image}')` } as React.CSSProperties : undefined}
+                            >
+                                <div className={styles.learningCardContent}>
+                                    <h3 className={styles.learningTitle}>{option.title}</h3>
+                                    <p className={styles.learningDescription}>{option.description}</p>
+                                </div>
                             </Link>
                         ))}
                     </div>
