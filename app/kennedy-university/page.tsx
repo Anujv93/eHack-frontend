@@ -55,18 +55,11 @@ export default function KennedyUniversityPage() {
 
 
                         <div className="batch-info">
-                            <span className="batch-label">NEXT BATCH STARTS</span>
-                            <span className="batch-date">IN JANUARY</span>
+                            <span className="batch-label">NEXT BATCH STARTS ON</span>
+                            <span className="batch-date">5th OF EVERY MONTH</span>
                         </div>
 
-                        <a href="#" className="btn-download-brochure">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                            Download Brochure
-                        </a>
+
                     </div>
 
                     {/* Right Form Card */}
@@ -345,7 +338,9 @@ export default function KennedyUniversityPage() {
                                 </ul>
                             </div>
                             <div className="partner-authorization-certificate">
-                                <img src="/images/ec-council-authorization-certificate.png" alt="EC-Council Accredited Training Center Certificate" className="authorization-certificate-img" />
+                                <div className="certificate-frame">
+                                    <img src="/images/ec-council-authorization-certificate.png" alt="EC-Council Accredited Training Center Certificate" className="authorization-certificate-img" />
+                                </div>
                                 <span className="authorization-label">Accredited Training Center Certificate</span>
                             </div>
                         </div>
@@ -365,7 +360,9 @@ export default function KennedyUniversityPage() {
                                 </ul>
                             </div>
                             <div className="partner-authorization-certificate">
-                                <img src="/images/kennedy-authorization-certificate.png" alt="Kennedy University Authorization Certificate" className="authorization-certificate-img" />
+                                <div className="certificate-frame">
+                                    <img src="/images/kennedy-authorization-certificate.png" alt="Kennedy University Authorization Certificate" className="authorization-certificate-img" />
+                                </div>
                                 <span className="authorization-label">Authorization Certificate of Partnership</span>
                             </div>
                         </div>

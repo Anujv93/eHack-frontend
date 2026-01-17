@@ -17,11 +17,11 @@
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(223, 103, 24, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(223, 103, 24, 0.1) 1px, transparent 1px);
+        linear-gradient(rgba(223, 103, 24, 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(223, 103, 24, 0.14) 1px, transparent 1px);
     background-size: 40px 40px;
     transform: perspective(500px) rotateX(60deg) scale(2);
-    opacity: 0.4;
+    opacity: 0.55;
     pointer-events: none;
 }
 
@@ -256,6 +256,7 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    border: 1px solid rgba(223, 103, 24, 0.4);
 }
 
 .program-detail-bscs .stat-column {
@@ -311,7 +312,7 @@
     font-weight: 800;
     color: #0F172A;
     text-align: center;
-    margin: 0 0 16px 0;
+    margin: 0 0 32px 0;
 }
 
 .program-detail-bscs .section-title .accent {
@@ -320,14 +321,14 @@
 
 .program-detail-bscs .section-subtitle {
     font-size: 1.1rem;
-    color: #64748B;
+    color: #475569;
     text-align: center;
     margin: 0 0 48px 0;
 }
 
 /* Program Overview */
 .program-detail-bscs .program-overview {
-    padding: 80px 0;
+    padding: 40px 0 30px;
     background: #FFFFFF;
 }
 
@@ -343,6 +344,7 @@
     padding: 28px;
     text-align: center;
     transition: all 0.3s;
+    border: 1px solid rgba(223, 103, 24, 0.6);
 }
 
 .program-detail-bscs .overview-card:hover {
