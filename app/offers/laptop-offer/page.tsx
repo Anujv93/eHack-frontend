@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
     title: 'Free Laptop Offer | eHack Academy',
-    description: 'Get a FREE laptop worth ₹50,000 when you enroll in Masters or Graduate Program with CSO & CSU Bundle. Transform your cybersecurity career today.',
+    description: 'Get a FREE laptop worth ₹50,000 when you enroll in Masters or Graduate Program with CSO & CSE Bundle. Transform your cybersecurity career today.',
 };
 
 export default function LaptopOfferPage() {
@@ -18,7 +18,7 @@ export default function LaptopOfferPage() {
                         <span>+ Get a Free Laptop</span>
                     </h1>
                     <p className="offer-hero-subtitle">
-                        Enroll in our Masters or Graduate Program with the CSO & CSU Bundle
+                        Enroll in our Masters or Graduate Program with the CSO & CSE Bundle
                         and receive a high-performance laptop worth ₹50,000 absolutely FREE.
                     </p>
                 </div>
@@ -35,7 +35,7 @@ export default function LaptopOfferPage() {
 
                 <div className="program-cards">
                     {/* Graduate Program */}
-                    <div className="program-card">
+                    <div className="program-card graduate-highlight">
                         <h3>Graduate Program</h3>
                         <div className="program-card-price">
                             <span>₹1,00,000</span> ₹1,50,000
@@ -182,7 +182,7 @@ export default function LaptopOfferPage() {
                         <tbody>
                             <tr>
                                 <td>CSCU</td>
-                                <td>Certified Secure Computer User</td>
+                                <td>Certified Secure Computer Engineer</td>
                                 <td className="price">₹25,000</td>
                                 <td className="included">Included</td>
                                 <td className="included">Included</td>
@@ -230,8 +230,8 @@ export default function LaptopOfferPage() {
                                 <td className="included">FREE</td>
                             </tr>
                             <tr>
-                                <td>CSO & CSU Bundle</td>
-                                <td>Certified SOC Analyst + Certified Security User</td>
+                                <td>CSO & CSE Bundle</td>
+                                <td>Certified SOC Analyst + Certified Security Engineer</td>
                                 <td className="price">₹1,10,000</td>
                                 <td className="included">Included</td>
                                 <td className="included">Included</td>
@@ -249,7 +249,7 @@ export default function LaptopOfferPage() {
                                 <td><strong>₹3,50,000</strong></td>
                             </tr>
                             <tr className="total-row program-price">
-                                <td colSpan={2}><strong>Our Offer Price (with CSO & CSU Bundle ₹1,10,000)</strong></td>
+                                <td colSpan={2}><strong>Our Offer Price (with CSO & CSE Bundle ₹1,10,000)</strong></td>
                                 <td>—</td>
                                 <td><strong>₹2,60,000</strong></td>
                                 <td><strong>₹4,60,000</strong></td>
@@ -272,15 +272,15 @@ export default function LaptopOfferPage() {
                         Get a <span>FREE Laptop Worth ₹50,000</span>
                     </h2>
                     <p className="laptop-offer-condition">
-                        Purchase any program above along with our <strong>CSO & CSU Bundle</strong> and
+                        Purchase any program above along with our <strong>CSO & CSE Bundle</strong> and
                         walk away with a brand new laptop to power your learning journey.
                     </p>
 
                     <div className="bundle-details">
-                        <h3>CSO & CSU Bundle Includes:</h3>
+                        <h3>CSO & CSE Bundle Includes:</h3>
                         <ul>
                             <li><strong>Certified SOC Analyst (CSA)</strong> — Monitor, detect, and respond to security threats</li>
-                            <li><strong>Certified Security User (CSU)</strong> — Essential cybersecurity awareness training</li>
+                            <li><strong>Certified Security Engineer (CSU)</strong> — Essential cybersecurity awareness training</li>
                         </ul>
                         <div className="bundle-price">Bundle Value: ₹1,10,000</div>
                     </div>
@@ -312,7 +312,7 @@ export default function LaptopOfferPage() {
                                 <td>₹3,50,000</td>
                             </tr>
                             <tr>
-                                <td>CSO & CSU Bundle</td>
+                                <td>CSO & CSE Bundle</td>
                                 <td>₹1,10,000</td>
                                 <td>₹1,10,000</td>
                             </tr>
