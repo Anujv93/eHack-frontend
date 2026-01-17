@@ -3,7 +3,7 @@ export const programs = [
     {
         slug: "masters-ethical-hacking",
         category: "cybersecurity",
-        title: "Masters Program in Ethical Hacking & Cyber Security powered by AI",
+        title: "Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (3 Global Certification)",
         subtitle: "with 6 Global Certifications",
         description: "Equip yourself with the skills to protect IT infrastructure, perform vulnerability assessments, and secure organizations against cyber threats.",
         features: "Includes real-time labs, hands-on penetration testing, network defense training, and internationally recognized certifications.",
@@ -259,7 +259,7 @@ export const programs = [
     {
         slug: "graduate-cybersecurity",
         category: "cybersecurity",
-        title: "Graduate Program in Ethical Hacking & Cyber Security powered by AI",
+        title: "Graduate Program in Ethical Hacking and Cybersecurityᴬᴵ (2 Global Certification)",
         subtitle: "with 2 Global Complimentary Certifications",
         description: "Equip yourself with skills to protect IT infrastructure, secure data, run risk analysis, architect cloud-based security, and achieve compliance.",
         features: "Includes IT Fundamentals, CSCU, CND certifications, Ethical Hacking, Penetration Testing, Digital Forensics & OWASP Top 10.",
@@ -1021,7 +1021,7 @@ export const programs = [
     {
         slug: "masterclass-ethical-hacking-ceh-v13",
         category: "cybersecurity",
-        title: "Master Class Program in Ethical Hacking (CEH v13)",
+        title: "Certified Ethical Hacker Master Program | CEHᴬᴵ v13 (3 Global Certification)",
         subtitle: "with 3 Global EC-Council Certifications",
         description: "A best-in-class program designed to equip students with skills to become experts in cybersecurity. It covers comprehensive approaches to protecting IT infrastructure, securing data and information, running risk analysis and mitigation, architecting cloud-based security, and achieving compliance.",
         features: "Includes Real Time Labs with EC-Council tools, Ethical Hacking Phases and Attack Vectors, Preventative Countermeasures, Penetration Testing for Networks, and 6 Months Free Membership for practice.",

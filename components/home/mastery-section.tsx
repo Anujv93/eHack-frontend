@@ -20,9 +20,9 @@ const programs: Program[] = [
     {
         title: 'Certified Ethical Hacker Master Program | CEHᴬᴵ v13 (3 Global Certification)',
         features: [
-            "Build expertise in ethical hacking with the world's #1 certification (CEH v13)",
-            '3 Global EC-Council Certifications: CEH, CEH Practical, CEH Master',
-            'Real-time labs with EC-Council tools & 6 months free membership'
+            "Master Real-World Ethical Hacking with AI-Powered Labs",
+            "Globally Recognized, Fully Proctored Practical Certification",
+            "Become Job-Ready in 5 Days with AI-Enhanced Cybersecurity Training"
         ],
         duration: '4 Months',
         trainingHours: '100 Hours',
@@ -36,9 +36,9 @@ const programs: Program[] = [
     {
         title: 'Graduate Program in Ethical Hacking and Cybersecurityᴬᴵ (2 Global Certification)',
         features: [
-            'Comprehensive program covering IT fundamentals',
-            'Ethical hacking, penetration testing, and digital forensics',
-            '2 global certifications from EC-Council'
+            "Industry-Integrated, AI-Powered Cybersecurity Curriculum",
+            "Live Labs, Real Attack Simulations & Tool Mastery",
+            "Career-Launch Focus with Global Certification Pathways"
         ],
         duration: '7-9 Months',
         trainingHours: '200+ Hours',
@@ -52,9 +52,9 @@ const programs: Program[] = [
     {
         title: 'Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (3 Global Certification)',
         features: [
-            'Ultimate cybersecurity mastery program',
-            '5 EC-Council certifications: CSCU, CND, CEH, CPENT, CHFI',
-            'For serious professionals aiming for advanced expertise'
+            "Advanced AI-Driven Cybersecurity Mastery",
+            "Real-World Cyber Range & Enterprise Attack Simulations",
+            "Leadership-Focused Career Acceleration"
         ],
         duration: '9-12 Months',
         trainingHours: '300 Hours',
