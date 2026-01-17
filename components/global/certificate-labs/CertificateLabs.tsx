@@ -677,10 +677,28 @@ export function CertificateLabs({ certificateSlug, certificateTitle }: Certifica
     const labsData = useMemo(() => getLabsForCertificate(certificateSlug), [certificateSlug]);
     const [activeLab, setActiveLab] = useState<LabTool>(labsData.labs[0]);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [transitionPhase, setTransitionPhase] = useState<'idle' | 'minimizing' | 'opening'>('idle');
 
     const handleLabChange = (lab: LabTool, index: number) => {
-        setActiveLab(lab);
-        setActiveIndex(index);
+        if (index === activeIndex || isTransitioning) return;
+
+        // Start minimize animation
+        setIsTransitioning(true);
+        setTransitionPhase('minimizing');
+
+        // After minimize animation, switch lab and start open animation
+        setTimeout(() => {
+            setActiveLab(lab);
+            setActiveIndex(index);
+            setTransitionPhase('opening');
+
+            // After open animation, reset to idle
+            setTimeout(() => {
+                setTransitionPhase('idle');
+                setIsTransitioning(false);
+            }, 400);
+        }, 300);
     };
 
     const getDifficultyColor = (difficulty: string) => {
@@ -766,7 +784,7 @@ export function CertificateLabs({ certificateSlug, certificateTitle }: Certifica
                     {/* Right Column - Terminal */}
                     <div className="cert-lab-details">
                         {/* Kali Linux Terminal Frame */}
-                        <div className="kali-terminal-frame">
+                        <div className={`kali-terminal-frame ${transitionPhase !== 'idle' ? `terminal-${transitionPhase}` : ''}`}>
                             {/* Terminal Title Bar */}
                             <div className="terminal-title-bar">
                                 <div className="terminal-buttons">
