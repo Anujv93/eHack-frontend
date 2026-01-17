@@ -18,7 +18,7 @@ interface Program {
 
 const programs: Program[] = [
     {
-        title: '(CEH v13) Masters powered by AI',
+        title: 'Certified Ethical Hacker Master Program | CEHᴬᴵ v13 (3 Global Certification)',
         features: [
             "Build expertise in ethical hacking with the world's #1 certification (CEH v13)",
             '3 Global EC-Council Certifications: CEH, CEH Practical, CEH Master',
@@ -34,7 +34,7 @@ const programs: Program[] = [
         featured: false
     },
     {
-        title: 'Graduate Program in Ethical Hacking powered by AI',
+        title: 'Graduate Program in Ethical Hacking and Cybersecurityᴬᴵ (2 Global Certification)',
         features: [
             'Comprehensive program covering IT fundamentals',
             'Ethical hacking, penetration testing, and digital forensics',
@@ -50,7 +50,7 @@ const programs: Program[] = [
         featured: true
     },
     {
-        title: 'Masters Program powered by AI (5 Global Certifications)',
+        title: 'Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (3 Global Certification)',
         features: [
             'Ultimate cybersecurity mastery program',
             '5 EC-Council certifications: CSCU, CND, CEH, CPENT, CHFI',

@@ -83,7 +83,7 @@ Several groups benefit from a mobile application security assessment:
 Simply put, an excellent mobile app security assessment will tell you what a mobile app is doing correctly and incorrectly in terms of cybersecurity.`,
         whyChooseUs: `At Our Company, we employ advanced methodologies that have been tailored to specific applications. We have a sophisticated approach to detecting bugs, ensuring that no bug goes unnoticed, and expert guidance can help mitigate issues without interfering with existing systems. Our expert team of penetration testers works quickly to identify flaws in source code, binary files, applications, back-end integrations, and platform workflow. Keeping all of this in mind, we also make certain to develop a customized scope and approach as the variety of applications changes rapidly. Finally, our support and reporting abilities can assist developers in developing secure systems in the long run.`,
         icon: '📱',
-        image: '/images/services/security.png',
+        image: '/images/mobileapp_service_image.png',
         category: 'security-assessment'
     },
     {
@@ -115,7 +115,7 @@ Simply put, an excellent mobile app security assessment will tell you what a mob
 
 Our team consists of skilled and experienced professionals, and each risk is taken seriously, devoid of any false assumptions. We constantly research and implement new and unknown bugs to widen our testing strategies. Our support has always been beyond technical assistance, and our client referrals are more than satisfactory with excellent reviews.`,
         icon: '🔌',
-        image: '/images/services/general.png',
+        image: '/images/API_service_image.png',
         category: 'security-assessment'
     },
     {
@@ -159,7 +159,7 @@ It is necessary to have a thorough understanding of the intended application. Th
 
 It is critical to achieving both breadth and depth of coverage unless Our Company has a specific focus. A hybrid approach combining dynamic tooling and manual review is used to accomplish this. Furthermore, having concurrent access to a running version of the target system while conducting the code review can maximize context and verify findings in real-time.`,
         icon: '💻',
-        image: '/images/services/general.png',
+        image: '/images/Source Code Review.png',
         category: 'security-assessment'
     },
     {
@@ -187,7 +187,7 @@ It is critical to achieving both breadth and depth of coverage unless Our Compan
 
 The Red Teaming concept begins with the challenge of comprehending the adversary's motivations and actions. We can anticipate an attacker's moves and develop effective countermeasures if we understand how he thinks. Red Team Exercises shed light on an organization's simulation of a real-world threat. This is accomplished by combining and chaining multiple domain-specific attacks. Our objective is to identify all possible entry points for an attacker to an organization's critical business assets and, on the other hand, to determine whether the organization can respond autonomously in the event of an attack.`,
         icon: '🎯',
-        image: '/images/services/security.png',
+        image: '/images/Red Team Assessment.png',
         category: 'security-assessment'
     },
     {
@@ -261,7 +261,7 @@ Thick client applications process data on both the client and server sides and u
         whyThisService: `Thick Client Application Security Testing necessitates highly skilled manual penetration testers and a methodical approach. These applications are critical for internal operations and frequently contain and process sensitive data. We can help you identify vulnerabilities in thick client applications that expose your organization to external or internal threats.`,
         whyChooseUs: `Since your thick client applications can involve intellectual property belonging to your company, you want to ensure that they are immune to reverse engineering and alteration. Without professional analysis of binary hardening mechanisms, you would be unaware of the ease with which an attacker can reverse engineer or change your client-side code. We provide the highest-quality cybersecurity services and have extensive experience analyzing obfuscated and hardened software, as well as breaching security controls such as white-box cryptography.`,
         icon: '🖥️',
-        image: '/images/services/security.png',
+        image: '/images/Thick Client Security.png',
         category: 'security-assessment'
     },
     {
@@ -303,7 +303,7 @@ The Firewall is a device that sits between the inside and outside of your networ
 A firewall that is incorrectly configured or has a software vulnerability due to a lack of patching can significantly impact your organization's security posture and allow a complete hacker access to the network.`,
         whyChooseUs: `Our company firewall audit identifies weak protocols, insecure rules, and additional data leakages that could jeopardize the firewall's infrastructure. Our team of cybersecurity experts has experience building firewalls from the ground up as well as implementing technology from a variety of leading firewall vendors. This allows us to see everything from both the attacker's and the defender's points of view. It enables us to conduct some of the most difficult and thorough assessments in our industry.`,
         icon: '🛡️',
-        image: '/images/services/general.png',
+        image: '/images/Firewall Security Assessment.png',
         category: 'security-assessment'
     },
     {
@@ -383,7 +383,7 @@ The key benefit of malware analysis is that it helps incident responders and sec
         whyThisService: `When a cyber-attack happens in your organization, an expert dealing with it is the need of the hour. Precious time takes the side bench when you rely on in-house techniques to recover from the incident. A professional is required to handle and mitigate the problem without causing further harm to your organization's data.`,
         whyChooseUs: `Our Company is committed to providing businesses worldwide with cutting-edge digital forensic solutions, and we are experts in our field. We are leveraging the experience of a diverse team to provide services for a variety of technologies and complex Cyber Frauds, resulting in the highest possible level of assurance.`,
         icon: '🦠',
-        image: '/images/services/forensics.png',
+        image: '/images/Malware Analysis and Root Cause Detection.png',
         category: 'forensics'
     },
     {
@@ -429,7 +429,7 @@ The key benefit of malware analysis is that it helps incident responders and sec
         whyThisService: `If you are a merchant or service provider that stores, handles, or transmits cardholder data, PCI enforcement is essential to your organization's operational security. A non-compliant company can face significant fines and penalties, as well as the loss of the right to accept card payments, loss of revenue, diminished consumer trust, and legal costs. PCI enforcement demonstrates your commitment to security and reassures clients about the security of their cardholder data.`,
         whyChooseUs: `PCI DSS is a comprehensive and granular requirement that applies to all entities that store, process, or distribute payment card data, as well as organizations that may affect the protection of a credit card processing environment. Our Qualified Security Assessor (QSA) will guide you through the PCI compliance process from initial examination to full compliance in the most effective and least intrusive manner possible.`,
         icon: '💳',
-        image: '/images/services/compliance.png',
+        image: '/images/PCI DSS Compliance Audit.png',
         category: 'compliance'
     },
     {
