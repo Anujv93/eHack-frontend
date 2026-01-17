@@ -1,8 +1,32 @@
 'use client';
 
+import { useState } from 'react';
 import './page.css';
 
 export default function AboutPage() {
+    const [showDebolinaModal, setShowDebolinaModal] = useState(false);
+    const [showFounderModal, setShowFounderModal] = useState(false);
+
+    const founderFullProfile = {
+        quote: `"Skills create careers. Vision creates leaders."`,
+        intro: `My journey has been a long one — over 30 years across banking, finance, leasing, and cyber security — and if there's one thing I've learned, it's this: technology keeps changing, but the need for the right guidance never does.`,
+        education: `I have been privileged to learn at IIM Calcutta (Business Management), NIPM Calcutta (Personnel Management), along with Law and Commerce specialisation. These experiences shaped the way I think — not just about business or law, but about people, responsibility, and long-term growth.`,
+        experience: `Alongside eHack Academy, I also serve as Director of Operations at Byte Code Cyber Security Pvt. Ltd., where I deal with real cyber security challenges every day. This keeps me closely connected to industry realities — what companies truly expect and what young professionals genuinely need to succeed.`,
+        mission: `I started eHack Academy with a simple intention: to help people build real skills, gain confidence, and create a secure and meaningful career in cyber security. Whether someone is a student, a working professional, or restarting their journey, our focus has always been on clarity, honesty, and practical learning.`,
+        vision: `At eHack Academy, we don't just teach technology. We mentor, guide, and prepare individuals to face the real world with confidence.`,
+        closing: `If you're serious about your future in cyber security, we'll walk that journey with you.`
+    };
+
+    const debolinaFullProfile = {
+        summary: `Dr. Debolina Gupta is a dynamic academician, mentor, and thought leader known for her proactive approach, exceptional leadership abilities, and deep commitment to education and entrepreneurship. A self-starter by nature, she brings clarity, confidence, and purpose to every role she undertakes. Her strong organisational acumen and coordination skills enable seamless engagement between students, institutions, and industry platforms.`,
+        expertise: `Dr. Gupta specializes in the design and delivery of concurrent training and teaching programmes that integrate HR practices, entrepreneurship, personal effectiveness, leadership development, and soft skills. Her pedagogical approach blends academic rigour with real-world relevance, empowering learners to navigate today's dynamic business environment with confidence.`,
+        collaboration: `Beyond the classroom, she plays a vital role in strengthening industry–academia collaboration. She actively participates in entrepreneurial consortia, offering training, mentoring, and strategic guidance to start-ups and emerging business ventures. Her consistent involvement of alumni in institutional initiatives further reinforces strong industry connections and enriches student exposure.`,
+        advocacy: `A passionate advocate for entrepreneurship and leadership development, Dr. Gupta regularly curates and conducts capacity-building workshops aimed at fostering an entrepreneurial mindset and future-ready leadership skills among students. Her research interests span leadership, entrepreneurship, start-ups, higher education, and human resource management, reflecting her dedication to addressing contemporary business and educational challenges through practical, impactful insights.`,
+        additional: `She is a thoughtful writer and editor at Spark: Igniting Minds, a fiction publishing house dedicated to nurturing original voices and crafting compelling narratives that inspire imagination, creativity, and thoughtful engagement.`,
+        roles: `In addition to her academic and mentoring roles, Dr. Gupta serves as a Board of Advisory Member at eHack Academy, contributing strategic guidance to innovation-driven learning initiatives. She also holds the position of Joint Secretary of eMERG, an eminent professional association, where she actively supports initiatives focusing on women leadership, entrepreneurship, and professional empowerment.`
+    };
+
+
     return (
         <>
             {/* Hero Section */}
@@ -121,31 +145,46 @@ export default function AboutPage() {
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge section-badge-purple">LEADERSHIP</span>
-                        <h2 className="section-title">Meet Our Founder</h2>
+                        <h2 className="section-title">From the Founder</h2>
                     </div>
 
                     <div className="founder-card">
-                        <div className="founder-image-wrapper">
+                        <div className="founder-image-section">
                             <img src="/images/about-us/manager.jpeg" alt="Sanjeev Gupta" className="founder-image" />
+                            <div className="founder-quote-badge">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                                <p>Skills create careers. Vision creates leaders.</p>
+                            </div>
+                            <div className="founder-name-badge">
+                                <h3 className="founder-name">Sanjeev Gupta</h3>
+                                <p className="founder-role">Founder & Director</p>
+                            </div>
                         </div>
                         <div className="founder-content">
-                            <h3 className="founder-name"> Sanjeev Gupta</h3>
-                            <p className="founder-role">Founder & CEO</p>
                             <p className="founder-bio">
-                                With over 30+ years of experience spanning Banking, Finance, Leasing, and Cyber Security, Mr. Sanjeev Gupta is a visionary leader dedicated to shaping the next generation of cyber security professionals.
+                                My journey has been a long one — over 30 years across banking, finance, leasing, and cyber security — and if there's one thing I've learned, it's this: <strong>technology keeps changing, but the need for the right guidance never does.</strong>
+                            </p>
+                            <p className="founder-bio">
+                                I have been privileged to learn at IIM Calcutta (Business Management), NIPM Calcutta (Personnel Management), along with Law and Commerce specialisation. These experiences shaped the way I think — not just about business or law, but about people, responsibility, and long-term growth.
                             </p>
                             <div className="founder-education">
-                                <strong>Education:</strong> IIM Calcutta (PG in Business Management), NIPM Calcutta (Personnel Management), Bangalore University (LLB), and NEHU Shillong (B.Com Hons).
+                                <strong>I started eHack Academy with a simple intention:</strong> to help people build real skills, gain confidence, and create a secure and meaningful career in cyber security.
                             </div>
-                            <p className="founder-additional">
-                                He also serves as Director of Operations at Byte Code Cyber Security Pvt. Ltd., bringing a unique blend of business acumen and technical expertise to eHack Academy's strategic direction.
-                            </p>
+                            <button className="read-more-btn" onClick={() => setShowFounderModal(true)}>
+                                Read Full Message
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
 
 
                 </div>
             </section>
+
 
             {/* Management & Advisory Board */}
             <section className="advisory-section">
@@ -195,6 +234,23 @@ export default function AboutPage() {
                                     24+ years of techno-management experience. Certified Handwriting Analyst, Career Coach, and Counselling Psychologist bringing unique perspectives to student development.
                                 </p>
                             </div>
+
+                            <div className="advisory-card">
+                                <div className="advisory-image-placeholder" style={{ background: '#F0FDF4', color: '#16A34A', border: '3px solid #DCFCE7' }}>
+                                    <span style={{ fontSize: '2.5rem', fontWeight: '800' }}>DG</span>
+                                </div>
+                                <h3 className="advisory-name">Dr. Debolina Gupta</h3>
+                                <p className="advisory-role">Advisory Board Member</p>
+                                <p className="advisory-bio">
+                                    OB-HR, Entrepreneurship, Training & Development expert. Dynamic academician, mentor, and thought leader committed to education and entrepreneurship.
+                                </p>
+                                <button className="read-more-btn" onClick={() => setShowDebolinaModal(true)}>
+                                    Read More
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
 
                         {/* Duplicate for seamless loop */}
@@ -235,6 +291,23 @@ export default function AboutPage() {
                                 <p className="advisory-bio">
                                     24+ years of techno-management experience. Certified Handwriting Analyst, Career Coach, and Counselling Psychologist bringing unique perspectives to student development.
                                 </p>
+                            </div>
+
+                            <div className="advisory-card">
+                                <div className="advisory-image-placeholder" style={{ background: '#F0FDF4', color: '#16A34A', border: '3px solid #DCFCE7' }}>
+                                    <span style={{ fontSize: '2.5rem', fontWeight: '800' }}>DG</span>
+                                </div>
+                                <h3 className="advisory-name">Dr. Debolina Gupta</h3>
+                                <p className="advisory-role">Advisory Board Member</p>
+                                <p className="advisory-bio">
+                                    OB-HR, Entrepreneurship, Training & Development expert. Dynamic academician, mentor, and thought leader committed to education and entrepreneurship.
+                                </p>
+                                <button className="read-more-btn" onClick={() => setShowDebolinaModal(true)}>
+                                    Read More
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -473,6 +546,150 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Dr. Debolina Gupta Profile Modal */}
+            {showDebolinaModal && (
+                <div className="profile-modal-overlay" onClick={() => setShowDebolinaModal(false)}>
+                    <div className="profile-modal" onClick={(e) => e.stopPropagation()}>
+                        <button className="profile-modal-close" onClick={() => setShowDebolinaModal(false)} aria-label="Close">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M18 6L6 18M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        <div className="profile-modal-header">
+                            <div className="profile-modal-avatar" style={{ background: '#F0FDF4', color: '#16A34A', border: '3px solid #DCFCE7' }}>
+                                <span style={{ fontSize: '3rem', fontWeight: '800' }}>DG</span>
+                            </div>
+                            <div className="profile-modal-title-section">
+                                <h2 className="profile-modal-name">Dr. Debolina Gupta</h2>
+                                <p className="profile-modal-role">Advisory Board Member</p>
+                                <p className="profile-modal-specialization">OB-HR, Entrepreneurship, Training & Development</p>
+                            </div>
+                        </div>
+
+                        <div className="profile-modal-content">
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Profile Summary</h3>
+                                <p>{debolinaFullProfile.summary}</p>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Areas of Expertise</h3>
+                                <p>{debolinaFullProfile.expertise}</p>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Industry-Academia Collaboration</h3>
+                                <p>{debolinaFullProfile.collaboration}</p>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Entrepreneurship & Leadership Advocacy</h3>
+                                <p>{debolinaFullProfile.advocacy}</p>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Additional Roles</h3>
+                                <p>{debolinaFullProfile.additional}</p>
+                                <p style={{ marginTop: '1rem' }}>{debolinaFullProfile.roles}</p>
+                            </div>
+
+                            <div className="profile-modal-highlights">
+                                <div className="profile-highlight-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                    </svg>
+                                    <span>Board of Advisory Member - eHack Academy</span>
+                                </div>
+                                <div className="profile-highlight-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                                    </svg>
+                                    <span>Joint Secretary - eMERG</span>
+                                </div>
+                                <div className="profile-highlight-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M12 20h9" />
+                                        <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+                                    </svg>
+                                    <span>Writer & Editor - Spark: Igniting Minds</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Founder Full Message Modal */}
+            {showFounderModal && (
+                <div className="profile-modal-overlay" onClick={() => setShowFounderModal(false)}>
+                    <div className="profile-modal founder-modal" onClick={(e) => e.stopPropagation()}>
+                        <button className="profile-modal-close" onClick={() => setShowFounderModal(false)} aria-label="Close">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M18 6L6 18M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        <div className="profile-modal-header founder-modal-header">
+                            <img src="/images/about-us/manager.jpeg" alt="Sanjeev Gupta" className="founder-modal-image" />
+                            <div className="profile-modal-title-section">
+                                <h2 className="profile-modal-name">Sanjeev Gupta</h2>
+                                <p className="profile-modal-role">Founder & Director</p>
+                                <p className="profile-modal-specialization">Skill to Employability</p>
+                            </div>
+                        </div>
+
+                        <div className="founder-modal-quote">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.15">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                            <p>{founderFullProfile.quote}</p>
+                        </div>
+
+                        <div className="profile-modal-content">
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">The Journey</h3>
+                                <p>{founderFullProfile.intro}</p>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Education & Growth</h3>
+                                <p>{founderFullProfile.education}</p>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Industry Experience</h3>
+                                <p>{founderFullProfile.experience}</p>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Our Mission</h3>
+                                <p>{founderFullProfile.mission}</p>
+                            </div>
+
+                            <div className="founder-modal-vision">
+                                <p>{founderFullProfile.vision}</p>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <p className="founder-closing">{founderFullProfile.closing}</p>
+                            </div>
+
+                            <div className="founder-modal-signature">
+                                <div className="signature-line"></div>
+                                <p className="signature-name">Sanjeev Gupta</p>
+                                <p className="signature-title">Founder & Director</p>
+                                <p className="signature-org">eHack Academy – Institute of Emerging Technologies</p>
+                                <p className="signature-domains">Cyber Security | Data Science | Robotics | Digital Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 }
