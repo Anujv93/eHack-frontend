@@ -16,10 +16,38 @@
     justify-content: flex-start;
 }
 
+/* Orange filter overlay - covers left side, fades to transparent on right (laptop area) */
+.offer-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Darker orange gradient: strong on left (text area), fading to transparent on right (laptop area) */
+    background: linear-gradient(to right,
+            rgba(160, 60, 0, 0.70) 0%,
+            /* Deep burnt orange on far left */
+            rgba(180, 75, 0, 0.60) 20%,
+            /* Dark orange */
+            rgba(200, 90, 20, 0.45) 45%,
+            /* Medium orange transition */
+            rgba(220, 110, 30, 0.20) 65%,
+            /* Light orange tint */
+            rgba(255, 255, 255, 0) 80%
+            /* Transparent - laptop area preserved */
+        );
+    pointer-events: none;
+    z-index: 1;
+}
+
 .offer-hero-container {
     max-width: 550px;
     margin: 0;
     margin-left: 5%;
+    position: relative;
+    z-index: 2;
+    /* Above the orange overlay */
 }
 
 .offer-hero-badge {

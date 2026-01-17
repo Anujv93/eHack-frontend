@@ -7,7 +7,7 @@ export const programs = [
         subtitle: "with 6 Global Certifications",
         description: "Equip yourself with the skills to protect IT infrastructure, perform vulnerability assessments, and secure organizations against cyber threats.",
         features: "Includes real-time labs, hands-on penetration testing, network defense training, and internationally recognized certifications.",
-        batchInfo: "IN JANUARY",
+        batchInfo: "5th of Every Month",
         partner: "EC-Council",
         partnerLogo: "/images/ec-council-logo.png",
         ehackLogo: "/ehack-black.png",
