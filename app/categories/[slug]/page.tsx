@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { use } from 'react';
 import { getProgramsByCategory, getCategoryBySlug, programCategories } from '@/data/programs';
+
 import './page.css';
 
 interface PageProps {
@@ -94,6 +95,8 @@ export default function CategoryPage({ params }: PageProps) {
                     )}
                 </div>
             </section>
+
+
 
             {/* Explore More Programs */}
             <section className="explore-more-section">

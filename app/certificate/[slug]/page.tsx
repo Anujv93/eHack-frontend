@@ -9,6 +9,7 @@ import CTASection from "@/components/global/cta-section/cta-section";
 import ExamDetails from "@/components/global/exam-details/exam-details";
 import StickySectionNav from "@/components/global/sticky-section-nav/sticky-section-nav";
 import RelatedCertificates from "@/components/global/related-certificates/related-certificates";
+import CertificateLabsWrapper from "@/components/global/certificate-labs/CertificateLabsWrapper";
 import {
     getCertificateBySlug,
     getAdmissionProcess,
@@ -112,6 +113,9 @@ export default async function CertificatePage({ params }: PageProps) {
         dynamicNavSections.push({ id: 'exam-details', label: 'Exam Details' });
     }
 
+    // Always add Labs section for cybersecurity certifications
+    dynamicNavSections.push({ id: 'labs', label: 'Hands-On Labs' });
+
     if (targetAudienceSection?.Audiences && targetAudienceSection.Audiences.length > 0) {
         dynamicNavSections.push({ id: 'target-audience', label: 'Who Should Enroll' });
     }
@@ -165,6 +169,13 @@ export default async function CertificatePage({ params }: PageProps) {
                 title={examDetailsSection?.Title}
                 examCards={examDetailsSection?.ExamCards}
             />
+
+            {/* Hands-On Labs Section */}
+            <CertificateLabsWrapper
+                certificateSlug={slug}
+                certificateTitle={certificate.Title}
+            />
+
             <TargetAudience
                 title={targetAudienceSection?.Title}
                 audiences={targetAudienceSection?.Audiences}
