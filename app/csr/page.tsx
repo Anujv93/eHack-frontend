@@ -2,6 +2,25 @@
 
 import './page.css';
 import Link from 'next/link';
+import {
+    GraduationCap,
+    School,
+    Shield,
+    Award,
+    Building2,
+    Landmark,
+    BookOpen,
+    Target,
+    Briefcase,
+    Sparkles,
+    Rocket,
+    CreditCard,
+    Zap,
+    Building,
+    Lock,
+    BarChart3,
+    TrendingUp
+} from 'lucide-react';
 
 export default function CSRPage() {
     return (
@@ -46,22 +65,22 @@ export default function CSRPage() {
 
                     <div className="stats-grid">
                         <div className="stat-card">
-                            <div className="stat-icon">🎓</div>
+                            <div className="stat-icon"><GraduationCap size={48} strokeWidth={1.5} /></div>
                             <div className="stat-value">50,000+</div>
                             <div className="stat-label">Students Trained</div>
                         </div>
                         <div className="stat-card">
-                            <div className="stat-icon">🏫</div>
+                            <div className="stat-icon"><School size={48} strokeWidth={1.5} /></div>
                             <div className="stat-value">100+</div>
                             <div className="stat-label">Institutions Served</div>
                         </div>
                         <div className="stat-card">
-                            <div className="stat-icon">🔐</div>
+                            <div className="stat-icon"><Shield size={48} strokeWidth={1.5} /></div>
                             <div className="stat-value">500+</div>
                             <div className="stat-label">Awareness Programs</div>
                         </div>
                         <div className="stat-card">
-                            <div className="stat-icon">🌟</div>
+                            <div className="stat-icon"><Award size={48} strokeWidth={1.5} /></div>
                             <div className="stat-value">10+</div>
                             <div className="stat-label">Years of Service</div>
                         </div>
@@ -79,7 +98,7 @@ export default function CSRPage() {
 
                     <div className="focus-grid">
                         <div className="focus-card">
-                            <div className="focus-icon">🔐</div>
+                            <div className="focus-icon"><Lock size={56} strokeWidth={1.5} /></div>
                             <h3 className="focus-title">Cybersecurity Awareness</h3>
                             <ul className="focus-list">
                                 <li>Cyber crime prevention programs</li>
@@ -90,7 +109,7 @@ export default function CSRPage() {
                         </div>
 
                         <div className="focus-card">
-                            <div className="focus-icon">📊</div>
+                            <div className="focus-icon"><BarChart3 size={56} strokeWidth={1.5} /></div>
                             <h3 className="focus-title">Emerging Technology Training</h3>
                             <ul className="focus-list">
                                 <li>Data Science & Artificial Intelligence</li>
@@ -102,7 +121,7 @@ export default function CSRPage() {
                         </div>
 
                         <div className="focus-card">
-                            <div className="focus-icon">🎯</div>
+                            <div className="focus-icon"><Target size={56} strokeWidth={1.5} /></div>
                             <h3 className="focus-title">Employability & Career Enablement</h3>
                             <ul className="focus-list">
                                 <li>Career guidance & mentorship programs</li>
@@ -128,42 +147,42 @@ export default function CSRPage() {
 
                     <div className="institutions-grid">
                         <div className="institution-card">
-                            <div className="institution-icon">🏛️</div>
+                            <div className="institution-icon"><Landmark size={40} strokeWidth={1.5} /></div>
                             <h4 className="institution-name">MS Ramaiah Institute of Technology</h4>
                             <p className="institution-desc">Engineering, BCA, MCA & Polytechnic</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon">🎓</div>
+                            <div className="institution-icon"><GraduationCap size={40} strokeWidth={1.5} /></div>
                             <h4 className="institution-name">MS Ramaiah Institute of Management</h4>
                             <p className="institution-desc">PGDM Programs</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon">📚</div>
+                            <div className="institution-icon"><BookOpen size={40} strokeWidth={1.5} /></div>
                             <h4 className="institution-name">Christ University</h4>
                             <p className="institution-desc">Multiple Departments</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon">🏫</div>
+                            <div className="institution-icon"><School size={40} strokeWidth={1.5} /></div>
                             <h4 className="institution-name">Sir M. Visvesvaraya Institute</h4>
                             <p className="institution-desc">Engineering & Technology</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon">🎯</div>
+                            <div className="institution-icon"><TrendingUp size={40} strokeWidth={1.5} /></div>
                             <h4 className="institution-name">REVA University</h4>
                             <p className="institution-desc">Postgraduate Programs</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon">💼</div>
+                            <div className="institution-icon"><Briefcase size={40} strokeWidth={1.5} /></div>
                             <h4 className="institution-name">PES Institute of Technology</h4>
                             <p className="institution-desc">Engineering Programs</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon">🌟</div>
+                            <div className="institution-icon"><Sparkles size={40} strokeWidth={1.5} /></div>
                             <h4 className="institution-name">Nitte Meenakshi Institute (NMIT)</h4>
                             <p className="institution-desc">Technology Programs</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon">🚀</div>
+                            <div className="institution-icon"><Rocket size={40} strokeWidth={1.5} /></div>
                             <h4 className="institution-name">Sambhram Institute</h4>
                             <p className="institution-desc">Technology & Management</p>
                         </div>
@@ -188,17 +207,17 @@ export default function CSRPage() {
 
                     <div className="corporate-grid">
                         <div className="corporate-card">
-                            <div className="corporate-logo">💳</div>
+                            <div className="corporate-logo"><CreditCard size={64} strokeWidth={1.5} /></div>
                             <h4 className="corporate-name">Cashfree</h4>
                             <p className="corporate-desc">Payment Technology Solutions</p>
                         </div>
                         <div className="corporate-card">
-                            <div className="corporate-logo">⚡</div>
+                            <div className="corporate-logo"><Zap size={64} strokeWidth={1.5} /></div>
                             <h4 className="corporate-name">Bharat Electronics Limited (BEL)</h4>
                             <p className="corporate-desc">Defense & Aerospace</p>
                         </div>
                         <div className="corporate-card">
-                            <div className="corporate-logo">🏢</div>
+                            <div className="corporate-logo"><Building size={64} strokeWidth={1.5} /></div>
                             <h4 className="corporate-name">IT & Non-IT Organizations</h4>
                             <p className="corporate-desc">Various Industry Sectors</p>
                         </div>
