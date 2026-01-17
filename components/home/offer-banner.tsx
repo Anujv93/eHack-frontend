@@ -35,7 +35,7 @@ export default function OfferBanner() {
                     </h3>
                     <p className="offer-banner-description">
                         Exclusively for students enrolling in Graduate or Master
-                        Program + Purchasing CSO & CSU Bundle (Worth ₹1,10,000).
+                        Program + Purchasing CSO & CSE Bundle (Worth ₹1,10,000).
                     </p>
                     <p className="offer-banner-certifications">
                         Includes certification training for: <strong>CEH, CPENT, CND, CHFI</strong> & more.

@@ -120,7 +120,8 @@
     transition: all 0.3s ease;
 }
 
-.program-card:hover {
+.program-card:hover,
+.program-card.graduate-highlight {
     border-color: #FF8C00;
     box-shadow: 0 8px 30px rgba(255, 107, 0, 0.15);
 }
