@@ -9,7 +9,7 @@ export default function CertificationsSection() {
         <section className="cert-section" id="certifications">
             <div className="cert-container">
                 <div className="cert-header">
-                    <h2 className="cert-title">Globally Recognized & Authorized</h2>
+                    <h2 className="cert-title">Globally Recognized & <span className="cert-title-gradient">Authorized</span></h2>
                     <p className="cert-subtitle">eHack Academy is an official partner of industry leaders, delivering curriculum that meets global standards.</p>
                 </div>
 
