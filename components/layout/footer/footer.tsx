@@ -196,7 +196,8 @@ export default function Footer() {
                             </h4>
                             <ul className="footer-links-list">
                                 <li><Link href="/about">About Us</Link></li>
-                                <li><Link href="/services">Corporate Training</Link></li>
+                                <li><Link href="/services">Corporate Service</Link></li>
+                                <li><Link href="/csr">Corporate Social Responsibility</Link></li>
                                 <li>
                                     <Link href="/franchise">
                                         <span className="link-badge new">New</span>

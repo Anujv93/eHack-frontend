@@ -363,26 +363,6 @@ export default function FranchisePage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="program-image-card">
-                            <div className="program-image-wrapper">
-                                <Image
-                                    src="/images/corporate.jpeg"
-                                    alt="Corporate Training & Services"
-                                    fill
-                                    style={{ objectFit: 'cover' }}
-                                />
-                                <div className="program-image-overlay"></div>
-                            </div>
-                            <div className="program-card-content">
-                                <div className="program-card-badge revenue">Revenue Stream</div>
-                                <h3>Corporate Training</h3>
-                                <p>Enterprise upskilling, security assessments, compliance audits & consulting services</p>
-                                <div className="program-card-stats">
-                                    <span><strong>B2B</strong> Revenue</span>
-                                    <span><strong>High</strong> Value</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
