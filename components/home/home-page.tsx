@@ -11,6 +11,7 @@ import PlacementSection from './placement-section';
 import TestimonialsSection from './testimonials-section';
 import OfferBanner from './offer-banner';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
+import CertificationsSection from './certifications-section';
 
 // Types for props
 interface Partner {
@@ -587,6 +588,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
             {/* What Our Learners Say */}
             <TestimonialsSection />
+
+            {/* Authorized Certifications */}
+            <CertificationsSection />
 
             {/* CTA Section */}
             <section className={styles.ctaSection}>
