@@ -222,6 +222,27 @@ export default function LaptopOfferPage() {
                                 <td className="included">Included</td>
                             </tr>
                             <tr>
+                                <td>OWASP Top 10</td>
+                                <td>Top 10 Web Application Vulnerabilities</td>
+                                <td className="price">₹40,000</td>
+                                <td className="not-included">Included</td>
+                                <td className="included">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Soft Skills</td>
+                                <td>Soft Skills</td>
+                                <td className="price">₹25,000</td>
+                                <td className="not-included">—</td>
+                                <td className="included">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Internship</td>
+                                <td>Internship & Project Work</td>
+                                <td className="price">₹35,000</td>
+                                <td className="not-included">—</td>
+                                <td className="included">Included</td>
+                            </tr>
+                            <tr>
                                 <td>FREE Laptop</td>
                                 <td>High-Performance Laptop</td>
                                 <td className="price">₹50,000</td>
