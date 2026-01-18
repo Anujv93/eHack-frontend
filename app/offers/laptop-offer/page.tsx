@@ -72,14 +72,13 @@ export default function LaptopOfferPage() {
                     <div className="bundle-upsell-content">
                         <span className="bundle-upsell-badge">🎁 Unlock Your Free Laptop</span>
                         <h3 className="bundle-upsell-title">
-                            Add the <span>SOC + CSE Bundle</span> to Your Program — Walk Away With a FREE Laptop!
+                            Add the <span>CSA + CCSE Bundle</span> to Your Program — Walk Away With a FREE Laptop!
                         </h3>
                         <p className="bundle-upsell-condition">
                             <strong>💡 How it works:</strong> Add this bundle to your <em>Graduate</em> or <em>Masters</em> program above, and the FREE laptop is yours!
                         </p>
                         <p className="bundle-upsell-desc">
-                            Here's the deal: Invest just <strong>₹1,10,000</strong> in our SOC Analyst & Certified Security Engineer
-                            bundle — and we'll hand you a <strong>brand new laptop worth ₹50,000</strong>. That's not a discount.
+                            Here's the deal: Invest just <strong>₹1,15,000</strong> in our CSA & CCSE bundle — and we'll hand you a <strong>brand new laptop worth ₹50,000</strong>. That's not a discount.
                             That's getting <em>almost half your investment back</em> as a high-performance machine to power your career.
                         </p>
 
@@ -93,19 +92,19 @@ export default function LaptopOfferPage() {
                                     <div className="bundle-calc-breakdown">
                                         <div className="calc-row">
                                             <span>Graduate Program</span>
-                                            <span>₹1,50,000</span>
+                                            <span>₹2,45,000</span>
                                         </div>
                                         <div className="calc-row">
-                                            <span>SOC + CSE Bundle</span>
-                                            <span>₹1,10,000</span>
+                                            <span>CSA + CCSE Bundle</span>
+                                            <span>₹1,15,000</span>
                                         </div>
                                         <div className="calc-row total">
                                             <span>Total</span>
-                                            <span>₹2,60,000</span>
+                                            <span>₹2,65,000</span>
                                         </div>
                                         <div className="calc-row free-laptop">
                                             <span>🎁 FREE Laptop</span>
-                                            <span className="free-value">-₹50,000</span>
+                                            <span className="free-value">₹50,000</span>
                                         </div>
                                     </div>
                                 </div>
@@ -120,16 +119,16 @@ export default function LaptopOfferPage() {
                                             <span>₹3,50,000</span>
                                         </div>
                                         <div className="calc-row">
-                                            <span>SOC + CSE Bundle</span>
-                                            <span>₹1,10,000</span>
+                                            <span>CSA + CCSE Bundle</span>
+                                            <span>₹1,15,000</span>
                                         </div>
                                         <div className="calc-row total">
                                             <span>Total</span>
-                                            <span>₹4,60,000</span>
+                                            <span>₹4,65,000</span>
                                         </div>
                                         <div className="calc-row free-laptop">
                                             <span>🎁 FREE Laptop</span>
-                                            <span className="free-value">-₹50,000</span>
+                                            <span className="free-value">₹50,000</span>
                                         </div>
                                     </div>
                                 </div>
