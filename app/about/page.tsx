@@ -1,11 +1,60 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './page.css';
 
 export default function AboutPage() {
     const [showDebolinaModal, setShowDebolinaModal] = useState(false);
     const [showFounderModal, setShowFounderModal] = useState(false);
+    const [showNeelKumarModal, setShowNeelKumarModal] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);
+    const [activeSection, setActiveSection] = useState('mission');
+    const navRef = useRef<HTMLDivElement>(null);
+    const placeholderRef = useRef<HTMLDivElement>(null);
+
+    const sections = [
+        { id: 'mission', label: 'Our Mission' },
+        { id: 'why-choose-us', label: 'Why Us' },
+        { id: 'leadership', label: 'Leadership' },
+        { id: 'advisory', label: 'Advisory Board' },
+        { id: 'contact', label: 'Contact' }
+    ];
+
+    // Sticky navigation scroll handling
+    useEffect(() => {
+        const handleScroll = () => {
+            if (placeholderRef.current) {
+                const placeholderTop = placeholderRef.current.getBoundingClientRect().top;
+                setIsSticky(placeholderTop <= 0);
+            }
+
+            // Update active section based on scroll position
+            const sectionElements = sections.map(s => document.getElementById(s.id));
+            const scrollPosition = window.scrollY + 150;
+
+            for (let i = sectionElements.length - 1; i >= 0; i--) {
+                const section = sectionElements[i];
+                if (section && section.offsetTop <= scrollPosition) {
+                    setActiveSection(sections[i].id);
+                    break;
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const offset = 80;
+            const top = element.offsetTop - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+    };
 
     const founderFullProfile = {
         quote: `"Skills create careers. Vision creates leaders."`,
@@ -26,6 +75,60 @@ export default function AboutPage() {
         roles: `In addition to her academic and mentoring roles, Dr. Gupta serves as a Board of Advisory Member at eHack Academy, contributing strategic guidance to innovation-driven learning initiatives. She also holds the position of Joint Secretary of eMERG, an eminent professional association, where she actively supports initiatives focusing on women leadership, entrepreneurship, and professional empowerment.`
     };
 
+    const neelKumarFullProfile = {
+        title: `Neel Kumar (C|CISO) | OSCP | OSCE | OSWP`,
+        role: `Sr. Cyber Security Analyst / IT Security Consultant / Mobile Pen-tester`,
+        experience: `9+ Years in Penetration Testing & Red Teaming`,
+        education: [
+            'B. Tech & M. Tech in Computer Science',
+            'Cyber Law from Indian Law Institute',
+            'Advance Diploma in Cyber Law',
+            'Diploma in International Cyber Law',
+            'Diploma in Digital Forensic & Cyber Crime Investigation',
+            'Diploma in Certified Information System Security Expert'
+        ],
+        certifications: [
+            'Offensive Security Certified Professional (OSCP)',
+            'Offensive Security Wireless Professional (OSWP)',
+            'ISC2 Certified Information System Security Expert (CISE)',
+            'SANS Advanced Web App Pen Test and Ethical Hacking',
+            'EC Council Computer Hacking Forensic Investigator (CHFI)',
+            'EC Council Certified Ethical Hacker (CEH)',
+            'EC Council Certified Security Analyst (ECSA)',
+            'EC Council Licensed Penetration Tester (LPT)',
+            'Certified Network Defender (C|ND)',
+            'EnCase Certified Examiner',
+            'FTK Forensic Expert',
+            'Mobile Device Forensic Examiner by CCFTC',
+            'Certified Cyber Crime Investigator by IFCI',
+            'Microsoft Certified Server Expert (MCSE)',
+            'CISCO Certified Network Associate (CCNA)',
+            'Certified Blockchain Expert',
+            '20+ more global certifications'
+        ],
+        leaTraining: [
+            'Singapore Police, Nepal Police, Sri-Lanka Cyber Crime Unit',
+            'CBI (India) and CBI Academy, Ghaziabad',
+            'Indian Intelligence Team, NIA (National Investigation Agency)',
+            'Delhi Police, UP Police, MP Police, Punjab Police',
+            'Delhi Cyber Cell, Cyber Cell Lucknow, Cyber Cell Chhattisgarh',
+            'Rajasthan Police Academy, Karnataka Police Academy',
+            'ATS Team, Special Task Force (Dehradun)',
+            'DRDO, Cabinet Secretariat, PMO Team',
+            'Ministry of Defense, Ministry of IT'
+        ],
+        corporateClients: [
+            'C-DAC, IBM, BSNL, HCL, Google, Yahoo, GAIL India',
+            'Gemalto, Samsung, MetLife, Aon Services',
+            'NHPC, NDTV, Indian Post Payments Bank',
+            'Kumari Bank Nepal, Agriculture Insurance Corp',
+            'Bytes Software Services UK, Paladion Networks'
+        ],
+        careerSummary: `More than 9+ years of extensive experience in Penetration Testing and Red Teaming including Web, Network, Mobile, and Hardware pen-testing. Training other Pen-testers and staying up to date on OWASP and SANS standards. Carrying healthy experience in business impact analyses, threat and vulnerability assessments, and Corporate Crime Monitoring and Cyber Incident Response.`,
+        forensicsExpertise: `Expertise in automated and manual Forensics tools such as FTK, Encase, Helix, SIFT Sans Toolkit, Oxygen Mobile Forensic Suite, Cellebrite UFED, XRY mobile forensics, and many more.`,
+        casesSolved: `Solved 350+ cases including Hacking Cases, Online Blackmailing, Banking/Credit Card Crimes, Phishing, Email Hacking & Spoofing, Social Media Fake Profiles, Mobile Phone Hacking, Identity Theft, Data Stealing, Cyber Pornography, and Unauthorized Access cases.`
+    };
+
 
     return (
         <>
@@ -42,8 +145,27 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* Sticky Navigation */}
+            <div ref={placeholderRef} className={`about-nav-placeholder ${isSticky ? 'active' : ''}`}></div>
+            <nav
+                ref={navRef}
+                className={`about-sticky-nav ${isSticky ? 'is-sticky' : ''}`}
+            >
+                <div className="about-nav-container">
+                    {sections.map(section => (
+                        <button
+                            key={section.id}
+                            className={`about-nav-btn ${activeSection === section.id ? 'active' : ''}`}
+                            onClick={() => scrollToSection(section.id)}
+                        >
+                            {section.label}
+                        </button>
+                    ))}
+                </div>
+            </nav>
+
             {/* Mission Section */}
-            <section className="mission-section">
+            <section id="mission" className="mission-section">
                 <div className="container">
                     <div className="mission-content">
                         <span className="section-badge">OUR MISSION</span>
@@ -59,7 +181,7 @@ export default function AboutPage() {
             </section>
 
             {/* Why Choose Us Section */}
-            <section className="why-choose-section">
+            <section id="why-choose-us" className="why-choose-section">
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge section-badge-blue">WHY CHOOSE US</span>
@@ -141,7 +263,7 @@ export default function AboutPage() {
             </section>
 
             {/* Leadership Section */}
-            <section className="leadership-section">
+            <section id="leadership" className="leadership-section">
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge section-badge-purple">LEADERSHIP</span>
@@ -187,7 +309,7 @@ export default function AboutPage() {
 
 
             {/* Management & Advisory Board */}
-            <section className="advisory-section">
+            <section id="advisory" className="advisory-section">
                 <div className="container">
                     <div className="section-header">
                         <h2 className="section-title">Management & Advisory Board</h2>
@@ -210,11 +332,17 @@ export default function AboutPage() {
                                 <div className="advisory-image-placeholder" style={{ background: '#FFF7ED', color: '#FF6B00', border: '3px solid #FFEDD5' }}>
                                     <span style={{ fontSize: '2.5rem', fontWeight: '800' }}>NK</span>
                                 </div>
-                                <h3 className="advisory-name">N. Kumar</h3>
+                                <h3 className="advisory-name">Neel Kumar</h3>
                                 <p className="advisory-role">Head Advisory & Consultant - Cyber Security</p>
                                 <p className="advisory-bio">
                                     9+ years in Penetration Testing, Red Teaming & Cyber Incident Response. Trained Interpol, CBI & solved 350+ cyber crime cases. OSCP, CEH & 20+ global certifications.
                                 </p>
+                                <button className="read-more-btn" onClick={() => setShowNeelKumarModal(true)}>
+                                    Read More
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </button>
                             </div>
 
                             <div className="advisory-card">
@@ -236,9 +364,7 @@ export default function AboutPage() {
                             </div>
 
                             <div className="advisory-card">
-                                <div className="advisory-image-placeholder" style={{ background: '#F0FDF4', color: '#16A34A', border: '3px solid #DCFCE7' }}>
-                                    <span style={{ fontSize: '2.5rem', fontWeight: '800' }}>DG</span>
-                                </div>
+                                <img src="/images/about-us/Dr. Debolina Gupta.jpg" alt="Dr. Debolina Gupta" className="advisory-image" />
                                 <h3 className="advisory-name">Dr. Debolina Gupta</h3>
                                 <p className="advisory-role">Advisory Board Member</p>
                                 <p className="advisory-bio">
@@ -268,11 +394,17 @@ export default function AboutPage() {
                                 <div className="advisory-image-placeholder" style={{ background: '#FFF7ED', color: '#FF6B00', border: '3px solid #FFEDD5' }}>
                                     <span style={{ fontSize: '2.5rem', fontWeight: '800' }}>NK</span>
                                 </div>
-                                <h3 className="advisory-name">N. Kumar</h3>
+                                <h3 className="advisory-name">Neel Kumar</h3>
                                 <p className="advisory-role">Head Advisory & Consultant - Cyber Security</p>
                                 <p className="advisory-bio">
                                     9+ years in Penetration Testing, Red Teaming & Cyber Incident Response. Trained Interpol, CBI & solved 350+ cyber crime cases. OSCP, CEH & 20+ global certifications.
                                 </p>
+                                <button className="read-more-btn" onClick={() => setShowNeelKumarModal(true)}>
+                                    Read More
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </button>
                             </div>
 
                             <div className="advisory-card">
@@ -294,9 +426,7 @@ export default function AboutPage() {
                             </div>
 
                             <div className="advisory-card">
-                                <div className="advisory-image-placeholder" style={{ background: '#F0FDF4', color: '#16A34A', border: '3px solid #DCFCE7' }}>
-                                    <span style={{ fontSize: '2.5rem', fontWeight: '800' }}>DG</span>
-                                </div>
+                                <img src="/images/about-us/Dr. Debolina Gupta.jpg" alt="Dr. Debolina Gupta" className="advisory-image" />
                                 <h3 className="advisory-name">Dr. Debolina Gupta</h3>
                                 <p className="advisory-role">Advisory Board Member</p>
                                 <p className="advisory-bio">
@@ -315,7 +445,7 @@ export default function AboutPage() {
             </section>
 
             {/* Contact Us Section - Premium Redesign */}
-            <section className="contact-section-pro">
+            <section id="contact" className="contact-section-pro">
                 {/* Background Elements */}
                 <div className="contact-bg-pattern"></div>
                 <div className="contact-bg-gradient"></div>
@@ -685,6 +815,105 @@ export default function AboutPage() {
                                 <p className="signature-title">Founder & Director</p>
                                 <p className="signature-org">eHack Academy – Institute of Emerging Technologies</p>
                                 <p className="signature-domains">Cyber Security | Data Science | Robotics | Digital Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Neel Kumar Profile Modal */}
+            {showNeelKumarModal && (
+                <div className="profile-modal-overlay" onClick={() => setShowNeelKumarModal(false)}>
+                    <div className="profile-modal neel-kumar-modal" onClick={(e) => e.stopPropagation()}>
+                        <button className="profile-modal-close" onClick={() => setShowNeelKumarModal(false)} aria-label="Close">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M18 6L6 18M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        <div className="profile-modal-header">
+                            <div className="profile-modal-avatar" style={{ background: '#FFF7ED', color: '#FF6B00', border: '3px solid #FFEDD5' }}>
+                                <span style={{ fontSize: '3rem', fontWeight: '800' }}>NK</span>
+                            </div>
+                            <div className="profile-modal-title-section">
+                                <h2 className="profile-modal-name">{neelKumarFullProfile.title}</h2>
+                                <p className="profile-modal-role">{neelKumarFullProfile.role}</p>
+                                <p className="profile-modal-specialization">{neelKumarFullProfile.experience}</p>
+                            </div>
+                        </div>
+
+                        <div className="profile-modal-content">
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Career Summary</h3>
+                                <p>{neelKumarFullProfile.careerSummary}</p>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Educational Background</h3>
+                                <ul className="profile-list">
+                                    {neelKumarFullProfile.education.map((item, index) => (
+                                        <li key={index}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Certifications & Training</h3>
+                                <div className="certification-grid">
+                                    {neelKumarFullProfile.certifications.map((cert, index) => (
+                                        <span key={index} className="certification-badge">{cert}</span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Law Enforcement & Government Training</h3>
+                                <ul className="profile-list">
+                                    {neelKumarFullProfile.leaTraining.map((item, index) => (
+                                        <li key={index}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Corporate Clients</h3>
+                                <ul className="profile-list">
+                                    {neelKumarFullProfile.corporateClients.map((item, index) => (
+                                        <li key={index}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Forensics Expertise</h3>
+                                <p>{neelKumarFullProfile.forensicsExpertise}</p>
+                            </div>
+
+                            <div className="profile-modal-section">
+                                <h3 className="profile-section-heading">Cases Solved</h3>
+                                <p>{neelKumarFullProfile.casesSolved}</p>
+                            </div>
+
+                            <div className="profile-modal-highlights neel-kumar-highlights">
+                                <div className="profile-highlight-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                    <span>350+ Cyber Crime Cases Solved</span>
+                                </div>
+                                <div className="profile-highlight-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg>
+                                    <span>Trained CBI, Interpol, NIA Officers</span>
+                                </div>
+                                <div className="profile-highlight-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                    </svg>
+                                    <span>20+ Global Security Certifications</span>
+                                </div>
                             </div>
                         </div>
                     </div>
