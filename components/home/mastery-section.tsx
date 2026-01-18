@@ -50,7 +50,7 @@ const programs: Program[] = [
         featured: true
     },
     {
-        title: 'Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (3 Global Certification)',
+        title: 'Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (5 Global Certification)',
         features: [
             "Advanced AI-Driven Cybersecurity Mastery",
             "Real-World Cyber Range & Enterprise Attack Simulations",
@@ -58,8 +58,8 @@ const programs: Program[] = [
         ],
         duration: '9-12 Months',
         trainingHours: '300 Hours',
-        certifications: '5 Global Certs',
-        membership: '2 Years',
+        certifications: '6 Global Certs',
+        membership: '6 Months Support',
         certificateImage: '/images/certificates/masters-certificate.jpg',
         ctaText: 'Explore Program',
         ctaLink: 'programs/masters-ethical-hacking',
