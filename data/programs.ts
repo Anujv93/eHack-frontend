@@ -3,7 +3,7 @@ export const programs = [
     {
         slug: "masters-ethical-hacking",
         category: "cybersecurity",
-        title: "Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (3 Global Certification)",
+        title: "Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (6 Global Certification)",
         subtitle: "with 6 Global Certifications",
         description: "Equip yourself with the skills to protect IT infrastructure, perform vulnerability assessments, and secure organizations against cyber threats.",
         features: "Includes real-time labs, hands-on penetration testing, network defense training, and internationally recognized certifications.",
@@ -16,7 +16,7 @@ export const programs = [
             duration: "9-12 Months",
             mode: "Classroom + Live Online",
             totalHours: "300 ",
-            membership: "2 Years Free Support"
+            membership: "6 Months support"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
@@ -272,7 +272,7 @@ export const programs = [
             duration: "7-9 Months",
             mode: "Classroom + Live Online",
             totalHours: "200+ ",
-            membership: "2 Years Free Support"
+            membership: "6 Months support"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
