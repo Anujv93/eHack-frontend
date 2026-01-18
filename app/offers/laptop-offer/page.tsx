@@ -225,7 +225,7 @@ export default function LaptopOfferPage() {
                                 <td>OWASP Top 10</td>
                                 <td>Top 10 Web Application Vulnerabilities</td>
                                 <td className="price">₹40,000</td>
-                                <td className="not-included">Included</td>
+                                <td className="included">Included</td>
                                 <td className="included">Included</td>
                             </tr>
                             <tr>
@@ -256,23 +256,17 @@ export default function LaptopOfferPage() {
                                 <td className="included">Included</td>
                                 <td className="included">Included</td>
                             </tr>
-                            <tr className="total-row individual-total">
-                                <td colSpan={2}><strong>Total If Purchased Individually</strong></td>
-                                <td className="price"><strong>₹5,85,000</strong></td>
-                                <td className="not-included">—</td>
-                                <td className="not-included">—</td>
-                            </tr>
                             <tr className="total-row original-price">
-                                <td colSpan={2}><strong>Our Program Original Pricing</strong></td>
+                                <td colSpan={2}><strong>Program Offer Price</strong></td>
                                 <td>—</td>
                                 <td><strong>₹1,50,000</strong></td>
                                 <td><strong>₹3,50,000</strong></td>
                             </tr>
                             <tr className="total-row program-price">
-                                <td colSpan={2}><strong>Our Offer Price (with CSO & CSE Bundle ₹1,10,000)</strong></td>
+                                <td colSpan={2}><strong>Our Offer Price (with CSA & CCSE Bundle ₹1,15,000)</strong></td>
                                 <td>—</td>
-                                <td><strong>₹2,60,000</strong></td>
-                                <td><strong>₹4,60,000</strong></td>
+                                <td><strong>₹2,65,000</strong></td>
+                                <td><strong>₹4,65,000</strong></td>
                             </tr>
                             <tr className="total-row savings-row">
                                 <td colSpan={2}><strong>YOUR TOTAL SAVINGS</strong></td>
