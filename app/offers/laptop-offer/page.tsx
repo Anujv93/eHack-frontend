@@ -18,7 +18,7 @@ export default function LaptopOfferPage() {
                         <span>+ Get a Free Laptop</span>
                     </h1>
                     <p className="offer-hero-subtitle">
-                        Enroll in our Masters or Graduate Program with the CSO & CSE Bundle
+                        Enroll in our Masters or Graduate Program with the Certified SOC Analyst (CSA) & Certified Cloud Security Engineer (CCSE) Bundle
                         and receive a high-performance laptop worth ₹50,000 absolutely FREE.
                     </p>
                 </div>
@@ -38,7 +38,7 @@ export default function LaptopOfferPage() {
                     <div className="program-card graduate-highlight">
                         <h3>Graduate Program</h3>
                         <div className="program-card-price">
-                            <span>₹1,00,000</span> ₹1,50,000
+                            <span>₹2,45,000</span> ₹1,00,000
                         </div>
                         <p className="program-card-certs">
                             <strong>2 EC-Council Certifications:</strong><br />
@@ -54,7 +54,7 @@ export default function LaptopOfferPage() {
                         <span className="program-card-badge">Most Popular</span>
                         <h3>Masters Program</h3>
                         <div className="program-card-price">
-                            <span>₹4,25,000</span> ₹3,50,000
+                            <span>₹5,00,000</span> ₹3,50,000
                         </div>
                         <p className="program-card-certs">
                             <strong>6 EC-Council Certifications:</strong><br />
