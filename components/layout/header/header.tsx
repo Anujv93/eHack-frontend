@@ -9,14 +9,14 @@ import './header-search.css';
 
 // Corporate Services Data for dropdown
 const corporateServices = [
-    { id: 'web-application-security', title: 'Web Application Security Assessment', icon: '🌐' },
-    { id: 'mobile-application-security', title: 'Mobile Application Security Assessment', icon: '📱' },
-    { id: 'api-security', title: 'API Security Assessment', icon: '🔌' },
+    { id: 'web-application-security', title: 'Web Application ', icon: '🌐' },
+    { id: 'mobile-application-security', title: 'Mobile Application ', icon: '📱' },
+    { id: 'api-security', title: 'API', icon: '🔌' },
     { id: 'secure-source-code-review', title: 'Secure Source Code Review', icon: '💻' },
     { id: 'red-team-assessment', title: 'Red Team Assessment', icon: '🎯' },
-    { id: 'infrastructure-security', title: 'Infrastructure Security Assessment', icon: '🏗️' },
-    { id: 'thick-client-security', title: 'Thick Client Security Assessment', icon: '🖥️' },
-    { id: 'firewall-security', title: 'Firewall Security Assessment', icon: '🛡️' },
+    { id: 'infrastructure-security', title: 'Infrastructure', icon: '🏗️' },
+    { id: 'thick-client-security', title: 'Thick Client', icon: '🖥️' },
+    { id: 'firewall-security', title: 'Firewall', icon: '🛡️' },
 ];
 
 const forensicsServices = [
