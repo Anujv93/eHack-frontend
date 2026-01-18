@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
     title: 'Free Laptop Offer | eHack Academy',
-    description: 'Get a FREE laptop worth ₹50,000 when you enroll in Masters or Graduate Program with CSO & CSE Bundle. Transform your cybersecurity career today.',
+    description: 'Get a FREE laptop worth ₹50,000 when you enroll in Masters or Graduate Program with CSA & CCSE Bundle. Transform your cybersecurity career today.',
 };
 
 export default function LaptopOfferPage() {
@@ -145,7 +145,7 @@ export default function LaptopOfferPage() {
                                 <span className="bundle-cert-desc">Master threat detection, SIEM tools, and incident response</span>
                             </div>
                             <div className="bundle-cert">
-                                <span className="bundle-cert-name">Certified Security Engineer (CSE)</span>
+                                <span className="bundle-cert-name">Certified Security Engineer (CCSE)</span>
                                 <span className="bundle-cert-desc">Build and secure enterprise-grade security infrastructure</span>
                             </div>
                         </div>
@@ -286,17 +286,17 @@ export default function LaptopOfferPage() {
                         Get a <span>FREE Laptop Worth ₹50,000</span>
                     </h2>
                     <p className="laptop-offer-condition">
-                        Purchase any program above along with our <strong>CSO & CSE Bundle</strong> and
+                        Purchase any program above along with our <strong>CSA & CCSE Bundle</strong> and
                         walk away with a brand new laptop to power your learning journey.
                     </p>
 
                     <div className="bundle-details">
-                        <h3>CSO & CSE Bundle Includes:</h3>
+                        <h3>CSA & CCSE Bundle Includes:</h3>
                         <ul>
-                            <li><strong>Certified SOC Analyst (CSA)</strong> — Monitor, detect, and respond to security threats</li>
-                            <li><strong>Certified Security Engineer (CSU)</strong> — Essential cybersecurity awareness training</li>
+                            <li><strong>Certified CSA Analyst (CSA)</strong> — Monitor, detect, and respond to security threats</li>
+                            <li><strong>Certified Security Engineer (CCSE)</strong> — Essential cybersecurity awareness training</li>
                         </ul>
-                        <div className="bundle-price">Bundle Value: ₹1,10,000</div>
+                        <div className="bundle-price">Bundle Value: ₹1,15,000</div>
                     </div>
                 </div>
             </section>
@@ -326,19 +326,19 @@ export default function LaptopOfferPage() {
                                 <td>₹3,50,000</td>
                             </tr>
                             <tr>
-                                <td>CSO & CSE Bundle</td>
-                                <td>₹1,10,000</td>
-                                <td>₹1,10,000</td>
+                                <td>CSA & CCSE Bundle</td>
+                                <td>₹1,15,000</td>
+                                <td>₹1,15,000</td>
                             </tr>
                             <tr className="highlight-row">
                                 <td>Total Package Value</td>
-                                <td>₹3,10,000</td>
-                                <td>₹5,10,000</td>
+                                <td>₹3,15,000</td>
+                                <td>₹5,15,000</td>
                             </tr>
                             <tr>
                                 <td>You Pay</td>
-                                <td>₹2,60,000</td>
-                                <td>₹4,60,000</td>
+                                <td>₹2,65,000</td>
+                                <td>₹4,65,000</td>
                             </tr>
                             <tr className="savings-row">
                                 <td>Your Savings</td>
