@@ -180,6 +180,13 @@ export default function LaptopOfferPage() {
                         </thead>
                         <tbody>
                             <tr>
+                                <td>ITF</td>
+                                <td>IT Fundamentals</td>
+                                <td className="price">₹40,000</td>
+                                <td className="included">Included</td>
+                                <td className="included">Included</td>
+                            </tr>
+                            <tr>
                                 <td>CSCU</td>
                                 <td>Certified Secure Computer Engineer</td>
                                 <td className="price">₹25,000</td>
@@ -208,15 +215,8 @@ export default function LaptopOfferPage() {
                                 <td className="included">Included</td>
                             </tr>
                             <tr>
-                                <td>CPENT</td>
-                                <td>Certified Penetration Testing Professional</td>
-                                <td className="price">₹95,000</td>
-                                <td className="not-included">—</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr>
-                                <td>LPT</td>
-                                <td>Licensed Penetration Tester</td>
+                                <td>CPENT / LPT</td>
+                                <td>Certified Penetration Testing Professional / Licensed Penetration Tester</td>
                                 <td className="price">₹95,000</td>
                                 <td className="not-included">—</td>
                                 <td className="included">Included</td>
@@ -229,9 +229,9 @@ export default function LaptopOfferPage() {
                                 <td className="included">FREE</td>
                             </tr>
                             <tr>
-                                <td>CSO & CSE Bundle</td>
-                                <td>Certified SOC Analyst + Certified Security Engineer</td>
-                                <td className="price">₹1,10,000</td>
+                                <td>CSA & CCSE Bundle</td>
+                                <td>Certified CSA Analyst + Certified Security Engineer</td>
+                                <td className="price">₹1,15,000</td>
                                 <td className="included">Included</td>
                                 <td className="included">Included</td>
                             </tr>
