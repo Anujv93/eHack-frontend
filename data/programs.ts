@@ -16,7 +16,7 @@ export const programs = [
             duration: "9-12 Months",
             mode: "Classroom + Live Online",
             totalHours: "300 ",
-            membership: "6 Months support"
+            membership: "2 Years Support"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
@@ -1031,10 +1031,10 @@ export const programs = [
         ehackLogo: "/ehack-black.png",
         stats: {
             startDate: "5th of Every Month",
-            duration: "4 Months",
+            duration: "5 Months",
             mode: "Classroom + Live Online",
-            totalHours: "100",
-            membership: "6 Months Free Practice Membership"
+            totalHours: "200+",
+            membership: "6 Months Free Membership"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
@@ -1056,111 +1056,279 @@ export const programs = [
                 title: "Introduction to Ethical Hacking",
                 duration: "1 Week",
                 certification: "",
-                description: "Understand the fundamentals of ethical hacking, including attack vectors, hacking phases, and the legal/ethical aspects of penetration testing.",
+                description: "Covers the fundamentals of ethical hacking, information security controls, relevant laws, and standard procedures.",
                 topics: [
-                    "Hacking Phases Overview",
-                    "Attack Vectors",
-                    "Legal & Ethical Considerations",
                     "Information Security Fundamentals",
-                    "Cyber Kill Chain"
+                    "Ethical Hacking Concepts",
+                    "Information Security Controls",
+                    "Information Security Laws and Standards",
+                    "Cyber Kill Chain Methodology"
                 ]
             },
             {
                 number: "02",
-                title: "Footprinting & Reconnaissance",
+                title: "Footprinting and Reconnaissance",
                 duration: "1 Week",
                 certification: "",
-                description: "Learn to gather information about target systems using various reconnaissance techniques and tools.",
+                description: "Acquire techniques and tools for gathering data before an attack, a critical pre-attack phase.",
                 topics: [
-                    "Passive Reconnaissance",
-                    "Active Reconnaissance",
-                    "OSINT Techniques",
-                    "Search Engine Hacking",
-                    "Footprinting Tools"
+                    "Footprinting Concepts and Objectives",
+                    "Footprinting through Search Engines",
+                    "Footprinting through Web Services",
+                    "Footprinting through Social Networking Sites",
+                    "Website Footprinting and Email Footprinting"
                 ]
             },
             {
                 number: "03",
-                title: "Scanning & Enumeration",
-                duration: "2 Weeks",
+                title: "Scanning Networks",
+                duration: "1 Week",
                 certification: "",
-                description: "Master network scanning and enumeration techniques to identify live hosts, open ports, and system vulnerabilities.",
+                description: "Focuses on various network scanning techniques and associated countermeasures.",
                 topics: [
-                    "Network Scanning",
-                    "Port Scanning",
-                    "Vulnerability Scanning",
-                    "NetBIOS, SNMP Enumeration",
-                    "LDAP & DNS Enumeration"
+                    "Network Scanning Concepts",
+                    "Scanning Tools and Techniques",
+                    "Host Discovery",
+                    "Port and Service Discovery",
+                    "Network Scanning Countermeasures"
                 ]
             },
             {
                 number: "04",
-                title: "System Hacking & Malware Threats",
-                duration: "2 Weeks",
+                title: "Enumeration",
+                duration: "1 Week",
                 certification: "",
-                description: "Understand how attackers compromise systems, escalate privileges, and deploy malware for persistence.",
+                description: "Teaches methods for extracting system information for penetration testing purposes.",
                 topics: [
-                    "Password Cracking",
-                    "Privilege Escalation",
-                    "Maintaining Access",
-                    "Covering Tracks",
-                    "Malware Analysis"
+                    "Enumeration Concepts",
+                    "NetBIOS Enumeration",
+                    "SNMP Enumeration",
+                    "LDAP Enumeration",
+                    "NTP and NFS Enumeration"
                 ]
             },
             {
                 number: "05",
-                title: "Sniffing, Social Engineering & DoS",
-                duration: "2 Weeks",
+                title: "Vulnerability Analysis",
+                duration: "1 Week",
                 certification: "",
-                description: "Learn about network sniffing attacks, social engineering tactics, and denial-of-service attack techniques.",
+                description: "Involves identifying security weaknesses within systems.",
                 topics: [
-                    "Packet Sniffing",
-                    "ARP Poisoning",
-                    "Social Engineering Techniques",
-                    "Phishing Attacks",
-                    "DoS/DDoS Attacks"
+                    "Vulnerability Assessment Concepts",
+                    "Vulnerability Assessment Solutions",
+                    "Vulnerability Scoring Systems",
+                    "Vulnerability Assessment Reports",
+                    "Vulnerability Management Life Cycle"
                 ]
             },
             {
                 number: "06",
-                title: "Session Hijacking & Web Hacking",
-                duration: "2 Weeks",
+                title: "System Hacking",
+                duration: "1 Week",
                 certification: "",
-                description: "Master session hijacking techniques and web application security testing methodologies.",
+                description: "Covers exploiting and protecting operating systems.",
                 topics: [
-                    "Session Hijacking",
-                    "Web Server Attacks",
-                    "Web Application Vulnerabilities",
-                    "SQL Injection",
-                    "XSS Attacks"
+                    "System Hacking Concepts",
+                    "Password Cracking Techniques",
+                    "Escalating Privileges",
+                    "Executing Applications and Hiding Files",
+                    "Clearing Logs and Covering Tracks"
                 ]
             },
             {
                 number: "07",
-                title: "Wireless, Mobile & IoT Hacking",
-                duration: "2 Weeks",
+                title: "Malware Threats",
+                duration: "1 Week",
                 certification: "",
-                description: "Explore security vulnerabilities in wireless networks, mobile devices, and IoT systems.",
+                description: "Explores different types of malware, such as viruses, Trojans, and ransomware.",
                 topics: [
-                    "Wireless Network Hacking",
-                    "WPA/WPA2 Cracking",
-                    "Mobile Platform Attacks",
-                    "IoT Vulnerabilities",
-                    "Bluetooth Hacking"
+                    "Malware Concepts",
+                    "APT and Fileless Malware",
+                    "Trojan Horses",
+                    "Viruses and Worms",
+                    "Malware Analysis and Countermeasures"
                 ]
             },
             {
                 number: "08",
-                title: "Cloud Security & Cryptography",
-                duration: "2 Weeks",
-                certification: "EC-Council CEH",
-                description: "Understand cloud infrastructure security, cryptographic techniques, and countermeasures against cyber threats.",
+                title: "Sniffing",
+                duration: "1 Week",
+                certification: "",
+                description: "Focuses on capturing and analyzing network traffic securely.",
                 topics: [
-                    "Cloud Computing Threats",
-                    "Cloud Security Controls",
-                    "Cryptography Fundamentals",
-                    "PKI & Encryption",
-                    "Countermeasures & Defense"
+                    "Sniffing Concepts",
+                    "Sniffing Techniques",
+                    "Sniffing Tools",
+                    "MAC Flooding and ARP Poisoning",
+                    "Sniffing Countermeasures"
+                ]
+            },
+            {
+                number: "09",
+                title: "Social Engineering",
+                duration: "1 Week",
+                certification: "",
+                description: "Delves into manipulation tactics and prevention strategies.",
+                topics: [
+                    "Social Engineering Concepts",
+                    "Social Engineering Techniques",
+                    "Insider Threats and Identity Theft",
+                    "Phishing and Impersonation",
+                    "Social Engineering Countermeasures"
+                ]
+            },
+            {
+                number: "10",
+                title: "Denial-of-Service",
+                duration: "1 Week",
+                certification: "",
+                description: "Explains attack methods and defense strategies against Denial-of-Service attacks.",
+                topics: [
+                    "DoS/DDoS Concepts",
+                    "DoS/DDoS Attack Techniques",
+                    "Botnets and DDoS Attack Tools",
+                    "DoS/DDoS Case Studies",
+                    "DoS/DDoS Countermeasures"
+                ]
+            },
+            {
+                number: "11",
+                title: "Session Hijacking",
+                duration: "1 Week",
+                certification: "",
+                description: "Covers understanding session-based attack scenarios.",
+                topics: [
+                    "Session Hijacking Concepts",
+                    "Application Level Session Hijacking",
+                    "Network Level Session Hijacking",
+                    "Session Hijacking Tools",
+                    "Session Hijacking Countermeasures"
+                ]
+            },
+            {
+                number: "12",
+                title: "Evading IDS, Firewalls, and Honeypots",
+                duration: "1 Week",
+                certification: "",
+                description: "Teaches techniques for bypassing detection systems safely.",
+                topics: [
+                    "IDS, Firewall, and Honeypot Concepts",
+                    "IDS/Firewall Evasion Techniques",
+                    "Firewall and IDS Evasion Tools",
+                    "Detecting Honeypots",
+                    "IDS/Firewall Evasion Countermeasures"
+                ]
+            },
+            {
+                number: "13",
+                title: "Hacking Web Servers",
+                duration: "1 Week",
+                certification: "",
+                description: "Focuses on securing and testing web infrastructure.",
+                topics: [
+                    "Web Server Concepts",
+                    "Web Server Attacks",
+                    "Web Server Attack Methodology",
+                    "Web Server Attack Tools",
+                    "Web Server Security and Countermeasures"
+                ]
+            },
+            {
+                number: "14",
+                title: "Hacking Web Applications",
+                duration: "1 Week",
+                certification: "",
+                description: "Involves analyzing application vulnerabilities.",
+                topics: [
+                    "Web Application Concepts",
+                    "Web Application Threats",
+                    "Web Application Hacking Methodology",
+                    "Web API and Webhook Hacking",
+                    "Web Application Security Testing"
+                ]
+            },
+            {
+                number: "15",
+                title: "SQL Injection",
+                duration: "1 Week",
+                certification: "",
+                description: "Covers detecting and preventing database attacks through SQL injection.",
+                topics: [
+                    "SQL Injection Concepts",
+                    "Types of SQL Injection",
+                    "SQL Injection Methodology",
+                    "SQL Injection Tools",
+                    "SQL Injection Countermeasures"
+                ]
+            },
+            {
+                number: "16",
+                title: "Hacking Wireless Networks",
+                duration: "1 Week",
+                certification: "",
+                description: "Addresses Wi-Fi security and encryption flaws.",
+                topics: [
+                    "Wireless Concepts and Encryption",
+                    "Wireless Threats and Attacks",
+                    "Wireless Hacking Methodology",
+                    "Wireless Hacking Tools",
+                    "Wireless Security and Countermeasures"
+                ]
+            },
+            {
+                number: "17",
+                title: "Hacking Mobile Platforms",
+                duration: "1 Week",
+                certification: "",
+                description: "Explores mobile app vulnerabilities and security for platforms like Android and iOS.",
+                topics: [
+                    "Mobile Platform Attack Vectors",
+                    "Hacking Android Platforms",
+                    "Hacking iOS Platforms",
+                    "Mobile Device Management",
+                    "Mobile Security Guidelines and Tools"
+                ]
+            },
+            {
+                number: "18",
+                title: "IoT and OT Hacking",
+                duration: "1 Week",
+                certification: "",
+                description: "Focuses on securing Internet of Things (IoT) and Operational Technology (OT) devices and systems.",
+                topics: [
+                    "IoT Hacking Concepts",
+                    "IoT Threats and Attacks",
+                    "OT Concepts and Attacks",
+                    "IoT and OT Hacking Methodology",
+                    "IoT and OT Security Countermeasures"
+                ]
+            },
+            {
+                number: "19",
+                title: "Cloud Computing",
+                duration: "1 Week",
+                certification: "",
+                description: "Covers cloud computing concepts, threats, security, and AI-driven container technology, along with serverless computing security measures.",
+                topics: [
+                    "Cloud Computing Concepts",
+                    "Container Technology",
+                    "Serverless Computing",
+                    "Cloud Computing Threats and Attacks",
+                    "Cloud Security and Countermeasures"
+                ]
+            },
+            {
+                number: "20",
+                title: "Cryptography",
+                duration: "1 Week",
+                certification: "EC-Council CEH",
+                description: "Covers encryption algorithms, Public Key Infrastructure (PKI), cryptographic attacks, and cryptanalysis.",
+                topics: [
+                    "Cryptography Concepts",
+                    "Encryption Algorithms",
+                    "Public Key Infrastructure (PKI)",
+                    "Cryptographic Attacks",
+                    "Cryptanalysis and Countermeasures"
                 ]
             }
         ],

@@ -69,6 +69,16 @@
     color: var(--accent);
 }
 
+p {
+    text-align: justify;
+}
+
+/* Global paragraph styling for justified text */
+.program-page p {
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
 /* Top Banner */
 .top-banner {
     background: linear-gradient(90deg, #0a1628 0%, #0d2137 50%, #0a1628 100%);
@@ -282,6 +292,7 @@
 .hero-features {
     font-size: 1rem;
     color: var(--gray-600);
+    max-width: 600px;
     line-height: 1.7;
     margin-bottom: var(--space-8);
 }
@@ -440,21 +451,21 @@
 .stats-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(5, 1fr);
     gap: var(--space-6);
 }
 
-.stat-item {
+.stats-bar .stat-item {
     text-align: center;
     padding: 0 var(--space-4);
 }
 
-.stat-item:not(:last-child) {
+.stats-bar .stat-item:not(:last-child) {
     border-right: 1px solid var(--gray-200);
 }
 
-.stat-label {
+.stats-bar .stat-label {
     display: block;
     font-size: 0.7rem;
     font-weight: 600;
@@ -464,12 +475,12 @@
     text-transform: uppercase;
 }
 
-.stat-value {
+.stats-bar .stat-value {
     font-size: 1rem;
     color: var(--gray-700);
 }
 
-.stat-value strong {
+.stats-bar .stat-value strong {
     font-weight: 700;
     color: var(--black);
 }
@@ -932,7 +943,7 @@
 }
 
 .skills-grid {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
     background: transparent;
@@ -2420,6 +2431,17 @@
     width: 100%;
 }
 
+/* Three cards layout for CEH Master */
+.certification-cards.three-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.certification-cards.three-cards .cert-card {
+    width: 100%;
+}
+
+
 .cert-card {
     border-radius: var(--border-radius-lg);
     overflow: hidden;
@@ -2971,6 +2993,7 @@
 }
 
 .cta-contact {
+    text-align: center !important;
     margin-top: 16px;
     font-size: 14px;
     color: #6b7280;
@@ -3132,6 +3155,11 @@
     .certification-cards {
         grid-template-columns: 1fr;
     }
+
+    /* Show 2 columns for three-cards on tablet */
+    .certification-cards.three-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -3149,6 +3177,11 @@
 
     .company-logo img {
         max-height: 45px;
+    }
+
+    /* Stack three cards on mobile */
+    .certification-cards.three-cards {
+        grid-template-columns: 1fr;
     }
 }
 

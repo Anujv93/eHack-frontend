@@ -8,72 +8,72 @@ const placementStories = [
         name: "Anmol Gupta",
         image: "/images/testimonials/person1.jpg",
         before: { role: "B.Tech Student", company: "Fresher" },
-        after: { role: "APV-DELIVERY", company: "Ampcuscyber", logo: "images/ampcuscyber.png" },
-        hike: "150%",
-        badge: "CEH Certified 🏆"
+        after: { role: "APV-DELIVERY", company: "Ampcuscyber", logo: "/images/ampcuscyber.png" },
+        hike: "400%",
+        badge: ["Masters Program"]
     },
     {
         id: 2,
         name: "Rajiv Govind",
         image: "/images/testimonials/person2.jpg",
         before: { role: "System Admin", company: "Local IT Firm" },
-        after: { role: "Head Teaching Assistant", company: "GTL", logo: "images/gtlogo.jpg" },
+        after: { role: "Head Teaching Assistant", company: "GTL", logo: "/images/gtlogo.jpg" },
         hike: "140%",
-        badge: "CND Certified ⭐"
+        badge: ["CSU", "CEH", "CCNA"]
     },
     {
         id: 3,
         name: "Vaddi . Paneendar",
         image: "/images/testimonials/person3.jpg",
         before: { role: "Support Engineer", company: "Tech Support" },
-        after: { role: "Red Teamer", company: "SISA", logo: "images/sisa.webp" },
-        hike: "180%",
-        badge: "CPENT Certified 🐞"
+        after: { role: "Red Teamer", company: "SISA", logo: "/images/sisa.webp" },
+        hike: "300%",
+        badge: ["Master Program"]
     },
     {
         id: 4,
         name: "Damini Ranganath",
         image: "/images/testimonials/person4.jpg",
         before: { role: "Software Dev", company: "Startup" },
-        after: { role: "Cybersecurity Engineer", company: "Anuvu", logo: "images/anuvu.png" },
+        after: { role: "Cybersecurity Engineer", company: "Anuvu", logo: "/images/anuvu.png" },
         hike: "120%",
-        badge: "CHFI Certified 🛡️"
+        badge: ["Master Program"]
     },
     {
         id: 5,
         name: "Pranshu Tiwari",
         image: "/images/testimonials/person5.jpg",
         before: { role: "Network Admin", company: "ISP" },
-        after: { role: "Director Security Services", company: "Ampcuscyber", logo: "images/ampcuscyber.png" },
+        after: { role: "Director Security Services", company: "Ampcuscyber", logo: "/images/ampcuscyber.png" },
         hike: "160%",
-        badge: "CCSE Certified 🚀"
+        badge: ["OSCP", "CEH"]
     },
     {
         id: 6,
         name: "Abhinav Choubey",
         image: "/images/testimonials/person6.jpg",
         before: { role: "IT Manager", company: "Mid-size Firm" },
-        after: { role: "Associate Director", company: "SISA", logo: "images/sisa.webp" },
+        after: { role: "Associate Director", company: "SISA", logo: "/images/sisa.webp" },
         hike: "200%",
-        badge: "CISM Certified 🎓"
+        badge: ["CND", "CEH", "CPENT"]
     },
     {
         id: 7,
         name: "Snigdha Suresh Poonghat ",
         image: "/images/testimonials/person7.jpg",
         before: { role: "IT Manager", company: "Mid-size Firm" },
-        after: { role: "Technical Support Engineer", company: "ASK4", logo: "images/ask4_limited_logo.jpg" },
+        after: { role: "Technical Support Engineer", company: "ASK4", logo: "/images/ask4_limited_logo.jpg" },
         hike: "200%",
-        badge: "CISM Certified 🎓"
+        badge: ["Graduate Program"]
     },
     {
         id: 8,
         name: "Rohit Prasad",
         image: "/images/testimonials/person8.jpg",
         before: { role: "IT Manager", company: "Mid-size Firm" },
-        after: { role: "Advisor", company: "Fiserv", logo: "images/fiserv.png" },
+        after: { role: "Advisor", company: "Fiserv", logo: "/images/fiserv.png" },
         hike: "200%",
-        badge: "CISM Certified 🎓"
+        badge: ["Master Program"]
     }
 ];
 
@@ -97,12 +97,16 @@ const PlacementSection = () => {
                         {[...placementStories, ...placementStories].map((story, index) => (
                             <div key={`${story.id}-${index}`} className="transformation-card">
                                 <div className="card-header-section">
-                                    <div className="card-badge">{story.badge}</div>
                                     <div className="profile-image-wrapper">
                                         <img src={story.image} alt={story.name} className="profile-image" />
                                         <div className="hike-badge">{story.hike} Hike</div>
                                     </div>
                                     <h3 className="student-name">{story.name}</h3>
+                                    <div className="card-badges">
+                                        {story.badge.map((cert, idx) => (
+                                            <span key={idx} className="card-badge">{cert}</span>
+                                        ))}
+                                    </div>
                                 </div>
 
                                 <div className="transformation-path">
