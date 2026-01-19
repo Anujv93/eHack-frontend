@@ -1,0 +1,417 @@
+.hero-section {
+    position: relative;
+    padding: 0;
+    background: linear-gradient(135deg, #fff7f0 0%, #ffffff 100%);
+    overflow: hidden;
+}
+
+.hero-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1440 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23df6718;stop-opacity:0.16' /%3E%3Cstop offset='100%25' style='stop-color:%23f79652;stop-opacity:0.06' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M-100 200 C 200 50, 400 350, 700 200 C 1000 50, 1200 350, 1500 200' stroke='url(%23grad1)' stroke-width='60' fill='none' /%3E%3Cpath d='M-100 300 C 200 150, 400 450, 700 300 C 1000 150, 1200 450, 1500 300' stroke='url(%23grad1)' stroke-width='40' fill='none' /%3E%3Cpath d='M-100 100 C 200 -50, 400 250, 700 100 C 1000 -50, 1200 250, 1500 100' stroke='url(%23grad1)' stroke-width='80' fill='none' /%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content-left {
+    text-align: left;
+    padding: 0.5rem 0;
+}
+
+.hero-content-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-self: flex-end;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.05));
+    animation: fadeInRight 1s ease forwards;
+    display: block;
+    margin-bottom: 0;
+}
+
+.hero-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    color: var(--neutral-900);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #df6718, #f79652);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--neutral-600);
+    margin-bottom: 1rem;
+    max-width: 90%;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.search-container {
+    position: relative;
+    max-width: 100%;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    /* Stronger shadow for better visibility */
+    padding: 0.25rem;
+    border: 1px solid rgba(223, 103, 24, 0.2);
+    /* Subtle orange border */
+    transition: all 0.3s ease;
+}
+
+.search-input-wrapper:focus-within {
+    box-shadow: 0 8px 30px rgba(223, 103, 24, 0.12);
+    border-color: rgba(223, 103, 24, 0.5);
+    /* Prominent orange on focus */
+    transform: translateY(-1px);
+}
+
+.search-icon {
+    margin-left: 1.5rem;
+    color: var(--neutral-400);
+    width: 20px;
+    height: 20px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    outline: none;
+    color: var(--neutral-800);
+    background: transparent;
+}
+
+.search-input::placeholder {
+    color: var(--neutral-400);
+}
+
+/* Categories Section */
+.categories-section {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--neutral-100);
+    position: sticky;
+    top: 80px;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.categories-list {
+    display: flex;
+    justify-content: flex-start;
+    /* Aligned left for better flow with grid usually, but center is fine too */
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.category-pill {
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--neutral-600);
+    background: var(--neutral-50);
+    border: 1px solid var(--neutral-200);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-pill:hover {
+    background: var(--neutral-100);
+    color: var(--neutral-800);
+    transform: translateY(-1px);
+}
+
+.category-pill.active {
+    background: var(--brand-primary);
+    color: white;
+    border-color: var(--brand-primary);
+    box-shadow: 0 4px 12px rgba(223, 103, 24, 0.25);
+}
+
+/* Jobs Grid */
+.jobs-section {
+    padding: 2.5rem 0;
+    background: #fdfdfd;
+    min-height: 50vh;
+}
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.job-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(223, 103, 24, 0.5);
+    /* Subtle orange border */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.job-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--brand-primary);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+}
+
+.job-card:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.job-type-badge {
+    padding: 0.25rem 0.75rem;
+    background: var(--brand-primary-50);
+    color: var(--brand-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.job-date {
+    font-size: 0.8125rem;
+    color: var(--neutral-400);
+}
+
+.job-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--neutral-900);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.job-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--neutral-500);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.meta-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+.job-desc {
+    font-size: 0.9375rem;
+    color: var(--neutral-600);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.job-footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--neutral-100);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.salary-tag {
+    font-weight: 600;
+    color: var(--neutral-800);
+    font-size: 0.9375rem;
+}
+
+.apply-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--brand-primary);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    transition: gap 0.2s ease;
+}
+
+.apply-link:hover {
+    gap: 0.75rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+
+/* Empty State */
+.no-results {
+    text-align: center;
+    padding: 4rem 0;
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+/* Media Queries */
+@media (max-width: 968px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-content-left {
+        text-align: center;
+        order: 2;
+        /* Put text below image on tablet if desired, or keep default */
+        order: 1;
+    }
+
+    .hero-content-right {
+        order: 2;
+        margin-top: 1rem;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 0;
+    }
+
+    .hero-content-left {
+        padding: 0.5rem 0;
+    }
+
+    .hero-title {
+        font-size: 1.25rem;
+    }
+
+    .categories-list {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        justify-content: flex-start;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+    }
+
+    .categories-section {
+        padding: 1rem 0;
+        top: 60px;
+    }
+
+    .category-pill {
+        white-space: nowrap;
+    }
+}
