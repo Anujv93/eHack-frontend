@@ -2431,6 +2431,17 @@ p {
     width: 100%;
 }
 
+/* Three cards layout for CEH Master */
+.certification-cards.three-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.certification-cards.three-cards .cert-card {
+    width: 100%;
+}
+
+
 .cert-card {
     border-radius: var(--border-radius-lg);
     overflow: hidden;
@@ -3144,6 +3155,11 @@ p {
     .certification-cards {
         grid-template-columns: 1fr;
     }
+
+    /* Show 2 columns for three-cards on tablet */
+    .certification-cards.three-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -3161,6 +3177,11 @@ p {
 
     .company-logo img {
         max-height: 45px;
+    }
+
+    /* Stack three cards on mobile */
+    .certification-cards.three-cards {
+        grid-template-columns: 1fr;
     }
 }
 
