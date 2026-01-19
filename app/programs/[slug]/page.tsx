@@ -185,7 +185,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">DURATION</span>
-                        <div className="stat-value"><strong>4</strong> Months</div>
+                        <div className="stat-value" dangerouslySetInnerHTML={{ __html: program.stats.duration.replace(/(\d+-?\d*)/g, '<strong>$1</strong>') }} />
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">MODE</span>
@@ -193,11 +193,11 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">TOTAL HOURS</span>
-                        <div className="stat-value"><strong>100</strong> Hours</div>
+                        <div className="stat-value" dangerouslySetInnerHTML={{ __html: program.stats.totalHours.replace(/(\d+\+?)/g, '<strong>$1</strong>') + ' Hours' }} />
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">MEMBERSHIP</span>
-                        <div className="stat-value"><strong>6 Months</strong> Free Support</div>
+                        <div className="stat-value" dangerouslySetInnerHTML={{ __html: program.stats.membership.replace(/(\d+\s+\w+)/g, '<strong>$1</strong>') }} />
                     </div>
                 </div>
             </section>
