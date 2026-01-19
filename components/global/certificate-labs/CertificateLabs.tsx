@@ -201,6 +201,156 @@ const terminalOutputs: { [key: string]: string[] } = {
         '<span class="term-prompt">┌──(root㉿kali)-[~]</span>',
         '<span class="term-prompt">└─#</span> <span class="term-cursor">_</span>',
     ],
+    // Wireshark packet analysis
+    'wireshark': [
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">tshark -i eth0 -f "tcp port 80" -w capture.pcap</span>',
+        '',
+        '<span class="term-info">[*]</span> Capturing on \'eth0\'',
+        '<span class="term-success">[+]</span> Packets captured: 1,247',
+        '',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">tshark -r capture.pcap -Y "http.request"</span>',
+        '',
+        '  Frame 42: HTTP GET /admin/login.php',
+        '  Frame 89: HTTP POST /api/users (credentials detected)',
+        '  Frame 156: HTTP GET /dashboard?token=eyJ0eXAi...',
+        '',
+        '<span class="term-success">[+]</span> <span class="term-highlight">Suspicious traffic patterns detected</span>',
+        '<span class="term-warning">[!]</span> Unencrypted credentials found in packet 89',
+        '',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-cursor">_</span>',
+    ],
+    // Splunk SIEM
+    'splunk': [
+        '<span class="term-info">[*]</span> Splunk Enterprise Security v8.2.0',
+        '<span class="term-success">[+]</span> Connected to indexer cluster',
+        '',
+        '<span class="term-prompt">splunk></span> <span class="term-command">search index=security sourcetype=firewall | stats count by action</span>',
+        '',
+        '  action=ALLOW    count=45,892',
+        '  action=BLOCK    count=12,347',
+        '  action=DROP     count=3,421',
+        '',
+        '<span class="term-prompt">splunk></span> <span class="term-command">search index=* "failed login" | timechart count</span>',
+        '',
+        '<span class="term-warning">[!]</span> <span class="term-highlight">Anomaly detected: 500% increase in failed logins</span>',
+        '<span class="term-warning">[!]</span> Source IP: 192.168.1.50 (Internal)',
+        '<span class="term-error">[X]</span> Possible brute force attack in progress',
+        '',
+        '<span class="term-success">[+]</span> Alert created: HIGH_PRIORITY_INCIDENT_2024',
+        '<span class="term-prompt">splunk></span> <span class="term-cursor">_</span>',
+    ],
+    // OWASP ZAP
+    'owasp': [
+        '<span class="term-info">[*]</span> OWASP ZAP v2.14.0 - Automated Scanner',
+        '<span class="term-success">[+]</span> Starting active scan on https://target-app.com',
+        '',
+        '<span class="term-info">[*]</span> Scanning for OWASP Top 10 vulnerabilities...',
+        '',
+        '<span class="term-error">[X]</span> <span class="term-highlight">SQL Injection found</span> - /api/users?id=1',
+        '  Risk: HIGH | Confidence: MEDIUM',
+        '  Payload: 1\' OR \'1\'=\'1',
+        '',
+        '<span class="term-warning">[!]</span> Cross-Site Scripting (XSS) - /search?q=<script>',
+        '  Risk: MEDIUM | Confidence: HIGH',
+        '',
+        '<span class="term-warning">[!]</span> Missing Security Headers',
+        '  - X-Frame-Options',
+        '  - Content-Security-Policy',
+        '',
+        '<span class="term-success">[+]</span> Scan complete: 23 vulnerabilities found',
+        '<span class="term-prompt">zap></span> <span class="term-cursor">_</span>',
+    ],
+    // SQLMap
+    'sqlmap': [
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">sqlmap -u "http://target.com/page?id=1" --dbs</span>',
+        '',
+        '<span class="term-info">[*]</span> Testing connection to the target URL',
+        '<span class="term-success">[+]</span> Target appears to be MySQL 5.7.x',
+        '<span class="term-success">[+]</span> <span class="term-highlight">Parameter \'id\' is vulnerable to SQL injection</span>',
+        '',
+        '<span class="term-info">[*]</span> Fetching database names...',
+        '',
+        'available databases [5]:',
+        '  [*] information_schema',
+        '  [*] mysql',
+        '  [*] performance_schema',
+        '  [*] <span class="term-highlight">webapp_db</span>',
+        '  [*] test',
+        '',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">sqlmap -u "http://target.com/page?id=1" -D webapp_db --tables</span>',
+        '',
+        '<span class="term-success">[+]</span> Retrieved: users, products, orders, admin_credentials',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-cursor">_</span>',
+    ],
+    // Aircrack-ng
+    'aircrack': [
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">airmon-ng start wlan0</span>',
+        '',
+        '<span class="term-success">[+]</span> Monitor mode enabled on wlan0mon',
+        '',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">airodump-ng wlan0mon</span>',
+        '',
+        ' BSSID              PWR  Beacons  CH  ESSID',
+        ' AA:BB:CC:DD:EE:FF  -42      156   6  <span class="term-highlight">TargetNetwork</span>',
+        ' 11:22:33:44:55:66  -68       89  11  GuestWiFi',
+        '',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">aireplay-ng --deauth 10 -a AA:BB:CC:DD:EE:FF wlan0mon</span>',
+        '',
+        '<span class="term-info">[*]</span> Sending deauth packets...',
+        '<span class="term-success">[+]</span> <span class="term-highlight">WPA handshake captured!</span>',
+        '',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">aircrack-ng -w wordlist.txt -b AA:BB:CC:DD:EE:FF capture.cap</span>',
+        '',
+        '<span class="term-info">[*]</span> Cracking WPA2 handshake...',
+        '<span class="term-success">[+]</span> KEY FOUND! [ <span class="term-highlight">P@ssw0rd123</span> ]',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-cursor">_</span>',
+    ],
+    // Volatility memory forensics
+    'volatility': [
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">volatility -f memory.dmp imageinfo</span>',
+        '',
+        '<span class="term-info">[*]</span> Volatility Framework 2.6.1',
+        '<span class="term-success">[+]</span> Suggested Profile: Win10x64_19041',
+        '',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">volatility -f memory.dmp --profile=Win10x64_19041 pslist</span>',
+        '',
+        ' Offset(V)          Name                    PID   PPID',
+        ' 0xffff8a0123456789 System                    4      0',
+        ' 0xffff8a0123456abc explorer.exe           2048    456',
+        ' 0xffff8a0123456def <span class="term-error">malware.exe</span>           3142   2048',
+        ' 0xffff8a0123456fed chrome.exe             4096   2048',
+        '',
+        '<span class="term-warning">[!]</span> <span class="term-highlight">Suspicious process detected: malware.exe</span>',
+        '',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-command">volatility -f memory.dmp --profile=Win10x64_19041 malfind -p 3142</span>',
+        '',
+        '<span class="term-error">[X]</span> Injected code found in process 3142',
+        '<span class="term-error">[X]</span> Hidden DLL: C:\\Windows\\Temp\\payload.dll',
+        '<span class="term-prompt">root@kali:~#</span> <span class="term-cursor">_</span>',
+    ],
+    // Cobalt Strike
+    'cobalt': [
+        '<span class="term-info">[*]</span> Cobalt Strike 4.9 - Team Server',
+        '<span class="term-success">[+]</span> Connected to 192.168.1.100:50050',
+        '',
+        '<span class="term-prompt">beacon></span> <span class="term-command">shell whoami</span>',
+        '<span class="term-success">[+]</span> received output:',
+        'CORP\\administrator',
+        '',
+        '<span class="term-prompt">beacon></span> <span class="term-command">hashdump</span>',
+        '<span class="term-info">[*]</span> Dumping SAM hashes...',
+        '<span class="term-success">[+]</span> Administrator:500:aad3b435b51404eeaad3b435b51404ee:...',
+        '<span class="term-success">[+]</span> Guest:501:aad3b435b51404eeaad3b435b51404ee:...',
+        '',
+        '<span class="term-prompt">beacon></span> <span class="term-command">mimikatz sekurlsa::logonpasswords</span>',
+        '<span class="term-info">[*]</span> Extracting credentials from LSASS...',
+        '<span class="term-success">[+]</span> <span class="term-highlight">Domain Admin credentials obtained</span>',
+        '',
+        '<span class="term-prompt">beacon></span> <span class="term-command">lateral-movement psexec DC01</span>',
+        '<span class="term-success">[+]</span> New beacon established on DC01',
+        '<span class="term-success">[+]</span> <span class="term-highlight">Domain Controller compromised!</span>',
+        '<span class="term-prompt">beacon></span> <span class="term-cursor">_</span>',
+    ],
 };
 
 // Map lab IDs to terminal output types
@@ -208,8 +358,15 @@ const getTerminalType = (labId: string): string => {
     if (labId.includes('metasploit') || labId.includes('exploit')) return 'metasploit';
     if (labId.includes('nmap') || labId.includes('network') || labId.includes('scan')) return 'nmap';
     if (labId.includes('burp') || labId.includes('web') || labId.includes('webapp')) return 'burp';
-    if (labId.includes('kali') || labId.includes('wireless') || labId.includes('privesc')) return 'kali';
-    if (labId.includes('autopsy') || labId.includes('forensic') || labId.includes('volatility') || labId.includes('chfi')) return 'forensics';
+    if (labId.includes('wireshark') || labId.includes('packet') || labId.includes('tshark')) return 'wireshark';
+    if (labId.includes('splunk') || labId.includes('siem')) return 'splunk';
+    if (labId.includes('owasp') || labId.includes('zap')) return 'owasp';
+    if (labId.includes('sqlmap') || labId.includes('sql')) return 'sqlmap';
+    if (labId.includes('aircrack') || labId.includes('wireless') || labId.includes('wifi')) return 'aircrack';
+    if (labId.includes('volatility') || labId.includes('memory')) return 'volatility';
+    if (labId.includes('cobalt') || labId.includes('c2') || labId.includes('redteam')) return 'cobalt';
+    if (labId.includes('kali') || labId.includes('privesc')) return 'kali';
+    if (labId.includes('autopsy') || labId.includes('forensic') || labId.includes('chfi')) return 'forensics';
     if (labId.includes('risk') || labId.includes('cciso') || labId.includes('compliance') || labId.includes('incident')) return 'risk';
     return 'default';
 };
@@ -599,6 +756,101 @@ const certificateLabsMapping: CertificateLabsData = {
                 duration: '30+ Hours',
                 thumbnail: '/images/labs/burpsuite-lab.png',
                 exercises: 25
+            }
+        ]
+    },
+    // Masters Comprehensive - All 6 Certifications (CSCU, CND, CEH, CHFI, CPENT, LPT)
+    'masters-comprehensive': {
+        title: 'Masters Program - Comprehensive Lab Suite',
+        description: 'Complete hands-on lab environment covering all 6 certifications with 300+ hours of practice',
+        labs: [
+            {
+                id: 'metasploit-masters',
+                name: 'Metasploit Framework',
+                icon: '🎯',
+                description: 'Advanced penetration testing with Metasploit. Master exploitation, payload creation, and post-exploitation techniques.',
+                skills: ['Exploitation', 'Payload Creation', 'Post-Exploitation', 'Meterpreter', 'Pivoting'],
+                difficulty: 'Advanced',
+                duration: '20+ Hours',
+                thumbnail: '/images/labs/metasploit-lab.png',
+                exercises: 35
+            },
+            {
+                id: 'nmap-masters',
+                name: 'Nmap Network Scanner',
+                icon: '🔍',
+                description: 'Comprehensive network reconnaissance and vulnerability scanning with advanced NSE scripts.',
+                skills: ['Network Scanning', 'Port Analysis', 'Service Detection', 'NSE Scripts', 'Vulnerability Assessment'],
+                difficulty: 'Intermediate',
+                duration: '15+ Hours',
+                thumbnail: '/images/labs/nmap-lab.png',
+                exercises: 28
+            },
+            {
+                id: 'burpsuite-masters',
+                name: 'Burp Suite Pro',
+                icon: '🕷️',
+                description: 'Master web application security testing with Burp Suite Professional. Learn to find and exploit web vulnerabilities.',
+                skills: ['Web Security', 'SQL Injection', 'XSS', 'CSRF', 'API Testing'],
+                difficulty: 'Advanced',
+                duration: '25+ Hours',
+                thumbnail: '/images/labs/burpsuite-lab.png',
+                exercises: 40
+            },
+            {
+                id: 'wireshark-masters',
+                name: 'Wireshark Analysis',
+                icon: '📡',
+                description: 'Deep packet analysis and network forensics. Capture, analyze, and investigate network traffic.',
+                skills: ['Packet Analysis', 'Protocol Analysis', 'Network Forensics', 'Traffic Monitoring'],
+                difficulty: 'Intermediate',
+                duration: '18+ Hours',
+                thumbnail: '/images/labs/wireshark-lab.png',
+                exercises: 30
+            },
+            {
+                id: 'autopsy-masters',
+                name: 'Autopsy Digital Forensics',
+                icon: '🔬',
+                description: 'Digital forensics investigation platform. Analyze disk images, recover deleted files, and investigate incidents.',
+                skills: ['Digital Forensics', 'Evidence Collection', 'File Recovery', 'Timeline Analysis'],
+                difficulty: 'Advanced',
+                duration: '22+ Hours',
+                thumbnail: '/images/labs/autopsy-lab.png',
+                exercises: 32
+            },
+            {
+                id: 'splunk-masters',
+                name: 'Splunk SIEM',
+                icon: '📊',
+                description: 'Security Information and Event Management with Splunk. Monitor, detect, and respond to security threats.',
+                skills: ['SIEM', 'Log Analysis', 'Threat Detection', 'Incident Response', 'Security Monitoring'],
+                difficulty: 'Advanced',
+                duration: '20+ Hours',
+                thumbnail: '/images/labs/splunk-lab.png',
+                exercises: 28
+            },
+            {
+                id: 'kali-masters',
+                name: 'Kali Linux Advanced',
+                icon: '🐉',
+                description: 'Complete Kali Linux mastery. Learn all essential tools and techniques for professional penetration testing.',
+                skills: ['Linux Administration', 'Tool Mastery', 'Scripting', 'Automation', 'Custom Tools'],
+                difficulty: 'Advanced',
+                duration: '25+ Hours',
+                thumbnail: '/images/labs/kali-lab.png',
+                exercises: 45
+            },
+            {
+                id: 'more-tools-masters',
+                name: '20+ More Tools Covered',
+                icon: '🛠️',
+                description: 'Access to 20+ additional professional security tools including OWASP ZAP, SQLMap, Aircrack-ng, Volatility, Cobalt Strike, John the Ripper, Hashcat, Hydra, and many more.',
+                skills: ['Web Security', 'Wireless Hacking', 'Password Cracking', 'Memory Forensics', 'Red Teaming', 'Automation'],
+                difficulty: 'Advanced',
+                duration: '100+ Hours',
+                thumbnail: '/images/labs/tools-lab.png',
+                exercises: 150
             }
         ]
     },

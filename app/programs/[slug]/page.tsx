@@ -7,6 +7,7 @@ import { programs, getProgramBySlug } from '@/data/programs';
 import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star } from 'lucide-react';
 import './program.css';
 import PlacementSection from '@/components/home/placement-section';
+import { ProgramLabsWrapper } from '@/components/global/certificate-labs/ProgramLabsWrapper';
 
 // Navigation sections configuration
 const NAV_SECTIONS = [
@@ -16,6 +17,7 @@ const NAV_SECTIONS = [
     { id: 'certifications', label: 'Certifications' },
     { id: 'structure', label: 'Who Should Enroll' },
     { id: 'curriculum', label: 'Curriculum' },
+    { id: 'labs', label: 'Hands-On Labs' },
     { id: 'pricing', label: 'Investment' },
     { id: 'faq', label: 'FAQ' },
 ];
@@ -179,23 +181,23 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 <div className="stats-container">
                     <div className="stat-item">
                         <span className="stat-label">START DATE</span>
-                        <div className="stat-value"><strong>5th</strong> of Every Month</div>
+                        <div className="stat-value" dangerouslySetInnerHTML={{ __html: program.stats.startDate.replace(/(\d+)(th|st|nd|rd)/, '<strong>$1$2</strong>') }} />
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">DURATION</span>
-                        <div className="stat-value"><strong>9-12</strong> Months</div>
+                        <div className="stat-value" dangerouslySetInnerHTML={{ __html: program.stats.duration.replace(/(\d+-?\d*)/g, '<strong>$1</strong>') }} />
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">MODE</span>
-                        <div className="stat-value"><strong>Classroom</strong> + Live Online</div>
+                        <div className="stat-value" dangerouslySetInnerHTML={{ __html: program.stats.mode.replace(/^([^+]+)/, '<strong>$1</strong>') }} />
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">TOTAL HOURS</span>
-                        <div className="stat-value"><strong>300</strong> Hours</div>
+                        <div className="stat-value" dangerouslySetInnerHTML={{ __html: program.stats.totalHours.replace(/(\d+\+?)/g, '<strong>$1</strong>') + ' Hours' }} />
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">MEMBERSHIP</span>
-                        <div className="stat-value"><strong>2 Years</strong> Free Support</div>
+                        <div className="stat-value" dangerouslySetInnerHTML={{ __html: program.stats.membership.replace(/(\d+\s+\w+)/g, '<strong>$1</strong>') }} />
                     </div>
                 </div>
             </section>
@@ -496,6 +498,17 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
                 </div>
             </section>
+
+            {/* Hands-On Labs Section - Only for Cybersecurity Programs */}
+            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && program.certifications.length > 0 && (
+                <div id="labs">
+                    <ProgramLabsWrapper
+                        certificationCodes={program.certifications.map(cert => cert.code)}
+                        programTitle={program.title}
+                        programSlug={program.slug}
+                    />
+                </div>
+            )}
 
             {/* Pricing Details */}
             <section className="pricing-section">
