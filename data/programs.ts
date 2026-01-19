@@ -1031,7 +1031,7 @@ export const programs = [
         ehackLogo: "/ehack-black.png",
         stats: {
             startDate: "5th of Every Month",
-            duration: "5 Months",
+            duration: "4 Months",
             mode: "Classroom + Live Online",
             totalHours: "100+",
             membership: "6 Months Membership"
