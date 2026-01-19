@@ -15,7 +15,7 @@ export const programs = [
             startDate: "5th of Every Month",
             duration: "9-12 Months",
             mode: "Classroom + Live Online",
-            totalHours: "300 ",
+            totalHours: "300+ ",
             membership: "2 Years Support"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
@@ -272,7 +272,7 @@ export const programs = [
             duration: "7-9 Months",
             mode: "Classroom + Live Online",
             totalHours: "200+ ",
-            membership: "6 Months support"
+            membership: "2 Years "
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
@@ -1033,8 +1033,8 @@ export const programs = [
             startDate: "5th of Every Month",
             duration: "5 Months",
             mode: "Classroom + Live Online",
-            totalHours: "200+",
-            membership: "6 Months Free Membership"
+            totalHours: "100+",
+            membership: "6 Months Membership"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
