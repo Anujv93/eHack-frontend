@@ -113,6 +113,34 @@
     flex-direction: column;
     box-shadow: 0 10px 40px rgba(223, 103, 24, 0.15);
     overflow: hidden;
+    position: relative;
+}
+
+/* Program Badges */
+.program-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    border-bottom-left-radius: 12px;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.badge-bestseller {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.badge-choice {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.badge-premium {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
 }
 
 .program-card:hover {
@@ -137,7 +165,8 @@
     margin: -2rem -2rem 1.5rem -2rem;
     line-height: 1.3;
     background-color: #FFECD9;
-    padding: 1rem 2rem;
+    padding: 3.5rem 2rem 1rem 2rem;
+    /* Increased top padding to clear badge */
     border-bottom: 2px solid #df6718;
     border-radius: 14px 14px 0 0;
 }

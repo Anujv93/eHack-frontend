@@ -1021,7 +1021,7 @@ export const programs = [
     {
         slug: "masterclass-ethical-hacking-ceh-v13",
         category: "cybersecurity",
-        title: "Certified Ethical Hacker Master Program | CEHᴬᴵ v13 (3 Global Certification)",
+        title: "Certified Ethical Hacker Master Program | CEHᴬᴵ v13",
         subtitle: "with 3 Global EC-Council Certifications",
         description: "A best-in-class program designed to equip students with skills to become experts in cybersecurity. It covers comprehensive approaches to protecting IT infrastructure, securing data and information, running risk analysis and mitigation, architecting cloud-based security, and achieving compliance.",
         features: "Includes Real Time Labs with EC-Council tools, Ethical Hacking Phases and Attack Vectors, Preventative Countermeasures, Penetration Testing for Networks, and 6 Months Free Membership for practice.",

@@ -182,7 +182,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">DURATION</span>
-                        <div className="stat-value"><strong>9-12</strong> Months</div>
+                        <div className="stat-value"><strong>4</strong> Months</div>
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">MODE</span>
@@ -190,11 +190,11 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">TOTAL HOURS</span>
-                        <div className="stat-value"><strong>300</strong> Hours</div>
+                        <div className="stat-value"><strong>100</strong> Hours</div>
                     </div>
                     <div className="stat-item">
                         <span className="stat-label">MEMBERSHIP</span>
-                        <div className="stat-value"><strong>2 Years</strong> Free Support</div>
+                        <div className="stat-value"><strong>6 Months</strong> Free Support</div>
                     </div>
                 </div>
             </section>

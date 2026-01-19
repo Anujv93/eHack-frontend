@@ -14,12 +14,14 @@ export const metadata: Metadata = {
 };
 
 interface PageProps {
-    searchParams: Promise<{ search?: string }>;
+    searchParams: Promise<{ search?: string; partner?: string; tab?: string }>;
 }
 
 export default async function CoursesPage({ searchParams }: PageProps) {
     const params = await searchParams;
     const initialSearch = params.search || '';
+    const initialPartner = params.partner || '';
+    const initialTab = params.tab || '';
 
     // Fetch all data in parallel
     const [coursesData, partnersData, categoriesData] = await Promise.all([
@@ -78,6 +80,8 @@ export default async function CoursesPage({ searchParams }: PageProps) {
                         partners={partners}
                         categories={categories}
                         initialSearch={initialSearch}
+                        initialPartner={initialPartner}
+                        initialTab={initialTab}
                     />
                 </div>
             </section>
