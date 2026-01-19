@@ -38,7 +38,7 @@ export default function LaptopOfferPage() {
                     <div className="program-card graduate-highlight">
                         <h3>Graduate Program</h3>
                         <div className="program-card-price">
-                            <span>₹2,45,000</span> ₹1,00,000
+                            <span>₹2,45,000</span> ₹1,50,000
                         </div>
                         <p className="program-card-certs">
                             <strong>2 EC-Council Certifications:</strong><br />
@@ -92,7 +92,7 @@ export default function LaptopOfferPage() {
                                     <div className="bundle-calc-breakdown">
                                         <div className="calc-row">
                                             <span>Graduate Program</span>
-                                            <span>₹2,45,000</span>
+                                            <span>₹1,45,000</span>
                                         </div>
                                         <div className="calc-row">
                                             <span>CSA + CCSE Bundle</span>
@@ -158,145 +158,298 @@ export default function LaptopOfferPage() {
                 </div>
             </section>
 
-            {/* Certification Value Breakdown */}
-            <section className="offer-section">
+            {/* Certification Value Breakdown - New Design */}
+            <section className="offer-section certification-breakdown">
                 <h2 className="offer-section-title">
-                    Your Complete Package Value — <span className="title-highlight">Including Free Laptop</span>
+                    Program Certification <span className="title-highlight">Comparison</span>
                 </h2>
                 <p className="offer-section-subtitle">
-                    See exactly how much you save with each program — the laptop alone is worth <strong>₹50,000!</strong>
+                    Understand exactly what certifications you'll earn with each program
                 </p>
 
-                <div className="value-table-container">
-                    <table className="value-table">
-                        <thead>
-                            <tr>
-                                <th>Certification</th>
-                                <th>Full Name</th>
-                                <th>Individual Price</th>
-                                <th>Graduate</th>
-                                <th className="highlight">Masters</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ITF</td>
-                                <td>IT Fundamentals</td>
-                                <td className="price">₹40,000</td>
-                                <td className="included">Included</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr>
-                                <td>CSCU</td>
-                                <td>Certified Secure Computer Engineer</td>
-                                <td className="price">₹25,000</td>
-                                <td className="included">Included</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr>
-                                <td>CND</td>
-                                <td>Certified Network Defender</td>
-                                <td className="price">₹75,000</td>
-                                <td className="included">Included</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr>
-                                <td>CEH</td>
-                                <td>Certified Ethical Hacker</td>
-                                <td className="price">₹60,000</td>
-                                <td className="not-included">—</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr>
-                                <td>CHFI</td>
-                                <td>Computer Hacking Forensic Investigator</td>
-                                <td className="price">₹75,000</td>
-                                <td className="not-included">—</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr>
-                                <td>CPENT / LPT</td>
-                                <td>Certified Penetration Testing Professional / Licensed Penetration Tester</td>
-                                <td className="price">₹95,000</td>
-                                <td className="not-included">—</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr>
-                                <td>OWASP Top 10</td>
-                                <td>Top 10 Web Application Vulnerabilities</td>
-                                <td className="price">₹40,000</td>
-                                <td className="included">Included</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr>
-                                <td>Soft Skills</td>
-                                <td>Soft Skills</td>
-                                <td className="price">₹25,000</td>
-                                <td className="not-included">—</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr>
-                                <td>Internship</td>
-                                <td>Internship & Project Work</td>
-                                <td className="price">₹35,000</td>
-                                <td className="not-included">—</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr>
-                                <td>FREE Laptop</td>
-                                <td>High-Performance Laptop</td>
-                                <td className="price">₹50,000</td>
-                                <td className="included">FREE</td>
-                                <td className="included">FREE</td>
-                            </tr>
-                            <tr>
-                                <td>CSA & CCSE Bundle</td>
-                                <td>Certified CSA Analyst + Certified Security Engineer</td>
-                                <td className="price">₹1,15,000</td>
-                                <td className="included">Included</td>
-                                <td className="included">Included</td>
-                            </tr>
-                            <tr className="total-row original-price">
-                                <td colSpan={2}><strong>Program Offer Price</strong></td>
-                                <td>—</td>
-                                <td><strong>₹1,50,000</strong></td>
-                                <td><strong>₹3,50,000</strong></td>
-                            </tr>
-                            <tr className="total-row program-price">
-                                <td colSpan={2}><strong>Our Offer Price (with CSA & CCSE Bundle ₹1,15,000)</strong></td>
-                                <td>—</td>
-                                <td><strong>₹2,65,000</strong></td>
-                                <td><strong>₹4,65,000</strong></td>
-                            </tr>
-                            <tr className="total-row savings-row">
-                                <td colSpan={2}><strong>YOUR TOTAL SAVINGS</strong></td>
-                                <td>—</td>
-                                <td className="savings-value">Save ₹3,25,000</td>
-                                <td className="savings-value">Save ₹1,25,000</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                {/* Legend */}
+                <div className="cert-legend">
+                    <div className="legend-item">
+                        <span className="legend-badge ec-council">EC-Council</span>
+                        <span className="legend-text">Globally Recognized Certification</span>
+                    </div>
+                    <div className="legend-item">
+                        <span className="legend-badge ehack">eHack Academy</span>
+                        <span className="legend-text">Industry-Relevant Training</span>
+                    </div>
                 </div>
-            </section>
 
-            {/* Laptop Offer Section */}
-            <section className="laptop-offer-section">
-                <div className="laptop-offer-container">
-                    <h2>
-                        Get a <span>FREE Laptop Worth ₹50,000</span>
-                    </h2>
-                    <p className="laptop-offer-condition">
-                        Purchase any program above along with our <strong>CSA & CCSE Bundle</strong> and
-                        walk away with a brand new laptop to power your learning journey.
-                    </p>
+                {/* Side by Side Program Comparison */}
+                <div className="program-comparison-grid">
+                    {/* Graduate Program */}
+                    <div className="program-comparison-card">
+                        <div className="program-comparison-header">
+                            <h3>Graduate Program</h3>
+                            <div className="program-price-badge">
+                                <span className="original-price">₹2,45,000</span>
+                                <span className="offer-price">₹1,50,000</span>
+                            </div>
+                        </div>
 
-                    <div className="bundle-details">
-                        <h3>CSA & CCSE Bundle Includes:</h3>
-                        <ul>
-                            <li><strong>Certified CSA Analyst (CSA)</strong> — Monitor, detect, and respond to security threats</li>
-                            <li><strong>Certified Security Engineer (CCSE)</strong> — Essential cybersecurity awareness training</li>
-                        </ul>
-                        <div className="bundle-price">Bundle Value: ₹1,15,000</div>
+                        {/* EC-Council Certifications */}
+                        <div className="cert-category">
+                            <div className="cert-category-header">
+                                <span className="category-badge ec-council">EC-Council Global Certifications</span>
+                                <span className="cert-count">2 Certifications</span>
+                            </div>
+                            <div className="cert-list">
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">CSCU</span>
+                                        <span className="cert-full">Certified Secure Computer User</span>
+                                    </div>
+                                    <span className="cert-price">₹25,000</span>
+                                </div>
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">CND</span>
+                                        <span className="cert-full">Certified Network Defender</span>
+                                    </div>
+                                    <span className="cert-price">₹75,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* eHack Certifications */}
+                        <div className="cert-category">
+                            <div className="cert-category-header">
+                                <span className="category-badge ehack">eHack Academy Certifications</span>
+                                <span className="cert-count">2 Courses</span>
+                            </div>
+                            <div className="cert-list">
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">IT Fundamentals</span>
+                                        <span className="cert-full">Foundation in IT & Security Basics</span>
+                                    </div>
+                                    <span className="cert-price">₹40,000</span>
+                                </div>
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">OWASP Top 10</span>
+                                        <span className="cert-full">Web Application Security</span>
+                                    </div>
+                                    <span className="cert-price">₹40,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Total Value */}
+                        <div className="program-total">
+                            <div className="total-value-row">
+                                <span>Total Certification Value</span>
+                                <span className="value">₹1,80,000</span>
+                            </div>
+                            <div className="total-value-row highlight">
+                                <span>You Pay</span>
+                                <span className="value">₹1,50,000</span>
+                            </div>
+                            <Link href="/programs/graduate-cybersecurity" className="program-details-link">
+                                View Program Details →
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Masters Program */}
+                    <div className="program-comparison-card featured">
+                        <span className="featured-badge">Most Popular</span>
+                        <div className="program-comparison-header">
+                            <h3>Masters Program</h3>
+                            <div className="program-price-badge">
+                                <span className="original-price">₹5,00,000</span>
+                                <span className="offer-price">₹3,50,000</span>
+                            </div>
+                        </div>
+
+                        {/* EC-Council Certifications */}
+                        <div className="cert-category">
+                            <div className="cert-category-header">
+                                <span className="category-badge ec-council">EC-Council Global Certifications</span>
+                                <span className="cert-count">6 Certifications</span>
+                            </div>
+                            <div className="cert-list">
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">CSCU</span>
+                                        <span className="cert-full">Certified Secure Computer User</span>
+                                    </div>
+                                    <span className="cert-price">₹25,000</span>
+                                </div>
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">CND</span>
+                                        <span className="cert-full">Certified Network Defender</span>
+                                    </div>
+                                    <span className="cert-price">₹75,000</span>
+                                </div>
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">CEH</span>
+                                        <span className="cert-full">Certified Ethical Hacker</span>
+                                    </div>
+                                    <span className="cert-price">₹60,000</span>
+                                </div>
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">CHFI</span>
+                                        <span className="cert-full">Computer Hacking Forensic Investigator</span>
+                                    </div>
+                                    <span className="cert-price">₹75,000</span>
+                                </div>
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">CPENT</span>
+                                        <span className="cert-full">Certified Penetration Testing Professional</span>
+                                    </div>
+                                    <span className="cert-price">₹95,000</span>
+                                </div>
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">LPT</span>
+                                        <span className="cert-full">Licensed Penetration Tester</span>
+                                    </div>
+                                    <span className="cert-price">Included</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* eHack Certifications */}
+                        <div className="cert-category">
+                            <div className="cert-category-header">
+                                <span className="category-badge ehack">eHack Academy Certifications</span>
+                                <span className="cert-count">4 Courses</span>
+                            </div>
+                            <div className="cert-list">
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">IT Fundamentals</span>
+                                        <span className="cert-full">Foundation in IT & Security Basics</span>
+                                    </div>
+                                    <span className="cert-price">₹40,000</span>
+                                </div>
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">OWASP Top 10</span>
+                                        <span className="cert-full">Web Application Security</span>
+                                    </div>
+                                    <span className="cert-price">₹40,000</span>
+                                </div>
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">Soft Skills</span>
+                                        <span className="cert-full">Professional Communication & Leadership</span>
+                                    </div>
+                                    <span className="cert-price">₹25,000</span>
+                                </div>
+                                <div className="cert-item">
+                                    <div className="cert-info">
+                                        <span className="cert-name">Internship</span>
+                                        <span className="cert-full">Real-World Project Experience</span>
+                                    </div>
+                                    <span className="cert-price">₹35,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Total Value */}
+                        <div className="program-total">
+                            <div className="total-value-row">
+                                <span>Total Certification Value</span>
+                                <span className="value">₹4,70,000</span>
+                            </div>
+                            <div className="total-value-row highlight">
+                                <span>You Pay</span>
+                                <span className="value">₹3,50,000</span>
+                            </div>
+                            <Link href="/programs/masters-ethical-hacking" className="program-details-link">
+                                View Program Details →
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bundle Add-on Section */}
+                <div className="bundle-addon-section">
+                    <div className="bundle-addon-header">
+                        <span className="addon-badge">🎁 Add Bundle & Get FREE Laptop</span>
+                        <h4>CSA & CCSE Bundle — <span>₹1,15,000</span></h4>
+                        <p>Add this EC-Council bundle to either program and receive a FREE Laptop worth ₹50,000!</p>
+                    </div>
+
+                    <div className="bundle-addon-certs">
+                        <div className="addon-cert">
+                            <span className="category-badge ec-council">EC-Council</span>
+                            <div className="addon-cert-info">
+                                <strong>CSA</strong> — Certified SOC Analyst
+                            </div>
+                        </div>
+                        <div className="addon-cert">
+                            <span className="category-badge ec-council">EC-Council</span>
+                            <div className="addon-cert-info">
+                                <strong>CCSE</strong> — Certified Cloud Security Engineer
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Final Price Comparison */}
+                    <div className="final-price-grid">
+                        <div className="final-price-card">
+                            <h5>Graduate + Bundle</h5>
+                            <div className="final-price-breakdown">
+                                <div className="price-row">
+                                    <span>Graduate Program</span>
+                                    <span>₹1,50,000</span>
+                                </div>
+                                <div className="price-row">
+                                    <span>CSA + CCSE Bundle</span>
+                                    <span>₹1,15,000</span>
+                                </div>
+                                <div className="price-row total">
+                                    <span>Total Investment</span>
+                                    <span>₹2,65,000</span>
+                                </div>
+                                <div className="price-row bonus">
+                                    <span>🎁 FREE Laptop</span>
+                                    <span>₹50,000</span>
+                                </div>
+                            </div>
+                            <div className="cert-summary">
+                                <span className="summary-badge ec-council">4 EC-Council Certs</span>
+                                <span className="summary-badge ehack">2 eHack Courses</span>
+                            </div>
+                        </div>
+
+                        <div className="final-price-card featured">
+                            <span className="best-value-badge">Best Value</span>
+                            <h5>Masters + Bundle</h5>
+                            <div className="final-price-breakdown">
+                                <div className="price-row">
+                                    <span>Masters Program</span>
+                                    <span>₹3,50,000</span>
+                                </div>
+                                <div className="price-row">
+                                    <span>CSA + CCSE Bundle</span>
+                                    <span>₹1,15,000</span>
+                                </div>
+                                <div className="price-row total">
+                                    <span>Total Investment</span>
+                                    <span>₹4,65,000</span>
+                                </div>
+                                <div className="price-row bonus">
+                                    <span>🎁 FREE Laptop</span>
+                                    <span>₹50,000</span>
+                                </div>
+                            </div>
+                            <div className="cert-summary">
+                                <span className="summary-badge ec-council">6 EC-Council Certs</span>
+                                <span className="summary-badge ehack">2 eHack Courses + Internship + Project Work</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
