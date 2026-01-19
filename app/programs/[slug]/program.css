@@ -451,21 +451,21 @@ p {
 .stats-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(5, 1fr);
     gap: var(--space-6);
 }
 
-.stat-item {
+.stats-bar .stat-item {
     text-align: center;
     padding: 0 var(--space-4);
 }
 
-.stat-item:not(:last-child) {
+.stats-bar .stat-item:not(:last-child) {
     border-right: 1px solid var(--gray-200);
 }
 
-.stat-label {
+.stats-bar .stat-label {
     display: block;
     font-size: 0.7rem;
     font-weight: 600;
@@ -475,12 +475,12 @@ p {
     text-transform: uppercase;
 }
 
-.stat-value {
+.stats-bar .stat-value {
     font-size: 1rem;
     color: var(--gray-700);
 }
 
-.stat-value strong {
+.stats-bar .stat-value strong {
     font-weight: 700;
     color: var(--black);
 }
@@ -943,7 +943,7 @@ p {
 }
 
 .skills-grid {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
     background: transparent;
