@@ -57,9 +57,9 @@ const programs: Program[] = [
             "Leadership-Focused Career Acceleration"
         ],
         duration: '9-12 Months',
-        trainingHours: '300 Hours',
+        trainingHours: '300+ Hours',
         certifications: '6 Global Certs',
-        membership: '6 Months Support',
+        membership: '2 Years Support',
         certificateImage: '/images/certificates/masters-certificate.jpg',
         ctaText: 'Explore Program',
         ctaLink: 'programs/masters-ethical-hacking',
