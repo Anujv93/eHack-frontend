@@ -6,6 +6,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { programs, getProgramBySlug } from '@/data/programs';
 import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star } from 'lucide-react';
 import './program.css';
+import PlacementSection from '@/components/home/placement-section';
 
 // Navigation sections configuration
 const NAV_SECTIONS = [
@@ -233,77 +234,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </nav>
 
-            {/* 4. SUCCESS STORIES - Social Proof EARLY (Trust Builder) */}
-            <section className="learners-section" id="reviews">
-                <div className="learners-container">
-                    <div className="learners-header">
-                        <span className="learners-badge">CAREER TRANSFORMATIONS</span>
-                        <h2 className="learners-title">
-                            From Learning to <span className="text-accent">Leading</span>
-                        </h2>
-                        <p className="learners-subtitle">
-                            See how our students transformed their careers with eHack Academy
-                        </p>
-                    </div>
-
-                    <div className="transformations-marquee-wrapper">
-                        <div className="transformations-marquee-track">
-                            {/* Render twice for infinite loop */}
-                            {[
-                                { id: 1, name: "Anmol Gupta", image: "/images/testimonials/person1.jpg", before: { role: "B.Tech Student", company: "Fresher" }, after: { role: "APV-DELIVERY", company: "Ampcuscyber", logo: "/images/ampcuscyber.png" }, hike: "150%", badge: "CEH Certified 🏆" },
-                                { id: 2, name: "Rajiv Govind", image: "/images/testimonials/person2.jpg", before: { role: "System Admin", company: "Local IT Firm" }, after: { role: "Head Teaching Assistant", company: "GTL", logo: "/images/gtlogo.jpg" }, hike: "140%", badge: "CND Certified ⭐" },
-                                { id: 3, name: "Vaddi . Paneendar", image: "/images/testimonials/person3.jpg", before: { role: "Support Engineer", company: "Tech Support" }, after: { role: "Red Teamer", company: "SISA", logo: "/images/sisa.webp" }, hike: "180%", badge: "CPENT Certified 🐞" },
-                                { id: 4, name: "Damini Ranganath", image: "/images/testimonials/person4.jpg", before: { role: "Software Dev", company: "Startup" }, after: { role: "Cybersecurity Engineer", company: "Anuvu", logo: "/images/anuvu.png" }, hike: "120%", badge: "CHFI Certified 🛡️" },
-                                { id: 5, name: "Pranshu Tiwari", image: "/images/testimonials/person5.jpg", before: { role: "Network Admin", company: "ISP" }, after: { role: "Director Security Services", company: "Ampcuscyber", logo: "/images/ampcuscyber.png" }, hike: "160%", badge: "CCSE Certified 🚀" },
-                                { id: 6, name: "Abhinav Choubey", image: "/images/testimonials/person6.jpg", before: { role: "IT Manager", company: "Mid-size Firm" }, after: { role: "Associate Director", company: "SISA", logo: "/images/sisa.webp" }, hike: "200%", badge: "CISM Certified 🎓" },
-                                { id: 7, name: "Snigdha Suresh Poonghat ", image: "/images/testimonials/person7.jpg", before: { role: "IT Manager", company: "Mid-size Firm" }, after: { role: "Technical Support Engineer", company: "ASK4", logo: "/images/ask4_limited_logo.jpg" }, hike: "200%", badge: "CISM Certified 🎓" },
-                                { id: 8, name: "Rohit Prasad", image: "/images/testimonials/person8.jpg", before: { role: "IT Manager", company: "Mid-size Firm" }, after: { role: "Advisor", company: "Fiserv", logo: "/images/fiserv.png" }, hike: "200%", badge: "CISM Certified 🎓" },
-                                // Duplicate for seamless loop
-                                { id: 1, name: "Anmol Gupta", image: "/images/testimonials/person1.jpg", before: { role: "B.Tech Student", company: "Fresher" }, after: { role: "APV-DELIVERY", company: "Ampcuscyber", logo: "/images/ampcuscyber.png" }, hike: "150%", badge: "CEH Certified 🏆" },
-                                { id: 2, name: "Rajiv Govind", image: "/images/testimonials/person2.jpg", before: { role: "System Admin", company: "Local IT Firm" }, after: { role: "Head Teaching Assistant", company: "GTL", logo: "/images/gtlogo.jpg" }, hike: "140%", badge: "CND Certified ⭐" },
-                                { id: 3, name: "Vaddi . Paneendar", image: "/images/testimonials/person3.jpg", before: { role: "Support Engineer", company: "Tech Support" }, after: { role: "Red Teamer", company: "SISA", logo: "/images/sisa.webp" }, hike: "180%", badge: "CPENT Certified 🐞" },
-                                { id: 4, name: "Damini Ranganath", image: "/images/testimonials/person4.jpg", before: { role: "Software Dev", company: "Startup" }, after: { role: "Cybersecurity Engineer", company: "Anuvu", logo: "/images/anuvu.png" }, hike: "120%", badge: "CHFI Certified 🛡️" }
-                            ].map((story, index) => (
-                                <div key={`${story.id}-${index}`} className="transformation-card-program">
-                                    <div className="transformation-card-header">
-                                        <div className="transformation-badge">{story.badge}</div>
-                                        <div className="transformation-profile-wrapper">
-                                            <img src={story.image} alt={story.name} className="transformation-profile-image" />
-                                            <div className="transformation-hike-badge">{story.hike} Hike</div>
-                                        </div>
-                                        <h3 className="transformation-student-name">{story.name}</h3>
-                                    </div>
-
-                                    <div className="transformation-journey">
-                                        <div className="journey-step journey-before">
-                                            <span className="journey-step-label">Before eHack</span>
-                                            <p className="journey-role">{story.before.role}</p>
-                                            <p className="journey-company">{story.before.company}</p>
-                                        </div>
-                                        <div className="journey-arrow">➜</div>
-                                        <div className="journey-step journey-after">
-                                            <span className="journey-step-label">After eHack</span>
-                                            <p className="journey-role">{story.after.role}</p>
-                                            {story.after.logo ? (
-                                                <div className="journey-company-logo-wrapper">
-                                                    <img
-                                                        src={story.after.logo}
-                                                        alt={story.after.company}
-                                                        className="journey-company-logo"
-                                                        referrerPolicy="no-referrer"
-                                                    />
-                                                </div>
-                                            ) : (
-                                                <p className="journey-company">{story.after.company}</p>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <PlacementSection />
 
             {/* 5. COMBINED ROI + JOB ROLES - Career Value Proposition */}
             <section className="roi-section" id="career">
