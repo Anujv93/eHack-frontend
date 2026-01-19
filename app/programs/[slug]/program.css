@@ -2469,6 +2469,45 @@ p {
     min-height: 220px;
 }
 
+.cert-card-blue .cert-image-wrapper,
+.three-cards .cert-image-wrapper {
+    padding: 16px;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 50%, #2c2c2c 100%);
+    border-radius: 4px;
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.25),
+        0 4px 8px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    margin: var(--space-8);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: auto;
+}
+
+/* Outer golden border */
+.cert-card-blue .cert-image-wrapper::before,
+.three-cards .cert-image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #d4af37 0%, #f4d675 25%, #d4af37 50%, #b8962e 75%, #d4af37 100%) 1;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Inner golden accent line */
+.cert-card-blue .cert-image-wrapper::after,
+.three-cards .cert-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    pointer-events: none;
+    z-index: 2;
+}
+
 /* Premium Certificate Frame */
 .cert-frame {
     position: relative;
@@ -2611,7 +2650,7 @@ p {
 
 .brand-badge {
     background: #374151;
-    color: #9CA3AF;
+    color: var(--white);
     font-size: 0.6rem;
     font-weight: 700;
     padding: 4px 8px;
