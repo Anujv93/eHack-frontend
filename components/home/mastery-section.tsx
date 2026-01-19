@@ -50,7 +50,7 @@ const programs: Program[] = [
         featured: true
     },
     {
-        title: 'Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (5 Global Certification)',
+        title: 'Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (6 Global Certification)',
         features: [
             "Advanced AI-Driven Cybersecurity Mastery",
             "Real-World Cyber Range & Enterprise Attack Simulations",
@@ -82,7 +82,17 @@ export default function MasterySection() {
                             key={index}
                             className={`program-card ${program.featured ? 'program-card-featured' : ''}`}
                         >
-                            <h3 className="program-title">{program.title}</h3>
+                            <h3 className="program-title">
+                                {program.title.includes('(') ? (
+                                    <>
+                                        {program.title.split('(')[0].trim()}
+                                        <br />
+                                        <span className="certification-badge">({program.title.split('(')[1]}</span>
+                                    </>
+                                ) : (
+                                    program.title
+                                )}
+                            </h3>
 
                             <ul className="program-features">
                                 {program.features.map((feature, idx) => (

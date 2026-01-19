@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
     title: 'Free Laptop Offer | eHack Academy',
-    description: 'Get a FREE laptop worth ₹50,000 when you enroll in Masters or Graduate Program with CSO & CSE Bundle. Transform your cybersecurity career today.',
+    description: 'Get a FREE laptop worth ₹50,000 when you enroll in Masters or Graduate Program with CSA & CCSE Bundle. Transform your cybersecurity career today.',
 };
 
 export default function LaptopOfferPage() {
@@ -18,7 +18,7 @@ export default function LaptopOfferPage() {
                         <span>+ Get a Free Laptop</span>
                     </h1>
                     <p className="offer-hero-subtitle">
-                        Enroll in our Masters or Graduate Program with the CSO & CSE Bundle
+                        Enroll in our Masters or Graduate Program with the Certified SOC Analyst (CSA) & Certified Cloud Security Engineer (CCSE) Bundle
                         and receive a high-performance laptop worth ₹50,000 absolutely FREE.
                     </p>
                 </div>
@@ -38,7 +38,7 @@ export default function LaptopOfferPage() {
                     <div className="program-card graduate-highlight">
                         <h3>Graduate Program</h3>
                         <div className="program-card-price">
-                            <span>₹1,00,000</span> ₹1,50,000
+                            <span>₹2,45,000</span> ₹1,00,000
                         </div>
                         <p className="program-card-certs">
                             <strong>2 EC-Council Certifications:</strong><br />
@@ -54,7 +54,7 @@ export default function LaptopOfferPage() {
                         <span className="program-card-badge">Most Popular</span>
                         <h3>Masters Program</h3>
                         <div className="program-card-price">
-                            <span>₹4,25,000</span> ₹3,50,000
+                            <span>₹5,00,000</span> ₹3,50,000
                         </div>
                         <p className="program-card-certs">
                             <strong>6 EC-Council Certifications:</strong><br />
@@ -72,14 +72,13 @@ export default function LaptopOfferPage() {
                     <div className="bundle-upsell-content">
                         <span className="bundle-upsell-badge">🎁 Unlock Your Free Laptop</span>
                         <h3 className="bundle-upsell-title">
-                            Add the <span>SOC + CSE Bundle</span> to Your Program — Walk Away With a FREE Laptop!
+                            Add the <span>CSA + CCSE Bundle</span> to Your Program — Walk Away With a FREE Laptop!
                         </h3>
                         <p className="bundle-upsell-condition">
                             <strong>💡 How it works:</strong> Add this bundle to your <em>Graduate</em> or <em>Masters</em> program above, and the FREE laptop is yours!
                         </p>
                         <p className="bundle-upsell-desc">
-                            Here's the deal: Invest just <strong>₹1,10,000</strong> in our SOC Analyst & Certified Security Engineer
-                            bundle — and we'll hand you a <strong>brand new laptop worth ₹50,000</strong>. That's not a discount.
+                            Here's the deal: Invest just <strong>₹1,15,000</strong> in our CSA & CCSE bundle — and we'll hand you a <strong>brand new laptop worth ₹50,000</strong>. That's not a discount.
                             That's getting <em>almost half your investment back</em> as a high-performance machine to power your career.
                         </p>
 
@@ -93,19 +92,19 @@ export default function LaptopOfferPage() {
                                     <div className="bundle-calc-breakdown">
                                         <div className="calc-row">
                                             <span>Graduate Program</span>
-                                            <span>₹1,50,000</span>
+                                            <span>₹2,45,000</span>
                                         </div>
                                         <div className="calc-row">
-                                            <span>SOC + CSE Bundle</span>
-                                            <span>₹1,10,000</span>
+                                            <span>CSA + CCSE Bundle</span>
+                                            <span>₹1,15,000</span>
                                         </div>
                                         <div className="calc-row total">
                                             <span>Total</span>
-                                            <span>₹2,60,000</span>
+                                            <span>₹2,65,000</span>
                                         </div>
                                         <div className="calc-row free-laptop">
                                             <span>🎁 FREE Laptop</span>
-                                            <span className="free-value">-₹50,000</span>
+                                            <span className="free-value">₹50,000</span>
                                         </div>
                                     </div>
                                 </div>
@@ -120,16 +119,16 @@ export default function LaptopOfferPage() {
                                             <span>₹3,50,000</span>
                                         </div>
                                         <div className="calc-row">
-                                            <span>SOC + CSE Bundle</span>
-                                            <span>₹1,10,000</span>
+                                            <span>CSA + CCSE Bundle</span>
+                                            <span>₹1,15,000</span>
                                         </div>
                                         <div className="calc-row total">
                                             <span>Total</span>
-                                            <span>₹4,60,000</span>
+                                            <span>₹4,65,000</span>
                                         </div>
                                         <div className="calc-row free-laptop">
                                             <span>🎁 FREE Laptop</span>
-                                            <span className="free-value">-₹50,000</span>
+                                            <span className="free-value">₹50,000</span>
                                         </div>
                                     </div>
                                 </div>
@@ -146,7 +145,7 @@ export default function LaptopOfferPage() {
                                 <span className="bundle-cert-desc">Master threat detection, SIEM tools, and incident response</span>
                             </div>
                             <div className="bundle-cert">
-                                <span className="bundle-cert-name">Certified Security Engineer (CSE)</span>
+                                <span className="bundle-cert-name">Certified Security Engineer (CCSE)</span>
                                 <span className="bundle-cert-desc">Build and secure enterprise-grade security infrastructure</span>
                             </div>
                         </div>
@@ -181,6 +180,13 @@ export default function LaptopOfferPage() {
                         </thead>
                         <tbody>
                             <tr>
+                                <td>ITF</td>
+                                <td>IT Fundamentals</td>
+                                <td className="price">₹40,000</td>
+                                <td className="included">Included</td>
+                                <td className="included">Included</td>
+                            </tr>
+                            <tr>
                                 <td>CSCU</td>
                                 <td>Certified Secure Computer Engineer</td>
                                 <td className="price">₹25,000</td>
@@ -209,16 +215,30 @@ export default function LaptopOfferPage() {
                                 <td className="included">Included</td>
                             </tr>
                             <tr>
-                                <td>CPENT</td>
-                                <td>Certified Penetration Testing Professional</td>
+                                <td>CPENT / LPT</td>
+                                <td>Certified Penetration Testing Professional / Licensed Penetration Tester</td>
                                 <td className="price">₹95,000</td>
                                 <td className="not-included">—</td>
                                 <td className="included">Included</td>
                             </tr>
                             <tr>
-                                <td>LPT</td>
-                                <td>Licensed Penetration Tester</td>
-                                <td className="price">₹95,000</td>
+                                <td>OWASP Top 10</td>
+                                <td>Top 10 Web Application Vulnerabilities</td>
+                                <td className="price">₹40,000</td>
+                                <td className="included">Included</td>
+                                <td className="included">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Soft Skills</td>
+                                <td>Soft Skills</td>
+                                <td className="price">₹25,000</td>
+                                <td className="not-included">—</td>
+                                <td className="included">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Internship</td>
+                                <td>Internship & Project Work</td>
+                                <td className="price">₹35,000</td>
                                 <td className="not-included">—</td>
                                 <td className="included">Included</td>
                             </tr>
@@ -230,29 +250,23 @@ export default function LaptopOfferPage() {
                                 <td className="included">FREE</td>
                             </tr>
                             <tr>
-                                <td>CSO & CSE Bundle</td>
-                                <td>Certified SOC Analyst + Certified Security Engineer</td>
-                                <td className="price">₹1,10,000</td>
+                                <td>CSA & CCSE Bundle</td>
+                                <td>Certified CSA Analyst + Certified Security Engineer</td>
+                                <td className="price">₹1,15,000</td>
                                 <td className="included">Included</td>
                                 <td className="included">Included</td>
-                            </tr>
-                            <tr className="total-row individual-total">
-                                <td colSpan={2}><strong>Total If Purchased Individually</strong></td>
-                                <td className="price"><strong>₹5,85,000</strong></td>
-                                <td className="not-included">—</td>
-                                <td className="not-included">—</td>
                             </tr>
                             <tr className="total-row original-price">
-                                <td colSpan={2}><strong>Our Program Original Pricing</strong></td>
+                                <td colSpan={2}><strong>Program Offer Price</strong></td>
                                 <td>—</td>
                                 <td><strong>₹1,50,000</strong></td>
                                 <td><strong>₹3,50,000</strong></td>
                             </tr>
                             <tr className="total-row program-price">
-                                <td colSpan={2}><strong>Our Offer Price (with CSO & CSE Bundle ₹1,10,000)</strong></td>
+                                <td colSpan={2}><strong>Our Offer Price (with CSA & CCSE Bundle ₹1,15,000)</strong></td>
                                 <td>—</td>
-                                <td><strong>₹2,60,000</strong></td>
-                                <td><strong>₹4,60,000</strong></td>
+                                <td><strong>₹2,65,000</strong></td>
+                                <td><strong>₹4,65,000</strong></td>
                             </tr>
                             <tr className="total-row savings-row">
                                 <td colSpan={2}><strong>YOUR TOTAL SAVINGS</strong></td>
@@ -272,17 +286,17 @@ export default function LaptopOfferPage() {
                         Get a <span>FREE Laptop Worth ₹50,000</span>
                     </h2>
                     <p className="laptop-offer-condition">
-                        Purchase any program above along with our <strong>CSO & CSE Bundle</strong> and
+                        Purchase any program above along with our <strong>CSA & CCSE Bundle</strong> and
                         walk away with a brand new laptop to power your learning journey.
                     </p>
 
                     <div className="bundle-details">
-                        <h3>CSO & CSE Bundle Includes:</h3>
+                        <h3>CSA & CCSE Bundle Includes:</h3>
                         <ul>
-                            <li><strong>Certified SOC Analyst (CSA)</strong> — Monitor, detect, and respond to security threats</li>
-                            <li><strong>Certified Security Engineer (CSU)</strong> — Essential cybersecurity awareness training</li>
+                            <li><strong>Certified CSA Analyst (CSA)</strong> — Monitor, detect, and respond to security threats</li>
+                            <li><strong>Certified Security Engineer (CCSE)</strong> — Essential cybersecurity awareness training</li>
                         </ul>
-                        <div className="bundle-price">Bundle Value: ₹1,10,000</div>
+                        <div className="bundle-price">Bundle Value: ₹1,15,000</div>
                     </div>
                 </div>
             </section>
@@ -312,19 +326,19 @@ export default function LaptopOfferPage() {
                                 <td>₹3,50,000</td>
                             </tr>
                             <tr>
-                                <td>CSO & CSE Bundle</td>
-                                <td>₹1,10,000</td>
-                                <td>₹1,10,000</td>
+                                <td>CSA & CCSE Bundle</td>
+                                <td>₹1,15,000</td>
+                                <td>₹1,15,000</td>
                             </tr>
                             <tr className="highlight-row">
                                 <td>Total Package Value</td>
-                                <td>₹3,10,000</td>
-                                <td>₹5,10,000</td>
+                                <td>₹3,15,000</td>
+                                <td>₹5,15,000</td>
                             </tr>
                             <tr>
                                 <td>You Pay</td>
-                                <td>₹2,60,000</td>
-                                <td>₹4,60,000</td>
+                                <td>₹2,65,000</td>
+                                <td>₹4,65,000</td>
                             </tr>
                             <tr className="savings-row">
                                 <td>Your Savings</td>
