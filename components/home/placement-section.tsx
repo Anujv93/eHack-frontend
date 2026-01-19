@@ -8,7 +8,7 @@ const placementStories = [
         name: "Anmol Gupta",
         image: "/images/testimonials/person1.jpg",
         before: { role: "B.Tech Student", company: "Fresher" },
-        after: { role: "APV-DELIVERY", company: "Ampcuscyber", logo: "images/ampcuscyber.png" },
+        after: { role: "APV-DELIVERY", company: "Ampcuscyber", logo: "/images/ampcuscyber.png" },
         hike: "400%",
         badge: ["Masters Program"]
     },
@@ -17,7 +17,7 @@ const placementStories = [
         name: "Rajiv Govind",
         image: "/images/testimonials/person2.jpg",
         before: { role: "System Admin", company: "Local IT Firm" },
-        after: { role: "Head Teaching Assistant", company: "GTL", logo: "images/gtlogo.jpg" },
+        after: { role: "Head Teaching Assistant", company: "GTL", logo: "/images/gtlogo.jpg" },
         hike: "140%",
         badge: ["CSU", "CEH", "CCNA"]
     },
@@ -26,7 +26,7 @@ const placementStories = [
         name: "Vaddi . Paneendar",
         image: "/images/testimonials/person3.jpg",
         before: { role: "Support Engineer", company: "Tech Support" },
-        after: { role: "Red Teamer", company: "SISA", logo: "images/sisa.webp" },
+        after: { role: "Red Teamer", company: "SISA", logo: "/images/sisa.webp" },
         hike: "300%",
         badge: ["Master Program"]
     },
@@ -35,7 +35,7 @@ const placementStories = [
         name: "Damini Ranganath",
         image: "/images/testimonials/person4.jpg",
         before: { role: "Software Dev", company: "Startup" },
-        after: { role: "Cybersecurity Engineer", company: "Anuvu", logo: "images/anuvu.png" },
+        after: { role: "Cybersecurity Engineer", company: "Anuvu", logo: "/images/anuvu.png" },
         hike: "120%",
         badge: ["Master Program"]
     },
@@ -44,7 +44,7 @@ const placementStories = [
         name: "Pranshu Tiwari",
         image: "/images/testimonials/person5.jpg",
         before: { role: "Network Admin", company: "ISP" },
-        after: { role: "Director Security Services", company: "Ampcuscyber", logo: "images/ampcuscyber.png" },
+        after: { role: "Director Security Services", company: "Ampcuscyber", logo: "/images/ampcuscyber.png" },
         hike: "160%",
         badge: ["OSCP", "CEH"]
     },
@@ -53,7 +53,7 @@ const placementStories = [
         name: "Abhinav Choubey",
         image: "/images/testimonials/person6.jpg",
         before: { role: "IT Manager", company: "Mid-size Firm" },
-        after: { role: "Associate Director", company: "SISA", logo: "images/sisa.webp" },
+        after: { role: "Associate Director", company: "SISA", logo: "/images/sisa.webp" },
         hike: "200%",
         badge: ["CND", "CEH", "CPENT"]
     },
@@ -62,7 +62,7 @@ const placementStories = [
         name: "Snigdha Suresh Poonghat ",
         image: "/images/testimonials/person7.jpg",
         before: { role: "IT Manager", company: "Mid-size Firm" },
-        after: { role: "Technical Support Engineer", company: "ASK4", logo: "images/ask4_limited_logo.jpg" },
+        after: { role: "Technical Support Engineer", company: "ASK4", logo: "/images/ask4_limited_logo.jpg" },
         hike: "200%",
         badge: ["Graduate Program"]
     },
@@ -71,7 +71,7 @@ const placementStories = [
         name: "Rohit Prasad",
         image: "/images/testimonials/person8.jpg",
         before: { role: "IT Manager", company: "Mid-size Firm" },
-        after: { role: "Advisor", company: "Fiserv", logo: "images/fiserv.png" },
+        after: { role: "Advisor", company: "Fiserv", logo: "/images/fiserv.png" },
         hike: "200%",
         badge: ["Master Program"]
     }
