@@ -69,6 +69,16 @@
     color: var(--accent);
 }
 
+p {
+    text-align: justify;
+}
+
+/* Global paragraph styling for justified text */
+.program-page p {
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
 /* Top Banner */
 .top-banner {
     background: linear-gradient(90deg, #0a1628 0%, #0d2137 50%, #0a1628 100%);
@@ -282,6 +292,7 @@
 .hero-features {
     font-size: 1rem;
     color: var(--gray-600);
+    max-width: 600px;
     line-height: 1.7;
     margin-bottom: var(--space-8);
 }
@@ -2971,6 +2982,7 @@
 }
 
 .cta-contact {
+    text-align: center !important;
     margin-top: 16px;
     font-size: 14px;
     color: #6b7280;
