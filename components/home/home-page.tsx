@@ -12,6 +12,7 @@ import TestimonialsSection from './testimonials-section';
 import OfferBanner from './offer-banner';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 import CertificationsSection from './certifications-section';
+import OnlineLibrarySection from './online-library-section';
 
 // Types for props
 interface Partner {
@@ -538,6 +539,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
             {/* Choose Your Path to Mastery */}
             < MasterySection />
+
+            {/* Online Library */}
+            <OnlineLibrarySection />
 
             {/* Learning Options */}
             <section className={styles.learningSection} id="learning">
