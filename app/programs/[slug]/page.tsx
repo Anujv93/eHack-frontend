@@ -612,51 +612,77 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <span className="invest-badge">INVEST IN YOUR FUTURE</span>
                     <h2 className="invest-title">Your Investment</h2>
 
-                    <div className={`certification-cards ${program.slug.includes('data-science') || program.slug.includes('digital-marketing') || program.slug.includes('robotics') ? 'single-card' : ''}`}>
-                        {!program.slug.includes('masterclass-ethical-hacking-ceh-v13') && (
-                            <div className="cert-card cert-card-blue">
-                                <div className="cert-image-wrapper">
-                                    <img src={program.slug === "masters-ethical-hacking" ? "/images/certificates/masters-certificate.jpg" : program.slug === "data-science-analytics" ? "/images/data_science certificate.jpeg" : "/images/certificates/graduate-certificate.jpg"} alt="eHack Academy Certificate" className="cert-image" />
-                                </div>
-                                <div className="cert-content">
-                                    <div className="cert-brand">
-                                        <img src="/ehack-logo.png" alt="eHack Academy" className="cert-brand-logo" />
-                                        <span className="brand-badge">ACADEMY</span>
+                    <div className={`certification-cards ${program.slug.includes('data-science') || program.slug.includes('digital-marketing') || program.slug.includes('robotics') ? 'single-card' : program.slug.includes('masterclass-ethical-hacking-ceh-v13') ? 'three-cards' : ''}`}>
+                        {program.slug.includes('masterclass-ethical-hacking-ceh-v13') ? (
+                            // Show 3 individual cards for CEH Master
+                            program.certifications.map((cert, idx) => (
+                                <div key={idx} className="cert-card cert-card-dark">
+                                    <div className="cert-image-wrapper">
+                                        <img src={cert.image} alt={`${cert.code} Certificate`} className="cert-image" />
                                     </div>
-                                    <h3 className="cert-program-name">{program.title}</h3>
-                                    <ul className="cert-features">
-                                        <li><span className="check-icon">✓</span>1 Program Completion Certificate</li>
-                                        <li><span className="check-icon">✓</span>{program.slug.includes('data-science') ? 'Industry Projects & Portfolio' : 'Real-Time Labs Access'}</li>
-                                        <li><span className="check-icon">✓</span>{program.slug === "masters-ethical-hacking" ? "Placement Support" : program.slug.includes('data-science') ? "100% Job Assistance" : "Internship Opportunity*"}</li>
-                                    </ul>
-                                    <button className="btn-counsellor">Talk to Career Counsellor</button>
+                                    <div className="cert-content">
+                                        <div className="cert-brand">
+                                            <img src="/images/ec-council-badge.png" alt="EC-Council" className="ec-council-logo" />
+                                            <span className="partner-text">EC-Council<br /><small>Official Partner</small></span>
+                                        </div>
+                                        <h3 className="cert-program-name cert-underline">{cert.name}</h3>
+                                        <ul className="cert-features">
+                                            <li><span className="check-icon">✓</span>{cert.code}</li>
+                                            <li><span className="check-icon">✓</span>Globally Recognized</li>
+                                            <li><span className="check-icon">✓</span>Industry Standard</li>
+                                        </ul>
+                                        <button className="btn-counsellor btn-counsellor-dark">Talk to Career Counsellor</button>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            ))
+                        ) : (
+                            <>
+                                {!program.slug.includes('masterclass-ethical-hacking-ceh-v13') && (
+                                    <div className="cert-card cert-card-blue">
+                                        <div className="cert-image-wrapper">
+                                            <img src={program.slug === "masters-ethical-hacking" ? "/images/certificates/masters-certificate.jpg" : program.slug === "data-science-analytics" ? "/images/data_science certificate.jpeg" : "/images/certificates/graduate-certificate.jpg"} alt="eHack Academy Certificate" className="cert-image" />
+                                        </div>
+                                        <div className="cert-content">
+                                            <div className="cert-brand">
+                                                <img src="/ehack-logo.png" alt="eHack Academy" className="cert-brand-logo" />
+                                                <span className="brand-badge">ACADEMY</span>
+                                            </div>
+                                            <h3 className="cert-program-name">{program.title}</h3>
+                                            <ul className="cert-features">
+                                                <li><span className="check-icon">✓</span>1 Program Completion Certificate</li>
+                                                <li><span className="check-icon">✓</span>{program.slug.includes('data-science') ? 'Industry Projects & Portfolio' : 'Real-Time Labs Access'}</li>
+                                                <li><span className="check-icon">✓</span>{program.slug === "masters-ethical-hacking" ? "Placement Support" : program.slug.includes('data-science') ? "100% Job Assistance" : "Internship Opportunity*"}</li>
+                                            </ul>
+                                            <button className="btn-counsellor">Talk to Career Counsellor</button>
+                                        </div>
+                                    </div>
+                                )}
 
-                        {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('data-science') && (
-                            <div className="cert-card cert-card-dark">
-                                <div className="cert-image-wrapper">
-                                    <div className="cert-stack">
-                                        {program.certifications.map((cert, idx) => (
-                                            <img key={idx} src={cert.image} alt={`${cert.code} Certificate`} className={`cert-stack-img cert-stack-${program.certifications.length - idx}`} />
-                                        ))}
+                                {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('data-science') && (
+                                    <div className="cert-card cert-card-dark">
+                                        <div className="cert-image-wrapper">
+                                            <div className="cert-stack">
+                                                {program.certifications.map((cert, idx) => (
+                                                    <img key={idx} src={cert.image} alt={`${cert.code} Certificate`} className={`cert-stack-img cert-stack-${program.certifications.length - idx}`} />
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="cert-content">
+                                            <div className="cert-brand">
+                                                <img src="/images/ec-council-badge.png" alt="EC-Council" className="ec-council-logo" />
+                                                <span className="partner-text">EC-Council<br /><small>Official Partner</small></span>
+                                            </div>
+                                            <h3 className="cert-program-name cert-underline">{program.certifications.length} EC-Council Certifications</h3>
+                                            <ul className="cert-features">
+                                                <li><span className="check-icon">✓</span>{program.certifications.map(c => c.code).join(" | ")}</li>
+                                                <li><span className="check-icon">✓</span>Globally Recognized</li>
+                                                <li><span className="check-icon">✓</span>Industry Standard</li>
+                                            </ul>
+                                            <button className="btn-counsellor btn-counsellor-dark">Talk to Career Counsellor</button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="cert-content">
-                                    <div className="cert-brand">
-                                        <img src="/images/ec-council-badge.png" alt="EC-Council" className="ec-council-logo" />
-                                        <span className="partner-text">EC-Council<br /><small>Official Partner</small></span>
-                                    </div>
-                                    <h3 className="cert-program-name cert-underline">{program.certifications.length} EC-Council Certifications</h3>
-                                    <ul className="cert-features">
-                                        <li><span className="check-icon">✓</span>{program.certifications.map(c => c.code).join(" | ")}</li>
-                                        <li><span className="check-icon">✓</span>Globally Recognized</li>
-                                        <li><span className="check-icon">✓</span>Industry Standard</li>
-                                    </ul>
-                                    <button className="btn-counsellor btn-counsellor-dark">Talk to Career Counsellor</button>
-                                </div>
-                            </div>
+                                )}
+                            </>
                         )}
                     </div>
 
