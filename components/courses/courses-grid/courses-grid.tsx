@@ -38,6 +38,8 @@ interface CoursesGridProps {
     partners: Partner[];
     categories: Category[];
     initialSearch?: string;
+    initialPartner?: string;
+    initialTab?: string;
 }
 
 // Kennedy University programs
@@ -68,12 +70,12 @@ const kennedyPrograms = [
     }
 ];
 
-export default function CoursesGrid({ courses, partners, categories, initialSearch = '' }: CoursesGridProps) {
-    const [selectedPartners, setSelectedPartners] = useState<string[]>([]);
+export default function CoursesGrid({ courses, partners, categories, initialSearch = '', initialPartner = '', initialTab = '' }: CoursesGridProps) {
+    const [selectedPartners, setSelectedPartners] = useState<string[]>(initialPartner ? [initialPartner] : []);
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
     const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
     const [searchQuery, setSearchQuery] = useState(initialSearch);
-    const [activeTab, setActiveTab] = useState<'popular' | 'ehack' | 'kennedy'>('popular');
+    const [activeTab, setActiveTab] = useState<'popular' | 'ehack' | 'kennedy'>(initialTab === 'kennedy' ? 'kennedy' : initialTab === 'ehack' ? 'ehack' : 'popular');
     const [sortBy, setSortBy] = useState('newest');
 
     const toggleFilter = (value: string, selected: string[], setSelected: (val: string[]) => void) => {

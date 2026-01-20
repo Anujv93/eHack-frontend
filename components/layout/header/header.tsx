@@ -9,14 +9,14 @@ import './header-search.css';
 
 // Corporate Services Data for dropdown
 const corporateServices = [
-    { id: 'web-application-security', title: 'Web Application Security Assessment', icon: '🌐' },
-    { id: 'mobile-application-security', title: 'Mobile Application Security Assessment', icon: '📱' },
-    { id: 'api-security', title: 'API Security Assessment', icon: '🔌' },
+    { id: 'web-application-security', title: 'Web Application ', icon: '🌐' },
+    { id: 'mobile-application-security', title: 'Mobile Application ', icon: '📱' },
+    { id: 'api-security', title: 'API', icon: '🔌' },
     { id: 'secure-source-code-review', title: 'Secure Source Code Review', icon: '💻' },
     { id: 'red-team-assessment', title: 'Red Team Assessment', icon: '🎯' },
-    { id: 'infrastructure-security', title: 'Infrastructure Security Assessment', icon: '🏗️' },
-    { id: 'thick-client-security', title: 'Thick Client Security Assessment', icon: '🖥️' },
-    { id: 'firewall-security', title: 'Firewall Security Assessment', icon: '🛡️' },
+    { id: 'infrastructure-security', title: 'Infrastructure', icon: '🏗️' },
+    { id: 'thick-client-security', title: 'Thick Client', icon: '🖥️' },
+    { id: 'firewall-security', title: 'Firewall', icon: '🛡️' },
 ];
 
 const forensicsServices = [
@@ -481,7 +481,24 @@ export default function Header({ partners, courses }: HeaderProps) {
                         <span className="code-text">CODE</span>
                         <span className="red-text">RED</span>
                     </Link>
-                    <Link href="/about" className="nav-link">About eHack</Link>
+                    {/* About eHack Dropdown */}
+                    <div className="dropdown-wrapper">
+                        <button className="nav-link nav-dropdown-btn">
+                            About eHack
+                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                        <div className="dropdown-menu">
+                            <Link href="/about" className="dropdown-item dropdown-item-main">About Us Overview</Link>
+                            <div className="dropdown-divider"></div>
+                            <Link href="/about#mission" className="dropdown-item">Our Mission</Link>
+                            <Link href="/about#why-choose-us" className="dropdown-item">Why Choose Us</Link>
+                            <Link href="/about#leadership" className="dropdown-item">Leadership</Link>
+                            <Link href="/about#advisory" className="dropdown-item">Advisory Board</Link>
+                            <Link href="/about#contact" className="dropdown-item">Contact Us</Link>
+                        </div>
+                    </div>
                 </nav>
 
                 {/* Compact Header Search in place of Get Started */}
@@ -646,9 +663,38 @@ export default function Header({ partners, courses }: HeaderProps) {
                         CODE<span className="red-badge">RED</span>
                     </Link>
 
-                    <Link href="/about" className="mobile-nav-item" onClick={closeMobileMenu}>
-                        About eHack
-                    </Link>
+                    {/* About eHack Dropdown */}
+                    <div className={`mobile-nav-dropdown ${mobileDropdown === 'about' ? 'open' : ''}`}>
+                        <button
+                            className="mobile-nav-dropdown-btn"
+                            onClick={() => toggleMobileDropdown('about')}
+                        >
+                            About eHack
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                        <div className="mobile-nav-dropdown-content">
+                            <Link href="/about" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                About Us Overview
+                            </Link>
+                            <Link href="/about#mission" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Our Mission
+                            </Link>
+                            <Link href="/about#why-choose-us" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Why Choose Us
+                            </Link>
+                            <Link href="/about#leadership" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Leadership
+                            </Link>
+                            <Link href="/about#advisory" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Advisory Board
+                            </Link>
+                            <Link href="/about#contact" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Contact Us
+                            </Link>
+                        </div>
+                    </div>
                 </nav>
 
                 <div className="mobile-menu-cta">

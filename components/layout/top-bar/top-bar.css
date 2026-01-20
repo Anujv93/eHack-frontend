@@ -18,7 +18,7 @@
     color: #ffffff;
     text-decoration: none;
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: 0.01em;
     transition: all 0.2s;
 }
@@ -52,6 +52,9 @@
 .promo-bar {
     background: #E55A00;
     padding: 0.625rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 

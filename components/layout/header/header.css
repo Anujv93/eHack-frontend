@@ -207,6 +207,17 @@ body {
     color: var(--brand-primary);
 }
 
+.dropdown-item-main {
+    font-weight: 700;
+    color: var(--neutral-900);
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: var(--neutral-200);
+    margin: 0.5rem 0;
+}
+
 /* Mega Menu Wrapper */
 .mega-menu-wrapper {
     position: relative;

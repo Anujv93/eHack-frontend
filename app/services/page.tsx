@@ -7,11 +7,33 @@ import './services.css';
 
 export default function ServicesPage() {
     const [activeCategory, setActiveCategory] = useState('all');
+    const [isSticky, setIsSticky] = useState(false);
+    const filtersRef = useRef<HTMLDivElement>(null);
+    const placeholderRef = useRef<HTMLDivElement>(null);
 
     // Filter services based on active category
     const filteredServices = activeCategory === 'all'
         ? services
         : services.filter(service => service.category === activeCategory);
+
+    // JavaScript-based sticky behavior
+    useEffect(() => {
+        const handleScroll = () => {
+            if (filtersRef.current && placeholderRef.current) {
+                const placeholderTop = placeholderRef.current.getBoundingClientRect().top;
+                const shouldBeSticky = placeholderTop <= 0;
+
+                if (shouldBeSticky !== isSticky) {
+                    setIsSticky(shouldBeSticky);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Check initial state
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isSticky]);
 
     return (
         <main className="services-page">
@@ -62,8 +84,14 @@ export default function ServicesPage() {
 
             {/* Services List Section */}
             <section id="services-list" className="services-list-section">
-                <div className="services-container">
-                    {/* Category Filters */}
+                {/* Placeholder to maintain layout when filters become fixed */}
+                <div ref={placeholderRef} className={`category-filters-placeholder ${isSticky ? 'active' : ''}`}></div>
+
+                {/* Sticky Category Filters */}
+                <div
+                    ref={filtersRef}
+                    className={`category-filters-sticky ${isSticky ? 'is-sticky' : ''}`}
+                >
                     <div className="category-filters">
                         {serviceCategories.map(category => (
                             <button
@@ -75,8 +103,10 @@ export default function ServicesPage() {
                             </button>
                         ))}
                     </div>
+                </div>
 
-                    {/* Services Grid */}
+                {/* Services Grid */}
+                <div className="services-container">
                     <div className="services-grid">
                         {filteredServices.map(service => (
                             <ServiceCard

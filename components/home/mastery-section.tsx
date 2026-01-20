@@ -14,6 +14,8 @@ interface Program {
     ctaText: string;
     ctaLink: string;
     featured?: boolean;
+    badge?: string;
+    badgeType?: 'bestseller' | 'choice' | 'premium';
 }
 
 const programs: Program[] = [
@@ -31,7 +33,9 @@ const programs: Program[] = [
         certificateImage: '/images/certificates/masterclass-1.jpeg',
         ctaText: 'Explore Program',
         ctaLink: '/programs/masterclass-ethical-hacking-ceh-v13',
-        featured: false
+        featured: false,
+        badge: 'Best Selling',
+        badgeType: 'bestseller'
     },
     {
         title: 'Graduate Program in Ethical Hacking and Cybersecurityᴬᴵ (2 Global Certification)',
@@ -47,7 +51,9 @@ const programs: Program[] = [
         certificateImage: '/images/certificates/graduate-certificate.jpg',
         ctaText: 'Explore Program',
         ctaLink: 'programs/graduate-cybersecurity',
-        featured: true
+        featured: true,
+        badge: "Student's Choice",
+        badgeType: 'choice'
     },
     {
         title: 'Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (6 Global Certification)',
@@ -57,13 +63,15 @@ const programs: Program[] = [
             "Leadership-Focused Career Acceleration"
         ],
         duration: '9-12 Months',
-        trainingHours: '300 Hours',
+        trainingHours: '300+ Hours',
         certifications: '6 Global Certs',
-        membership: '6 Months Support',
+        membership: '2 Years Support',
         certificateImage: '/images/certificates/masters-certificate.jpg',
         ctaText: 'Explore Program',
         ctaLink: 'programs/masters-ethical-hacking',
-        featured: false
+        featured: false,
+        badge: 'Premium Course',
+        badgeType: 'premium'
     }
 ];
 
@@ -82,6 +90,11 @@ export default function MasterySection() {
                             key={index}
                             className={`program-card ${program.featured ? 'program-card-featured' : ''}`}
                         >
+                            {program.badge && (
+                                <div className={`program-badge badge-${program.badgeType}`}>
+                                    {program.badge}
+                                </div>
+                            )}
                             <h3 className="program-title">
                                 {program.title.includes('(') ? (
                                     <>

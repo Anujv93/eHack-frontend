@@ -12,6 +12,7 @@ import TestimonialsSection from './testimonials-section';
 import OfferBanner from './offer-banner';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 import CertificationsSection from './certifications-section';
+import OnlineLibrarySection from './online-library-section';
 
 // Types for props
 interface Partner {
@@ -382,8 +383,8 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         <Link href="/categories/digital-marketing" className={styles.quickLink}>
                             Digital Marketing
                         </Link>
-                        <Link href="/services" className={styles.quickLink}>
-                            Services
+                        <Link href="/services" className={styles.quickLinkHighlight}>
+                            Corporate Services
                         </Link>
                     </div>
                 </div>
@@ -430,8 +431,16 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
                             return sortedPartners.map((partner) => {
                                 const isKennedy = partner.slug === 'kennedy-university';
+                                // Kennedy University goes to the Kennedy tab, others use partner filter
+                                const href = isKennedy
+                                    ? '/courses?tab=kennedy'
+                                    : `/courses?partner=${partner.slug}`;
                                 return (
-                                    <div key={partner.id} className={styles.partnerCard}>
+                                    <Link
+                                        key={partner.id}
+                                        href={href}
+                                        className={styles.partnerCard}
+                                    >
                                         <div className={styles.partnerLogoWrapper}>
                                             {partner.logoUrl ? (
                                                 <img
@@ -444,7 +453,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                                             )}
                                         </div>
                                         <span className={styles.partnerName}>{partner.name}</span>
-                                    </div>
+                                    </Link>
                                 );
                             });
                         })()}
@@ -481,12 +490,24 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                     <div className={styles.coursesGrid}>
                         {courses.slice(0, 6).map((course) => {
                             const partner = partners.find(p => p.slug === course.partnerSlug);
+
+                            // Define tags for specific courses
+                            let courseTag = null;
+                            if (course.title.includes('CISSP')) {
+                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagPopular}`}>Popular</span>;
+                            } else if (course.title.includes('OSCP')) {
+                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagBestseller}`}>Bestseller</span>;
+                            } else if (course.title.includes('CEH')) {
+                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagTrending}`}>Trending</span>;
+                            }
+
                             return (
                                 <Link
                                     key={course.id}
                                     href={`/certificate/${course.slug}`}
                                     className={styles.courseCard}
                                 >
+                                    {courseTag}
                                     {partner?.logoUrl && (
                                         <div className={styles.coursePartnerLogo}>
                                             <img
@@ -518,6 +539,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
             {/* Choose Your Path to Mastery */}
             < MasterySection />
+
+            {/* Online Library */}
+            <OnlineLibrarySection />
 
             {/* Learning Options */}
             <section className={styles.learningSection} id="learning">
@@ -591,6 +615,23 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
             {/* Authorized Certifications */}
             <CertificationsSection />
+
+            <div className={styles.container}>
+                {/* eHack Role */}
+                <div className={styles.ehackRoleCard}>
+                    <img src="/ehack-black.png" alt="eHack Academy" className={styles.ehackRoleLogo} />
+                    <div className={styles.ehackRoleContent}>
+                        <h4>eHack Academy - Training & Facilitation Partner</h4>
+                        <p>eHack Academy acts as a training and facilitation partner only. Certifications and degrees are awarded solely by EC-Council and Kennedy University respectively, as per their norms. </p>
+                    </div>
+                </div>
+
+                {/* Disclaimer */}
+                <div className={styles.disclaimerNotice}>
+                    <h5 className={styles.disclaimerTitle}>Disclaimer</h5>
+                    <p>Students are advised to independently verify accreditation, recognition, program structure, and validity directly from the official websites of EC-Council and Kennedy University. eHack Academy shall not be responsible for any decisions made by students without conducting their own due diligence prior to enrollment.</p>
+                </div>
+            </div>
 
             {/* CTA Section */}
             <section className={styles.ctaSection}>

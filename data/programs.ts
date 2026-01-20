@@ -15,7 +15,7 @@ export const programs = [
             startDate: "5th of Every Month",
             duration: "9-12 Months",
             mode: "Classroom + Live Online",
-            totalHours: "300 ",
+            totalHours: "300+ ",
             membership: "2 Years Support"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
@@ -272,7 +272,7 @@ export const programs = [
             duration: "7-9 Months",
             mode: "Classroom + Live Online",
             totalHours: "200+ ",
-            membership: "6 Months support"
+            membership: "2 Years "
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
@@ -1021,7 +1021,7 @@ export const programs = [
     {
         slug: "masterclass-ethical-hacking-ceh-v13",
         category: "cybersecurity",
-        title: "Certified Ethical Hacker Master Program | CEHᴬᴵ v13 (3 Global Certification)",
+        title: "Certified Ethical Hacker Master Program | CEHᴬᴵ v13",
         subtitle: "with 3 Global EC-Council Certifications",
         description: "A best-in-class program designed to equip students with skills to become experts in cybersecurity. It covers comprehensive approaches to protecting IT infrastructure, securing data and information, running risk analysis and mitigation, architecting cloud-based security, and achieving compliance.",
         features: "Includes Real Time Labs with EC-Council tools, Ethical Hacking Phases and Attack Vectors, Preventative Countermeasures, Penetration Testing for Networks, and 6 Months Free Membership for practice.",
@@ -1031,10 +1031,10 @@ export const programs = [
         ehackLogo: "/ehack-black.png",
         stats: {
             startDate: "5th of Every Month",
-            duration: "5 Months",
+            duration: "4 Months",
             mode: "Classroom + Live Online",
-            totalHours: "200+",
-            membership: "6 Months Free Membership"
+            totalHours: "100+",
+            membership: "6 Months Membership"
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
