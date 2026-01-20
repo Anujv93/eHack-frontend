@@ -186,7 +186,7 @@ export default function KennedyUniversityPage() {
                                 <p className="certificate-label">EC-Council Certification</p>
                             </div>
                             <div className="certificate-card">
-                                <img src="/images/kennedy-university-certificate.png" alt="Kennedy University Degree" className="certificate-img" />
+                                <img src="/Integrated MSCS Degree Certifcate.png" alt="Kennedy University Degree" className="certificate-img" />
                                 <p className="certificate-label">Kennedy University Degree</p>
                             </div>
                         </div>
