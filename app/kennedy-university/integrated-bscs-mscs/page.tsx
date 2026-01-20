@@ -601,6 +601,12 @@ export default function IntegratedBSCSMSCSPage() {
                             </li>
                         </ul>
                     </div>
+
+                    <div className="certificate-showcase">
+                        <div className="program-certificate">
+                            <img src="/Integrated MSCS Degree Certifcate.png" alt="Integrated BSCS + MSCS Degree Certificate" className="certificate-image" />
+                        </div>
+                    </div>
                 </div>
             </section>
 

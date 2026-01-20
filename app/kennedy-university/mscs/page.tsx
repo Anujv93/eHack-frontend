@@ -440,6 +440,12 @@ export default function MSCSPage() {
                             </li>
                         </ul>
                     </div>
+
+                    <div className="certificate-showcase">
+                        <div className="program-certificate">
+                            <img src="/MSCS Degree Certificate.png" alt="MSCS Degree Certificate" className="certificate-image" />
+                        </div>
+                    </div>
                 </div>
             </section>
 

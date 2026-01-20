@@ -412,6 +412,12 @@ export default function BSCSPage() {
                             </li>
                         </ul>
                     </div>
+
+                    <div className="certificate-showcase">
+                        <div className="program-certificate">
+                            <img src="/BSCS Degree Certificate.png" alt="BSCS Degree Certificate" className="certificate-image" />
+                        </div>
+                    </div>
                 </div>
             </section>
 
