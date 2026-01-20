@@ -217,15 +217,17 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             >
                 <div className="sticky-nav-container">
                     <div className="sticky-nav-links">
-                        {NAV_SECTIONS.map((section) => (
-                            <button
-                                key={section.id}
-                                className={`sticky-nav-link ${activeSection === section.id ? 'active' : ''}`}
-                                onClick={() => scrollToSection(section.id)}
-                            >
-                                {section.label}
-                            </button>
-                        ))}
+                        {NAV_SECTIONS
+                            .filter(section => section.id !== 'labs' || !['data-science', 'robotics-iot', 'digital-marketing'].includes(program.category))
+                            .map((section) => (
+                                <button
+                                    key={section.id}
+                                    className={`sticky-nav-link ${activeSection === section.id ? 'active' : ''}`}
+                                    onClick={() => scrollToSection(section.id)}
+                                >
+                                    {section.label}
+                                </button>
+                            ))}
                     </div>
                     <div className="sticky-nav-cta">
                         <a href="tel:+919886035330" className="sticky-nav-call-btn">
@@ -236,7 +238,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </nav>
 
-            <PlacementSection />
+            {!['data-science', 'robotics-iot', 'digital-marketing'].includes(program.category) && <PlacementSection />}
 
             {/* 5. COMBINED ROI + JOB ROLES - Career Value Proposition */}
             <section className="roi-section" id="career">
@@ -500,7 +502,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* Hands-On Labs Section - Only for Cybersecurity Programs */}
-            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && program.certifications.length > 0 && (
+            {!['data-science', 'robotics-iot', 'digital-marketing'].includes(program.category) && program.certifications.length > 0 && (
                 <div id="labs">
                     <ProgramLabsWrapper
                         certificationCodes={program.certifications.map(cert => cert.code)}
@@ -640,7 +642,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 {!program.slug.includes('masterclass-ethical-hacking-ceh-v13') && (
                                     <div className="cert-card cert-card-blue">
                                         <div className="cert-image-wrapper">
-                                            <img src={program.slug === "masters-ethical-hacking" ? "/images/certificates/masters-certificate.jpg" : program.slug === "data-science-analytics" ? "/images/data_science certificate.jpeg" : "/images/certificates/graduate-certificate.jpg"} alt="eHack Academy Certificate" className="cert-image" />
+                                            <img src={program.slug === "masters-ethical-hacking" ? "/images/certificates/masters-certificate.jpg" : program.slug === "data-science-analytics" ? "/images/data_science certificate.jpeg" : program.slug === "robotics-for-all" ? "/images/certificates/robotics-image.jpeg" : "/images/certificates/graduate-certificate.jpg"} alt="eHack Academy Certificate" className="cert-image" />
                                         </div>
                                         <div className="cert-content">
                                             <div className="cert-brand">
