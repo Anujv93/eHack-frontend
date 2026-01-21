@@ -1893,6 +1893,351 @@ export const programs = [
                 ]
             }
         ]
+    },
+
+    {
+        slug: "personality-softskill-development",
+        category: "personality-softskills",
+        title: "Personality & Soft Skill Development Program",
+        subtitle: "Module-wise Syllabus (40 Hours)",
+        description: "A comprehensive personality development and soft skills program designed to support placement readiness for students pursuing Cybersecurity, Data Science, Robotics, and Digital Marketing. Master communication, interview skills, corporate readiness, and career planning to land your dream job.",
+        features: "Includes Personality Development, Communication Skills, Emotional Intelligence, Interview Preparation, Resume Building, LinkedIn Optimization, Mock Interviews, and Complete Placement Readiness Training.",
+        batchInfo: "5TH OF EVERY MONTH",
+        partner: "eHack Academy",
+        partnerLogo: "/ehack-black.png",
+        ehackLogo: "/ehack-black.png",
+        stats: {
+            startDate: "5th of Every Month",
+            duration: "40 Hours",
+            mode: "Classroom + Live Online",
+            totalHours: "40",
+            membership: "Placement Assistance"
+        },
+        schedule: "20 Modules × 2 Hours each | Weekday & Weekend Batches Available",
+        certifications: [
+            { code: "PSSD", name: "Personality & Soft Skill Development Certificate", image: "/Personality-and-Softskill-Development.png" }
+        ],
+        skills: [
+            { name: "Communication Skills", desc: "Master verbal and non-verbal communication, public speaking, and professional vocabulary for workplace success." },
+            { name: "Emotional Intelligence", desc: "Develop self-awareness, empathy, stress management, and interpersonal skills essential for professional growth." },
+            { name: "Interview Skills", desc: "Ace HR and technical interviews with confidence using proven techniques like the STAR method." },
+            { name: "Leadership & Teamwork", desc: "Build leadership fundamentals, team collaboration skills, and conflict management abilities." },
+            { name: "Professional Branding", desc: "Create ATS-friendly resumes, optimize LinkedIn profiles, and develop a strong personal brand." },
+            { name: "Corporate Readiness", desc: "Prepare for workplace ethics, corporate culture, professional email writing, and meeting skills." }
+        ],
+        curriculum: [
+            {
+                number: "01",
+                title: "Introduction to Personality & Professional Success",
+                duration: "2 Hours",
+                certification: "",
+                description: "Understand the importance of personality in career growth, industry expectations, and placement readiness.",
+                topics: [
+                    "Importance of personality in career growth",
+                    "Industry expectations & placement readiness",
+                    "Self-assessment and goal setting"
+                ]
+            },
+            {
+                number: "02",
+                title: "Self-Awareness & Confidence Building",
+                duration: "2 Hours",
+                certification: "",
+                description: "Develop self-awareness by understanding your strengths and weaknesses, and build unshakeable confidence.",
+                topics: [
+                    "Understanding strengths & weaknesses",
+                    "Building self-confidence",
+                    "Overcoming fear and self-doubt"
+                ]
+            },
+            {
+                number: "03",
+                title: "Attitude, Mindset & Professional Behavior",
+                duration: "2 Hours",
+                certification: "",
+                description: "Cultivate a growth mindset and professional attitude essential for success in tech careers.",
+                topics: [
+                    "Growth mindset",
+                    "Workplace ethics and discipline",
+                    "Professional attitude for tech careers"
+                ]
+            },
+            {
+                number: "04",
+                title: "Emotional Intelligence (EQ)",
+                duration: "2 Hours",
+                certification: "",
+                description: "Master your emotions and develop empathy and interpersonal skills for workplace success.",
+                topics: [
+                    "Understanding emotions",
+                    "Managing stress and pressure",
+                    "Empathy and interpersonal skills"
+                ]
+            },
+            {
+                number: "05",
+                title: "Time Management & Productivity",
+                duration: "2 Hours",
+                certification: "",
+                description: "Learn effective goal planning, prioritization, and work-life balance techniques for professionals.",
+                topics: [
+                    "Goal planning techniques",
+                    "Prioritization skills",
+                    "Work-life balance for professionals"
+                ]
+            },
+            {
+                number: "06",
+                title: "Verbal Communication Skills",
+                duration: "2 Hours",
+                certification: "",
+                description: "Develop clear and effective speaking abilities with proper voice modulation and professional vocabulary.",
+                topics: [
+                    "Clear and effective speaking",
+                    "Voice modulation & tone",
+                    "Professional vocabulary"
+                ]
+            },
+            {
+                number: "07",
+                title: "Non-Verbal Communication & Body Language",
+                duration: "2 Hours",
+                certification: "",
+                description: "Master body language, posture, and non-verbal cues for interviews and professional settings.",
+                topics: [
+                    "Posture, gestures, and eye contact",
+                    "Interview body language",
+                    "First impressions"
+                ]
+            },
+            {
+                number: "08",
+                title: "Listening Skills & Question Handling",
+                duration: "2 Hours",
+                certification: "",
+                description: "Develop active listening techniques and learn to handle interviewer questions with confidence.",
+                topics: [
+                    "Active listening techniques",
+                    "Understanding interviewer questions",
+                    "Structured and confident responses"
+                ]
+            },
+            {
+                number: "09",
+                title: "Public Speaking & Presentation Skills",
+                duration: "2 Hours",
+                certification: "",
+                description: "Overcome stage fear and master the art of delivering impactful technical presentations.",
+                topics: [
+                    "Overcoming stage fear",
+                    "Structuring presentations",
+                    "Technical presentation delivery"
+                ]
+            },
+            {
+                number: "10",
+                title: "Teamwork & Leadership Skills",
+                duration: "2 Hours",
+                certification: "",
+                description: "Learn to work effectively in teams, develop leadership fundamentals, and manage conflicts.",
+                topics: [
+                    "Working in teams",
+                    "Leadership fundamentals",
+                    "Conflict management"
+                ]
+            },
+            {
+                number: "11",
+                title: "Corporate Communication Skills",
+                duration: "2 Hours",
+                certification: "",
+                description: "Master professional email writing, workplace etiquette, and meeting skills.",
+                topics: [
+                    "Professional email writing",
+                    "Workplace etiquette",
+                    "Meeting and reporting skills"
+                ]
+            },
+            {
+                number: "12",
+                title: "Problem-Solving & Critical Thinking",
+                duration: "2 Hours",
+                certification: "",
+                description: "Develop analytical thinking and decision-making skills for handling real-world scenarios.",
+                topics: [
+                    "Analytical thinking",
+                    "Decision-making skills",
+                    "Handling real-world scenarios"
+                ]
+            },
+            {
+                number: "13",
+                title: "Resume Building (ATS-Friendly)",
+                duration: "2 Hours",
+                certification: "",
+                description: "Create ATS-friendly resumes that highlight your technical projects and stand out to recruiters.",
+                topics: [
+                    "Resume structure & formatting",
+                    "Highlighting technical projects",
+                    "Customizing resumes for roles"
+                ]
+            },
+            {
+                number: "14",
+                title: "LinkedIn Profile & Personal Branding",
+                duration: "2 Hours",
+                certification: "",
+                description: "Build a professional online presence with optimized LinkedIn profile and networking strategies.",
+                topics: [
+                    "Professional online presence",
+                    "LinkedIn optimization",
+                    "Networking strategies"
+                ]
+            },
+            {
+                number: "15",
+                title: "Group Discussion (GD) Techniques",
+                duration: "2 Hours",
+                certification: "",
+                description: "Master GD formats, evaluation criteria, and demonstrate communication & leadership skills.",
+                topics: [
+                    "GD formats & evaluation criteria",
+                    "Communication & leadership in GD",
+                    "Practice sessions"
+                ]
+            },
+            {
+                number: "16",
+                title: "HR Interview Preparation",
+                duration: "2 Hours",
+                certification: "",
+                description: "Prepare for common HR questions using behavioral interview techniques and the STAR method.",
+                topics: [
+                    "Common HR questions",
+                    "Behavioral interview techniques",
+                    "STAR method for answers"
+                ]
+            },
+            {
+                number: "17",
+                title: "Technical Interview Communication",
+                duration: "2 Hours",
+                certification: "",
+                description: "Learn to explain technical concepts clearly and handle technical questions with confidence.",
+                topics: [
+                    "Explaining technical concepts clearly",
+                    "Project explanation techniques",
+                    "Handling technical questions confidently"
+                ]
+            },
+            {
+                number: "18",
+                title: "Mock Interviews – HR & Technical",
+                duration: "2 Hours",
+                certification: "",
+                description: "Participate in real-time mock interviews with individual feedback and improvement plans.",
+                topics: [
+                    "Real-time mock interviews",
+                    "Individual feedback & improvement plan"
+                ]
+            },
+            {
+                number: "19",
+                title: "Corporate Readiness & Workplace Ethics",
+                duration: "2 Hours",
+                certification: "",
+                description: "Prepare for professional conduct at workplace, corporate culture adaptability, and challenges.",
+                topics: [
+                    "Professional conduct at workplace",
+                    "Adaptability in corporate culture",
+                    "Workplace challenges"
+                ]
+            },
+            {
+                number: "20",
+                title: "Placement Readiness & Career Roadmap",
+                duration: "2 Hours",
+                certification: "eHack Academy",
+                description: "Final assessment, career planning, and building placement confidence for your next steps.",
+                topics: [
+                    "Final assessment",
+                    "Career planning & growth roadmap",
+                    "Placement confidence & next steps"
+                ]
+            }
+        ],
+        targetAudience: [
+            { title: "Fresh Graduates", desc: "Recent graduates from any stream looking to improve their personality and soft skills for better job opportunities.", tag: "Entry Level" },
+            { title: "Job Seekers", desc: "Individuals actively seeking jobs who want to ace interviews and build professional confidence.", tag: "Career Ready" },
+            { title: "Working Professionals", desc: "Professionals looking to enhance their communication, leadership, and corporate skills for career growth.", tag: "Skill Enhancement" },
+            { title: "Students", desc: "College students preparing for campus placements and building industry-ready soft skills.", tag: "Campus Prep" }
+        ],
+        jobRoles: [
+            "Any Professional Role", "Team Leader", "Project Coordinator", "Client Relationship Manager",
+            "Business Development Executive", "HR Executive", "Corporate Trainer", "Sales Executive"
+        ],
+        pricing: {
+            original: "₹40,000",
+            discounted: "₹25,000",
+            emi: "Contact for EMI options",
+            applicationFee: "₹1,000",
+            admissionFee: "₹25,000"
+        },
+        partnerLogos: [
+            "/ehack-black.png"
+        ],
+        careerROI: {
+            title: "Great Career ROI",
+            subtitle: "This program transforms your personality and professional presence, making you job-ready with enhanced communication, leadership, and interview skills—essential for landing and excelling in any career.",
+            chartTitle: "Boost Your Career Prospects",
+            salaryIntro: "Professionals with strong soft skills command 20-30% higher salaries and faster career progression.",
+            salaryLevels: [
+                { label: "20%", level: "Higher Starting" },
+                { label: "2x", level: "Faster Growth" },
+                { label: "80%", level: "Interview Success" }
+            ],
+            chartDesc: "Impact of Soft Skills on Career Success",
+            chartNote: "Employers consistently rank soft skills as the most important factor in hiring decisions, often above technical skills."
+        },
+        whyEhack: [
+            { title: "Industry-Focused Training", desc: "Curriculum designed based on real industry requirements and placement needs of tech companies." },
+            { title: "Expert Trainers", desc: "Learn from experienced corporate trainers and HR professionals who understand what employers look for." },
+            { title: "Hands-On Practice", desc: "Extensive mock interviews, GD practice sessions, and real-time feedback to build confidence." },
+            { title: "Placement Support", desc: "Complete placement assistance including resume building, LinkedIn optimization, and interview preparation." }
+        ],
+        programExcellence: [
+            { title: "Practical Training", desc: "Hands-on practice with mock interviews, GDs, and real-time feedback.", icon: "lab" },
+            { title: "Expert Faculty", desc: "Learn from corporate trainers and HR professionals with industry experience.", icon: "certificate" },
+            { title: "Placement Focus", desc: "Comprehensive placement preparation and career guidance.", icon: "infrastructure" },
+            { title: "Industry Curriculum", desc: "Content designed based on actual employer requirements.", icon: "global" }
+        ],
+        faq: [
+            {
+                category: "Program",
+                questions: [
+                    { q: "What is the Personality & Soft Skill Development Program?", a: "A comprehensive 20-week program covering personality development, communication skills, interview preparation, and complete placement readiness training." },
+                    { q: "What will I learn in this program?", a: "You'll learn communication skills, emotional intelligence, body language, public speaking, resume building, LinkedIn optimization, interview techniques, and corporate readiness." },
+                    { q: "What are the schedule options?", a: "Weekday (Tuesday to Friday): 2 hrs/day OR Weekend (Saturday & Sunday): 4 hrs/day. New batches start on the 5th of every month." },
+                    { q: "Is there a certification?", a: "Yes, you will receive a Personality & Soft Skill Development Certificate from eHack Academy upon successful completion." }
+                ]
+            },
+            {
+                category: "Eligibility",
+                questions: [
+                    { q: "Who can enroll in this program?", a: "Anyone looking to improve their personality, communication skills, and professional presence—students, fresh graduates, job seekers, and working professionals." },
+                    { q: "Is prior experience required?", a: "No prior experience is required. This program is designed for everyone who wants to develop professional soft skills." },
+                    { q: "Can working professionals join?", a: "Yes! We offer flexible weekday evening and weekend batches designed for working professionals." }
+                ]
+            },
+            {
+                category: "Fees & Admission",
+                questions: [
+                    { q: "What is the program fee?", a: "Original Price: ₹50,000 | Offer Price: ₹35,000. Application fee of ₹1,000 is adjustable in the program fee." },
+                    { q: "Are EMI options available?", a: "Yes, we offer flexible EMI options. Contact our counselors for detailed payment plans." },
+                    { q: "Is there placement assistance?", a: "Yes, we provide complete placement support including resume building, interview preparation, and mock interviews." }
+                ]
+            }
+        ]
     }
 ];
 
@@ -1941,6 +2286,14 @@ export const programCategories = [
         icon: '📈',
         color: '#8B5CF6',
         backgroundImage: '/images/social-media-marketing.jpg'
+    },
+    {
+        slug: 'personality-softskills',
+        name: 'Personality & Soft Skills',
+        description: 'Master communication, interviews, and professional presence',
+        icon: '🎯',
+        color: '#EC4899',
+        backgroundImage: '/Personality-and-Softskill-Development.png'
     }
 ];
 

@@ -238,54 +238,56 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </nav>
 
-            {!['data-science', 'robotics-iot', 'digital-marketing'].includes(program.category) && <PlacementSection />}
+            {!['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category) && <PlacementSection />}
 
             {/* 5. COMBINED ROI + JOB ROLES - Career Value Proposition */}
-            <section className="roi-section" id="career">
-                <div className="section-container">
-                    <h2 className="roi-title">{program.careerROI?.title || 'Great'} <span className="text-accent">Career ROI</span></h2>
-                    <p className="roi-subtitle">{program.careerROI?.subtitle || "This program equips you with advanced skills essential for protecting organizations."}</p>
+            {program.category !== 'personality-softskills' && (
+                <section className="roi-section" id="career">
+                    <div className="section-container">
+                        <h2 className="roi-title">{program.careerROI?.title || 'Great'} <span className="text-accent">Career ROI</span></h2>
+                        <p className="roi-subtitle">{program.careerROI?.subtitle || "This program equips you with advanced skills essential for protecting organizations."}</p>
 
-                    <div className="roi-grid">
-                        <div className="salary-card">
-                            <h3 className="roi-section-title">{program.careerROI?.chartTitle || 'Earning Potential'}</h3>
-                            <p className="salary-stat">{program.careerROI?.salaryIntro || 'Professionals in this field are in high demand with competitive salaries.'}</p>
-                            <div className="salary-chart">
-                                <div className="chart-bars">
-                                    {program.careerROI?.salaryLevels?.map((level, idx) => (
-                                        <div key={idx} className="chart-bar-group">
-                                            <span className="bar-label">{level.label}</span>
-                                            <div className={`chart-bar bar-${idx + 1}`}></div>
-                                        </div>
-                                    )) || (
-                                            <>
-                                                <div className="chart-bar-group"><span className="bar-label">₹8L</span><div className="chart-bar bar-1"></div></div>
-                                                <div className="chart-bar-group"><span className="bar-label">₹18L</span><div className="chart-bar bar-2"></div></div>
-                                                <div className="chart-bar-group"><span className="bar-label">₹35L+</span><div className="chart-bar bar-3"></div></div>
-                                            </>
-                                        )}
-                                </div>
-                            </div>
-                            <h4 className="chart-title">{program.careerROI?.chartDesc || 'Salary Progression'}</h4>
-                            <p className="chart-desc">{program.careerROI?.chartNote || 'Companies offer competitive salaries to skilled professionals.'}</p>
-                        </div>
-
-                        {/* Job Roles integrated here */}
-                        <div className="jobroles-card-integrated">
-                            <h3 className="roi-section-title"><span className="text-accent">{program.jobRoles.length}+</span> Career Paths</h3>
-                            <div className="jobroles-grid-compact">
-                                {program.jobRoles.slice(0, 9).map((role, idx) => (
-                                    <div key={idx} className="job-role-tag">
-                                        <BriefcaseBusiness size={14} />
-                                        <span>{role}</span>
+                        <div className="roi-grid">
+                            <div className="salary-card">
+                                <h3 className="roi-section-title">{program.careerROI?.chartTitle || 'Earning Potential'}</h3>
+                                <p className="salary-stat">{program.careerROI?.salaryIntro || 'Professionals in this field are in high demand with competitive salaries.'}</p>
+                                <div className="salary-chart">
+                                    <div className="chart-bars">
+                                        {program.careerROI?.salaryLevels?.map((level, idx) => (
+                                            <div key={idx} className="chart-bar-group">
+                                                <span className="bar-label">{level.label}</span>
+                                                <div className={`chart-bar bar-${idx + 1}`}></div>
+                                            </div>
+                                        )) || (
+                                                <>
+                                                    <div className="chart-bar-group"><span className="bar-label">₹8L</span><div className="chart-bar bar-1"></div></div>
+                                                    <div className="chart-bar-group"><span className="bar-label">₹18L</span><div className="chart-bar bar-2"></div></div>
+                                                    <div className="chart-bar-group"><span className="bar-label">₹35L+</span><div className="chart-bar bar-3"></div></div>
+                                                </>
+                                            )}
                                     </div>
-                                ))}
+                                </div>
+                                <h4 className="chart-title">{program.careerROI?.chartDesc || 'Salary Progression'}</h4>
+                                <p className="chart-desc">{program.careerROI?.chartNote || 'Companies offer competitive salaries to skilled professionals.'}</p>
                             </div>
-                            <a href="#pricing" className="btn-see-investment">See Your Investment →</a>
+
+                            {/* Job Roles integrated here */}
+                            <div className="jobroles-card-integrated">
+                                <h3 className="roi-section-title"><span className="text-accent">{program.jobRoles.length}+</span> Career Paths</h3>
+                                <div className="jobroles-grid-compact">
+                                    {program.jobRoles.slice(0, 9).map((role, idx) => (
+                                        <div key={idx} className="job-role-tag">
+                                            <BriefcaseBusiness size={14} />
+                                            <span>{role}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <a href="#pricing" className="btn-see-investment">See Your Investment →</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
 
             {/* 6. CREDENTIALS - Authority & Trust */}
             <section className="credentials-section" id="certifications">
@@ -294,16 +296,19 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         <h2 className="credentials-title">Earn <span className="text-accent">{program.certifications.length} Global Certifications</span></h2>
                         <p className="credentials-subtitle">Graduate with internationally recognized certifications from {program.partner}.</p>
 
-                        <div className={`certificates-gallery count-${program.certifications.length}`}>
-                            {program.certifications.map((cert, idx) => (
-                                <div key={idx} className="certificate-image-card">
-                                    <img src={cert.image} alt={`${cert.code} - ${cert.name} Certificate`} className="certificate-img" />
-                                    <div className="certificate-overlay">
-                                        <span className="cert-badge-label">{cert.code}</span>
+                        {/* Certificate images gallery - hidden for personality-softskills */}
+                        {program.category !== 'personality-softskills' && (
+                            <div className={`certificates-gallery count-${program.certifications.length}`}>
+                                {program.certifications.map((cert, idx) => (
+                                    <div key={idx} className="certificate-image-card">
+                                        <img src={cert.image} alt={`${cert.code} - ${cert.name} Certificate`} className="certificate-img" />
+                                        <div className="certificate-overlay">
+                                            <span className="cert-badge-label">{cert.code}</span>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
+                                ))}
+                            </div>
+                        )}
 
                         <div className="credentials-grid">
                             {program.certifications.map((cert, idx) => (
@@ -353,7 +358,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
 
                     {/* Stats Row */}
-                    {programType === 'cybersecurity' && (
+                    {programType === 'cybersecurity' && program.category !== 'personality-softskills' && (
                         <div className="audience-stats-row">
                             <div className="audience-stat-item">
                                 <span className="stat-number">85%</span>
@@ -502,7 +507,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* Hands-On Labs Section - Only for Cybersecurity Programs */}
-            {!['data-science', 'robotics-iot', 'digital-marketing'].includes(program.category) && program.certifications.length > 0 && (
+            {!['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category) && program.certifications.length > 0 && (
                 <div id="labs">
                     <ProgramLabsWrapper
                         certificationCodes={program.certifications.map(cert => cert.code)}
@@ -614,79 +619,82 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <span className="invest-badge">INVEST IN YOUR FUTURE</span>
                     <h2 className="invest-title">Your Investment</h2>
 
-                    <div className={`certification-cards ${program.slug.includes('data-science') || program.slug.includes('digital-marketing') || program.slug.includes('robotics') ? 'single-card' : program.slug.includes('masterclass-ethical-hacking-ceh-v13') ? 'three-cards' : ''}`}>
-                        {program.slug.includes('masterclass-ethical-hacking-ceh-v13') ? (
-                            // Show 3 individual cards for CEH Master
-                            program.certifications.map((cert, idx) => (
-                                <div key={idx} className="cert-card cert-card-dark">
-                                    <div className="cert-image-wrapper">
-                                        <img src={cert.image} alt={`${cert.code} Certificate`} className="cert-image" />
-                                    </div>
-                                    <div className="cert-content">
-                                        <div className="cert-brand">
-                                            <img src="/images/ec-council-badge.png" alt="EC-Council" className="ec-council-logo" />
-                                            <span className="partner-text">EC-Council<br /><small>Official Partner</small></span>
-                                        </div>
-                                        <h3 className="cert-program-name cert-underline">{cert.name}</h3>
-                                        <ul className="cert-features">
-                                            <li><span className="check-icon">✓</span>{cert.code}</li>
-                                            <li><span className="check-icon">✓</span>Globally Recognized</li>
-                                            <li><span className="check-icon">✓</span>Industry Standard</li>
-                                        </ul>
-                                        <button className="btn-counsellor btn-counsellor-dark">Talk to Career Counsellor</button>
-                                    </div>
-                                </div>
-                            ))
-                        ) : (
-                            <>
-                                {!program.slug.includes('masterclass-ethical-hacking-ceh-v13') && (
-                                    <div className="cert-card cert-card-blue">
+                    {/* Certification cards - hidden for personality-softskills */}
+                    {program.category !== 'personality-softskills' && (
+                        <div className={`certification-cards ${program.slug.includes('data-science') || program.slug.includes('digital-marketing') || program.slug.includes('robotics') ? 'single-card' : program.slug.includes('masterclass-ethical-hacking-ceh-v13') ? 'three-cards' : ''}`}>
+                            {program.slug.includes('masterclass-ethical-hacking-ceh-v13') ? (
+                                // Show 3 individual cards for CEH Master
+                                program.certifications.map((cert, idx) => (
+                                    <div key={idx} className="cert-card cert-card-dark">
                                         <div className="cert-image-wrapper">
-                                            <img src={program.slug === "masters-ethical-hacking" ? "/images/certificates/masters-certificate.jpg" : program.slug === "data-science-analytics" ? "/images/data_science certificate.jpeg" : program.slug === "robotics-for-all" ? "/images/certificates/robotics-image.jpeg" : "/images/certificates/graduate-certificate.jpg"} alt="eHack Academy Certificate" className="cert-image" />
-                                        </div>
-                                        <div className="cert-content">
-                                            <div className="cert-brand">
-                                                <img src="/ehack-logo.png" alt="eHack Academy" className="cert-brand-logo" />
-                                                <span className="brand-badge">ACADEMY</span>
-                                            </div>
-                                            <h3 className="cert-program-name">{program.title}</h3>
-                                            <ul className="cert-features">
-                                                <li><span className="check-icon">✓</span>1 Program Completion Certificate</li>
-                                                <li><span className="check-icon">✓</span>{program.slug.includes('data-science') ? 'Industry Projects & Portfolio' : 'Real-Time Labs Access'}</li>
-                                                <li><span className="check-icon">✓</span>{program.slug === "masters-ethical-hacking" ? "Placement Support" : program.slug.includes('data-science') ? "100% Job Assistance" : "Internship Opportunity*"}</li>
-                                            </ul>
-                                            <button className="btn-counsellor">Talk to Career Counsellor</button>
-                                        </div>
-                                    </div>
-                                )}
-
-                                {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('data-science') && (
-                                    <div className="cert-card cert-card-dark">
-                                        <div className="cert-image-wrapper">
-                                            <div className="cert-stack">
-                                                {program.certifications.map((cert, idx) => (
-                                                    <img key={idx} src={cert.image} alt={`${cert.code} Certificate`} className={`cert-stack-img cert-stack-${program.certifications.length - idx}`} />
-                                                ))}
-                                            </div>
+                                            <img src={cert.image} alt={`${cert.code} Certificate`} className="cert-image" />
                                         </div>
                                         <div className="cert-content">
                                             <div className="cert-brand">
                                                 <img src="/images/ec-council-badge.png" alt="EC-Council" className="ec-council-logo" />
                                                 <span className="partner-text">EC-Council<br /><small>Official Partner</small></span>
                                             </div>
-                                            <h3 className="cert-program-name cert-underline">{program.certifications.length} EC-Council Certifications</h3>
+                                            <h3 className="cert-program-name cert-underline">{cert.name}</h3>
                                             <ul className="cert-features">
-                                                <li><span className="check-icon">✓</span>{program.certifications.map(c => c.code).join(" | ")}</li>
+                                                <li><span className="check-icon">✓</span>{cert.code}</li>
                                                 <li><span className="check-icon">✓</span>Globally Recognized</li>
                                                 <li><span className="check-icon">✓</span>Industry Standard</li>
                                             </ul>
                                             <button className="btn-counsellor btn-counsellor-dark">Talk to Career Counsellor</button>
                                         </div>
                                     </div>
-                                )}
-                            </>
-                        )}
-                    </div>
+                                ))
+                            ) : (
+                                <>
+                                    {!program.slug.includes('masterclass-ethical-hacking-ceh-v13') && (
+                                        <div className="cert-card cert-card-blue">
+                                            <div className="cert-image-wrapper">
+                                                <img src={program.slug === "masters-ethical-hacking" ? "/images/certificates/masters-certificate.jpg" : program.slug === "data-science-analytics" ? "/images/data_science certificate.jpeg" : program.slug === "robotics-for-all" ? "/images/certificates/robotics-image.jpeg" : "/images/certificates/graduate-certificate.jpg"} alt="eHack Academy Certificate" className="cert-image" />
+                                            </div>
+                                            <div className="cert-content">
+                                                <div className="cert-brand">
+                                                    <img src="/ehack-logo.png" alt="eHack Academy" className="cert-brand-logo" />
+                                                    <span className="brand-badge">ACADEMY</span>
+                                                </div>
+                                                <h3 className="cert-program-name">{program.title}</h3>
+                                                <ul className="cert-features">
+                                                    <li><span className="check-icon">✓</span>1 Program Completion Certificate</li>
+                                                    <li><span className="check-icon">✓</span>{program.slug.includes('data-science') ? 'Industry Projects & Portfolio' : 'Real-Time Labs Access'}</li>
+                                                    <li><span className="check-icon">✓</span>{program.slug === "masters-ethical-hacking" ? "Placement Support" : program.slug.includes('data-science') ? "100% Job Assistance" : "Internship Opportunity*"}</li>
+                                                </ul>
+                                                <button className="btn-counsellor">Talk to Career Counsellor</button>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('data-science') && (
+                                        <div className="cert-card cert-card-dark">
+                                            <div className="cert-image-wrapper">
+                                                <div className="cert-stack">
+                                                    {program.certifications.map((cert, idx) => (
+                                                        <img key={idx} src={cert.image} alt={`${cert.code} Certificate`} className={`cert-stack-img cert-stack-${program.certifications.length - idx}`} />
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            <div className="cert-content">
+                                                <div className="cert-brand">
+                                                    <img src="/images/ec-council-badge.png" alt="EC-Council" className="ec-council-logo" />
+                                                    <span className="partner-text">EC-Council<br /><small>Official Partner</small></span>
+                                                </div>
+                                                <h3 className="cert-program-name cert-underline">{program.certifications.length} EC-Council Certifications</h3>
+                                                <ul className="cert-features">
+                                                    <li><span className="check-icon">✓</span>{program.certifications.map(c => c.code).join(" | ")}</li>
+                                                    <li><span className="check-icon">✓</span>Globally Recognized</li>
+                                                    <li><span className="check-icon">✓</span>Industry Standard</li>
+                                                </ul>
+                                                <button className="btn-counsellor btn-counsellor-dark">Talk to Career Counsellor</button>
+                                            </div>
+                                        </div>
+                                    )}
+                                </>
+                            )}
+                        </div>
+                    )}
 
                     <p className="invest-footer">
                         Connect with our admissions team to know about fees & financing.
@@ -722,25 +730,27 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </section>
 
-            {/* 11. SKILLS SECTION */}
-            <section className="skills-section">
-                <div className="section-container">
-                    <h2 className="skills-title">Master <span className="text-accent">{programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'}</span> Skills</h2>
-                    <div className="skills-grid">
-                        {program.skills.map((skill, idx) => (
-                            <div key={idx} className="skill-card">
-                                <h3 className="skill-name">{skill.name}</h3>
-                                <p className="skill-desc">{skill.desc}</p>
-                            </div>
-                        ))}
+            {/* 11. SKILLS SECTION - Hidden for personality-softskills */}
+            {program.category !== 'personality-softskills' && (
+                <section className="skills-section">
+                    <div className="section-container">
+                        <h2 className="skills-title">Master <span className="text-accent">{programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'}</span> Skills</h2>
+                        <div className="skills-grid">
+                            {program.skills.map((skill, idx) => (
+                                <div key={idx} className="skill-card">
+                                    <h3 className="skill-name">{skill.name}</h3>
+                                    <p className="skill-desc">{skill.desc}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
 
 
 
-            {/* 13. NEWS SECTION - Industry Validation & Urgency */}
-            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && <section className="news-section">
+            {/* 13. NEWS SECTION - Industry Validation & Urgency - Hidden for non-cybersecurity programs */}
+            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('personality') && program.category !== 'personality-softskills' && <section className="news-section">
                 <div className="news-container">
                     <span className="news-badge">CYBER THREATS ARE RISING</span>
                     <h2 className="news-title">Why Cybersecurity Skills Matter Now</h2>
@@ -776,7 +786,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {/* 14. FINAL CTA SECTION */}
             <section className="program-cta-section">
                 <div className="section-container">
-                    <h2>Ready to Start Your {programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'} Journey?</h2>
+                    <h2>Ready to Start Your {program.category === 'personality-softskills' ? 'Professional Development' : programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'} Journey?</h2>
                     <p>Join thousands of professionals who have transformed their careers with eHack Academy</p>
                     <div className="cta-buttons">
                         <a href="tel:+919886035330" className="btn-primary btn-large">Call Now: +91-9886035330</a>
