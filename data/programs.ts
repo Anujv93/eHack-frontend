@@ -530,7 +530,7 @@ export const programs = [
             {
                 category: "Eligibility",
                 questions: [
-                    { q: "What is the minimum qualification required?", a: "A basic understanding of computers and networking is helpful. Graduates from any stream can apply." },
+                    { q: "What is the minimum qualification required?", a: "A basic understanding of computers and networking is helpful. Minimum qualification: 12th pass" },
                     { q: "Is coding knowledge required?", a: "Basic programming knowledge is beneficial but not mandatory. We cover necessary scripting as part of the curriculum." },
                     { q: "Can working professionals join?", a: "Absolutely! We offer flexible weekend and evening batches designed for working professionals." }
                 ]
