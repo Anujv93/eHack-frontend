@@ -281,6 +281,12 @@ export default async function CertificatePage({ params }: PageProps) {
                 accreditations={accreditationsSection?.Accreditations}
             />
 
+            {/* Inquiry Form Section */}
+            <CertificateInquirySection
+                certificateTitle={certificate.Title}
+                certificateSlug={slug}
+            />
+
             {/* Related Certificates Section */}
             <RelatedCertificates
                 title="Explore More Certifications"
