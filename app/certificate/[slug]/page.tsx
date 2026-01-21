@@ -172,6 +172,29 @@ export default async function CertificatePage({ params }: PageProps) {
     // Always add Inquiry section
     dynamicNavSections.push({ id: 'inquiry', label: 'Enquire Now' });
 
+<<<<<<< HEAD
+    // Add new sections to navigation
+    if (careerStatsSection?.Stats && careerStatsSection.Stats.length > 0) {
+        dynamicNavSections.push({ id: 'career-value', label: 'Career Value' });
+    }
+
+    if (jobRolesSection?.JobRoles && jobRolesSection.JobRoles.length > 0) {
+        dynamicNavSections.push({ id: 'job-roles', label: 'Job Roles' });
+    }
+
+    if (courseOutlineSection?.Modules && courseOutlineSection.Modules.length > 0) {
+        dynamicNavSections.push({ id: 'course-outline', label: 'Course Outline' });
+    }
+
+    if (faqSection?.FAQs && faqSection.FAQs.length > 0) {
+        dynamicNavSections.push({ id: 'faqs', label: 'FAQs' });
+    }
+
+=======
+>>>>>>> e9a6cbd (Integrated Zoho inquiry form)
+    // Always add Inquiry section
+    dynamicNavSections.push({ id: 'inquiry', label: 'Enquire Now' });
+
     return (
         <div>
             {/* Sticky Section Navigation - Only shows sections that exist */}
