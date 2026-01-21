@@ -698,7 +698,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
                     <p className="invest-footer">
                         Connect with our admissions team to know about fees & financing.
-                        10th Anniversary Offer: <strong style={{ color: 'var(--accent)' }}>{program.pricing.discounted}</strong> (Original: {program.pricing.original})
+                        Anniversary Offer: <strong style={{ color: 'var(--accent)' }}>{program.pricing.discounted}</strong> (Original: {program.pricing.original})
                     </p>
                 </div>
             </section>
