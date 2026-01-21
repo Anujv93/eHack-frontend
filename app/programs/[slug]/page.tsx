@@ -118,9 +118,11 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                     <div className="divider"></div>
                                 </>
                             )}
-                            <div className="partner-brand">
-                                <img src={program.ehackLogo} alt="eHack Academy" className="hero-brand-logo" />
-                            </div>
+                            {!program.slug.includes('masterclass-ethical-hacking-ceh-v13') && (
+                                <div className="partner-brand">
+                                    <img src={program.ehackLogo} alt="eHack Academy" className="hero-brand-logo" />
+                                </div>
+                            )}
                         </div>
 
                         <h1 className="hero-title">
@@ -653,6 +655,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                             </div>
                                             <div className="cert-content">
                                                 <div className="cert-brand">
+
                                                     <img src="/ehack-logo.png" alt="eHack Academy" className="cert-brand-logo" />
                                                     <span className="brand-badge">ACADEMY</span>
                                                 </div>
