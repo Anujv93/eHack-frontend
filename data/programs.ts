@@ -1082,7 +1082,7 @@ export const programs = [
         batchInfo: "5TH OF EVERY MONTH",
         partner: "EC-Council",
         partnerLogo: "/images/ec-council-logo.png",
-        ehackLogo: "/ehack-black.png",
+        // ehackLogo: "",
         stats: {
             startDate: "5th of Every Month",
             duration: "4 Months",
