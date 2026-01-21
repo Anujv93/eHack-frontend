@@ -8,6 +8,7 @@ import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star } from 'lucide-
 import './program.css';
 import PlacementSection from '@/components/home/placement-section';
 import { ProgramLabsWrapper } from '@/components/global/certificate-labs/ProgramLabsWrapper';
+import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
 
 // Navigation sections configuration
 const NAV_SECTIONS = [
@@ -151,30 +152,13 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         </div>
                     </div>
 
-                    <div className="form-card">
-                        <div className="form-urgency-badge">🔥 Limited Seats Available</div>
-                        <h2 className="form-title">Book a <span className="text-accent">FREE</span> Live class!</h2>
-                        <p className="form-subtitle">Login to get started</p>
-
-                        <div className="phone-input">
-                            <div className="country-code">
-                                <span className="flag">🇮🇳</span>
-                                <span>+91</span>
-                            </div>
-                            <input type="tel" placeholder="Mobile Number" className="phone-field" />
-                        </div>
-
-                        <button className="btn-continue">CONTINUE</button>
-
-                        <label className="checkbox-label">
-                            <input type="checkbox" defaultChecked />
-                            <span>I wish to receive updates via WhatsApp.</span>
-                        </label>
-
-                        <p className="terms-text">
-                            By continuing, you agree to eHack's <a href="#">Terms</a> and <a href="#">Privacy Policy</a>
-                        </p>
-                    </div>
+                    <InquiryForm
+                        courseName={program.title}
+                        courseCode={program.slug}
+                        variant="hero"
+                        title="Get Course Information"
+                        subtitle="Our counselor will call you within 2 hours"
+                    />
                 </div>
             </section>
 

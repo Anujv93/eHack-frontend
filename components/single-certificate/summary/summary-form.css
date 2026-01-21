@@ -1,0 +1,82 @@
+/* Summary Inquiry Form Styles */
+
+.inquiry-form-card .form-error-msg {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #dc2626;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Success State */
+.inquiry-form-card .form-success {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.inquiry-form-card .success-checkmark {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 auto 1rem;
+}
+
+.inquiry-form-card .form-success h3 {
+    color: #1a1a1a;
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.inquiry-form-card .form-success p {
+    color: #666;
+    margin: 0 0 1.25rem 0;
+    font-size: 0.9rem;
+}
+
+.inquiry-form-card .success-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.inquiry-form-card .btn-call,
+.inquiry-form-card .btn-whatsapp {
+    padding: 0.625rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.inquiry-form-card .btn-call {
+    background: rgba(234, 88, 12, 0.1);
+    color: #ea580c;
+    border: 1px solid rgba(234, 88, 12, 0.25);
+}
+
+.inquiry-form-card .btn-whatsapp {
+    background: rgba(37, 211, 102, 0.1);
+    color: #16a34a;
+    border: 1px solid rgba(37, 211, 102, 0.25);
+}
+
+.inquiry-form-card .btn-call:hover,
+.inquiry-form-card .btn-whatsapp:hover {
+    transform: translateY(-2px);
+}
+
+/* Submit button disabled state */
+.inquiry-form-card .btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

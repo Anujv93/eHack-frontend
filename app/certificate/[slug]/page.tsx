@@ -10,6 +10,7 @@ import ExamDetails from "@/components/global/exam-details/exam-details";
 import StickySectionNav from "@/components/global/sticky-section-nav/sticky-section-nav";
 import RelatedCertificates from "@/components/global/related-certificates/related-certificates";
 import CertificateLabsWrapper from "@/components/global/certificate-labs/CertificateLabsWrapper";
+import CertificateInquirySection from "@/components/global/certificate-inquiry/certificate-inquiry";
 import {
     getCertificateBySlug,
     getAdmissionProcess,
@@ -124,6 +125,9 @@ export default async function CertificatePage({ params }: PageProps) {
         dynamicNavSections.push({ id: 'accreditations', label: 'Accreditations' });
     }
 
+    // Always add Inquiry section
+    dynamicNavSections.push({ id: 'inquiry', label: 'Enquire Now' });
+
     return (
         <div>
             {/* Sticky Section Navigation - Only shows sections that exist */}
@@ -144,6 +148,8 @@ export default async function CertificatePage({ params }: PageProps) {
                 description={summarySection?.Description}
                 features={summarySection?.Features}
                 videoLink={summarySection?.CertificateVideo?.VideoLink}
+                certificateTitle={certificate.Title}
+                certificateSlug={slug}
             />
             <FeaturesGrid
                 title={featuresGridSection?.Title}
@@ -189,6 +195,12 @@ export default async function CertificatePage({ params }: PageProps) {
                 subtitle={ctaSection?.Subtitle}
                 buttonText={ctaSection?.ButtonText}
                 buttonLink={ctaSection?.ButtonLink}
+            />
+
+            {/* Inquiry Form Section */}
+            <CertificateInquirySection
+                certificateTitle={certificate.Title}
+                certificateSlug={slug}
             />
 
             {/* Related Certificates Section */}
