@@ -162,6 +162,245 @@ export const programs = [
                     "Reporting, Documentation, and Post-Test Actions"
 
                 ]
+            },
+            {
+                number: "06",
+                title: "Introduction to Personality & Professional Success",
+                duration: "1 Week",
+                certification: "",
+                description: "Understand the importance of personality in career growth, industry expectations, and placement readiness.",
+                topics: [
+                    "Importance of personality in career growth",
+                    "Industry expectations & placement readiness",
+                    "Self-assessment and goal setting"
+                ]
+            },
+            {
+                number: "07",
+                title: "Self-Awareness & Confidence Building",
+                duration: "1 Week",
+                certification: "",
+                description: "Develop self-awareness by understanding your strengths and weaknesses, and build unshakeable confidence.",
+                topics: [
+                    "Understanding strengths & weaknesses",
+                    "Building self-confidence",
+                    "Overcoming fear and self-doubt"
+                ]
+            },
+            {
+                number: "08",
+                title: "Attitude, Mindset & Professional Behavior",
+                duration: "1 Week",
+                certification: "",
+                description: "Cultivate a growth mindset and professional attitude essential for success in tech careers.",
+                topics: [
+                    "Growth mindset",
+                    "Workplace ethics and discipline",
+                    "Professional attitude for tech careers"
+                ]
+            },
+            {
+                number: "09",
+                title: "Emotional Intelligence (EQ)",
+                duration: "1 Week",
+                certification: "",
+                description: "Master your emotions and develop empathy and interpersonal skills for workplace success.",
+                topics: [
+                    "Understanding emotions",
+                    "Managing stress and pressure",
+                    "Empathy and interpersonal skills"
+                ]
+            },
+            {
+                number: "10",
+                title: "Time Management & Productivity",
+                duration: "1 Week",
+                certification: "",
+                description: "Learn effective goal planning, prioritization, and work-life balance techniques for professionals.",
+                topics: [
+                    "Goal planning techniques",
+                    "Prioritization skills",
+                    "Work-life balance for professionals"
+                ]
+            },
+            {
+                number: "11",
+                title: "Verbal Communication Skills",
+                duration: "1 Week",
+                certification: "",
+                description: "Develop clear and effective speaking abilities with proper voice modulation and professional vocabulary.",
+                topics: [
+                    "Clear and effective speaking",
+                    "Voice modulation & tone",
+                    "Professional vocabulary"
+                ]
+            },
+            {
+                number: "12",
+                title: "Non-Verbal Communication & Body Language",
+                duration: "1 Week",
+                certification: "",
+                description: "Master body language, posture, and non-verbal cues for interviews and professional settings.",
+                topics: [
+                    "Posture, gestures, and eye contact",
+                    "Interview body language",
+                    "First impressions"
+                ]
+            },
+            {
+                number: "13",
+                title: "Listening Skills & Question Handling",
+                duration: "1 Week",
+                certification: "",
+                description: "Develop active listening techniques and learn to handle interviewer questions with confidence.",
+                topics: [
+                    "Active listening techniques",
+                    "Understanding interviewer questions",
+                    "Structured and confident responses"
+                ]
+            },
+            {
+                number: "14",
+                title: "Public Speaking & Presentation Skills",
+                duration: "1 Week",
+                certification: "",
+                description: "Overcome stage fear and master the art of delivering impactful technical presentations.",
+                topics: [
+                    "Overcoming stage fear",
+                    "Structuring presentations",
+                    "Technical presentation delivery"
+                ]
+            },
+            {
+                number: "15",
+                title: "Teamwork & Leadership Skills",
+                duration: "1 Week",
+                certification: "",
+                description: "Learn to work effectively in teams, develop leadership fundamentals, and manage conflicts.",
+                topics: [
+                    "Working in teams",
+                    "Leadership fundamentals",
+                    "Conflict management"
+                ]
+            },
+            {
+                number: "16",
+                title: "Corporate Communication Skills",
+                duration: "1 Week",
+                certification: "",
+                description: "Master professional email writing, workplace etiquette, and meeting skills.",
+                topics: [
+                    "Professional email writing",
+                    "Workplace etiquette",
+                    "Meeting and reporting skills"
+                ]
+            },
+            {
+                number: "17",
+                title: "Problem-Solving & Critical Thinking",
+                duration: "1 Week",
+                certification: "",
+                description: "Develop analytical thinking and decision-making skills for handling real-world scenarios.",
+                topics: [
+                    "Analytical thinking",
+                    "Decision-making skills",
+                    "Handling real-world scenarios"
+                ]
+            },
+            {
+                number: "18",
+                title: "Resume Building (ATS-Friendly)",
+                duration: "1 Week",
+                certification: "",
+                description: "Create ATS-friendly resumes that highlight your technical projects and stand out to recruiters.",
+                topics: [
+                    "Resume structure & formatting",
+                    "Highlighting technical projects",
+                    "Customizing resumes for roles"
+                ]
+            },
+            {
+                number: "19",
+                title: "LinkedIn Profile & Personal Branding",
+                duration: "1 Week",
+                certification: "",
+                description: "Build a professional online presence with optimized LinkedIn profile and networking strategies.",
+                topics: [
+                    "Professional online presence",
+                    "LinkedIn optimization",
+                    "Networking strategies"
+                ]
+            },
+            {
+                number: "20",
+                title: "Group Discussion (GD) Techniques",
+                duration: "1 Week",
+                certification: "",
+                description: "Master GD formats, evaluation criteria, and demonstrate communication & leadership skills.",
+                topics: [
+                    "GD formats & evaluation criteria",
+                    "Communication & leadership in GD",
+                    "Practice sessions"
+                ]
+            },
+            {
+                number: "21",
+                title: "HR Interview Preparation",
+                duration: "1 Week",
+                certification: "",
+                description: "Prepare for common HR questions using behavioral interview techniques and the STAR method.",
+                topics: [
+                    "Common HR questions",
+                    "Behavioral interview techniques",
+                    "STAR method for answers"
+                ]
+            },
+            {
+                number: "22",
+                title: "Technical Interview Communication",
+                duration: "1 Week",
+                certification: "",
+                description: "Learn to explain technical concepts clearly and handle technical questions with confidence.",
+                topics: [
+                    "Explaining technical concepts clearly",
+                    "Project explanation techniques",
+                    "Handling technical questions confidently"
+                ]
+            },
+            {
+                number: "23",
+                title: "Mock Interviews – HR & Technical",
+                duration: "1 Week",
+                certification: "",
+                description: "Participate in real-time mock interviews with individual feedback and improvement plans.",
+                topics: [
+                    "Real-time mock interviews",
+                    "Individual feedback & improvement plan"
+                ]
+            },
+            {
+                number: "24",
+                title: "Corporate Readiness & Workplace Ethics",
+                duration: "1 Week",
+                certification: "",
+                description: "Prepare for professional conduct at workplace, corporate culture adaptability, and challenges.",
+                topics: [
+                    "Professional conduct at workplace",
+                    "Adaptability in corporate culture",
+                    "Workplace challenges"
+                ]
+            },
+            {
+                number: "25",
+                title: "Placement Readiness & Career Roadmap",
+                duration: "1 Week",
+                certification: "",
+                description: "Final assessment, career planning, and building placement confidence for your next steps.",
+                topics: [
+                    "Final assessment",
+                    "Career planning & growth roadmap",
+                    "Placement confidence & next steps"
+                ]
             }
         ],
         targetAudience: [
@@ -405,6 +644,245 @@ export const programs = [
                     "Insecure Deserialization",
                     "Using Components with Known Vulnerabilities",
                     "Insufficient Logging & Monitoring"
+                ]
+            },
+            {
+                number: "07",
+                title: "Introduction to Personality & Professional Success",
+                duration: "1 Week",
+                certification: "",
+                description: "Understand the importance of personality in career growth, industry expectations, and placement readiness.",
+                topics: [
+                    "Importance of personality in career growth",
+                    "Industry expectations & placement readiness",
+                    "Self-assessment and goal setting"
+                ]
+            },
+            {
+                number: "08",
+                title: "Self-Awareness & Confidence Building",
+                duration: "1 Week",
+                certification: "",
+                description: "Develop self-awareness by understanding your strengths and weaknesses, and build unshakeable confidence.",
+                topics: [
+                    "Understanding strengths & weaknesses",
+                    "Building self-confidence",
+                    "Overcoming fear and self-doubt"
+                ]
+            },
+            {
+                number: "09",
+                title: "Attitude, Mindset & Professional Behavior",
+                duration: "1 Week",
+                certification: "",
+                description: "Cultivate a growth mindset and professional attitude essential for success in tech careers.",
+                topics: [
+                    "Growth mindset",
+                    "Workplace ethics and discipline",
+                    "Professional attitude for tech careers"
+                ]
+            },
+            {
+                number: "10",
+                title: "Emotional Intelligence (EQ)",
+                duration: "1 Week",
+                certification: "",
+                description: "Master your emotions and develop empathy and interpersonal skills for workplace success.",
+                topics: [
+                    "Understanding emotions",
+                    "Managing stress and pressure",
+                    "Empathy and interpersonal skills"
+                ]
+            },
+            {
+                number: "11",
+                title: "Time Management & Productivity",
+                duration: "1 Week",
+                certification: "",
+                description: "Learn effective goal planning, prioritization, and work-life balance techniques for professionals.",
+                topics: [
+                    "Goal planning techniques",
+                    "Prioritization skills",
+                    "Work-life balance for professionals"
+                ]
+            },
+            {
+                number: "12",
+                title: "Verbal Communication Skills",
+                duration: "1 Week",
+                certification: "",
+                description: "Develop clear and effective speaking abilities with proper voice modulation and professional vocabulary.",
+                topics: [
+                    "Clear and effective speaking",
+                    "Voice modulation & tone",
+                    "Professional vocabulary"
+                ]
+            },
+            {
+                number: "13",
+                title: "Non-Verbal Communication & Body Language",
+                duration: "1 Week",
+                certification: "",
+                description: "Master body language, posture, and non-verbal cues for interviews and professional settings.",
+                topics: [
+                    "Posture, gestures, and eye contact",
+                    "Interview body language",
+                    "First impressions"
+                ]
+            },
+            {
+                number: "14",
+                title: "Listening Skills & Question Handling",
+                duration: "1 Week",
+                certification: "",
+                description: "Develop active listening techniques and learn to handle interviewer questions with confidence.",
+                topics: [
+                    "Active listening techniques",
+                    "Understanding interviewer questions",
+                    "Structured and confident responses"
+                ]
+            },
+            {
+                number: "15",
+                title: "Public Speaking & Presentation Skills",
+                duration: "1 Week",
+                certification: "",
+                description: "Overcome stage fear and master the art of delivering impactful technical presentations.",
+                topics: [
+                    "Overcoming stage fear",
+                    "Structuring presentations",
+                    "Technical presentation delivery"
+                ]
+            },
+            {
+                number: "16",
+                title: "Teamwork & Leadership Skills",
+                duration: "1 Week",
+                certification: "",
+                description: "Learn to work effectively in teams, develop leadership fundamentals, and manage conflicts.",
+                topics: [
+                    "Working in teams",
+                    "Leadership fundamentals",
+                    "Conflict management"
+                ]
+            },
+            {
+                number: "17",
+                title: "Corporate Communication Skills",
+                duration: "1 Week",
+                certification: "",
+                description: "Master professional email writing, workplace etiquette, and meeting skills.",
+                topics: [
+                    "Professional email writing",
+                    "Workplace etiquette",
+                    "Meeting and reporting skills"
+                ]
+            },
+            {
+                number: "18",
+                title: "Problem-Solving & Critical Thinking",
+                duration: "1 Week",
+                certification: "",
+                description: "Develop analytical thinking and decision-making skills for handling real-world scenarios.",
+                topics: [
+                    "Analytical thinking",
+                    "Decision-making skills",
+                    "Handling real-world scenarios"
+                ]
+            },
+            {
+                number: "19",
+                title: "Resume Building (ATS-Friendly)",
+                duration: "1 Week",
+                certification: "",
+                description: "Create ATS-friendly resumes that highlight your technical projects and stand out to recruiters.",
+                topics: [
+                    "Resume structure & formatting",
+                    "Highlighting technical projects",
+                    "Customizing resumes for roles"
+                ]
+            },
+            {
+                number: "20",
+                title: "LinkedIn Profile & Personal Branding",
+                duration: "1 Week",
+                certification: "",
+                description: "Build a professional online presence with optimized LinkedIn profile and networking strategies.",
+                topics: [
+                    "Professional online presence",
+                    "LinkedIn optimization",
+                    "Networking strategies"
+                ]
+            },
+            {
+                number: "21",
+                title: "Group Discussion (GD) Techniques",
+                duration: "1 Week",
+                certification: "",
+                description: "Master GD formats, evaluation criteria, and demonstrate communication & leadership skills.",
+                topics: [
+                    "GD formats & evaluation criteria",
+                    "Communication & leadership in GD",
+                    "Practice sessions"
+                ]
+            },
+            {
+                number: "22",
+                title: "HR Interview Preparation",
+                duration: "1 Week",
+                certification: "",
+                description: "Prepare for common HR questions using behavioral interview techniques and the STAR method.",
+                topics: [
+                    "Common HR questions",
+                    "Behavioral interview techniques",
+                    "STAR method for answers"
+                ]
+            },
+            {
+                number: "23",
+                title: "Technical Interview Communication",
+                duration: "1 Week",
+                certification: "",
+                description: "Learn to explain technical concepts clearly and handle technical questions with confidence.",
+                topics: [
+                    "Explaining technical concepts clearly",
+                    "Project explanation techniques",
+                    "Handling technical questions confidently"
+                ]
+            },
+            {
+                number: "24",
+                title: "Mock Interviews – HR & Technical",
+                duration: "1 Week",
+                certification: "",
+                description: "Participate in real-time mock interviews with individual feedback and improvement plans.",
+                topics: [
+                    "Real-time mock interviews",
+                    "Individual feedback & improvement plan"
+                ]
+            },
+            {
+                number: "25",
+                title: "Corporate Readiness & Workplace Ethics",
+                duration: "1 Week",
+                certification: "",
+                description: "Prepare for professional conduct at workplace, corporate culture adaptability, and challenges.",
+                topics: [
+                    "Professional conduct at workplace",
+                    "Adaptability in corporate culture",
+                    "Workplace challenges"
+                ]
+            },
+            {
+                number: "26",
+                title: "Placement Readiness & Career Roadmap",
+                duration: "1 Week",
+                certification: "",
+                description: "Final assessment, career planning, and building placement confidence for your next steps.",
+                topics: [
+                    "Final assessment",
+                    "Career planning & growth roadmap",
+                    "Placement confidence & next steps"
                 ]
             }
         ],
