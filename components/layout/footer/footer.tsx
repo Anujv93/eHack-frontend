@@ -204,6 +204,7 @@ export default function Footer() {
                                         Franchise Opportunity
                                     </Link>
                                 </li>
+                                <li><Link href="/careers">Careers</Link></li>
                             </ul>
                             <h5 className="footer-subheading">Most Popular Certifications</h5>
                             <ul className="footer-links-list partner-certs">

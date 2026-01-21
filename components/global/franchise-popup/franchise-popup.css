@@ -116,7 +116,7 @@
 .franchise-popup-image {
     position: relative;
     width: 45%;
-    min-height: 500px;
+    min-height: 400px;
     flex-shrink: 0;
 }
 
@@ -170,7 +170,7 @@
 .franchise-popup-form-section {
     flex: 1;
     padding: 24px 40px;
-    overflow-y: visible;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     /* Hide scrollbar for Chrome, Safari and Opera */
@@ -605,8 +605,8 @@
     }
 
     .franchise-popup-image {
-        min-height: 100px;
-        max-height: 100px;
+        min-height: 0;
+        max-height: none;
     }
 
     .franchise-popup-image-content h2 {

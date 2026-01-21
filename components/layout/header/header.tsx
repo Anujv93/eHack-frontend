@@ -58,6 +58,7 @@ const ehackPrograms = [
     { id: 103, slug: 'diploma-cybersecurity', title: 'Diploma in Ethical Hacking', duration: '4-6 Months', partnerSlug: 'ehack-originals' },
     { id: 104, slug: 'digital-marketing-masterprogram', title: 'Masters Program in Digital Marketing', duration: '4 Months', partnerSlug: 'ehack-originals' },
     { id: 105, slug: 'robotics-for-all', title: 'Robotics for Every One', duration: '60 Days', partnerSlug: 'ehack-originals' },
+    { id: 106, slug: 'personality-softskill-development', title: 'Personality & Soft Skill Development', duration: '40 Hours', partnerSlug: 'ehack-originals' },
 ];
 
 const ehackOriginalPartner: Partner = {
@@ -293,6 +294,18 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     <div className="mega-cat-overlay"></div>
                                                     <div className="mega-cat-content">
                                                         <span className="mega-cat-name">Digital Marketing Powered by AI</span>
+                                                        <span className="mega-cat-count">1 Program</span>
+                                                    </div>
+                                                </Link>
+                                                <Link
+                                                    href="/categories/personality-softskills"
+                                                    className="mega-category-card"
+                                                    onClick={() => setMegaMenuOpen(false)}
+                                                    style={{ backgroundImage: `url('/Personality-and-Softskill-Development.png')` }}
+                                                >
+                                                    <div className="mega-cat-overlay"></div>
+                                                    <div className="mega-cat-content">
+                                                        <span className="mega-cat-name">Personality & Soft Skills</span>
                                                         <span className="mega-cat-count">1 Program</span>
                                                     </div>
                                                 </Link>
@@ -796,6 +809,10 @@ export default function Header({ partners, courses }: HeaderProps) {
                                 <Link href="/categories/digital-marketing" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">📈</span>
                                     <span className="cat-name">Digital Marketing Powered by AI</span>
+                                </Link>
+                                <Link href="/categories/personality-softskills" className="mobile-category-card" onClick={closeMobileMenu}>
+                                    <span className="cat-icon">🎯</span>
+                                    <span className="cat-name">Personality & Soft Skills</span>
                                 </Link>
                             </div>
                         </div>

@@ -1112,6 +1112,54 @@
     color: #DF6718;
 }
 
+.program-detail-integrated .certificate-showcase {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+.program-detail-integrated .program-certificate {
+    position: relative;
+    padding: 16px;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 50%, #2c2c2c 100%);
+    border-radius: 4px;
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.25),
+        0 4px 8px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    max-width: 700px;
+    width: 100%;
+}
+
+.program-detail-integrated .program-certificate img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+/* Outer golden border */
+.program-detail-integrated .program-certificate::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #d4af37 0%, #f4d675 25%, #d4af37 50%, #b8962e 75%, #d4af37 100%) 1;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Inner golden accent line */
+.program-detail-integrated .program-certificate::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    pointer-events: none;
+    z-index: 2;
+}
+
 /* CTA Section */
 .program-detail-integrated .cta-section {
     padding: 80px 0;
