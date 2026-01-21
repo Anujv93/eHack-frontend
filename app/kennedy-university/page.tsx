@@ -1,7 +1,7 @@
 'use client'
 import './page.css';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
-
+import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
 // Navigation sections for Kennedy University page
 const KENNEDY_NAV_SECTIONS = [
     { id: 'programs', label: 'Programs' },
@@ -12,13 +12,6 @@ const KENNEDY_NAV_SECTIONS = [
 ];
 
 export default function KennedyUniversityPage() {
-
-
-    const handleFormSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        alert('Thank you for your inquiry! Our team will contact you shortly.');
-    };
-
     return (
         <div className="kennedy-page-wrapper">
             {/* Sticky Section Navigation - MOVED INSIDE WRAPPER so styles apply? 
@@ -66,33 +59,13 @@ export default function KennedyUniversityPage() {
                     </div>
 
                     {/* Right Form Card */}
-                    <div className="form-card">
-                        <h2 className="form-title">Book a <span className="text-accent">FREE</span> Live class!</h2>
-                        <p className="form-subtitle">Login to get started</p>
-
-                        <div className="phone-input">
-                            <div className="country-code">
-                                <span className="flag">🇮🇳</span>
-                                <span>+91</span>
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                                    <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                                </svg>
-                            </div>
-                            <input type="tel" placeholder="Mobile Number" className="phone-field" />
-                        </div>
-
-                        <button className="btn-continue" disabled>CONTINUE</button>
-
-                        <label className="checkbox-label">
-                            <input type="checkbox" defaultChecked />
-                            <span className="checkmark"></span>
-                            I wish to receive updates via WhatsApp.
-                        </label>
-
-                        <p className="terms-text">
-                            By continuing, you agree to eHack&apos;s <a href="#">Terms</a> and <a href="#">Privacy Policy</a>
-                        </p>
-                    </div>
+                    <InquiryForm
+                        courseName="Kennedy University Cyber Security Program"
+                        courseCode="kennedy-university"
+                        variant="hero"
+                        title="Get Program Details"
+                        subtitle="Our counselor will call you within 2 hours"
+                    />
                 </div>
             </section>
 
@@ -568,23 +541,13 @@ export default function KennedyUniversityPage() {
                                 </div>
                             </div>
 
-                            <div className="apply-form-card">
-                                <h3>Request a Callback</h3>
-                                <form className="apply-form" onSubmit={handleFormSubmit}>
-                                    <input type="text" placeholder="Full Name" required />
-                                    <input type="email" placeholder="Email Address" required />
-                                    <input type="tel" placeholder="Phone Number" required />
-                                    <select required>
-                                        <option value="">Select Program</option>
-                                        <option value="ec-council">EC-Council Certifications</option>
-                                        <option value="bscs">BSCS – Fast Track (1 Year)</option>
-                                        <option value="mscs">MSCS – Fast Track (1 Year)</option>
-                                        <option value="integrated">Integrated BSCS + MSCS (15 Months)</option>
-                                    </select>
-                                    <textarea placeholder="Your Message (Optional)" rows={3}></textarea>
-                                    <button type="submit" className="btn-apply-form">Submit Inquiry</button>
-                                </form>
-                            </div>
+                            <InquiryForm
+                                courseName="Kennedy University Program"
+                                courseCode="kennedy-university"
+                                variant="section"
+                                title="Request a Callback"
+                                subtitle="Get personalized program guidance"
+                            />
                         </div>
                     </div>
                 </div>

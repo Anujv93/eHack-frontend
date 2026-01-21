@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import './page.css';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
+import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
 
 // Navigation sections for MSCS page
 const MSCS_NAV_SECTIONS = [
@@ -274,19 +275,13 @@ export default function MSCSPage() {
 
                         <div className="hero-right">
                             {/* Lead Collection Form */}
-                            <div className="lead-form-card">
-                                <h3 className="form-title">Get Program Details</h3>
-                                <p className="form-subtitle">Fill the form to receive a callback</p>
-                                <form className="lead-form">
-                                    <input type="text" placeholder="Your Name" className="form-input" required />
-                                    <input type="email" placeholder="Email Address" className="form-input" required />
-                                    <div className="phone-input-wrapper">
-                                        <span className="country-code">+91</span>
-                                        <input type="tel" placeholder="Phone Number" className="form-input phone" required />
-                                    </div>
-                                    <button type="submit" className="btn-submit-form">Request Callback</button>
-                                </form>
-                            </div>
+                            <InquiryForm
+                                courseName="Kennedy University - MSCS (Cyber Security)"
+                                courseCode="kennedy-mscs"
+                                variant="hero"
+                                title="Get Program Details"
+                                subtitle="Our counselor will call you within 2 hours"
+                            />
                         </div>
                     </div>
 

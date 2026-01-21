@@ -47,27 +47,58 @@ export default function FranchisePopup() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            // Send data to Zoho Bigin via API
+            const response = await fetch('/api/zoho/deal', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    city: formData.city,
+                    message: formData.message,
+                    leadSource: 'Franchise Popup',
+                    dealName: `Franchise Inquiry - ${formData.name} - ${formData.city}`,
+                    pipeline: 'Sales Pipeline Standard', // Using Sales Pipeline for franchise inquiries
+                    stage: 'New Inquiry',
+                    // Add any custom fields specific to franchise inquiries
+                }),
+            });
 
-        setIsSubmitting(false);
-        setIsSubmitted(true);
+            if (!response.ok) {
+                throw new Error('Failed to submit form');
+            }
 
-        // Close popup after showing success message
-        setTimeout(() => {
-            handleClose();
-            // Reset form after closing
+            const result = await response.json();
+            console.log('Zoho submission successful:', result);
+
+            setIsSubmitting(false);
+            setIsSubmitted(true);
+
+            // Close popup after showing success message
             setTimeout(() => {
-                setIsSubmitted(false);
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '',
-                    city: '',
-                    message: ''
-                });
-            }, 500);
-        }, 2000);
+                handleClose();
+                // Reset form after closing
+                setTimeout(() => {
+                    setIsSubmitted(false);
+                    setFormData({
+                        name: '',
+                        email: '',
+                        phone: '',
+                        city: '',
+                        message: ''
+                    });
+                }, 500);
+            }, 2000);
+        } catch (error) {
+            console.error('Error submitting to Zoho:', error);
+            setIsSubmitting(false);
+            // You might want to show an error message to the user here
+            alert('Failed to submit form. Please try again or contact us directly.');
+        }
     };
 
     const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
