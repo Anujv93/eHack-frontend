@@ -34,7 +34,7 @@ import {
 } from "@/lib/strapi";
 import { notFound } from "next/navigation";
 import CareerStatsSection from "@/components/single-certificate/career-stats-section/career-stats-section";
-import { MOCK_CEH_FAQS } from "@/lib/mock-ceh-faqs";
+
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -115,10 +115,7 @@ export default async function CertificatePage({ params }: PageProps) {
         (item): item is FAQSectionType => item.__component === 'global.faq-section'
     );
 
-    // Fallback: If no FAQ section in Strapi for CEH v13, use mock data
-    if (!faqSection && slug === 'ceh-v13') {
-        faqSection = MOCK_CEH_FAQS;
-    }
+
 
     // Build dynamic navigation sections based on available content
     const dynamicNavSections = [];
@@ -202,6 +199,12 @@ export default async function CertificatePage({ params }: PageProps) {
                 title={featuresGridSection?.Title}
                 features={featuresGridSection?.Features}
             />
+
+            <TargetAudience
+                title={targetAudienceSection?.Title}
+                audiences={targetAudienceSection?.Audiences}
+            />
+
             <TrainingSection
                 badgeText={trainingSection?.BadgeText}
                 title={trainingSection?.Title}
@@ -229,20 +232,7 @@ export default async function CertificatePage({ params }: PageProps) {
                 certificateTitle={certificate.Title}
             />
 
-            <TargetAudience
-                title={targetAudienceSection?.Title}
-                audiences={targetAudienceSection?.Audiences}
-            />
-            <Accreditations
-                title={accreditationsSection?.Title}
-                accreditations={accreditationsSection?.Accreditations}
-            />
-            <CTASection
-                title={ctaSection?.Title}
-                subtitle={ctaSection?.Subtitle}
-                buttonText={ctaSection?.ButtonText}
-                buttonLink={ctaSection?.ButtonLink}
-            />
+
 
             {/* Career Stats Section */}
             {careerStatsSection && <CareerStatsSection section={careerStatsSection} />}
@@ -260,6 +250,16 @@ export default async function CertificatePage({ params }: PageProps) {
             <CertificateInquirySection
                 certificateTitle={certificate.Title}
                 certificateSlug={slug}
+            />
+            <CTASection
+                title={ctaSection?.Title}
+                subtitle={ctaSection?.Subtitle}
+                buttonText={ctaSection?.ButtonText}
+                buttonLink={ctaSection?.ButtonLink}
+            />
+            <Accreditations
+                title={accreditationsSection?.Title}
+                accreditations={accreditationsSection?.Accreditations}
             />
 
             {/* Related Certificates Section */}
