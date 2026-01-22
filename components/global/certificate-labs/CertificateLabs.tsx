@@ -1099,23 +1099,23 @@ export function CertificateLabs({ certificateSlug, certificateTitle }: Certifica
                 {/* Stats Bar */}
                 <div className="cert-labs-stats">
                     <div className="labs-stat">
-                        <span className="stat-value">{labsData.labs.length}</span>
-                        <span className="stat-text">Lab Tools</span>
+                        <span className="lab-stat-value">{labsData.labs.length}</span>
+                        <span className="lab-stat-text">Lab Tools</span>
                     </div>
                     <div className="labs-stat-divider"></div>
                     <div className="labs-stat">
-                        <span className="stat-value">{totalExercises}+</span>
-                        <span className="stat-text">Exercises</span>
+                        <span className="lab-stat-value">{totalExercises}+</span>
+                        <span className="lab-stat-text">Exercises</span>
                     </div>
                     <div className="labs-stat-divider"></div>
                     <div className="labs-stat">
-                        <span className="stat-value">{totalHours}+</span>
-                        <span className="stat-text">Hours of Practice</span>
+                        <span className="lab-stat-value">{totalHours}+</span>
+                        <span className="lab-stat-text">Hours of Practice</span>
                     </div>
                     <div className="labs-stat-divider"></div>
                     <div className="labs-stat">
-                        <span className="stat-value">24/7</span>
-                        <span className="stat-text">Lab Access</span>
+                        <span className="lab-stat-value">24/7</span>
+                        <span className="lab-stat-text">Lab Access</span>
                     </div>
                 </div>
             </div>
