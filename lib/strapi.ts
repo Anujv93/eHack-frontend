@@ -186,7 +186,73 @@ export interface ExamDetailsSection {
     ExamCards: ExamCard[];
 }
 
-export type PageContent = HeroSection | CertificateSummarySection | FeaturesGridSection | TrainingSectionData | LearningFrameworkSection | TargetAudienceSection | AccreditationsSection | CTASection | ExamDetailsSection;
+// Career Stats Section
+export interface StatItem {
+    id?: number;
+    StatText: string;
+    IconSvg?: string;
+}
+
+export interface CareerStatsSection {
+    __component: 'global.career-stats-section';
+    Title: string;
+    Subtitle?: string;
+    Description?: string;
+    ButtonText?: string;
+    ButtonLink?: string;
+    Stats: StatItem[];
+}
+
+// Job Roles Section
+export interface JobRoleItem {
+    id?: number;
+    RoleName: string;
+}
+
+export interface JobRolesSection {
+    __component: 'global.job-roles-section';
+    Title: string;
+    Description?: string;
+    IconSvg?: string;
+    JobRoles: JobRoleItem[];
+}
+
+// Course Outline Section
+export interface ModuleTopic {
+    id?: number;
+    TopicName: string;
+}
+
+export interface CourseModule {
+    id?: number;
+    ModuleNumber: string;
+    ModuleTitle: string;
+    Topics?: ModuleTopic[];
+}
+
+export interface CourseOutlineSection {
+    __component: 'global.course-outline-section';
+    Title: string;
+    Modules: CourseModule[];
+    CTAButtonText?: string;
+    CTAButtonLink?: string;
+}
+
+// FAQ Section
+export interface FAQItem {
+    id?: number;
+    Question: string;
+    Answer: string;
+    Category: string;
+}
+
+export interface FAQSection {
+    __component: 'global.faq-section';
+    Title: string;
+    FAQs: FAQItem[];
+}
+
+export type PageContent = HeroSection | CertificateSummarySection | FeaturesGridSection | TrainingSectionData | LearningFrameworkSection | TargetAudienceSection | AccreditationsSection | CTASection | ExamDetailsSection | CareerStatsSection | JobRolesSection | CourseOutlineSection | FAQSection;
 
 export interface Certificate {
     id: number;
