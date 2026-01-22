@@ -19,7 +19,7 @@ export default async function Page() {
     const coursesTransformed = coursesData.map((course) => ({
         id: course.id,
         slug: course.slug,
-        title: course.Title,
+        title: course.Title.replace('EC-Council ', '').replace('ISACA ', '').replace('ISC2 ', '').replace('OffSec ', ''),
         level: course.Level,
         duration: course.Duration || undefined,
         partnerSlug: course.certification_partner?.slug,

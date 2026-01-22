@@ -488,7 +488,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
                     {/* Course Cards */}
                     <div className={styles.coursesGrid}>
-                        {courses.slice(0, 6).map((course) => {
+                        {courses.slice(0, 6).map((course, index) => {
                             const partner = partners.find(p => p.slug === course.partnerSlug);
 
                             // Define tags for specific courses
@@ -499,6 +499,25 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                                 courseTag = <span className={`${styles.courseTag} ${styles.courseTagBestseller}`}>Bestseller</span>;
                             } else if (course.title.includes('CEH')) {
                                 courseTag = <span className={`${styles.courseTag} ${styles.courseTagTrending}`}>Trending</span>;
+                            } else if (course.title.includes('C|CISO')) {
+                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagTrending}`}>In Demand</span>;
+                            } else if (course.title.includes('CISA')) {
+                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagPopular}`}>Essential</span>;
+                            } else {
+                                // Fallback logic for all other courses
+                                const badgeTypes = [
+                                    { text: 'Popular', style: styles.courseTagPopular },
+                                    { text: 'Bestseller', style: styles.courseTagBestseller },
+                                    { text: 'Trending', style: styles.courseTagTrending },
+                                    { text: 'Top Rated', style: styles.courseTagBestseller },
+                                    { text: 'In Demand', style: styles.courseTagTrending },
+                                    { text: 'Essential', style: styles.courseTagPopular }
+                                ];
+                                // Use index to distribute badges evenly
+                                const badgeIndex = index % badgeTypes.length;
+                                const badge = badgeTypes[badgeIndex];
+
+                                courseTag = <span className={`${styles.courseTag} ${badge.style}`}>{badge.text}</span>;
                             }
 
                             return (
