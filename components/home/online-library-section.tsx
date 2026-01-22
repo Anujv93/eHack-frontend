@@ -64,7 +64,7 @@ const OnlineLibrarySection = () => {
                         World-Class <span className="text-accent">Cybersecurity</span> Courses
                     </h2>
                     <p className="section-subtitle">
-                        Powered by <strong>EC-Council CodeRed</strong>. Access thousands of premium videos and microdegrees.
+                        Powered by <strong className="text-red">EC-Council CodeRed</strong>. Access thousands of premium videos and microdegrees.
                     </p>
                 </div>
 

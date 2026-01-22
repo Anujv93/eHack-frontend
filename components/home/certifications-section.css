@@ -62,6 +62,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
 
 .cert-card:hover {
@@ -97,15 +99,26 @@
 }
 
 .cert-badge {
-    background: #FFF7ED;
-    color: #EA580C;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
+    color: white;
+    border-bottom-left-radius: 12px;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
     letter-spacing: 0.05em;
-    border: 1px solid #FED7AA;
+}
+
+.cert-badge-premium {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.cert-badge-university {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
 }
 
 .cert-content {

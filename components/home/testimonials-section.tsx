@@ -115,6 +115,132 @@ const testimonials = [
         certification: 'CISM Certified',
         course: 'Masters in Ethical Hacking',
         text: "I served in the Indian Air Force for 20 years before joining eHack… Today, as Director at SISA Security, I’m proud to say age is no barrier."
+    },
+    {
+        name: 'Sneha Sharma',
+        role: 'Digital Marketing Specialist',
+        company: 'GrowthPulse India',
+        companyColor: '#FF4500',
+        certification: 'Google Ads Professional',
+        course: 'Digital Marketing Masterclass',
+        text: "The transition from traditional marketing to digital was seamless with eHack. Their hands-on approach and real-world projects gave me the confidence to lead digital campaigns for global brands."
+    },
+    {
+        name: 'Arjun Mehra',
+        role: 'AI Engineer',
+        company: 'NeuralTech Solutions',
+        companyColor: '#00BFFF',
+        certification: 'AI Specialist',
+        course: 'Data Science & AI Bootcamp',
+        text: "Building neural networks and understanding deep learning seemed daunting until I joined eHack. The mentors here are exceptional, breaking down complex AI concepts into practical, applicable knowledge."
+    },
+    {
+        name: 'Priya Iyer',
+        role: 'IoT Solutions Architect',
+        company: 'SmartConnect Labs',
+        companyColor: '#32CD32',
+        certification: 'IoT Professional',
+        course: 'Robotics & IoT Specialist',
+        text: "From sensors to cloud integration, eHack's IoT program covers it all. I now design smart home solutions that are efficient and secure, thanks to the comprehensive training I received."
+    },
+    {
+        name: 'Rajesh Kumar',
+        role: 'Cloud Security Consultant',
+        company: 'SkyShield Defense',
+        companyColor: '#4682B4',
+        certification: 'AWS Certified Security',
+        course: 'Cloud Security Mastery',
+        text: "Securing cloud infrastructures is critical today. eHack's mastery program provided me with the tools and techniques to identify vulnerabilities in complex cloud environments and implement robust defenses."
+    },
+    {
+        name: 'Anjali Desai',
+        role: 'VAPT Lead',
+        company: 'SecureNet India',
+        companyColor: '#DC143C',
+        certification: 'OSCP Certified',
+        course: 'Advanced Pentesting Program',
+        text: "The advanced pentesting program at eHack is intense and rewarding. The labs simulate real-world attacks, allowing me to refine my hacking skills in a controlled environment."
+    },
+    {
+        name: 'Vikram Singh',
+        role: 'SOC Analyst',
+        company: 'CyberWatch Systems',
+        companyColor: '#2F4F4F',
+        certification: 'SOC Analyst L3',
+        course: 'SOC Operations & Management',
+        text: "Managing a Security Operations Center requires a blend of technical and leadership skills. eHack's SOC program prepared me for the fast-paced nature of incident response and threat hunting."
+    },
+    {
+        name: 'Kavita Reddy',
+        role: 'SEO Manager',
+        company: 'SearchEngine Experts',
+        companyColor: '#FFD700',
+        certification: 'HubSpot SEO Certified',
+        course: 'Digital Marketing Masterclass',
+        text: "SEO is more than just keywords. eHack taught me the technical aspects of search engine optimization, which helped me improve organic traffic for my clients by over 200%."
+    },
+    {
+        name: 'Sandeep Patil',
+        role: 'Data Scientist',
+        company: 'Insight Analytics',
+        companyColor: '#8A2BE2',
+        certification: 'Data Analytics Professional',
+        course: 'Data Science Bootcamp',
+        text: "Turning raw data into actionable insights is what I do every day. eHack's bootcamp gave me a strong foundation in statistics, Python, and machine learning."
+    },
+    {
+        name: 'Aditi Verma',
+        role: 'Robotics Engineer',
+        company: 'AutoBotics India',
+        companyColor: '#FF6347',
+        certification: 'ROB Certified',
+        course: 'Robotics & IoT Specialist',
+        text: "Designing autonomous robots requires a deep understanding of hardware and software. eHack's hands-on labs were instrumental in my journey to becoming a robotics engineer."
+    },
+    {
+        name: 'Rohan Gupta',
+        role: 'Security Analyst',
+        company: 'NetDeflect Solutions',
+        companyColor: '#556B2F',
+        certification: 'Security+ Certified',
+        course: 'Graduate Program in Cybersecurity',
+        text: "eHack's cybersecurity program is comprehensive and up-to-date. I learned how to protect networks from sophisticated threats and respond to data breaches effectively."
+    },
+    {
+        name: 'Mansi Joshi',
+        role: 'ML Ops Specialist',
+        company: 'MachineLogic AI',
+        companyColor: '#008080',
+        certification: 'TensorFlow Professional',
+        course: 'AI & Machine Learning Bootcamp',
+        text: "Deploying and managing machine learning models in production is a specialized skill. eHack provided the perfect environment to master MLOps tools and workflows."
+    },
+    {
+        name: 'Rahul Malhotra',
+        role: 'Ethical Hacker',
+        company: 'BugBounty Network',
+        companyColor: '#B22222',
+        certification: 'CEH Master',
+        course: 'Masters in Ethical Hacking',
+        text: "I started as a hobbyist, but eHack turned me into a professional ethical hacker. The curriculum covers the latest attack vectors and defense mechanisms."
+    },
+    {
+        name: 'Deepika Nair',
+        role: 'Content Strategist',
+        company: 'MediaMinds Asia',
+        companyColor: '#FF1493',
+        certification: 'Social Media Professional',
+        course: 'Digital Marketing Masterclass',
+        text: "Connecting with audiences through compelling content is an art. eHack's digital marketing program helped me refine my storytelling skills and use data to drive engagement."
+    },
+    {
+        name: 'Sameer Khan',
+        role: 'Cloud Architect',
+        company: 'CloudVista Technologies',
+        companyColor: '#4169E1',
+        certification: 'Azure Solutions Architect',
+        course: 'Cloud Security Mastery',
+        text: "Designing scalable and secure cloud solutions is what I love. eHack's mentors shared invaluable industry insights that helped me excel in my role as a cloud architect."
     }
 ];
 
@@ -179,12 +305,14 @@ export default function TestimonialsSection() {
                         {testimonials.map((testimonial, index) => (
                             <div key={`first-${index}`} className="testimonial-card">
                                 <div className="testimonial-header">
-                                    <img
-                                        src={testimonial.image}
-                                        alt={testimonial.name}
-                                        className="testimonial-avatar"
-                                    />
-                                    <div className="testimonial-info">
+                                    {testimonial.image && (
+                                        <img
+                                            src={testimonial.image}
+                                            alt={testimonial.name}
+                                            className="testimonial-avatar"
+                                        />
+                                    )}
+                                    <div className="testimonial-info" style={!testimonial.image ? { marginLeft: 0 } : {}}>
                                         <h3 className="testimonial-name">{testimonial.name}</h3>
                                         <p className="testimonial-role">{testimonial.role}</p>
                                     </div>
@@ -196,18 +324,18 @@ export default function TestimonialsSection() {
                                         {testimonial.course && <span className="badge course-badge">{testimonial.course}</span>}
                                     </div>
                                 )}
-                                <p className="testimonial-text">"{testimonial.text}"</p>
-                                {(testimonial.companyLogo || testimonial.company) ? (
+                                <p className="testimonial-text">{testimonial.text}</p>
+                                {(testimonial.companyLogo || testimonial.company) && (
                                     <div className="testimonial-company-footer">
-                                        <img
-                                            src={testimonial.companyLogo}
-                                            alt={testimonial.company}
-                                            className="company-logo-large"
-                                        />
-                                        <span className="company-name-footer">{testimonial.company}</span>
+                                        {testimonial.companyLogo && (
+                                            <img
+                                                src={testimonial.companyLogo}
+                                                alt={testimonial.company}
+                                                className="company-logo-large"
+                                            />
+                                        )}
+                                        <span className="company-name-footer" style={!testimonial.companyLogo ? { marginLeft: 0 } : {}}>{testimonial.company}</span>
                                     </div>
-                                ) : (
-                                    <div className="testimonial-company-footer spacer" style={{ minHeight: '24px' }}></div>
                                 )}
                             </div>
                         ))}
@@ -215,12 +343,14 @@ export default function TestimonialsSection() {
                         {testimonials.map((testimonial, index) => (
                             <div key={`second-${index}`} className="testimonial-card">
                                 <div className="testimonial-header">
-                                    <img
-                                        src={testimonial.image}
-                                        alt={testimonial.name}
-                                        className="testimonial-avatar"
-                                    />
-                                    <div className="testimonial-info">
+                                    {testimonial.image && (
+                                        <img
+                                            src={testimonial.image}
+                                            alt={testimonial.name}
+                                            className="testimonial-avatar"
+                                        />
+                                    )}
+                                    <div className="testimonial-info" style={!testimonial.image ? { marginLeft: 0 } : {}}>
                                         <h3 className="testimonial-name">{testimonial.name}</h3>
                                         <p className="testimonial-role">{testimonial.role}</p>
                                     </div>
@@ -232,18 +362,18 @@ export default function TestimonialsSection() {
                                         {testimonial.course && <span className="badge course-badge">{testimonial.course}</span>}
                                     </div>
                                 )}
-                                <p className="testimonial-text">"{testimonial.text}"</p>
-                                {(testimonial.companyLogo || testimonial.company) ? (
+                                <p className="testimonial-text">{testimonial.text}</p>
+                                {(testimonial.companyLogo || testimonial.company) && (
                                     <div className="testimonial-company-footer">
-                                        <img
-                                            src={testimonial.companyLogo}
-                                            alt={testimonial.company}
-                                            className="company-logo-large"
-                                        />
-                                        <span className="company-name-footer">{testimonial.company}</span>
+                                        {testimonial.companyLogo && (
+                                            <img
+                                                src={testimonial.companyLogo}
+                                                alt={testimonial.company}
+                                                className="company-logo-large"
+                                            />
+                                        )}
+                                        <span className="company-name-footer" style={!testimonial.companyLogo ? { marginLeft: 0 } : {}}>{testimonial.company}</span>
                                     </div>
-                                ) : (
-                                    <div className="testimonial-company-footer spacer" style={{ minHeight: '24px' }}></div>
                                 )}
                             </div>
                         ))}
@@ -254,18 +384,20 @@ export default function TestimonialsSection() {
                 <div className="highlighted-testimonial-container">
                     <div className="testimonial-card testimonial-card-horizontal">
                         <div className="testimonial-header horizontal-header">
-                            <img
-                                src={highlightedTestimonial.image}
-                                alt={highlightedTestimonial.name}
-                                className="testimonial-avatar large-avatar"
-                            />
+                            {highlightedTestimonial.image && (
+                                <img
+                                    src={highlightedTestimonial.image}
+                                    alt={highlightedTestimonial.name}
+                                    className="testimonial-avatar large-avatar"
+                                />
+                            )}
                             <div className="testimonial-info">
                                 <h3 className="testimonial-name">{highlightedTestimonial.name}</h3>
                                 <p className="testimonial-role">{highlightedTestimonial.role}</p>
                             </div>
                         </div>
                         <div className="testimonial-content-wrapper">
-                            <p className="testimonial-text">"{highlightedTestimonial.text}"</p>
+                            <p className="testimonial-text">{highlightedTestimonial.text}</p>
                         </div>
                     </div>
                 </div>

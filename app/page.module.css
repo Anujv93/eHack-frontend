@@ -1193,106 +1193,97 @@
 
 /* ===== Learning Section ===== */
 .learningSection {
-    padding: 3.5rem 0;
+    padding: 5rem 0;
     background: #fff;
 }
 
 .learningGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+    gap: 1.5rem;
 }
 
 .learningCard {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 0.5rem;
     background: #fff;
-    border-radius: 10px;
-    padding: 1.5rem;
-    text-align: left;
-    border: 2px solid var(--brand-primary);
+    border-radius: 12px;
     text-decoration: none;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(223, 103, 24, 0.1);
-    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1.5px solid var(--brand-primary);
     overflow: hidden;
-    min-height: 160px;
-    isolation: isolate;
-    /* Create new stacking context */
+    height: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-.learningCard::before {
-    content: '';
-    position: absolute;
-    width: 140px;
-    /* Bigger size */
-    height: 140px;
-    bottom: -20px;
-    right: -20px;
-    border-radius: 50%;
-    /* Circular shape */
-    background-image: var(--card-bg-image);
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-    /* Behind content */
-    opacity: 0.5;
-    /* Increased visibility */
-    transition: all 0.3s ease;
+.learningImageWrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    background: #f8fafc;
 }
 
-.learningCard:hover {
-    border-color: var(--brand-primary);
-    box-shadow: 0 6px 16px rgba(223, 103, 24, 0.18);
-    transform: translateY(-2px);
+.learningImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
-.learningCard:hover::before {
-    transform: scale(1.1);
-    opacity: 0.6;
-    /* Increased visibility on hover */
-}
-
-/* Overlay removed */
 
 .learningCardContent {
-    position: relative;
-    z-index: 2;
-}
-
-.learningIcon {
-    display: none;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .learningTitle {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--neutral-800);
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.5rem;
-    line-height: 1.3;
-    position: relative;
-}
-
-.learningTitle::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 60%;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(223, 103, 24, 0.5) 0%, rgba(223, 103, 24, 0.1) 100%);
-    border-radius: 1px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.4rem 1.25rem;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    border-radius: 50px;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.2);
+    display: inline-block;
+    line-height: 1.2;
 }
 
 .learningDescription {
     font-size: 0.9375rem;
-    color: #1f2937;
+    color: #475569;
     line-height: 1.6;
-    max-width: 90%;
-    font-weight: 500;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.learningLink {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
+}
+
+.learningCard:hover {
+    transform: translateY(-8px);
+    border-color: var(--brand-primary);
+    box-shadow: 0 20px 40px rgba(236, 124, 0, 0.12);
+}
+
+.learningCard:hover .learningImage {
+    transform: scale(1.1);
+}
+
+.learningCard:hover .learningLink {
+    gap: 0.75rem;
 }
 
 /* ===== Offerings Section ===== */
@@ -1762,15 +1753,27 @@
 
     /* Learning cards mobile */
     .learningCard {
+        padding: 0;
+        /* Remove parent padding to allow image to be full width */
+    }
+
+    .learningImageWrapper {
+        height: 150px;
+        /* Take slightly less space on mobile */
+    }
+
+    .learningCardContent {
         padding: 1.25rem;
     }
 
     .learningTitle {
-        font-size: 0.9375rem;
+        font-size: 0.7rem;
+        padding: 0.35rem 1rem;
     }
 
     .learningDescription {
-        font-size: 0.8125rem;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
     }
 
     /* Offering cards mobile */
