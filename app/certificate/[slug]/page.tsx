@@ -36,7 +36,6 @@ import { notFound } from "next/navigation";
 import CareerStatsSection from "@/components/single-certificate/career-stats-section/career-stats-section";
 
 
-
 interface PageProps {
     params: Promise<{ slug: string }>;
 }
@@ -231,20 +230,7 @@ export default async function CertificatePage({ params }: PageProps) {
                 certificateTitle={certificate.Title}
             />
 
-            <TargetAudience
-                title={targetAudienceSection?.Title}
-                audiences={targetAudienceSection?.Audiences}
-            />
-            <Accreditations
-                title={accreditationsSection?.Title}
-                accreditations={accreditationsSection?.Accreditations}
-            />
-            <CTASection
-                title={ctaSection?.Title}
-                subtitle={ctaSection?.Subtitle}
-                buttonText={ctaSection?.ButtonText}
-                buttonLink={ctaSection?.ButtonLink}
-            />
+
 
             {/* Career Stats Section */}
             {careerStatsSection && <CareerStatsSection section={careerStatsSection} />}
@@ -283,5 +269,3 @@ export default async function CertificatePage({ params }: PageProps) {
         </div>
     );
 }
-
-
