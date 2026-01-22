@@ -328,8 +328,9 @@ export default function KennedyUniversityPage() {
                     <div className="partners-grid">
                         {/* EC-Council */}
                         <div className="partner-card">
+                            <div className="cert-badge cert-badge-premium">Premium Partner</div>
                             <div className="partner-card-header">
-                                <img src="/images/ec-council-logo.png" alt="EC-Council" className="partner-card-logo-img" />
+                                <img src="/images/ec-council-badge.png" alt="EC-Council" className="partner-card-logo-img" />
                             </div>
                             <div className="partner-card-content">
                                 <span className="partner-role">Certification-Awarding Body</span>
@@ -350,6 +351,7 @@ export default function KennedyUniversityPage() {
 
                         {/* Kennedy University */}
                         <div className="partner-card">
+                            <div className="cert-badge cert-badge-university">University Partner</div>
                             <div className="partner-card-header">
                                 <img src="/images/kennedy-university-logo.png" alt="Kennedy University" className="partner-card-logo-img kennedy" />
                             </div>
