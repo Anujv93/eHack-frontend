@@ -334,6 +334,16 @@ export default async function CertificatePage({ params }: PageProps) {
                 certificateTitle={certificate.Title}
                 certificateSlug={slug}
             />
+            <CTASection
+                title={ctaSection?.Title}
+                subtitle={ctaSection?.Subtitle}
+                buttonText={ctaSection?.ButtonText}
+                buttonLink={ctaSection?.ButtonLink}
+            />
+            <Accreditations
+                title={accreditationsSection?.Title}
+                accreditations={accreditationsSection?.Accreditations}
+            />
 
             {/* Related Certificates Section */}
             <RelatedCertificates
