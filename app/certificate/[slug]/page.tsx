@@ -35,7 +35,6 @@ import {
 import { notFound } from "next/navigation";
 import CareerStatsSection from "@/components/single-certificate/career-stats-section/career-stats-section";
 
-
 interface PageProps {
     params: Promise<{ slug: string }>;
 }
@@ -115,8 +114,6 @@ export default async function CertificatePage({ params }: PageProps) {
         (item): item is FAQSectionType => item.__component === 'global.faq-section'
     );
 
-
-
     // Build dynamic navigation sections based on available content
     const dynamicNavSections = [];
 
@@ -188,6 +185,7 @@ export default async function CertificatePage({ params }: PageProps) {
     if (faqSection?.FAQs && faqSection.FAQs.length > 0) {
         dynamicNavSections.push({ id: 'faqs', label: 'FAQs' });
     }
+
 
     // Always add Inquiry section
     dynamicNavSections.push({ id: 'inquiry', label: 'Enquire Now' });
@@ -277,6 +275,7 @@ export default async function CertificatePage({ params }: PageProps) {
                 buttonText={ctaSection?.ButtonText}
                 buttonLink={ctaSection?.ButtonLink}
             />
+
             <Accreditations
                 title={accreditationsSection?.Title}
                 accreditations={accreditationsSection?.Accreditations}
