@@ -40,10 +40,28 @@ export default function LearningOptionsPage() {
         };
     }, []);
 
+    const tabImages: Record<string, string> = {
+        'live-online': '/Live Online Training.png',
+        'classroom': '/Classroom Training.png',
+        'one-on-one': '/1-on-1.jpg',
+        'fly-trainer': '/Fly-Me-A-Trainer.jpg',
+        'flexi': '/Flexi.jpg',
+        'customized': '/Customized Training.jpg',
+        'webinar-service': '/Webinar as a Service.jpeg',
+        'upcoming-webinars': '/Upcoming Webinars.jpeg'
+    };
+
     return (
         <>
             {/* Hero Section */}
-            <section className="learning-hero-light" ref={heroRef}>
+            <section
+                className="learning-hero-light"
+                ref={heroRef}
+                style={{
+                    backgroundImage: `url('${tabImages[activeTab] || '/images/certificates/services.png'}')`,
+                    transition: 'background-image 0.5s ease-in-out'
+                }}
+            >
                 <div className="container">
                     <div className="hero-content-compact">
                         <span className="hero-badge-light">FLEXIBLE LEARNING OPTIONS</span>
@@ -551,6 +569,9 @@ export default function LearningOptionsPage() {
                                     <div className="panel-content">
                                         <span className="panel-badge panel-badge-red">FREE TO ATTEND</span>
                                         <h2 className="panel-title">Upcoming Webinars</h2>
+                                        <div className="webinar-featured-image">
+                                            <img src="/Upcoming Webinars.jpeg" alt="Upcoming Webinars" />
+                                        </div>
                                         <p className="panel-description">
                                             Join our free expert-led webinars on the latest tech trends, cybersecurity threats, career guidance, and certification preparation. Learn from industry leaders and certified professionals who share real-world insights and actionable knowledge.
                                         </p>
