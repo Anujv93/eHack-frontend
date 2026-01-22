@@ -11,6 +11,9 @@ import StickySectionNav from "@/components/global/sticky-section-nav/sticky-sect
 import RelatedCertificates from "@/components/global/related-certificates/related-certificates";
 import CertificateLabsWrapper from "@/components/global/certificate-labs/CertificateLabsWrapper";
 import CertificateInquirySection from "@/components/global/certificate-inquiry/certificate-inquiry";
+import JobRolesSection from "@/components/single-certificate/job-roles-section/job-roles-section";
+import CourseOutlineSection from "@/components/single-certificate/course-outline-section/course-outline-section";
+import FAQSection from "@/components/single-certificate/faq-section/faq-section";
 import {
     getCertificateBySlug,
     getAdmissionProcess,
@@ -23,9 +26,15 @@ import {
     TargetAudienceSection,
     AccreditationsSection,
     CTASection as CTASectionType,
-    ExamDetailsSection
+    ExamDetailsSection,
+    CareerStatsSection as CareerStatsSectionType,
+    JobRolesSection as JobRolesSectionType,
+    CourseOutlineSection as CourseOutlineSectionType,
+    FAQSection as FAQSectionType
 } from "@/lib/strapi";
 import { notFound } from "next/navigation";
+import CareerStatsSection from "@/components/single-certificate/career-stats-section/career-stats-section";
+import { MOCK_CEH_FAQS } from "@/lib/mock-ceh-faqs";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -90,6 +99,27 @@ export default async function CertificatePage({ params }: PageProps) {
         (item): item is ExamDetailsSection => item.__component === 'global.exam-details'
     );
 
+    const careerStatsSection = certificate.pageContent?.find(
+        (item): item is CareerStatsSectionType => item.__component === 'global.career-stats-section'
+    );
+
+    const jobRolesSection = certificate.pageContent?.find(
+        (item): item is JobRolesSectionType => item.__component === 'global.job-roles-section'
+    );
+
+    const courseOutlineSection = certificate.pageContent?.find(
+        (item): item is CourseOutlineSectionType => item.__component === 'global.course-outline-section'
+    );
+
+    let faqSection = certificate.pageContent?.find(
+        (item): item is FAQSectionType => item.__component === 'global.faq-section'
+    );
+
+    // Fallback: If no FAQ section in Strapi for CEH v13, use mock data
+    if (!faqSection && slug === 'ceh-v13') {
+        faqSection = MOCK_CEH_FAQS;
+    }
+
     // Build dynamic navigation sections based on available content
     const dynamicNavSections = [];
 
@@ -123,6 +153,23 @@ export default async function CertificatePage({ params }: PageProps) {
 
     if (accreditationsSection?.Accreditations && accreditationsSection.Accreditations.length > 0) {
         dynamicNavSections.push({ id: 'accreditations', label: 'Accreditations' });
+    }
+
+    // Add new sections to navigation
+    if (careerStatsSection?.Stats && careerStatsSection.Stats.length > 0) {
+        dynamicNavSections.push({ id: 'career-value', label: 'Career Value' });
+    }
+
+    if (jobRolesSection?.JobRoles && jobRolesSection.JobRoles.length > 0) {
+        dynamicNavSections.push({ id: 'job-roles', label: 'Job Roles' });
+    }
+
+    if (courseOutlineSection?.Modules && courseOutlineSection.Modules.length > 0) {
+        dynamicNavSections.push({ id: 'course-outline', label: 'Course Outline' });
+    }
+
+    if (faqSection?.FAQs && faqSection.FAQs.length > 0) {
+        dynamicNavSections.push({ id: 'faqs', label: 'FAQs' });
     }
 
     // Always add Inquiry section
@@ -196,6 +243,18 @@ export default async function CertificatePage({ params }: PageProps) {
                 buttonText={ctaSection?.ButtonText}
                 buttonLink={ctaSection?.ButtonLink}
             />
+
+            {/* Career Stats Section */}
+            {careerStatsSection && <CareerStatsSection section={careerStatsSection} />}
+
+            {/* Job Roles Section */}
+            {jobRolesSection && <JobRolesSection section={jobRolesSection} />}
+
+            {/* Course Outline Section */}
+            {courseOutlineSection && <CourseOutlineSection section={courseOutlineSection} />}
+
+            {/* FAQ Section */}
+            {faqSection && <FAQSection section={faqSection} />}
 
             {/* Inquiry Form Section */}
             <CertificateInquirySection
