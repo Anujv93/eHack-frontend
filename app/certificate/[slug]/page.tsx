@@ -36,6 +36,7 @@ import { notFound } from "next/navigation";
 import CareerStatsSection from "@/components/single-certificate/career-stats-section/career-stats-section";
 
 
+
 interface PageProps {
     params: Promise<{ slug: string }>;
 }
