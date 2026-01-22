@@ -118,7 +118,6 @@ const PlacementSection = () => {
                                     <div className="path-arrow">➜</div>
                                     <div className="path-step after">
                                         <span className="step-label">After eHack</span>
-                                        <p className="step-role">{story.after.role}</p>
                                         {story.after.logo ? (
                                             <div className="company-logo-wrapper">
                                                 <img
@@ -131,6 +130,7 @@ const PlacementSection = () => {
                                         ) : (
                                             <p className="step-company">{story.after.company}</p>
                                         )}
+                                        <p className="step-role">{story.after.role}</p>
                                     </div>
                                 </div>
                             </div>
