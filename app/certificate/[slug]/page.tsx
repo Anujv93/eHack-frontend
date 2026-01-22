@@ -35,6 +35,7 @@ import {
 import { notFound } from "next/navigation";
 import CareerStatsSection from "@/components/single-certificate/career-stats-section/career-stats-section";
 
+
 interface PageProps {
     params: Promise<{ slug: string }>;
 }
@@ -275,7 +276,6 @@ export default async function CertificatePage({ params }: PageProps) {
                 buttonText={ctaSection?.ButtonText}
                 buttonLink={ctaSection?.ButtonLink}
             />
-
             <Accreditations
                 title={accreditationsSection?.Title}
                 accreditations={accreditationsSection?.Accreditations}
