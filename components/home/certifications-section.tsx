@@ -19,15 +19,15 @@ export default function CertificationsSection() {
                         <div className="cert-entity-header">
                             <div className="cert-logo-wrapper">
                                 <Image
-                                    src="/images/ec-council-logo.png"
+                                    src="/images/ec-council-badge.png"
                                     alt="EC-Council Authorized Partner"
                                     width={180}
-                                    height={60}
+                                    height={80}
                                     className="cert-logo"
                                     style={{ objectFit: 'contain' }}
                                 />
                             </div>
-                            <div className="cert-badge">Premium Partner</div>
+                            <div className="cert-badge cert-badge-premium">Premium Partner</div>
                         </div>
 
                         <div className="cert-content">
@@ -63,7 +63,7 @@ export default function CertificationsSection() {
                                     style={{ objectFit: 'contain' }}
                                 />
                             </div>
-                            <div className="cert-badge">University Partner</div>
+                            <div className="cert-badge cert-badge-university">University Partner</div>
                         </div>
 
                         <div className="cert-content">
