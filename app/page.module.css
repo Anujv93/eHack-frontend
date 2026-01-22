@@ -1826,3 +1826,143 @@
         font-size: 0.875rem;
     }
 }
+
+/* ===== Ribbons Section ===== */
+.ribbonsWrapper {
+    padding: 4rem 0 2rem;
+    background: #ffffff;
+}
+
+.ribbonsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 992px) {
+    .ribbonsGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.ribbonCard {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.ribbonCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.csrRibbon {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.franchiseRibbon {
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+    border: 1px solid rgba(236, 124, 0, 0.15);
+}
+
+.ribbonContent {
+    position: relative;
+    z-index: 2;
+}
+
+.ribbonTag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.csrRibbon .ribbonTag {
+    background: rgba(255, 107, 0, 0.15);
+    color: #FF6B00;
+}
+
+.franchiseRibbon .ribbonTag {
+    background: rgba(236, 124, 0, 0.2);
+    color: #ec7c00;
+}
+
+.ribbonTitle {
+    font-size: 1.875rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.csrRibbon .ribbonTitle {
+    color: #ffffff;
+}
+
+.franchiseRibbon .ribbonTitle {
+    color: #1a1a1a;
+}
+
+.ribbonText {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.csrRibbon .ribbonText {
+    color: #94a3b8;
+}
+
+.franchiseRibbon .ribbonText {
+    color: #4b5563;
+}
+
+.ribbonAction {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.csrRibbon .ribbonAction {
+    color: #FF6B00;
+}
+
+.franchiseRibbon .ribbonAction {
+    color: #ec7c00;
+}
+
+.ribbonCard:hover .ribbonAction {
+    gap: 1.25rem;
+}
+
+/* Decorative Background Elements */
+.ribbonPattern {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60%;
+    height: 140%;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, transparent 100%);
+    transform: rotate(15deg);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.franchiseRibbon .ribbonPattern {
+    background: linear-gradient(135deg, rgba(236, 124, 0, 0.08) 0%, transparent 100%);
+}
