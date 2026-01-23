@@ -102,8 +102,8 @@
 
 .newsletter-input-wrapper {
     display: flex;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: white;
+    border: 1px solid white;
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -111,27 +111,22 @@
 
 .newsletter-input-wrapper:focus-within {
     border-color: var(--brand-primary);
-    box-shadow: 0 0 0 3px rgba(223, 103, 24, 0.2);
+    box-shadow: 0 0 0 3px rgba(221, 216, 213, 0.2);
 }
 
 .newsletter-input-wrapper input {
-    background: transparent;
     border: none;
     padding: 1rem 1.25rem;
     font-size: 0.9375rem;
-    color: white;
+    color: black;
     width: 280px;
     outline: none;
-}
-
-.newsletter-input-wrapper input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
 }
 
 .newsletter-input-wrapper button {
     background: linear-gradient(135deg, var(--brand-primary) 0%, #e8751f 100%);
     border: none;
-    padding: 1rem 1.75rem;
+    padding: 0rem 1.75rem;
     font-size: 0.9375rem;
     font-weight: 600;
     color: white;

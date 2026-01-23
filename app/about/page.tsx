@@ -14,9 +14,10 @@ export default function AboutPage() {
 
     const sections = [
         { id: 'mission', label: 'Our Mission' },
+        { id: 'philosophy', label: 'Philosophy' },
+        { id: 'what-we-do', label: 'What We Do' },
         { id: 'why-choose-us', label: 'Why Us' },
         { id: 'leadership', label: 'Leadership' },
-        { id: 'advisory', label: 'Advisory Board' },
         { id: 'contact', label: 'Contact' }
     ];
 
@@ -137,9 +138,9 @@ export default function AboutPage() {
                 <div className="container">
                     <div className="hero-content-compact">
                         <span className="hero-badge-light">ABOUT US</span>
-                        <h1 className="hero-title-light">Empowering the Next Generation of Tech Professionals</h1>
+                        <h1 className="hero-title-light">Global Leaders in Technology Education and Corporate Solutions</h1>
                         <p className="hero-subtitle-light">
-                            Leading training institute dedicated to transforming careers through world-class education in Cybersecurity and Digital Marketing
+                            Empowering the World with Emerging Technologies & High-Impact Learning
                         </p>
                     </div>
                 </div>
@@ -169,13 +170,122 @@ export default function AboutPage() {
                 <div className="container">
                     <div className="mission-content">
                         <span className="section-badge">OUR MISSION</span>
-                        <h2 className="section-title">Shaping Careers, Securing the Future</h2>
+                        <h2 className="section-title">Bridging Technology & Innovation</h2>
                         <p className="mission-text">
-                            At eHack Academy, our mission is to help students enhance their knowledge and skills in Cyber Security and Digital Marketing, thereby creating and improving their career opportunities in these rapidly evolving fields.
+                            At Ehack, we are committed to bridging emerging technologies with high-impact learning and corporate innovation. Our mission is to empower learners, professionals, and enterprises with the skills, knowledge, and tools they need to thrive in a rapidly evolving digital world.
                         </p>
                         <p className="mission-text">
-                            We provide high-end infrastructure with the latest technology and certified instructors to ensure effective and quality education that prepares our students for real-world challenges.
+                            We invite you to join a holistic ecosystem where technology meets learning, integrated with enterprise solutions and global knowledge empowerment.
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Philosophy Section */}
+            <section id="philosophy" className="philosophy-section">
+                <div className="container">
+                    <div className="section-header">
+                        <span className="section-badge section-badge-purple">OUR PHILOSOPHY</span>
+                        <h2 className="section-title">The E-HACK Approach</h2>
+                        <p className="section-subtitle">A holistic approach to empowering the digital future</p>
+                    </div>
+
+                    <div className="philosophy-grid">
+                        <div className="philosophy-card">
+                            <span className="philosophy-letter">E</span>
+                            <div className="philosophy-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
+                            </div>
+                            <h3 className="philosophy-title">Emerging Technologies</h3>
+                            <p className="philosophy-desc">Focus on Cybersecurity, AI, Robotics, and Data Science</p>
+                        </div>
+
+                        <div className="philosophy-card">
+                            <span className="philosophy-letter">H</span>
+                            <div className="philosophy-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
+                            </div>
+                            <h3 className="philosophy-title">High-Impact Learning</h3>
+                            <p className="philosophy-desc">Education, training, and skill empowerment for every stage</p>
+                        </div>
+
+                        <div className="philosophy-card">
+                            <span className="philosophy-letter">A</span>
+                            <div className="philosophy-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" /></svg>
+                            </div>
+                            <h3 className="philosophy-title">Analytics & AI</h3>
+                            <p className="philosophy-desc">Data-driven insights and AI-powered innovation</p>
+                        </div>
+
+                        <div className="philosophy-card">
+                            <span className="philosophy-letter">C</span>
+                            <div className="philosophy-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                            </div>
+                            <h3 className="philosophy-title">Cybersecurity & Corporate</h3>
+                            <p className="philosophy-desc">VAPT, Digital Forensics, IT Audits, and Compliance solutions</p>
+                        </div>
+
+                        <div className="philosophy-card">
+                            <span className="philosophy-letter">K</span>
+                            <div className="philosophy-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M2 12h20" /></svg>
+                            </div>
+                            <h3 className="philosophy-title">Knowledge & Reach</h3>
+                            <p className="philosophy-desc">Empowering learners and enterprises worldwide</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* What We Do Section */}
+            <section id="what-we-do" className="what-we-do-section">
+                <div className="container">
+                    <div className="section-header">
+                        <span className="section-badge section-badge-blue">OUR SERVICES</span>
+                        <h2 className="section-title">What We Do</h2>
+                    </div>
+
+                    <div className="what-we-do-grid">
+                        <div className="what-card">
+                            <h3>1. Learning & Training</h3>
+                            <p style={{ marginBottom: '1.5rem', color: '#64748B' }}>We provide industry-aligned programs that equip learners with future-ready skills.</p>
+                            <ul className="what-list">
+                                <li>Advanced programs in Cybersecurity, Data Science, AI, Robotics, and Digital Marketing</li>
+                                <li>Globally recognized certifications and hands-on training</li>
+                                <li>Flexible online and offline live classes</li>
+                                <li>Focused on skill development, employability, and professional growth</li>
+                            </ul>
+                        </div>
+
+                        <div className="what-card">
+                            <h3>2. Corporate & Technology Services</h3>
+                            <p style={{ marginBottom: '1.5rem', color: '#64748B' }}>Through Ehack Global Technology, we deliver enterprise-grade services.</p>
+                            <ul className="what-list">
+                                <li>VAPT (Vulnerability Assessment & Penetration Testing)</li>
+                                <li>Digital Forensics & Incident Response</li>
+                                <li>IT Audits & Compliance</li>
+                                <li>Enterprise solutions for cybersecurity, analytics, and digital transformation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Visual Split Section */}
+            <section className="w-full">
+                <div className="container" style={{ padding: '0 0 60px 0' }}>
+                    <div className="section-header">
+                        <h2 className="section-title">A Holistic Ecosystem</h2>
+                        <p>Where student learning meets corporate excellence</p>
+                    </div>
+                    <div style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                        <img
+                            src="/images/about-us/split-concept.png"
+                            alt="Learning and Corporate Services"
+                            className="full-split-image"
+                        />
                     </div>
                 </div>
             </section>
@@ -188,74 +298,44 @@ export default function AboutPage() {
                         <h2 className="section-title">What Sets Us Apart</h2>
                     </div>
 
-                    <div className="features-grid">
-                        <div className="feature-card">
-                            <div className="feature-number">#1</div>
-                            <h3 className="feature-title">#1 in Consistency</h3>
-                            <p className="feature-description">
-                                Ranked as India's #1 in classroom training with proven track record of student success.
-                            </p>
-                        </div>
-
+                    <div className="features-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
                         <div className="feature-card">
                             <div className="feature-icon-wrapper feature-icon-purple">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                </svg>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
                             </div>
-                            <h3 className="feature-title">Innovative Approach</h3>
+                            <h3 className="feature-title">Global Presence</h3>
                             <p className="feature-description">
-                                Recognized as a leading IT training company with cutting-edge curriculum and methodologies.
-                            </p>
-                        </div>
-
-                        <div className="feature-card">
-                            <div className="feature-icon-wrapper feature-icon-green">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg>
-                            </div>
-                            <h3 className="feature-title">Expert Tutors</h3>
-                            <p className="feature-description">
-                                Training delivered by India's best industry experts with real-world experience.
-                            </p>
-                        </div>
-
-                        <div className="feature-card">
-                            <div className="feature-icon-wrapper feature-icon-yellow">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
-                            </div>
-                            <h3 className="feature-title">Study Material</h3>
-                            <p className="feature-description">
-                                Comprehensive resources including e-books, HD videos, and hands-on lab access.
+                                Training and services with a worldwide footprint, connecting you to global opportunities.
                             </p>
                         </div>
 
                         <div className="feature-card">
                             <div className="feature-icon-wrapper feature-icon-cyan">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
                             </div>
-                            <h3 className="feature-title">Global Reach</h3>
+                            <h3 className="feature-title">Innovation-Driven</h3>
                             <p className="feature-description">
-                                Strong global authorizations and strategic partnerships with industry leaders.
+                                Programs and solutions built on the latest technologies and emerging industry trends.
                             </p>
                         </div>
 
                         <div className="feature-card">
-                            <div className="feature-icon-wrapper">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                                </svg>
+                            <div className="feature-icon-wrapper feature-icon-green">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                             </div>
-                            <h3 className="feature-title">Practical Approach</h3>
+                            <h3 className="feature-title">Trusted & Credible</h3>
                             <p className="feature-description">
-                                Focus on live and real-time project-based training for hands-on experience.
+                                Empowering both learners and corporates with reliability, excellence, and proven results.
+                            </p>
+                        </div>
+
+                        <div className="feature-card">
+                            <div className="feature-icon-wrapper feature-icon-yellow">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                            </div>
+                            <h3 className="feature-title">Holistic Ecosystem</h3>
+                            <p className="feature-description">
+                                Bridging skills, services, and knowledge under one roof for comprehensive growth.
                             </p>
                         </div>
                     </div>
@@ -443,6 +523,13 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Tagline Banner */}
+            <div className="tagline-banner">
+                <div className="container">
+                    <h2 className="tagline-text">“Ehack – Empowering Skills, Securing Enterprises, Enabling Innovation”</h2>
+                </div>
+            </div>
 
             {/* Contact Us Section - Premium Redesign */}
             <section id="contact" className="contact-section-pro">

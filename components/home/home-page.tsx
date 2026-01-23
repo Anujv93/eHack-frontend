@@ -94,7 +94,7 @@ const stats = [
     { value: '11+', label: 'Years of Excellence' },
     { value: '50,000+', label: 'Students Trained' },
     { value: '98%', label: 'Placement Rate' },
-    { value: '10+', label: 'Expert Trainers' },
+    { value: '50+', label: 'Expert Consultants' },
 ];
 
 // Learning options
@@ -279,7 +279,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             />
 
             {/* Hero Section */}
-            <section className={styles.hero}>
+            <section className={styles.hero} style={{ borderBottom: 'solid 2px orange' }}>
                 <div className={styles.heroBackground}>
                     <div className={styles.heroOverlay}></div>
                     {heroSlides.map((slide, index) => (
@@ -395,7 +395,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
             {/* Partners Section */}
             {/* @ts-ignore */}
-            <section className={styles.partners} id="partners">
+            <section className={styles.partners} style={{ borderBottom: 'solid 2px orange' }} id="partners">
                 <div className={styles.container}>
                     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                         <span className={styles.partnersLabel}>Trusted by World&apos;s Leading Certification Partners</span>
@@ -462,7 +462,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             </section >
 
             {/* Course Categories */}
-            < section id="courses" className={styles.coursesSection} >
+            < section id="courses" style={{ borderBottom: 'solid 2px orange' }} className={styles.coursesSection} >
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
                         <span className={styles.sectionBadge}>Explore Our Courses</span>
@@ -554,16 +554,13 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             <OnlineLibrarySection />
 
             {/* Learning Options */}
-            <section className={styles.learningSection} id="learning">
+            <section className={styles.learningSection} style={{ padding: '2rem 0' }} id="learning">
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
-                        <span className={styles.sectionBadge}>Flexible Learning Options</span>
-                        <h2 className={styles.sectionTitle}>
-                            Choose the <span className={styles.textAccent}>Learning</span> Format That Works Best for You
-                        </h2>
-                        <p className={styles.sectionSubtitle}>
-                            From live sessions to self-paced courses — learn your way, at your pace, on your schedule.
-                        </p>
+                        <h2 className={styles.sectionTitle}>Flexible Learning Options</h2>
+                        <div style={{ display: 'flex', justifyContent: 'center', width: '100%', height: '100px' }}>
+                            <span className={styles.partnersLabel}>Choose the learning format that works best for you</span>
+                        </div>
                     </div>
 
                     <div className={styles.learningGrid}>
@@ -592,7 +589,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             </section>
 
             {/* Stats Section */}
-            <section className={styles.statsSection} id="stats">
+            <section className={styles.statsSection} style={{ borderBottom: 'solid 2px orange', padding: '2rem 0', marginTop: '2rem' }} id="stats">
                 <div className={styles.container}>
                     <div className={styles.statsGrid}>
                         {stats.map((stat, index) => (
@@ -655,7 +652,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
 
             {/* Ribbons Section */}
-            <section className={styles.ribbonsWrapper}>
+            <section style={{ borderBottom: 'solid 2px orange', padding: '2rem 0' }}>
                 <div className={styles.container}>
                     <div className={styles.ribbonsGrid}>
                         <Link href="/csr" className={`${styles.ribbonCard} ${styles.csrRibbon}`}>

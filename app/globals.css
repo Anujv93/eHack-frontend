@@ -415,6 +415,23 @@ a:hover {
   grid-template-columns: repeat(6, 1fr);
 }
 
+.border-bottom {
+  position: relative;
+}
+
+.border-bottom:before {
+  content: "";
+  background: linear-gradient(90deg, var(--brand-primary), #ff8c42, var(--brand-primary));
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: block;
+}
+
 @media (max-width: 1024px) {
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, 1fr);

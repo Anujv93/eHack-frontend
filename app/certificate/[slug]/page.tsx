@@ -115,6 +115,8 @@ export default async function CertificatePage({ params }: PageProps) {
         (item): item is FAQSectionType => item.__component === 'global.faq-section'
     );
 
+
+
     // Build dynamic navigation sections based on available content
     const dynamicNavSections = [];
 
@@ -230,19 +232,33 @@ export default async function CertificatePage({ params }: PageProps) {
                 certificateTitle={certificate.Title}
             />
 
-            <TargetAudience
-                title={targetAudienceSection?.Title}
-                audiences={targetAudienceSection?.Audiences}
+
+
+            {/* Career Stats Section */}
+            {careerStatsSection && <CareerStatsSection section={careerStatsSection} />}
+
+            {/* Job Roles Section */}
+            {jobRolesSection && <JobRolesSection section={jobRolesSection} />}
+
+            {/* Course Outline Section */}
+            {courseOutlineSection && <CourseOutlineSection section={courseOutlineSection} />}
+
+            {/* FAQ Section */}
+            {faqSection && <FAQSection section={faqSection} />}
+
+            {/* Inquiry Form Section */}
+            {/* <CertificateInquirySection
+                certificateTitle={certificate.Title}
+                certificateSlug={slug}
+            /> */}
+            <CTASection
+                title={ctaSection?.Title}
+                subtitle={ctaSection?.Subtitle}
             />
             <Accreditations
                 title={accreditationsSection?.Title}
                 accreditations={accreditationsSection?.Accreditations}
             />
-            <CTASection
-                title={ctaSection?.Title}
-                subtitle={ctaSection?.Subtitle}
-            />
-
             {/* Related Certificates Section */}
             <RelatedCertificates
                 title="Explore More Certifications"

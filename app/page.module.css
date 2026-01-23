@@ -884,12 +884,17 @@
     opacity: 0.8;
 }
 
+.border-top-orange {
+    border-top: solid 2px orange
+}
+
 /* ===== Stats Section ===== */
 .statsSection {
     padding: 2rem 0;
     background: #FFF7F0;
     width: 80%;
     margin: 0 auto;
+    border: solid 2px orange;
 }
 
 .statsGrid {
@@ -1840,7 +1845,7 @@
         font-size: 0.75rem;
         letter-spacing: 1.5px;
         padding: 0.5rem 1rem;
-        margin: 1rem auto 1.5rem;
+        margin: 1rem auto 0px;
     }
 }
 

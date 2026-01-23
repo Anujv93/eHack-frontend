@@ -103,7 +103,7 @@ export default function TrainingSection({
     };
 
     return (
-        <section className="ehack-training-section" id="ehack-training">
+        <section className="ehack-training-section border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="ehack-training">
             <div className="container">
                 {/* Section Header */}
                 {(badgeText || title) && (
