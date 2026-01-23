@@ -112,8 +112,10 @@ const PlacementSection = () => {
                                 <div className="transformation-path">
                                     <div className="path-step before">
                                         <span className="step-label">Before eHack</span>
+                                        <div className="company-text-wrapper">
+                                            <p className="step-company">{story.before.company}</p>
+                                        </div>
                                         <p className="step-role">{story.before.role}</p>
-                                        <p className="step-company">{story.before.company}</p>
                                     </div>
                                     <div className="path-arrow">➜</div>
                                     <div className="path-step after">
