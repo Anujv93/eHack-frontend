@@ -9,8 +9,8 @@
 /* Tilted Special Offer Ribbon */
 .offer-ribbon {
     position: absolute;
-    top: 55px;
-    left: -55px;
+    top: 35px;
+    left: -75px;
     width: 250px;
     padding: 8px 0;
     background: linear-gradient(180deg, #FF8C00 0%, #E65100 100%);
@@ -219,10 +219,20 @@
     }
 
     .offer-ribbon {
-        top: 45px;
-        left: -50px;
-        width: 220px;
-        font-size: 0.7rem;
+        display: flex;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        width: 100%;
+        height: auto;
+        font-size: 0.75rem;
+        padding: 8px 0;
+        z-index: 10;
+        transform: none;
+        writing-mode: horizontal-tb;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(255, 107, 0, 0.3);
     }
 
     .offer-banner-container {
@@ -250,13 +260,20 @@
     }
 
     .offer-ribbon {
-        display: block;
-        top: 20px;
-        left: -45px;
-        width: 180px;
-        font-size: 0.65rem;
-        padding: 6px 0;
+        display: flex;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        width: 100%;
+        height: auto;
+        font-size: 0.75rem;
+        padding: 8px 0;
         z-index: 10;
+        transform: none;
+        writing-mode: horizontal-tb;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(255, 107, 0, 0.3);
     }
 
     .offer-banner::before,
@@ -274,7 +291,7 @@
         max-width: 100%;
         position: relative;
         z-index: 2;
-        padding-top: 1rem;
+        padding-top: 2rem;
         /* Add padding to prevent text overlap with ribbon */
     }
 
@@ -334,11 +351,13 @@
 
     /* Adjust ribbon specifically for mobile to sit strictly in corner */
     .offer-ribbon {
-        top: 12px;
-        left: -42px;
-        width: 160px;
-        font-size: 0.6rem;
-        padding: 5px 0;
+        font-size: 0.7rem;
+        padding: 6px 0;
+        width: 100%;
+        /* Ensure full width is maintained */
+        top: 0;
+        left: 0;
+        transform: none;
     }
 
     .offer-banner-content {
@@ -380,10 +399,8 @@
 
 @media (max-width: 360px) {
     .offer-ribbon {
-        top: 8px;
-        left: -40px;
-        width: 140px;
-        font-size: 0.55rem;
+        font-size: 0.65rem;
+        width: 100%;
     }
 
     .offer-banner {
