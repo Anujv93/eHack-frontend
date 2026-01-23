@@ -228,26 +228,9 @@ export default async function CertificatePage({ params }: PageProps) {
                 certificateTitle={certificate.Title}
             />
 
-
-
-            {/* Career Stats Section */}
-            {careerStatsSection && <CareerStatsSection section={careerStatsSection} />}
-
-            {/* Job Roles Section */}
-            {jobRolesSection && <JobRolesSection section={jobRolesSection} />}
-
-            {/* Course Outline Section */}
-            {courseOutlineSection && <CourseOutlineSection section={courseOutlineSection} />}
-
-            {/* FAQ Section */}
-            {faqSection && <FAQSection section={faqSection} />}
-
-            {/* Inquiry Form Section - Now in CTA Section */}
-            <CTASection
-                title={ctaSection?.Title}
-                subtitle={ctaSection?.Subtitle}
-                certificateTitle={certificate.Title}
-                certificateSlug={slug}
+            <TargetAudience
+                title={targetAudienceSection?.Title}
+                audiences={targetAudienceSection?.Audiences}
             />
             <Accreditations
                 title={accreditationsSection?.Title}
@@ -256,12 +239,6 @@ export default async function CertificatePage({ params }: PageProps) {
             <CTASection
                 title={ctaSection?.Title}
                 subtitle={ctaSection?.Subtitle}
-                buttonText={ctaSection?.ButtonText}
-                buttonLink={ctaSection?.ButtonLink}
-            />
-            <Accreditations
-                title={accreditationsSection?.Title}
-                accreditations={accreditationsSection?.Accreditations}
             />
 
             {/* Related Certificates Section */}
