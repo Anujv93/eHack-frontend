@@ -110,21 +110,6 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             <section className="hero-section" id="overview">
                 <div className="hero-container">
                     <div className="hero-content">
-                        <div className="partner-logos">
-                            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && (
-                                <>
-                                    <div className="partner-logo">
-                                        <img src={program.partnerLogo} alt={`${program.partner} Accredited Training Center`} className="ec-council-badge" />
-                                    </div>
-                                    <div className="divider"></div>
-                                </>
-                            )}
-                            {!program.slug.includes('masterclass-ethical-hacking-ceh-v13') && (
-                                <div className="partner-brand">
-                                    <img src={program.ehackLogo} alt="eHack Academy" className="hero-brand-logo" />
-                                </div>
-                            )}
-                        </div>
 
                         <h1 className="hero-title">
                             {program.title.includes('Ethical Hacking') ? (
