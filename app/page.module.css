@@ -941,6 +941,23 @@
     line-height: 1.2;
 }
 
+.sectionBadge {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: rgba(255, 107, 0, 0.1);
+    color: #FF6B00;
+    border-radius: 50px;
+    margin-bottom: 1.25rem;
+}
+
+.textAccent {
+    color: #FF6B00;
+}
+
 .sectionSubtitle {
     font-size: 1.1rem;
     color: #64748B;
@@ -1912,16 +1929,33 @@
 .csrRibbon {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 !important;
+    /* Flush banner alignment */
+    display: flex;
+    flex-direction: column;
+}
+
+.csrRibbon .ribbonContent {
+    padding: 2.5rem;
 }
 
 .franchiseRibbon {
     background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
     border: 1px solid rgba(236, 124, 0, 0.15);
+    padding: 0 !important;
+    /* Truly flush image */
+    display: flex;
+    flex-direction: column;
+}
+
+.franchiseRibbon .ribbonContent {
+    padding: 2.5rem;
 }
 
 .ribbonContent {
     position: relative;
     z-index: 2;
+    flex: 1;
 }
 
 .ribbonTag {
@@ -1968,11 +2002,13 @@
 }
 
 .csrRibbon .ribbonText {
-    color: #94a3b8;
+    color: #e2e8f0;
+    font-weight: 500;
 }
 
 .franchiseRibbon .ribbonText {
-    color: #4b5563;
+    color: #111827;
+    font-weight: 500;
 }
 
 .ribbonAction {
@@ -2011,4 +2047,39 @@
 
 .franchiseRibbon .ribbonPattern {
     background: linear-gradient(135deg, rgba(236, 124, 0, 0.08) 0%, transparent 100%);
+}
+
+/* Standard Banner Image Styles - TOP PLACEMENT */
+.ribbonImageWrapper {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    /* Flush with card top */
+    overflow: hidden;
+}
+
+.floatingImage {
+    width: 100%;
+    /* No transformation or perspective */
+    border-radius: 0;
+    /* Clipped by parent card overflow */
+    overflow: hidden;
+    background: #fff;
+}
+
+.ribbonImage {
+    width: 100%;
+    height: 240px;
+    /* Standard banner height */
+    display: block;
+    object-fit: cover;
+    /* Fills the area completely */
+    object-position: center 70%;
+    transition: transform 0.5s ease;
+}
+
+/* Simple zoom on hover instead of 3D rotation */
+.ribbonCard:hover .ribbonImage {
+    transform: scale(1.05);
 }

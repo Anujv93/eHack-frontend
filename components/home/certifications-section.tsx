@@ -26,6 +26,15 @@ export default function CertificationsSection() {
                                     className="cert-logo"
                                     style={{ objectFit: 'contain' }}
                                 />
+                                <div className="cert-logo-divider" />
+                                <Image
+                                    src="/images/ec-council-logo.png"
+                                    alt="EC-Council Logo"
+                                    width={180}
+                                    height={50}
+                                    className="cert-logo secondary-logo"
+                                    style={{ objectFit: 'contain' }}
+                                />
                             </div>
                             <div className="cert-badge cert-badge-premium">Premium Partner</div>
                         </div>

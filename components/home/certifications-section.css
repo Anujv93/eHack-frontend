@@ -85,11 +85,23 @@
     height: 60px;
     display: flex;
     align-items: center;
+    gap: 1.5rem;
 }
 
 .cert-logo {
     max-height: 100%;
     width: auto;
+}
+
+.cert-logo-divider {
+    width: 2px;
+    height: 30px;
+    background: #E2E8F0;
+    opacity: 0.8;
+}
+
+.secondary-logo {
+    max-height: 45px;
 }
 
 /* Invert/Darken specific logos if they are white/light on transparent */

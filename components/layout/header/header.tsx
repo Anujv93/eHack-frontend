@@ -243,7 +243,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                 </div>
 
                                 {/* Middle Section: Courses or Categories */}
-                                <div className="mega-menu-middle">
+                                <div className={`mega-menu-middle ${isEhackOriginals ? 'ehack-active' : ''}`}>
                                     {/* Show Categories for eHack Originals */}
                                     {isEhackOriginals ? (
                                         <div className="mega-menu-right">

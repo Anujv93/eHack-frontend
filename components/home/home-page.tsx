@@ -556,11 +556,11 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             {/* Learning Options */}
             <section className={styles.learningSection} style={{ padding: '2rem 0' }} id="learning">
                 <div className={styles.container}>
-                    <div className={styles.sectionHeader}>
-                        <h2 className={styles.sectionTitle}>Flexible Learning Options</h2>
-                        <div style={{ display: 'flex', justifyContent: 'center', width: '100%', height: '100px' }}>
-                            <span className={styles.partnersLabel}>Choose the learning format that works best for you</span>
-                        </div>
+                    <div className={styles.sectionHeader} style={{ textAlign: 'center', marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <span className={styles.sectionBadge}>Flexible Learning Options</span>
+                        <h2 className={styles.sectionTitle}>
+                            Choose the learning <span className={styles.textAccent}>format</span> that works best for you
+                        </h2>
                     </div>
 
                     <div className={styles.learningGrid}>
@@ -656,6 +656,15 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                 <div className={styles.container}>
                     <div className={styles.ribbonsGrid}>
                         <Link href="/csr" className={`${styles.ribbonCard} ${styles.csrRibbon}`}>
+                            <div className={styles.ribbonImageWrapper}>
+                                <div className={styles.floatingImage}>
+                                    <img
+                                        src="/images/csr-banner-image.jpg"
+                                        alt="eHack CSR Initiatives"
+                                        className={styles.ribbonImage}
+                                    />
+                                </div>
+                            </div>
                             <div className={styles.ribbonContent}>
                                 <span className={styles.ribbonTag}>Empowering Society</span>
                                 <h3 className={styles.ribbonTitle}>Empowering Society Through Cybersecurity, Employability & Emerging Technologies</h3>
@@ -668,6 +677,15 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         </Link>
 
                         <Link href="/franchise" className={`${styles.ribbonCard} ${styles.franchiseRibbon}`}>
+                            <div className={styles.ribbonImageWrapper}>
+                                <div className={styles.floatingImage}>
+                                    <img
+                                        src="/images/franchise-popup-image.jpg"
+                                        alt="Franchise Laboratory"
+                                        className={styles.ribbonImage}
+                                    />
+                                </div>
+                            </div>
                             <div className={styles.ribbonContent}>
                                 <span className={styles.ribbonTag}>Partnership Opportunity</span>
                                 <h3 className={styles.ribbonTitle}>Partner with eHack Academy</h3>

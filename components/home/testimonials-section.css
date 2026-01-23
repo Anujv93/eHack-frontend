@@ -560,22 +560,38 @@
 .testimonial-company-footer {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding-top: 1.5rem;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
     border-top: 1px solid var(--neutral-100);
     justify-content: flex-start;
-    /* Align left */
+    height: 64px;
+}
+
+.company-logo-container {
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
 }
 
 .company-logo-large {
-    height: 32px;
-    /* Smaller, cleaner */
+    max-height: 100%;
+    max-width: 100%;
     width: auto;
-    max-width: 100px;
     object-fit: contain;
-    opacity: 1;
+    opacity: 0.95;
     transition: all 0.2s;
-    filter: grayscale(0%);
+    filter: brightness(1.1);
+}
+
+.company-logo-container[data-company="ampcuscyber"] .company-logo-large {
+    transform: scale(1.3);
+}
+
+.company-logo-container[data-company="sisa"] .company-logo-large {
+    transform: scale(0.85);
 }
 
 .testimonial-card:hover .company-logo-large {
@@ -584,11 +600,13 @@
 }
 
 .company-name-footer {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--neutral-400);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--neutral-700);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    overflow: visible;
 }
 
 /* Responsive */

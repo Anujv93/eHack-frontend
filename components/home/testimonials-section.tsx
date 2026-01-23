@@ -54,7 +54,7 @@ const testimonials = [
         name: 'Anmol Gupta',
         role: 'APV-DELIVERY',
         company: 'ampcuscyber',
-        companyLogo: 'images/ampcuscyber.png',
+        companyLogo: '/images/ampcuscyber.png',
         companyColor: '#86BC25',
         image: '/images/testimonials/person1.jpg',
         certification: 'CEH Certified',
@@ -65,7 +65,7 @@ const testimonials = [
         name: 'Rajiv Govind',
         role: 'Head Teaching Assistant',
         company: 'GT',
-        companyLogo: 'images/gtlogo.jpg',
+        companyLogo: '/images/gtlogo.jpg',
         companyColor: '#D04A02',
         image: '/images/testimonials/person2.jpg',
         certification: 'CND Certified',
@@ -76,7 +76,7 @@ const testimonials = [
         name: 'Vaddi . Paneendar',
         role: 'Penetration Tester',
         company: 'sisa',
-        companyLogo: 'images/sisa.webp',
+        companyLogo: '/images/sisa.webp',
         companyColor: '#00338D',
         image: '/images/testimonials/person3.jpg',
         certification: 'CPENT Certified',
@@ -87,7 +87,7 @@ const testimonials = [
         name: 'Damini Settappa Ranganath',
         role: 'Cybersecurity Engineer',
         company: 'anuvu',
-        companyLogo: 'images/anuvu.png',
+        companyLogo: '/images/anuvu.png',
         companyColor: '#FFD100',
         image: '/images/testimonials/person4.jpg',
         certification: 'CHFI Certified',
@@ -98,7 +98,7 @@ const testimonials = [
         name: 'Pranshu Tiwari',
         role: 'Director Security Services',
         company: 'ampcuscyber',
-        companyLogo: 'images/ampcuscyber.png',
+        companyLogo: '/images/ampcuscyber.png',
         companyColor: '#A100FF',
         image: '/images/testimonials/person5.jpg',
         certification: 'CCSE Certified',
@@ -109,7 +109,7 @@ const testimonials = [
         name: 'Abhinav Choubey',
         role: 'Information Security Manager',
         company: 'sisa',
-        companyLogo: 'images/sisa.webp',
+        companyLogo: '/images/sisa.webp',
         companyColor: '#0530AD',
         image: '/images/testimonials/person6.jpg',
         certification: 'CISM Certified',
@@ -119,7 +119,8 @@ const testimonials = [
     {
         name: 'Sneha Sharma',
         role: 'Digital Marketing Specialist',
-        company: 'GrowthPulse India',
+        company: 'TCS',
+        companyLogo: 'https://img.logo.dev/tcs.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#FF4500',
         certification: 'Google Ads Professional',
         course: 'Digital Marketing Masterclass',
@@ -128,7 +129,8 @@ const testimonials = [
     {
         name: 'Arjun Mehra',
         role: 'AI Engineer',
-        company: 'NeuralTech Solutions',
+        company: 'Microsoft',
+        companyLogo: 'https://img.logo.dev/microsoft.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#00BFFF',
         certification: 'AI Specialist',
         course: 'Data Science & AI Bootcamp',
@@ -137,7 +139,8 @@ const testimonials = [
     {
         name: 'Priya Iyer',
         role: 'IoT Solutions Architect',
-        company: 'SmartConnect Labs',
+        company: 'Cisco',
+        companyLogo: 'https://img.logo.dev/cisco.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#32CD32',
         certification: 'IoT Professional',
         course: 'Robotics & IoT Specialist',
@@ -146,7 +149,8 @@ const testimonials = [
     {
         name: 'Rajesh Kumar',
         role: 'Cloud Security Consultant',
-        company: 'SkyShield Defense',
+        company: 'IBM',
+        companyLogo: 'https://img.logo.dev/ibm.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#4682B4',
         certification: 'AWS Certified Security',
         course: 'Cloud Security Mastery',
@@ -155,7 +159,8 @@ const testimonials = [
     {
         name: 'Anjali Desai',
         role: 'VAPT Lead',
-        company: 'SecureNet India',
+        company: 'Fortinet',
+        companyLogo: 'https://img.logo.dev/fortinet.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#DC143C',
         certification: 'OSCP Certified',
         course: 'Advanced Pentesting Program',
@@ -164,7 +169,8 @@ const testimonials = [
     {
         name: 'Vikram Singh',
         role: 'SOC Analyst',
-        company: 'CyberWatch Systems',
+        company: 'Oracle',
+        companyLogo: 'https://img.logo.dev/oracle.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#2F4F4F',
         certification: 'SOC Analyst L3',
         course: 'SOC Operations & Management',
@@ -173,7 +179,8 @@ const testimonials = [
     {
         name: 'Kavita Reddy',
         role: 'SEO Manager',
-        company: 'SearchEngine Experts',
+        company: 'Cognizant',
+        companyLogo: 'https://img.logo.dev/cognizant.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#FFD700',
         certification: 'HubSpot SEO Certified',
         course: 'Digital Marketing Masterclass',
@@ -182,7 +189,8 @@ const testimonials = [
     {
         name: 'Sandeep Patil',
         role: 'Data Scientist',
-        company: 'Insight Analytics',
+        company: 'HCL Tech',
+        companyLogo: 'https://img.logo.dev/hcltech.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#8A2BE2',
         certification: 'Data Analytics Professional',
         course: 'Data Science Bootcamp',
@@ -191,7 +199,8 @@ const testimonials = [
     {
         name: 'Aditi Verma',
         role: 'Robotics Engineer',
-        company: 'AutoBotics India',
+        company: 'Bosch',
+        companyLogo: 'https://img.logo.dev/bosch.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#FF6347',
         certification: 'ROB Certified',
         course: 'Robotics & IoT Specialist',
@@ -200,7 +209,8 @@ const testimonials = [
     {
         name: 'Rohan Gupta',
         role: 'Security Analyst',
-        company: 'NetDeflect Solutions',
+        company: 'Capgemini',
+        companyLogo: 'https://img.logo.dev/capgemini.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#556B2F',
         certification: 'Security+ Certified',
         course: 'Graduate Program in Cybersecurity',
@@ -209,7 +219,8 @@ const testimonials = [
     {
         name: 'Mansi Joshi',
         role: 'ML Ops Specialist',
-        company: 'MachineLogic AI',
+        company: 'Tech Mahindra',
+        companyLogo: 'https://img.logo.dev/techmahindra.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#008080',
         certification: 'TensorFlow Professional',
         course: 'AI & Machine Learning Bootcamp',
@@ -218,7 +229,8 @@ const testimonials = [
     {
         name: 'Rahul Malhotra',
         role: 'Ethical Hacker',
-        company: 'BugBounty Network',
+        company: 'United Nations',
+        companyLogo: 'https://img.logo.dev/un.org?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#B22222',
         certification: 'CEH Master',
         course: 'Masters in Ethical Hacking',
@@ -227,7 +239,8 @@ const testimonials = [
     {
         name: 'Deepika Nair',
         role: 'Content Strategist',
-        company: 'MediaMinds Asia',
+        company: 'Infosys',
+        companyLogo: 'https://img.logo.dev/infosys.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#FF1493',
         certification: 'Social Media Professional',
         course: 'Digital Marketing Masterclass',
@@ -236,7 +249,8 @@ const testimonials = [
     {
         name: 'Sameer Khan',
         role: 'Cloud Architect',
-        company: 'CloudVista Technologies',
+        company: 'Wipro',
+        companyLogo: 'https://img.logo.dev/wipro.com?token=pk_RM4Xs6-nTrO6e8JzPUxMCQ',
         companyColor: '#4169E1',
         certification: 'Azure Solutions Architect',
         course: 'Cloud Security Mastery',
@@ -328,11 +342,13 @@ export default function TestimonialsSection() {
                                 {(testimonial.companyLogo || testimonial.company) && (
                                     <div className="testimonial-company-footer">
                                         {testimonial.companyLogo && (
-                                            <img
-                                                src={testimonial.companyLogo}
-                                                alt={testimonial.company}
-                                                className="company-logo-large"
-                                            />
+                                            <div className="company-logo-container" data-company={testimonial.company}>
+                                                <img
+                                                    src={testimonial.companyLogo}
+                                                    alt={testimonial.company}
+                                                    className="company-logo-large"
+                                                />
+                                            </div>
                                         )}
                                         <span className="company-name-footer" style={!testimonial.companyLogo ? { marginLeft: 0 } : {}}>{testimonial.company}</span>
                                     </div>
@@ -366,11 +382,13 @@ export default function TestimonialsSection() {
                                 {(testimonial.companyLogo || testimonial.company) && (
                                     <div className="testimonial-company-footer">
                                         {testimonial.companyLogo && (
-                                            <img
-                                                src={testimonial.companyLogo}
-                                                alt={testimonial.company}
-                                                className="company-logo-large"
-                                            />
+                                            <div className="company-logo-container" data-company={testimonial.company}>
+                                                <img
+                                                    src={testimonial.companyLogo}
+                                                    alt={testimonial.company}
+                                                    className="company-logo-large"
+                                                />
+                                            </div>
                                         )}
                                         <span className="company-name-footer" style={!testimonial.companyLogo ? { marginLeft: 0 } : {}}>{testimonial.company}</span>
                                     </div>

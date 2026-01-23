@@ -588,15 +588,25 @@
     border-radius: 10px;
     text-decoration: none;
     transition: all 0.2s;
-    border: 2px solid var(--neutral-200);
+    border: 2px solid #FF6B00;
+    /* Persistent orange border for partners */
     background: #FAFAFA;
     min-width: 0;
 }
 
+.ehack-active .mega-course-item {
+    border-color: var(--neutral-200);
+    /* Persistent neutral border for eHack originals */
+}
+
 .mega-course-item:hover {
     background: #FFF7F0;
-    border-color: var(--brand-primary);
     transform: translateY(-2px);
+    /* Border color stays consistent with default state */
+}
+
+.ehack-active .mega-course-item:hover {
+    border-color: var(--neutral-200);
 }
 
 .mega-course-name {
@@ -679,6 +689,12 @@
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     border-color: rgba(255, 255, 255, 0.2);
+    /* Neutral by default */
+}
+
+.ehack-active .mega-category-card:hover {
+    border-color: var(--neutral-200);
+    /* Explicit neutral for eHack categories */
 }
 
 .mega-cat-name {
