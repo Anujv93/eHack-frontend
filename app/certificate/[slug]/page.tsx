@@ -244,16 +244,12 @@ export default async function CertificatePage({ params }: PageProps) {
             {/* FAQ Section */}
             {faqSection && <FAQSection section={faqSection} />}
 
-            {/* Inquiry Form Section */}
-            <CertificateInquirySection
-                certificateTitle={certificate.Title}
-                certificateSlug={slug}
-            />
+            {/* Inquiry Form Section - Now in CTA Section */}
             <CTASection
                 title={ctaSection?.Title}
                 subtitle={ctaSection?.Subtitle}
-                buttonText={ctaSection?.ButtonText}
-                buttonLink={ctaSection?.ButtonLink}
+                certificateTitle={certificate.Title}
+                certificateSlug={slug}
             />
             <Accreditations
                 title={accreditationsSection?.Title}
