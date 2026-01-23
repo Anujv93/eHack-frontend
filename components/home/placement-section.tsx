@@ -119,7 +119,7 @@ const PlacementSection = () => {
                                     <div className="path-step after">
                                         <span className="step-label">After eHack</span>
                                         {story.after.logo ? (
-                                            <div className="company-logo-wrapper">
+                                            <div className="company-logo-wrapper" data-company={story.after.company}>
                                                 <img
                                                     src={story.after.logo}
                                                     alt={story.after.company}

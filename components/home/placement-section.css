@@ -303,7 +303,8 @@
 }
 
 .path-step {
-    flex: 1;
+    flex: 1 1 50%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -402,8 +403,8 @@
 }
 
 .transformation-path .company-logo-wrapper {
-    height: 90px;
-    width: 200px;
+    height: 75px;
+    width: 170px;
     margin: 0 auto 0.75rem;
     display: flex;
     align-items: center;
@@ -426,6 +427,16 @@
     width: auto;
     height: auto;
     object-fit: contain;
+}
+
+.transformation-path .company-logo-wrapper[data-company="Ampcuscyber"] .step-company-logo,
+.transformation-path .company-logo-wrapper[data-company="Anuvu"] .step-company-logo,
+.transformation-path .company-logo-wrapper[data-company="Fiserv"] .step-company-logo {
+    transform: scale(1.7);
+}
+
+.transformation-path .company-logo-wrapper[data-company="SISA"] .step-company-logo {
+    transform: scale(0.9);
 }
 
 /* Stats Strip */
