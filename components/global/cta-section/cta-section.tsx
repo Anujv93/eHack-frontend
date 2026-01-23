@@ -135,7 +135,7 @@ export default function CTASection({
     if (!title) return null;
 
     return (
-        <section className="cta-section border-bottom" id="cta">
+        <section className="cta-section border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="cta">
             <div className="container">
                 <div className="cta-content">
                     <h2>{title}</h2>

@@ -16,7 +16,7 @@ export default function JobRolesSection({ section }: JobRolesSectionProps) {
     const rightColumn = section.JobRoles.slice(midPoint);
 
     return (
-        <section className="job-roles-section border-bottom" id="job-roles">
+        <section className="job-roles-section border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="job-roles">
             <div className="container">
                 <div className="job-roles-card">
                     {/* Icon */}

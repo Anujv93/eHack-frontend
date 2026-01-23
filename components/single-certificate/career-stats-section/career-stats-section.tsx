@@ -15,7 +15,7 @@ export default function CareerStatsSection({ section }: CareerStatsSectionProps)
     }
 
     return (
-        <section className="section section-gray border-bottom" id="career-value">
+        <section className="section section-gray border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="career-value">
             <div className="container">
                 {/* Section Header */}
                 <div className="section-header">
