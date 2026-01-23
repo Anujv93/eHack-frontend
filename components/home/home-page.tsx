@@ -279,7 +279,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             />
 
             {/* Hero Section */}
-            <section className={styles.hero} style={{ border: 'solid 2px orange' }}>
+            <section className={styles.hero} style={{ borderBottom: 'solid 2px orange' }}>
                 <div className={styles.heroBackground}>
                     <div className={styles.heroOverlay}></div>
                     {heroSlides.map((slide, index) => (
