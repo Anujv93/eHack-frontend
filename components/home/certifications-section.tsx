@@ -6,7 +6,7 @@ import './certifications-section.css';
 
 export default function CertificationsSection() {
     return (
-        <section className="cert-section" id="certifications">
+        <section className="cert-section" style={{ borderBottom: 'solid 2px orange' }} id="certifications">
             <div className="cert-container">
                 <div className="cert-header">
                     <h2 className="cert-title">Globally Recognized & <span className="cert-title-gradient">Authorized</span></h2>

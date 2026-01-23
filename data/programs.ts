@@ -38,6 +38,23 @@ export const programs = [
         curriculum: [
             {
                 number: "01",
+                title: "IT Fundamentals",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Build a strong foundation in IT essentials covering hardware, operating systems, networking, servers, and cloud technologies.",
+                topics: [
+                    "Computer Hardware & Architecture",
+                    "Operating Systems (Windows/Linux/Mac)",
+                    "Networking Fundamentals",
+                    "TCP/IP & Network Protocols",
+                    "Server Administration Basics",
+                    "Cloud Computing Concepts",
+                    "Virtualization Technologies",
+                    "Basic Troubleshooting"
+                ]
+            },
+            {
+                number: "02",
                 title: "P|SCSPᴬᴵ - Professional | Secure Computer Systems Programᴬᴵ",
                 duration: "8 Weeks",
                 certification: "EC-Council CSCU",
@@ -58,7 +75,7 @@ export const programs = [
                 ]
             },
             {
-                number: "02",
+                number: "03",
                 title: "P|NDPᴬᴵ - Professional | Network Defense Programᴬᴵ",
                 duration: "12 Weeks",
                 certification: "EC-Council CND",
@@ -87,7 +104,7 @@ export const programs = [
                 ]
             },
             {
-                number: "03",
+                number: "04",
                 title: "P|EHCOPᴬᴵ - Professional | Ethical Hacking and Cyber Offense Programᴬᴵ",
                 duration: "12 Weeks",
                 certification: "EC-Council CEH",
@@ -116,7 +133,7 @@ export const programs = [
                 ]
             },
             {
-                number: "04",
+                number: "05",
                 title: "P|DFIPᴬᴵ - Professional | Digital Forensics and Investigation Programᴬᴵ",
                 duration: "8 Weeks",
                 certification: "EC-Council CHFI",
@@ -140,7 +157,7 @@ export const programs = [
                 ]
             },
             {
-                number: "05",
+                number: "06",
                 title: "P|APTPᴬᴵ - Professional | Advanced Penetration Testing Programᴬᴵ",
                 duration: "10 Weeks",
                 certification: "EC-Council CPENT",
@@ -164,7 +181,7 @@ export const programs = [
                 ]
             },
             {
-                number: "06",
+                number: "07",
                 title: "OWASP Top 10",
                 duration: "4 Weeks",
                 certification: "",
@@ -183,7 +200,7 @@ export const programs = [
                 ]
             },
             {
-                number: "07",
+                number: "08",
                 title: "Personality and Softskill Development",
                 duration: "2 Week",
                 certification: "",
@@ -208,6 +225,19 @@ export const programs = [
                     "Corporate Readiness & Workplace Ethics",
                     "Placement Readiness & Career Roadmap"
                 ]
+            },
+            {
+                number: "09",
+                title: "ADVANCED REAL-TIME INDUSTRY PROJECTS",
+                duration: "3 Months",
+                description: "Each Master Program student must select ANY TWO advanced projects.",
+                topics: [
+                    "Advanced Penetration Testing & Red Team Operations",
+                    "Enterprise Security Operations & Incident Management",
+                    "Advanced Digital Forensics & Incident Response",
+                    "Cloud Security Architecture & Compliance",
+                    "Threat Intelligence & Security Strategy"
+                ],
             }
         ],
         targetAudience: [
@@ -479,6 +509,18 @@ export const programs = [
                     "Corporate Readiness & Workplace Ethics",
                     "Placement Readiness & Career Roadmap"
                 ]
+            },
+            {
+                number: "08",
+                title: "ADVANCED REAL-TIME INDUSTRY PROJECTS",
+                duration: "3 Months",
+                description: "Each Master Program student must select ANY TWO advanced projects.",
+                topics: [
+                    "1. Network Security & SOC Operations",
+                    "2. Application & Network Security Testing",
+                    "3. Digital Forensics & Incident Analysis",
+                    "4. Cloud Infrastructure Security",
+                ],
             }
         ],
         careerROI: {

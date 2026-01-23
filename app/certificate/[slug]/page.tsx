@@ -228,19 +228,33 @@ export default async function CertificatePage({ params }: PageProps) {
                 certificateTitle={certificate.Title}
             />
 
-            <TargetAudience
-                title={targetAudienceSection?.Title}
-                audiences={targetAudienceSection?.Audiences}
+
+
+            {/* Career Stats Section */}
+            {careerStatsSection && <CareerStatsSection section={careerStatsSection} />}
+
+            {/* Job Roles Section */}
+            {jobRolesSection && <JobRolesSection section={jobRolesSection} />}
+
+            {/* Course Outline Section */}
+            {courseOutlineSection && <CourseOutlineSection section={courseOutlineSection} />}
+
+            {/* FAQ Section */}
+            {faqSection && <FAQSection section={faqSection} />}
+
+            {/* Inquiry Form Section */}
+            {/* <CertificateInquirySection
+                certificateTitle={certificate.Title}
+                certificateSlug={slug}
+            /> */}
+            <CTASection
+                title={ctaSection?.Title}
+                subtitle={ctaSection?.Subtitle}
             />
             <Accreditations
                 title={accreditationsSection?.Title}
                 accreditations={accreditationsSection?.Accreditations}
             />
-            <CTASection
-                title={ctaSection?.Title}
-                subtitle={ctaSection?.Subtitle}
-            />
-
             {/* Related Certificates Section */}
             <RelatedCertificates
                 title="Explore More Certifications"
@@ -250,5 +264,3 @@ export default async function CertificatePage({ params }: PageProps) {
         </div>
     );
 }
-
-
