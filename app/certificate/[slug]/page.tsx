@@ -10,10 +10,6 @@ import ExamDetails from "@/components/global/exam-details/exam-details";
 import StickySectionNav from "@/components/global/sticky-section-nav/sticky-section-nav";
 import RelatedCertificates from "@/components/global/related-certificates/related-certificates";
 import CertificateLabsWrapper from "@/components/global/certificate-labs/CertificateLabsWrapper";
-import CertificateInquirySection from "@/components/global/certificate-inquiry/certificate-inquiry";
-import JobRolesSection from "@/components/single-certificate/job-roles-section/job-roles-section";
-import CourseOutlineSection from "@/components/single-certificate/course-outline-section/course-outline-section";
-import FAQSection from "@/components/single-certificate/faq-section/faq-section";
 import {
     getCertificateBySlug,
     getAdmissionProcess,
@@ -172,26 +168,6 @@ export default async function CertificatePage({ params }: PageProps) {
     // Always add Inquiry section
     dynamicNavSections.push({ id: 'inquiry', label: 'Enquire Now' });
 
-    // Add new sections to navigation
-    if (careerStatsSection?.Stats && careerStatsSection.Stats.length > 0) {
-        dynamicNavSections.push({ id: 'career-value', label: 'Career Value' });
-    }
-
-    if (jobRolesSection?.JobRoles && jobRolesSection.JobRoles.length > 0) {
-        dynamicNavSections.push({ id: 'job-roles', label: 'Job Roles' });
-    }
-
-    if (courseOutlineSection?.Modules && courseOutlineSection.Modules.length > 0) {
-        dynamicNavSections.push({ id: 'course-outline', label: 'Course Outline' });
-    }
-
-    if (faqSection?.FAQs && faqSection.FAQs.length > 0) {
-        dynamicNavSections.push({ id: 'faqs', label: 'FAQs' });
-    }
-
-    // Always add Inquiry section
-    dynamicNavSections.push({ id: 'inquiry', label: 'Enquire Now' });
-
     return (
         <div>
             {/* Sticky Section Navigation - Only shows sections that exist */}
@@ -266,10 +242,16 @@ export default async function CertificatePage({ params }: PageProps) {
             {/* FAQ Section */}
             {faqSection && <FAQSection section={faqSection} />}
 
-            {/* Inquiry Form Section */}
-            <CertificateInquirySection
+            {/* Inquiry Form Section - Now in CTA Section */}
+            <CTASection
+                title={ctaSection?.Title}
+                subtitle={ctaSection?.Subtitle}
                 certificateTitle={certificate.Title}
                 certificateSlug={slug}
+            />
+            <Accreditations
+                title={accreditationsSection?.Title}
+                accreditations={accreditationsSection?.Accreditations}
             />
             <CTASection
                 title={ctaSection?.Title}
