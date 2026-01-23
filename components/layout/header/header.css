@@ -27,6 +27,8 @@
 @media (min-width: 1025px) {
     .header-container {
         padding: 0.5rem 2rem;
+        max-width: 1440px;
+        margin: 0 auto;
     }
 }
 

@@ -18,6 +18,12 @@
     max-width: 300px;
 }
 
+@media (min-width: 1440px) {
+    .header-search-wrapper {
+        max-width: 350px;
+    }
+}
+
 .header-search-wrapper:focus-within {
     border-color: var(--brand-primary);
     box-shadow: 0 0 0 3px rgba(223, 103, 24, 0.1);
