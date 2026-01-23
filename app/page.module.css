@@ -928,7 +928,7 @@
 }
 
 .sectionTitle {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 800;
     color: #0a0a1a;
     margin-bottom: 0.75rem;
@@ -946,14 +946,14 @@
 
 .sectionBadge {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     margin-bottom: 1rem;
-    padding: 0.625rem 1.5rem;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    padding: 0.5rem 2rem;
+    background: linear-gradient(135deg, #FF8533 0%, #FF9E66 100%);
     border-radius: 100px;
     box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
@@ -1053,11 +1053,26 @@
 }
 
 .courseTagBestseller {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: linear-gradient(135deg, #FF6B00 0%, #e85d04 100%);
     color: white;
 }
 
 .courseTagTrending {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+}
+
+.courseTagBlue {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+}
+
+.courseTagGreen {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.courseTagOrange {
     background: linear-gradient(135deg, #FF6B00 0%, #e85d04 100%);
     color: white;
 }

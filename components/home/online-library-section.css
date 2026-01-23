@@ -68,8 +68,9 @@
 }
 
 .text-red {
-    color: #ff1818 !important;
-    /* Bright red */
+    color: #FF0000 !important;
+    /* Brighter red */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
 .section-subtitle {
@@ -236,7 +237,7 @@
 }
 
 .card-cta:hover {
-    background: #111;
+    background: #ca6b00;
     color: #fff;
 }
 

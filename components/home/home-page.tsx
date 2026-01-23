@@ -465,10 +465,10 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             < section id="courses" className={styles.coursesSection} >
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
-                        <h2 className={styles.sectionTitle}>Explore Our Courses</h2>
-                        <p className={styles.sectionSubtitle}>
-                            Choose from our comprehensive range of professional courses
-                        </p>
+                        <span className={styles.sectionBadge}>Explore Our Courses</span>
+                        <h2 className={styles.sectionTitle}>
+                            Choose from our comprehensive range of <span className={styles.textAccent}>professional courses</span>
+                        </h2>
                     </div>
 
                     {/* Category Tabs */}
@@ -491,34 +491,25 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         {courses.slice(0, 6).map((course, index) => {
                             const partner = partners.find(p => p.slug === course.partnerSlug);
 
-                            // Define tags for specific courses
-                            let courseTag = null;
-                            if (course.title.includes('CISSP')) {
-                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagPopular}`}>Popular</span>;
-                            } else if (course.title.includes('OSCP')) {
-                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagBestseller}`}>Bestseller</span>;
-                            } else if (course.title.includes('CEH')) {
-                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagTrending}`}>Trending</span>;
-                            } else if (course.title.includes('C|CISO')) {
-                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagTrending}`}>In Demand</span>;
-                            } else if (course.title.includes('CISA')) {
-                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagPopular}`}>Essential</span>;
-                            } else {
-                                // Fallback logic for all other courses
-                                const badgeTypes = [
-                                    { text: 'Popular', style: styles.courseTagPopular },
-                                    { text: 'Bestseller', style: styles.courseTagBestseller },
-                                    { text: 'Trending', style: styles.courseTagTrending },
-                                    { text: 'Top Rated', style: styles.courseTagBestseller },
-                                    { text: 'In Demand', style: styles.courseTagTrending },
-                                    { text: 'Essential', style: styles.courseTagPopular }
-                                ];
-                                // Use index to distribute badges evenly
-                                const badgeIndex = index % badgeTypes.length;
-                                const badge = badgeTypes[badgeIndex];
+                            // Determine badge color based on column (index % 3)
+                            // 0 -> Green, 1 -> Orange, 2 -> Blue
+                            let badgeClass = styles.courseTagGreen;
+                            if (index % 3 === 1) badgeClass = styles.courseTagOrange;
+                            if (index % 3 === 2) badgeClass = styles.courseTagBlue;
 
-                                courseTag = <span className={`${styles.courseTag} ${badge.style}`}>{badge.text}</span>;
+                            // Determine badge text
+                            let badgeText = 'Popular';
+                            if (course.title.includes('CISSP')) badgeText = 'Popular';
+                            else if (course.title.includes('OSCP')) badgeText = 'Bestseller';
+                            else if (course.title.includes('CEH')) badgeText = 'Trending';
+                            else if (course.title.includes('C|CISO')) badgeText = 'In Demand';
+                            else if (course.title.includes('CISA')) badgeText = 'Essential';
+                            else {
+                                const badgeTexts = ['Popular', 'Bestseller', 'Trending', 'Top Rated', 'In Demand', 'Essential'];
+                                badgeText = badgeTexts[index % badgeTexts.length];
                             }
+
+                            const courseTag = <span className={`${styles.courseTag} ${badgeClass}`}>{badgeText}</span>;
 
                             return (
                                 <Link
