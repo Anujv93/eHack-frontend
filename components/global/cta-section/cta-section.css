@@ -1,89 +1,377 @@
 .cta-section {
-    background: #FF6B00;
-    padding: 2.5rem 0;
-    text-align: center;
+    background: linear-gradient(135deg, #1a1f3a 0%, #2d1b4e 100%);
+    padding: 3rem 0;
 }
 
 .cta-section .container {
     max-width: var(--container-max-width, 1200px);
     margin: 0 auto;
     padding: 0 var(--container-padding, 1rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: center;
 }
 
-.cta-section h2 {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+/* Left Content */
+.cta-content h2 {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
     font-weight: 800;
     color: #fff;
     margin-bottom: 0.75rem;
     line-height: 1.2;
 }
 
-.cta-section p {
+.cta-content h2 span {
+    color: #FF6B00;
+}
+
+.cta-content p {
     font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1.5rem;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1rem;
     line-height: 1.5;
 }
 
-.cta-section .btn-white {
-    display: inline-block;
-    background: #fff;
-    color: #FF6B00;
-    padding: 12px 28px;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-decoration: none;
-    min-height: 44px;
+.cta-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.cta-section .btn-white:hover {
-    background: #F8F9FA;
+.cta-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+    margin-bottom: 0.625rem;
+}
+
+.cta-features .check-icon {
+    width: 20px;
+    height: 20px;
+    background: #FF6B00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* Right Form */
+.cta-form-wrapper {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.form-header {
+    margin-bottom: 1rem;
+}
+
+.urgency-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6B00, #ff8533);
+    color: #fff;
+    font-size: 0.625rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.form-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 0.375rem 0;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 0.8125rem;
+    margin: 0;
+}
+
+.form-error-msg {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #dc2626;
+    padding: 0.625rem;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.cta-form-wrapper form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 0.875rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    background: #fff;
+    color: #1a1a1a;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #FF6B00;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center;
+    padding-right: 2.25rem;
+}
+
+.form-group select option {
+    color: #1a1a1a;
+}
+
+/* Phone Field */
+.phone-field {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.country-code {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.75rem 0.875rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #f9fafb;
+    font-size: 0.875rem;
+    color: #1a1a1a;
+    white-space: nowrap;
+}
+
+.country-code .flag {
+    font-size: 1rem;
+}
+
+.phone-field input {
+    flex: 1;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 0.875rem;
+    background: linear-gradient(135deg, #FF6B00, #ff8533);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.25rem;
+}
+
+.btn-submit:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Checkbox */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #666;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #FF6B00;
+}
+
+.checkmark {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #d1d5db;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.checkbox-label input[type="checkbox"]:checked+.checkmark {
+    background: #FF6B00;
+    border-color: #FF6B00;
+}
+
+.checkbox-label input[type="checkbox"]:checked+.checkmark::after {
+    content: '✓';
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* Terms Text */
+.terms-text {
+    font-size: 0.6875rem;
+    color: #999;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.terms-text a {
     color: #FF6B00;
+    text-decoration: none;
+}
+
+.terms-text a:hover {
+    text-decoration: underline;
+}
+
+/* Success State */
+.cta-form-success {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.success-checkmark {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: #fff;
+    margin: 0 auto 1rem;
+}
+
+.cta-form-success h3 {
+    color: #1a1a1a;
+    font-size: 1.25rem;
+    margin: 0 0 0.375rem 0;
+}
+
+.cta-form-success p {
+    color: #666;
+    margin: 0 0 1rem 0;
+    font-size: 0.9375rem;
+}
+
+.success-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.btn-call,
+.btn-whatsapp {
+    padding: 0.625rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-call {
+    background: rgba(234, 88, 12, 0.1);
+    color: #ea580c;
+    border: 1px solid rgba(234, 88, 12, 0.25);
+}
+
+.btn-whatsapp {
+    background: rgba(37, 211, 102, 0.1);
+    color: #16a34a;
+    border: 1px solid rgba(37, 211, 102, 0.25);
+}
+
+.btn-call:hover,
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
 }
 
 /* Tablet */
-@media (min-width: 481px) {
-    .cta-section {
-        padding: 3rem 0;
+@media (min-width: 768px) {
+    .cta-section .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
     }
 
-    .cta-section p {
-        font-size: 1rem;
-        max-width: 550px;
-    }
-
-    .cta-section .btn-white {
-        padding: 14px 36px;
-        font-size: 1rem;
+    .cta-form-wrapper {
+        padding: 1.75rem;
     }
 }
 
-/* Desktop */
-@media (min-width: 1025px) {
+/* Mobile */
+@media (max-width: 767px) {
     .cta-section {
-        padding: 4rem 0;
+        padding: 2.5rem 0;
     }
 
-    .cta-section h2 {
-        margin-bottom: 1rem;
+    .form-row {
+        grid-template-columns: 1fr;
     }
 
-    .cta-section p {
+    .cta-form-wrapper {
+        padding: 1.25rem;
+    }
+
+    .form-header h3 {
         font-size: 1.125rem;
-        margin-bottom: 2rem;
-        max-width: 600px;
     }
 
-    .cta-section .btn-white {
-        padding: 16px 48px;
+    .success-buttons {
+        flex-direction: column;
+    }
+
+    .btn-call,
+    .btn-whatsapp {
+        width: 100%;
+        text-align: center;
     }
 }
