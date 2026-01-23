@@ -60,7 +60,7 @@ const programs: Program[] = [
         features: [
             "Advanced AI-Driven Cybersecurity Mastery",
             "Real-World Cyber Range & Enterprise Attack Simulations",
-            "Leadership-Focused Career Acceleration"
+            "Leadership Role - Focused Career Acceleration"
         ],
         duration: '9-12 Months',
         trainingHours: '300+ Hours',
@@ -100,7 +100,7 @@ export default function MasterySection() {
                                     <>
                                         {program.title.split('(')[0].trim()}
                                         <br />
-                                        <span className="certification-badge">({program.title.split('(')[1]}</span>
+                                        <span className="">({program.title.split('(')[1]}</span>
                                     </>
                                 ) : (
                                     program.title

@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Phone } from 'lucide-react';
+import { Phone, ArrowRight } from 'lucide-react';
 import styles from '@/app/page.module.css';
 import ProgramsSection from './programs-section';
 import MasterySection from './mastery-section';
@@ -658,6 +658,38 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                     <p>Students are advised to independently verify accreditation, recognition, program structure, and validity directly from the official websites of EC-Council and Kennedy University. eHack Academy shall not be responsible for any decisions made by students without conducting their own due diligence prior to enrollment.</p>
                 </div>
             </div>
+
+
+            {/* Ribbons Section */}
+            <section className={styles.ribbonsWrapper}>
+                <div className={styles.container}>
+                    <div className={styles.ribbonsGrid}>
+                        <Link href="/csr" className={`${styles.ribbonCard} ${styles.csrRibbon}`}>
+                            <div className={styles.ribbonContent}>
+                                <span className={styles.ribbonTag}>Empowering Society</span>
+                                <h3 className={styles.ribbonTitle}>Empowering Society Through Cybersecurity, Employability & Emerging Technologies</h3>
+                                <p className={styles.ribbonText}>Join our mission to bridge the skill gap and build a safer digital future for everyone.</p>
+                                <div className={styles.ribbonAction}>
+                                    Explore CSR Initiatives <ArrowRight size={20} />
+                                </div>
+                            </div>
+                            <div className={styles.ribbonPattern}></div>
+                        </Link>
+
+                        <Link href="/franchise" className={`${styles.ribbonCard} ${styles.franchiseRibbon}`}>
+                            <div className={styles.ribbonContent}>
+                                <span className={styles.ribbonTag}>Partnership Opportunity</span>
+                                <h3 className={styles.ribbonTitle}>Partner with eHack Academy</h3>
+                                <p className={styles.ribbonText}>Build a thriving educational venture with India's premier cybersecurity academy.</p>
+                                <div className={styles.ribbonAction}>
+                                    Start Your Franchise <ArrowRight size={20} />
+                                </div>
+                            </div>
+                            <div className={styles.ribbonPattern}></div>
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
             {/* CTA Section */}
             <section className={styles.ctaSection}>

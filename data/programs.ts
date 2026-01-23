@@ -165,6 +165,25 @@ export const programs = [
             },
             {
                 number: "06",
+                title: "OWASP Top 10",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Master the OWASP Top 10 web application security risks and learn how to identify, exploit, and mitigate them.",
+                topics: [
+                    "Injection Attacks (SQL, NoSQL, OS)",
+                    "Broken Authentication",
+                    "Sensitive Data Exposure",
+                    "XML External Entities (XXE)",
+                    "Broken Access Control",
+                    "Security Misconfigurations",
+                    "Cross-Site Scripting (XSS)",
+                    "Insecure Deserialization",
+                    "Using Components with Known Vulnerabilities",
+                    "Insufficient Logging & Monitoring"
+                ]
+            },
+            {
+                number: "07",
                 title: "Personality and Softskill Development",
                 duration: "2 Week",
                 certification: "",
