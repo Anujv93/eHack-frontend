@@ -9,9 +9,9 @@
 
 /* Mobile-first header container */
 .header-container {
-    max-width: 1440px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
