@@ -870,13 +870,13 @@
     gap: 4px;
 }
 
-.stat-value {
+.lab-stat-value {
     font-size: var(--font-size-2xl);
     font-weight: 800;
     color: var(--ec-red);
 }
 
-.stat-text {
+.lab-stat-text {
     font-size: var(--font-size-sm);
     color: var(--ec-gray-400);
     text-transform: uppercase;
@@ -1028,11 +1028,11 @@
         font-size: var(--font-size-sm);
     }
 
-    .stat-value {
+    .lab-stat-value {
         font-size: var(--font-size-xl);
     }
 
-    .stat-text {
+    .lab-stat-text {
         font-size: var(--font-size-xs);
     }
 

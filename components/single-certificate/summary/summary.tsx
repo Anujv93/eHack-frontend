@@ -1,18 +1,23 @@
 import "./summary.css"
 import { Feature } from "@/lib/strapi";
+import SummaryInquiryForm from "./summary-form";
 
 interface CertificateSummaryProps {
     heading?: string;
     description?: string;
     features?: Feature[];
     videoLink?: string;
+    certificateTitle?: string;
+    certificateSlug?: string;
 }
 
 export default function CertificateSummary({
     heading,
     description,
     features,
-    videoLink
+    videoLink,
+    certificateTitle,
+    certificateSlug
 }: CertificateSummaryProps) {
     // Parse heading to highlight standalone "AI" text only (not "ai" within words like "Gain")
     const parseHeading = (text: string) => {
@@ -85,43 +90,11 @@ export default function CertificateSummary({
                         )}
                     </div>
 
-                    {/* Inquiry Form */}
-                    <div className="inquiry-form-card" id="inquiry">
-                        <h3>Course Inquiry</h3>
-                        <form>
-                            <div className="form-group">
-                                <input type="text" placeholder="First Name *" required />
-                            </div>
-                            <div className="form-group">
-                                <input type="text" placeholder="Last Name *" required />
-                            </div>
-                            <div className="form-group">
-                                <input type="email" placeholder="Email *" required />
-                            </div>
-                            <div className="form-group">
-                                <input type="tel" placeholder="Phone Number *" required />
-                            </div>
-                            <div className="form-group">
-                                <select>
-                                    <option value="">Select Country *</option>
-                                    <option value="IN">India</option>
-                                    <option value="US">United States</option>
-                                    <option value="UK">United Kingdom</option>
-                                    <option value="AE">UAE</option>
-                                    <option value="SG">Singapore</option>
-                                </select>
-                            </div>
-                            <div className="form-group">
-                                <select>
-                                    <option value="">Training Mode *</option>
-                                    <option value="online">Live Online</option>
-                                    <option value="classroom">Classroom</option>
-                                    <option value="self-paced">Self-Paced</option>
-                                </select>
-                            </div>
-                            <button type="submit" className="btn-submit">Submit Inquiry</button>
-                        </form>
-                    </div>
+                    {/* Inquiry Form - Now with Zoho Integration */}
+                    <SummaryInquiryForm
+                        certificateTitle={certificateTitle}
+                        certificateSlug={certificateSlug}
+                    />
                 </div>
             </div>
         </section>

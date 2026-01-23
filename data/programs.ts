@@ -165,6 +165,25 @@ export const programs = [
             },
             {
                 number: "06",
+                title: "OWASP Top 10",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Master the OWASP Top 10 web application security risks and learn how to identify, exploit, and mitigate them.",
+                topics: [
+                    "Injection Attacks (SQL, NoSQL, OS)",
+                    "Broken Authentication",
+                    "Sensitive Data Exposure",
+                    "XML External Entities (XXE)",
+                    "Broken Access Control",
+                    "Security Misconfigurations",
+                    "Cross-Site Scripting (XSS)",
+                    "Insecure Deserialization",
+                    "Using Components with Known Vulnerabilities",
+                    "Insufficient Logging & Monitoring"
+                ]
+            },
+            {
+                number: "07",
                 title: "Personality and Softskill Development",
                 duration: "2 Week",
                 certification: "",
@@ -530,7 +549,7 @@ export const programs = [
             {
                 category: "Eligibility",
                 questions: [
-                    { q: "What is the minimum qualification required?", a: "A basic understanding of computers and networking is helpful. Graduates from any stream can apply." },
+                    { q: "What is the minimum qualification required?", a: "A basic understanding of computers and networking is helpful. Minimum qualification: 12th pass" },
                     { q: "Is coding knowledge required?", a: "Basic programming knowledge is beneficial but not mandatory. We cover necessary scripting as part of the curriculum." },
                     { q: "Can working professionals join?", a: "Absolutely! We offer flexible weekend and evening batches designed for working professionals." }
                 ]
