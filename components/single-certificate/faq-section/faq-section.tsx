@@ -41,7 +41,7 @@ export default function FAQSection({ section }: FAQSectionProps) {
     };
 
     return (
-        <section className="section section-white" id="faqs">
+        <section className="section section-white border-bottom" id="faqs">
             <div className="container">
                 {/* Section Header */}
                 <div className="section-header">

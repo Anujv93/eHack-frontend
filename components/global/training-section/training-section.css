@@ -41,6 +41,20 @@
     color: var(--ec-red);
 }
 
+.border-bottom {
+    position: relative;
+}
+
+.border-bottom:before {
+    content: "";
+    background: linear-gradient(90deg, var(--accent), #ff8c42, var(--accent));
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 .anniversary-badge {
     display: inline-block;
     background: linear-gradient(135deg, var(--ec-red) 0%, #ff9933 100%);

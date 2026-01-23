@@ -39,7 +39,7 @@ export default function CertificateHeader({
     } : undefined;
 
     return (
-        <section className="hero-banner" style={backgroundStyle}>
+        <section className="hero-banner border-bottom" style={backgroundStyle}>
             <div className="hero-content-wrapper container">
                 {title && (
                     <h1 className="hero-title-main">

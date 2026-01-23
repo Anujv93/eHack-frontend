@@ -41,7 +41,7 @@ export default function TargetAudience({ title, audiences }: TargetAudienceProps
     if (!audiences || audiences.length === 0) return null;
 
     return (
-        <section className="audience-section" id="target-audience">
+        <section className="audience-section border-bottom" id="target-audience">
             <div className="container">
                 {title && (
                     <div className="section-header">

@@ -228,9 +228,9 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
             {/* 5. COMBINED ROI + JOB ROLES - Career Value Proposition */}
             {program.category !== 'personality-softskills' && (
-                <section className="roi-section" id="career">
+                <section className="roi-section border-bottom" id="career">
                     <div className="section-container">
-                        <h2 className="roi-title">{program.careerROI?.title || 'Great'} <span className="text-accent">Career ROI</span></h2>
+                        <h2 className="roi-title">{program.careerROI?.title || 'Great'}</h2>
                         <p className="roi-subtitle">{program.careerROI?.subtitle || "This program equips you with advanced skills essential for protecting organizations."}</p>
 
                         <div className="roi-grid">
@@ -276,36 +276,33 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             )}
 
             {/* 6. CREDENTIALS - Authority & Trust */}
-            <section className="credentials-section" id="certifications">
+            <section className="border-bottom credentials-section" id="certifications">
                 <div className="credentials-wrapper">
                     <div className="section-container">
                         <h2 className="credentials-title">Earn <span className="text-accent">{program.certifications.length} Global Certifications</span></h2>
                         <p className="credentials-subtitle">Graduate with internationally recognized certifications from {program.partner}.</p>
 
-                        {/* Certificate images gallery - hidden for personality-softskills */}
+                        {/* Certificate images with names - hidden for personality-softskills */}
                         {program.category !== 'personality-softskills' && (
                             <div className={`certificates-gallery count-${program.certifications.length}`}>
                                 {program.certifications.map((cert, idx) => (
-                                    <div key={idx} className="certificate-image-card">
-                                        <img src={cert.image} alt={`${cert.code} - ${cert.name} Certificate`} className="certificate-img" />
-                                        <div className="certificate-overlay">
-                                            <span className="cert-badge-label">{cert.code}</span>
+                                    <div key={idx} className="certificate-item-combined">
+                                        <div className="certificate-image-card">
+                                            <img src={cert.image} alt={`${cert.code} - ${cert.name} Certificate`} className="certificate-img" />
+                                            <div className="certificate-overlay">
+                                                <span className="cert-badge-label">{cert.code}</span>
+                                            </div>
+                                        </div>
+                                        <div className="credential-card">
+                                            <div className="credential-logo">
+                                                <span className="logo-text"><span className="logo-accent">{cert.code.charAt(0)}</span>{cert.code.slice(1)}</span>
+                                                <span className="logo-label">{cert.name}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         )}
-
-                        <div className="credentials-grid">
-                            {program.certifications.map((cert, idx) => (
-                                <div key={idx} className="credential-card">
-                                    <div className="credential-logo">
-                                        <span className="logo-text"><span className="logo-accent">{cert.code.charAt(0)}</span>{cert.code.slice(1)}</span>
-                                        <span className="logo-label">{cert.name}</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
 
                         <div className="credentials-cta">
                             <a href="tel:+919886035330" className="btn-inquire">Inquire Now <span>→</span></a>
@@ -315,7 +312,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* 7. WHO IS THIS FOR - Coursera/DeepLearning.ai Inspired Design */}
-            <section className="audience-section-modern" id="structure">
+            <section className="audience-section-modern border-bottom" id="structure">
                 <div className="section-container">
                     <div className="audience-header-modern">
                         <span className="audience-eyebrow">DESIGNED FOR BEGINNERS</span>
@@ -378,7 +375,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* 12. CURRICULUM SECTION - Modern Redesign */}
-            <section className="curriculum-section-modern" id="curriculum">
+            <section className="curriculum-section-modern border-bottom" id="curriculum">
                 <div className="curriculum-container-modern">
                     {/* Header */}
                     <div className="curriculum-header-modern">
@@ -504,7 +501,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             )}
 
             {/* Pricing Details */}
-            <section className="pricing-section">
+            <section className="pricing-section border-bottom">
                 <div className="pricing-container-full">
                     <div className="pricing-header">
                         <h2 className="pricing-title">Program Investment & Financing</h2>
@@ -576,7 +573,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* 9. FAQ SECTION - Objection Handling (Right After Pricing) */}
-            <section className="faq-section" id="faq">
+            <section className="faq-section border-bottom" id="faq">
                 <div className="section-container">
                     <h2 className="faq-title">Frequently Asked <span className="text-accent">Questions</span></h2>
                     <div className="faq-container">
@@ -600,7 +597,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </section>
             {/* 8. INVEST + PRICING SECTION - Decision Point (Moved Up) */}
-            <section className="invest-section" id="pricing">
+            <section className="invest-section border-bottom" id="pricing">
                 <div className="invest-container">
                     <span className="invest-badge">INVEST IN YOUR FUTURE</span>
                     <h2 className="invest-title">Your Investment</h2>
@@ -691,7 +688,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* 10. WHY EHACK - Differentiation */}
-            <section className="why-ehack-section">
+            <section className="why-ehack-section border-bottom">
                 <div className="section-container">
                     <h2 className="roi-title">Why <span className="text-accent">eHack Academy</span>?</h2>
                     <p className="roi-subtitle">{programType === 'digital-marketing' ? 'Passion for Excellence in Digital Marketing Training' : 'Passion for Excellence in Information Security'}</p>
@@ -719,7 +716,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
             {/* 11. SKILLS SECTION - Hidden for personality-softskills */}
             {program.category !== 'personality-softskills' && (
-                <section className="skills-section">
+                <section className="skills-section border-bottom">
                     <div className="section-container">
                         <h2 className="skills-title">Master <span className="text-accent">{programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'}</span> Skills</h2>
                         <div className="skills-grid">
@@ -737,8 +734,8 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
 
             {/* 13. NEWS SECTION - Industry Validation & Urgency - Hidden for non-cybersecurity programs */}
-            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('personality') && program.category !== 'personality-softskills' && <section className="news-section">
-                <div className="news-container">
+            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('personality') && program.category !== 'personality-softskills' && <section className="news-section border-bottom">
+                <div className="news-container ">
                     <span className="news-badge">CYBER THREATS ARE RISING</span>
                     <h2 className="news-title">Why Cybersecurity Skills Matter Now</h2>
                     <div className="news-grid">
@@ -771,7 +768,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>}
 
             {/* 14. FINAL CTA SECTION */}
-            <section className="program-cta-section">
+            <section className="program-cta-section border-bottom">
                 <div className="section-container">
                     <h2>Ready to Start Your {program.category === 'personality-softskills' ? 'Professional Development' : programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'} Journey?</h2>
                     <p>Join thousands of professionals who have transformed their careers with eHack Academy</p>

@@ -42,7 +42,7 @@ export default function ExamDetails({ title, examCards }: ExamDetailsProps) {
     if (!examCards || examCards.length === 0) return null;
 
     return (
-        <section className="exam-details-section" id="exam-details">
+        <section className="exam-details-section border-bottom" id="exam-details">
             <div className="container">
                 {title && (
                     <div className="section-header">

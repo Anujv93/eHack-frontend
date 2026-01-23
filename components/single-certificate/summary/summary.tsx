@@ -55,7 +55,7 @@ export default function CertificateSummary({
     }
 
     return (
-        <section className="hero-main" id="summary">
+        <section className="hero-main border-bottom" id="summary">
             <div className="container">
                 <div className="hero-grid">
                     <div className="hero-left">

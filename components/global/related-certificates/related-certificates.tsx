@@ -18,7 +18,7 @@ export default function RelatedCertificates({
     }
 
     return (
-        <section className="related-certificates" id="related-certificates">
+        <section className="related-certificates border-bottom" id="related-certificates">
             <div className="related-certificates-container">
                 <div className="related-certificates-header">
                     <div className="header-badge">
