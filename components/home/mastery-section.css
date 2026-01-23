@@ -169,6 +169,7 @@
     /* Increased top padding to clear badge */
     border-bottom: 2px solid #df6718;
     border-radius: 14px 14px 0 0;
+    text-align: center;
 }
 
 /* Features */
