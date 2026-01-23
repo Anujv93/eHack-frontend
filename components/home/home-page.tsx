@@ -566,9 +566,12 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             <section className={styles.learningSection} id="learning">
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
-                        <h2 className={styles.sectionTitle}>Flexible Learning Options</h2>
+                        <span className={styles.sectionBadge}>Flexible Learning Options</span>
+                        <h2 className={styles.sectionTitle}>
+                            Choose the <span className={styles.textAccent}>Learning</span> Format That Works Best for You
+                        </h2>
                         <p className={styles.sectionSubtitle}>
-                            Choose the learning format that works best for you
+                            From live sessions to self-paced courses — learn your way, at your pace, on your schedule.
                         </p>
                     </div>
 
