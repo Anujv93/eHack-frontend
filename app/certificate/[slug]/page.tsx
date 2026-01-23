@@ -259,7 +259,6 @@ export default async function CertificatePage({ params }: PageProps) {
                 title={accreditationsSection?.Title}
                 accreditations={accreditationsSection?.Accreditations}
             />
-
             {/* Related Certificates Section */}
             <RelatedCertificates
                 title="Explore More Certifications"
@@ -269,5 +268,3 @@ export default async function CertificatePage({ params }: PageProps) {
         </div>
     );
 }
-
-
