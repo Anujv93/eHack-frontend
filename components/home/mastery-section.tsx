@@ -77,7 +77,7 @@ const programs: Program[] = [
 
 export default function MasterySection() {
     return (
-        <section className="mastery-section" id="programs">
+        <section className="mastery-section" style={{ borderBottom: 'solid 2px orange' }} id="programs">
             <div className="mastery-container">
                 <div className="mastery-header">
                     <span className="mastery-label">Comprehensive Curriculum</span>

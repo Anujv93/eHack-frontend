@@ -56,7 +56,7 @@ const FEATURED_COURSES: OnlineLibraryCourse[] = [
 
 const OnlineLibrarySection = () => {
     return (
-        <section className="online-library-section" id="online-library">
+        <section className="online-library-section" style={{ borderBottom: 'solid 2px orange' }} id="online-library">
             <div className="section-container">
                 <div className="section-header">
                     <span className="section-badge">OUR ONLINE LIBRARY</span>

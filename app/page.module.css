@@ -884,12 +884,17 @@
     opacity: 0.8;
 }
 
+.border-top-orange {
+    border-top: solid 2px orange
+}
+
 /* ===== Stats Section ===== */
 .statsSection {
     padding: 2rem 0;
     background: #FFF7F0;
     width: 80%;
     margin: 0 auto;
+    border: solid 2px orange;
 }
 
 .statsGrid {
