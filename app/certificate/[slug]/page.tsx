@@ -10,6 +10,10 @@ import ExamDetails from "@/components/global/exam-details/exam-details";
 import StickySectionNav from "@/components/global/sticky-section-nav/sticky-section-nav";
 import RelatedCertificates from "@/components/global/related-certificates/related-certificates";
 import CertificateLabsWrapper from "@/components/global/certificate-labs/CertificateLabsWrapper";
+import CareerStatsSection from "@/components/single-certificate/career-stats-section/career-stats-section";
+import JobRolesSection from "@/components/single-certificate/job-roles-section/job-roles-section";
+import CourseOutlineSection from "@/components/single-certificate/course-outline-section/course-outline-section";
+import FAQSection from "@/components/single-certificate/faq-section/faq-section";
 import {
     getCertificateBySlug,
     getAdmissionProcess,
@@ -29,7 +33,6 @@ import {
     FAQSection as FAQSectionType
 } from "@/lib/strapi";
 import { notFound } from "next/navigation";
-import CareerStatsSection from "@/components/single-certificate/career-stats-section/career-stats-section";
 
 
 interface PageProps {

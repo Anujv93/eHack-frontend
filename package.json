@@ -10,14 +10,19 @@
     "backup:strapi": "tsx scripts/backup-strapi-data.ts"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
+    "better-sqlite3": "^12.6.2",
+    "cloudinary": "^2.9.0",
     "lucide-react": "^0.562.0",
     "next": "16.1.0",
+    "razorpay": "^2.9.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "strapi-plugin-populate-deep": "^3.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
