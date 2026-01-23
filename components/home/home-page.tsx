@@ -466,9 +466,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
                         <h2 className={styles.sectionTitle}>Explore Our Courses</h2>
-                        <p className={styles.sectionSubtitle}>
-                            Choose from our comprehensive range of professional courses
-                        </p>
+                        <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                            <span className={styles.partnersLabel}>Choose from our comprehensive range of professional courses</span>
+                        </div>
                     </div>
 
                     {/* Category Tabs */}
@@ -567,9 +567,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
                         <h2 className={styles.sectionTitle}>Flexible Learning Options</h2>
-                        <p className={styles.sectionSubtitle}>
-                            Choose the learning format that works best for you
-                        </p>
+                        <div style={{ display: 'flex', justifyContent: 'center', width: '100%', height: '100px' }}>
+                            <span className={styles.partnersLabel}>Choose the learning format that works best for you</span>
+                        </div>
                     </div>
 
                     <div className={styles.learningGrid}>
