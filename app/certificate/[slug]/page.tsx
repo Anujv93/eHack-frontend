@@ -172,7 +172,6 @@ export default async function CertificatePage({ params }: PageProps) {
     // Always add Inquiry section
     dynamicNavSections.push({ id: 'inquiry', label: 'Enquire Now' });
 
-<<<<<<< HEAD
     // Add new sections to navigation
     if (careerStatsSection?.Stats && careerStatsSection.Stats.length > 0) {
         dynamicNavSections.push({ id: 'career-value', label: 'Career Value' });
@@ -190,8 +189,6 @@ export default async function CertificatePage({ params }: PageProps) {
         dynamicNavSections.push({ id: 'faqs', label: 'FAQs' });
     }
 
-=======
->>>>>>> e9a6cbd (Integrated Zoho inquiry form)
     // Always add Inquiry section
     dynamicNavSections.push({ id: 'inquiry', label: 'Enquire Now' });
 
