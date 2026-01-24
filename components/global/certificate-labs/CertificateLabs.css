@@ -75,32 +75,36 @@
 }
 
 /* Main Content Grid */
+/* Main Content Grid */
 .cert-labs-content {
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    /* Was space-8, maybe I need space-12 or just margin-top */
     margin-bottom: var(--space-12);
-    align-items: start;
 }
 
+/* Labs Selector - Add margin top to push it down further as requested */
+.cert-labs-selector {
+    margin-top: var(--space-8);
+    /* Added margin */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+    padding-right: 0;
+}
+
+/* Left Column - Labs Selector + Lab Info */
 /* Left Column - Labs Selector + Lab Info */
 .cert-labs-left-column {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
+    width: 100%;
 }
 
 /* Labs Selector */
-.cert-labs-selector {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    max-height: 850px;
-    overflow-y: auto;
-    padding-right: 8px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 107, 0, 0.5) rgba(255, 107, 0, 0.1);
-}
+
 
 .cert-labs-selector::-webkit-scrollbar {
     width: 6px;
@@ -274,10 +278,14 @@
 }
 
 /* Lab Details - Right Side */
+/* Lab Details - Right Side (Now Top) */
 .cert-lab-details {
     display: flex;
     flex-direction: column;
     gap: var(--space-6);
+    width: 100%;
+    order: -1;
+    /* Move to top */
 }
 
 /* ============================================

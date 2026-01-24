@@ -50,7 +50,7 @@ export default function ExamDetails({ title, examCards }: ExamDetailsProps) {
                         <div className="red-underline-center"></div>
                     </div>
                 )}
-                <div className="exam-cards-grid">
+                <div className={`exam-cards-grid ${examCards.length === 1 ? 'single-card-grid' : ''}`}>
                     {examCards.map((card) => (
                         <div key={card.id} className="exam-card">
                             <span className={`exam-badge ${card.BadgeType === 'optional' ? 'optional' : 'required'}`}>

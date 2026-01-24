@@ -48,7 +48,8 @@
 
 .hero-left p {
     font-size: var(--font-size-lg);
-    color: var(--ec-gray-600);
+    color: var(--ec-gray-800);
+    font-weight: 500;
     margin-bottom: var(--space-6);
     line-height: 1.7;
 }
@@ -62,7 +63,8 @@
     align-items: center;
     gap: var(--space-3);
     font-size: var(--font-size-base);
-    color: var(--ec-gray-700);
+    color: var(--ec-black);
+    font-weight: 600;
     margin-bottom: var(--space-3);
 }
 
@@ -70,7 +72,8 @@
     content: '✓';
     color: var(--ec-red);
     font-weight: 700;
-    font-size: var(--font-size-lg);
+    font-size: 1.35rem;
+    /* Increased visibility */
 }
 
 .hero-buttons {
