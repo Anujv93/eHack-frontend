@@ -249,7 +249,7 @@ export default function Footer() {
 
                     {/* Brand Initiative Strip */}
                     <div className="footer-initiative-strip">
-                        <span className="parent-brand-text">Driving Global Cybersecurity Excellence as a Strategic Initiative of eHack Group</span>
+                        <span className="parent-brand-text">DRIVING GLOBAL CYBERSECURITY EXCELLENCE AS A STRATEGIC INITIATIVE OF eHACK GROUP</span>
                         <div className="initiative-logos">
                             <Image
                                 src="/images/white-global.png"

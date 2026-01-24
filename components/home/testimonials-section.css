@@ -466,7 +466,7 @@
     right: 2rem;
     font-size: 8rem;
     line-height: 1;
-    color: var(--neutral-100);
+    color: var(--neutral);
     font-family: serif;
     opacity: 0.5;
     pointer-events: none;
@@ -562,7 +562,7 @@
     align-items: center;
     gap: 1.25rem;
     padding-top: 1.25rem;
-    border-top: 1px solid var(--neutral-100);
+    border-top: 1px solid var(--brand-primary);
     justify-content: flex-start;
     height: 64px;
 }
@@ -662,7 +662,7 @@
     max-width: 900px;
     width: 100%;
     background: linear-gradient(135deg, #FFFFFF 0%, #FFF9F5 50%, #FFECD9 100%);
-    border: 3px solid transparent;
+    border: 3px solid var(--brand-primary);
     background-clip: padding-box;
     position: relative;
     box-shadow:

@@ -709,7 +709,7 @@
     width: auto;
     margin: 1.5rem auto 2.5rem;
     text-align: center;
-    font-size: 0.875rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: white;
     text-transform: uppercase;
@@ -975,7 +975,7 @@
     letter-spacing: 0.12em;
     margin-bottom: 1rem;
     padding: 0.5rem 2rem;
-    background: linear-gradient(135deg, #FF8533 0%, #FF9E66 100%);
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
     border-radius: 100px;
     box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
@@ -1859,7 +1859,7 @@
 
     /* Partners Label mobile */
     .partnersLabel {
-        font-size: 0.75rem;
+        font-size: 1.1rem;
         letter-spacing: 1.5px;
         padding: 0.5rem 1rem;
         margin: 1rem auto 0px;
@@ -1940,7 +1940,7 @@
 }
 
 .franchiseRibbon {
-    background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+    background: linear-gradient(135deg, #fff7ed 0%, #c38532 100%);
     border: 1px solid rgba(236, 124, 0, 0.15);
     padding: 0 !important;
     /* Truly flush image */
@@ -1992,7 +1992,7 @@
 }
 
 .franchiseRibbon .ribbonTitle {
-    color: #1a1a1a;
+    color: #0f172a;
 }
 
 .ribbonText {
@@ -2007,7 +2007,7 @@
 }
 
 .franchiseRibbon .ribbonText {
-    color: #111827;
+    color: #334155;
     font-weight: 500;
 }
 
@@ -2025,7 +2025,7 @@
 }
 
 .franchiseRibbon .ribbonAction {
-    color: #ec7c00;
+    color: #0f172a;
 }
 
 .ribbonCard:hover .ribbonAction {
@@ -2082,4 +2082,30 @@
 /* Simple zoom on hover instead of 3D rotation */
 .ribbonCard:hover .ribbonImage {
     transform: scale(1.05);
+}
+
+.ribbonGridItem {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.ribbonGridItem .ribbonCard {
+    height: auto;
+    flex: 1;
+}
+
+.capsuleBadge {
+    align-self: flex-start;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
+    margin-bottom: 0.5rem;
 }

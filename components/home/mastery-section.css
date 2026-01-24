@@ -40,7 +40,7 @@
 
 .mastery-label {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: white;
     text-transform: uppercase;
@@ -54,7 +54,7 @@
 
 @media (min-width: 481px) {
     .mastery-label {
-        font-size: 0.8125rem;
+        font-size: 1.1rem;
         letter-spacing: 0.12em;
         margin-bottom: 1rem;
         padding: 0.75rem 2rem;

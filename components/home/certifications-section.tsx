@@ -19,20 +19,21 @@ export default function CertificationsSection() {
                         <div className="cert-entity-header">
                             <div className="cert-logo-wrapper">
                                 <Image
-                                    src="/images/ec-council-badge.png"
-                                    alt="EC-Council Authorized Partner"
-                                    width={180}
-                                    height={80}
-                                    className="cert-logo"
-                                    style={{ objectFit: 'contain' }}
-                                />
-                                <div className="cert-logo-divider" />
-                                <Image
                                     src="/images/ec-council-logo.png"
                                     alt="EC-Council Logo"
                                     width={180}
                                     height={50}
                                     className="cert-logo secondary-logo"
+                                    style={{ objectFit: 'contain' }}
+                                />
+                                <div className="cert-logo-divider" />
+
+                                <Image
+                                    src="/images/ec-council-badge.png"
+                                    alt="EC-Council Authorized Partner"
+                                    width={180}
+                                    height={80}
+                                    className="cert-logo"
                                     style={{ objectFit: 'contain' }}
                                 />
                             </div>

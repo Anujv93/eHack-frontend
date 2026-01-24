@@ -32,6 +32,12 @@
     }
 }
 
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .header-container {
+        padding: 0.5rem 1rem;
+    }
+}
+
 .logo {
     display: flex;
     flex-direction: column;
@@ -64,8 +70,8 @@
 
 @media (min-width: 1025px) {
     .logo-image {
-        width: 200px;
-        min-width: 200px;
+        width: 300px;
+        min-width: 300px;
     }
 }
 
@@ -98,7 +104,7 @@
     align-items: center;
     gap: 0.25rem;
     margin-left: auto;
-    padding-left: 2rem;
+    padding-left: 1rem;
     flex-wrap: nowrap;
     white-space: nowrap;
 }
@@ -111,7 +117,7 @@
 }
 
 .nav-link {
-    padding: 0.4rem 0.75rem;
+    padding: 0.4rem 0.5rem;
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--neutral-700);
@@ -1113,9 +1119,20 @@
     }
 }
 
-/* Small Tablets (max-width: 768px) */
-@media (max-width: 768px) {
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .nav-link {
+        padding: 0.35rem 0.4rem;
+        font-size: 0.75rem;
+    }
+
     .nav {
+        padding-left: 0.5rem;
+        gap: 0;
+    }
+
+    .logo-image {
+        /* Slight reduction if absolutely needed, but trying to keep 300px target as much as possible.
+           If 300px is strict, we just squeeze content. */
         gap: 0.25rem;
     }
 

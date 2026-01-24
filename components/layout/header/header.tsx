@@ -197,7 +197,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                 </Link>
 
                 <nav className="nav">
-                    <Link href="/" className="nav-link">Home</Link>
+                    {/* Home Link removed to save space - Logo acts as Home */}
                     {/* Mega Menu Wrapper */}
                     <div
                         className="mega-menu-wrapper"
