@@ -656,7 +656,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                 <div className={styles.container}>
                     <div className={styles.ribbonsGrid}>
                         <div className={styles.ribbonGridItem}>
-                            <div className={styles.capsuleBadge}>Empowering Society</div>
+                            <div className={`${styles.ribbonTitleStrip} ${styles.csrTitleStrip}`}>Empowering Society</div>
                             <Link href="/csr" className={`${styles.ribbonCard} ${styles.csrRibbon}`}>
                                 <div className={styles.ribbonImageWrapper}>
                                     <div className={styles.floatingImage}>
@@ -679,7 +679,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         </div>
 
                         <div className={styles.ribbonGridItem}>
-                            <div className={styles.capsuleBadge}>Partnership</div>
+                            <div className={`${styles.ribbonTitleStrip} ${styles.franchiseTitleStrip}`}>Partnership</div>
                             <Link href="/franchise" className={`${styles.ribbonCard} ${styles.franchiseRibbon}`}>
                                 <div className={styles.ribbonImageWrapper}>
                                     <div className={styles.floatingImage}>
