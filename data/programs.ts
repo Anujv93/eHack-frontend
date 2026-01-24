@@ -37,11 +37,36 @@ export const programs = [
         ],
         curriculum: [
             {
+                number: "00",
+                title: "ICE Breaker, Program Kick-off & Orientation",
+                duration: "4 Hours",
+                certification: "",
+                description: "Your journey into a high-growth cyber security career begins from Day One. The ICE Breaker & Orientation session is a power-packed 4-hour onboarding experience designed to align learners with industry expectations, global certifications, and a clear career roadmap—before core technical training begins.",
+                topics: [
+                    "Interactive introductions to build confidence and collaboration",
+                    "Clear understanding of the Master’s Program structure",
+                    "Alignment on learning discipline, ethics, and performance standards",
+                    "Setting expectations for real-world cyber security careers",
+                    "Introduction to eHack Academy – Institute of Emerging Technologies",
+                    "Overview of EC-Council, the world’s leading cyber security certification body",
+                    "Academic, university, and industry partnerships",
+                    "Industry-aligned curriculum with real-world relevance",
+                    "Guided walkthrough of the EC-Council LMS",
+                    "Access to official courseware, labs, and licensed tools",
+                    "Importance of classroom training and hands-on practice",
+                    "Transparent evaluation, exam pattern, and certification process",
+                    "Cyber Security–specific resume building",
+                    "Understanding job roles, domains, and growth paths",
+                    "Smart job application strategies and LinkedIn optimization",
+                    "Long-term career success roadmap in cyber security"
+                ]
+            },
+            {
                 number: "01",
-                title: "IT Fundamentals",
+                title: "P|CSF - Professional | Cyber Security Fundamentals",
                 duration: "4 Weeks",
                 certification: "",
-                description: "Build a strong foundation in IT essentials covering hardware, operating systems, networking, servers, and cloud technologies.",
+                description: "Build a strong foundation in Cyber Security essentials covering hardware, operating systems, networking, servers, and cloud technologies.",
                 topics: [
                     "Computer Hardware & Architecture",
                     "Operating Systems (Windows/Linux/Mac)",
@@ -132,8 +157,33 @@ export const programs = [
                     "Cryptography and Data Protection Basics"
                 ]
             },
+
             {
                 number: "05",
+                title: "P|APTPᴬᴵ - Professional | Advanced Penetration Testing Programᴬᴵ",
+                duration: "10 Weeks",
+                certification: "EC-Council CPENT + EC-Council LPT",
+                description: "Elevate your skills with advanced red team techniques including IoT exploitation, OT/SCADA security, and live cyber range exercises.",
+                topics: [
+                    "Penetration Testing Foundations",
+                    "Testing Scope and Engagement Planning",
+                    "Open-Source Intelligence Techniques",
+                    "Social Engineering Assessment",
+                    "External Network Penetration Testing",
+                    "Internal Network Penetration Testing",
+                    "Perimeter Network Testing",
+                    "Web Application Penetration Testing",
+                    "Wireless Security Testing",
+                    "IoT Penetration Testing",
+                    "Operational Technology and SCADA Security Testing",
+                    "Cloud Penetration Testing",
+                    "Binary Analysis and Exploitation",
+                    "Reporting, Documentation, and Post-Test Actions"
+
+                ]
+            },
+            {
+                number: "06",
                 title: "P|DFIPᴬᴵ - Professional | Digital Forensics and Investigation Programᴬᴵ",
                 duration: "8 Weeks",
                 certification: "EC-Council CHFI",
@@ -157,50 +207,7 @@ export const programs = [
                 ]
             },
             {
-                number: "06",
-                title: "P|APTPᴬᴵ - Professional | Advanced Penetration Testing Programᴬᴵ",
-                duration: "10 Weeks",
-                certification: "EC-Council CPENT",
-                description: "Elevate your skills with advanced red team techniques including IoT exploitation, OT/SCADA security, and live cyber range exercises.",
-                topics: [
-                    "Penetration Testing Foundations",
-                    "Testing Scope and Engagement Planning",
-                    "Open-Source Intelligence Techniques",
-                    "Social Engineering Assessment",
-                    "External Network Penetration Testing",
-                    "Internal Network Penetration Testing",
-                    "Perimeter Network Testing",
-                    "Web Application Penetration Testing",
-                    "Wireless Security Testing",
-                    "IoT Penetration Testing",
-                    "Operational Technology and SCADA Security Testing",
-                    "Cloud Penetration Testing",
-                    "Binary Analysis and Exploitation",
-                    "Reporting, Documentation, and Post-Test Actions"
-
-                ]
-            },
-            {
                 number: "07",
-                title: "OWASP Top 10",
-                duration: "4 Weeks",
-                certification: "",
-                description: "Master the OWASP Top 10 web application security risks and learn how to identify, exploit, and mitigate them.",
-                topics: [
-                    "Injection Attacks (SQL, NoSQL, OS)",
-                    "Broken Authentication",
-                    "Sensitive Data Exposure",
-                    "XML External Entities (XXE)",
-                    "Broken Access Control",
-                    "Security Misconfigurations",
-                    "Cross-Site Scripting (XSS)",
-                    "Insecure Deserialization",
-                    "Using Components with Known Vulnerabilities",
-                    "Insufficient Logging & Monitoring"
-                ]
-            },
-            {
-                number: "08",
                 title: "Personality and Softskill Development",
                 duration: "2 Week",
                 certification: "",
@@ -227,8 +234,27 @@ export const programs = [
                 ]
             },
             {
+                number: "08",
+                title: "OWASP Top 10",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Master the OWASP Top 10 web application security risks and learn how to identify, exploit, and mitigate them.",
+                topics: [
+                    "Injection Attacks (SQL, NoSQL, OS)",
+                    "Broken Authentication",
+                    "Sensitive Data Exposure",
+                    "XML External Entities (XXE)",
+                    "Broken Access Control",
+                    "Security Misconfigurations",
+                    "Cross-Site Scripting (XSS)",
+                    "Insecure Deserialization",
+                    "Using Components with Known Vulnerabilities",
+                    "Insufficient Logging & Monitoring"
+                ]
+            },
+            {
                 number: "09",
-                title: "ADVANCED REAL-TIME INDUSTRY PROJECTS",
+                title: "3 Months Internship ",
                 duration: "3 Months",
                 description: "Each Master Program student must select ANY TWO advanced projects.",
                 topics: [
@@ -366,7 +392,7 @@ export const programs = [
         curriculum: [
             {
                 number: "01",
-                title: "IT Fundamentals",
+                title: "P|CSFᴬᴵ - Professional | Cybersecurity Fundamentals Programᴬᴵ",
                 duration: "4 Weeks",
                 certification: "",
                 description: "Build a strong foundation in IT essentials covering hardware, operating systems, networking, servers, and cloud technologies.",
@@ -512,7 +538,7 @@ export const programs = [
             },
             {
                 number: "08",
-                title: "ADVANCED REAL-TIME INDUSTRY PROJECTS",
+                title: "3 Months Internship on real-time industry projects",
                 duration: "3 Months",
                 description: "Each Master Program student must select ANY TWO advanced projects.",
                 topics: [

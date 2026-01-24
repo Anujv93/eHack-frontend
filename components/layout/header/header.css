@@ -329,7 +329,7 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s;
-    border: 1px solid var(--neutral-200);
+    border: 1px solid var(--brand-primary);
     background: #fff;
 }
 
@@ -380,7 +380,7 @@
 
 .mega-partner-card.ehack-originals-partner:hover,
 .mega-partner-card.ehack-originals-partner.active {
-    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    background: var(--brand-primary);
     border-color: var(--brand-primary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -388,7 +388,7 @@
 /* Kennedy University Partner Card - Special Styling */
 .mega-partner-card.kennedy-university-partner {
     background: #fff;
-    border: 1px solid var(--neutral-200);
+    border: 1px solid var(--brand-primary);
     position: relative;
 }
 

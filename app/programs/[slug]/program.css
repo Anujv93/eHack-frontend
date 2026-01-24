@@ -183,15 +183,46 @@ p {
 
 /* Hero Section - Swiss Minimal */
 /* Hero Section - C.L.E.A.R. Refinement */
+@keyframes gridPulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
 .hero-section {
     position: relative;
-    background: var(--white);
-    padding: var(--space-24) var(--space-6) var(--space-16);
+    background-color: var(--white);
+
+    /* Reduced Padding */
+    padding: var(--space-10) var(--space-6) var(--space-8);
     border-bottom: 1px solid var(--gray-200);
+    overflow: hidden;
+    /* Ensure grid doesn't overflow */
 }
 
 .hero-section::before {
-    display: none;
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    /* Orange Grid Pattern */
+    background-image:
+        linear-gradient(to right, rgba(255, 107, 0, 0.35) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 107, 0, 0.35) 1px, transparent 1px);
+    background-size: 40px 40px;
+
+    /* Subtle Blinking Animation */
+    animation: gridPulse 4s ease-in-out infinite;
 }
 
 .hero-section::after {
@@ -246,11 +277,47 @@ p {
     line-height: 1.1;
     letter-spacing: -0.03em;
     color: var(--black);
-    margin-bottom: var(--space-6);
+    margin-top: 0;
+    margin-bottom: var(--space-4);
 }
 
 .hero-title .text-accent {
     color: var(--accent);
+}
+
+@keyframes borderBlink {
+    0% {
+        box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.4);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(234, 88, 12, 0);
+        transform: scale(1.02);
+        border-color: #ff4500;
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(234, 88, 12, 0);
+        transform: scale(1);
+    }
+}
+
+@keyframes textBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+        color: var(--accent);
+        text-shadow: none;
+    }
+
+    50% {
+        opacity: 1;
+        color: #ff4500;
+        text-shadow: 0 0 10px rgba(255, 69, 0, 0.4);
+        transform: scale(1.02);
+    }
 }
 
 .hero-title .cert-count {
@@ -267,13 +334,14 @@ p {
     text-transform: uppercase;
     border-radius: 4px;
     vertical-align: middle;
+    animation: borderBlink 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
 }
 
 .hero-description {
     font-size: 1.125rem;
     color: var(--gray-700);
     line-height: 1.6;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
     max-width: 600px;
 }
 
@@ -282,7 +350,7 @@ p {
     color: var(--gray-600);
     max-width: 600px;
     line-height: 1.7;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
 }
 
 .batch-info {
@@ -299,10 +367,13 @@ p {
 }
 
 .batch-date {
+    display: inline-block;
+    /* Required for transform */
     font-size: 0.875rem;
     font-weight: 700;
     color: var(--accent);
     letter-spacing: 0.1em;
+    animation: textBlink 1s infinite alternate;
 }
 
 /* Form Card - Swiss Minimal */
@@ -431,7 +502,7 @@ p {
 
 /* Stats Bar */
 .stats-bar {
-    background: var(--gray-100);
+    background: #fff7ed;
     padding: var(--space-8) var(--space-6);
     border-bottom: 1px solid var(--gray-200);
 }
@@ -455,22 +526,25 @@ p {
 
 .stats-bar .stat-label {
     display: block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--gray-500);
-    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--gray-600);
+    letter-spacing: 0.1em;
     margin-bottom: var(--space-2);
     text-transform: uppercase;
 }
 
 .stats-bar .stat-value {
-    font-size: 1rem;
-    color: var(--gray-700);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--black);
 }
 
 .stats-bar .stat-value strong {
-    font-weight: 700;
+    font-weight: 800;
     color: var(--black);
+    font-size: 1.35rem;
+    /* Make numbers pop */
 }
 
 /* Schedule Bar */
@@ -490,16 +564,21 @@ p {
 .cert-badge {
     background: var(--accent);
     color: var(--white);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 6px 12px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    padding: 8px 16px;
     border-radius: var(--border-radius-sm);
     white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
 }
 
 .cert-text {
-    font-size: 0.875rem;
-    color: var(--gray-300);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--white);
+    /* Brighter contrast */
 }
 
 /* ============================================
@@ -2770,16 +2849,25 @@ p {
 /* ============================================
    Pricing Section - Professional Full-Width Design
    ============================================ */
+/* Pricing Section - Professional Full-Width Design
+   ============================================ */
 .pricing-section {
-    background: #ffffff;
-    padding: 80px 0;
+    background: linear-gradient(to bottom, #fff7ed, #ffffff);
+    padding: 80px 24px;
+    /* Added horizontal padding for mobile safety */
     border-top: 1px solid #e5e7eb;
 }
 
 .pricing-container-full {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 48px;
+    background: #ffffff;
+    border: 2px solid var(--accent);
+    /* Special Boxed Look */
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(223, 103, 24, 0.15);
+    /* Orange tinted shadow */
 }
 
 .pricing-header {
@@ -2816,19 +2904,41 @@ p {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    /* Removed inner boxing to favor outer section box */
 }
 
-/* Fee Sections */
+/* Fee Sections - Enhanced */
 .fee-section {
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 20px 24px;
+    background: #ffffff;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fee-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    /* Soft lift */
 }
 
 .fee-section.primary {
-    background: #eff6ff;
-    border: 2px solid #3b82f6;
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+    border: 2px solid #3b82f6 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.fee-section.primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(30%, -30%);
 }
 
 .fee-row {
@@ -2836,67 +2946,94 @@ p {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
+    position: relative;
+    /* For z-index above gradient */
 }
 
 .fee-label-text {
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
     font-weight: 600;
     color: #374151;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.01em;
+}
+
+.fee-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #fff7ed;
+    color: var(--accent);
+    border-radius: 8px;
+}
+
+.fee-icon-wrapper.primary {
+    background: #dbeafe;
+    color: #2563eb;
 }
 
 .fee-value {
     font-size: 20px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #111827;
 }
 
 .fee-value-large {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 800;
     color: #1e40af;
+    letter-spacing: -0.02em;
 }
 
 .fee-note-text {
     font-size: 13px;
     color: #6b7280;
-    margin: 0;
+    margin: 4px 0 0 48px;
+    /* Align with text, skipping icon */
     font-style: italic;
 }
 
 /* Payment Plans Section */
 .payment-plans-section {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 24px;
+    margin-top: 16px;
 }
 
 .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 18px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #111827;
     margin: 0 0 20px 0;
-    letter-spacing: -0.01em;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.heading-icon {
+    display: inline-flex;
+    color: var(--accent);
 }
 
 .plan-option {
-    padding: 16px;
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    margin-bottom: 12px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    margin-bottom: 16px;
     transition: all 0.2s ease;
-}
-
-.plan-option:last-child {
-    margin-bottom: 0;
+    cursor: default;
+    /* Not clickable yet strictly, but feels interactive */
 }
 
 .plan-option:hover {
-    border-color: #3b82f6;
-    background: #eff6ff;
+    border-color: var(--accent);
+    background: #fff7ed;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.08);
 }
 
 .plan-header {
@@ -2904,6 +3041,18 @@ p {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
+}
+
+.plan-title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.plan-icon {
+    color: var(--accent);
+    display: flex;
+    align-items: center;
 }
 
 .plan-name {
@@ -2914,15 +3063,16 @@ p {
 }
 
 .plan-price {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
-    color: #1e40af;
+    color: var(--accent-dark);
 }
 
 .plan-description {
     font-size: 14px;
     color: #6b7280;
-    margin: 0;
+    margin: 0 0 0 32px;
+    /* Indent under title (icon(20) + gap(12)) */
     line-height: 1.5;
 }
 
@@ -2946,22 +3096,21 @@ p {
 .pricing-side-column {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
 }
 
 /* Financing Box */
 .financing-box {
-    background: #f0fdf4;
-    border: 1px solid #86efac;
-    border-radius: 8px;
-    padding: 24px;
+    background: transparent;
+    padding: 0;
+    border: none;
 }
 
 .financing-description {
     font-size: 14px;
-    color: #166534;
+    color: #6b7280;
     line-height: 1.6;
-    margin: 0 0 20px 0;
+    margin: 0 0 24px 0;
 }
 
 .financing-list {
@@ -2971,27 +3120,45 @@ p {
 }
 
 .financing-item {
-    padding-bottom: 16px;
-    border-bottom: 1px solid #bbf7d0;
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: #f8fafc;
+    /* Cool grey background */
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: background 0.2s;
 }
 
-.financing-item:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
+.financing-item:hover {
+    background: #f1f5f9;
+}
+
+.financing-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 10px;
+    color: #0f172a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
 }
 
 .financing-name {
     font-size: 15px;
     font-weight: 600;
-    color: #14532d;
-    margin: 0 0 6px 0;
+    color: #0f172a;
+    margin: 0 0 4px 0;
 }
 
 .financing-desc {
     font-size: 13px;
-    color: #166534;
+    color: #64748b;
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 /* What's Included Box */
@@ -3421,11 +3588,11 @@ p {
 
 .audience-eyebrow {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.15em;
-    color: var(--accent);
-    background: var(--accent-light);
+    color: white;
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #FF8A00 100%);
     padding: 8px 16px;
     border-radius: 50px;
     margin-bottom: var(--space-4);
@@ -3446,6 +3613,7 @@ p {
     line-height: 1.7;
     max-width: 600px;
     margin: 0 auto;
+    text-align: center;
 }
 
 /* Modern Grid Layout */
