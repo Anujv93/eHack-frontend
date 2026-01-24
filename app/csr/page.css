@@ -24,6 +24,7 @@
     justify-content: center;
 }
 
+/* Later this will be deleted if you read this delte it */
 .csr-hero::before {
     content: '';
     position: absolute;
