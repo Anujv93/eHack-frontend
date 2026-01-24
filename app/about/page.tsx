@@ -242,6 +242,9 @@ export default function AboutPage() {
                                 <li>Focused on skill development, employability, and professional growth</li>
                             </ul>
                             <img src="/images/about%20Learning%20%26%20Training.jpg" alt="Learning & Training" className="what-card-image" />
+                            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
+                                <img src="/images/newnew-ehack.jpeg" alt="eHack Academy Logo" style={{ height: '80px', objectFit: 'contain' }} />
+                            </div>
                         </div>
 
                         <div className="what-card">
@@ -254,6 +257,9 @@ export default function AboutPage() {
                                 <li>Enterprise solutions for cybersecurity, analytics, and digital transformation</li>
                             </ul>
                             <img src="/images/corporate.jpeg" alt="Corporate Services" className="what-card-image" />
+                            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
+                                <img src="/images/new-global-ehack.jpeg" alt="eHack Global Technologies Logo" style={{ height: '80px', objectFit: 'contain' }} />
+                            </div>
                         </div>
                     </div>
                 </div>
