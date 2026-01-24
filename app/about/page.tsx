@@ -184,54 +184,38 @@ export default function AboutPage() {
             {/* Philosophy Section */}
             <section id="philosophy" className="philosophy-section">
                 <div className="container">
-                    <div className="section-header">
-                        <span className="section-badge section-badge-purple">OUR PHILOSOPHY</span>
-                        <h2 className="section-title">The E-HACK Approach</h2>
-                        <p className="section-subtitle">A holistic approach to empowering the digital future</p>
+                    <div className="philosophy-header">
+                        <span className="philosophy-capsule">OUR PHILOSOPHY</span>
+                        <p className="philosophy-intro">A holistic approach to empowering the digital future through technological excellence and education.</p>
                     </div>
 
                     <div className="philosophy-grid">
                         <div className="philosophy-card">
                             <span className="philosophy-letter">E</span>
-                            <div className="philosophy-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
-                            </div>
                             <h3 className="philosophy-title">Emerging Technologies</h3>
                             <p className="philosophy-desc">Focus on Cybersecurity, AI, Robotics, and Data Science</p>
                         </div>
 
                         <div className="philosophy-card">
                             <span className="philosophy-letter">H</span>
-                            <div className="philosophy-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
-                            </div>
                             <h3 className="philosophy-title">High-Impact Learning</h3>
                             <p className="philosophy-desc">Education, training, and skill empowerment for every stage</p>
                         </div>
 
                         <div className="philosophy-card">
                             <span className="philosophy-letter">A</span>
-                            <div className="philosophy-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" /></svg>
-                            </div>
                             <h3 className="philosophy-title">Analytics & AI</h3>
                             <p className="philosophy-desc">Data-driven insights and AI-powered innovation</p>
                         </div>
 
                         <div className="philosophy-card">
                             <span className="philosophy-letter">C</span>
-                            <div className="philosophy-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                            </div>
                             <h3 className="philosophy-title">Cybersecurity & Corporate</h3>
                             <p className="philosophy-desc">VAPT, Digital Forensics, IT Audits, and Compliance solutions</p>
                         </div>
 
                         <div className="philosophy-card">
                             <span className="philosophy-letter">K</span>
-                            <div className="philosophy-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M2 12h20" /></svg>
-                            </div>
                             <h3 className="philosophy-title">Knowledge & Reach</h3>
                             <p className="philosophy-desc">Empowering learners and enterprises worldwide</p>
                         </div>

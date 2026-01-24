@@ -257,6 +257,14 @@
     line-height: 1.2;
 }
 
+.philosophy-section .section-title {
+    color: #0F172A;
+}
+
+.philosophy-section .section-subtitle {
+    color: #64748B;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 64px;
@@ -2065,64 +2073,132 @@
     }
 }
 
-/* Philosophy Section */
+/* Philosophy Section - Professional Light Redesign */
 .philosophy-section {
-    padding: 80px 0;
+    padding: 40px 0;
     background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.philosophy-capsule {
+    display: inline-block;
+    background: #FF6B00;
+    color: #FFFFFF;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.philosophy-intro {
+    font-size: 1.25rem;
+    color: #1E293B;
+    /* Darker charcoal for maximum visibility */
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 600;
+    /* Increased weight */
+    line-height: 1.6;
 }
 
 .philosophy-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
+    gap: 1.25rem;
+    position: relative;
+    z-index: 2;
 }
 
 .philosophy-card {
-    background: #F8FAFC;
-    padding: 1.5rem;
-    border-radius: 16px;
+    background: #FFFFFF;
+    padding: 3rem 1.75rem;
+    /* Slightly more horizontal breathing room */
+    border-radius: 24px;
     text-align: center;
-    border: 1px solid #E2E8F0;
-    transition: all 0.3s ease;
     height: 100%;
-}
-
-.philosophy-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border-color: #FF6B00;
+    min-height: 280px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FF6B00;
+    /* Bold orange border as requested */
+    box-shadow: 0 12px 45px rgba(255, 107, 0, 0.05);
+    /* Soft themed shadow */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    gap: 0.5rem;
+    /* Consistent spacing between title and desc */
 }
 
 .philosophy-letter {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #FF6B00;
-    margin-bottom: 1rem;
-    display: block;
+    font-size: 11rem;
+    font-weight: 1000;
+    /* Maximize weight for monument effect */
+    color: rgba(255, 107, 0, 0.25);
+    /* Increased visibility with a subtle orange tint */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -46%);
+    z-index: 1;
+    line-height: 1;
+    transition: all 0.5s ease;
+    user-select: none;
+    pointer-events: none;
 }
 
-.philosophy-icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 1rem;
-    color: #334155;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.philosophy-card:hover {
+    transform: translateY(-12px);
+    border-color: #FF8533;
+    /* Slightly lighter on hover */
+    box-shadow: 0 25px 60px rgba(255, 107, 0, 0.12);
+}
+
+.philosophy-card:hover .philosophy-letter {
+    color: rgba(255, 107, 0, 0.06);
+    transform: translate(-50%, -50%) scale(1.05);
 }
 
 .philosophy-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #1E293B;
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #0F172A;
+    position: relative;
+    z-index: 10;
+    letter-spacing: -0.01em;
 }
 
 .philosophy-desc {
-    font-size: 0.9rem;
-    color: #64748B;
-    line-height: 1.5;
+    font-size: 1rem;
+    color: #334155;
+    /* Higher contrast charcoal */
+    line-height: 1.6;
+    font-weight: 600;
+    /* Increased weight for visibility */
+    position: relative;
+    z-index: 10;
+}
+
+.about-nav-btn.active {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
 }
 
 /* What We Do Section */
