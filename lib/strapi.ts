@@ -352,7 +352,7 @@ export async function getAdmissionProcess(): Promise<AdmissionProcess | null> {
 
 // Helper to get Strapi media URL
 export function getStrapiMediaUrl(url: string): string {
-    if (url.startsWith('http')) return url;
+    if (url.startsWith('http') || url.startsWith('/images/')) return url;
     return `${STRAPI_URL}${url}`;
 }
 

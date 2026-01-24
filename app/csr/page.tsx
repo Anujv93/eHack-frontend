@@ -1,56 +1,52 @@
 'use client';
 
 import './page.css';
-import Link from 'next/link';
 import Image from 'next/image';
+import CertificateHeader from "@/components/single-certificate/header/header";
+import CTASection from "@/components/global/cta-section/cta-section";
 import {
     GraduationCap,
     School,
     Shield,
     Award,
-    Building2,
-    Landmark,
-    BookOpen,
-    Target,
-    Briefcase,
-    Sparkles,
-    Rocket,
-    CreditCard,
-    Zap,
-    Building,
     Lock,
     BarChart3,
-    TrendingUp
+    Target,
+    Building
 } from 'lucide-react';
 
 export default function CSRPage() {
     return (
-        <>
-            {/* Hero Section */}
-            <section className="csr-hero">
-                <div className="container">
-                    <div className="hero-content-compact">
-                        <span className="hero-badge-light">CORPORATE SOCIAL RESPONSIBILITY</span>
-                        <h1 className="hero-title-light">
-                            Empowering Society Through
-                            <span className="hero-highlight"> Cybersecurity, Employability & Emerging Technologies</span>
-                        </h1>
-                        <p className="hero-subtitle-light">
-                            At eHack Academy Bangalore, CSR is not just a commitment—it is our mission. For over a decade, we have actively worked towards building a cyber-aware, skilled, and employable society.
-                        </p>
-                    </div>
-                </div>
-            </section>
+        <div className="csr-page-wrapper">
+            <CertificateHeader
+                title="Corporate Social Responsibility"
+                subtitle="Empowering Society Through Cybersecurity, Employability & Emerging Technologies"
+                backgroundImage="/images/cybersecurity.jpg"
+            />
 
-            {/* Mission Statement */}
+            {/* Mission Section */}
             <section className="csr-mission-section">
                 <div className="container">
-                    <div className="mission-content">
-                        <span className="section-badge">OUR CSR MISSION</span>
-                        <h2 className="section-title">"To make India Cyber Secure, Skill-Enabled and Employment Ready"</h2>
-                        <p className="mission-text">
-                            We strive to create a cyber-aware society, enable youth with future-ready skills, improve employability through industry-aligned training, and spread happiness by empowering lives with knowledge.
-                        </p>
+                    <div className="csr-mission-grid">
+                        <div className="csr-mission-image-wrapper">
+                            <Image
+                                src="/images/csr-our-missioin.png"
+                                alt="Our CSR Mission"
+                                width={600}
+                                height={450}
+                                className="csr-mission-img"
+                            />
+                        </div>
+                        <div className="csr-mission-content">
+                            <div className="section-badge-wrapper">
+                                <span className="section-badge-orange-big">OUR CSR MISSION</span>
+                            </div>
+                            <h2 className="csr-mission-title">"To make India Cyber Secure, Skill-Enabled and Employment Ready"</h2>
+                            <div className="csr-mission-text">
+                                <p>We strive to create a cyber-aware society, enable youth with future-ready skills, improve employability through industry-aligned training, and spread happiness by empowering lives with knowledge.</p>
+                                <p>At eHack Academy Bangalore, CSR is not just a commitment—it is our mission. For over a decade, we have actively worked towards building a cyber-aware, skilled, and employable society.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -59,7 +55,7 @@ export default function CSRPage() {
             <section className="impact-stats-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge">OUR IMPACT</span>
+                        <span className="section-badge-orange-big">OUR IMPACT</span>
                         <h2 className="section-title">10+ Years of CSR Excellence</h2>
                         <p className="section-subtitle">Making a difference through education and empowerment</p>
                     </div>
@@ -93,7 +89,7 @@ export default function CSRPage() {
             <section className="focus-areas-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge">FOCUS AREAS</span>
+                        <span className="section-badge-orange-big">FOCUS AREAS</span>
                         <h2 className="section-title">Our CSR Initiatives</h2>
                     </div>
 
@@ -139,7 +135,7 @@ export default function CSRPage() {
             <section className="institutions-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge">INSTITUTIONS WE SERVE</span>
+                        <span className="section-badge-orange-big">INSTITUTIONS WE SERVE</span>
                         <h2 className="section-title">Partnering with Leading Educational Institutions</h2>
                         <p className="section-subtitle">
                             Over the last decade, we have proudly partnered with numerous educational institutions across Bangalore and India
@@ -248,7 +244,7 @@ export default function CSRPage() {
             <section className="corporate-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge">CORPORATE PARTNERSHIPS</span>
+                        <span className="section-badge-orange-big">CORPORATE PARTNERSHIPS</span>
                         <h2 className="section-title">Corporate CSR Engagements</h2>
                         <p className="section-subtitle">
                             Delivering customized cybersecurity and emerging technology workshops for leading organizations
@@ -293,7 +289,7 @@ export default function CSRPage() {
             <section className="roadmap-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge">FUTURE VISION</span>
+                        <span className="section-badge-orange-big">FUTURE VISION</span>
                         <h2 className="section-title">Our Roadmap: 2026 – 2028</h2>
                         <p className="section-subtitle">
                             Expanding our CSR footprint across schools, colleges, corporates, government bodies, and trusts
@@ -335,47 +331,11 @@ export default function CSRPage() {
                 </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="csr-cta-section">
-                <div className="container">
-                    <div className="cta-box">
-                        <div className="cta-content">
-                            <span className="cta-badge">JOIN OUR CSR MOVEMENT</span>
-                            <h2 className="cta-title">Partner with Us to Build a Safer, Smarter India</h2>
-                            <p className="cta-subtitle">
-                                We invite schools, colleges, corporates, trusts, NGOs, and government organizations to partner with us in building a safer, smarter and more skilled India.
-                            </p>
-                        </div>
-                        <div className="cta-actions">
-                            <a href="mailto:info@ehackacademy.com" className="cta-btn-primary">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                Contact Us for CSR Collaboration
-                            </a>
-                            <a href="tel:+919886035330" className="cta-btn-secondary">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                                Call Us Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Testimonial Quote */}
-            <section className="quote-section">
-                <div className="container">
-                    <div className="quote-card">
-                        <div className="quote-icon">"</div>
-                        <blockquote className="quote-text">
-                            Knowledge is the strongest form of protection, and skills are the foundation of sustainable employment.
-                        </blockquote>
-                        <div className="quote-author">— eHack Academy CSR Philosophy</div>
-                    </div>
-                </div>
-            </section>
-        </>
+            <CTASection
+                title="Partner with Us to Build a Safer, Smarter India"
+                subtitle="We invite schools, colleges, corporates, trusts, NGOs, and government organizations to partner with us in building a safer, smarter and more skilled India."
+                features={["Cybersecurity Awareness", "Skill Development", "Employability", "Digital Safety"]}
+            />
+        </div>
     );
 }
