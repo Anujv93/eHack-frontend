@@ -2,6 +2,7 @@
 
 import './page.css';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     GraduationCap,
     School,
@@ -58,7 +59,7 @@ export default function CSRPage() {
             <section className="impact-stats-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge section-badge-blue">OUR IMPACT</span>
+                        <span className="section-badge">OUR IMPACT</span>
                         <h2 className="section-title">10+ Years of CSR Excellence</h2>
                         <p className="section-subtitle">Making a difference through education and empowerment</p>
                     </div>
@@ -92,7 +93,7 @@ export default function CSRPage() {
             <section className="focus-areas-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge section-badge-purple">FOCUS AREAS</span>
+                        <span className="section-badge">FOCUS AREAS</span>
                         <h2 className="section-title">Our CSR Initiatives</h2>
                     </div>
 
@@ -147,17 +148,38 @@ export default function CSRPage() {
 
                     <div className="institutions-grid">
                         <div className="institution-card">
-                            <div className="institution-icon"><Landmark size={40} strokeWidth={1.5} /></div>
+                            <div className="institution-icon icon-dark-bg">
+                                <Image
+                                    src="/csr-uni-logo/ramaiah.png"
+                                    alt="MS Ramaiah Institute of Technology"
+                                    width={200}
+                                    height={100}
+                                />
+                            </div>
                             <h4 className="institution-name">MS Ramaiah Institute of Technology</h4>
                             <p className="institution-desc">Engineering, BCA, MCA & Polytechnic</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon"><GraduationCap size={40} strokeWidth={1.5} /></div>
+                            <div className="institution-icon icon-dark-bg">
+                                <Image
+                                    src="/csr-uni-logo/ramaiah-management.png"
+                                    alt="MS Ramaiah Institute of Management"
+                                    width={200}
+                                    height={100}
+                                />
+                            </div>
                             <h4 className="institution-name">MS Ramaiah Institute of Management</h4>
                             <p className="institution-desc">PGDM Programs</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon"><BookOpen size={40} strokeWidth={1.5} /></div>
+                            <div className="institution-icon">
+                                <Image
+                                    src="/csr-uni-logo/christ.jpeg"
+                                    alt="Christ University"
+                                    width={200}
+                                    height={100}
+                                />
+                            </div>
                             <h4 className="institution-name">Christ University</h4>
                             <p className="institution-desc">Multiple Departments</p>
                         </div>
@@ -167,22 +189,50 @@ export default function CSRPage() {
                             <p className="institution-desc">Engineering & Technology</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon"><TrendingUp size={40} strokeWidth={1.5} /></div>
+                            <div className="institution-icon icon-dark-bg">
+                                <Image
+                                    src="/csr-uni-logo/reva-university.webp"
+                                    alt="REVA University"
+                                    width={200}
+                                    height={100}
+                                />
+                            </div>
                             <h4 className="institution-name">REVA University</h4>
                             <p className="institution-desc">Postgraduate Programs</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon"><Briefcase size={40} strokeWidth={1.5} /></div>
+                            <div className="institution-icon">
+                                <Image
+                                    src="/csr-uni-logo/PESU.png"
+                                    alt="PES Institute of Technology"
+                                    width={200}
+                                    height={100}
+                                />
+                            </div>
                             <h4 className="institution-name">PES Institute of Technology</h4>
                             <p className="institution-desc">Engineering Programs</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon"><Sparkles size={40} strokeWidth={1.5} /></div>
+                            <div className="institution-icon">
+                                <Image
+                                    src="/csr-uni-logo/nitte.svg"
+                                    alt="Nitte Meenakshi Institute (NMIT)"
+                                    width={200}
+                                    height={100}
+                                />
+                            </div>
                             <h4 className="institution-name">Nitte Meenakshi Institute (NMIT)</h4>
                             <p className="institution-desc">Technology Programs</p>
                         </div>
                         <div className="institution-card">
-                            <div className="institution-icon"><Rocket size={40} strokeWidth={1.5} /></div>
+                            <div className="institution-icon">
+                                <Image
+                                    src="/csr-uni-logo/sambhram.jpg"
+                                    alt="Sambhram Institute"
+                                    width={200}
+                                    height={100}
+                                />
+                            </div>
                             <h4 className="institution-name">Sambhram Institute</h4>
                             <p className="institution-desc">Technology & Management</p>
                         </div>
@@ -198,7 +248,7 @@ export default function CSRPage() {
             <section className="corporate-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge section-badge-blue">CORPORATE PARTNERSHIPS</span>
+                        <span className="section-badge">CORPORATE PARTNERSHIPS</span>
                         <h2 className="section-title">Corporate CSR Engagements</h2>
                         <p className="section-subtitle">
                             Delivering customized cybersecurity and emerging technology workshops for leading organizations
@@ -207,12 +257,26 @@ export default function CSRPage() {
 
                     <div className="corporate-grid">
                         <div className="corporate-card">
-                            <div className="corporate-logo"><CreditCard size={64} strokeWidth={1.5} /></div>
+                            <div className="corporate-logo">
+                                <Image
+                                    src="/csr-uni-logo/cashfree.png"
+                                    alt="Cashfree"
+                                    width={200}
+                                    height={100}
+                                />
+                            </div>
                             <h4 className="corporate-name">Cashfree</h4>
                             <p className="corporate-desc">Payment Technology Solutions</p>
                         </div>
                         <div className="corporate-card">
-                            <div className="corporate-logo"><Zap size={64} strokeWidth={1.5} /></div>
+                            <div className="corporate-logo">
+                                <Image
+                                    src="/csr-uni-logo/bel.jpeg"
+                                    alt="Bharat Electronics Limited (BEL)"
+                                    width={200}
+                                    height={100}
+                                />
+                            </div>
                             <h4 className="corporate-name">Bharat Electronics Limited (BEL)</h4>
                             <p className="corporate-desc">Defense & Aerospace</p>
                         </div>
@@ -229,7 +293,7 @@ export default function CSRPage() {
             <section className="roadmap-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge section-badge-purple">FUTURE VISION</span>
+                        <span className="section-badge">FUTURE VISION</span>
                         <h2 className="section-title">Our Roadmap: 2026 – 2028</h2>
                         <p className="section-subtitle">
                             Expanding our CSR footprint across schools, colleges, corporates, government bodies, and trusts
