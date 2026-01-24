@@ -70,25 +70,6 @@ export default function Footer() {
                     <div className="footer-grid">
                         {/* Brand Section */}
                         <div className="footer-brand">
-                            <div className="footer-parent-brand">
-                                <span className="parent-brand-text">Driving Global Cybersecurity Excellence as a Strategic Initiative of eHack Group</span>
-                                <div className="footer-logo-group">
-                                    <Image
-                                        src="/images/white-global.png"
-                                        alt="eHack Global"
-                                        width={200}
-                                        height={80}
-                                        className="footer-logo-global"
-                                    />
-                                    <Image
-                                        src="/images/white-academy.png"
-                                        alt="eHack Academy"
-                                        width={210}
-                                        height={65}
-                                        className="footer-logo"
-                                    />
-                                </div>
-                            </div>
                             <p className="footer-description">
                                 Empowering global careers through industry-leading training and certifications in Cybersecurity, Digital Marketing, and Emerging Technologies.
                             </p>
@@ -216,13 +197,20 @@ export default function Footer() {
                                 </li>
                                 <li><Link href="/careers">Careers</Link></li>
                             </ul>
-                            <h5 className="footer-subheading">Most Popular Certifications</h5>
-                            <ul className="footer-links-list partner-certs">
-                                <li><Link href="/certificate/ceh-v13">EC-Council CEH</Link></li>
-                                <li><Link href="/certificate/ecc-cnd">EC-Council CND</Link></li>
-                                <li><Link href="/certificate/ecc-cpent">EC-Council CPENT</Link></li>
-                                <li><Link href="/certificate/ecc-chfi">EC-Council CHFI</Link></li>
-                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Popular Certifications Horizontal Bar */}
+                    <div className="footer-certs-bar">
+                        <span className="certs-bar-title">Most Popular Certifications:</span>
+                        <div className="certs-bar-links">
+                            <Link href="/certificate/ceh-v13">EC-Council CEH</Link>
+                            <span className="certs-divider">|</span>
+                            <Link href="/certificate/ecc-cnd">EC-Council CND</Link>
+                            <span className="certs-divider">|</span>
+                            <Link href="/certificate/ecc-cpent">EC-Council CPENT</Link>
+                            <span className="certs-divider">|</span>
+                            <Link href="/certificate/ecc-chfi">EC-Council CHFI</Link>
                         </div>
                     </div>
 
@@ -256,6 +244,27 @@ export default function Footer() {
                                 <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                             <span>Tue - Sun: 9:30 AM - 6:30 PM</span>
+                        </div>
+                    </div>
+
+                    {/* Brand Initiative Strip */}
+                    <div className="footer-initiative-strip">
+                        <span className="parent-brand-text">Driving Global Cybersecurity Excellence as a Strategic Initiative of eHack Group</span>
+                        <div className="initiative-logos">
+                            <Image
+                                src="/images/white-global.png"
+                                alt="eHack Global"
+                                width={200}
+                                height={75}
+                                className="footer-logo-global"
+                            />
+                            <Image
+                                src="/images/white-academy.png"
+                                alt="eHack Academy"
+                                width={240}
+                                height={70}
+                                className="footer-logo"
+                            />
                         </div>
                     </div>
                 </div>

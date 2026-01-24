@@ -262,6 +262,16 @@
     margin-bottom: 64px;
 }
 
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    color: #334155;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
 .mission-text {
     font-size: 1.25rem;
     color: #1e293b;
@@ -277,7 +287,7 @@
 
 /* Why Choose Us Section */
 .why-choose-section {
-    padding: 60px 0;
+    padding: 20px 0;
     background: #FFFFFF;
 }
 
@@ -292,7 +302,7 @@
     border-radius: 16px;
     padding: 3rem 2.5rem;
     text-align: center;
-    border: 1px solid #E2E8F0;
+    border: 2px solid #FF6B00;
     transition: all 0.3s ease;
 }
 
@@ -301,6 +311,15 @@
     border-color: #CBD5E1;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     transform: translateY(-4px);
+}
+
+.feature-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .feature-number {
@@ -349,9 +368,10 @@
 }
 
 .feature-description {
-    font-size: 1.0625rem;
-    color: #475569;
+    font-size: 1.1rem;
+    color: #334155;
     line-height: 1.7;
+    font-weight: 500;
 }
 
 /* Leadership Section */
@@ -367,7 +387,7 @@
     background: #FFFFFF;
     border-radius: 20px;
     padding: 3rem;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #FF6B00;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
@@ -700,7 +720,7 @@
     border-radius: 16px;
     padding: 2.5rem 2rem;
     text-align: center;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #FF6B00;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     min-width: 340px;
     max-width: 340px;
@@ -2127,15 +2147,15 @@
 
 /* What We Do Section */
 .what-we-do-section {
-    padding: 80px 0;
-    background: #F1F5F9;
+    padding: 20px 0;
+    background: linear-gradient(180deg, #FFF7ED 0%, #FFFFFF 100%);
 }
 
 .what-we-do-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 .what-card {
@@ -2173,6 +2193,29 @@
     left: 0;
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+.section-badge-orange-big {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    color: #FFFFFF;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+.what-card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Split Image Section */
@@ -2225,17 +2268,39 @@
 }
 
 /* Tagline Banner */
+/* Tagline Banner */
 .tagline-banner {
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
-    padding: 4rem 1rem;
+    background: #0F172A;
+    padding: 3rem 1.5rem;
     text-align: center;
-    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.tagline-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: #FF6B00;
 }
 
 .tagline-text {
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: #FFFFFF;
     letter-spacing: -0.02em;
+    line-height: 1.4;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.tagline-text span {
+    color: #FF6B00;
 }
 
 @media (max-width: 992px) {

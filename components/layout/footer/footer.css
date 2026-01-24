@@ -196,15 +196,13 @@
 }
 
 .footer-logo {
-    height: 65px;
-    /* High-impact academy scale */
+    height: 70px;
     width: auto;
     object-fit: contain;
 }
 
 .footer-logo-global {
-    height: 80px;
-    /* Commanding parent brand scale */
+    height: 75px;
     width: auto;
     object-fit: contain;
 }
@@ -398,22 +396,55 @@
     letter-spacing: 0.05em;
 }
 
-/* Certification Subheading */
-.footer-subheading {
-    font-size: 0.75rem;
-    font-weight: 600;
+/* Certification Bar Styles */
+.footer-certs-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.certs-bar-title {
+    font-size: 0.8125rem;
+    font-weight: 700;
     color: var(--brand-primary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-bottom: 0.75rem;
-    margin-top: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(223, 103, 24, 0.3);
 }
 
-.partner-certs {
-    padding-top: 0.5rem;
-    border-top: none;
+.certs-bar-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.certs-bar-links a {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.certs-bar-links a:hover {
+    color: var(--brand-primary);
+}
+
+.certs-divider {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .footer-certs-bar {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
 }
 
 /* ========================================
@@ -461,6 +492,61 @@
 .contact-divider {
     color: rgba(255, 255, 255, 0.2);
     font-size: 1rem;
+}
+
+/* Initiative Strip */
+.footer-initiative-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-initiative-strip .parent-brand-text {
+    margin-bottom: 0;
+    font-size: 0.75rem;
+    font-weight: 800;
+    max-width: 450px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: linear-gradient(to bottom,
+            #ffffff 0%,
+            #f0f0f0 15%,
+            #ffffff 30%,
+            #e5e5e5 50%,
+            #ffffff 65%,
+            #dcdcdc 85%,
+            #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+    display: inline-block;
+    /* Brighter metallic highlights */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.initiative-logos {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+    .footer-initiative-strip {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .initiative-logos {
+        gap: 2rem;
+    }
 }
 
 /* ========================================
