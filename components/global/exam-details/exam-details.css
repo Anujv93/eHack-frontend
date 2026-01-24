@@ -34,6 +34,17 @@
     gap: 2rem;
 }
 
+.exam-cards-grid.single-card-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.exam-cards-grid.single-card-grid .exam-card {
+    max-width: 600px;
+    /* Optional: limit width for better aesthetics */
+    width: 100%;
+}
+
 .exam-card {
     background: #fff;
     border-radius: 12px;

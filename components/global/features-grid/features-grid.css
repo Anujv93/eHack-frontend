@@ -31,12 +31,20 @@
 .features-grid-ec {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
+    gap: 2px;
+    /* Fading multicolor Tic-Tac-Toe separators */
+    background-image:
+        linear-gradient(to right, transparent, var(--ec-red) 15%, var(--ec-red) 70%, #2196F3 85%, transparent),
+        linear-gradient(to bottom, transparent, var(--ec-red) 15%, var(--ec-red) 70%, #2196F3 85%, transparent);
+    background-origin: border-box;
 }
 
 .feature-item-ec {
     text-align: center;
-    padding: var(--space-6);
+    padding: var(--space-10);
+    /* Increased padding to compensate for reduced gap */
+    background-color: var(--ec-gray-100);
+    /* Match section bg to mask container bg */
 }
 
 .feature-icon-ec {
@@ -74,7 +82,8 @@
 @media (max-width: 992px) {
     .features-grid-ec {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-6);
+        gap: 2px;
+        /* Maintain thin grid lines */
     }
 }
 
@@ -92,7 +101,8 @@
     }
 
     .features-grid-ec {
-        gap: var(--space-4);
+        gap: 2px;
+        /* Maintain thin grid lines */
     }
 
     .feature-item-ec {
