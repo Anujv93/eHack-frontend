@@ -1607,6 +1607,44 @@
     pointer-events: none;
 }
 
+/* Larger Screens (15-17 inches) targeting typical resolutions */
+@media (min-width: 1441px) {
+    .header-container {
+        max-width: 1600px;
+        padding: 0.5rem 2.5rem;
+    }
+
+    .mega-menu {
+        max-width: 1400px;
+    }
+
+    .services-dropdown-menu {
+        width: 1200px;
+        right: -200px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .header-container {
+        max-width: 1800px;
+        padding: 0.5rem 3rem;
+    }
+
+    .mega-menu {
+        max-width: 1600px;
+    }
+
+    .logo-image {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .nav-link {
+        font-size: 0.9375rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
 .mobile-mega-menu.open {
     transform: translateX(0);
     visibility: visible;

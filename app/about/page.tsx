@@ -243,8 +243,8 @@ export default function AboutPage() {
             <section id="what-we-do" className="what-we-do-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge section-badge-blue">OUR SERVICES</span>
-                        <h2 className="section-title">What We Do</h2>
+                        <span className="section-badge-orange-big">OUR SERVICES</span>
+                        <h2 className="section-title">Empowering <span style={{ color: '#FF6B00' }}>Digital</span> Excellence</h2>
                     </div>
 
                     <div className="what-we-do-grid">
@@ -257,6 +257,7 @@ export default function AboutPage() {
                                 <li>Flexible online and offline live classes</li>
                                 <li>Focused on skill development, employability, and professional growth</li>
                             </ul>
+                            <img src="/images/about%20Learning%20%26%20Training.jpg" alt="Learning & Training" className="what-card-image" />
                         </div>
 
                         <div className="what-card">
@@ -268,41 +269,26 @@ export default function AboutPage() {
                                 <li>IT Audits & Compliance</li>
                                 <li>Enterprise solutions for cybersecurity, analytics, and digital transformation</li>
                             </ul>
+                            <img src="/images/corporate.jpeg" alt="Corporate Services" className="what-card-image" />
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Visual Split Section */}
-            <section className="w-full">
-                <div className="container" style={{ padding: '0 0 60px 0' }}>
-                    <div className="section-header">
-                        <h2 className="section-title">A Holistic Ecosystem</h2>
-                        <p>Where student learning meets corporate excellence</p>
-                    </div>
-                    <div style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
-                        <img
-                            src="/images/about-us/split-concept.png"
-                            alt="Learning and Corporate Services"
-                            className="full-split-image"
-                        />
-                    </div>
-                </div>
-            </section>
+
 
             {/* Why Choose Us Section */}
             <section id="why-choose-us" className="why-choose-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge section-badge-blue">WHY CHOOSE US</span>
-                        <h2 className="section-title">What Sets Us Apart</h2>
+                        <span className="section-badge-orange-big">WHY CHOOSE US</span>
+                        <h2 className="section-title">Defining <span style={{ color: '#FF6B00' }}>Excellence</span></h2>
+                        <p className="section-subtitle">We don't just teach technology; we shape the future leaders of the digital world through innovation and global connection.</p>
                     </div>
 
                     <div className="features-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
                         <div className="feature-card">
-                            <div className="feature-icon-wrapper feature-icon-purple">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
-                            </div>
+                            <img src="/images/day-office-travel-agency.jpg" alt="Global Presence" className="feature-card-img" />
                             <h3 className="feature-title">Global Presence</h3>
                             <p className="feature-description">
                                 Training and services with a worldwide footprint, connecting you to global opportunities.
@@ -310,9 +296,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="feature-card">
-                            <div className="feature-icon-wrapper feature-icon-cyan">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
-                            </div>
+                            <img src="/images/executive-manager-wearing-virtual-reality-headset.jpg" alt="Innovation-Driven" className="feature-card-img" />
                             <h3 className="feature-title">Innovation-Driven</h3>
                             <p className="feature-description">
                                 Programs and solutions built on the latest technologies and emerging industry trends.
@@ -320,9 +304,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="feature-card">
-                            <div className="feature-icon-wrapper feature-icon-green">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                            </div>
+                            <img src="/images/young-student-wearing-graduation-cape-looking-her-notebook.jpg" alt="Trusted & Credible" className="feature-card-img" />
                             <h3 className="feature-title">Trusted & Credible</h3>
                             <p className="feature-description">
                                 Empowering both learners and corporates with reliability, excellence, and proven results.
@@ -330,9 +312,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="feature-card">
-                            <div className="feature-icon-wrapper feature-icon-yellow">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
-                            </div>
+                            <img src="/images/front-view-businessman-with-colorful-cones-representing-growth.jpg" alt="Holistic Ecosystem" className="feature-card-img" />
                             <h3 className="feature-title">Holistic Ecosystem</h3>
                             <p className="feature-description">
                                 Bridging skills, services, and knowledge under one roof for comprehensive growth.
@@ -346,8 +326,8 @@ export default function AboutPage() {
             <section id="leadership" className="leadership-section">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge section-badge-purple">LEADERSHIP</span>
-                        <h2 className="section-title">From the Founder</h2>
+                        <span className="section-badge-orange-big">LEADERSHIP</span>
+                        <h2 className="section-title">From the <span style={{ color: '#FF6B00' }}>Founder</span></h2>
                     </div>
 
                     <div className="founder-card">
@@ -527,7 +507,9 @@ export default function AboutPage() {
             {/* Tagline Banner */}
             <div className="tagline-banner">
                 <div className="container">
-                    <h2 className="tagline-text">“Ehack – Empowering Skills, Securing Enterprises, Enabling Innovation”</h2>
+                    <h2 className="tagline-text">
+                        Ehack – Empowering <span>Skills</span>, Securing <span>Enterprises</span>, Enabling <span>Innovation</span>
+                    </h2>
                 </div>
             </div>
 
