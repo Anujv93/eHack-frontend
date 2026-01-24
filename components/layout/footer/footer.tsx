@@ -70,17 +70,27 @@ export default function Footer() {
                     <div className="footer-grid">
                         {/* Brand Section */}
                         <div className="footer-brand">
-                            <div className="footer-logo-wrapper">
-                                <Image
-                                    src="/ehack-logo.png"
-                                    alt="eHack Academy"
-                                    width={160}
-                                    height={50}
-                                    className="footer-logo"
-                                />
+                            <div className="footer-parent-brand">
+                                <span className="parent-brand-text">Driving Global Cybersecurity Excellence as a Strategic Initiative of eHack Group</span>
+                                <div className="footer-logo-group">
+                                    <Image
+                                        src="/images/white-global.png"
+                                        alt="eHack Global"
+                                        width={200}
+                                        height={80}
+                                        className="footer-logo-global"
+                                    />
+                                    <Image
+                                        src="/images/white-academy.png"
+                                        alt="eHack Academy"
+                                        width={210}
+                                        height={65}
+                                        className="footer-logo"
+                                    />
+                                </div>
                             </div>
                             <p className="footer-description">
-                                Empowering careers through industry-leading professional training and globally recognized certifications. Your trusted partner for cybersecurity, digital marketing, and technology education.
+                                Empowering global careers through industry-leading training and certifications in Cybersecurity, Digital Marketing, and Emerging Technologies.
                             </p>
 
                             {/* Social Links */}

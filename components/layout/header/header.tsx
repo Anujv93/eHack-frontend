@@ -192,7 +192,7 @@ export default function Header({ partners, courses }: HeaderProps) {
             <div className="header-container">
                 <Link href="/" className="logo">
                     <div className="logo-container">
-                        <img src="/images/new-eHACK.png" alt="eHack Academy" className="logo-image" />
+                        <img src="/images/newnew-ehack.jpeg" alt="eHack Academy" className="logo-image" />
                     </div>
                 </Link>
 
@@ -589,7 +589,7 @@ export default function Header({ partners, courses }: HeaderProps) {
             {/* Mobile Menu Drawer */}
             <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
                 <div className="mobile-menu-header">
-                    <img src="/images/new-eHACK.png" alt="eHack Academy" className="mobile-menu-logo" />
+                    <img src="/images/newnew-ehack.jpeg" alt="eHack Academy" className="mobile-menu-logo" />
                     <button className="mobile-menu-close" onClick={closeMobileMenu} aria-label="Close menu">
                         ✕
                     </button>
