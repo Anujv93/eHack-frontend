@@ -84,10 +84,12 @@ const PlacementSection = () => {
                 <div className="placement-header">
                     <span className="placement-label">Career Transformations</span>
                     <h2 className="placement-title">
-                        From Learning to <span className="highlight">Leading</span>
+                        From Learning to Leading<br />
+                        <span className="highlight">eHack Academy</span>
                     </h2>
                     <p className="placement-subtitle">
-                        See how our students transformed their careers with eHack Academy
+                        See how our students transformed their careers with<br />
+                        <span className="highlight">eHack Academy</span>
                     </p>
                 </div>
 

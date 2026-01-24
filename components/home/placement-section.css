@@ -133,6 +133,15 @@
     }
 }
 
+.placement-subtitle .highlight {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #FF8A00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    display: inline-block;
+}
+
 /* Marquee Container */
 .marquee-container {
     width: 100%;
