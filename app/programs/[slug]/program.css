@@ -93,6 +93,7 @@ p {
     text-decoration: none;
 }
 
+/* Remove ir wehn you see it comit */
 .banner-contact:hover {
     color: var(--accent);
 }
