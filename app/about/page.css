@@ -830,14 +830,16 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #FFF7ED;
-    border: 1px solid #FFEDD5;
-    padding: 0.5rem 1.25rem;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    color: #FFFFFF;
+    padding: 12px 30px;
     border-radius: 50px;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: #FF6B00;
-    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
 }
 
 .pulse-dot {
@@ -896,7 +898,7 @@
 /* Quick Actions Card */
 .quick-actions-card {
     background: #F8FAFC;
-    border: 1px solid #E2E8F0;
+    border: 2px solid #FF6B00;
     border-radius: 16px;
     padding: 1.5rem;
 }
@@ -1015,7 +1017,7 @@
 /* Location Card */
 .location-card {
     background: #F8FAFC;
-    border: 1px solid #E2E8F0;
+    border: 2px solid #FF6B00;
     border-radius: 16px;
     padding: 1.5rem;
 }
@@ -1089,7 +1091,7 @@
 /* Hours Card */
 .hours-card {
     background: #F8FAFC;
-    border: 1px solid #E2E8F0;
+    border: 2px solid #FF6B00;
     border-radius: 16px;
     padding: 1.5rem;
 }
@@ -1181,7 +1183,7 @@
 
 .map-card {
     background: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    border: 2px solid #FF6B00;
     border-radius: 16px;
     overflow: hidden;
     flex: 1;
@@ -1265,7 +1267,7 @@
     align-items: center;
     gap: 1rem;
     background: #FFF7ED;
-    border: 1px solid #FFEDD5;
+    border: 2px solid #FF6B00;
     border-radius: 12px;
     padding: 1.25rem;
 }
