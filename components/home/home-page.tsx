@@ -441,6 +441,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                                         href={href}
                                         className={styles.partnerCard}
                                     >
+                                        <div className={styles.partnerBadge}>
+                                            {isKennedy ? 'UNIVERSITY PARTNER' : 'PREMIUM PARTNER'}
+                                        </div>
                                         <div className={styles.partnerLogoWrapper}>
                                             {partner.logoUrl ? (
                                                 <img

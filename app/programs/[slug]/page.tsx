@@ -588,7 +588,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                     What's Included
                                 </h3>
                                 <ul className="included-list">
-                                    <li>{program.certifications.length} {programType === 'digital-marketing' ? 'Professional' : programType === 'robotics' ? 'Robotics' : 'Global EC-Council'} Certifications</li>
+                                    <li>{program.certifications.length} {program.category === 'cybersecurity' ? 'Global EC-Council' : 'eHack'} Certifications</li>
                                     <li>{program.stats.totalHours} of Hands-on Training</li>
                                     <li>Real-Time Labs & Practice Environment</li>
                                     <li>{program.stats.membership} Post-Training Support</li>

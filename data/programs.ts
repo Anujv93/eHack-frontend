@@ -1895,7 +1895,7 @@ export const programs = [
             {
                 category: "Fees & Admission",
                 questions: [
-                    { q: "What is the program fee?", a: "Original Price: ₹50,000 | Offer Price: ₹35,000. Application fee of ₹1,000 is adjustable in the program fee." },
+                    { q: "What is the program fee?", a: "Original Price: ₹40,000 | Offer Price: ₹25,000. Application fee of ₹1,000 is adjustable in the program fee." },
                     { q: "Are EMI options available?", a: "Yes, we offer flexible EMI options. Contact our counselors for detailed payment plans." },
                     { q: "Is there placement assistance?", a: "Yes, we provide complete placement support including resume building, interview preparation, and mock interviews." }
                 ]

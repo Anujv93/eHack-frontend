@@ -57,9 +57,6 @@
     color: var(--accent);
 }
 
-p {
-    text-align: justify;
-}
 
 /* Global paragraph styling for justified text */
 .program-page p {
@@ -68,7 +65,7 @@ p {
 }
 
 /* Top Banner */
-.top-banner {
+.program-page .top-banner {
     background: linear-gradient(90deg, #0a1628 0%, #0d2137 50%, #0a1628 100%);
     padding: 8px var(--space-6);
     position: relative;
@@ -198,7 +195,7 @@ p {
     }
 }
 
-.hero-section {
+.program-page .hero-section {
     position: relative;
     background-color: var(--white);
 
@@ -209,7 +206,7 @@ p {
     /* Ensure grid doesn't overflow */
 }
 
-.hero-section::before {
+.program-page .hero-section::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -226,7 +223,7 @@ p {
     animation: gridPulse 4s ease-in-out infinite;
 }
 
-.hero-section::after {
+.program-page .hero-section::after {
     display: none;
 }
 
@@ -379,7 +376,7 @@ p {
 
 /* Form Card - Swiss Minimal */
 /* Form Card - Refined C.L.E.A.R. */
-.form-card {
+.program-page .form-card {
     background: var(--white);
     border: 1px solid var(--gray-200);
     padding: var(--space-8);
@@ -502,7 +499,7 @@ p {
 }
 
 /* Stats Bar */
-.stats-bar {
+.program-page .stats-bar {
     background: #fff7ed;
     padding: var(--space-8) var(--space-6);
     border-bottom: 1px solid var(--gray-200);
@@ -516,16 +513,16 @@ p {
     gap: var(--space-6);
 }
 
-.stats-bar .stat-item {
+.program-page .stats-bar .stat-item {
     text-align: center;
     padding: 0 var(--space-4);
 }
 
-.stats-bar .stat-item:not(:last-child) {
+.program-page .stats-bar .stat-item:not(:last-child) {
     border-right: 1px solid var(--gray-200);
 }
 
-.stats-bar .stat-label {
+.program-page .stats-bar .stat-label {
     display: block;
     font-size: 0.85rem;
     font-weight: 800;
@@ -535,13 +532,13 @@ p {
     text-transform: uppercase;
 }
 
-.stats-bar .stat-value {
+.program-page .stats-bar .stat-value {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--black);
 }
 
-.stats-bar .stat-value strong {
+.program-page .stats-bar .stat-value strong {
     font-weight: 800;
     color: var(--black);
     font-size: 1.35rem;
@@ -1950,7 +1947,7 @@ p {
     margin-top: var(--space-6);
 }
 
-.btn-primary {
+.program-page .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1966,7 +1963,7 @@ p {
     cursor: pointer;
 }
 
-.btn-primary:hover {
+.program-page .btn-primary:hover {
     background: var(--accent-dark);
     transform: translateY(-2px);
 }
@@ -4770,6 +4767,7 @@ p {
         transform: rotate(10deg) translateX(35px) translateY(8px);
     }
 }
+
 /* Robotics Hero Section Specific Styles */
 .hero-robotics {
     background-image: url('/images/programs/robotics-hero-bg.jpg');
@@ -4786,7 +4784,7 @@ p {
     background: rgba(255, 255, 255, 0.90);
     z-index: 1;
     background-image: none !important;
-    animation: none;
+    animation: none !important;
 }
 
 .hero-robotics .hero-container {
@@ -4815,7 +4813,7 @@ p {
     background: rgba(255, 255, 255, 0.90);
     z-index: 1;
     background-image: none !important;
-    animation: none;
+    animation: none !important;
 }
 
 .hero-softskills .hero-container {
@@ -4844,7 +4842,7 @@ p {
     background: rgba(255, 255, 255, 0.90);
     z-index: 1;
     background-image: none !important;
-    animation: none;
+    animation: none !important;
 }
 
 .hero-digital-marketing .hero-container {
@@ -4873,7 +4871,7 @@ p {
     background: rgba(255, 255, 255, 0.90);
     z-index: 1;
     background-image: none !important;
-    animation: none;
+    animation: none !important;
 }
 
 .hero-data-science .hero-container {
@@ -4902,7 +4900,7 @@ p {
     background: rgba(255, 255, 255, 0.90);
     z-index: 1;
     background-image: none !important;
-    animation: none;
+    animation: none !important;
 }
 
 .hero-masters .hero-container {
@@ -4931,7 +4929,7 @@ p {
     background: rgba(255, 255, 255, 0.90);
     z-index: 1;
     background-image: none !important;
-    animation: none;
+    animation: none !important;
 }
 
 .hero-graduate .hero-container {
@@ -4960,7 +4958,7 @@ p {
     background: rgba(255, 255, 255, 0.90);
     z-index: 1;
     background-image: none !important;
-    animation: none;
+    animation: none !important;
 }
 
 .hero-ceh-master .hero-container {

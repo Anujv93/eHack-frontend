@@ -744,6 +744,25 @@
     padding: 0;
     text-decoration: none;
     cursor: pointer;
+    position: relative;
+}
+
+.partnerBadge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    color: #1a1a1a;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    border-bottom-left-radius: 8px;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    letter-spacing: 0.5px;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .partnerCard:hover {
