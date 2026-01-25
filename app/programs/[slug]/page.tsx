@@ -107,7 +107,14 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
     return (
         <div className="program-page">
             {/* 1. HERO SECTION - Attention + Lead Capture */}
-            <section className="hero-section" id="overview">
+            <section className={`hero-section ${program.slug === 'robotics-for-all' ? 'hero-robotics' :
+                program.slug === 'personality-softskill-development' ? 'hero-softskills' :
+                    program.slug === 'digital-marketing-masterprogram' ? 'hero-digital-marketing' :
+                        program.slug === 'data-science-analytics' ? 'hero-data-science' :
+                            program.slug === 'masters-ethical-hacking' ? 'hero-masters' :
+                                program.slug === 'graduate-cybersecurity' ? 'hero-graduate' :
+                                    program.slug === 'masterclass-ethical-hacking-ceh-v13' ? 'hero-ceh-master' : ''
+                }`} id="overview">
                 <div className="hero-container">
                     <div className="hero-content">
 

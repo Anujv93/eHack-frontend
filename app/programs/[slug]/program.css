@@ -4770,3 +4770,205 @@ p {
         transform: rotate(10deg) translateX(35px) translateY(8px);
     }
 }
+/* Robotics Hero Section Specific Styles */
+.hero-robotics {
+    background-image: url('/images/programs/robotics-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-robotics::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.90);
+    z-index: 1;
+    background-image: none !important;
+    animation: none;
+}
+
+.hero-robotics .hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-robotics .hero-title {
+    color: var(--black);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Soft Skills Hero Section Specific Styles */
+.hero-softskills {
+    background-image: url('/images/programs/softskills-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-softskills::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.90);
+    z-index: 1;
+    background-image: none !important;
+    animation: none;
+}
+
+.hero-softskills .hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-softskills .hero-title {
+    color: var(--black);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Digital Marketing Hero Section Specific Styles */
+.hero-digital-marketing {
+    background-image: url('/images/programs/digital-marketing-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-digital-marketing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.90);
+    z-index: 1;
+    background-image: none !important;
+    animation: none;
+}
+
+.hero-digital-marketing .hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-digital-marketing .hero-title {
+    color: var(--black);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Data Science Hero Section Specific Styles */
+.hero-data-science {
+    background-image: url('/images/programs/data-science-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-data-science::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.90);
+    z-index: 1;
+    background-image: none !important;
+    animation: none;
+}
+
+.hero-data-science .hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-data-science .hero-title {
+    color: var(--black);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Masters Program Hero Section Specific Styles */
+.hero-masters {
+    background-image: url('/images/programs/masters-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-masters::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.90);
+    z-index: 1;
+    background-image: none !important;
+    animation: none;
+}
+
+.hero-masters .hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-masters .hero-title {
+    color: var(--black);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Graduate Program Hero Section Specific Styles */
+.hero-graduate {
+    background-image: url('/images/programs/graduate-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-graduate::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.90);
+    z-index: 1;
+    background-image: none !important;
+    animation: none;
+}
+
+.hero-graduate .hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-graduate .hero-title {
+    color: var(--black);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* CEH Master Program Hero Section Specific Styles */
+.hero-ceh-master {
+    background-image: url('/images/programs/ceh-master-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-ceh-master::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.90);
+    z-index: 1;
+    background-image: none !important;
+    animation: none;
+}
+
+.hero-ceh-master .hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-ceh-master .hero-title {
+    color: var(--black);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
