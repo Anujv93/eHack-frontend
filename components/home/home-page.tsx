@@ -661,8 +661,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                     </div>
                     <div className={styles.ribbonsGrid}>
                         <div className={styles.ribbonGridItem}>
-                            <div className={`${styles.ribbonTitleStrip} ${styles.csrTitleStrip}`}>Cyber Literacy | AI Awareness </div>
+                            <div className={`${styles.ribbonTitleStrip} ${styles.csrTitleStrip}`}>Corporate Social Responsibility </div>
                             <Link href="/csr" className={`${styles.ribbonCard} ${styles.csrRibbon}`}>
+                                <span className={styles.ribbonBadge}>Cyber Literacy | AI Awareness</span>
                                 <div className={styles.ribbonImageWrapper}>
                                     <div className={styles.floatingImage}>
                                         <img
@@ -684,8 +685,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         </div>
 
                         <div className={styles.ribbonGridItem}>
-                            <div className={`${styles.ribbonTitleStrip} ${styles.franchiseTitleStrip}`}>Collaborative Growth</div>
+                            <div className={`${styles.ribbonTitleStrip} ${styles.franchiseTitleStrip}`}>Franchise Opportunities</div>
                             <Link href="/franchise" className={`${styles.ribbonCard} ${styles.franchiseRibbon}`}>
+                                <span className={styles.ribbonBadge}>Collaborative Growth</span>
                                 <div className={styles.ribbonImageWrapper}>
                                     <div className={styles.floatingImage}>
                                         <img
