@@ -652,8 +652,12 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
 
             {/* Ribbons Section */}
-            <section style={{ borderBottom: 'solid 2px orange', padding: '2rem 0' }}>
+            <section style={{ borderBottom: 'solid 2px orange', padding: '2rem 0', borderTop: 'solid 2px orange', marginTop: '2rem' }}>
                 <div className={styles.container}>
+                    <div className="cert-header" style={{ marginBottom: '3rem' }}>
+                        <h2 className="cert-title">Social Impact & <span className="cert-title-gradient">Strategic Growth</span></h2>
+                        <p className="cert-subtitle">Driving positive change through cyber literacy while expanding our global footprint through strategic partnerships.</p>
+                    </div>
                     <div className={styles.ribbonsGrid}>
                         <div className={styles.ribbonGridItem}>
                             <div className={`${styles.ribbonTitleStrip} ${styles.csrTitleStrip}`}>Cyber Literacy | AI Awareness </div>
