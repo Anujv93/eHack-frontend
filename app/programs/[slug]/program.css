@@ -1,5 +1,5 @@
 /* ============================================
-   eHack Academy - Program Page Styles
+eHack Academy - Program Page Styles
    Swiss Design System - Minimal & Clean
    ============================================ */
 
@@ -549,6 +549,11 @@
 .schedule-bar {
     background: linear-gradient(90deg, #0a1628 0%, #0d2137 50%, #0a1628 100%);
     padding: var(--space-4) var(--space-6);
+}
+
+.schedule-badge {
+    color: var(--accent, #f7931e);
+    font-weight: 700;
 }
 
 .banner-container {
