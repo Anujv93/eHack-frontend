@@ -4908,7 +4908,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.90);
+    background: #ffffff91;
     z-index: 1;
     background-image: none !important;
     animation: none !important;
