@@ -202,7 +202,7 @@
 }
 
 .footer-logo-global {
-    height: 75px;
+    height: 70px;
     width: auto;
     object-fit: contain;
 }
@@ -817,6 +817,17 @@
     .trust-badge span {
         font-size: 0.75rem;
     }
+
+    .footer-initiative-strip .parent-brand-text {
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+    }
+
+    .footer-logo-global,
+    .footer-logo {
+        height: 50px;
+        width: auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -835,8 +846,10 @@
         height: 24px;
     }
 
+    .footer-logo-global,
     .footer-logo {
-        height: 40px;
+        height: 35px;
+        width: auto;
     }
 
     .footer-description {
@@ -877,5 +890,12 @@
 
     .footer-legal-links a {
         font-size: 0.8125rem;
+    }
+
+    .footer-initiative-strip .parent-brand-text {
+        font-size: 0.75rem;
+        /* Decreased size */
+        line-height: 1.4;
+        letter-spacing: 0.05em;
     }
 }
