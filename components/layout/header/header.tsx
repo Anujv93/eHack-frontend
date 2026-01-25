@@ -262,7 +262,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/data-science"
+                                                    href="/programs/data-science-analytics"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/images/datascience.jpeg')` }}
@@ -274,7 +274,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/robotics-iot"
+                                                    href="/programs/robotics-for-all"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/images/robotics.jpeg')` }}
@@ -286,7 +286,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/digital-marketing"
+                                                    href="/programs/digital-marketing-masterprogram"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/images/social-media-marketing.jpg')` }}
@@ -298,7 +298,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/personality-softskills"
+                                                    href="/programs/personality-softskill-development"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/Personality-and-Softskill-Development.png')` }}
@@ -798,19 +798,19 @@ export default function Header({ partners, courses }: HeaderProps) {
                                     <span className="cat-icon">🛡️</span>
                                     <span className="cat-name">Cybersecurity Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/data-science" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/data-science-analytics" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">📊</span>
                                     <span className="cat-name">Data Science Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/robotics-iot" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/robotics-for-all" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">🤖</span>
                                     <span className="cat-name">Robotics & IoT Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/digital-marketing" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/digital-marketing-masterprogram" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">📈</span>
                                     <span className="cat-name">Digital Marketing Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/personality-softskills" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/personality-softskill-development" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">🎯</span>
                                     <span className="cat-name">Personality & Soft Skills</span>
                                 </Link>
