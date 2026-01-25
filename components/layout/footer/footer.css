@@ -378,7 +378,7 @@
 }
 
 .partner-logo-item img {
-    height: 32px;
+    height: 45px;
     width: auto;
     object-fit: contain;
     opacity: 0.9;
@@ -386,7 +386,7 @@
 
 .partner-logo-item .kennedy-logo {
     filter: brightness(0) invert(1);
-    height: 50px;
+    height: 45px;
 }
 
 .partner-logo-item span {
@@ -885,7 +885,7 @@
     }
 
     .footer-bottom-left p {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
     }
 
     .footer-legal-links a {
@@ -893,7 +893,7 @@
     }
 
     .footer-initiative-strip .parent-brand-text {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
         /* Decreased size */
         line-height: 1.4;
         letter-spacing: 0.05em;

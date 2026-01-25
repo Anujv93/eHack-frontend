@@ -184,7 +184,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {/* 3. SCHEDULE BAR */}
             <section className="schedule-bar">
                 <div className="banner-container">
-                    <span className="cert-badge">Schedule Options</span>
+                    <span className="schedule-badge">Schedule Options</span>
                     <span className="cert-text">{program.schedule}</span>
                 </div>
             </section>
