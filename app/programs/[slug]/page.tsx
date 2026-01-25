@@ -9,6 +9,7 @@ import './program.css';
 import PlacementSection from '@/components/home/placement-section';
 import { ProgramLabsWrapper } from '@/components/global/certificate-labs/ProgramLabsWrapper';
 import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
+import ProgramToolsSection from '@/components/programs/program-tools-section';
 
 // Navigation sections configuration
 const NAV_SECTIONS = [
@@ -365,6 +366,11 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
                 </div>
             </section>
+
+            {/* Program Tools Section - Data Science Only */}
+            {program.slug === 'data-science-analytics' && (
+                <ProgramToolsSection />
+            )}
 
             {/* 12. CURRICULUM SECTION - Modern Redesign */}
             <section className="curriculum-section-modern border-bottom" id="curriculum">
