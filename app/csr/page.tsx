@@ -12,20 +12,110 @@ import {
     Lock,
     BarChart3,
     Target,
-    Building
+    Building,
+    Phone
 } from 'lucide-react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+
+const NAV_SECTIONS = [
+    { id: 'mission', label: 'Our Mission' },
+    { id: 'impact', label: 'Impact' },
+    { id: 'initiatives', label: 'Initiatives' },
+    { id: 'partners', label: 'Partners' },
+    { id: 'corporate', label: 'Corporate' },
+    { id: 'roadmap', label: 'Roadmap' },
+];
 
 export default function CSRPage() {
+    const [activeSection, setActiveSection] = useState('mission');
+    const [showStickyNav, setShowStickyNav] = useState(false);
+    const stickyNavRef = useRef<HTMLDivElement>(null);
+
+    // Handle scroll to update active section and sticky nav visibility
+    useEffect(() => {
+        const handleScroll = () => {
+            // Show sticky nav after scrolling past the header (approximately 400px)
+            const scrollY = window.scrollY;
+            setShowStickyNav(scrollY > 400);
+
+            // Find which section is currently in view
+            const sectionElements = NAV_SECTIONS.map(section => ({
+                id: section.id,
+                element: document.getElementById(section.id),
+            })).filter(s => s.element);
+
+            const viewportHeight = window.innerHeight;
+            const offset = 150; // Account for sticky nav height
+
+            for (let i = sectionElements.length - 1; i >= 0; i--) {
+                const { id, element } = sectionElements[i];
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= offset + viewportHeight * 0.3) {
+                        setActiveSection(id);
+                        break;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Initial check
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Smooth scroll to section
+    const scrollToSection = useCallback((sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const offset = 80; // Height of sticky nav
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }, []);
+
     return (
         <div className="csr-page-wrapper">
             <CertificateHeader
                 title="Corporate Social Responsibility"
                 subtitle="Empowering Society Through Cybersecurity, Employability & Emerging Technologies"
-                backgroundImage="/images/cybersecurity.jpg"
+                backgroundImage="/images/csr-banner-image.jpg"
             />
 
+            {/* STICKY SECTION NAVIGATION */}
+            <nav
+                ref={stickyNavRef}
+                className={`sticky-section-nav ${showStickyNav ? 'visible' : ''}`}
+            >
+                <div className="sticky-nav-container">
+                    <div className="sticky-nav-links">
+                        {NAV_SECTIONS.map((section) => (
+                            <button
+                                key={section.id}
+                                className={`sticky-nav-link ${activeSection === section.id ? 'active' : ''}`}
+                                onClick={() => scrollToSection(section.id)}
+                            >
+                                {section.label}
+                            </button>
+                        ))}
+                    </div>
+                    <div className="sticky-nav-cta">
+                        <a href="tel:+919886035330" className="sticky-nav-call-btn">
+                            <Phone size={16} />
+                            <span>Call Now</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
             {/* Mission Section */}
-            <section className="csr-mission-section">
+            <section id="mission" className="csr-mission-section">
                 <div className="container">
                     <div className="csr-mission-grid">
                         <div className="csr-mission-image-wrapper">
@@ -52,7 +142,7 @@ export default function CSRPage() {
             </section>
 
             {/* Impact Stats */}
-            <section className="impact-stats-section">
+            <section id="impact" className="impact-stats-section">
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">OUR IMPACT</span>
@@ -86,7 +176,7 @@ export default function CSRPage() {
             </section>
 
             {/* Focus Areas */}
-            <section className="focus-areas-section">
+            <section id="initiatives" className="focus-areas-section">
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">FOCUS AREAS</span>
@@ -132,7 +222,7 @@ export default function CSRPage() {
             </section>
 
             {/* Institutions Served */}
-            <section className="institutions-section">
+            <section id="partners" className="institutions-section">
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">INSTITUTIONS WE SERVE</span>
@@ -241,7 +331,7 @@ export default function CSRPage() {
             </section>
 
             {/* Corporate Engagements */}
-            <section className="corporate-section">
+            <section id="corporate" className="corporate-section">
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">CORPORATE PARTNERSHIPS</span>
@@ -286,7 +376,7 @@ export default function CSRPage() {
             </section>
 
             {/* Roadmap 2026-2028 */}
-            <section className="roadmap-section">
+            <section id="roadmap" className="roadmap-section">
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">FUTURE VISION</span>

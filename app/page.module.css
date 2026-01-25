@@ -2026,6 +2026,7 @@
 
 .franchiseRibbon .ribbonTitle {
     color: #0f172a;
+    font-weight: 900;
 }
 
 .ribbonText {
@@ -2040,8 +2041,9 @@
 }
 
 .franchiseRibbon .ribbonText {
-    color: #334155;
-    font-weight: 500;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 1.15rem;
 }
 
 .ribbonAction {
@@ -2059,6 +2061,7 @@
 
 .franchiseRibbon .ribbonAction {
     color: #0f172a;
+    font-weight: 800;
 }
 
 .ribbonCard:hover .ribbonAction {
