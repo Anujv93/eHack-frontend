@@ -375,14 +375,24 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                             <span className="curriculum-eyebrow">LEARNING PATH</span>
                             <h2 className="curriculum-title-modern">
                                 Your Journey to Becoming a<br />
-                                <span className="text-accent">{programType === 'digital-marketing' ? 'Digital Marketing Expert' : programType === 'robotics' ? 'Robotics Engineer' : 'Cybersecurity Professional'}</span>
+                                <span className="text-accent">
+                                    {program.category === 'digital-marketing' ? 'Digital Marketing Expert' :
+                                        program.category === 'robotics-iot' ? 'Robotics Engineer' :
+                                            program.category === 'data-science' ? 'Data Science Professional' :
+                                                program.category === 'personality-softskills' ? 'Corporate Professional' :
+                                                    'Cybersecurity Professional'}
+                                </span>
                             </h2>
                             <p className="curriculum-subtitle-modern">
-                                {programType === 'digital-marketing'
+                                {program.category === 'digital-marketing'
                                     ? 'A structured learning path designed by industry experts to take you from beginner to job-ready.'
-                                    : programType === 'robotics'
+                                    : program.category === 'robotics-iot'
                                         ? 'A hands-on learning journey designed for absolute beginners.'
-                                        : 'A structured learning path taking you from fundamentals to advanced penetration testing with globally recognized certifications.'
+                                        : program.category === 'data-science'
+                                            ? 'Master data analysis, machine learning, and AI with industry-relevant projects.'
+                                            : program.category === 'personality-softskills'
+                                                ? 'Enhance your communication and soft skills to excel in your career.'
+                                                : 'A structured learning path taking you from fundamentals to advanced penetration testing with globally recognized certifications.'
                                 }
                             </p>
                         </div>
