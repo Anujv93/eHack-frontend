@@ -804,10 +804,11 @@ eHack Academy - Program Page Styles
     width: 100%;
 }
 
+/* 
 .certificates-gallery.count-1 .certificate-img,
 .certificates-gallery:has(.certificate-image-card:only-child) .certificate-img {
     height: 350px;
-}
+} */
 
 /* Center align section content when there's only 1 certificate */
 .credentials-wrapper:has(.certificates-gallery.count-1) .credentials-title,
@@ -3218,6 +3219,10 @@ eHack Academy - Program Page Styles
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
 .btn-enroll-primary:hover {
@@ -3882,8 +3887,8 @@ eHack Academy - Program Page Styles
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.15em;
-    color: var(--accent);
-    background: var(--accent-light);
+    color: var(--white);
+    background: var(--accent);
     padding: 8px 16px;
     border-radius: 50px;
     margin-bottom: var(--space-4);
@@ -4985,4 +4990,24 @@ eHack Academy - Program Page Styles
 .hero-ceh-master .hero-title {
     color: var(--black);
     text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 480px) {
+    .curr-stat-modern {
+        padding: 0.5rem;
+    }
+
+    .pricing-container-full {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .pricing-header {
+        padding: 0;
+        margin: 0;
+    }
+
+    .btn-enroll-primary {
+        padding: 8px 16px;
+    }
 }
