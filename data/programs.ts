@@ -1087,9 +1087,16 @@ export const programs = [
             "Power BI Developer", "Data Science Associate", "Applied Data Scientist", "Business Intelligence Analyst"
         ],
         pricing: {
-            original: "₹1,50,000",
-            discounted: "₹99,000",
-            emi: "No Cost EMI available"
+            original: "₹2,00,000",
+            discounted: "₹1,10,000",
+            emi: "₹18,333/month",
+            applicationFee: "₹1,000",
+            admissionFee: "₹1,10,000",
+            companyEMI: "₹1,30,000",
+            upfrontPercentage: "50%",
+            upfrontAmount: "₹65,000",
+            emiCount: 4,
+            emiAmount: "₹18,750"
         },
         partnerLogos: [
             "/images/partners/python.png",

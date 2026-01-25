@@ -1,9 +1,10 @@
 .section {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background-color: var(--white, #ffffff);
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid var(--gray-200, #e5e7eb);
+    border-top: 4px solid var(--accent, #ea580c);
 }
 
 .container {
@@ -24,13 +25,19 @@
 }
 
 .eyebrow {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
     font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--accent, #ea580c);
+    background: var(--accent, #ea580c);
+    color: var(--white, #ffffff);
     margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    width: 200px;
 }
 
 .title {
@@ -71,7 +78,7 @@
 
 .card {
     background: var(--white, #ffffff);
-    border: 1px solid var(--gray-200, #e5e7eb);
+    border: 1px solid var(--accent, #ea580c);
     border-radius: 12px;
     padding: 1.5rem;
     display: flex;
