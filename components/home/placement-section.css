@@ -576,4 +576,8 @@
         width: 120px;
         height: 50px;
     }
+
+    .transformation-path .company-text-wrapper {
+        width: 0;
+    }
 }
