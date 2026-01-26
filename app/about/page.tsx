@@ -276,7 +276,7 @@ export default function AboutPage() {
                         <p className="section-subtitle">We don't just teach technology; we shape the future leaders of the digital world through innovation and global connection.</p>
                     </div>
 
-                    <div className="features-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+                    <div className="features-grid features-grid-2col">
                         <div className="feature-card">
                             <img src="/images/day-office-travel-agency.jpg" alt="Global Presence" className="feature-card-img" />
                             <h3 className="feature-title">Global Presence</h3>

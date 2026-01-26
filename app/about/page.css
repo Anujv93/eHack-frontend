@@ -305,6 +305,10 @@
     gap: 2.5rem;
 }
 
+.features-grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .feature-card {
     background: #F8FAFC;
     border-radius: 16px;
