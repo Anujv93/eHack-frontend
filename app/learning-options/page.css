@@ -212,7 +212,7 @@
     grid-template-columns: 1fr 360px;
     gap: 40px;
     background: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #FF6B00;
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
@@ -287,7 +287,7 @@
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 32px;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #FF6B00;
 }
 
 .webinar-featured-image img {
@@ -380,7 +380,7 @@
 .info-card,
 .best-for-card {
     background: #F8FAFC;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #FF6B00;
     border-radius: 14px;
     padding: 24px;
 }
@@ -460,7 +460,7 @@
     display: flex;
     gap: 20px;
     background: linear-gradient(135deg, rgba(255, 107, 0, 0.04), rgba(255, 107, 0, 0.01));
-    border: 1px solid rgba(255, 107, 0, 0.1);
+    border: 1px solid #FF6B00;
     border-radius: 14px;
     padding: 20px;
     transition: all 0.3s ease;
@@ -537,7 +537,7 @@
 /* Contact CTA Section */
 .contact-cta-section {
     background: #F8FAFC;
-    padding: 60px 0;
+    padding: 20px 0;
 }
 
 .contact-cta-box {
@@ -546,7 +546,7 @@
     justify-content: space-between;
     gap: 40px;
     background: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #FF6B00;
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
