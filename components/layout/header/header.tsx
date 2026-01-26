@@ -433,7 +433,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         {corporateServices.map((service) => (
                                             <Link
                                                 key={service.id}
-                                                href={`/services/${service.id}`}
+                                                href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
                                                 className="service-dropdown-item"
                                                 onClick={() => setServicesMenuOpen(false)}
                                             >
@@ -451,7 +451,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         {forensicsServices.map((service) => (
                                             <Link
                                                 key={service.id}
-                                                href={`/services/${service.id}`}
+                                                href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
                                                 className="service-dropdown-item"
                                                 onClick={() => setServicesMenuOpen(false)}
                                             >
@@ -469,7 +469,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         {complianceServices.map((service) => (
                                             <Link
                                                 key={service.id}
-                                                href={`/services/${service.id}`}
+                                                href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
                                                 className="service-dropdown-item"
                                                 onClick={() => setServicesMenuOpen(false)}
                                             >
@@ -479,7 +479,8 @@ export default function Header({ partners, courses }: HeaderProps) {
                                         ))}
                                     </div>
                                     <Link
-                                        href="/services"
+                                        href="https://www.ehackglobaltechnology.com/services/web-application-security"
+                                        target="_blank"
                                         className="services-view-all"
                                         onClick={() => setServicesMenuOpen(false)}
                                     >
@@ -654,19 +655,19 @@ export default function Header({ partners, courses }: HeaderProps) {
                         </button>
 
                         <div className="mobile-nav-dropdown-content">
-                            <Link href="/services" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="https://www.ehackglobaltechnology.com/services/web-application-security" target="_blank" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 All Services
                             </Link>
-                            <Link href="/services/web-application-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="https://www.ehackglobaltechnology.com/services/web-application-security" target="_blank" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Web Application Security
                             </Link>
-                            <Link href="/services/infrastructure-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="https://www.ehackglobaltechnology.com/services/infrastructure-security" target="_blank" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Infrastructure Security
                             </Link>
-                            <Link href="/services/malware-analysis" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="https://www.ehackglobaltechnology.com/services/malware-analysis" target="_blank" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Malware Analysis
                             </Link>
-                            <Link href="/services/digital-forensics" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                            <Link href="https://www.ehackglobaltechnology.com/services/digital-forensics" target="_blank" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Digital Forensics
                             </Link>
                         </div>
