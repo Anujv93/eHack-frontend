@@ -1202,24 +1202,18 @@
         font-size: 0.875rem;
     }
 
+    /* Restoring horizontal layout for 1366px screens */
     .mega-menu {
-        width: 95vw;
-        max-width: 700px;
+        width: calc(100vw - 40px);
+        max-width: 1280px;
         padding: 1.5rem;
     }
 
-    .mega-menu-inner {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+    /* Use default grid layout or max-width: 1280px layout */
 
-    .mega-menu-kennedy {
-        border-left: none;
-        border-top: 1px solid var(--neutral-200);
-        padding-left: 0;
-        padding-top: 1.5rem;
-        margin-top: 1.5rem;
-    }
+    /* 
+    .mega-menu-kennedy styles removed to restore left border and remove top margin 
+    */
 
     .mega-menu-heading {
         font-size: 0.625rem;
