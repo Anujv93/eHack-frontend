@@ -84,6 +84,14 @@
     font-size: 16px;
 }
 
+.border-bottom {
+    border-bottom: 3px solid var(--accent, #DF6718);
+}
+
+.border-all {
+    border: 3px solid var(--accent, #DF6718);
+}
+
 .kennedy-page-wrapper {
     font-family: var(--font-family);
     font-size: var(--font-size-base);

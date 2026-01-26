@@ -311,7 +311,7 @@ export default function IntegratedBSCSMSCSPage() {
             />
 
             {/* Hero Section */}
-            <section className="program-hero">
+            <section className="program-hero border-bottom">
                 <div className="hero-grid-bg"></div>
                 <div className="hero-container">
                     <Link href="/kennedy-university" className="back-link">
@@ -391,7 +391,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* Program Overview */}
-            <section className="program-overview" id="overview">
+            <section className="program-overview border-bottom" id="overview">
                 <div className="section-container">
                     <h2 className="section-title">Program <span className="accent">Overview</span></h2>
                     <div className="overview-grid">
@@ -416,7 +416,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* Curriculum Section */}
-            <section className="curriculum-section" id="curriculum">
+            <section className="curriculum-section border-bottom" id="curriculum">
                 <div className="section-container">
                     <h2 className="section-title">Program <span className="accent">Curriculum</span></h2>
                     <p className="section-subtitle">A comprehensive 4-part learning path covering 180 credits over 15 months.</p>
@@ -496,7 +496,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* Credit Summary */}
-            <section className="credit-summary-section" id="credits">
+            <section className="credit-summary-section border-bottom" id="credits">
                 <div className="section-container">
                     <h2 className="section-title">Credit <span className="accent">Summary</span></h2>
                     <div className="credit-summary-grid">
@@ -530,7 +530,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* Degrees Awarded Section */}
-            <section className="degrees-awarded-section" id="degrees">
+            <section className="degrees-awarded-section border-bottom" id="degrees">
                 <div className="section-container">
                     <div className="degrees-card">
                         <h2>Degrees Awarded – Kennedy University</h2>
@@ -572,7 +572,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* Degree Award Criteria */}
-            <section className="criteria-section" id="criteria">
+            <section className="criteria-section border-bottom" id="criteria">
                 <div className="section-container">
                     <div className="criteria-card">
                         <h2>Degree Award Criteria</h2>
@@ -606,7 +606,7 @@ export default function IntegratedBSCSMSCSPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="cta-section" id="apply">
+            <section className="cta-section border-bottom" id="apply">
                 <div className="section-container">
                     <div className="cta-content">
                         <h2>Get Dual Degrees in 15 Months</h2>

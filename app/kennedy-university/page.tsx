@@ -24,7 +24,7 @@ export default function KennedyUniversityPage() {
             />
 
             {/* Hero Section */}
-            <section className="hero-section">
+            <section className="hero-section ">
 
                 <div className="hero-container">
                     {/* Left Content */}
@@ -70,7 +70,7 @@ export default function KennedyUniversityPage() {
             </section>
 
             {/* Combined Dark Section: Stats + Partnership */}
-            <section className="partnership-highlight">
+            <section className="partnership-highlight border-bottom">
                 {/* Floating Stats Card */}
                 <div className="stats-container">
                     <div className="stat-item">
@@ -168,7 +168,7 @@ export default function KennedyUniversityPage() {
             </section>
 
             {/* Programs Section - Card Layout */}
-            <section className="programs-section" id="programs">
+            <section className="programs-section border-bottom" id="programs">
                 <div className="section-container">
                     <span className="section-badge">OUR PROGRAMS</span>
                     <h2 className="section-title">Choose Your <span className="text-accent">Cybersecurity</span> Pathway</h2>
@@ -292,7 +292,7 @@ export default function KennedyUniversityPage() {
             </section>
 
             {/* Partners Section */}
-            <section className="partners-section" id="partners">
+            <section className="partners-section border-bottom" id="partners">
                 <div className="section-container">
                     <span className="section-badge">OUR PARTNERS</span>
                     <h2 className="section-title">Academic &amp; <span className="text-accent">Industry Partners</span></h2>
@@ -364,7 +364,7 @@ export default function KennedyUniversityPage() {
             </section>
 
             {/* Learning Experience Section */}
-            <section className="experience-section" id="experience">
+            <section className="experience-section border-bottom" id="experience">
                 <div className="experience-wrapper">
                     <div className="section-container">
                         <span className="section-badge">LEARNING EXPERIENCE</span>
@@ -456,7 +456,7 @@ export default function KennedyUniversityPage() {
             </section>
 
             {/* Career Outcomes Section */}
-            <section className="careers-section" id="careers">
+            <section className="careers-section border-bottom" id="careers">
                 <div className="section-container">
                     <span className="section-badge">CAREER OUTCOMES</span>
                     <h2 className="section-title">Launch Your <span className="text-accent">Cybersecurity Career</span></h2>
@@ -503,9 +503,9 @@ export default function KennedyUniversityPage() {
             </section>
 
             {/* Lead Capture Section */}
-            <section className="apply-section" id="apply">
-                <div className="apply-wrapper">
-                    <div className="section-container">
+            <section className="apply-section " id="apply">
+                <div className="apply-wrapper border-all">
+                    <div className="section-container ">
                         <div className="apply-grid">
                             <div className="apply-content">
                                 <h2>Ready to Start Your <span className="text-accent">Cybersecurity Journey</span>?</h2>

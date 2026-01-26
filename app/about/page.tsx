@@ -135,7 +135,7 @@ export default function AboutPage() {
         <>
             {/* Hero Section */}
             <section className="about-hero-light">
-                <div className="container">
+                <div className="about-container">
                     <div className="hero-content-compact">
                         <span className="hero-badge-light">ABOUT US</span>
                         <h1 className="hero-title-light">Global Leaders in Technology Education and Corporate Solutions</h1>
@@ -167,11 +167,11 @@ export default function AboutPage() {
 
             {/* Mission Section */}
             <section id="mission" className="mission-section">
-                <div className="container">
+                <div className="about-container">
                     <div className="mission-content-split">
                         <div className="mission-text-column">
                             <span className="section-badge ">OUR MISSION</span>
-                            <h2 className="section-title">Bridging Technology & Innovation</h2>
+                            <h2 className="about-section-title">Bridging Technology & Innovation</h2>
                             <p className="mission-text">
                                 At Ehack, we are committed to bridging emerging technologies with high-impact learning and corporate innovation. Our mission is to empower learners, professionals, and enterprises with the skills, knowledge, and tools they need to thrive in a rapidly evolving digital world.
                             </p>
@@ -188,7 +188,7 @@ export default function AboutPage() {
 
             {/* eHack Promise Section */}
             <section className="promise-section">
-                <div className="container">
+                <div className="about-container">
                     <h2 className="promise-main-title">What is the <span style={{ color: '#FF6B00' }}>eHack Promise?</span></h2>
 
                     <div className="promise-grid">
@@ -231,7 +231,7 @@ export default function AboutPage() {
 
             {/* Philosophy Section */}
             <section id="philosophy" className="philosophy-section">
-                <div className="container">
+                <div className="about-container">
                     <div className="philosophy-header">
                         <span className="philosophy-capsule">OUR PHILOSOPHY</span>
                         <p className="philosophy-intro">A holistic approach to empowering the digital future through technological excellence and education.</p>
@@ -273,10 +273,10 @@ export default function AboutPage() {
 
             {/* What We Do Section */}
             <section id="what-we-do" className="what-we-do-section">
-                <div className="container">
+                <div className="about-container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">OUR SERVICES</span>
-                        <h2 className="section-title">Empowering <span style={{ color: '#FF6B00' }}>Digital</span> Excellence</h2>
+                        <h2 className="about-section-title">Empowering <span style={{ color: '#FF6B00' }}>Digital</span> Excellence</h2>
                     </div>
 
                     <div className="what-we-do-grid">
@@ -317,11 +317,11 @@ export default function AboutPage() {
 
             {/* Why Choose Us Section */}
             <section id="why-choose-us" className="why-choose-section">
-                <div className="container">
+                <div className="about-container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">WHY CHOOSE US</span>
-                        <h2 className="section-title">Defining <span style={{ color: '#FF6B00' }}>Excellence</span></h2>
-                        <p className="section-subtitle">We don't just teach technology; we shape the future leaders of the digital world through innovation and global connection.</p>
+                        <h2 className="about-section-title">Defining <span style={{ color: '#FF6B00' }}>Excellence</span></h2>
+                        <p className="about-section-subtitle">We don't just teach technology; we shape the future leaders of the digital world through innovation and global connection.</p>
                     </div>
 
                     <div className="features-grid features-grid-2col">
@@ -362,10 +362,10 @@ export default function AboutPage() {
 
             {/* Leadership Section */}
             <section id="leadership" className="leadership-section">
-                <div className="container">
+                <div className="about-container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">LEADERSHIP</span>
-                        <h2 className="section-title">From the <span style={{ color: '#FF6B00' }}>Founder</span></h2>
+                        <h2 className="about-section-title">From the <span style={{ color: '#FF6B00' }}>Founder</span></h2>
                     </div>
 
                     <div className="founder-card">
@@ -408,9 +408,9 @@ export default function AboutPage() {
 
             {/* Management & Advisory Board */}
             <section id="advisory" className="advisory-section">
-                <div className="container">
+                <div className="about-container">
                     <div className="section-header">
-                        <h2 className="section-title">Management & Advisory Board</h2>
+                        <h2 className="about-section-title">Management & Advisory Board</h2>
                     </div>
                 </div>
 
@@ -544,7 +544,7 @@ export default function AboutPage() {
 
             {/* Tagline Banner */}
             <div className="tagline-banner">
-                <div className="container">
+                <div className="about-container">
                     <h2 className="tagline-text">
                         Ehack – Empowering <span>Skills</span>, Securing <span>Enterprises</span>, Enabling <span>Innovation</span>
                     </h2>
@@ -557,7 +557,7 @@ export default function AboutPage() {
                 <div className="contact-bg-pattern"></div>
                 <div className="contact-bg-gradient"></div>
 
-                <div className="container">
+                <div className="about-container">
                     {/* Section Header */}
                     <div className="contact-header">
                         <div className="contact-header-badge">
@@ -760,8 +760,8 @@ export default function AboutPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="cta-section">
-                <div className="container">
+            <section className="about-cta-section">
+                <div className="about-container">
                     <div className="cta-box">
                         <div className="cta-content">
                             <div className="cta-tagline-highlight">FOLLOW US JOB FOLLOWS YOU</div>

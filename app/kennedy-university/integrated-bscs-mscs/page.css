@@ -5,6 +5,10 @@
     background: #FFFFFF;
 }
 
+.border-bottom {
+    border-bottom: 3px solid var(--accent, #DF6718);
+}
+
 /* Hero Section */
 .program-detail-integrated .program-hero {
     position: relative;

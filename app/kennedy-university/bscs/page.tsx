@@ -203,7 +203,7 @@ export default function BSCSPage() {
             />
 
             {/* Hero Section */}
-            <section className="program-hero">
+            <section className="program-hero border-bottom">
 
                 <div className="hero-grid-bg"></div>
                 <div className="hero-container">
@@ -283,7 +283,7 @@ export default function BSCSPage() {
             </section>
 
             {/* Program Overview */}
-            <section className="program-overview" id="overview">
+            <section className="program-overview border-bottom" id="overview">
                 <div className="section-container">
                     <h2 className="section-title">Program <span className="accent">Overview</span></h2>
                     <div className="overview-grid">
@@ -308,7 +308,7 @@ export default function BSCSPage() {
             </section>
 
             {/* Curriculum Section */}
-            <section className="curriculum-section" id="curriculum">
+            <section className="curriculum-section border-bottom" id="curriculum">
                 <div className="section-container">
                     <h2 className="section-title">Program <span className="accent">Curriculum</span></h2>
                     <p className="section-subtitle">A structured learning path across 3 parts, covering 120 credits over 12 months.</p>
@@ -383,7 +383,7 @@ export default function BSCSPage() {
             </section>
 
             {/* Degree Award Criteria */}
-            <section className="criteria-section" id="criteria">
+            <section className="criteria-section border-bottom" id="criteria">
                 <div className="section-container">
                     <div className="criteria-card">
                         <h2>Degree Award Criteria – Kennedy University</h2>
@@ -417,7 +417,7 @@ export default function BSCSPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="cta-section" id="apply">
+            <section className="cta-section border-bottom" id="apply">
                 <div className="section-container">
                     <div className="cta-content">
                         <h2>Ready to Start Your Cybersecurity Career?</h2>
