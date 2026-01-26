@@ -663,17 +663,19 @@
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-    padding: 16px 20px;
+    padding: 0;
     display: flex;
-    align-items: center;
-    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
     cursor: pointer;
     z-index: 9990;
     /* Just below popup overlay */
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border-left: 5px solid #df6718;
+    border: 1px solid #E5E7EB;
     animation: bannerSlideIn 0.5s ease-out forwards;
-    max-width: 320px;
+    width: 260px;
+    overflow: hidden;
 }
 
 .franchise-sticky-banner:hover {
@@ -682,19 +684,24 @@
 }
 
 .franchise-banner-icon {
-    width: 44px;
-    height: 44px;
+    width: 100%;
+    height: 140px;
     background: #FFF4ED;
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #df6718;
     flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
 }
 
 .franchise-banner-content {
     flex: 1;
+    padding: 16px;
+    width: 100%;
+    text-align: left;
 }
 
 .franchise-banner-content h4 {
@@ -714,21 +721,22 @@
 
 .franchise-banner-close {
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: 8px;
+    right: 8px;
     width: 24px;
     height: 24px;
-    background: #FFF;
-    border: 1px solid #E5E7EB;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #6B7280;
     cursor: pointer;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.2s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    z-index: 20;
 }
 
 .franchise-sticky-banner:hover .franchise-banner-close {

@@ -144,13 +144,12 @@ export default function FranchisePopup() {
                         </svg>
                     </button>
                     <div className="franchise-banner-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 21V6.5C19 4.01472 16.9853 2 14.5 2C12.0147 2 10 4.01472 10 6.5V21M19 21H10M19 21H22M10 21H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M7 10H7.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M7 14H7.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M15 10H15.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M15 14H15.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        <Image
+                            src="/images/franchise-popup-image.jpg"
+                            alt="Franchise"
+                            fill
+                            style={{ objectFit: 'cover' }}
+                        />
                     </div>
                     <div className="franchise-banner-content">
                         <h4>Franchise Opportunity</h4>

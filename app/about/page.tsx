@@ -168,15 +168,63 @@ export default function AboutPage() {
             {/* Mission Section */}
             <section id="mission" className="mission-section">
                 <div className="container">
-                    <div className="mission-content">
-                        <span className="section-badge">OUR MISSION</span>
-                        <h2 className="section-title">Bridging Technology & Innovation</h2>
-                        <p className="mission-text">
-                            At Ehack, we are committed to bridging emerging technologies with high-impact learning and corporate innovation. Our mission is to empower learners, professionals, and enterprises with the skills, knowledge, and tools they need to thrive in a rapidly evolving digital world.
-                        </p>
-                        <p className="mission-text">
-                            We invite you to join a holistic ecosystem where technology meets learning, integrated with enterprise solutions and global knowledge empowerment.
-                        </p>
+                    <div className="mission-content-split">
+                        <div className="mission-text-column">
+                            <span className="section-badge ">OUR MISSION</span>
+                            <h2 className="section-title">Bridging Technology & Innovation</h2>
+                            <p className="mission-text">
+                                At Ehack, we are committed to bridging emerging technologies with high-impact learning and corporate innovation. Our mission is to empower learners, professionals, and enterprises with the skills, knowledge, and tools they need to thrive in a rapidly evolving digital world.
+                            </p>
+                            <p className="mission-text">
+                                We invite you to join a holistic ecosystem where technology meets learning, integrated with enterprise solutions and global knowledge empowerment.
+                            </p>
+                        </div>
+                        <div className="mission-image-column">
+                            <img src="/images/new-mission-aboutus.png" alt="Our Mission" className="mission-side-image" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* eHack Promise Section */}
+            <section className="promise-section">
+                <div className="container">
+                    <h2 className="promise-main-title">What is the <span style={{ color: '#FF6B00' }}>eHack Promise?</span></h2>
+
+                    <div className="promise-grid">
+                        <div className="promise-image-col">
+                            <img src="/images/ehack_promise_realistic.png" alt="eHack Team" className="promise-feature-img" />
+                        </div>
+                        <div className="promise-content-col">
+                            <div className="promise-card">
+                                <div className="promise-item">
+                                    <div className="promise-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <p>At eHack Academy, your success is our priority. That's why we offer our comprehensive <strong>Skill Certification Guarantee</strong>.</p>
+                                </div>
+
+                                <div className="promise-item">
+                                    <div className="promise-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <p>We believe true learning happens when skills meet opportunity. This guarantee ensures you receive the <strong style={{ color: '#FF6B00' }}>high-quality training and practical exposure</strong> you deserve.</p>
+                                </div>
+
+                                <div className="promise-item">
+                                    <div className="promise-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <p>If for any reason, you feel your learning gap isn't bridged, we promise to support you until you are <strong>industry-ready</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -233,8 +281,8 @@ export default function AboutPage() {
 
                     <div className="what-we-do-grid">
                         <div className="what-card">
-                            <h3>1. Learning & Training</h3>
-                            <p style={{ marginBottom: '1.5rem', color: '#64748B' }}>We provide industry-aligned programs that equip learners with future-ready skills.</p>
+                            <h3>1. Industry Ready Learning</h3>
+                            <p style={{ marginBottom: '1.5rem', color: '#cc680bee' }}>We provide industry-aligned programs that equip learners with future-ready skills.</p>
                             <ul className="what-list">
                                 <li>Advanced programs in Cybersecurity, Data Science, AI, Robotics, and Digital Marketing</li>
                                 <li>Globally recognized certifications and hands-on training</li>
@@ -249,7 +297,7 @@ export default function AboutPage() {
 
                         <div className="what-card">
                             <h3>2. Corporate & Technology Services</h3>
-                            <p style={{ marginBottom: '1.5rem', color: '#64748B' }}>Through Ehack Global Technology, we deliver enterprise-grade services.</p>
+                            <p style={{ marginBottom: '1.5rem', color: '#cc680bee' }}>Through Ehack Global Technology, we deliver enterprise-grade services.</p>
                             <ul className="what-list">
                                 <li>VAPT (Vulnerability Assessment & Penetration Testing)</li>
                                 <li>Digital Forensics & Incident Response</li>
@@ -635,14 +683,17 @@ export default function AboutPage() {
                                             <span className="status-indicator status-open"></span>
                                             Tuesday - Sunday
                                         </div>
-                                        <div className="hours-time">9:30 AM - 6:30 PM</div>
+                                        <div className="hours-time">9:00 AM - 9:00 PM</div>
                                     </div>
                                     <div className="hours-item hours-item-closed">
                                         <div className="hours-day">
-                                            <span className="status-indicator status-closed"></span>
+                                            <span className="status-indicator status-open"></span>
                                             Monday
                                         </div>
-                                        <div className="hours-time">Closed</div>
+                                        <div className="hours-time">
+                                            <span style={{ display: 'block', color: '#64748B', fontSize: '0.85rem' }}>Campus Closed</span>
+                                            <span style={{ color: '#16A34A', fontWeight: '600' }}>Sales Office Open</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -713,6 +764,7 @@ export default function AboutPage() {
                 <div className="container">
                     <div className="cta-box">
                         <div className="cta-content">
+                            <div className="cta-tagline-highlight">FOLLOW US JOB FOLLOWS YOU</div>
                             <h2 className="cta-title">Ready to Transform Your Career?</h2>
                             <p className="cta-subtitle">
                                 Join thousands of professionals who have advanced their careers with eHack Academy. Start your journey today!
