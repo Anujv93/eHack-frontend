@@ -12,11 +12,36 @@ export default function LearningOptionsPage() {
     const tabsPlaceholderRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // Handle URL hash for direct linking
-        if (window.location.hash) {
-            const hash = window.location.hash.substring(1);
-            setActiveTab(hash);
-        }
+        // Function to update active tab based on hash
+        const handleHashUpdate = () => {
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1);
+                // Update tab if hash exists and is not empty
+                if (hash) {
+                    setActiveTab(hash);
+
+                    // Scroll to top of tabs section if needed (optional UX improvement)
+                    // if (tabsWrapperRef.current) {
+                    //    tabsWrapperRef.current.scrollIntoView({ behavior: 'smooth' });
+                    // }
+                }
+            }
+        };
+
+        // Initial check
+        handleHashUpdate();
+
+        // Listen for events that might change the hash
+        window.addEventListener('hashchange', handleHashUpdate);
+        window.addEventListener('popstate', handleHashUpdate);
+
+        // Handle Next.js Link clicks which might not trigger hashchange 
+        // especially for same-page navigation
+        const handleGlobalClick = () => {
+            // Small delay to allow URL to update
+            setTimeout(handleHashUpdate, 100);
+        };
+        window.addEventListener('click', handleGlobalClick);
 
         // Scroll listener for sticky tabs
         const handleScroll = () => {
@@ -36,6 +61,9 @@ export default function LearningOptionsPage() {
         handleScroll(); // Check on mount
 
         return () => {
+            window.removeEventListener('hashchange', handleHashUpdate);
+            window.removeEventListener('popstate', handleHashUpdate);
+            window.removeEventListener('click', handleGlobalClick);
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
