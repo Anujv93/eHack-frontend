@@ -5010,4 +5010,8 @@ eHack Academy - Program Page Styles
     .btn-enroll-primary {
         padding: 8px 16px;
     }
+
+    .certificates-gallery.count-2 .certificate-img {
+        height: auto;
+    }
 }
