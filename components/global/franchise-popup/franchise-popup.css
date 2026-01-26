@@ -767,14 +767,44 @@
         right: 20px;
         left: 20px;
         max-width: none;
+        flex-direction: row;
+        align-items: center;
+        padding-right: 10px;
     }
 
     .franchise-banner-icon {
-        width: 36px;
-        height: 36px;
+        width: 80px;
+        height: 80px;
+        border-radius: 12px 0 0 12px;
+    }
+
+    .franchise-banner-content {
+        padding: 12px 16px;
     }
 
     .franchise-banner-content h4 {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        margin-bottom: 2px;
+        padding-right: 15px;
+    }
+
+    .franchise-banner-content p {
+        font-size: 0.8rem;
+    }
+
+    .franchise-banner-close {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        background: transparent;
+        box-shadow: none;
+        color: #9CA3AF;
+        width: 30px;
+        height: 30px;
+    }
+
+    .franchise-banner-close:hover {
+        background: rgba(0, 0, 0, 0.05);
+        color: #6B7280;
     }
 }
