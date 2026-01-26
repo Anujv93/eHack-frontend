@@ -7,28 +7,7 @@ import { Handshake } from 'lucide-react';
 import './header.css';
 import './header-search.css';
 
-// Corporate Services Data for dropdown
-const corporateServices = [
-    { id: 'web-application-security', title: 'Web Application ', icon: '🌐' },
-    { id: 'mobile-application-security', title: 'Mobile Application ', icon: '📱' },
-    { id: 'api-security', title: 'API', icon: '🔌' },
-    { id: 'secure-source-code-review', title: 'Secure Source Code Review', icon: '💻' },
-    { id: 'red-team-assessment', title: 'Red Team Assessment', icon: '🎯' },
-    { id: 'infrastructure-security', title: 'Infrastructure', icon: '🏗️' },
-    { id: 'thick-client-security', title: 'Thick Client', icon: '🖥️' },
-    { id: 'firewall-security', title: 'Firewall', icon: '🛡️' },
-];
 
-const forensicsServices = [
-    { id: 'malware-analysis', title: 'Malware Analysis & Root Cause Detection', icon: '🦠' },
-    { id: 'digital-forensics', title: 'Digital Forensics & Incident Response', icon: '🔍' },
-];
-
-const complianceServices = [
-    { id: 'gdpr-consulting', title: 'GDPR Consulting and Audit', icon: '🇪🇺' },
-    { id: 'pci-dss-compliance', title: 'PCI DSS Compliance Audit', icon: '💳' },
-    { id: 'iso-certification', title: 'ISO Certification Advisory', icon: '📋' },
-];
 
 interface Partner {
     id: number;
@@ -102,7 +81,7 @@ export default function Header({ partners, courses }: HeaderProps) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mobileMegaMenuOpen, setMobileMegaMenuOpen] = useState(false);
     const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
-    const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
+
     const [activePartner, setActivePartner] = useState<string | null>(
         allPartners.length > 0 ? allPartners[0].slug : null
     );
@@ -412,84 +391,9 @@ export default function Header({ partners, courses }: HeaderProps) {
                         </div>
                     </div>
 
-                    {/* Corporate Services Mega Menu Dropdown */}
-                    <div
-                        className={`services-dropdown-wrapper ${servicesMenuOpen ? 'open' : ''}`}
-                        onMouseEnter={() => setServicesMenuOpen(true)}
-                        onMouseLeave={() => setServicesMenuOpen(false)}
-                    >
-                        <button className="nav-link nav-dropdown-btn services-btn">
-                            Corporate Services
-                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
-                        <div className="services-dropdown-menu">
-                            <div className="services-dropdown-inner">
-                                {/* Security Assessment Services */}
-                                <div className="services-column">
-                                    <h4 className="services-column-title">Security Assessment</h4>
-                                    <div className="services-list">
-                                        {corporateServices.map((service) => (
-                                            <Link
-                                                key={service.id}
-                                                href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
-                                                className="service-dropdown-item"
-                                                onClick={() => setServicesMenuOpen(false)}
-                                            >
-                                                <span className="service-item-icon">{service.icon}</span>
-                                                <span className="service-item-title">{service.title}</span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Forensics & Malware Services */}
-                                <div className="services-column">
-                                    <h4 className="services-column-title">Forensics & Malware</h4>
-                                    <div className="services-list">
-                                        {forensicsServices.map((service) => (
-                                            <Link
-                                                key={service.id}
-                                                href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
-                                                className="service-dropdown-item"
-                                                onClick={() => setServicesMenuOpen(false)}
-                                            >
-                                                <span className="service-item-icon">{service.icon}</span>
-                                                <span className="service-item-title">{service.title}</span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Compliance Services */}
-                                <div className="services-column compliance-column">
-                                    <h4 className="services-column-title">Compliance Audit</h4>
-                                    <div className="services-list">
-                                        {complianceServices.map((service) => (
-                                            <Link
-                                                key={service.id}
-                                                href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
-                                                className="service-dropdown-item"
-                                                onClick={() => setServicesMenuOpen(false)}
-                                            >
-                                                <span className="service-item-icon">{service.icon}</span>
-                                                <span className="service-item-title">{service.title}</span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                    <Link
-                                        href="https://www.ehackglobaltechnology.com/services/web-application-security"
-                                        target="_blank"
-                                        className="services-view-all"
-                                        onClick={() => setServicesMenuOpen(false)}
-                                    >
-                                        View All Services →
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Link href="https://ehackglobaltechnology.com" className="nav-link" target="_blank">
+                        Corporate Services
+                    </Link>
 
                     <Link href="/codered" className="nav-link codered-link">
                         <span className="code-text">CODE</span>
@@ -642,36 +546,9 @@ export default function Header({ partners, courses }: HeaderProps) {
                         </div>
                     </div>
 
-                    {/* Services Dropdown */}
-                    <div className={`mobile-nav-dropdown ${mobileDropdown === 'services' ? 'open' : ''}`}>
-                        <button
-                            className="mobile-nav-dropdown-btn"
-                            onClick={() => toggleMobileDropdown('services')}
-                        >
-                            Corporate Services
-                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
-
-                        <div className="mobile-nav-dropdown-content">
-                            <Link href="https://www.ehackglobaltechnology.com/services/web-application-security" target="_blank" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                All Services
-                            </Link>
-                            <Link href="https://www.ehackglobaltechnology.com/services/web-application-security" target="_blank" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Web Application Security
-                            </Link>
-                            <Link href="https://www.ehackglobaltechnology.com/services/infrastructure-security" target="_blank" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Infrastructure Security
-                            </Link>
-                            <Link href="https://www.ehackglobaltechnology.com/services/malware-analysis" target="_blank" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Malware Analysis
-                            </Link>
-                            <Link href="https://www.ehackglobaltechnology.com/services/digital-forensics" target="_blank" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Digital Forensics
-                            </Link>
-                        </div>
-                    </div>
+                    <Link href="https://ehackglobaltechnology.com" className="mobile-nav-item" target="_blank" onClick={closeMobileMenu}>
+                        Corporate Services
+                    </Link>
 
                     <Link href="/codered" className="mobile-nav-item codered-mobile" onClick={closeMobileMenu}>
                         CODE<span className="red-badge">RED</span>
