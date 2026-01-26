@@ -974,7 +974,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.3), rgba(249, 115, 22, 0.3), transparent);
+    background: red;
 }
 
 .codered-microdegrees .container {
@@ -1930,6 +1930,7 @@
         flex-direction: column;
         gap: 1rem;
         width: 100%;
+        margin-bottom: 28px;
     }
 
     .btn-clean-primary,
