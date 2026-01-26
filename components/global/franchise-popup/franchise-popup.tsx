@@ -3,10 +3,13 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import './franchise-popup.css';
 
 export default function FranchisePopup() {
-    const [isVisible, setIsVisible] = useState(false);
+    const router = useRouter();
+    const [isBannerVisible, setIsBannerVisible] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
@@ -19,20 +22,41 @@ export default function FranchisePopup() {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     useEffect(() => {
-        // Show popup after 5 seconds on every page load
+        // Show banner after a short delay on every page load
         const timer = setTimeout(() => {
-            setIsVisible(true);
-        }, 5000);
+            setIsBannerVisible(true);
+        }, 2000);
 
-        return () => clearTimeout(timer);
+        // Listen for custom event to open popup
+        const handleOpenPopup = () => {
+            setIsPopupOpen(true);
+        };
+        window.addEventListener('openFranchisePopup', handleOpenPopup);
+
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener('openFranchisePopup', handleOpenPopup);
+        };
     }, []);
 
     const handleClose = () => {
         setIsClosing(true);
         setTimeout(() => {
-            setIsVisible(false);
+            setIsPopupOpen(false);
             setIsClosing(false);
+            // Banner remains visible after closing popup
+            setIsBannerVisible(true);
         }, 300);
+    };
+
+    const handleBannerClick = () => {
+        // Redirect to franchise page instead of opening popup immediately
+        router.push('/franchise');
+    };
+
+    const handleBannerClose = (e: React.MouseEvent) => {
+        e.stopPropagation(); // Prevent opening popup or navigating
+        setIsBannerVisible(false);
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -62,9 +86,8 @@ export default function FranchisePopup() {
                     message: formData.message,
                     leadSource: 'Franchise Popup',
                     dealName: `Franchise Inquiry - ${formData.name} - ${formData.city}`,
-                    pipeline: 'Sales Pipeline Standard', // Using Sales Pipeline for franchise inquiries
+                    pipeline: 'Sales Pipeline Standard',
                     stage: 'New Inquiry',
-                    // Add any custom fields specific to franchise inquiries
                 }),
             });
 
@@ -96,7 +119,6 @@ export default function FranchisePopup() {
         } catch (error) {
             console.error('Error submitting to Zoho:', error);
             setIsSubmitting(false);
-            // You might want to show an error message to the user here
             alert('Failed to submit form. Please try again or contact us directly.');
         }
     };
@@ -107,172 +129,203 @@ export default function FranchisePopup() {
         }
     };
 
-    if (!isVisible) return null;
-
     return (
-        <div
-            className={`franchise-popup-overlay ${isClosing ? 'closing' : ''}`}
-            onClick={handleOverlayClick}
-        >
-            <div className={`franchise-popup-container ${isClosing ? 'closing' : ''}`}>
-                {/* Close Button */}
-                <button
-                    className="franchise-popup-close"
-                    onClick={handleClose}
-                    aria-label="Close popup"
+        <>
+            {/* Sticky Banner (Visible when popup is closed) */}
+            {isBannerVisible && !isPopupOpen && (
+                <div className="franchise-sticky-banner" onClick={handleBannerClick}>
+                    <button
+                        className="franchise-banner-close"
+                        onClick={handleBannerClose}
+                        aria-label="Close banner"
+                    >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </button>
+                    <div className="franchise-banner-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 21V6.5C19 4.01472 16.9853 2 14.5 2C12.0147 2 10 4.01472 10 6.5V21M19 21H10M19 21H22M10 21H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M7 10H7.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M7 14H7.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M15 10H15.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M15 14H15.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </div>
+                    <div className="franchise-banner-content">
+                        <h4>Franchise Opportunity</h4>
+                        <p>Partner with eHack Academy</p>
+                    </div>
+                </div>
+            )}
+
+            {/* Franchise Popup Overlay */}
+            {isPopupOpen && (
+                <div
+                    className={`franchise-popup-overlay ${isClosing ? 'closing' : ''}`}
+                    onClick={handleOverlayClick}
                 >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </button>
+                    <div className={`franchise-popup-container ${isClosing ? 'closing' : ''}`}>
+                        {/* Close Button */}
+                        <button
+                            className="franchise-popup-close"
+                            onClick={handleClose}
+                            aria-label="Close popup"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
 
-                {/* Left Side - Image */}
-                <div className="franchise-popup-image">
-                    <Image
-                        src="/images/franchise-popup-image.jpg"
-                        alt="eHack Academy Franchise Opportunity"
-                        fill
-                        style={{ objectFit: 'cover' }}
-                        priority
-                    />
-                    <div className="franchise-popup-image-overlay">
-                        <div className="franchise-popup-image-content">
-                            <span className="franchise-badge">Franchise Opportunity</span>
-                            <h2>Partner with India&apos;s Premier Institute for Emerging Technologies</h2>
+                        {/* Left Side - Image */}
+                        <div className="franchise-popup-image">
+                            <Image
+                                src="/images/franchise-popup-image.jpg"
+                                alt="eHack Academy Franchise Opportunity"
+                                fill
+                                style={{ objectFit: 'cover' }}
+                                priority
+                            />
+                            <div className="franchise-popup-image-overlay">
+                                <div className="franchise-popup-image-content">
+                                    <span className="franchise-badge">Franchise Opportunity</span>
+                                    <h2>Partner with India&apos;s Premier Institute for Emerging Technologies</h2>
 
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Side - Form */}
+                        <div className="franchise-popup-form-section">
+                            {isSubmitted ? (
+                                <div className="franchise-popup-success">
+                                    <div className="success-icon">
+                                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="32" cy="32" r="32" fill="#10B981" fillOpacity="0.1" />
+                                            <circle cx="32" cy="32" r="24" fill="#10B981" fillOpacity="0.2" />
+                                            <path d="M22 32L28 38L42 24" stroke="#10B981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <h3>Thank You!</h3>
+                                    <p>We&apos;ve received your franchise enquiry. Our team will contact you within 24 hours.</p>
+                                </div>
+                            ) : (
+                                <>
+                                    <div className="franchise-popup-header">
+                                        <div className="franchise-popup-logo">
+                                            <Image
+                                                src="/ehack-black.png"
+                                                alt="eHack Academy"
+                                                width={120}
+                                                height={40}
+                                                style={{ objectFit: 'contain' }}
+                                            />
+                                        </div>
+                                        <h3>Franchise <span className="text-accent">Enquiry</span></h3>
+                                        <p>Fill in your details and we&apos;ll get back to you shortly</p>
+                                        <Link href="/franchise" className="franchise-learn-more" onClick={handleClose}>
+                                            View Franchise Details →
+                                        </Link>
+                                    </div>
+
+                                    <form className="franchise-popup-form" onSubmit={handleSubmit}>
+                                        <div className="form-row">
+                                            <div className="form-group">
+                                                <label htmlFor="popup-name">Full Name</label>
+                                                <input
+                                                    type="text"
+                                                    id="popup-name"
+                                                    name="name"
+                                                    placeholder="Enter your name"
+                                                    value={formData.name}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="popup-email">Email Address</label>
+                                                <input
+                                                    type="email"
+                                                    id="popup-email"
+                                                    name="email"
+                                                    placeholder="Enter your email"
+                                                    value={formData.email}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-row">
+                                            <div className="form-group">
+                                                <label htmlFor="popup-phone">Phone Number</label>
+                                                <div className="phone-input-wrapper">
+                                                    <span className="phone-prefix">🇮🇳 +91</span>
+                                                    <input
+                                                        type="tel"
+                                                        id="popup-phone"
+                                                        name="phone"
+                                                        placeholder="Enter phone number"
+                                                        value={formData.phone}
+                                                        onChange={handleInputChange}
+                                                        required
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="popup-city">City/Location</label>
+                                                <input
+                                                    type="text"
+                                                    id="popup-city"
+                                                    name="city"
+                                                    placeholder="Your preferred city"
+                                                    value={formData.city}
+                                                    onChange={handleInputChange}
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group full-width">
+                                            <label htmlFor="popup-message">Message (Optional)</label>
+                                            <textarea
+                                                id="popup-message"
+                                                name="message"
+                                                placeholder="Tell us about your interest in the franchise"
+                                                value={formData.message}
+                                                onChange={handleInputChange}
+                                                rows={3}
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            className="franchise-submit-btn"
+                                            disabled={isSubmitting}
+                                        >
+                                            {isSubmitting ? (
+                                                <>
+                                                    <span className="spinner"></span>
+                                                    Submitting...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    Submit Enquiry
+                                                    <span className="btn-arrow">→</span>
+                                                </>
+                                            )}
+                                        </button>
+                                    </form>
+
+                                    <div className="franchise-popup-footer">
+                                        <p>Or call us directly: <a href="tel:+919886035330">+91-9886035330</a></p>
+                                    </div>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
-
-                {/* Right Side - Form */}
-                <div className="franchise-popup-form-section">
-                    {isSubmitted ? (
-                        <div className="franchise-popup-success">
-                            <div className="success-icon">
-                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="32" cy="32" r="32" fill="#10B981" fillOpacity="0.1" />
-                                    <circle cx="32" cy="32" r="24" fill="#10B981" fillOpacity="0.2" />
-                                    <path d="M22 32L28 38L42 24" stroke="#10B981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </div>
-                            <h3>Thank You!</h3>
-                            <p>We&apos;ve received your franchise enquiry. Our team will contact you within 24 hours.</p>
-                        </div>
-                    ) : (
-                        <>
-                            <div className="franchise-popup-header">
-                                <div className="franchise-popup-logo">
-                                    <Image
-                                        src="/ehack-black.png"
-                                        alt="eHack Academy"
-                                        width={120}
-                                        height={40}
-                                        style={{ objectFit: 'contain' }}
-                                    />
-                                </div>
-                                <h3>Franchise <span className="text-accent">Enquiry</span></h3>
-                                <p>Fill in your details and we&apos;ll get back to you shortly</p>
-                                <Link href="/franchise" className="franchise-learn-more" onClick={handleClose}>
-                                    View Franchise Details →
-                                </Link>
-                            </div>
-
-                            <form className="franchise-popup-form" onSubmit={handleSubmit}>
-                                <div className="form-row">
-                                    <div className="form-group">
-                                        <label htmlFor="popup-name">Full Name</label>
-                                        <input
-                                            type="text"
-                                            id="popup-name"
-                                            name="name"
-                                            placeholder="Enter your name"
-                                            value={formData.name}
-                                            onChange={handleInputChange}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="popup-email">Email Address</label>
-                                        <input
-                                            type="email"
-                                            id="popup-email"
-                                            name="email"
-                                            placeholder="Enter your email"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
-                                            required
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="form-row">
-                                    <div className="form-group">
-                                        <label htmlFor="popup-phone">Phone Number</label>
-                                        <div className="phone-input-wrapper">
-                                            <span className="phone-prefix">🇮🇳 +91</span>
-                                            <input
-                                                type="tel"
-                                                id="popup-phone"
-                                                name="phone"
-                                                placeholder="Enter phone number"
-                                                value={formData.phone}
-                                                onChange={handleInputChange}
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="popup-city">City/Location</label>
-                                        <input
-                                            type="text"
-                                            id="popup-city"
-                                            name="city"
-                                            placeholder="Your preferred city"
-                                            value={formData.city}
-                                            onChange={handleInputChange}
-                                            required
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="form-group full-width">
-                                    <label htmlFor="popup-message">Message (Optional)</label>
-                                    <textarea
-                                        id="popup-message"
-                                        name="message"
-                                        placeholder="Tell us about your interest in the franchise"
-                                        value={formData.message}
-                                        onChange={handleInputChange}
-                                        rows={3}
-                                    />
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    className="franchise-submit-btn"
-                                    disabled={isSubmitting}
-                                >
-                                    {isSubmitting ? (
-                                        <>
-                                            <span className="spinner"></span>
-                                            Submitting...
-                                        </>
-                                    ) : (
-                                        <>
-                                            Submit Enquiry
-                                            <span className="btn-arrow">→</span>
-                                        </>
-                                    )}
-                                </button>
-                            </form>
-
-                            <div className="franchise-popup-footer">
-                                <p>Or call us directly: <a href="tel:+919886035330">+91-9886035330</a></p>
-                            </div>
-                        </>
-                    )}
-                </div>
-            </div>
-        </div>
+            )}
+        </>
     );
 }
