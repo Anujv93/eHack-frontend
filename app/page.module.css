@@ -744,6 +744,25 @@
     padding: 0;
     text-decoration: none;
     cursor: pointer;
+    position: relative;
+}
+
+.partnerBadge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    color: #1a1a1a;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    border-bottom-left-radius: 8px;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    letter-spacing: 0.5px;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .partnerCard:hover {
@@ -1581,6 +1600,20 @@
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .partnersLabel {
+        font-size: 0.8rem;
+        padding: 0.5rem 1.25rem;
+        margin: 1rem auto 1.5rem;
+    }
+
+    .sectionBadge {
+        font-size: 0.8rem;
+        padding: 0.4rem 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
 .footerBottom p {
     font-size: 0.9375rem;
     color: rgba(255, 255, 255, 0.5);
@@ -1859,10 +1892,10 @@
 
     /* Partners Label mobile */
     .partnersLabel {
-        font-size: 1.1rem;
+        font-size: 0.75rem;
         letter-spacing: 1.5px;
         padding: 0.5rem 1rem;
-        margin: 1rem auto 0px;
+        margin: 1rem auto 1rem;
     }
 }
 
@@ -1993,6 +2026,7 @@
 
 .franchiseRibbon .ribbonTitle {
     color: #0f172a;
+    font-weight: 900;
 }
 
 .ribbonText {
@@ -2007,8 +2041,9 @@
 }
 
 .franchiseRibbon .ribbonText {
-    color: #334155;
-    font-weight: 500;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 1.15rem;
 }
 
 .ribbonAction {
@@ -2026,6 +2061,7 @@
 
 .franchiseRibbon .ribbonAction {
     color: #0f172a;
+    font-weight: 800;
 }
 
 .ribbonCard:hover .ribbonAction {
@@ -2119,4 +2155,42 @@
     flex-direction: column;
     gap: 0;
     height: 100%;
+}
+
+/* Premium Badge Styles for Ribbon Cards */
+.ribbonBadge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.625rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.35);
+    letter-spacing: 0.8px;
+    transition: all 0.3s ease;
+    margin-bottom: 1.25rem;
+}
+
+.ribbonBadge:hover {
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.45);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .ribbonBadge {
+        font-size: 0.65rem;
+        padding: 0.5rem 1.25rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+    }
+}
+
+.ribbonGridItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 100%;
+    align-items: center;
 }

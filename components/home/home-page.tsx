@@ -383,7 +383,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         <Link href="/categories/digital-marketing" className={styles.quickLink}>
                             Digital Marketing
                         </Link>
-                        <Link href="https://www.ehackglobaltechnology.com/services/web-application-security" target="_blank" className={styles.quickLinkHighlight}>
+                        <Link href="https://www.ehackglobaltechnology.com/" target="_blank" className={styles.quickLinkHighlight}>
                             Corporate Services
                         </Link>
                     </div>
@@ -442,6 +442,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                                         className={styles.partnerCard}
                                     >
                                         <div className={styles.partnerLogoWrapper}>
+
                                             {partner.logoUrl ? (
                                                 <img
                                                     src={partner.logoUrl}
@@ -652,11 +653,15 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
 
             {/* Ribbons Section */}
-            <section style={{ borderBottom: 'solid 2px orange', padding: '2rem 0' }}>
+            <section style={{ borderBottom: 'solid 2px orange', padding: '2rem 0', borderTop: 'solid 2px orange', marginTop: '2rem' }}>
                 <div className={styles.container}>
+                    <div className="cert-header" style={{ marginBottom: '3rem' }}>
+                        <h2 className="cert-title">Social Impact & <span className="cert-title-gradient">Strategic Growth</span></h2>
+                        <p className="cert-subtitle">Driving positive change through cyber literacy while expanding our global footprint through strategic partnerships.</p>
+                    </div>
                     <div className={styles.ribbonsGrid}>
                         <div className={styles.ribbonGridItem}>
-                            <div className={`${styles.ribbonTitleStrip} ${styles.csrTitleStrip}`}>Empowering Society</div>
+                            <div className={`${styles.ribbonTitleStrip} ${styles.csrTitleStrip}`}>Corporate Social Responsibility </div>
                             <Link href="/csr" className={`${styles.ribbonCard} ${styles.csrRibbon}`}>
                                 <div className={styles.ribbonImageWrapper}>
                                     <div className={styles.floatingImage}>
@@ -668,6 +673,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                                     </div>
                                 </div>
                                 <div className={styles.ribbonContent}>
+                                    <span className={styles.ribbonBadge}>Cyber Literacy | AI Awareness</span>
                                     <h3 className={styles.ribbonTitle}>Empowering Society Through Cybersecurity, Employability & Emerging Technologies</h3>
                                     <p className={styles.ribbonText}>Join our mission to bridge the skill gap and build a safer digital future for everyone.</p>
                                     <div className={styles.ribbonAction}>
@@ -679,7 +685,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         </div>
 
                         <div className={styles.ribbonGridItem}>
-                            <div className={`${styles.ribbonTitleStrip} ${styles.franchiseTitleStrip}`}>Partnership</div>
+                            <div className={`${styles.ribbonTitleStrip} ${styles.franchiseTitleStrip}`}>Franchise Opportunities</div>
                             <Link href="/franchise" className={`${styles.ribbonCard} ${styles.franchiseRibbon}`}>
                                 <div className={styles.ribbonImageWrapper}>
                                     <div className={styles.floatingImage}>
@@ -691,7 +697,8 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                                     </div>
                                 </div>
                                 <div className={styles.ribbonContent}>
-                                    <h3 className={styles.ribbonTitle}>Partner with eHack Academy</h3>
+                                    <span className={styles.ribbonBadge}>Collaborative Growth</span>
+                                    <h3 className={styles.ribbonTitle}>Build Your Educational Empire with eHack Academy Franchise</h3>
                                     <p className={styles.ribbonText}>Build a thriving educational venture with India's premier cybersecurity academy.</p>
                                     <div className={styles.ribbonAction}>
                                         Start Your Franchise <ArrowRight size={20} />

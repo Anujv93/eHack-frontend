@@ -1087,9 +1087,16 @@ export const programs = [
             "Power BI Developer", "Data Science Associate", "Applied Data Scientist", "Business Intelligence Analyst"
         ],
         pricing: {
-            original: "₹1,50,000",
-            discounted: "₹99,000",
-            emi: "No Cost EMI available"
+            original: "₹2,00,000",
+            discounted: "₹1,10,000",
+            emi: "₹18,333/month",
+            applicationFee: "₹1,000",
+            admissionFee: "₹1,10,000",
+            companyEMI: "₹1,30,000",
+            upfrontPercentage: "50%",
+            upfrontAmount: "₹65,000",
+            emiCount: 4,
+            emiAmount: "₹18,750"
         },
         partnerLogos: [
             "/images/partners/python.png",
@@ -1895,7 +1902,7 @@ export const programs = [
             {
                 category: "Fees & Admission",
                 questions: [
-                    { q: "What is the program fee?", a: "Original Price: ₹50,000 | Offer Price: ₹35,000. Application fee of ₹1,000 is adjustable in the program fee." },
+                    { q: "What is the program fee?", a: "Original Price: ₹40,000 | Offer Price: ₹25,000. Application fee of ₹1,000 is adjustable in the program fee." },
                     { q: "Are EMI options available?", a: "Yes, we offer flexible EMI options. Contact our counselors for detailed payment plans." },
                     { q: "Is there placement assistance?", a: "Yes, we provide complete placement support including resume building, interview preparation, and mock interviews." }
                 ]

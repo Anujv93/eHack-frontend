@@ -346,42 +346,51 @@
 
 /* eHack Originals Partner Card - Special Styling */
 .mega-partner-card.ehack-originals-partner {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border: 1px solid #2a2a4e;
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+    border: 1px solid var(--brand-primary-dark);
     margin-top: 0.75rem;
     position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem 1.5rem;
+    height: auto;
+    min-height: 120px;
+    justify-content: center;
 }
 
 .mega-partner-card.ehack-originals-partner::before {
-    content: '';
-    position: absolute;
-    top: -0.75rem;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--neutral-200);
+    display: none;
 }
 
 .mega-partner-card.ehack-originals-partner .partner-logo-img {
     filter: brightness(0) invert(1);
+    width: auto;
+    height: 24px;
+    max-width: 120px;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+    object-position: left;
 }
 
 .mega-partner-card.ehack-originals-partner .partner-name {
     color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
 }
 
 .mega-partner-card.ehack-originals-partner .partner-count {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
 }
 
 .mega-partner-card.ehack-originals-partner .partner-arrow {
-    color: var(--brand-primary);
+    display: none;
 }
 
 .mega-partner-card.ehack-originals-partner:hover,
 .mega-partner-card.ehack-originals-partner.active {
-    background: var(--brand-primary);
-    border-color: var(--brand-primary);
+    background: linear-gradient(135deg, var(--brand-primary-dark) 0%, var(--brand-primary) 100%);
+    border-color: var(--brand-primary-dark);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -928,7 +937,7 @@
     transform: scale(1.02);
 }
 
-/* ========== Services Dropdown Mega Menu ========== */
+/* ========== Services Dropdown Mega Menu (Vertical Layered) ========== */
 .services-dropdown-wrapper {
     position: relative;
 }
@@ -936,7 +945,7 @@
 .services-dropdown-wrapper.open .services-dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
     pointer-events: auto;
 }
 
@@ -948,123 +957,175 @@
     color: var(--neutral-700);
 }
 
+/* Main Dropdown - Left Side Vertical List */
 .services-dropdown-menu {
     position: absolute;
-    top: 100%;
-    right: -180px;
-    width: 1100px;
-    max-width: calc(100vw - 40px);
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translate(-50%, 10px);
+    width: 250px;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    border: 1px solid var(--neutral-200);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.2s ease;
-    padding: 1.25rem;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.2s, transform 0.2s;
+    padding: 0.5rem;
     z-index: 9999;
 }
 
-.services-dropdown-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr 260px;
-    gap: 1.5rem;
-}
-
-.services-column {
+.vertical-menu-container {
     display: flex;
     flex-direction: column;
+    gap: 2px;
+    padding: 0.25rem;
 }
 
-.services-column-title {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--neutral-400);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--neutral-200);
+.vertical-menu-item {
+    position: relative;
+    /* Context for absolute submenu */
 }
 
-.services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-    max-height: none;
-    overflow-y: visible;
-    padding-right: 0;
-}
-
-.services-list::-webkit-scrollbar {
-    width: 3px;
-}
-
-.services-list::-webkit-scrollbar-track {
-    background: var(--neutral-100);
-    border-radius: 3px;
-}
-
-.services-list::-webkit-scrollbar-thumb {
-    background: var(--neutral-300);
-    border-radius: 3px;
-}
-
-.service-dropdown-item {
+/* Category Label (Button) */
+.vertical-menu-label {
     display: flex;
     align-items: center;
-    padding: 0.5rem 0.625rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.15s ease;
-}
-
-.service-dropdown-item:hover {
-    background: #FFF7F0;
-}
-
-.service-item-icon {
-    display: none;
-}
-
-.service-item-title {
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
     font-size: 0.9375rem;
     font-weight: 500;
     color: var(--neutral-700);
-    line-height: 1.4;
+    transition: all 0.2s ease;
 }
 
-.service-dropdown-item:hover .service-item-title {
+.vertical-menu-label:hover {
+    background: #FFF7F0;
+    /* Orange Tint */
     color: var(--brand-primary);
 }
 
-.compliance-column {
-    background: #fafafa;
-    padding: 0.875rem;
-    margin: -0.5rem;
-    margin-left: 0;
-    border-radius: 8px;
-    border: 1px solid var(--neutral-200);
+.menu-arrow {
+    color: var(--neutral-400);
+    transition: transform 0.2s;
 }
 
-.services-view-all {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.625rem 1rem;
-    background: var(--brand-primary);
-    color: #fff;
+.vertical-menu-label:hover .menu-arrow {
+    color: var(--brand-primary);
+    transform: translateX(3px);
+}
+
+/* Submenu (Flyout) */
+/* Submenu (Flyout) - Modified to fly out to the LEFT */
+.vertical-menu-submenu {
+    position: absolute;
+    right: calc(100% + 8px);
+    /* Fly out to the left */
+    left: auto;
+    top: -10px;
+    width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    /* Slide in from right */
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 10000;
+}
+
+/* Show Submenu on Item Hover */
+.vertical-menu-item:hover .vertical-menu-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Keeping the label active when hovering the submenu */
+.vertical-menu-item:hover .vertical-menu-label {
+    background: #FFF7F0;
+    color: var(--brand-primary);
+}
+
+/* Submenu Header */
+.submenu-header {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--neutral-400);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--neutral-100);
+}
+
+/* Grid for Security Assessment (2 Cols) */
+.submenu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+}
+
+/* Simple List for others */
+.submenu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Individual Service Links */
+.vertical-submenu-item {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -0.75rem;
+    border-radius: 6px;
+    color: var(--neutral-600);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.vertical-submenu-item:hover {
+    background: var(--neutral-50);
+    color: var(--brand-primary);
+    transform: translateX(4px);
+}
+
+.submenu-item-title {
+    display: block;
+}
+
+/* Footer Section in Submenu */
+.submenu-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--neutral-100);
+}
+
+.submenu-view-all-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem;
+    background: transparent;
+    border: 1px solid var(--brand-primary);
+    color: var(--brand-primary);
     font-size: 0.875rem;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
-    text-align: center;
-    transition: background 0.2s;
+    transition: all 0.2s ease;
 }
 
-.services-view-all:hover {
-    background: #c45815;
+.submenu-view-all-btn:hover {
+    background: var(--brand-primary);
     color: #fff;
+    box-shadow: 0 4px 12px rgba(223, 103, 24, 0.2);
 }
 
 /* Responsive */

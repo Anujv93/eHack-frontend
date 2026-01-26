@@ -262,7 +262,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/data-science"
+                                                    href="/programs/data-science-analytics"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/images/datascience.jpeg')` }}
@@ -274,7 +274,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/robotics-iot"
+                                                    href="/programs/robotics-for-all"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/images/robotics.jpeg')` }}
@@ -286,7 +286,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/digital-marketing"
+                                                    href="/programs/digital-marketing-masterprogram"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/images/social-media-marketing.jpg')` }}
@@ -298,7 +298,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/personality-softskills"
+                                                    href="/programs/personality-softskill-development"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/Personality-and-Softskill-Development.png')` }}
@@ -424,68 +424,92 @@ export default function Header({ partners, courses }: HeaderProps) {
                                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
-                        <div className="services-dropdown-menu">
-                            <div className="services-dropdown-inner">
+                        <div className="services-dropdown-menu vertical-layered-menu">
+                            <div className="vertical-menu-container">
                                 {/* Security Assessment Services */}
-                                <div className="services-column">
-                                    <h4 className="services-column-title">Security Assessment</h4>
-                                    <div className="services-list">
-                                        {corporateServices.map((service) => (
-                                            <Link
-                                                key={service.id}
-                                                href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
-                                                className="service-dropdown-item"
-                                                onClick={() => setServicesMenuOpen(false)}
-                                            >
-                                                <span className="service-item-icon">{service.icon}</span>
-                                                <span className="service-item-title">{service.title}</span>
-                                            </Link>
-                                        ))}
+                                <div className="vertical-menu-item">
+                                    <div className="vertical-menu-label">
+                                        <span>Security Assessment</span>
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" className="menu-arrow">
+                                            <path d="M1 1L5 5L1 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div className="vertical-menu-submenu">
+                                        <div className="submenu-header">Security Assessment Services</div>
+                                        <div className="submenu-grid">
+                                            {corporateServices.map((service) => (
+                                                <Link
+                                                    key={service.id}
+                                                    href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
+                                                    className="vertical-submenu-item"
+                                                    onClick={() => setServicesMenuOpen(false)}
+                                                >
+                                                    <span className="submenu-item-title">{service.title}</span>
+                                                </Link>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
 
                                 {/* Forensics & Malware Services */}
-                                <div className="services-column">
-                                    <h4 className="services-column-title">Forensics & Malware</h4>
-                                    <div className="services-list">
-                                        {forensicsServices.map((service) => (
-                                            <Link
-                                                key={service.id}
-                                                href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
-                                                className="service-dropdown-item"
-                                                onClick={() => setServicesMenuOpen(false)}
-                                            >
-                                                <span className="service-item-icon">{service.icon}</span>
-                                                <span className="service-item-title">{service.title}</span>
-                                            </Link>
-                                        ))}
+                                <div className="vertical-menu-item">
+                                    <div className="vertical-menu-label">
+                                        <span>Forensics & Malware</span>
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" className="menu-arrow">
+                                            <path d="M1 1L5 5L1 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div className="vertical-menu-submenu">
+                                        <div className="submenu-header">Forensics & Malware Investigation</div>
+                                        <div className="submenu-list">
+                                            {forensicsServices.map((service) => (
+                                                <Link
+                                                    key={service.id}
+                                                    href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
+                                                    className="vertical-submenu-item"
+                                                    onClick={() => setServicesMenuOpen(false)}
+                                                >
+                                                    <span className="submenu-item-title">{service.title}</span>
+                                                </Link>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
 
                                 {/* Compliance Services */}
-                                <div className="services-column compliance-column">
-                                    <h4 className="services-column-title">Compliance Audit</h4>
-                                    <div className="services-list">
-                                        {complianceServices.map((service) => (
+                                <div className="vertical-menu-item">
+                                    <div className="vertical-menu-label">
+                                        <span>Compliance Audit</span>
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" className="menu-arrow">
+                                            <path d="M1 1L5 5L1 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div className="vertical-menu-submenu">
+                                        <div className="submenu-header">Compliance & Audit Services</div>
+                                        <div className="submenu-list">
+                                            {complianceServices.map((service) => (
+                                                <Link
+                                                    key={service.id}
+                                                    href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
+                                                    className="vertical-submenu-item"
+                                                    onClick={() => setServicesMenuOpen(false)}
+                                                >
+                                                    <span className="submenu-item-title">{service.title}</span>
+                                                </Link>
+                                            ))}
+                                        </div>
+                                        {/* View All Details Button */}
+                                        <div className="submenu-footer">
                                             <Link
-                                                key={service.id}
-                                                href={`https://www.ehackglobaltechnology.com/services/${service.id}`} target="_blank"
-                                                className="service-dropdown-item"
+                                                href="https://www.ehackglobaltechnology.com/"
+                                                target="_blank"
+                                                className="submenu-view-all-btn"
                                                 onClick={() => setServicesMenuOpen(false)}
                                             >
-                                                <span className="service-item-icon">{service.icon}</span>
-                                                <span className="service-item-title">{service.title}</span>
+                                                Visit Corporate Services Website →
                                             </Link>
-                                        ))}
+                                        </div>
                                     </div>
-                                    <Link
-                                        href="https://www.ehackglobaltechnology.com/services/web-application-security"
-                                        target="_blank"
-                                        className="services-view-all"
-                                        onClick={() => setServicesMenuOpen(false)}
-                                    >
-                                        View All Services →
-                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -799,19 +823,19 @@ export default function Header({ partners, courses }: HeaderProps) {
                                     <span className="cat-icon">🛡️</span>
                                     <span className="cat-name">Cybersecurity Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/data-science" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/data-science-analytics" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">📊</span>
                                     <span className="cat-name">Data Science Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/robotics-iot" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/robotics-for-all" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">🤖</span>
                                     <span className="cat-name">Robotics & IoT Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/digital-marketing" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/digital-marketing-masterprogram" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">📈</span>
                                     <span className="cat-name">Digital Marketing Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/personality-softskills" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/personality-softskill-development" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">🎯</span>
                                     <span className="cat-name">Personality & Soft Skills</span>
                                 </Link>

@@ -9,6 +9,7 @@ import './program.css';
 import PlacementSection from '@/components/home/placement-section';
 import { ProgramLabsWrapper } from '@/components/global/certificate-labs/ProgramLabsWrapper';
 import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
+import ProgramToolsSection from '@/components/programs/program-tools-section';
 
 // Navigation sections configuration
 const NAV_SECTIONS = [
@@ -107,7 +108,14 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
     return (
         <div className="program-page">
             {/* 1. HERO SECTION - Attention + Lead Capture */}
-            <section className="hero-section" id="overview">
+            <section className={`hero-section ${program.slug === 'robotics-for-all' ? 'hero-robotics' :
+                program.slug === 'personality-softskill-development' ? 'hero-softskills' :
+                    program.slug === 'digital-marketing-masterprogram' ? 'hero-digital-marketing' :
+                        program.slug === 'data-science-analytics' ? 'hero-data-science' :
+                            program.slug === 'masters-ethical-hacking' ? 'hero-masters' :
+                                program.slug === 'graduate-cybersecurity' ? 'hero-graduate' :
+                                    program.slug === 'masterclass-ethical-hacking-ceh-v13' ? 'hero-ceh-master' : ''
+                }`} id="overview">
                 <div className="hero-container">
                     <div className="hero-content">
 
@@ -176,7 +184,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {/* 3. SCHEDULE BAR */}
             <section className="schedule-bar">
                 <div className="banner-container">
-                    <span className="cert-badge">Schedule Options</span>
+                    <span className="schedule-badge">Schedule Options</span>
                     <span className="cert-text">{program.schedule}</span>
                 </div>
             </section>
@@ -359,6 +367,11 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </section>
 
+            {/* Program Tools Section - Data Science Only */}
+            {program.slug === 'data-science-analytics' && (
+                <ProgramToolsSection />
+            )}
+
             {/* 12. CURRICULUM SECTION - Modern Redesign */}
             <section className="curriculum-section-modern border-bottom" id="curriculum">
                 <div className="curriculum-container-modern">
@@ -368,14 +381,24 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                             <span className="curriculum-eyebrow">LEARNING PATH</span>
                             <h2 className="curriculum-title-modern">
                                 Your Journey to Becoming a<br />
-                                <span className="text-accent">{programType === 'digital-marketing' ? 'Digital Marketing Expert' : programType === 'robotics' ? 'Robotics Engineer' : 'Cybersecurity Professional'}</span>
+                                <span className="text-accent">
+                                    {program.category === 'digital-marketing' ? 'Digital Marketing Expert' :
+                                        program.category === 'robotics-iot' ? 'Robotics Engineer' :
+                                            program.category === 'data-science' ? 'Data Science Professional' :
+                                                program.category === 'personality-softskills' ? 'Corporate Professional' :
+                                                    'Cybersecurity Professional'}
+                                </span>
                             </h2>
                             <p className="curriculum-subtitle-modern">
-                                {programType === 'digital-marketing'
+                                {program.category === 'digital-marketing'
                                     ? 'A structured learning path designed by industry experts to take you from beginner to job-ready.'
-                                    : programType === 'robotics'
+                                    : program.category === 'robotics-iot'
                                         ? 'A hands-on learning journey designed for absolute beginners.'
-                                        : 'A structured learning path taking you from fundamentals to advanced penetration testing with globally recognized certifications.'
+                                        : program.category === 'data-science'
+                                            ? 'Master data analysis, machine learning, and AI with industry-relevant projects.'
+                                            : program.category === 'personality-softskills'
+                                                ? 'Enhance your communication and soft skills to excel in your career.'
+                                                : 'A structured learning path taking you from fundamentals to advanced penetration testing with globally recognized certifications.'
                                 }
                             </p>
                         </div>
@@ -581,7 +604,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                     What's Included
                                 </h3>
                                 <ul className="included-list">
-                                    <li>{program.certifications.length} {programType === 'digital-marketing' ? 'Professional' : programType === 'robotics' ? 'Robotics' : 'Global EC-Council'} Certifications</li>
+                                    <li>{program.certifications.length} {program.category === 'cybersecurity' ? 'Global EC-Council' : 'eHack'} Certifications</li>
                                     <li>{program.stats.totalHours} of Hands-on Training</li>
                                     <li>Real-Time Labs & Practice Environment</li>
                                     <li>{program.stats.membership} Post-Training Support</li>
