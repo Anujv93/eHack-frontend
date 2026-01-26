@@ -383,7 +383,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         <Link href="/categories/digital-marketing" className={styles.quickLink}>
                             Digital Marketing
                         </Link>
-                        <Link href="https://www.ehackglobaltechnology.com/" target="_blank" className={styles.quickLinkHighlight}>
+                        <Link href="https://www.ehackglobaltechnology.com/services/web-application-security" target="_blank" className={styles.quickLinkHighlight}>
                             Corporate Services
                         </Link>
                     </div>
