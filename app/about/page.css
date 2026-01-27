@@ -2610,3 +2610,99 @@
         max-width: 100%;
     }
 }
+
+/* Student Feedback Section */
+.feedback-section {
+    padding: 60px 0;
+    background: #FFFAEB;
+    /* Matches Promise Section for consistency, or use #FFFFFF */
+    border-top: 1px solid #FFEDD5;
+}
+
+.feedback-disclaimer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748B;
+    margin-top: 16px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    /* Tight spacing requirement */
+}
+
+.feedback-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid #E2E8F0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    border-color: #FED7AA;
+    /* Light Orange */
+}
+
+.feedback-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.feedback-quote-icon {
+    color: #FF6B00;
+    margin-bottom: -0.5rem;
+}
+
+.feedback-text {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.6;
+    flex-grow: 1;
+    font-style: italic;
+}
+
+.feedback-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #F1F5F9;
+}
+
+.author-avatar-placeholder {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.author-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+@media (max-width: 640px) {
+    .feedback-grid {
+        grid-template-columns: 1fr;
+    }
+}

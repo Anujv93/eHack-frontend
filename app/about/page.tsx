@@ -14,10 +14,12 @@ export default function AboutPage() {
 
     const sections = [
         { id: 'mission', label: 'Our Mission' },
+        { id: 'promise', label: 'eHack Promise' },
         { id: 'philosophy', label: 'Philosophy' },
         { id: 'what-we-do', label: 'What We Do' },
         { id: 'why-choose-us', label: 'Why Us' },
         { id: 'leadership', label: 'Leadership' },
+        { id: 'feedback', label: 'Student Feedback' },
         { id: 'contact', label: 'Contact' }
     ];
 
@@ -130,6 +132,33 @@ export default function AboutPage() {
         casesSolved: `Solved 350+ cases including Hacking Cases, Online Blackmailing, Banking/Credit Card Crimes, Phishing, Email Hacking & Spoofing, Social Media Fake Profiles, Mobile Phone Hacking, Identity Theft, Data Stealing, Cyber Pornography, and Unauthorized Access cases.`
     };
 
+    const studentFeedbacks = [
+        { name: "Priya S.", feedback: "The cybersecurity bootcamp was intense but incredibly rewarding. I learned more in 12 weeks than I did in 4 years of college." },
+        { name: "Rahul M.", feedback: "Excellent mentors and hands-on labs. The VAPT training is top-notch and industry-relevant." },
+        { name: "Ankit V.", feedback: "Landed a job as a SOC Analyst within a month of graduating. The career support is fantastic." },
+        { name: "Sneha K.", feedback: "The curriculum is updated with the latest threats and tools. Truly prepares you for the real world." },
+        { name: "Vikram R.", feedback: "I was a complete beginner. enhancing my skills has completely changed my career trajectory." },
+        { name: "Arjun D.", feedback: "The ethical hacking modules are deep and practical. Highly recommend to anyone serious about security." },
+        { name: "Meera T.", feedback: "Great community and networking opportunities. I met my current employer through an eHack event." },
+        { name: "Karthik N.", feedback: "The instructors are industry veterans. Their insights into real-world scenarios are invaluable." },
+        { name: "Riya P.", feedback: "Flexible schedule helped me manage my job and studies. The recorded sessions are a lifesaver." },
+        { name: "Sandeep G.", feedback: "From zero to hero in 6 months. The structure of the course is perfect for beginners." },
+        { name: "Divya B.", feedback: "The hands-on labs are the best part. You actually get to hack into vulnerable machines." },
+        { name: "Mohit J.", feedback: "Support team is always available. Doubts are cleared almost instantly." },
+        { name: "Nisha C.", feedback: "The Digital Forensics module was an eye-opener. I love the depth of the content." },
+        { name: "Aditya S.", feedback: "Best investment for my career. The ROI is high if you put in the effort." },
+        { name: "Varun K.", feedback: "Challenging projects that push your limits. Precisely what I needed to grow." },
+        { name: "Pooja L.", feedback: "Certification preparation is excellent. I cleared my CEH on the first attempt." },
+        { name: "Rohan M.", feedback: "The syllabus is comprehensive. Covers everything from basics to advanced exploit development." },
+        { name: "Swati R.", feedback: "I loved the capstone project. It gave me the confidence to handle real-world projects." },
+        { name: "Amit B.", feedback: "Placement assistance is genuine. They guide you through resume building and mock interviews." },
+        { name: "Neha S.", feedback: "A truly holistic learning experience. It's not just about tools, but the mindset." },
+        { name: "Suresh P.", feedback: "The infrastructure and labs are world-class. No lag, just pure learning." },
+        { name: "Kiran D.", feedback: "I appreciate the focus on ethics and legal boundaries. Critical for this field." },
+        { name: "Manish T.", feedback: "Networking with peers was a highlight. We still collaborate on bug bounties." },
+        { name: "Deepa A.", feedback: "Standard of teaching is very high. Rivals international bootcamps." }
+    ];
+
 
     return (
         <>
@@ -187,7 +216,7 @@ export default function AboutPage() {
             </section>
 
             {/* eHack Promise Section */}
-            <section className="promise-section">
+            <section id="promise" className="promise-section">
                 <div className="about-container">
                     <h2 className="promise-main-title">What is the <span style={{ color: '#FF6B00' }}>eHack Promise?</span></h2>
 
@@ -281,8 +310,8 @@ export default function AboutPage() {
 
                     <div className="what-we-do-grid">
                         <div className="what-card">
-                            <h3>1. Industry Ready Learning</h3>
-                            <p style={{ marginBottom: '1.5rem', color: '#cc680bee' }}>We provide industry-aligned programs that equip learners with future-ready skills.</p>
+                            <h3>1. Industry Ready <br /> Learning</h3>
+                            <p style={{ marginBottom: '1.5rem', color: '#fe6a03' }}>We provide industry-aligned programs that equip learners with future-ready skills.</p>
                             <ul className="what-list">
                                 <li>Advanced programs in Cybersecurity, Data Science, AI, Robotics, and Digital Marketing</li>
                                 <li>Globally recognized certifications and hands-on training</li>
@@ -297,7 +326,7 @@ export default function AboutPage() {
 
                         <div className="what-card">
                             <h3>2. Corporate & Technology Services</h3>
-                            <p style={{ marginBottom: '1.5rem', color: '#cc680bee' }}>Through Ehack Global Technology, we deliver enterprise-grade services.</p>
+                            <p style={{ marginBottom: '1.5rem', color: '#fe6a03' }}>Through Ehack Global Technology, we deliver enterprise-grade services.</p>
                             <ul className="what-list">
                                 <li>VAPT (Vulnerability Assessment & Penetration Testing)</li>
                                 <li>Digital Forensics & Incident Response</li>
@@ -542,6 +571,38 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* Student Feedback Section */}
+            <section id="feedback" className="feedback-section">
+                <div className="about-container">
+                    <div className="section-header">
+                        <span className="section-badge-orange-big">TESTIMONIALS</span>
+                        <h2 className="about-section-title">Student <span style={{ color: '#FF6B00' }}>Feedback</span></h2>
+                        <p className="feedback-disclaimer" style={{ marginTop: '-20px' }}>To ensure the privacy of our clients, we use pseudonyms.</p>
+                    </div>
+
+                    <div className="feedback-grid">
+                        {studentFeedbacks.map((item, index) => (
+                            <div key={index} className="feedback-card">
+                                <div className="feedback-content">
+                                    <div className="feedback-quote-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ opacity: 0.2 }}>
+                                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                        </svg>
+                                    </div>
+                                    <p className="feedback-text">"{item.feedback}"</p>
+                                    <div className="feedback-author">
+                                        <div className="author-avatar-placeholder">
+                                            {item.name.charAt(0)}
+                                        </div>
+                                        <span className="author-name">{item.name}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Tagline Banner */}
             <div className="tagline-banner">
                 <div className="about-container">
@@ -764,7 +825,7 @@ export default function AboutPage() {
                 <div className="about-container">
                     <div className="cta-box">
                         <div className="cta-content">
-                            <div className="cta-tagline-highlight">FOLLOW US JOB FOLLOWS YOU</div>
+                            <div className="cta-tagline-highlight">FOLLOW US, JOB FOLLOWS YOU</div>
                             <h2 className="cta-title">Ready to Transform Your Career?</h2>
                             <p className="cta-subtitle">
                                 Join thousands of professionals who have advanced their careers with eHack Academy. Start your journey today!
