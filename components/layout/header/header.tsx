@@ -34,7 +34,7 @@ interface HeaderProps {
 const ehackPrograms = [
     { id: 101, slug: 'masters-ethical-hacking', title: 'Masters Program in Ethical Hacking', duration: '9-12 Months', partnerSlug: 'ehack-originals' },
     { id: 102, slug: 'graduate-cybersecurity', title: 'Graduate Program in Ethical Hacking', duration: '7-9 Months', partnerSlug: 'ehack-originals' },
-    { id: 103, slug: 'diploma-cybersecurity', title: 'Diploma in Ethical Hacking', duration: '4-6 Months', partnerSlug: 'ehack-originals' },
+    { id: 103, slug: 'masterclass-ethical-hacking-ceh-v13', title: 'Certified Ethical Hacker Master Program (CEH v13)', duration: '4 Months', partnerSlug: 'ehack-originals' },
     { id: 104, slug: 'digital-marketing-masterprogram', title: 'Masters Program in Digital Marketing', duration: '4 Months', partnerSlug: 'ehack-originals' },
     { id: 105, slug: 'robotics-for-all', title: 'Robotics for Every One', duration: '60 Days', partnerSlug: 'ehack-originals' },
     { id: 106, slug: 'personality-softskill-development', title: 'Personality & Soft Skill Development', duration: '40 Hours', partnerSlug: 'ehack-originals' },
@@ -643,7 +643,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                     {activePartner && (
                         <div className="mobile-mega-section mobile-mega-courses-section">
                             <h4 className="mobile-mega-section-title">
-                                {activePartnerData ? (isKennedyUniversity ? 'Kennedy University Degrees' : `${activePartnerData.name} Courses`) : 'Courses'}
+                                {activePartnerData ? (isKennedyUniversity ? 'Kennedy University Degrees' : `${activePartnerData.name}`) : 'Courses'}
                             </h4>
                             <div className="mobile-mega-courses">
                                 {filteredCourses.length > 0 ? (
