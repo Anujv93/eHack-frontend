@@ -197,8 +197,6 @@ eHack Academy - Program Page Styles
 
 .program-page .hero-section {
     position: relative;
-    background-color: var(--white);
-
     /* Reduced Padding */
     padding: var(--space-10) var(--space-6) var(--space-8);
     border-bottom: 1px solid var(--gray-200);
@@ -206,21 +204,32 @@ eHack Academy - Program Page Styles
     /* Ensure grid doesn't overflow */
 }
 
-.program-page .hero-section::before {
-    content: '';
+.hero-background {
     position: absolute;
     inset: 0;
-    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(10, 10, 26, 0.6) 0%,
+            rgba(26, 26, 46, 0.5) 50%,
+            rgba(10, 10, 26, 0.6) 100%);
     z-index: 1;
+}
 
-    /* Orange Grid Pattern */
-    background-image:
-        linear-gradient(to right, rgba(255, 107, 0, 0.35) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 107, 0, 0.35) 1px, transparent 1px);
-    background-size: 40px 40px;
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-    /* Subtle Blinking Animation */
-    animation: gridPulse 4s ease-in-out infinite;
+.program-page .hero-section::before {
+    display: none;
 }
 
 .program-page .hero-section::after {
@@ -240,7 +249,9 @@ eHack Academy - Program Page Styles
 }
 
 .hero-content {
-    color: var(--black);
+    color: var(--white);
+    position: relative;
+    z-index: 2;
 }
 
 .partner-logos {
@@ -274,7 +285,7 @@ eHack Academy - Program Page Styles
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
-    color: var(--black);
+    color: var(--white);
     margin-top: 0;
     margin-bottom: var(--space-4);
 }
@@ -337,15 +348,16 @@ eHack Academy - Program Page Styles
 
 .hero-description {
     font-size: 1.125rem;
-    color: var(--gray-700);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
     margin-bottom: var(--space-4);
     max-width: 600px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-features {
     font-size: 1rem;
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.8);
     max-width: 600px;
     line-height: 1.7;
     margin-bottom: var(--space-6);
@@ -360,8 +372,9 @@ eHack Academy - Program Page Styles
 .batch-label {
     font-size: 0.875rem;
     font-weight: 700;
-    color: var(--black);
+    color: var(--white);
     letter-spacing: 0.1em;
+    opacity: 0.9;
 }
 
 .batch-date {
@@ -4814,8 +4827,7 @@ eHack Academy - Program Page Styles
 }
 
 .hero-robotics .hero-title {
-    color: var(--black);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+    color: var(--white);
 }
 
 /* Soft Skills Hero Section Specific Styles */
@@ -4843,8 +4855,7 @@ eHack Academy - Program Page Styles
 }
 
 .hero-softskills .hero-title {
-    color: var(--black);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+    color: var(--white);
 }
 
 /* Digital Marketing Hero Section Specific Styles */
@@ -4872,8 +4883,7 @@ eHack Academy - Program Page Styles
 }
 
 .hero-digital-marketing .hero-title {
-    color: var(--black);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+    color: var(--white);
 }
 
 /* Data Science Hero Section Specific Styles */
@@ -4901,8 +4911,7 @@ eHack Academy - Program Page Styles
 }
 
 .hero-data-science .hero-title {
-    color: var(--black);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+    color: var(--white);
 }
 
 /* Masters Program Hero Section Specific Styles */
@@ -4930,8 +4939,7 @@ eHack Academy - Program Page Styles
 }
 
 .hero-masters .hero-title {
-    color: var(--black);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+    color: var(--white);
 }
 
 /* Graduate Program Hero Section Specific Styles */
@@ -4959,8 +4967,7 @@ eHack Academy - Program Page Styles
 }
 
 .hero-graduate .hero-title {
-    color: var(--black);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+    color: var(--white);
 }
 
 /* CEH Master Program Hero Section Specific Styles */
@@ -4988,8 +4995,7 @@ eHack Academy - Program Page Styles
 }
 
 .hero-ceh-master .hero-title {
-    color: var(--black);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+    color: var(--white);
 }
 
 @media (max-width: 480px) {

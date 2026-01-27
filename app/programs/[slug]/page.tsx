@@ -24,6 +24,25 @@ const NAV_SECTIONS = [
     { id: 'faq', label: 'FAQ' },
 ];
 
+const getHeroImage = (category: string, slug: string) => {
+    // Specific program based images
+    if (slug === 'masters-ethical-hacking') return '/images/programs/masters-hero-bg.jpg';
+    if (slug === 'graduate-cybersecurity') return '/images/programs/graduate-hero-bg.jpg';
+    if (slug === 'masterclass-ethical-hacking-ceh-v13') return '/images/programs/ceh-master-hero-bg.jpg';
+    if (slug === 'data-science-analytics') return '/images/programs/data-science-hero-bg.jpg';
+    if (slug === 'digital-marketing-masterprogram') return '/images/programs/digital-marketing-hero-bg.jpg';
+    if (slug === 'robotics-for-all') return '/images/programs/robotics-hero-bg.jpg';
+    if (slug === 'personality-softskill-development') return '/images/programs/softskills-hero-bg.jpg';
+
+    // Fallbacks
+    if (category === 'data-science') return '/images/programs/data-science-hero-bg.jpg';
+    if (category === 'robotics-iot') return '/images/programs/robotics-hero-bg.jpg';
+    if (category === 'digital-marketing') return '/images/programs/digital-marketing-hero-bg.jpg';
+    if (slug.includes('corporate')) return '/images/corporate.jpeg';
+
+    return '/images/programs/masters-hero-bg.jpg';
+};
+
 export default function ProgramPage({ params }: { params: Promise<{ slug: string }> }) {
     const [program, setProgram] = useState<typeof programs[0] | null>(null);
     const [activeCategory, setActiveCategory] = useState(0);
@@ -116,6 +135,15 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 program.slug === 'graduate-cybersecurity' ? 'hero-graduate' :
                                     program.slug === 'masterclass-ethical-hacking-ceh-v13' ? 'hero-ceh-master' : ''
                 }`} id="overview">
+                <div className="hero-background">
+                    <div className="hero-overlay"></div>
+                    <div
+                        className="hero-image"
+                        style={{
+                            backgroundImage: `url('${getHeroImage(program.category, program.slug)}')`
+                        }}
+                    />
+                </div>
                 <div className="hero-container">
                     <div className="hero-content">
 
