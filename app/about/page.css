@@ -2600,3 +2600,13 @@
         grid-template-columns: 1fr;
     }
 }
+
+.contact-pro-grid>* {
+    min-width: 0;
+}
+
+@media (max-width: 425px) {
+    .contact-map-column {
+        max-width: 100%;
+    }
+}

@@ -243,7 +243,7 @@ export default function Footer() {
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
                                 <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span>Tue - Sun: 9:30 AM - 6:30 PM</span>
+                            <span>Tue - Sun: 9:00 AM - 9:00 PM , Monday: Sales Office Only</span>
                         </div>
                     </div>
 
