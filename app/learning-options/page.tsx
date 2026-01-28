@@ -79,6 +79,11 @@ export default function LearningOptionsPage() {
         'upcoming-webinars': '/Upcoming Webinars.jpeg'
     };
 
+    const changeTab = (tab: string) => {
+        setActiveTab(tab);
+        window.location.hash = tab;
+    };
+
     return (
         <>
             {/* Hero Section */}
@@ -111,7 +116,7 @@ export default function LearningOptionsPage() {
                     <div className="tabs-nav">
                         <button
                             className={`tab-btn ${activeTab === 'live-online' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('live-online')}
+                            onClick={() => changeTab('live-online')}
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
@@ -120,7 +125,7 @@ export default function LearningOptionsPage() {
                         </button>
                         <button
                             className={`tab-btn ${activeTab === 'classroom' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('classroom')}
+                            onClick={() => changeTab('classroom')}
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" strokeLinecap="round" strokeLinejoin="round" />
@@ -129,7 +134,7 @@ export default function LearningOptionsPage() {
                         </button>
                         <button
                             className={`tab-btn ${activeTab === 'one-on-one' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('one-on-one')}
+                            onClick={() => changeTab('one-on-one')}
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" strokeLinecap="round" strokeLinejoin="round" />
@@ -138,7 +143,7 @@ export default function LearningOptionsPage() {
                         </button>
                         <button
                             className={`tab-btn ${activeTab === 'fly-trainer' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('fly-trainer')}
+                            onClick={() => changeTab('fly-trainer')}
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" strokeLinecap="round" strokeLinejoin="round" />
@@ -147,7 +152,7 @@ export default function LearningOptionsPage() {
                         </button>
                         <button
                             className={`tab-btn ${activeTab === 'flexi' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('flexi')}
+                            onClick={() => changeTab('flexi')}
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
@@ -156,7 +161,7 @@ export default function LearningOptionsPage() {
                         </button>
                         <button
                             className={`tab-btn ${activeTab === 'customized' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('customized')}
+                            onClick={() => changeTab('customized')}
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" strokeLinecap="round" strokeLinejoin="round" />
@@ -166,7 +171,7 @@ export default function LearningOptionsPage() {
                         </button>
                         <button
                             className={`tab-btn ${activeTab === 'webinar-service' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('webinar-service')}
+                            onClick={() => changeTab('webinar-service')}
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
@@ -175,7 +180,7 @@ export default function LearningOptionsPage() {
                         </button>
                         <button
                             className={`tab-btn ${activeTab === 'upcoming-webinars' ? 'active' : ''}`}
-                            onClick={() => setActiveTab('upcoming-webinars')}
+                            onClick={() => changeTab('upcoming-webinars')}
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
