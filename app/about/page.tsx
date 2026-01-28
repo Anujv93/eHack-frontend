@@ -311,7 +311,7 @@ export default function AboutPage() {
                     <div className="what-we-do-grid">
                         <div className="what-card">
                             <h3>1. Industry Ready <br /> Learning</h3>
-                            <p style={{ marginBottom: '1.5rem', color: '#fe6a03' }}>We provide industry-aligned programs that equip learners with future-ready skills.</p>
+                            <p style={{ marginBottom: '1.5rem', color: '#fb6c07ff', fontWeight: 'bold' }}>We provide industry-aligned programs that equip learners with future-ready skills.</p>
                             <ul className="what-list">
                                 <li>Advanced programs in Cybersecurity, Data Science, AI, Robotics, and Digital Marketing</li>
                                 <li>Globally recognized certifications and hands-on training</li>
@@ -326,7 +326,7 @@ export default function AboutPage() {
 
                         <div className="what-card">
                             <h3>2. Corporate & Technology Services</h3>
-                            <p style={{ marginBottom: '1.5rem', color: '#fe6a03' }}>Through Ehack Global Technology, we deliver enterprise-grade services.</p>
+                            <p style={{ marginBottom: '1.5rem', color: '#fb6c07ff', fontWeight: 'bold' }}>Through Ehack Global Technology, we deliver enterprise-grade services.</p>
                             <ul className="what-list">
                                 <li>VAPT (Vulnerability Assessment & Penetration Testing)</li>
                                 <li>Digital Forensics & Incident Response</li>
