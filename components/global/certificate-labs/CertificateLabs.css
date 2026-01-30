@@ -159,16 +159,7 @@
     letter-spacing: 0.5px;
 }
 
-.lab-info-compact .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
 
-.lab-info-compact .skill-chip {
-    padding: 4px 10px;
-    font-size: 0.7rem;
-}
 
 .cert-lab-card {
     position: relative;
@@ -817,25 +808,23 @@
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 12px;
 }
 
 .skill-chip {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: rgba(0, 245, 212, 0.15);
-    border: 1px solid rgba(0, 245, 212, 0.3);
-    border-radius: 6px;
-    font-size: var(--font-size-xs);
-    color: #009688;
-    transition: all 0.3s ease;
-}
-
-.skill-chip:hover {
-    background: rgba(0, 245, 212, 0.2);
-    transform: translateY(-2px);
+    gap: 8px;
+    padding: 7px 14px;
+    background: rgba(255, 107, 0, 0.1);
+    border: none;
+    border-radius: 50px;
+    font-size: 0.925rem;
+    font-weight: 700;
+    color: #000000;
+    box-shadow: none;
+    width: max-content;
+    flex: 0 0 auto;
 }
 
 /* CTA Button */
