@@ -280,14 +280,28 @@ eHack Academy - Program Page Styles
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    /* Emphasis: Swiss Bold, but balanced */
+    font-size: clamp(1.75rem, 6vw, 3.5rem);
     font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    color: var(--white);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
     margin-top: 0;
     margin-bottom: var(--space-4);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 481px) {
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero-title {
+        font-size: clamp(2.25rem, 5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+    }
 }
 
 .hero-title .text-accent {
@@ -347,20 +361,53 @@ eHack Academy - Program Page Styles
 }
 
 .hero-description {
-    font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    color: #ffffff;
     line-height: 1.6;
     margin-bottom: var(--space-4);
     max-width: 600px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 481px) {
+    .hero-description {
+        font-size: 1.1rem;
+        line-height: 1.65;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero-description {
+        font-size: 1.35rem;
+        line-height: 1.7;
+        max-width: 700px;
+    }
 }
 
 .hero-features {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
     max-width: 600px;
     line-height: 1.7;
     margin-bottom: var(--space-6);
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 481px) {
+    .hero-features {
+        font-size: 1.05rem;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero-features {
+        font-size: 1.2rem;
+        max-width: 700px;
+    }
 }
 
 .batch-info {
