@@ -29,8 +29,10 @@ export const metadata: Metadata = {
   description: "Transform your career with industry-leading courses in Cybersecurity, Digital Marketing, Data Science & AI, and IoT & Robotics. Get certified from EC-Council, ISACA, OffSec, Cisco, and CompTIA.",
   keywords: "professional training, cybersecurity, digital marketing, data science, AI, IoT, robotics, certification training, ethical hacking, SEO, machine learning",
   icons: {
-    icon: '/images/favicon.png',
-    apple: '/images/favicon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' }
+    ],
+    apple: '/apple-icon.png',
   },
 };
 
