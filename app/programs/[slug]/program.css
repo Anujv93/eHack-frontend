@@ -4110,7 +4110,8 @@ eHack Academy - Program Page Styles
     justify-content: center;
     gap: var(--space-10);
     padding: var(--space-8) var(--space-6);
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: rgba(255, 107, 0, 0.05);
+    border: 1px solid rgba(255, 107, 0, 0.1);
     border-radius: 16px;
     margin-bottom: var(--space-12);
 }
@@ -4123,23 +4124,25 @@ eHack Academy - Program Page Styles
 }
 
 .audience-stat-item .stat-number {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 800;
     color: var(--accent);
     line-height: 1;
+    margin-bottom: var(--space-2);
 }
 
 .audience-stat-item .stat-text {
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.7);
-    max-width: 150px;
-    line-height: 1.4;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black);
+    max-width: 260px;
+    line-height: 1.5;
 }
 
 .audience-stat-divider {
     width: 1px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 107, 0, 0.2);
 }
 
 /* Modern CTA Box */
