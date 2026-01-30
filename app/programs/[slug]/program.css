@@ -579,17 +579,20 @@ eHack Academy - Program Page Styles
 }
 
 .program-page .stats-bar .stat-item:not(:last-child) {
-    border-right: 1px solid var(--gray-200);
+    border-right: 1px solid rgba(255, 107, 0, 0.3);
 }
 
 .program-page .stats-bar .stat-label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 800;
-    color: var(--gray-600);
-    letter-spacing: 0.1em;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    letter-spacing: 0.08em;
     margin-bottom: var(--space-2);
     text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 4px;
 }
 
 .program-page .stats-bar .stat-value {
