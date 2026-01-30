@@ -1172,30 +1172,60 @@ eHack Academy - Program Page Styles
 }
 
 .roi-title {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 800;
     text-align: center;
     color: var(--black);
     margin-bottom: var(--space-4);
     letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+@media (min-width: 481px) {
+    .roi-title {
+        font-size: clamp(1.6rem, 4vw, 2rem);
+    }
+}
+
+@media (min-width: 1025px) {
+    .roi-title {
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+    }
 }
 
 .roi-subtitle {
     max-width: 700px;
     margin: 0 auto var(--space-10);
     text-align: center;
-    font-size: 0.875rem;
-    color: var(--gray-600);
+    font-size: 0.9rem;
+    color: var(--gray-700);
     line-height: 1.6;
+    font-weight: 500;
+}
+
+@media (min-width: 481px) {
+    .roi-subtitle {
+        font-size: 1rem;
+        line-height: 1.65;
+        font-weight: 500;
+    }
+}
+
+@media (min-width: 1025px) {
+    .roi-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
 }
 
 .roi-section-title {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    font-weight: 600;
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    font-weight: 700;
     text-align: center;
     color: var(--black);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
     letter-spacing: -0.01em;
+    line-height: 1.3;
 }
 
 .roi-grid {
@@ -1217,14 +1247,151 @@ eHack Academy - Program Page Styles
 }
 
 .salary-stat {
-    font-size: 0.9375rem;
-    color: var(--gray-700);
+    font-size: 1rem;
+    color: var(--gray-800);
     margin-bottom: var(--space-6);
-    line-height: 1.6;
+    line-height: 1.7;
+    font-weight: 500;
 }
 
 .salary-chart {
     margin-bottom: var(--space-6);
+}
+
+/* ============================================
+   SALARY PROGRESSION GRAPH - Visual Design
+   ============================================ */
+.salary-graph {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(180deg, rgba(255, 107, 0, 0.02) 0%, rgba(255, 107, 0, 0.06) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 107, 0, 0.15);
+    overflow: hidden;
+}
+
+.graph-grid {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px 0;
+}
+
+.grid-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 107, 0, 0.1) 20%, rgba(255, 107, 0, 0.1) 80%, transparent 100%);
+}
+
+.graph-line {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.graph-points {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 20px 20px;
+}
+
+.graph-point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.graph-point.point-1 {
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.graph-point.point-2 {
+    align-self: center;
+    margin-bottom: 60px;
+}
+
+.graph-point.point-3 {
+    align-self: flex-start;
+    margin-bottom: 110px;
+}
+
+.point-marker {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 8px;
+}
+
+.point-dot {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.4);
+    z-index: 2;
+}
+
+.point-pulse {
+    position: absolute;
+    inset: -4px;
+    background: rgba(255, 107, 0, 0.3);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+.point-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.graph-point:hover .point-info {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.15);
+    border-color: rgba(255, 107, 0, 0.4);
+}
+
+.point-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FF6B00;
+    line-height: 1.2;
+}
+
+.point-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
 .chart-bars {
@@ -1270,10 +1437,11 @@ eHack Academy - Program Page Styles
 }
 
 .chart-title {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--black);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-2);
+    line-height: 1.3;
 }
 
 .accent-title {
@@ -1282,9 +1450,81 @@ eHack Academy - Program Page Styles
 }
 
 .chart-desc {
-    font-size: 0.875rem;
-    color: var(--gray-600);
+    font-size: 0.95rem;
+    color: var(--gray-700);
     line-height: 1.7;
+    font-weight: 500;
+}
+
+/* ============================================
+   CAREER PATHS CARD - Professional UI
+   ============================================ */
+.jobroles-card-integrated {
+    background: var(--white);
+    padding: var(--space-8);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 107, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.jobroles-card-integrated .roi-section-title {
+    margin-bottom: var(--space-6);
+    font-size: 1.25rem;
+}
+
+.jobroles-grid-compact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    flex: 1;
+}
+
+@media (min-width: 600px) {
+    .jobroles-grid-compact {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.job-role-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.08) 0%, rgba(255, 107, 0, 0.15) 100%);
+    border: 1px solid rgba(255, 107, 0, 0.4);
+    border-radius: 8px;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.12);
+}
+
+.job-role-tag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #FF6B00 0%, #FF8533 100%);
+    opacity: 1;
+}
+
+.job-role-tag svg {
+    flex-shrink: 0;
+    color: #FF6B00;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.job-role-tag span {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.3;
 }
 
 .why-item {

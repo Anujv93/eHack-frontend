@@ -251,30 +251,74 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             {program.category !== 'personality-softskills' && (
                 <section className="roi-section border-bottom" id="career">
                     <div className="section-container">
-                        <h2 className="roi-title">{program.careerROI?.title || 'Great'}</h2>
+                        <h2 className="roi-title">
+                            {(() => {
+                                const title = program.careerROI?.title || 'Great Career';
+                                const words = title.split(' ');
+                                const lastWord = words.pop();
+                                return (
+                                    <>
+                                        {words.join(' ')} <span className="text-accent">{lastWord}</span>
+                                    </>
+                                );
+                            })()}
+                        </h2>
                         <p className="roi-subtitle">{program.careerROI?.subtitle || "This program equips you with advanced skills essential for protecting organizations."}</p>
 
                         <div className="roi-grid">
                             <div className="salary-card">
-                                <h3 className="roi-section-title">{program.careerROI?.chartTitle || 'Earning Potential'}</h3>
+                                <h3 className="roi-section-title"><span className="text-accent">Earning</span> {(program.careerROI?.chartTitle || 'Potential').replace('Earning ', '')}</h3>
                                 <p className="salary-stat">{program.careerROI?.salaryIntro || 'Professionals in this field are in high demand with competitive salaries.'}</p>
                                 <div className="salary-chart">
-                                    <div className="chart-bars">
-                                        {program.careerROI?.salaryLevels?.map((level, idx) => (
-                                            <div key={idx} className="chart-bar-group">
-                                                <span className="bar-label">{level.label}</span>
-                                                <div className={`chart-bar bar-${idx + 1}`}></div>
-                                            </div>
-                                        )) || (
-                                                <>
-                                                    <div className="chart-bar-group"><span className="bar-label">₹8L</span><div className="chart-bar bar-1"></div></div>
-                                                    <div className="chart-bar-group"><span className="bar-label">₹18L</span><div className="chart-bar bar-2"></div></div>
-                                                    <div className="chart-bar-group"><span className="bar-label">₹35L+</span><div className="chart-bar bar-3"></div></div>
-                                                </>
-                                            )}
+                                    <div className="salary-graph">
+                                        {/* Graph Grid Background */}
+                                        <div className="graph-grid">
+                                            <div className="grid-line"></div>
+                                            <div className="grid-line"></div>
+                                            <div className="grid-line"></div>
+                                        </div>
+
+                                        {/* Progression Line */}
+                                        <svg className="graph-line" viewBox="0 0 300 120" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.3" />
+                                                    <stop offset="50%" stopColor="#FF6B00" stopOpacity="0.6" />
+                                                    <stop offset="100%" stopColor="#FF6B00" stopOpacity="1" />
+                                                </linearGradient>
+                                                <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                    <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.2" />
+                                                    <stop offset="100%" stopColor="#FF6B00" stopOpacity="0.02" />
+                                                </linearGradient>
+                                            </defs>
+                                            {/* Area fill */}
+                                            <path d="M 30 100 L 30 85 Q 75 85 100 65 T 170 40 T 270 15 L 270 100 Z" fill="url(#areaGradient)" />
+                                            {/* Line */}
+                                            <path d="M 30 85 Q 75 85 100 65 T 170 40 T 270 15" stroke="url(#lineGradient)" strokeWidth="3" fill="none" strokeLinecap="round" />
+                                        </svg>
+
+                                        {/* Data Points */}
+                                        <div className="graph-points">
+                                            {(program.careerROI?.salaryLevels || [
+                                                { label: '₹8L', experience: '0-2 yrs' },
+                                                { label: '₹18L', experience: '3-5 yrs' },
+                                                { label: '₹35L+', experience: '6+ yrs' }
+                                            ]).map((level, idx) => (
+                                                <div key={idx} className={`graph-point point-${idx + 1}`}>
+                                                    <div className="point-marker">
+                                                        <div className="point-pulse"></div>
+                                                        <div className="point-dot"></div>
+                                                    </div>
+                                                    <div className="point-info">
+                                                        <span className="point-value">{level.label}</span>
+                                                        <span className="point-label">{level.level || ['Entry', 'Mid', 'Senior'][idx]}</span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                                <h4 className="chart-title">{program.careerROI?.chartDesc || 'Salary Progression'}</h4>
+                                <h4 className="chart-title"><span className="text-accent">Salary</span> {(program.careerROI?.chartDesc || 'Progression').replace('Salary ', '')}</h4>
                                 <p className="chart-desc">{program.careerROI?.chartNote || 'Companies offer competitive salaries to skilled professionals.'}</p>
                             </div>
 
@@ -289,7 +333,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                         </div>
                                     ))}
                                 </div>
-                                <a href="#pricing" className="btn-see-investment">See Your Investment →</a>
+                                {/* <a href="#pricing" className="btn-see-investment">See Your Investment →</a> */}
                             </div>
                         </div>
                     </div>
