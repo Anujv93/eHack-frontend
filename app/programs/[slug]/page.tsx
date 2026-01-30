@@ -382,7 +382,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <div className="audience-header-modern">
                         <span className="audience-eyebrow">DESIGNED FOR BEGINNERS</span>
                         <h2 className="audience-title-modern">
-                            Who should enroll?
+                            <span className="text-accent">Who</span> should enroll?
                         </h2>
                         <p className="audience-subtitle-modern">
                             {programType === 'cybersecurity'

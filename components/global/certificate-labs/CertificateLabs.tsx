@@ -420,7 +420,7 @@ export interface LabTool {
 
 export interface CertificateLabsData {
     [key: string]: {
-        title: string;
+        title: string | React.ReactNode;
         description: string;
         labs: LabTool[];
     };
@@ -761,7 +761,7 @@ const certificateLabsMapping: CertificateLabsData = {
     },
     // Masters Comprehensive - All 6 Certifications (CSCU, CND, CEH, CHFI, CPENT, LPT)
     'masters-comprehensive': {
-        title: 'Masters Program - Comprehensive Lab Suite',
+        title: <>Masters Program - Comprehensive Lab <span className="text-accent">Suite</span></>,
         description: 'Complete hands-on lab environment covering all 6 certifications with 300+ hours of practice',
         labs: [
             {
@@ -886,7 +886,7 @@ const certificateLabsMapping: CertificateLabsData = {
 };
 
 // Helper function to match certificate slug to labs
-const getLabsForCertificate = (slug: string): { title: string; description: string; labs: LabTool[] } => {
+const getLabsForCertificate = (slug: string): { title: string | React.ReactNode; description: string; labs: LabTool[] } => {
     // Try exact match first
     if (certificateLabsMapping[slug]) {
         return certificateLabsMapping[slug];

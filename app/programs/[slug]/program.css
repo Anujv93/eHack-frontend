@@ -5396,3 +5396,70 @@ eHack Academy - Program Page Styles
         height: auto;
     }
 }
+
+.audience-section-modern {
+    padding: var(--space-4) 0 var(--space-8);
+    /* Reduced top padding from space-8 */
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* Audience Section Typography - Prominent Badge, Compact Text */
+.audience-header-modern {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 2rem 1rem 0;
+    /* Reduced top padding (from '0 1rem' with parent padding handling it, but usually parent has padding) */
+}
+
+/* We need to check the parent container spacing too. 
+   Usually .audience-section-modern has padding. Let's target that instead or as well. */
+
+.audience-title-modern {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    /* Reduced from 2rem-3rem */
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: var(--space-4);
+}
+
+.audience-subtitle-modern {
+    font-size: 1rem;
+    /* Reduced from 1.15rem */
+    line-height: 1.6;
+    font-weight: 500;
+    color: var(--gray-700);
+    max-width: 700px;
+    /* Reduced width */
+    margin: 0 auto;
+}
+
+@media (min-width: 481px) {
+    /* No specific changes needed */
+}
+
+@media (min-width: 1025px) {
+    /* Adjustments if needed */
+}
+
+.audience-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    /* Increased from 0.85rem */
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: var(--space-6);
+    /* More spacing below big badge */
+    padding: 1rem 2.5rem;
+    /* Significantly Increased padding */
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
