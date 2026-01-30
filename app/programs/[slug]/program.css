@@ -610,13 +610,20 @@ eHack Academy - Program Page Styles
 
 /* Schedule Bar */
 .schedule-bar {
-    background: linear-gradient(90deg, #0a1628 0%, #0d2137 50%, #0a1628 100%);
+    background: rgba(255, 107, 0, 0.1);
     padding: var(--space-4) var(--space-6);
+    border-top: 1px solid rgba(255, 107, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 107, 0, 0.2);
 }
 
 .schedule-badge {
-    color: var(--accent, #f7931e);
+    display: inline-block;
+    color: #ffffff;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
     font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
 }
 
 .banner-container {
@@ -642,9 +649,8 @@ eHack Academy - Program Page Styles
 
 .cert-text {
     font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--white);
-    /* Brighter contrast */
+    font-weight: 600;
+    color: var(--black);
 }
 
 /* ============================================
