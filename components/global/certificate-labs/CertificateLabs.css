@@ -854,39 +854,44 @@
 /* Stats Bar */
 .cert-labs-stats {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: var(--space-10);
-    padding: var(--space-6);
-    background: rgba(255, 107, 0, 0.1);
-    border: 1px solid rgba(255, 107, 0, 0.2);
+    gap: var(--space-8);
+    padding: var(--space-8);
+    background: rgba(255, 107, 0, 0.05);
+    border: 1px solid rgba(255, 107, 0, 0.1);
     border-radius: 12px;
+    width: 100%;
 }
 
 .labs-stat {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
+    flex: 1;
 }
 
 .lab-stat-value {
-    font-size: var(--font-size-2xl);
+    font-size: 2.5rem;
     font-weight: 800;
-    color: var(--ec-red);
+    color: var(--accent);
+    line-height: 1;
 }
 
 .lab-stat-text {
-    font-size: var(--font-size-sm);
-    color: var(--gray-600);
+    font-size: 0.95rem;
+    color: var(--black);
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    text-align: center;
 }
 
 .labs-stat-divider {
     width: 1px;
-    height: 40px;
-    background: linear-gradient(180deg, transparent, rgba(255, 107, 0, 0.3), transparent);
+    height: 50px;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */

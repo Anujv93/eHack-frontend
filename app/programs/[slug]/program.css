@@ -1190,48 +1190,75 @@ eHack Academy - Program Page Styles
 }
 
 .skills-title {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 600;
-    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
     color: var(--black);
-    margin-bottom: var(--space-10);
+    text-align: center;
     letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.875rem;
+}
+
+@media (min-width: 481px) {
+    .skills-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .skills-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.1;
+    }
 }
 
 .skills-grid {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: var(--space-6);
     background: transparent;
     border: none;
 }
 
-.skill-card {
-    background: var(--white);
-    padding: var(--space-6);
-    transition: all 0.2s ease;
-    border: 1px solid var(--accent);
-    border-radius: 8px;
-    height: 100%;
+@media (min-width: 600px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.skill-card:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px);
+@media (min-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.skill-card {
+    background: var(--white);
+    padding: var(--space-8);
+    transition: none;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    height: 100%;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .skill-name {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
     color: var(--black);
     margin-bottom: var(--space-3);
     letter-spacing: -0.01em;
 }
 
 .skill-desc {
-    font-size: 0.8125rem;
-    color: var(--gray-600);
+    font-size: 0.95rem;
+    color: var(--gray-800);
     line-height: 1.6;
+    font-weight: 500;
 }
 
 /* ROI Section - Swiss Minimal */
@@ -2441,7 +2468,7 @@ eHack Academy - Program Page Styles
 
 /* Final CTA Section */
 .program-cta-section {
-    padding: 100px 0;
+    padding: 60px 0;
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
     text-align: center;
 }
@@ -3690,7 +3717,7 @@ eHack Academy - Program Page Styles
    ============================================ */
 .news-section {
     background: var(--gray-50);
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 .news-container {
@@ -3701,8 +3728,11 @@ eHack Academy - Program Page Styles
 
 .news-badge {
     display: inline-block;
-    color: var(--accent);
-    font-size: 0.875rem;
+    background: var(--accent);
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
