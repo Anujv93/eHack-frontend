@@ -9,6 +9,7 @@
     background: var(--accent-light);
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid #ff6b00;
 }
 
 .cert-labs-bg-pattern {
