@@ -287,7 +287,6 @@ eHack Academy - Program Page Styles
     color: #FFFFFF;
     margin-top: 0;
     margin-bottom: var(--space-4);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 481px) {
@@ -364,7 +363,6 @@ eHack Academy - Program Page Styles
     margin-bottom: var(--space-4);
     max-width: 600px;
     font-weight: 500;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 481px) {
@@ -390,7 +388,6 @@ eHack Academy - Program Page Styles
     line-height: 1.7;
     margin-bottom: var(--space-6);
     font-weight: 500;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 481px) {
