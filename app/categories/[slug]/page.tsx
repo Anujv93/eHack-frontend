@@ -31,7 +31,7 @@ export default function CategoryPage({ params }: PageProps) {
                 />
                 <div className="category-header-overlay" />
                 <div className="container">
-                    <h1>{category.name} Programs</h1>
+                    <h1>{category.name} <span className="category-highlight">Programs</span></h1>
                     <p>{category.description}</p>
                 </div>
             </div>

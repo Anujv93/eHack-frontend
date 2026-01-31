@@ -280,14 +280,28 @@ eHack Academy - Program Page Styles
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    /* Emphasis: Swiss Bold, but balanced */
+    font-size: clamp(1.75rem, 6vw, 3.5rem);
     font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    color: var(--white);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
     margin-top: 0;
     margin-bottom: var(--space-4);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 481px) {
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero-title {
+        font-size: clamp(2.25rem, 5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+    }
 }
 
 .hero-title .text-accent {
@@ -347,20 +361,53 @@ eHack Academy - Program Page Styles
 }
 
 .hero-description {
-    font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    color: #ffffff;
     line-height: 1.6;
     margin-bottom: var(--space-4);
     max-width: 600px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 481px) {
+    .hero-description {
+        font-size: 1.1rem;
+        line-height: 1.65;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero-description {
+        font-size: 1.35rem;
+        line-height: 1.7;
+        max-width: 700px;
+    }
 }
 
 .hero-features {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
     max-width: 600px;
     line-height: 1.7;
     margin-bottom: var(--space-6);
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 481px) {
+    .hero-features {
+        font-size: 1.05rem;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero-features {
+        font-size: 1.2rem;
+        max-width: 700px;
+    }
 }
 
 .batch-info {
@@ -511,62 +558,76 @@ eHack Academy - Program Page Styles
     font-weight: 500;
 }
 
-/* Stats Bar */
+/* Stats Bar - Table Style */
 .program-page .stats-bar {
-    background: #fff7ed;
-    padding: var(--space-8) var(--space-6);
+    background: #ffffff;
+    padding: var(--space-6) var(--space-6);
     border-bottom: 1px solid var(--gray-200);
 }
 
 .stats-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid !important;
-    grid-template-columns: repeat(5, 1fr);
-    gap: var(--space-6);
+    display: flex !important;
+    border: 2px solid #FF6B00;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .program-page .stats-bar .stat-item {
+    flex: 1;
     text-align: center;
-    padding: 0 var(--space-4);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
 }
 
 .program-page .stats-bar .stat-item:not(:last-child) {
-    border-right: 1px solid var(--gray-200);
+    border-right: 1px solid rgba(255, 107, 0, 0.3);
 }
 
 .program-page .stats-bar .stat-label {
     display: block;
-    font-size: 0.85rem;
-    font-weight: 800;
-    color: var(--gray-600);
-    letter-spacing: 0.1em;
-    margin-bottom: var(--space-2);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    padding: 10px 8px;
+    border-bottom: 1px solid rgba(255, 107, 0, 0.3);
 }
 
 .program-page .stats-bar .stat-value {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--black);
+    padding: 12px 8px;
+    background: rgba(255, 107, 0, 0.05);
 }
 
 .program-page .stats-bar .stat-value strong {
     font-weight: 800;
-    color: var(--black);
-    font-size: 1.35rem;
-    /* Make numbers pop */
+    color: #FF6B00;
+    font-size: 1.2rem;
 }
 
 /* Schedule Bar */
 .schedule-bar {
-    background: linear-gradient(90deg, #0a1628 0%, #0d2137 50%, #0a1628 100%);
+    background: rgba(255, 107, 0, 0.1);
     padding: var(--space-4) var(--space-6);
+    border-top: 1px solid rgba(255, 107, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 107, 0, 0.2);
 }
 
 .schedule-badge {
-    color: var(--accent, #f7931e);
+    display: inline-block;
+    color: #ffffff;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
     font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
 }
 
 .banner-container {
@@ -592,9 +653,8 @@ eHack Academy - Program Page Styles
 
 .cert-text {
     font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--white);
-    /* Brighter contrast */
+    font-weight: 600;
+    color: var(--black);
 }
 
 /* ============================================
@@ -778,21 +838,23 @@ eHack Academy - Program Page Styles
 }
 
 .credentials-title {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 600;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
     text-align: center;
     color: var(--black);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
     letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 .credentials-subtitle {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto var(--space-10);
     text-align: center;
-    font-size: 1rem;
-    color: var(--gray-600);
-    line-height: 1.6;
+    font-size: 1.1rem;
+    color: var(--gray-700);
+    line-height: 1.7;
+    font-weight: 500;
 }
 
 /* Certificate Images Gallery */
@@ -945,30 +1007,101 @@ eHack Academy - Program Page Styles
     display: none;
 }
 
-/* Combined certificate item - image with name below */
+/* ============================================
+   CERTIFICATE CARDS - Professional UI/UX Design
+   ============================================ */
+
+/* Combined certificate item - unified frame containing image and name */
 .certificate-item-combined {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: 0;
+    position: relative;
+    border-radius: 8px;
+    /* Matching var(--border-radius-lg) usually */
+    overflow: hidden;
+    /* Move background and shadows here */
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 50%, #2c2c2c 100%);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.25),
+        0 4px 8px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    /* Original padding */
 }
 
+/* Outer golden border on the combined item */
+.certificate-item-combined::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #d4af37 0%, #f4d675 25%, #d4af37 50%, #b8962e 75%, #d4af37 100%) 1;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Inner golden accent line on the combined item */
+.certificate-item-combined::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Certificate image area - clear styles as they are now on parent */
 .certificate-item-combined .certificate-image-card {
     flex: 1;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    margin-bottom: 12px;
+    /* Space between image and name card */
 }
 
+/* Hide the pseudo-elements on the inner image card */
+.certificate-item-combined .certificate-image-card::before,
+.certificate-item-combined .certificate-image-card::after {
+    display: none;
+}
+
+/* Name panel - style as a panel inside the frame */
 .certificate-item-combined .credential-card {
-    margin-bottom: 0;
-    padding: var(--space-4) var(--space-3);
+    margin: 0;
+    padding: 12px 16px;
+    background: var(--white);
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 5;
+    /* Ensure it's clickable but below frame if desired, or above? */
+    /* Frame has z-index 10 and pointer-events none, so visual overlay is fine */
 }
 
+/* Certificate code - bold emphasis */
 .certificate-item-combined .credential-card .logo-text {
     font-size: 1.5rem;
-    margin-bottom: var(--space-1);
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+    color: var(--black);
 }
 
+.certificate-item-combined .credential-card .logo-accent {
+    color: var(--accent);
+}
+
+/* Full certification name - improved visibility */
 .certificate-item-combined .credential-card .logo-label {
-    font-size: 0.7rem;
-    line-height: 1.3;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--gray-700);
 }
 
 /* Adjust gallery for combined items with count-1 */
@@ -992,17 +1125,17 @@ eHack Academy - Program Page Styles
 .credential-card {
     background: var(--white);
     padding: var(--space-6);
-    border-radius: var(--border-radius-md);
+    border-radius: 8px;
     text-align: center;
     border: 1px solid var(--accent);
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .credential-card:hover {
     border-color: var(--accent);
     transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .logo-text {
@@ -1019,8 +1152,10 @@ eHack Academy - Program Page Styles
 
 .logo-label {
     display: block;
-    font-size: 0.75rem;
-    color: var(--gray-600);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    line-height: 1.5;
 }
 
 .credentials-cta {
@@ -1055,48 +1190,75 @@ eHack Academy - Program Page Styles
 }
 
 .skills-title {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 600;
-    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
     color: var(--black);
-    margin-bottom: var(--space-10);
+    text-align: center;
     letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.875rem;
+}
+
+@media (min-width: 481px) {
+    .skills-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .skills-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.1;
+    }
 }
 
 .skills-grid {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: var(--space-6);
     background: transparent;
     border: none;
 }
 
-.skill-card {
-    background: var(--white);
-    padding: var(--space-6);
-    transition: all 0.2s ease;
-    border: 1px solid var(--accent);
-    border-radius: 8px;
-    height: 100%;
+@media (min-width: 600px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.skill-card:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px);
+@media (min-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.skill-card {
+    background: var(--white);
+    padding: var(--space-8);
+    transition: none;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    height: 100%;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .skill-name {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
     color: var(--black);
     margin-bottom: var(--space-3);
     letter-spacing: -0.01em;
 }
 
 .skill-desc {
-    font-size: 0.8125rem;
-    color: var(--gray-600);
+    font-size: 0.95rem;
+    color: var(--gray-800);
     line-height: 1.6;
+    font-weight: 500;
 }
 
 /* ROI Section - Swiss Minimal */
@@ -1112,30 +1274,60 @@ eHack Academy - Program Page Styles
 }
 
 .roi-title {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 800;
     text-align: center;
     color: var(--black);
     margin-bottom: var(--space-4);
     letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+@media (min-width: 481px) {
+    .roi-title {
+        font-size: clamp(1.6rem, 4vw, 2rem);
+    }
+}
+
+@media (min-width: 1025px) {
+    .roi-title {
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+    }
 }
 
 .roi-subtitle {
     max-width: 700px;
     margin: 0 auto var(--space-10);
     text-align: center;
-    font-size: 0.875rem;
-    color: var(--gray-600);
+    font-size: 0.9rem;
+    color: var(--gray-700);
     line-height: 1.6;
+    font-weight: 500;
+}
+
+@media (min-width: 481px) {
+    .roi-subtitle {
+        font-size: 1rem;
+        line-height: 1.65;
+        font-weight: 500;
+    }
+}
+
+@media (min-width: 1025px) {
+    .roi-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
 }
 
 .roi-section-title {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    font-weight: 600;
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    font-weight: 700;
     text-align: center;
     color: var(--black);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
     letter-spacing: -0.01em;
+    line-height: 1.3;
 }
 
 .roi-grid {
@@ -1157,14 +1349,151 @@ eHack Academy - Program Page Styles
 }
 
 .salary-stat {
-    font-size: 0.9375rem;
-    color: var(--gray-700);
+    font-size: 1rem;
+    color: var(--gray-800);
     margin-bottom: var(--space-6);
-    line-height: 1.6;
+    line-height: 1.7;
+    font-weight: 500;
 }
 
 .salary-chart {
     margin-bottom: var(--space-6);
+}
+
+/* ============================================
+   SALARY PROGRESSION GRAPH - Visual Design
+   ============================================ */
+.salary-graph {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(180deg, rgba(255, 107, 0, 0.02) 0%, rgba(255, 107, 0, 0.06) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 107, 0, 0.15);
+    overflow: hidden;
+}
+
+.graph-grid {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px 0;
+}
+
+.grid-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 107, 0, 0.1) 20%, rgba(255, 107, 0, 0.1) 80%, transparent 100%);
+}
+
+.graph-line {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.graph-points {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 20px 20px;
+}
+
+.graph-point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.graph-point.point-1 {
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.graph-point.point-2 {
+    align-self: center;
+    margin-bottom: 60px;
+}
+
+.graph-point.point-3 {
+    align-self: flex-start;
+    margin-bottom: 110px;
+}
+
+.point-marker {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 8px;
+}
+
+.point-dot {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.4);
+    z-index: 2;
+}
+
+.point-pulse {
+    position: absolute;
+    inset: -4px;
+    background: rgba(255, 107, 0, 0.3);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+.point-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.graph-point:hover .point-info {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.15);
+    border-color: rgba(255, 107, 0, 0.4);
+}
+
+.point-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FF6B00;
+    line-height: 1.2;
+}
+
+.point-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
 .chart-bars {
@@ -1210,10 +1539,11 @@ eHack Academy - Program Page Styles
 }
 
 .chart-title {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--black);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-2);
+    line-height: 1.3;
 }
 
 .accent-title {
@@ -1222,9 +1552,81 @@ eHack Academy - Program Page Styles
 }
 
 .chart-desc {
-    font-size: 0.875rem;
-    color: var(--gray-600);
+    font-size: 0.95rem;
+    color: var(--gray-700);
     line-height: 1.7;
+    font-weight: 500;
+}
+
+/* ============================================
+   CAREER PATHS CARD - Professional UI
+   ============================================ */
+.jobroles-card-integrated {
+    background: var(--white);
+    padding: var(--space-8);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 107, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.jobroles-card-integrated .roi-section-title {
+    margin-bottom: var(--space-6);
+    font-size: 1.25rem;
+}
+
+.jobroles-grid-compact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    flex: 1;
+}
+
+@media (min-width: 600px) {
+    .jobroles-grid-compact {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.job-role-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.08) 0%, rgba(255, 107, 0, 0.15) 100%);
+    border: 1px solid rgba(255, 107, 0, 0.4);
+    border-radius: 8px;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.12);
+}
+
+.job-role-tag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #FF6B00 0%, #FF8533 100%);
+    opacity: 1;
+}
+
+.job-role-tag svg {
+    flex-shrink: 0;
+    color: #FF6B00;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.job-role-tag span {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.3;
 }
 
 .why-item {
@@ -2066,7 +2468,7 @@ eHack Academy - Program Page Styles
 
 /* Final CTA Section */
 .program-cta-section {
-    padding: 100px 0;
+    padding: 60px 0;
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
     text-align: center;
 }
@@ -3315,7 +3717,7 @@ eHack Academy - Program Page Styles
    ============================================ */
 .news-section {
     background: var(--gray-50);
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 .news-container {
@@ -3326,8 +3728,11 @@ eHack Academy - Program Page Styles
 
 .news-badge {
     display: inline-block;
-    color: var(--accent);
-    font-size: 0.875rem;
+    background: var(--accent);
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -3735,7 +4140,8 @@ eHack Academy - Program Page Styles
     justify-content: center;
     gap: var(--space-10);
     padding: var(--space-8) var(--space-6);
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: rgba(255, 107, 0, 0.05);
+    border: 1px solid rgba(255, 107, 0, 0.1);
     border-radius: 16px;
     margin-bottom: var(--space-12);
 }
@@ -3748,23 +4154,25 @@ eHack Academy - Program Page Styles
 }
 
 .audience-stat-item .stat-number {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 800;
     color: var(--accent);
     line-height: 1;
+    margin-bottom: var(--space-2);
 }
 
 .audience-stat-item .stat-text {
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.7);
-    max-width: 150px;
-    line-height: 1.4;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black);
+    max-width: 260px;
+    line-height: 1.5;
 }
 
 .audience-stat-divider {
     width: 1px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 107, 0, 0.2);
 }
 
 /* Modern CTA Box */
@@ -4168,40 +4576,49 @@ eHack Academy - Program Page Styles
 }
 
 .module-topics-modern {
-    background: var(--gray-50);
+    background: #ffffff;
+    border: 1px solid var(--gray-200);
     border-radius: 12px;
-    padding: var(--space-5);
+    padding: var(--space-6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .topics-label {
-    display: block;
-    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.8125rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--gray-500);
-    margin-bottom: var(--space-3);
+    color: var(--accent);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--gray-100);
 }
 
 .topics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: var(--space-2);
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-3) var(--space-8);
 }
 
 .topic-item {
     display: flex;
     align-items: flex-start;
-    gap: var(--space-2);
-    font-size: 0.875rem;
-    color: var(--gray-700);
+    gap: var(--space-3);
+    font-size: 0.95rem;
+    color: var(--gray-800);
+    font-weight: 500;
     line-height: 1.5;
+    padding: 2px 0;
 }
 
 .topic-item svg {
     color: var(--accent);
     flex-shrink: 0;
-    margin-top: 3px;
+    margin-top: 4px;
+    /* Size controlled by SVG attributes or utility classes */
 }
 
 /* Footer CTA */
@@ -4215,20 +4632,21 @@ eHack Academy - Program Page Styles
     justify-content: space-between;
     gap: var(--space-8);
     padding: var(--space-8);
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: rgba(255, 107, 0, 0.05);
+    border: 1px solid rgba(255, 107, 0, 0.1);
     border-radius: 16px;
 }
 
 .footer-info h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: white;
+    color: var(--black);
     margin-bottom: var(--space-1);
 }
 
 .footer-info p {
     font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--gray-600);
     margin: 0;
 }
 
@@ -5020,4 +5438,71 @@ eHack Academy - Program Page Styles
     .certificates-gallery.count-2 .certificate-img {
         height: auto;
     }
+}
+
+.audience-section-modern {
+    padding: var(--space-4) 0 var(--space-8);
+    /* Reduced top padding from space-8 */
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* Audience Section Typography - Prominent Badge, Compact Text */
+.audience-header-modern {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 2rem 1rem 0;
+    /* Reduced top padding (from '0 1rem' with parent padding handling it, but usually parent has padding) */
+}
+
+/* We need to check the parent container spacing too. 
+   Usually .audience-section-modern has padding. Let's target that instead or as well. */
+
+.audience-title-modern {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    /* Reduced from 2rem-3rem */
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: var(--space-4);
+}
+
+.audience-subtitle-modern {
+    font-size: 1rem;
+    /* Reduced from 1.15rem */
+    line-height: 1.6;
+    font-weight: 500;
+    color: var(--gray-700);
+    max-width: 700px;
+    /* Reduced width */
+    margin: 0 auto;
+}
+
+@media (min-width: 481px) {
+    /* No specific changes needed */
+}
+
+@media (min-width: 1025px) {
+    /* Adjustments if needed */
+}
+
+.audience-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    /* Increased from 0.85rem */
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: var(--space-6);
+    /* More spacing below big badge */
+    padding: 1rem 2.5rem;
+    /* Significantly Increased padding */
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
