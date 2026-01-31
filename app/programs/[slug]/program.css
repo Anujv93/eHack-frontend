@@ -5,18 +5,18 @@ eHack Academy - Program Page Styles
 
 .program-page {
     /* Color Palette - Minimal Swiss */
-    --black: #000;
-    --white: #000;
-    --gray-50: #000;
-    --gray-100: #000;
-    --gray-200: #000;
-    --gray-300: #000;
-    --gray-400: #000;
-    --gray-500: #000;
-    --gray-600: #000;
-    --gray-700: #000;
-    --gray-800: #000;
-    --gray-900: #000;
+    --black: var(--neutral-black);
+    --white: var(--neutral-white);
+    --gray-50: var(--neutral-50);
+    --gray-100: var(--neutral-100);
+    --gray-200: var(--neutral-200);
+    --gray-300: var(--neutral-300);
+    --gray-400: var(--neutral-400);
+    --gray-500: var(--neutral-500);
+    --gray-600: var(--neutral-600);
+    --gray-700: var(--neutral-700);
+    --gray-800: var(--neutral-800);
+    --gray-900: var(--neutral-900);
 
     /* Brand Accent - Single Accent Color */
     --accent: #ff6b00;
@@ -78,6 +78,10 @@ eHack Academy - Program Page Styles
     gap: var(--space-12);
     font-size: 1rem;
     color: var(--white);
+}
+
+p {
+    color: #1f2937;
 }
 
 .banner-contact {
@@ -484,7 +488,7 @@ eHack Academy - Program Page Styles
 
 .form-subtitle {
     font-size: 0.875rem;
-    color: var(--gray-500);
+    color: #1f2937;
     margin-bottom: var(--space-6);
 }
 
@@ -509,7 +513,7 @@ eHack Academy - Program Page Styles
     background: var(--gray-50);
     border-right: 1px solid var(--gray-300);
     font-size: 0.875rem;
-    color: var(--gray-600);
+    color: #1f2937;
 }
 
 .country-code .flag {
@@ -551,7 +555,7 @@ eHack Academy - Program Page Styles
     align-items: flex-start;
     gap: var(--space-2);
     font-size: 0.875rem;
-    color: var(--gray-600);
+    color: #1f2937;
     margin-bottom: var(--space-4);
     cursor: pointer;
 }
@@ -563,7 +567,7 @@ eHack Academy - Program Page Styles
 
 .terms-text {
     font-size: 0.75rem;
-    color: var(--gray-500);
+    color: #1f2937;
     text-align: center;
 }
 
@@ -726,7 +730,7 @@ eHack Academy - Program Page Styles
     padding: 10px 16px;
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--gray-600);
+    color: #1f2937;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -737,7 +741,7 @@ eHack Academy - Program Page Styles
 
 .sticky-nav-link:hover {
     color: var(--black);
-    background: var(--gray-100);
+    background: #1f2937;
 }
 
 .sticky-nav-link.active {
@@ -866,7 +870,7 @@ eHack Academy - Program Page Styles
     margin: 0 auto var(--space-10);
     text-align: center;
     font-size: 1.1rem;
-    color: var(--gray-700);
+    color: #1f2937;
     line-height: 1.7;
     font-weight: 500;
 }
@@ -1115,7 +1119,7 @@ eHack Academy - Program Page Styles
     font-size: 0.85rem;
     line-height: 1.4;
     font-weight: 600;
-    color: var(--gray-700);
+    color: #1f2937;
 }
 
 /* Adjust gallery for combined items with count-1 */
@@ -1168,7 +1172,7 @@ eHack Academy - Program Page Styles
     display: block;
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--gray-700);
+    color: #1f2937;
     line-height: 1.5;
 }
 
@@ -1273,7 +1277,7 @@ eHack Academy - Program Page Styles
 
 .skill-desc {
     font-size: 0.95rem;
-    color: var(--gray-800);
+    color: #1f2937;
     line-height: 1.6;
     font-weight: 500;
 }
@@ -1317,7 +1321,7 @@ eHack Academy - Program Page Styles
     margin: 0 auto var(--space-10);
     text-align: center;
     font-size: 0.9rem;
-    color: var(--gray-700);
+    color: #1f2937;
     line-height: 1.6;
     font-weight: 500;
 }
@@ -1532,7 +1536,7 @@ eHack Academy - Program Page Styles
 .bar-label {
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--gray-700);
+    color: #1f2937;
     margin-bottom: var(--space-2);
 }
 
@@ -1570,7 +1574,7 @@ eHack Academy - Program Page Styles
 
 .chart-desc {
     font-size: 0.95rem;
-    color: var(--gray-700);
+    color: #1f2937;
     line-height: 1.7;
     font-weight: 500;
 }
@@ -1899,7 +1903,7 @@ eHack Academy - Program Page Styles
 
 .curriculum-subtitle {
     font-size: 1rem;
-    color: var(--gray-600);
+    color: #1f2937;
     line-height: 1.6;
     max-width: 520px;
 }
@@ -2707,7 +2711,7 @@ eHack Academy - Program Page Styles
 
 .learners-subtitle {
     font-size: 1.25rem;
-    color: var(--neutral-600);
+    color: #1f2937;
     line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;
@@ -2873,13 +2877,13 @@ eHack Academy - Program Page Styles
 .journey-role {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--neutral-700);
+    color: #1f2937;
     line-height: 1.3;
 }
 
 .journey-company {
     font-size: 0.85rem;
-    color: var(--neutral-500);
+    color: #1f2937;
 }
 
 /* Styled Arrow */
@@ -4347,7 +4351,7 @@ eHack Academy - Program Page Styles
 
 .curriculum-subtitle-modern {
     font-size: 1rem;
-    color: var(--gray-600);
+    color: #1f2937;
     line-height: 1.7;
 }
 
@@ -5495,7 +5499,7 @@ eHack Academy - Program Page Styles
     /* Reduced from 1.15rem */
     line-height: 1.6;
     font-weight: 500;
-    color: var(--gray-700);
+    color: #1f2937;
     max-width: 700px;
     /* Reduced width */
     margin: 0 auto;
