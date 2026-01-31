@@ -859,7 +859,7 @@
     gap: var(--space-8);
     padding: var(--space-8);
     background: rgba(255, 107, 0, 0.05);
-    border: 1px solid rgba(255, 107, 0, 0.1);
+    border: 2px solid #ff6b00;
     border-radius: 12px;
     width: 100%;
 }
@@ -891,7 +891,7 @@
 .labs-stat-divider {
     width: 1px;
     height: 50px;
-    background: rgba(0, 0, 0, 0.1);
+    background: #ff6b00;
 }
 
 /* Responsive Design */

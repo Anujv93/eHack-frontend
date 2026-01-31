@@ -19,9 +19,9 @@ eHack Academy - Program Page Styles
     --gray-900: var(--neutral-900);
 
     /* Brand Accent - Single Accent Color */
-    --accent: var(--brand-primary);
-    --accent-light: var(--brand-primary-50);
-    --accent-dark: var(--brand-primary-dark);
+    --accent: #ff6b00;
+    --accent-light: #fff0e0;
+    --accent-dark: #cc5600;
 
     /* Typography - Use Global Font */
     --font-family: var(--font-primary);
@@ -305,41 +305,20 @@ eHack Academy - Program Page Styles
 }
 
 .hero-title .text-accent {
-    color: var(--accent);
+    color: #ff6b00;
 }
 
-@keyframes borderBlink {
+@keyframes borderRun {
     0% {
-        box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.4);
-        transform: scale(1);
+        background-position: 0% 50%;
     }
 
     50% {
-        box-shadow: 0 0 0 8px rgba(234, 88, 12, 0);
-        transform: scale(1.02);
-        border-color: #ff4500;
+        background-position: 100% 50%;
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(234, 88, 12, 0);
-        transform: scale(1);
-    }
-}
-
-@keyframes textBlink {
-
-    0%,
-    100% {
-        opacity: 1;
-        color: var(--accent);
-        text-shadow: none;
-    }
-
-    50% {
-        opacity: 1;
-        color: #ff4500;
-        text-shadow: 0 0 10px rgba(255, 69, 0, 0.4);
-        transform: scale(1.02);
+        background-position: 0% 50%;
     }
 }
 
@@ -347,17 +326,35 @@ eHack Academy - Program Page Styles
     display: inline-block;
     font-size: 0.875rem;
     font-weight: 700;
-    color: var(--accent-dark);
-    background: var(--accent-light);
-    border: 1px solid var(--accent);
+    color: #ff6b00 !important;
+    background: transparent;
+    border: none;
     padding: 6px 12px;
     margin-top: var(--space-4);
     line-height: 1.5;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    border-radius: 4px;
+    border-radius: 100px;
     vertical-align: middle;
-    animation: borderBlink 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title .cert-count::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    padding: 2px;
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000);
+    background-size: 300% 300%;
+    border-radius: 100px;
+    animation: borderRun 3s linear infinite;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
 .hero-description {
@@ -426,12 +423,32 @@ eHack Academy - Program Page Styles
 
 .batch-date {
     display: inline-block;
-    /* Required for transform */
     font-size: 0.875rem;
     font-weight: 700;
-    color: var(--accent);
+    color: #ff6b00 !important;
+    background: transparent;
     letter-spacing: 0.1em;
-    animation: textBlink 1s infinite alternate;
+    position: relative;
+    z-index: 1;
+    padding: 6px 12px;
+    border-radius: 100px;
+}
+
+.batch-date::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    padding: 2px;
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000);
+    background-size: 300% 300%;
+    border-radius: 100px;
+    animation: borderRun 3s linear infinite;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
 /* Form Card - Swiss Minimal */
@@ -448,7 +465,7 @@ eHack Academy - Program Page Styles
 }
 
 .form-urgency-badge {
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    background: #ff6b00;
     color: white;
     font-size: 0.75rem;
     font-weight: 700;
@@ -569,7 +586,7 @@ eHack Academy - Program Page Styles
     max-width: 1200px;
     margin: 0 auto;
     display: flex !important;
-    border: 2px solid #FF6B00;
+    border: 2px solid #ff6b00;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -583,7 +600,7 @@ eHack Academy - Program Page Styles
 }
 
 .program-page .stats-bar .stat-item:not(:last-child) {
-    border-right: 1px solid rgba(255, 107, 0, 0.3);
+    border-right: 1px solid #ff6b00;
 }
 
 .program-page .stats-bar .stat-label {
@@ -591,7 +608,7 @@ eHack Academy - Program Page Styles
     font-size: 0.7rem;
     font-weight: 700;
     color: #ffffff;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     padding: 10px 8px;
@@ -608,7 +625,7 @@ eHack Academy - Program Page Styles
 
 .program-page .stats-bar .stat-value strong {
     font-weight: 800;
-    color: #FF6B00;
+    color: #ff6b00;
     font-size: 1.2rem;
 }
 
@@ -616,14 +633,14 @@ eHack Academy - Program Page Styles
 .schedule-bar {
     background: rgba(255, 107, 0, 0.1);
     padding: var(--space-4) var(--space-6);
-    border-top: 1px solid rgba(255, 107, 0, 0.2);
-    border-bottom: 1px solid rgba(255, 107, 0, 0.2);
+    border-top: 1px solid #ff6b00;
+    border-bottom: 1px solid #ff6b00;
 }
 
 .schedule-badge {
     display: inline-block;
     color: #ffffff;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     font-weight: 700;
     padding: 6px 12px;
     border-radius: 4px;
@@ -1167,19 +1184,22 @@ eHack Academy - Program Page Styles
     align-items: center;
     gap: var(--space-2);
     padding: 12px 24px;
-    background: transparent;
-    color: var(--black);
+    background: #ff6b00;
+    color: var(--white);
     font-size: 0.875rem;
     font-weight: 600;
-    border: 1px solid var(--black);
+    border: none;
     text-decoration: none;
     transition: all 0.2s;
     letter-spacing: 0.02em;
+    border-radius: 6px;
 }
 
 .btn-inquire:hover {
-    background: var(--black);
+    background: #cc5600;
     color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
 /* Skills Section - Swiss Minimal */
@@ -3754,6 +3774,7 @@ eHack Academy - Program Page Styles
 
 .news-card {
     background: var(--white);
+    border: 2px solid var(--accent);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
@@ -4109,10 +4130,11 @@ eHack Academy - Program Page Styles
 
 .audience-card-desc-modern {
     font-size: 0.9375rem;
-    color: var(--gray-600);
+    color: var(--gray-800);
     line-height: 1.6;
     margin-bottom: var(--space-4);
     flex-grow: 1;
+    font-weight: 500;
 }
 
 .audience-tag-modern {
@@ -4125,6 +4147,7 @@ eHack Academy - Program Page Styles
     background: var(--accent-light);
     padding: 6px 12px;
     border-radius: 50px;
+    border: 2px solid #ff6b00;
     width: fit-content;
 }
 
@@ -4141,7 +4164,7 @@ eHack Academy - Program Page Styles
     gap: var(--space-10);
     padding: var(--space-8) var(--space-6);
     background: rgba(255, 107, 0, 0.05);
-    border: 1px solid rgba(255, 107, 0, 0.1);
+    border: 2px solid #ff6b00;
     border-radius: 16px;
     margin-bottom: var(--space-12);
 }
@@ -4172,7 +4195,7 @@ eHack Academy - Program Page Styles
 .audience-stat-divider {
     width: 1px;
     height: 50px;
-    background: rgba(255, 107, 0, 0.2);
+    background: #ff6b00;
 }
 
 /* Modern CTA Box */
@@ -4305,14 +4328,15 @@ eHack Academy - Program Page Styles
 
 .curriculum-eyebrow {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     color: var(--white);
-    background: var(--accent);
-    padding: 8px 16px;
-    border-radius: 50px;
-    margin-bottom: var(--space-4);
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    margin-bottom: var(--space-6);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
 .curriculum-title-modern {
@@ -4633,7 +4657,7 @@ eHack Academy - Program Page Styles
     gap: var(--space-8);
     padding: var(--space-8);
     background: rgba(255, 107, 0, 0.05);
-    border: 1px solid rgba(255, 107, 0, 0.1);
+    border: 2px solid #ff6b00;
     border-radius: 16px;
 }
 
