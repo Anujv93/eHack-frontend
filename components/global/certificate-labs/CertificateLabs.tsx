@@ -969,7 +969,7 @@ export function CertificateLabs({ certificateSlug, certificateTitle }: Certifica
     }, 0);
 
     return (
-        <section className="certificate-labs-section border-bottom" id="labs">
+        <section className="certificate-labs-section" id="labs">
             {/* Subtle Background */}
             <div className="cert-labs-bg-pattern"></div>
 

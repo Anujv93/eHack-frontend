@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* eHack Academy Brand Colors - Primary Orange Theme */
+  /* eHack Academy Brand Colors - Primary Orange Theme  #ff6b00 */
   --brand-primary: #df6718;
   --brand-primary-dark: #c4580f;
   --brand-primary-light: #f07a2e;

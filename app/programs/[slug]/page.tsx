@@ -249,7 +249,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
             {/* 5. COMBINED ROI + JOB ROLES - Career Value Proposition */}
             {program.category !== 'personality-softskills' && (
-                <section className="roi-section border-bottom" id="career">
+                <section className="roi-section" id="career">
                     <div className="section-container">
                         <h2 className="roi-title">
                             {(() => {
@@ -341,7 +341,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             )}
 
             {/* 6. CREDENTIALS - Authority & Trust */}
-            <section className="border-bottom credentials-section" id="certifications">
+            <section className="credentials-section" id="certifications">
                 <div className="credentials-wrapper">
                     <div className="section-container">
                         <h2 className="credentials-title">Earn <span className="text-accent">{program.certifications.length} Global Certifications</span></h2>
@@ -377,7 +377,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* 7. WHO IS THIS FOR - Coursera/DeepLearning.ai Inspired Design */}
-            <section className="audience-section-modern border-bottom" id="structure">
+            <section className="audience-section-modern" id="structure">
                 <div className="section-container">
                     <div className="audience-header-modern">
                         <span className="audience-eyebrow">DESIGNED FOR BEGINNERS</span>
@@ -445,7 +445,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             )}
 
             {/* 12. CURRICULUM SECTION - Modern Redesign */}
-            <section className="curriculum-section-modern border-bottom" id="curriculum">
+            <section className="curriculum-section-modern" id="curriculum">
                 <div className="curriculum-container-modern">
                     {/* Header */}
                     <div className="curriculum-header-modern">
@@ -581,7 +581,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             )}
 
             {/* Pricing Details */}
-            <section className="pricing-section border-bottom">
+            <section className="pricing-section">
                 <div className="pricing-container-full">
                     <div className="pricing-header">
                         <h2 className="pricing-title">Program Investment & Financing</h2>
@@ -698,7 +698,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* 9. FAQ SECTION - Objection Handling (Right After Pricing) */}
-            <section className="faq-section border-bottom" id="faq">
+            <section className="faq-section" id="faq">
                 <div className="section-container">
                     <h2 className="faq-title">Frequently Asked <span className="text-accent">Questions</span></h2>
                     <div className="faq-container">
@@ -813,7 +813,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>  */}
 
             {/* 10. WHY EHACK - Differentiation */}
-            <section className="why-ehack-section border-bottom">
+            <section className="why-ehack-section">
                 <div className="section-container">
                     <h2 className="roi-title">Why <span className="text-accent">eHack Academy</span>?</h2>
                     <p className="roi-subtitle">{programType === 'digital-marketing' ? 'Passion for Excellence in Digital Marketing Training' : 'Passion for Excellence in Information Security'}</p>
@@ -841,13 +841,23 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
             {/* 11. SKILLS SECTION - Hidden for personality-softskills */}
             {program.category !== 'personality-softskills' && (
-                <section className="skills-section border-bottom">
+                <section className="skills-section">
                     <div className="section-container">
                         <h2 className="skills-title">Master <span className="text-accent">{programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'}</span> Skills</h2>
                         <div className="skills-grid">
                             {program.skills.map((skill, idx) => (
                                 <div key={idx} className="skill-card">
-                                    <h3 className="skill-name">{skill.name}</h3>
+                                    <h3 className="skill-name">
+                                        {(() => {
+                                            const words = skill.name.split(' ');
+                                            const lastWord = words.pop();
+                                            return (
+                                                <>
+                                                    {words.join(' ')} <span className="text-accent">{lastWord}</span>
+                                                </>
+                                            );
+                                        })()}
+                                    </h3>
                                     <p className="skill-desc">{skill.desc}</p>
                                 </div>
                             ))}
@@ -859,7 +869,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
 
             {/* 13. NEWS SECTION - Industry Validation & Urgency - Hidden for non-cybersecurity programs */}
-            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('personality') && program.category !== 'personality-softskills' && <section className="news-section border-bottom">
+            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('personality') && program.category !== 'personality-softskills' && <section className="news-section">
                 <div className="news-container ">
                     <span className="news-badge">CYBER THREATS ARE RISING</span>
                     <h2 className="news-title">Why Cybersecurity Skills Matter Now</h2>
@@ -893,7 +903,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>}
 
             {/* 14. FINAL CTA SECTION */}
-            <section className="program-cta-section border-bottom">
+            <section className="program-cta-section">
                 <div className="section-container">
                     <h2>Ready to Start Your {program.category === 'personality-softskills' ? 'Professional Development' : programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'} Journey?</h2>
                     <p>Join thousands of professionals who have transformed their careers with eHack Academy</p>
