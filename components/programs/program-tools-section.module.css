@@ -1,19 +1,18 @@
 .section {
-    padding: 4rem 0;
+    padding: 2rem 0;
     background-color: var(--white, #ffffff);
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid var(--gray-200, #e5e7eb);
-    border-top: 4px solid var(--accent, #ea580c);
+    border-bottom: 1px solid #ff6b00;
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .content {
@@ -29,15 +28,16 @@
     align-items: center;
     justify-content: center;
     border-radius: 24px;
-    font-size: 0.875rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     background: var(--accent, #ea580c);
     color: var(--white, #ffffff);
     margin-bottom: 1rem;
-    padding: 0.5rem 1rem;
-    width: 200px;
+    padding: 0.75rem 2rem;
+    width: auto;
+    display: inline-flex;
 }
 
 .title {
