@@ -969,6 +969,11 @@ p {
     text-align: center;
 }
 
+/* Three certificates styling - mixed orientation handling */
+.certificates-gallery.count-3 .certificate-item-combined:first-child {
+    align-self: center;
+}
+
 .certificate-image-card {
     position: relative;
     border-radius: var(--border-radius-lg);
