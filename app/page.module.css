@@ -2210,6 +2210,11 @@
         padding: 1.5rem;
     }
 
+    .empowermentRibbon .ribbonBadge {
+        font-size: 0.65rem;
+        padding: 0.5rem 1rem;
+    }
+
     .empowermentRibbon .ribbonTitle {
         font-size: 1.5rem;
     }
@@ -2225,8 +2230,14 @@
     }
 
     .empowermentRibbon .ribbonContent {
-        margin-top: -40px;
+        margin-top: -30px;
         padding: 1rem;
+    }
+
+    .empowermentRibbon .ribbonBadge {
+        font-size: 0.55rem;
+        padding: 0.4rem 0.75rem;
+        margin-bottom: 0.75rem;
     }
 
     .empowermentRibbon .ribbonTitle {
