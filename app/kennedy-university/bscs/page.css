@@ -6,7 +6,7 @@
 }
 
 .border-bottom {
-    border-bottom: 3px solid var(--accent, #DF6718);
+    border-bottom: 1px solid #ff6b00;
 }
 
 /* Hero Section */
@@ -86,7 +86,7 @@
 }
 
 .program-detail-bscs .program-title .highlight {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-bscs .program-desc {
@@ -348,7 +348,7 @@
     padding: 28px;
     text-align: center;
     transition: all 0.3s;
-    border: 1px solid rgba(223, 103, 24, 0.6);
+    border: 1px solid #ff6b00;
 }
 
 .program-detail-bscs .overview-card:hover {
@@ -365,7 +365,7 @@
 
 .program-detail-bscs .overview-card p {
     font-size: 0.9rem;
-    color: #64748B;
+    color: #1f2937;
     line-height: 1.6;
     margin: 0;
 }

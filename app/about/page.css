@@ -45,7 +45,7 @@
 
 .hero-badge-light {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.15);
+    background: #ff6b00;
     backdrop-filter: blur(10px);
     color: #FFFFFF;
     padding: 14px 32px;
@@ -188,6 +188,7 @@
     background: #FFFFFF;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid #ff6b00;
 }
 
 .mission-content-split {
@@ -2616,7 +2617,7 @@
     padding: 60px 0;
     background: #FFFAEB;
     /* Matches Promise Section for consistency, or use #FFFFFF */
-    border-top: 1px solid #FFEDD5;
+    border-top: 1px solid #ff6b00;
 }
 
 .feedback-disclaimer {
@@ -2638,9 +2639,9 @@
 .feedback-card {
     background: #FFFFFF;
     border-radius: 12px;
+    border: 1px solid #ff6b00;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    border: 1px solid #E2E8F0;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -2679,7 +2680,7 @@
     gap: 0.75rem;
     margin-top: 0.5rem;
     padding-top: 1rem;
-    border-top: 1px solid #F1F5F9;
+    border-top: 1px solid #ff6b00;
 }
 
 .author-avatar-placeholder {

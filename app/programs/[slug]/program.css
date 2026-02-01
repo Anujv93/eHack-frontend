@@ -4598,7 +4598,7 @@ p {
 
 .module-description-modern {
     font-size: 0.9375rem;
-    color: var(--gray-600);
+    color: #1f2937;
     line-height: 1.7;
     margin-bottom: var(--space-5);
 }

@@ -421,7 +421,6 @@ a:hover {
 
 .border-bottom:before {
   content: "";
-  background: linear-gradient(90deg, var(--brand-primary), #ff8c42, var(--brand-primary));
   height: 4px;
   width: 100%;
   position: absolute;
