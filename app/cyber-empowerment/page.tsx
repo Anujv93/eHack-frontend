@@ -61,21 +61,14 @@ export default function CyberEmpowermentPage() {
             <section className={styles.hero}>
                 <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
-                    <Link href="/" className={styles.backLink}>
-                        <ArrowLeft size={20} />
-                        Back to Home
-                    </Link>
+                    <div style={{ marginBottom: '2rem' }}></div>
                     <span className={styles.heroBadge}>A New Initiative by eHack Academy, Bangalore</span>
                     <h1 className={styles.heroTitle}>
-                        Cyber Empowerment <span className={styles.heroHighlight}>for All</span>
+                        <span className={styles.heroHighlight}>Cyber</span> Empowerment for All
                     </h1>
-                    <p className={styles.heroSubtitle}>
+                    {/* <p className={styles.heroSubtitle}>
                         Empowering Young Minds & Experienced Lives in the Digital World
-                    </p>
-                    <p className={styles.heroLead}>
-                        Led by <strong>Ms. Smitha C</strong><br />
-                        <span>Center Head – eHack Academy, Bangalore</span>
-                    </p>
+                    </p> */}
                 </div>
             </section>
 
@@ -83,12 +76,27 @@ export default function CyberEmpowermentPage() {
             <section className={styles.introSection}>
                 <div className={styles.container}>
                     <div className={styles.introContent}>
-                        <p className={styles.introParagraph}>
-                            In today's fast-evolving digital era, cyber awareness and cyber skills are no longer optional—they are
-                            essential. eHack Academy, Bangalore proudly launches <strong>Cyber Empowerment for All</strong>, a unique initiative
-                            designed to empower youngsters, working professionals, homemakers, senior citizens, and aged
-                            individuals with the knowledge and confidence to thrive safely and smartly in the digital world.
-                        </p>
+                        <div className={styles.introSplit}>
+                            <div className={styles.introTextWrapper}>
+                                <h2 className={styles.sectionTitle} style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
+                                    Empowering <span className={styles.textAccent}>Young Minds</span> & <span className={styles.textAccent}>Experienced Lives</span> in the Digital World
+                                </h2>
+                                <p className={styles.introParagraph} style={{ textAlign: 'left' }}>
+                                    In today's fast-evolving digital era, cyber awareness and cyber skills are no longer optional—they are
+                                    essential. eHack Academy, Bangalore proudly launches <strong>Cyber Empowerment for All</strong>, a unique initiative
+                                    designed to empower youngsters, working professionals, homemakers, senior citizens, and aged
+                                    individuals with the knowledge and confidence to thrive safely and smartly in the digital world.
+                                </p>
+                            </div>
+                            <div className={styles.introImageWrapper}>
+                                <img
+                                    src="/impowerment-2.png"
+                                    alt="Empowering Young Minds & Experienced Lives"
+                                    className={styles.introImage}
+                                />
+                            </div>
+                        </div>
+
                         <div className={styles.beliefBox}>
                             <p>
                                 This initiative is driven by a simple but powerful belief:
@@ -110,19 +118,15 @@ export default function CyberEmpowermentPage() {
                     </h2>
                     <div className={styles.whyGrid}>
                         <div className={styles.whyCard}>
-                            <div className={styles.whyIcon}>⚠️</div>
                             <p>Rising cyber frauds, online scams, and digital crimes</p>
                         </div>
                         <div className={styles.whyCard}>
-                            <div className={styles.whyIcon}>💳</div>
                             <p>Increased dependence on online banking, UPI, social media, and e-governance</p>
                         </div>
                         <div className={styles.whyCard}>
-                            <div className={styles.whyIcon}>📚</div>
                             <p>Lack of structured cyber awareness for non-technical users</p>
                         </div>
                         <div className={styles.whyCard}>
-                            <div className={styles.whyIcon}>🚀</div>
                             <p>Growing interest among youngsters to build careers in Cyber Security</p>
                         </div>
                     </div>
@@ -229,7 +233,7 @@ export default function CyberEmpowermentPage() {
                 </div>
             </section>
 
-            {/* Why eHack Section */}
+            {/*What Makes eHack Academy*/}
             <section className={styles.differenceSection}>
                 <div className={styles.container}>
                     <h2 className={styles.sectionTitle}>
@@ -237,23 +241,33 @@ export default function CyberEmpowermentPage() {
                     </h2>
                     <div className={styles.differenceGrid}>
                         <div className={styles.differenceItem}>
-                            <span className={styles.differenceIcon}>🏢</span>
+                            <span className={styles.differenceIcon}>
+                                <Award size={24} />
+                            </span>
                             <span>Industry-driven Cyber Security training institute</span>
                         </div>
                         <div className={styles.differenceItem}>
-                            <span className={styles.differenceIcon}>🔧</span>
+                            <span className={styles.differenceIcon}>
+                                <Award size={24} />
+                            </span>
                             <span>Practical, hands-on learning approach</span>
                         </div>
                         <div className={styles.differenceItem}>
-                            <span className={styles.differenceIcon}>🤝</span>
+                            <span className={styles.differenceIcon}>
+                                <Award size={24} />
+                            </span>
                             <span>Community-focused awareness initiatives</span>
                         </div>
                         <div className={styles.differenceItem}>
-                            <span className={styles.differenceIcon}>👨‍🏫</span>
+                            <span className={styles.differenceIcon}>
+                                <Award size={24} />
+                            </span>
                             <span>Experienced trainers and mentors</span>
                         </div>
                         <div className={styles.differenceItem}>
-                            <span className={styles.differenceIcon}>🌍</span>
+                            <span className={styles.differenceIcon}>
+                                <Award size={24} />
+                            </span>
                             <span>Strong commitment to social responsibility and digital inclusion</span>
                         </div>
                     </div>
