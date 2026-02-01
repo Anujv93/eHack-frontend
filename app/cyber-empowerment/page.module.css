@@ -730,6 +730,19 @@
         font-size: 2.5rem;
     }
 
+    .introSplit {
+        gap: 2rem;
+    }
+
+    .introImageWrapper {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Reorder flex items to show image first on tablet/mobile if desired, or keep text first */
+    /* Let's keep text first as per current layout, but center everything */
+
     .whyGrid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -743,7 +756,9 @@
     }
 
     .audienceGrid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for tablet better than 1 */
+        gap: 1.5rem;
     }
 
     .differenceGrid {
@@ -764,11 +779,10 @@
         font-size: 1.75rem;
     }
 
-    .whyGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .focusGrid {
+    .whyGrid,
+    .focusGrid,
+    .audienceGrid {
+        /* Stack audience cards on mobile */
         grid-template-columns: 1fr;
     }
 
@@ -778,6 +792,10 @@
 
     .differenceGrid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .leaderCard {
+        padding: 2rem;
     }
 
     .ctaContent h2 {
@@ -795,6 +813,10 @@
 }
 
 @media (max-width: 480px) {
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+
     .hero {
         padding: 3rem 1rem;
         min-height: 50vh;
@@ -804,16 +826,53 @@
         font-size: 1.75rem;
     }
 
+    .introSection,
+    .whySection,
+    .leadershipSection,
+    .focusSection,
+    .statsSection,
+    .audienceSection,
+    .differenceSection,
+    .ctaSection,
+    .footerInfo {
+        padding: 2rem 0;
+        /* Reduce padding on mobile */
+    }
+
+    .introSplit {
+        gap: 2rem;
+    }
+
+    /* Stack stats on very small screens? or keep 2 cols? 
+       2 cols with smaller font might work, let's keep 2 cols but check gap */
     .statsGrid {
         grid-template-columns: 1fr 1fr;
+        /* Keep 2 cols */
         gap: 1rem;
     }
 
     .statValue {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .statCard {
+        padding: 1rem;
     }
 
     .differenceGrid {
         grid-template-columns: 1fr;
+    }
+
+    .leaderCard {
+        padding: 1.5rem;
+    }
+
+    .leaderInfo h3 {
+        font-size: 1.5rem;
+    }
+
+    .focusIcon {
+        width: 50px;
+        height: 50px;
     }
 }

@@ -869,38 +869,26 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
 
             {/* 13. NEWS SECTION - Industry Validation & Urgency - Hidden for non-cybersecurity programs */}
-            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('personality') && program.category !== 'personality-softskills' && <section className="news-section">
-                <div className="news-container ">
-                    <span className="news-badge">CYBER THREATS ARE RISING</span>
-                    <h2 className="news-title">Why Cybersecurity Skills Matter Now</h2>
-                    <div className="news-grid">
-                        <article className="news-card">
-                            <div className="news-image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" alt="Cybersecurity" /></div>
-                            <div className="news-content">
-                                <span className="news-date">December 2024</span>
-                                <h3 className="news-headline">India Records 500% Increase in Cyberattacks - Skilled Professionals in High Demand</h3>
-                                <p className="news-source">Economic Times</p>
-                            </div>
-                        </article>
-                        <article className="news-card">
-                            <div className="news-image"><img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop" alt="Hacking" /></div>
-                            <div className="news-content">
-                                <span className="news-date">November 2024</span>
-                                <h3 className="news-headline">Cybersecurity Job Market Expected to Grow 35% by 2027 - CEH Certified Professionals Lead</h3>
-                                <p className="news-source">Forbes India</p>
-                            </div>
-                        </article>
-                        <article className="news-card">
-                            <div className="news-image"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop" alt="Data Security" /></div>
-                            <div className="news-content">
-                                <span className="news-date">October 2024</span>
-                                <h3 className="news-headline">Companies Willing to Pay Premium Salaries for Certified Ethical Hackers</h3>
-                                <p className="news-source">Business Standard</p>
-                            </div>
-                        </article>
+            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('personality') && program.category !== 'personality-softskills' && program.newsItems && (
+                <section className="news-section">
+                    <div className="news-container ">
+                        <span className="news-badge">CYBER THREATS ARE RISING</span>
+                        <h2 className="news-title">Why Cybersecurity Skills Matter Now</h2>
+                        <div className="news-grid">
+                            {program.newsItems.map((item, idx) => (
+                                <article key={idx} className="news-card">
+                                    <div className="news-image"><img src={item.image} alt="Cybersecurity News" /></div>
+                                    <div className="news-content">
+                                        <span className="news-date">{item.date}</span>
+                                        <h3 className="news-headline">{item.headline}</h3>
+                                        <p className="news-source">{item.source}</p>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>}
+                </section>
+            )}
 
             {/* 14. FINAL CTA SECTION */}
             <section className="program-cta-section">

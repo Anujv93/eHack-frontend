@@ -355,6 +355,26 @@ export const programs = [
                     { q: "Can working professionals join?", a: "Absolutely! We offer flexible weekend and evening batches designed for working professionals." }
                 ]
             }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                date: "December 2024",
+                headline: "India Records 500% Increase in Cyberattacks - Skilled Professionals in High Demand",
+                source: "Economic Times"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
+                date: "November 2024",
+                headline: "Cybersecurity Job Market Expected to Grow 35% by 2027 - CEH Certified Professionals Lead",
+                source: "Forbes India"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+                date: "October 2024",
+                headline: "Companies Willing to Pay Premium Salaries for Certified Ethical Hackers",
+                source: "Business Standard"
+            }
         ]
     },
 
@@ -390,6 +410,31 @@ export const programs = [
             { name: "Digital Forensics", desc: "Evidence collection, forensic analysis, incident investigation, and reporting techniques for cybercrime cases." }
         ],
         curriculum: [
+            {
+                number: "00",
+                title: "ICE Breaker, Program Kick-off & Orientation",
+                duration: "4 Hours",
+                certification: "",
+                description: "Your journey into a high-growth cyber security career begins from Day One. The ICE Breaker & Orientation session is a power-packed 4-hour onboarding experience designed to align learners with industry expectations, global certifications, and a clear career roadmap—before core technical training begins.",
+                topics: [
+                    "Interactive introductions to build confidence and collaboration",
+                    "Clear understanding of the Master’s Program structure",
+                    "Alignment on learning discipline, ethics, and performance standards",
+                    "Setting expectations for real-world cyber security careers",
+                    "Introduction to eHack Academy – Institute of Emerging Technologies",
+                    "Overview of EC-Council, the world’s leading cyber security certification body",
+                    "Academic, university, and industry partnerships",
+                    "Industry-aligned curriculum with real-world relevance",
+                    "Guided walkthrough of the EC-Council LMS",
+                    "Access to official courseware, labs, and licensed tools",
+                    "Importance of classroom training and hands-on practice",
+                    "Transparent evaluation, exam pattern, and certification process",
+                    "Cyber Security–specific resume building",
+                    "Understanding job roles, domains, and growth paths",
+                    "Smart job application strategies and LinkedIn optimization",
+                    "Long-term career success roadmap in cyber security"
+                ]
+            },
             {
                 number: "01",
                 title: "P|CSFᴬᴵ - Professional | Cybersecurity Fundamentals Programᴬᴵ",
@@ -629,6 +674,33 @@ export const programs = [
                     { q: "Is there any scholarship available?", a: "Merit-based scholarships are available up to ₹20,000 for exceptional candidates. Contact our counselors for eligibility." },
                     { q: "What does the fee include?", a: "The fee covers all training materials, lab access, certification exam vouchers, and 2 years of post-training support." }
                 ]
+            },
+            {
+                category: "Career",
+                questions: [
+                    { q: "What role can I get?", a: "You can start as a Security Analyst, Network Defender, or Junior Pen Tester." },
+                    { q: "Is this degree recognized?", a: "Yes, it's a legitimate specialized program recognized by industry partners." }
+                ]
+            }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=250&fit=crop",
+                date: "January 2025",
+                headline: "Huge Demand for Freshers in Cybersecurity - 3.5 Million Unfilled Jobs Globally",
+                source: "Times of India"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
+                date: "December 2024",
+                headline: "Degree + Certification: The Winning Combination for Early Career Success",
+                source: "Education Times"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop",
+                date: "November 2024",
+                headline: "Start Your Career in Cyber Security with 50% Higher Salary than Peers",
+                source: "Naukri.com"
             }
         ]
     },
@@ -1561,6 +1633,26 @@ export const programs = [
                     { q: "When can I start?", a: "New batches start on the 5th of every month. You can begin the admission process anytime." },
                     { q: "Is there an interview?", a: "Yes, a telephonic interview with an industry expert is conducted to gauge your passion and eligibility for the program." }
                 ]
+            }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=250&fit=crop",
+                date: "January 2025",
+                headline: "CEH Certified Professionals Earn 40% More Than Non-Certified Experts",
+                source: "PayScale Report"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
+                date: "December 2024",
+                headline: "Specialized Skills in Penetration Testing & Cloud Security in High Demand",
+                source: "Hacker News"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=400&h=250&fit=crop",
+                date: "November 2024",
+                headline: "Global Enterprises Mandating CEH v13 for InfoSec Roles",
+                source: "CSO Online"
             }
         ]
     },
