@@ -2145,6 +2145,103 @@
     background: #ce9851;
 }
 
+.empowermentTitleStrip {
+    background: #ce9851;
+}
+
+.empowermentRibbon {
+    background: linear-gradient(135deg, #fff7ed 0%, #c38532 100%);
+    border: 1px solid rgba(236, 124, 0, 0.15);
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.empowermentRibbon .ribbonContent {
+    padding: 2.5rem;
+}
+
+.empowermentRibbon .ribbonTitle {
+    color: #0f172a;
+    font-weight: 900;
+}
+
+.empowermentRibbon .ribbonText {
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 1.15rem;
+}
+
+.empowermentRibbon .ribbonAction {
+    color: #0f172a;
+    font-weight: 800;
+    margin-top: 15px;
+}
+
+.empowermentRibbon .ribbonImage {
+    height: 500px;
+}
+
+.empowermentRibbon .ribbonContent {
+    margin-top: -90px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive styles for Empowerment Ribbon */
+@media (max-width: 992px) {
+    .empowermentRibbon .ribbonImage {
+        height: 400px;
+    }
+
+    .empowermentRibbon .ribbonContent {
+        margin-top: -70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .empowermentRibbon .ribbonImage {
+        height: 320px;
+    }
+
+    .empowermentRibbon .ribbonContent {
+        margin-top: -50px;
+        padding: 1.5rem;
+    }
+
+    .empowermentRibbon .ribbonTitle {
+        font-size: 1.5rem;
+    }
+
+    .empowermentRibbon .ribbonText {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .empowermentRibbon .ribbonImage {
+        height: 250px;
+    }
+
+    .empowermentRibbon .ribbonContent {
+        margin-top: -40px;
+        padding: 1rem;
+    }
+
+    .empowermentRibbon .ribbonTitle {
+        font-size: 1.25rem;
+    }
+
+    .empowermentRibbon .ribbonText {
+        font-size: 0.9rem;
+    }
+
+    .empowermentRibbon .ribbonAction {
+        margin-top: 10px;
+    }
+}
+
 .ribbonGridItem .ribbonCard {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -2193,4 +2290,248 @@
     gap: 0;
     height: 100%;
     align-items: center;
+}
+
+/* ===== Cyber Empowerment Banner ===== */
+.cyberEmpowermentBanner {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 2.5rem 3rem;
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
+    border: 3px solid #ff6b00;
+    border-radius: 20px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 20px rgba(255, 107, 0, 0.15);
+}
+
+.cyberEmpowermentBanner:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(255, 107, 0, 0.25);
+    border-color: #e65c00;
+}
+
+.cyberEmpowermentContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.cyberEmpowermentLeft {
+    flex: 1;
+}
+
+.cyberEmpowermentBadge {
+    display: inline-block;
+    background: #ff6b00;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+.cyberEmpowermentTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0 0 0.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.cyberEmpowermentSubtitle {
+    font-size: 1.125rem;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+.cyberEmpowermentRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.cyberEmpowermentStats {
+    display: flex;
+    gap: 2rem;
+    margin-top: -20px;
+}
+
+.cyberEmpowermentStat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.75rem 1.25rem;
+    background: transparent;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.cyberEmpowermentStatValue {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #ff6b00;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.cyberEmpowermentStatLabel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1f2937;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Stats for Empowerment Card */
+@media (max-width: 768px) {
+    .cyberEmpowermentStats {
+        gap: 1rem;
+        margin-top: -15px;
+    }
+
+    .cyberEmpowermentStatValue {
+        font-size: 1.5rem;
+    }
+
+    .cyberEmpowermentStatLabel {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cyberEmpowermentStats {
+        gap: 0.5rem;
+        margin-top: -10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cyberEmpowermentStat {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .cyberEmpowermentStatValue {
+        font-size: 1.25rem;
+    }
+
+    .cyberEmpowermentStatLabel {
+        font-size: 0.65rem;
+    }
+}
+
+.cyberEmpowermentAction {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ff6b00;
+    transition: all 0.3s ease;
+}
+
+.cyberEmpowermentBanner:hover .cyberEmpowermentAction {
+    gap: 1rem;
+    color: #e65c00;
+}
+
+.cyberEmpowermentPattern {
+    position: absolute;
+    top: -30%;
+    right: -5%;
+    width: 40%;
+    height: 160%;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.08) 0%, transparent 60%);
+    transform: rotate(15deg);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Responsive for Cyber Empowerment Banner */
+@media (max-width: 992px) {
+    .cyberEmpowermentContent {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cyberEmpowermentLeft {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cyberEmpowermentRight {
+        align-items: center;
+    }
+
+    .cyberEmpowermentStats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .cyberEmpowermentBanner {
+        padding: 2rem 1.5rem;
+    }
+
+    .cyberEmpowermentTitle {
+        font-size: 1.5rem;
+    }
+
+    .cyberEmpowermentSubtitle {
+        font-size: 1rem;
+    }
+
+    .cyberEmpowermentStats {
+        gap: 1rem;
+    }
+
+    .cyberEmpowermentStat {
+        padding: 0.75rem 1rem;
+    }
+
+    .cyberEmpowermentStatValue {
+        font-size: 1.5rem;
+    }
+
+    .cyberEmpowermentStatLabel {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cyberEmpowermentBanner {
+        padding: 1.5rem 1rem;
+    }
+
+    .cyberEmpowermentTitle {
+        font-size: 1.25rem;
+    }
+
+    .cyberEmpowermentStats {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .cyberEmpowermentStat {
+        flex: 1;
+        min-width: 80px;
+    }
 }

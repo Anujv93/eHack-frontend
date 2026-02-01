@@ -91,7 +91,7 @@
 
 .program-detail-bscs .program-desc {
     font-size: 1.25rem;
-    color: #475569;
+    color: #1f2937;
     line-height: 1.7;
     margin: 0 0 36px 0;
     max-width: 560px;
@@ -615,7 +615,7 @@
 
 .program-detail-bscs .topic-text {
     font-size: 0.9rem;
-    color: #1E293B;
+    color: #1f2937;
     font-weight: 500;
     line-height: 1.4;
 }
@@ -626,7 +626,7 @@
     background: #FFF7ED;
     border-radius: 10px;
     font-size: 0.9rem;
-    color: #475569;
+    color: #1f2937;
 }
 
 .program-detail-bscs .assessment-info strong {
