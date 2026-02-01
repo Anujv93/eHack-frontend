@@ -216,16 +216,23 @@ export const DataScienceSimulation = ({ mode }: { mode: 'python' | 'ml' | 'viz' 
 
     return (
         <div className="sim-container datascience-sim viz-mode">
+            <div className="sim-toolbar">
+                <div className="tool-btn active"><BarChart2 size={14} /> Visualize</div>
+                <div className="tool-btn"><TrendingUp size={14} /> Trends</div>
+                <div className="tool-btn"><PieChart size={14} /> Distribution</div>
+            </div>
             <div className="sim-chart-area">
                 <div className="sim-bar-chart">
                     {dataPoints.map((h, i) => (
                         <div key={i} className="sim-bar-col">
-                            <div className="sim-bar" style={{ height: `${h}%` }}></div>
+                            <div className="sim-bar" style={{ height: `${h}%` }} title={`Value: ${Math.round(h)}`}></div>
+                            <span className="sim-bar-label">Q{i + 1}</span>
                         </div>
                     ))}
                 </div>
             </div>
         </div>
+
     );
 };
 
