@@ -347,27 +347,25 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         <h2 className="credentials-title">Earn <span className="text-accent">{program.certifications.length} Global Certifications</span></h2>
                         <p className="credentials-subtitle">Graduate with internationally recognized certifications from {program.partner}.</p>
 
-                        {/* Certificate images with names - hidden for personality-softskills */}
-                        {program.category !== 'personality-softskills' && (
-                            <div className={`certificates-gallery count-${program.certifications.length}`}>
-                                {program.certifications.map((cert, idx) => (
-                                    <div key={idx} className="certificate-item-combined">
-                                        <div className="certificate-image-card">
-                                            <img src={cert.image} alt={`${cert.code} - ${cert.name} Certificate`} className="certificate-img" />
-                                            <div className="certificate-overlay">
-                                                <span className="cert-badge-label">{cert.code}</span>
-                                            </div>
-                                        </div>
-                                        <div className="credential-card">
-                                            <div className="credential-logo">
-                                                <span className="logo-text"><span className="logo-accent">{cert.code.charAt(0)}</span>{cert.code.slice(1)}</span>
-                                                <span className="logo-label">{cert.name}</span>
-                                            </div>
+                        {/* Certificate images with names */}
+                        <div className={`certificates-gallery count-${program.certifications.length}`}>
+                            {program.certifications.map((cert, idx) => (
+                                <div key={idx} className="certificate-item-combined">
+                                    <div className="certificate-image-card">
+                                        <img src={cert.image} alt={`${cert.code} - ${cert.name} Certificate`} className="certificate-img" />
+                                        <div className="certificate-overlay">
+                                            <span className="cert-badge-label">{cert.code}</span>
                                         </div>
                                     </div>
-                                ))}
-                            </div>
-                        )}
+                                    <div className="credential-card">
+                                        <div className="credential-logo">
+                                            <span className="logo-text"><span className="logo-accent">{cert.code.charAt(0)}</span>{cert.code.slice(1)}</span>
+                                            <span className="logo-label">{cert.name}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
 
                         <div className="credentials-cta">
                             <a href="tel:+919886035330" className="btn-inquire">Inquire Now <span>→</span></a>
