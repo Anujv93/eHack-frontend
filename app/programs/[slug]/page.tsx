@@ -868,12 +868,24 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
 
 
-            {/* 13. NEWS SECTION - Industry Validation & Urgency - Hidden for non-cybersecurity programs */}
-            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('personality') && program.category !== 'personality-softskills' && program.newsItems && (
+            {/* 13. NEWS SECTION - Industry Validation & Urgency */}
+            {program.newsItems && program.newsItems.length > 0 && (
                 <section className="news-section">
                     <div className="news-container ">
-                        <span className="news-badge">CYBER THREATS ARE RISING</span>
-                        <h2 className="news-title">Why Cybersecurity Skills Matter Now</h2>
+                        <span className="news-badge">
+                            {programType === 'digital-marketing' ? 'DIGITAL TRENDS' :
+                                programType === 'robotics' ? 'FUTURE TECH' :
+                                    program.category === 'data-science' ? 'DATA INSIGHTS' :
+                                        program.category === 'personality-softskills' ? 'CAREER GROWTH' :
+                                            'CYBER THREATS ARE RISING'}
+                        </span>
+                        <h2 className="news-title">
+                            {programType === 'digital-marketing' ? 'Why Digital Skills Matter Now' :
+                                programType === 'robotics' ? 'Why Robotics is the Future' :
+                                    program.category === 'data-science' ? 'Why Data Science Matters Now' :
+                                        program.category === 'personality-softskills' ? 'Why Soft Skills Matter' :
+                                            'Why Cybersecurity Skills Matter Now'}
+                        </h2>
                         <div className="news-grid">
                             {program.newsItems.map((item, idx) => (
                                 <article key={idx} className="news-card">
