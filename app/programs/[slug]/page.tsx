@@ -567,8 +567,8 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </section>
 
-            {/* Hands-On Labs Section - Only for Cybersecurity Programs */}
-            {!['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category) && program.certifications.length > 0 && (
+            {/* Hands-On Labs Section */}
+            {(program.certifications.length > 0 || ['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category)) && (
                 <div id="labs">
                     <ProgramLabsWrapper
                         certificationCodes={program.certifications.map(cert => cert.code)}
@@ -577,6 +577,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     />
                 </div>
             )}
+
 
             {/* Pricing Details */}
             <section className="pricing-section">
