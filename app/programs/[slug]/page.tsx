@@ -587,102 +587,117 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
 
                     <div className="pricing-content-wrapper">
-                        <div className="pricing-main-column">
-                            {program.pricing.applicationFee && (
-                                <div className="fee-section">
-                                    <div className="fee-row">
-                                        <span className="fee-label-text">
-                                            <span className="fee-icon-wrapper"><FileText size={18} /></span>
-                                            Application Fee
-                                        </span>
-                                        <span className="fee-value">{program.pricing.applicationFee}</span>
-                                    </div>
-                                    <p className="fee-note-text">Will be adjusted in the program fee. *GST as applicable</p>
-                                </div>
-                            )}
-                            {program.pricing.admissionFee && (
-                                <div className="fee-section primary">
-                                    <div className="fee-row">
-                                        <span className="fee-label-text">
-                                            <span className="fee-icon-wrapper primary"><Gem size={18} /></span>
-                                            Program Admission Fee
-                                        </span>
-                                        <span className="fee-value-large">{program.pricing.admissionFee}</span>
-                                    </div>
-                                    <p className="fee-note-text">*GST as applicable</p>
-                                </div>
-                            )}
-                            {(program.pricing.companyEMI || program.pricing.upfrontAmount) && (
-                                <div className="payment-plans-section">
-                                    <h3 className="section-heading">Payment Plans</h3>
-                                    {program.pricing.companyEMI && (
-                                        <div className="plan-option">
-                                            <div className="plan-header">
-                                                <div className="plan-title-group">
-                                                    <span className="plan-icon"><BriefcaseBusiness size={20} /></span>
-                                                    <h4 className="plan-name">Company EMI Plan</h4>
-                                                </div>
-                                                <span className="plan-price">{program.pricing.companyEMI}</span>
-                                            </div>
-                                            <p className="plan-description">Complete flexibility with company-sponsored EMI option</p>
-                                        </div>
-                                    )}
-                                    {program.pricing.upfrontAmount && (
-                                        <div className="plan-option">
-                                            <div className="plan-header">
-                                                <div className="plan-title-group">
-                                                    <span className="plan-icon"><Banknote size={20} /></span>
-                                                    <h4 className="plan-name">{program.pricing.upfrontPercentage} Upfront Payment</h4>
-                                                </div>
-                                                <span className="plan-price">{program.pricing.upfrontAmount}</span>
-                                            </div>
-                                            <p className="plan-description">Balance payable in {program.pricing.emiCount} equal EMIs of {program.pricing.emiAmount} each</p>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </div>
+                        {(() => {
+                            const hasPaymentPlans = program.pricing.companyEMI || program.pricing.upfrontAmount;
 
-                        <div className="pricing-side-column">
-                            <div className="financing-box">
-                                <h3 className="section-heading">
-                                    <span className="heading-icon"><Landmark size={20} /></span>
-                                    Financing Options
-                                </h3>
-                                <p className="financing-description">We offer multiple financing solutions to make our programs accessible to all students.</p>
-                                <div className="financing-list">
-                                    <div className="financing-item">
-                                        <div className="financing-icon"><Shield size={24} /></div>
-                                        <div>
-                                            <h4 className="financing-name">No Cost EMI (Internal)</h4>
-                                            <p className="financing-desc">Zero interest installments through our internal program</p>
-                                        </div>
-                                    </div>
-                                    <div className="financing-item">
-                                        <div className="financing-icon"><CreditCard size={24} /></div>
-                                        <div>
-                                            <h4 className="financing-name">Bank/NBFC Financing</h4>
-                                            <p className="financing-desc">Flexible payment plans through partner banks and NBFCs</p>
-                                        </div>
-                                    </div>
+                            const WhatsIncludedContent = (
+                                <div className="whats-included-box" style={!hasPaymentPlans ? { marginTop: '24px' } : undefined}>
+                                    <h3 className="section-heading">
+                                        <span className="heading-icon"><CheckCircle size={20} /></span>
+                                        What's Included
+                                    </h3>
+                                    <ul className="included-list">
+                                        <li>{program.certifications.length} {program.category === 'cybersecurity' ? 'Global EC-Council' : 'eHack'} Certifications</li>
+                                        <li>{program.stats.totalHours} of Hands-on Training</li>
+                                        <li>Real-Time Labs & Practice Environment</li>
+                                        <li>{program.stats.membership} Post-Training Support</li>
+                                        <li>Program Completion Certificate</li>
+                                        <li>{program.slug === "masters-ethical-hacking" ? "100% Placement Assistance" : "Internship Opportunities"}</li>
+                                    </ul>
                                 </div>
-                            </div>
+                            );
 
-                            <div className="whats-included-box">
-                                <h3 className="section-heading">
-                                    <span className="heading-icon"><CheckCircle size={20} /></span>
-                                    What's Included
-                                </h3>
-                                <ul className="included-list">
-                                    <li>{program.certifications.length} {program.category === 'cybersecurity' ? 'Global EC-Council' : 'eHack'} Certifications</li>
-                                    <li>{program.stats.totalHours} of Hands-on Training</li>
-                                    <li>Real-Time Labs & Practice Environment</li>
-                                    <li>{program.stats.membership} Post-Training Support</li>
-                                    <li>Program Completion Certificate</li>
-                                    <li>{program.slug === "masters-ethical-hacking" ? "100% Placement Assistance" : "Internship Opportunities"}</li>
-                                </ul>
-                            </div>
-                        </div>
+                            return (
+                                <>
+                                    <div className="pricing-main-column">
+                                        {program.pricing.applicationFee && (
+                                            <div className="fee-section">
+                                                <div className="fee-row">
+                                                    <span className="fee-label-text">
+                                                        <span className="fee-icon-wrapper"><FileText size={18} /></span>
+                                                        Application Fee
+                                                    </span>
+                                                    <span className="fee-value">{program.pricing.applicationFee}</span>
+                                                </div>
+                                                <p className="fee-note-text">Will be adjusted in the program fee. *GST as applicable</p>
+                                            </div>
+                                        )}
+                                        {program.pricing.admissionFee && (
+                                            <div className="fee-section primary">
+                                                <div className="fee-row">
+                                                    <span className="fee-label-text">
+                                                        <span className="fee-icon-wrapper primary"><Gem size={18} /></span>
+                                                        Program Admission Fee
+                                                    </span>
+                                                    <span className="fee-value-large">{program.pricing.admissionFee}</span>
+                                                </div>
+                                                <p className="fee-note-text">*GST as applicable</p>
+                                            </div>
+                                        )}
+
+                                        {!hasPaymentPlans && WhatsIncludedContent}
+
+                                        {hasPaymentPlans && (
+                                            <div className="payment-plans-section">
+                                                <h3 className="section-heading">Payment Plans</h3>
+                                                {program.pricing.companyEMI && (
+                                                    <div className="plan-option">
+                                                        <div className="plan-header">
+                                                            <div className="plan-title-group">
+                                                                <span className="plan-icon"><BriefcaseBusiness size={20} /></span>
+                                                                <h4 className="plan-name">Company EMI Plan</h4>
+                                                            </div>
+                                                            <span className="plan-price">{program.pricing.companyEMI}</span>
+                                                        </div>
+                                                        <p className="plan-description">Complete flexibility with company-sponsored EMI option</p>
+                                                    </div>
+                                                )}
+                                                {program.pricing.upfrontAmount && (
+                                                    <div className="plan-option">
+                                                        <div className="plan-header">
+                                                            <div className="plan-title-group">
+                                                                <span className="plan-icon"><Banknote size={20} /></span>
+                                                                <h4 className="plan-name">{program.pricing.upfrontPercentage} Upfront Payment</h4>
+                                                            </div>
+                                                            <span className="plan-price">{program.pricing.upfrontAmount}</span>
+                                                        </div>
+                                                        <p className="plan-description">Balance payable in {program.pricing.emiCount} equal EMIs of {program.pricing.emiAmount} each</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <div className="pricing-side-column">
+                                        <div className="financing-box">
+                                            <h3 className="section-heading">
+                                                <span className="heading-icon"><Landmark size={20} /></span>
+                                                Financing Options
+                                            </h3>
+                                            <p className="financing-description">We offer multiple financing solutions to make our programs accessible to all students.</p>
+                                            <div className="financing-list">
+                                                <div className="financing-item">
+                                                    <div className="financing-icon"><Shield size={24} /></div>
+                                                    <div>
+                                                        <h4 className="financing-name">No Cost EMI (Internal)</h4>
+                                                        <p className="financing-desc">Zero interest installments through our internal program</p>
+                                                    </div>
+                                                </div>
+                                                <div className="financing-item">
+                                                    <div className="financing-icon"><CreditCard size={24} /></div>
+                                                    <div>
+                                                        <h4 className="financing-name">Bank/NBFC Financing</h4>
+                                                        <p className="financing-desc">Flexible payment plans through partner banks and NBFCs</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {hasPaymentPlans && WhatsIncludedContent}
+                                    </div>
+                                </>
+                            );
+                        })()}
                     </div>
 
                     <div className="pricing-cta-section">
