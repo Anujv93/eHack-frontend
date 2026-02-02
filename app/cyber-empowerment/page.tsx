@@ -1,10 +1,53 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft, Users, Shield, Smartphone, BookOpen, Award, Target, CheckCircle } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ArrowLeft, Users, Shield, Smartphone, BookOpen, Award, Target, CheckCircle, Phone } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function CyberEmpowermentPage() {
+    const [isSticky, setIsSticky] = useState(false);
+    const [activeSection, setActiveSection] = useState('intro');
+
+    const sections = [
+        { id: 'intro', label: 'Overview' },
+        { id: 'why-matters', label: 'Why It Matters' },
+        { id: 'leadership', label: 'Leadership' },
+        { id: 'focus', label: 'Focus Areas' },
+        { id: 'impact', label: 'Impact' },
+        { id: 'audience', label: 'Who Is It For' },
+        { id: 'difference', label: 'Why Us' }
+    ];
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsSticky(window.scrollY > 400);
+
+            const sectionElements = sections.map(s => document.getElementById(s.id));
+            const scrollPosition = window.scrollY + 100;
+
+            for (let i = sectionElements.length - 1; i >= 0; i--) {
+                const section = sectionElements[i];
+                if (section && section.offsetTop <= scrollPosition) {
+                    setActiveSection(sections[i].id);
+                    break;
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const offset = 80;
+            const top = element.offsetTop - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+    };
+
     const impactStats = [
         { value: '1000+', label: 'Participants Impacted' },
         { value: '100+', label: 'Sessions Conducted' },
@@ -72,8 +115,30 @@ export default function CyberEmpowermentPage() {
                 </div>
             </section>
 
+            <nav className={`${styles.stickyNav} ${isSticky ? styles.stickyNavActive : ''}`}>
+                <div className={styles.navContainer}>
+                    <div className={styles.navLinks}>
+                        {sections.map(section => (
+                            <button
+                                key={section.id}
+                                className={`${styles.navBtn} ${activeSection === section.id ? styles.navBtnActive : ''}`}
+                                onClick={() => scrollToSection(section.id)}
+                            >
+                                {section.label}
+                            </button>
+                        ))}
+                    </div>
+                    <div className={styles.navCta}>
+                        <a href="tel:+919886035330" className={styles.navCallBtn}>
+                            <Phone size={16} />
+                            <span>Call Now</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
             {/* Introduction Section */}
-            <section className={styles.introSection}>
+            <section id="intro" className={styles.introSection}>
                 <div className={styles.container}>
                     <div className={styles.introContent}>
                         <div className={styles.introSplit}>
@@ -111,7 +176,7 @@ export default function CyberEmpowermentPage() {
             </section>
 
             {/* Why It Matters Section */}
-            <section className={styles.whySection}>
+            <section id="why-matters" className={styles.whySection}>
                 <div className={styles.container}>
                     <h2 className={styles.sectionTitle}>
                         Why Cyber Empowerment <span className={styles.textAccent}>Matters Today</span>
@@ -137,7 +202,7 @@ export default function CyberEmpowermentPage() {
             </section>
 
             {/* Leadership Section */}
-            <section className={styles.leadershipSection}>
+            <section id="leadership" className={styles.leadershipSection}>
                 <div className={styles.container}>
                     <h2 className={styles.sectionTitle}>
                         Leadership & <span className={styles.textAccent}>Vision</span>
@@ -162,7 +227,7 @@ export default function CyberEmpowermentPage() {
             </section>
 
             {/* Focus Areas Section */}
-            <section className={styles.focusSection}>
+            <section id="focus" className={styles.focusSection}>
                 <div className={styles.container}>
                     <span className={styles.sectionBadge}>Key Focus Areas Covered</span>
                     <h2 className={styles.sectionTitle}>
@@ -184,7 +249,7 @@ export default function CyberEmpowermentPage() {
             </section>
 
             {/* Impact Stats Section */}
-            <section className={styles.statsSection}>
+            <section id="impact" className={styles.statsSection}>
                 <div className={styles.container}>
                     <h2 className={styles.sectionTitle}>
                         Impact Created <span className={styles.textAccent}>So Far</span>
@@ -213,7 +278,7 @@ export default function CyberEmpowermentPage() {
             </section>
 
             {/* Audience Section */}
-            <section className={styles.audienceSection}>
+            <section id="audience" className={styles.audienceSection}>
                 <div className={styles.container}>
                     <h2 className={styles.sectionTitle}>
                         Who Is This Initiative <span className={styles.textAccent}>For?</span>
@@ -234,7 +299,7 @@ export default function CyberEmpowermentPage() {
             </section>
 
             {/*What Makes eHack Academy*/}
-            <section className={styles.differenceSection}>
+            <section id="difference" className={styles.differenceSection}>
                 <div className={styles.container}>
                     <h2 className={styles.sectionTitle}>
                         What Makes eHack Academy <span className={styles.textAccent}>Different</span>

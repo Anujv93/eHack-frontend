@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Phone } from 'lucide-react';
 import './franchise.css';
 
 // SOP Data
@@ -184,42 +185,50 @@ export default function FranchisePage() {
             {/* Sticky Section Nav */}
             <nav className={`franchise-section-nav ${isNavVisible ? 'visible' : ''}`}>
                 <div className="section-nav-container">
-                    <button
-                        className={`section-nav-link ${activeSection === 'programs' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('programs')}
-                    >
-                        Programs
-                    </button>
-                    <button
-                        className={`section-nav-link ${activeSection === 'why-choose' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('why-choose')}
-                    >
-                        Why Choose
-                    </button>
-                    <button
-                        className={`section-nav-link ${activeSection === 'sop-framework' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('sop-framework')}
-                    >
-                        SOPs
-                    </button>
-                    <button
-                        className={`section-nav-link ${activeSection === 'business-model' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('business-model')}
-                    >
-                        Business Model
-                    </button>
-                    <button
-                        className={`section-nav-link ${activeSection === 'apply' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('apply')}
-                    >
-                        Who Apply
-                    </button>
-                    <button
-                        className={`section-nav-link ${activeSection === 'enquire' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('enquire')}
-                    >
-                        Enquire
-                    </button>
+                    <div className="section-nav-links">
+                        <button
+                            className={`section-nav-link ${activeSection === 'programs' ? 'active' : ''}`}
+                            onClick={() => scrollToSection('programs')}
+                        >
+                            Programs
+                        </button>
+                        <button
+                            className={`section-nav-link ${activeSection === 'why-choose' ? 'active' : ''}`}
+                            onClick={() => scrollToSection('why-choose')}
+                        >
+                            Why Choose
+                        </button>
+                        <button
+                            className={`section-nav-link ${activeSection === 'sop-framework' ? 'active' : ''}`}
+                            onClick={() => scrollToSection('sop-framework')}
+                        >
+                            SOPs
+                        </button>
+                        <button
+                            className={`section-nav-link ${activeSection === 'business-model' ? 'active' : ''}`}
+                            onClick={() => scrollToSection('business-model')}
+                        >
+                            Business Model
+                        </button>
+                        <button
+                            className={`section-nav-link ${activeSection === 'apply' ? 'active' : ''}`}
+                            onClick={() => scrollToSection('apply')}
+                        >
+                            Who Apply
+                        </button>
+                        <button
+                            className={`section-nav-link ${activeSection === 'enquire' ? 'active' : ''}`}
+                            onClick={() => scrollToSection('enquire')}
+                        >
+                            Enquire
+                        </button>
+                    </div>
+                    <div className="nav-cta">
+                        <a href="tel:+919886035330" className="nav-call-btn">
+                            <Phone size={16} />
+                            <span>Call Now</span>
+                        </a>
+                    </div>
                 </div>
             </nav>
 
