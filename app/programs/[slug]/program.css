@@ -1302,6 +1302,7 @@ p {
 .why-ehack-section {
     background: var(--white);
     padding: var(--space-16) 0;
+    border-bottom: 1px solid #ff6b00;
 
 }
 
