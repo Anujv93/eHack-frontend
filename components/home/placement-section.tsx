@@ -79,7 +79,7 @@ const placementStories = [
 
 const PlacementSection = () => {
     return (
-        <section className="placement-section" style={{ borderBottom: 'solid 2px orange' }} id="placements">
+        <section className="placement-section" style={{ borderBottom: 'solid 2px #FF6B00' }} id="placements">
             <div className="container">
                 <div className="placement-header">
                     <span className="placement-label">Career Transformations</span>
