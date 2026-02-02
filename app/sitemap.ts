@@ -4,7 +4,7 @@ import { services } from '@/data/services'
 import { getCoursesForListing } from '@/lib/strapi'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = 'https://ehackacademy.org'
+    const baseUrl = 'https://ehackacademy.com'
     const currentDate = new Date().toISOString()
 
     // Fetch courses from Strapi
