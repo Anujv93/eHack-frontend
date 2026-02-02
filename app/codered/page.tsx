@@ -37,189 +37,216 @@ export default function CodeRedPage() {
             description: 'Strengthen your pentesting skills through capture the flag exercises with walkthroughs',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/8Z8QkXF5/4yFBnkZGVaDbxF6f',
             category: 'Ethical Hacking',
-            level: 'Intermediate'
+            level: 'Intermediate',
+            image: '/images/Capture the Flag.jpg'
         },
         {
             title: 'Bug Bounty Hunting Essentials',
             description: 'Practical bug bounty hunting for hackers and pentesters with top tools and tricks',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/Us775v10/4yFBnkZGVaDbxF6f',
             category: 'Bug Bounty',
-            level: 'Intermediate'
+            level: 'Intermediate',
+            image: '/images/Bug Bounty Hunting Essentials.jpg'
         },
         {
             title: 'The Ultimate JavaScript Bundle',
             description: 'Complete JavaScript learning path from HTML, CSS to full-stack development',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/GREtvqs8/4yFBnkZGVaDbxF6f',
             category: 'Web Development',
-            level: 'Beginner'
+            level: 'Beginner',
+            image: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Master Open-Source Intelligence',
             description: 'Advanced OSINT techniques for hackers and penetration testers',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/KtG5Oefw/4yFBnkZGVaDbxF6f',
             category: 'OSINT',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: '/images/Master Open-Source Intelligence.jpg'
         },
         {
             title: 'Mastering Digital Forensics',
             description: 'Linux forensics, digital forensics for pentesters, and computer forensics best practices',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/exNKMTJD/4yFBnkZGVaDbxF6f',
             category: 'Digital Forensics',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: '/images/services/forensics.png'
         },
         {
             title: 'EC-Council Pro',
             description: 'Get access to the world\'s largest online cybersecurity course library of 500+ courses',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/qYBOo7gz/4yFBnkZGVaDbxF6f',
             category: 'All-Access',
-            level: 'All Levels'
+            level: 'All Levels',
+            image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Ultimate Red Team Cyber Suite',
             description: 'Build new skills with comprehensive red team operations and offensive security',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/cOXfXsOF/4yFBnkZGVaDbxF6f',
             category: 'Red Team',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: '/images/Red Team Assessment.png'
         },
         {
             title: 'Unleash the Power of Linux',
             description: 'Master app development, server configuration, and networking with Linux',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/drAJcC5r/4yFBnkZGVaDbxF6f',
             category: 'Linux',
-            level: 'Intermediate'
+            level: 'Intermediate',
+            image: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Protecting Data in Microsoft Azure',
             description: 'Master data protection techniques and leverage Microsoft\'s robust security features in Azure',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/XavEAgzZ/4yFBnkZGVaDbxF6f',
             category: 'Cloud Security',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Adopting Security and Privacy in Data',
             description: 'Become a data protection expert with GDPR compliance and privacy by design',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/jXN1lRJI/4yFBnkZGVaDbxF6f',
             category: 'Data Privacy',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Practical Linux for Security Professionals',
             description: 'Essential Linux skills tailored for cybersecurity and security professionals',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/t8OKNu7M/4yFBnkZGVaDbxF6f',
             category: 'Linux Security',
-            level: 'Intermediate'
+            level: 'Intermediate',
+            image: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Becoming a Digital Imaging Professional',
             description: 'Master digital imaging techniques and professional image processing',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/2nAm7Z25/4yFBnkZGVaDbxF6f',
             category: 'Digital Imaging',
-            level: 'Intermediate'
+            level: 'Intermediate',
+            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Become a Full Stack Developer',
             description: 'Complete full-stack development training from frontend to backend',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/SV1zRMWk/4yFBnkZGVaDbxF6f',
             category: 'Web Development',
-            level: 'Intermediate'
+            level: 'Intermediate',
+            image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Practical Artificial Intelligence for Professionals',
             description: 'Hands-on AI and machine learning for cybersecurity professionals',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/Aydst144/4yFBnkZGVaDbxF6f',
             category: 'AI & ML',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Cybersecurity Project Manager',
             description: 'Master project management skills specific to cybersecurity initiatives',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/X24n021f/4yFBnkZGVaDbxF6f',
             category: 'Management',
-            level: 'Intermediate'
+            level: 'Intermediate',
+            image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Integrating Security into IoT',
             description: 'Secure Internet of Things devices and implement IoT security best practices',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/nEnsKy1N/4yFBnkZGVaDbxF6f',
             category: 'IoT Security',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Becoming a DevOps Professional',
             description: 'Master DevOps practices, tools, and automation for modern infrastructure',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/Lv8zzscM/4yFBnkZGVaDbxF6f',
             category: 'DevOps',
-            level: 'Intermediate'
+            level: 'Intermediate',
+            image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Becoming a Network Security Engineer',
             description: 'Comprehensive network security engineering and defense strategies',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/RedV2cky/4yFBnkZGVaDbxF6f',
             category: 'Network Security',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Cybersecurity Fundamentals for Beginners',
             description: 'Introduction to cybersecurity with hands-on learning covering malware, attacks, and OWASP Top 10',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/kZ3W4tGD/4yFBnkZGVaDbxF6f',
             category: 'Fundamentals',
-            level: 'Beginner'
+            level: 'Beginner',
+            image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Programming Fundamentals and Security',
             description: 'Secure programming with C, C++, and Java for high-level developers',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/miFznW0d/4yFBnkZGVaDbxF6f',
             category: 'Secure Coding',
-            level: 'Intermediate'
+            level: 'Intermediate',
+            image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Cybersecurity Super Sale',
             description: 'Get premium cybersecurity courses at special pricing',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/YMBjh8vp/4yFBnkZGVaDbxF6f',
             category: 'Special Offer',
-            level: 'All Levels'
+            level: 'All Levels',
+            image: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'EC-Council Learning Platform',
             description: 'Access the complete EC-Council learning platform with flexible plans',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/fAlnap6P/4yFBnkZGVaDbxF6f',
             category: 'Platform Access',
-            level: 'All Levels'
+            level: 'All Levels',
+            image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'EC-Council Pro - Premium Access',
             description: 'Get access to 500+ courses covering all cybersecurity domains',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/aFTKoM4O/4yFBnkZGVaDbxF6f',
             category: 'All-Access',
-            level: 'All Levels'
+            level: 'All Levels',
+            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'ChatGPT for Ethical Hackers',
             description: 'Learn to leverage ChatGPT and AI tools for ethical hacking and penetration testing',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/gzESbpRe/4yFBnkZGVaDbxF6f',
             category: 'AI for Hacking',
-            level: 'Intermediate'
+            level: 'Intermediate',
+            image: '/images/ChatGPT for Ethical Hackers.png'
         },
         {
             title: 'Full Stack Development Specialist',
             description: 'Advanced full-stack development with modern frameworks and technologies',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/Iq2xwZf4/4yFBnkZGVaDbxF6f',
             category: 'Web Development',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Practical Linux for Security Professionals',
             description: 'Advanced Linux administration and security for cybersecurity professionals',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/Ud41TTh2/4yFBnkZGVaDbxF6f',
             category: 'Linux Security',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Practical Information Security Risk Management',
             description: 'Master information security risk assessment and management frameworks',
             affiliateLink: 'https://coderedcheckout.eccouncil.org/referral/zd8IqN9W/4yFBnkZGVaDbxF6f',
             category: 'Risk Management',
-            level: 'Advanced'
+            level: 'Advanced',
+            image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80'
         }
     ];
 
@@ -264,7 +291,7 @@ export default function CodeRedPage() {
                 </div>
 
                 <div className="container">
-                    <div className="hero-content-clean">
+                    <div className="hero-clean-content">
                         <div className="clean-brand-header">
                             <span className="clean-code">CODE</span>
                             <span className="clean-red">RED</span>
@@ -387,6 +414,13 @@ export default function CodeRedPage() {
                                 className="microdegree-card-new available"
                                 style={{ '--card-index': index } as React.CSSProperties}
                             >
+                                <div className="card-image-wrapper">
+                                    <img
+                                        src={course.image}
+                                        alt={course.title}
+                                        className="card-image"
+                                    />
+                                </div>
                                 {/* Category Tag */}
                                 <div className="card-category">{course.category}</div>
 
