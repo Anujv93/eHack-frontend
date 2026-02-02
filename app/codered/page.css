@@ -976,7 +976,7 @@
 
 .codered-microdegrees {
     background: linear-gradient(180deg, #ffffff 0%, #f9fafb 50%, #ffffff 100%);
-    padding: 7rem 0 8rem;
+    padding: 4rem 0 5rem;
     position: relative;
     overflow: hidden;
 }
@@ -1018,8 +1018,8 @@
 }
 
 .microdegrees-header .section-badge {
-    background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(249, 115, 22, 0.1) 100%);
-    color: #dc2626;
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: #fff;
     padding: 0.6rem 1.5rem;
     border-radius: 50px;
     font-size: 0.8rem;
