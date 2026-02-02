@@ -131,7 +131,7 @@ export default function CSRPage() {
                             <div className="section-badge-wrapper">
                                 <span className="section-badge-orange-big">OUR CSR MISSION</span>
                             </div>
-                            <h2 className="csr-mission-title">"To make India Cyber Secure, Skill-Enabled and Employment Ready"</h2>
+                            <h2 className="csr-mission-title">"To make India Cyber <span className="text-orange">Secure</span>, Skill-Enabled and Employment Ready"</h2>
                             <div className="csr-mission-text">
                                 <p>We strive to create a cyber-aware society, enable youth with future-ready skills, improve employability through industry-aligned training, and spread happiness by empowering lives with knowledge.</p>
                                 <p>At eHack Academy Bangalore, CSR is not just a commitment—it is our mission. For over a decade, we have actively worked towards building a cyber-aware, skilled, and employable society.</p>
@@ -146,7 +146,7 @@ export default function CSRPage() {
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">OUR IMPACT</span>
-                        <h2 className="section-title">10+ Years of CSR Excellence</h2>
+                        <h2 className="section-title">10+ Years of CSR <span className="text-orange">Excellence</span></h2>
                         <p className="section-subtitle">Making a difference through education and empowerment</p>
                     </div>
 
@@ -180,7 +180,7 @@ export default function CSRPage() {
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">FOCUS AREAS</span>
-                        <h2 className="section-title">Our CSR Initiatives</h2>
+                        <h2 className="section-title">Our CSR <span className="text-orange">Initiatives</span></h2>
                     </div>
 
                     <div className="focus-grid">
@@ -226,7 +226,7 @@ export default function CSRPage() {
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">INSTITUTIONS WE SERVE</span>
-                        <h2 className="section-title">Partnering with Leading Educational Institutions</h2>
+                        <h2 className="section-title"><span className="text-orange">Partnering</span> with Leading Educational Institutions</h2>
                         <p className="section-subtitle">
                             Over the last decade, we have proudly partnered with numerous educational institutions across Bangalore and India
                         </p>
@@ -335,7 +335,7 @@ export default function CSRPage() {
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">CORPORATE PARTNERSHIPS</span>
-                        <h2 className="section-title">Corporate CSR Engagements</h2>
+                        <h2 className="section-title">Corporate CSR <span className="text-orange">Engagements</span></h2>
                         <p className="section-subtitle">
                             Delivering customized cybersecurity and emerging technology workshops for leading organizations
                         </p>
@@ -380,7 +380,7 @@ export default function CSRPage() {
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge-orange-big">FUTURE VISION</span>
-                        <h2 className="section-title">Our Roadmap: 2026 – 2028</h2>
+                        <h2 className="section-title">Our <span className="text-orange">Roadmap</span>: 2026 – 2028</h2>
                         <p className="section-subtitle">
                             Expanding our CSR footprint across schools, colleges, corporates, government bodies, and trusts
                         </p>

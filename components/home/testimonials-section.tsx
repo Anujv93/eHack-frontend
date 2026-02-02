@@ -278,7 +278,7 @@ export default function TestimonialsSection() {
     const currentCompanies = allCompanies[currentSet];
 
     return (
-        <section className="testimonials-section" style={{ borderBottom: 'solid 2px orange' }} id="testimonials">
+        <section className="testimonials-section" style={{ borderBottom: 'solid 1px #ff6b00' }} id="testimonials">
             <div className="testimonials-container">
                 {/* Trusted By Section - Grid Layout */}
                 <div className="trusted-by-section">

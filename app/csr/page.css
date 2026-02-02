@@ -26,7 +26,7 @@
 
 /* Mission Section - Matching CertificateSummary style */
 .csr-mission-section {
-    padding: 80px 0;
+    padding: 2rem 0;
     border-bottom: 2px solid #FF6B00;
     background: #FFFFFF;
 }
@@ -85,7 +85,7 @@
 
 .csr-mission-text p {
     font-size: 1.125rem;
-    color: #475569;
+    color: #1f2937;
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
@@ -100,7 +100,7 @@
 
 /* Impact Stats Section */
 .impact-stats-section {
-    padding: 80px 0;
+    padding: 2rem 0;
     background: #FFFFFF;
     border-bottom: 2px solid #FF6B00;
 }
@@ -148,13 +148,13 @@
 .stat-label {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #334155;
+    color: #1f2937;
     line-height: 1.4;
 }
 
 /* Focus Areas Section */
 .focus-areas-section {
-    padding: 80px 0;
+    padding: 2rem 0;
     background: #F8FAFC;
     border-bottom: 2px solid #FF6B00;
 }
@@ -203,7 +203,7 @@
 
 .focus-list li {
     font-size: 1.0625rem;
-    color: #475569;
+    color: #1f2937;
     line-height: 1.8;
     padding-left: 1.75rem;
     margin-bottom: 0.75rem;
@@ -221,7 +221,7 @@
 
 /* Institutions Section */
 .institutions-section {
-    padding: 80px 0;
+    padding: 2rem 0;
     background: #FFFFFF;
     border-bottom: 2px solid #FF6B00;
 }
@@ -281,7 +281,7 @@
 
 .institution-desc {
     font-size: 0.9375rem;
-    color: #64748B;
+    color: #1f2937;
     line-height: 1.5;
 }
 
@@ -302,7 +302,7 @@
 
 /* Corporate Section */
 .corporate-section {
-    padding: 80px 0;
+    padding: 2rem 0;
     background: #F8FAFC;
     border-bottom: 2px solid #FF6B00;
 }
@@ -357,13 +357,13 @@
 
 .corporate-desc {
     font-size: 1rem;
-    color: #64748B;
+    color: #1f2937;
     line-height: 1.6;
 }
 
 /* Roadmap Section */
 .roadmap-section {
-    padding: 80px 0;
+    padding: 2rem 0;
     background: #FFFFFF;
     border-bottom: 2px solid #FF6B00;
 }
@@ -425,13 +425,13 @@
 
 .roadmap-desc {
     font-size: 1rem;
-    color: #64748B;
+    color: #1f2937;
     line-height: 1.6;
 }
 
 /* CTA Section */
 .csr-cta-section {
-    padding: 80px 0;
+    padding: 2rem 0;
     background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
     position: relative;
     overflow: hidden;
@@ -546,7 +546,7 @@
 
 /* Quote Section */
 .quote-section {
-    padding: 80px 0;
+    padding: 2rem 0;
     background: linear-gradient(135deg, #FFF7ED 0%, #FFFBF5 100%);
     border-bottom: 2px solid #FF6B00;
 }
@@ -851,4 +851,8 @@
         padding: 10px;
         border-radius: 50%;
     }
+}
+
+.text-orange {
+    color: #ff6b00;
 }
