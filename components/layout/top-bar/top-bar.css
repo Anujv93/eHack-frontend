@@ -106,12 +106,12 @@
     }
 
     .promo-text {
-        font-size: 14px !important;
+        font-size: 1.25rem !important;
         line-height: 1.4;
     }
 
     .promo-link {
-        font-size: 14px;
+        font-size: 1.25rem;
         display: inline;
     }
 }
@@ -144,10 +144,10 @@
     }
 
     .promo-text {
-        font-size: 12px !important;
+        font-size: 1rem !important;
     }
 
     .promo-link {
-        font-size: 12px;
+        font-size: 1rem;
     }
 }
