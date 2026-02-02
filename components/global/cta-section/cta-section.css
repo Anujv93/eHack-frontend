@@ -1,6 +1,6 @@
 .cta-section {
-    background: linear-gradient(135deg, #1a1f3a 0%, #2d1b4e 100%);
-    padding: 3rem 0;
+    background: linear-gradient(135deg, #FF6B00 0%, #e65100 100%);
+    padding: 1rem 0;
 }
 
 .cta-section .container {
@@ -9,30 +9,32 @@
     padding: 0 var(--container-padding, 1rem);
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: center;
     align-items: center;
 }
 
 /* Left Content */
 .cta-content h2 {
-    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     /* Maximized size */
     font-weight: 800;
     color: #fff;
-    margin-bottom: 1.5rem;
-    line-height: 1;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
 }
 
 .cta-content h2 span {
-    color: #FF6B00;
+    color: #FFFFFF;
 }
 
 .cta-content p {
     font-size: 1.25rem;
     /* Even bigger */
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 2rem;
-    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    line-height: 1.5;
 }
 
 .cta-features {
@@ -44,22 +46,22 @@
 .cta-features li {
     display: flex;
     align-items: center;
-    gap: 0.625rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.875rem;
-    margin-bottom: 0.625rem;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .cta-features .check-icon {
-    width: 20px;
-    height: 20px;
-    background: #FF6B00;
+    width: 28px;
+    height: 28px;
+    background: #FFFFFF;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    font-size: 0.75rem;
+    color: #FF6B00;
+    font-size: 1rem;
     font-weight: 700;
     flex-shrink: 0;
 }
@@ -68,7 +70,7 @@
 .cta-form-wrapper {
     background: #fff;
     border-radius: 12px;
-    padding: 1.25rem 2rem;
+    padding: 1rem 1.5rem;
     /* Further reduced vertical, increased horizontal */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     width: 100%;

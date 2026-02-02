@@ -287,7 +287,7 @@ export default function FranchisePage() {
             <section id="programs" className="programs-section">
                 <div className="section-container">
                     <div className="section-header">
-                        <h2>Programs You&apos;ll Deliver</h2>
+                        <h2>Programs You&apos;ll <span className="text-orange">Deliver</span></h2>
                         <p>As a franchise partner, you become part of a future-ready education ecosystem delivering high-demand programs</p>
                     </div>
                     <div className="programs-image-grid">
@@ -413,8 +413,8 @@ export default function FranchisePage() {
             <section id="sop-framework" className="sop-section">
                 <div className="section-container">
                     <div className="section-header">
-                        <h2>Franchise SOP Framework</h2>
-                        <p>Our comprehensive Standard Operating Procedures ensure quality consistency across all franchise locations</p>
+                        <h2>Franchise SOP <span className="text-orange">Framework</span></h2>
+                        <p>Our comprehensive <span className="text-orange">Standard Operating Procedures</span> ensure quality consistency across all franchise locations</p>
                     </div>
                     <div className="sop-intro">
                         <p>Click on each section to explore the detailed processes and guidelines that power every eHack Academy franchise.</p>
