@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { Phone } from 'lucide-react';
 import './page.css';
 
 export default function AboutPage() {
@@ -182,15 +183,23 @@ export default function AboutPage() {
                 className={`about-sticky-nav ${isSticky ? 'is-sticky' : ''}`}
             >
                 <div className="about-nav-container">
-                    {sections.map(section => (
-                        <button
-                            key={section.id}
-                            className={`about-nav-btn ${activeSection === section.id ? 'active' : ''}`}
-                            onClick={() => scrollToSection(section.id)}
-                        >
-                            {section.label}
-                        </button>
-                    ))}
+                    <div className="about-nav-links">
+                        {sections.map(section => (
+                            <button
+                                key={section.id}
+                                className={`about-nav-btn ${activeSection === section.id ? 'active' : ''}`}
+                                onClick={() => scrollToSection(section.id)}
+                            >
+                                {section.label}
+                            </button>
+                        ))}
+                    </div>
+                    <div className="about-nav-cta">
+                        <a href="tel:+919886035330" className="about-nav-call-btn">
+                            <Phone size={16} />
+                            <span>Call Now</span>
+                        </a>
+                    </div>
                 </div>
             </nav>
 

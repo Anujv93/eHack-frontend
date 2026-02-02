@@ -87,98 +87,130 @@
     height: 70px;
 }
 
+/* Sticky Section Navigation (Matched to Program Page) */
 .about-sticky-nav {
-    width: 100%;
-    padding: 1rem 0;
-    z-index: 100;
-    background: transparent;
-    transition: all 0.3s ease;
-}
-
-.about-sticky-nav.is-sticky {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    animation: slideDown 0.3s ease;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.about-sticky-nav.is-sticky {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .about-nav-container {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
-    flex-wrap: wrap;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    gap: 1rem;
+}
+
+.about-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+}
+
+.about-nav-links::-webkit-scrollbar {
+    display: none;
 }
 
 .about-nav-btn {
-    padding: 0.6rem 1.25rem;
+    position: relative;
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1f2937;
+    background: transparent;
     border: none;
-    background: #F1F5F9;
-    color: #64748B;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 50px;
     cursor: pointer;
-    transition: all 0.25s ease;
     white-space: nowrap;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    box-shadow: none;
+    /* Reset existing shadow */
 }
 
 .about-nav-btn:hover {
-    background: #E2E8F0;
-    color: #334155;
+    color: #000;
+    background: #f3f4f6;
 }
 
 .about-nav-btn.active {
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
-    color: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+    color: #ff6b00;
+    /* accent */
+    background: #fff0e0;
+    /* accent-light */
+    font-weight: 600;
+    box-shadow: none;
 }
 
-/* Responsive Sticky Navigation */
-@media (max-width: 768px) {
-    .about-nav-placeholder.active {
-        height: 60px;
-    }
+.about-nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #ff6b00;
+    transition: width 0.2s ease;
+    border-radius: 1px;
+}
 
-    .about-nav-container {
-        gap: 0.35rem;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        padding-bottom: 0.25rem;
-    }
+.about-nav-btn.active::after {
+    width: 60%;
+}
 
-    .about-nav-container::-webkit-scrollbar {
-        display: none;
-    }
+.about-nav-cta {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
 
-    .about-nav-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-        flex-shrink: 0;
-    }
+.about-nav-call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #ff6b00;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(223, 103, 24, 0.3);
+}
+
+.about-nav-call-btn:hover {
+    background: #cc5600;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(223, 103, 24, 0.4);
+}
+
+.about-nav-call-btn svg {
+    flex-shrink: 0;
 }
 
 /* Mission Section */
