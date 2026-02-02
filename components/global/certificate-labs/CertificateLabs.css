@@ -1086,3 +1086,941 @@
         height: 22px;
     }
 }
+
+/* ==========================================
+   Creative Simulations CSS
+   ========================================== */
+.sim-container {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    background: #f8fafc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ==========================================
+   Diversified Simulations CSS
+   ========================================== */
+
+/* Base Robotics Sim */
+.robotics-sim {
+    background: #1e1e2e;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* --- Robotics Modes --- */
+/* Arduino Mode */
+.arduino-mode {
+    background: #00979C;
+    /* Arduino Teal */
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 15px;
+}
+
+.arduino-board {
+    flex: 1;
+    background: #006368;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.board-chip {
+    width: 60%;
+    height: 20%;
+    background: #333;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-family: monospace;
+    border: 1px solid #555;
+}
+
+.led-component {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #550000;
+    transition: background 0.1s;
+}
+
+.led-component.on {
+    background: #ff0000;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+.code-editor-sim {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.code-header {
+    background: #e2e8f0;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    color: #64748b;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.code-editor-sim pre {
+    padding: 10px;
+    font-size: 0.75rem;
+    background: #fff;
+    color: #333;
+    flex: 1;
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+}
+
+.compile-btn {
+    background: #00979C;
+    color: white;
+    border: none;
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* IoT Mode */
+.iot-mode {
+    background: #f1f5f9;
+}
+
+.iot-dashboard h3 {
+    margin: 0 0 15px 0;
+    color: #334155;
+    font-size: 1.1rem;
+}
+
+.iot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.iot-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.humidity-ring {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #e2e8f0;
+    border-top-color: #3b82f6;
+    margin-bottom: 5px;
+}
+
+.iot-log {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+.iot-log .highlight {
+    color: #facc15;
+}
+
+
+/* --- Data Science Modes --- */
+/* Python Mode */
+.python-mode {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+.notebook-cell {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.cell-type {
+    font-size: 0.7rem;
+    color: #64748b;
+    margin-bottom: 5px;
+    font-family: monospace;
+}
+
+.notebook-output {
+    padding: 10px;
+}
+
+.sim-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    color: #334155;
+}
+
+.sim-table th {
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+    padding: 5px;
+}
+
+.sim-table td {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 5px;
+}
+
+.more-rows {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.7rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* ML Mode */
+.ml-mode {
+    background: #181825;
+    color: white;
+    padding: 20px;
+}
+
+.ml-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ml-header .badge {
+    background: #10b981;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 100px;
+}
+
+.epoch-progress {
+    margin-bottom: 20px;
+}
+
+.epoch-bar-bg {
+    width: 100%;
+    height: 8px;
+    background: #313244;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.epoch-bar-fill {
+    height: 100%;
+    background: #8b5cf6;
+    transition: width 0.1s linear;
+}
+
+.ml-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-box .label {
+    font-size: 0.7rem;
+    color: #a6adc8;
+}
+
+.stat-box .value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+
+/* --- Marketing Modes --- */
+/* SEO Mode */
+.seo-mode {
+    background: #fff;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.seo-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.score-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 8px solid #10b981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #10b981;
+}
+
+.seo-checklist {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.check-item {
+    margin-bottom: 4px;
+}
+
+.check-item.good {
+    color: #15803d;
+}
+
+.check-item.warn {
+    color: #d97706;
+}
+
+.check-item.error {
+    color: #dc2626;
+}
+
+/* Analytics Mode */
+.analytics-mode {
+    background: #f8fafc;
+}
+
+.analytics-map {
+    height: 120px;
+    position: relative;
+    background: #e2e8f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.visitor-bubble {
+    position: absolute;
+    background: #3b82f6;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    box-shadow: 0 2px 5px rgba(59, 130, 246, 0.4);
+    animation: bounce 2s infinite;
+}
+
+.analytics-stats {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.analytics-stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.analytics-stats strong {
+    font-size: 1.2rem;
+    color: #1e293b;
+}
+
+
+/* --- Soft Skills Modes --- */
+/* Leadership Mode */
+.leadership-mode {
+    justify-content: center;
+}
+
+.scenario-card {
+    background: #fef2f2;
+    border: 1px solid #fee2e2;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.scenario-card h4 {
+    color: #991b1b;
+    margin: 0 0 5px 0;
+}
+
+.scenario-card p {
+    font-size: 0.9rem;
+    color: #7f1d1d;
+    margin: 0;
+}
+
+.decision-tree {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.decision-btn {
+    padding: 10px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    text-align: left;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.decision-btn:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+/* Interview Mode */
+.interview-mode {
+    background: #111;
+    color: white;
+    padding: 0 !important;
+}
+
+.video-feed {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: linear-gradient(to bottom, #222, #111);
+}
+
+.avatar-large {
+    width: 80px;
+    height: 80px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+.audio-wave {
+    display: flex;
+    gap: 3px;
+    height: 40px;
+    align-items: center;
+}
+
+.audio-wave .bar {
+    width: 4px;
+    background: #10b981;
+    border-radius: 2px;
+    transition: height 0.1s;
+}
+
+.transcription {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.mic-controls {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.mic-btn,
+.cam-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.mic-btn:hover,
+.cam-btn:hover {
+    background: #444;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.sim-viewport {
+    flex: 2;
+    background: #181825;
+    border: 2px solid #313244;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sim-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.sim-robot {
+    position: absolute;
+    width: 40px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 10;
+}
+
+.robot-chassis {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #FF6B00;
+    border-radius: 8px;
+    opacity: 0.5;
+}
+
+.sim-controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: #11111b;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.joystick-pad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.joy-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.joy-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #313244;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.1s;
+    box-shadow: 0 4px 0 #181825;
+}
+
+.joy-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 transparent;
+}
+
+.joy-center {
+    font-size: 2rem;
+}
+
+.sim-status {
+    width: 100%;
+    background: #1e1e2e;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #a6adc8;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.blink {
+    animation: blink 1s infinite;
+    color: #a6e3a1;
+}
+
+/* Data Science Sim */
+.datascience-sim {
+    background: white;
+}
+
+.sim-toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.tool-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.tool-btn.active {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.sim-chart-area {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 0;
+    min-height: 200px;
+}
+
+
+.sim-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+.sim-bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.sim-bar {
+    width: 100%;
+    background: linear-gradient(to top, #3b82f6, #60a5fa);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease-out;
+    position: relative;
+}
+
+.sim-bar:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+}
+
+.sim-bar-label {
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.sim-code-preview {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+.kw {
+    color: #c4b5fd;
+}
+
+.str {
+    color: #86efac;
+}
+
+.comment {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* Marketing Sim */
+.marketing-sim {
+    background: #f1f5f9;
+}
+
+.sim-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.live-badge {
+    background: #ef4444;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+
+.sim-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    display: block;
+}
+
+.metric-value {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1e293b;
+    display: block;
+    margin: 4px 0;
+}
+
+.metric-trend {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.metric-trend.up {
+    color: #10b981;
+}
+
+.ad-card-mockup {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.ad-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ad-avatar {
+    width: 32px;
+    height: 32px;
+    background: #e2e8f0;
+    border-radius: 50%;
+}
+
+.ad-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.ad-sponsored {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+.ad-image-placeholder {
+    height: 120px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.ad-cta {
+    width: 100%;
+    padding: 8px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Soft Skills Sim */
+.softskills-sim {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 15px;
+}
+
+.chat-avatar-bot {
+    width: 36px;
+    height: 36px;
+    background: #8b5cf6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.status-online {
+    color: #10b981;
+    font-size: 0.75rem;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 5px;
+}
+
+.chat-bubble {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.chat-bubble.bot {
+    background: #f3f4f6;
+    border-top-left-radius: 2px;
+    align-self: flex-start;
+}
+
+.chat-bubble.user {
+    background: #8b5cf6;
+    color: white;
+    border-top-right-radius: 2px;
+    align-self: flex-end;
+}
+
+.chat-options {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chat-opt-btn {
+    background: white;
+    border: 1px solid #8b5cf6;
+    color: #8b5cf6;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.chat-opt-btn:hover {
+    background: #8b5cf6;
+    color: white;
+}

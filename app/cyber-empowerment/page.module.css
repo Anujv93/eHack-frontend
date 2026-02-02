@@ -1,0 +1,878 @@
+/* ===== Cyber Empowerment Page Styles ===== */
+
+.page {
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/impowerment.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 4rem 2rem;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 107, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 107, 0, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+
+.backLink:hover {
+    color: #ff6b00;
+}
+
+.heroBadge {
+    display: inline-block;
+    background: rgba(255, 107, 0, 0.9);
+    color: #ffffff;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.heroHighlight {
+    color: #ff6b00;
+}
+
+.heroSubtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.heroLead {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.heroLead strong {
+    color: #ff6b00;
+    font-size: 1.25rem;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ===== Section Common ===== */
+.sectionTitle {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.textAccent {
+    color: #ff6b00;
+}
+
+.sectionBadge {
+    display: inline-block;
+    background: #ff6b00;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sectionSubtitle {
+    font-size: 1.125rem;
+    color: #4b5563;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+}
+
+/* ===== Introduction Section ===== */
+.introSection {
+    padding: 5rem 0;
+    background-color: #ffffff;
+    opacity: 1;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(255, 107, 0, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(255, 107, 0, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(255, 107, 0, 0.15) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(255, 107, 0, 0.12) 0px, transparent 50%);
+    background-size: 100% 100%;
+    background-position: center;
+    border-top: 1px solid #ff6b00;
+}
+
+.introContent {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.introSplit {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.introImageWrapper {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+}
+
+.introTextWrapper {
+    flex: 1;
+}
+
+.introImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.introParagraph {
+    font-size: 1.15rem;
+    color: #1f2937;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+.introParagraph strong {
+    color: #ff6b00;
+}
+
+.beliefBox {
+    background: rgba(255, 107, 0, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid #ff6b00;
+}
+
+.beliefBox p {
+    color: #1f2937;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.beliefBox blockquote {
+    color: #ff6b00;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ===== Why Section ===== */
+.whySection {
+    padding: 3rem 0;
+    background-color: #ffffff;
+    opacity: 1;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(255, 107, 0, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(255, 107, 0, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(255, 107, 0, 0.15) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(255, 107, 0, 0.12) 0px, transparent 50%);
+    background-size: 100% 100%;
+    background-position: center;
+    border-top: 1px solid #ff6b00;
+}
+
+.whyGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.whyCard {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 2px solid #ff6b00;
+    transition: all 0.3s ease;
+}
+
+.whyCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(255, 107, 0, 0.15);
+}
+
+.whyIcon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.whyCard p {
+    font-size: 1rem;
+    color: #1f2937;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.whyConclusion {
+    font-size: 1.125rem;
+    color: #4b5563;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.whyConclusion strong {
+    color: #ff6b00;
+}
+
+/* ===== Leadership Section ===== */
+.leadershipSection {
+    padding: 3rem 0;
+    background-color: #ffffff;
+    opacity: 1;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(255, 107, 0, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(255, 107, 0, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(255, 107, 0, 0.15) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(255, 107, 0, 0.12) 0px, transparent 50%);
+    background-size: 100% 100%;
+    background-position: center;
+    border-top: 1px solid #ff6b00;
+}
+
+.leadershipSection .sectionTitle {
+    color: #1f2937;
+}
+
+.leaderCard {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 3rem;
+    border: 2px solid #ff6b00;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.leaderInfo h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #ff6b00;
+    margin-bottom: 0.5rem;
+}
+
+.leaderRole {
+    display: inline-block;
+    color: #4b5563;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.leaderInfo p {
+    color: #1f2937;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.visionBox {
+    background: rgba(255, 107, 0, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid #ff6b00;
+}
+
+.visionBox strong {
+    color: #ff6b00;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.visionBox p {
+    color: #1f2937;
+    font-size: 1.125rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ===== Focus Areas Section ===== */
+.focusSection {
+    padding: 3rem 0;
+    background: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #ff6b00;
+    border-top: 1px solid #ff6b00;
+}
+
+.focusGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.focusCard {
+    background: #f9fafb;
+    border-radius: 16px;
+    border: 1px solid #ff6b00;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.focusCard:hover {
+    border-color: #ff6b00;
+    transform: translateY(-4px);
+}
+
+.focusIcon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.focusCard h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ===== Stats Section ===== */
+.statsSection {
+    padding: 3rem 0;
+    background: #f9fafb;
+
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.statCard {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #ff6b00;
+    transition: all 0.3s ease;
+}
+
+.statCard:hover {
+    border-color: #ff6b00;
+}
+
+.statValue {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ff6b00;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.impactHighlights {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 2px solid #ff6b00;
+}
+
+.highlightItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #ff6b00;
+}
+
+.highlightItem:last-of-type {
+    border-bottom: none;
+}
+
+.checkIcon {
+    color: #ff6b00;
+    flex-shrink: 0;
+}
+
+.highlightItem span {
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+.highlightNote {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ff6b00;
+    color: #4b5563;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* ===== Audience Section ===== */
+.audienceSection {
+    padding: 3rem 0;
+    background: #ffffff;
+    border-top: 1px solid #ff6b00;
+    border-bottom: 1px solid #ff6b00;
+}
+
+.audienceGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.audienceCard {
+    background: #ffffff;
+    background-image:
+        radial-gradient(circle at 0% 0%, rgba(255, 107, 0, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(255, 107, 0, 0.08) 0%, transparent 60%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid #ff6b00;
+    transition: all 0.3s ease;
+}
+
+.audienceCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(255, 107, 0, 0.15);
+}
+
+.audienceCard h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ff6b00;
+    margin-bottom: 1.5rem;
+}
+
+.audienceCard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.audienceCard li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #1f2937;
+    font-size: 1rem;
+    border-bottom: 1px solid #ff6b00;
+}
+
+.audienceCard li:last-child {
+    border-bottom: none;
+}
+
+.audienceCard li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ff6b00;
+    font-weight: bold;
+}
+
+/* ===== Difference Section ===== */
+.differenceSection {
+    padding: 3rem 0;
+    background: #f9fafb;
+    border-bottom: 1px solid #ff6b00;
+}
+
+.differenceGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.differenceItem {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    /* Sharper corners for frame look */
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 4px solid #ff6b00;
+    /* Thicker outer border */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.differenceItem::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(255, 107, 0, 0.4);
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.differenceItem:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.15);
+}
+
+.differenceIcon {
+    color: #ff6b00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.differenceItem span:last-child {
+    font-size: 0.9rem;
+    color: #1f2937;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* ===== CTA Section ===== */
+.ctaSection {
+    padding: 3rem 0;
+    background: #ff6b00;
+    text-align: center;
+}
+
+.ctaContent h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.ctaContent p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    line-height: 1.6;
+}
+
+.ctaTagline {
+    font-size: 1.125rem;
+    margin-bottom: 2rem !important;
+}
+
+.ctaTagline strong {
+    color: #1f2937;
+}
+
+.ctaButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.ctaPrimaryBtn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #1f2937;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.ctaPrimaryBtn:hover {
+    background: #111827;
+    transform: translateY(-2px);
+}
+
+.ctaSecondaryBtn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.ctaSecondaryBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Footer Info ===== */
+.footerInfo {
+    padding: 4rem 0;
+    background: #1f2937;
+    text-align: center;
+}
+
+.footerContent h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff6b00;
+    margin-bottom: 0.5rem;
+}
+
+.footerContent p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.footerTags {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.footerTagline {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footerTagline strong {
+    color: #ff6b00;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+    .introSplit {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sectionTitle,
+    .introParagraph {
+        text-align: center !important;
+    }
+
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+
+    .introSplit {
+        gap: 2rem;
+    }
+
+    .introImageWrapper {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Reorder flex items to show image first on tablet/mobile if desired, or keep text first */
+    /* Let's keep text first as per current layout, but center everything */
+
+    .whyGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .focusGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .audienceGrid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for tablet better than 1 */
+        gap: 1.5rem;
+    }
+
+    .differenceGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.25rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.75rem;
+    }
+
+    .whyGrid,
+    .focusGrid,
+    .audienceGrid {
+        /* Stack audience cards on mobile */
+        grid-template-columns: 1fr;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .differenceGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .leaderCard {
+        padding: 2rem;
+    }
+
+    .ctaContent h2 {
+        font-size: 1.75rem;
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+    }
+
+    .ctaPrimaryBtn,
+    .ctaSecondaryBtn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+        min-height: 50vh;
+    }
+
+    .heroTitle {
+        font-size: 1.75rem;
+    }
+
+    .introSection,
+    .whySection,
+    .leadershipSection,
+    .focusSection,
+    .statsSection,
+    .audienceSection,
+    .differenceSection,
+    .ctaSection,
+    .footerInfo {
+        padding: 2rem 0;
+        /* Reduce padding on mobile */
+    }
+
+    .introSplit {
+        gap: 2rem;
+    }
+
+    /* Stack stats on very small screens? or keep 2 cols? 
+       2 cols with smaller font might work, let's keep 2 cols but check gap */
+    .statsGrid {
+        grid-template-columns: 1fr 1fr;
+        /* Keep 2 cols */
+        gap: 1rem;
+    }
+
+    .statValue {
+        font-size: 1.75rem;
+    }
+
+    .statCard {
+        padding: 1rem;
+    }
+
+    .differenceGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .leaderCard {
+        padding: 1.5rem;
+    }
+
+    .leaderInfo h3 {
+        font-size: 1.5rem;
+    }
+
+    .focusIcon {
+        width: 50px;
+        height: 50px;
+    }
+}

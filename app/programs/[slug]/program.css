@@ -895,7 +895,7 @@ p {
 
 .certificates-gallery.count-1 .certificate-image-card,
 .certificates-gallery:has(.certificate-image-card:only-child) .certificate-image-card {
-    max-width: 500px;
+    max-width: 800px;
     width: 100%;
 }
 
@@ -967,6 +967,11 @@ p {
 
 .credentials-wrapper:has(.certificates-gallery.count-2) .credentials-cta {
     text-align: center;
+}
+
+/* Three certificates styling - mixed orientation handling */
+.certificates-gallery.count-3 .certificate-item-combined:first-child {
+    align-self: center;
 }
 
 .certificate-image-card {
@@ -1089,6 +1094,14 @@ p {
     display: none;
 }
 
+.certificate-item-combined .certificate-image-card img.certificate-img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    object-fit: cover;
+    max-width: none !important;
+}
+
 /* Name panel - style as a panel inside the frame */
 .certificate-item-combined .credential-card {
     margin: 0;
@@ -1126,7 +1139,7 @@ p {
 
 /* Adjust gallery for combined items with count-1 */
 .certificates-gallery.count-1 .certificate-item-combined {
-    max-width: 500px;
+    max-width: 800px;
     width: 100%;
 }
 
@@ -1289,7 +1302,7 @@ p {
 .why-ehack-section {
     background: var(--white);
     padding: var(--space-16) 0;
-    border-bottom: 1px solid #ff6b00;
+
 }
 
 .why-ehack-section {
@@ -2384,9 +2397,233 @@ p {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* ============================================
+   RESPONSIVE OPTIMIZATIONS
+   ============================================ */
+
+/* Large Screens (2K/4K) */
+@media (min-width: 1600px) {
+
+    .nav-container,
+    .hero-container,
+    .section-container,
+    .credentials-wrapper,
+    .curriculum-container,
+    .pricing-container-full,
+    .banner-container,
+    .sticky-nav-container {
+        max-width: 1600px;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-description,
+    .hero-features {
+        font-size: 1.25rem;
+        max-width: 800px;
+    }
+
+    .curriculum-title {
+        font-size: 3.5rem;
+    }
+
+    .pricing-subtitle,
+    .roi-subtitle,
+    .credentials-subtitle {
+        font-size: 1.2rem;
+        max-width: 900px;
+    }
+}
+
+/* Tablet & Mobile Screens */
+@media (max-width: 1024px) {
+
+    /* Adjust Section Paddings */
+    .program-page .hero-section,
+    .credentials-section,
+    .skills-section,
+    .roi-section,
+    .why-ehack-section,
+    .audience-section,
+    .curriculum-section,
+    .pricing-section,
+    .faq-section {
+        padding: var(--space-8) 0;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-description,
+    .hero-features {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .program-page .form-card {
+        top: 0;
+        margin-top: var(--space-6);
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Stats Bar Stacking */
+    .stats-container {
+        flex-wrap: wrap;
+    }
+
+    .program-page .stats-bar .stat-item {
+        flex: 1 1 50%;
+        /* 2 per row */
+        border-bottom: 1px solid #ff6b00;
+    }
+
+    .program-page .stats-bar .stat-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .program-page .stats-bar .stat-item:last-child {
+        border-bottom: none;
+        flex: 1 1 100%;
+        /* Membership full width */
+        border-right: none;
+    }
+
+    /* Grids to Single/Dual Column */
+    .roi-grid,
+    .jobroles-grid,
+    .audience-grid,
+    .certificates-gallery,
+    .pricing-cards {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .certificates-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Typography Adjustments */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .curriculum-stats {
+        gap: var(--space-6);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Further Reduced Padding for Mobile */
+    .program-page .hero-section,
+    .credentials-section,
+    .skills-section,
+    .roi-section,
+    .audience-section,
+    .curriculum-section,
+    .pricing-section,
+    .faq-section {
+        padding: var(--space-8) 0;
+    }
+
+    .section-container {
+        padding: 0 var(--space-4);
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-container {
+        gap: var(--space-6);
+    }
+
+    /* Stats Bar - Mobile vertical stack or 2x2 */
+    .program-page .stats-bar .stat-item {
+        padding: 8px 4px;
+    }
+
+    .program-page .stats-bar .stat-value {
+        font-size: 0.95rem;
+    }
+
+    /* Audience Grid - Single Column */
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer / CTA Buttons */
+    .curriculum-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4);
+    }
+
+    .curriculum-stats {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .curriculum-footer {
+        flex-direction: column;
+        gap: var(--space-6);
+        text-align: center;
+    }
+
+    .curriculum-total {
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: center;
+    }
+
+    .btn-download-brochure {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* FAQ */
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-categories {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .faq-category-btn {
+        white-space: nowrap;
+    }
+}
+
+
+
 .pricing-features li:last-child {
     border-bottom: none;
 }
+
 
 .pricing-cta {
     margin-top: var(--space-6);
@@ -4600,7 +4837,7 @@ p {
 
 .module-description-modern {
     font-size: 0.9375rem;
-    color: var(--gray-600);
+    color: #1f2937;
     line-height: 1.7;
     margin-bottom: var(--space-5);
 }

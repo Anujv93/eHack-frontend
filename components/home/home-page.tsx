@@ -708,6 +708,44 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                             </Link>
                         </div>
                     </div>
+                    {/* Cyber Empowerment Banner - Following Ribbon Card Structure */}
+                    <div className={styles.ribbonGridItem} style={{ marginTop: '2rem' }}>
+                        <div className={`${styles.ribbonTitleStrip} ${styles.empowermentTitleStrip}`}>Cyber Empowerment Initiative</div>
+                        <Link href="/cyber-empowerment" className={`${styles.ribbonCard} ${styles.empowermentRibbon}`}>
+                            <div className={styles.ribbonImageWrapper}>
+                                <div className={styles.floatingImage}>
+                                    <img
+                                        src="/impowerment.png"
+                                        alt="Cyber Empowerment for All"
+                                        className={styles.ribbonImage}
+                                    />
+                                </div>
+                            </div>
+                            <div className={styles.ribbonContent}>
+                                <span className={styles.ribbonBadge}>A New Initiative by eHack Academy, Bangalore</span>
+                                <h3 className={styles.ribbonTitle}>Cyber Empowerment for All</h3>
+                                <p className={styles.ribbonText}>Empowering Young Minds & Experienced Lives in the Digital World. Our initiative bridges the digital divide by providing free cybersecurity awareness sessions to students, senior citizens, and communities across India – making online safety accessible to everyone.</p>
+                                <div className={styles.cyberEmpowermentStats}>
+                                    <div className={styles.cyberEmpowermentStat}>
+                                        <span className={styles.cyberEmpowermentStatValue}>1000+</span>
+                                        <span className={styles.cyberEmpowermentStatLabel}>Participants</span>
+                                    </div>
+                                    <div className={styles.cyberEmpowermentStat}>
+                                        <span className={styles.cyberEmpowermentStatValue}>100+</span>
+                                        <span className={styles.cyberEmpowermentStatLabel}>Sessions</span>
+                                    </div>
+                                    <div className={styles.cyberEmpowermentStat}>
+                                        <span className={styles.cyberEmpowermentStatValue}>50+</span>
+                                        <span className={styles.cyberEmpowermentStatLabel}>Institutions</span>
+                                    </div>
+                                </div>
+                                <div className={styles.ribbonAction}>
+                                    Learn More <ArrowRight size={20} />
+                                </div>
+                            </div>
+                            <div className={styles.ribbonPattern}></div>
+                        </Link>
+                    </div>
                 </div>
             </section>
 

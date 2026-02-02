@@ -347,27 +347,25 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         <h2 className="credentials-title">Earn <span className="text-accent">{program.certifications.length} Global Certifications</span></h2>
                         <p className="credentials-subtitle">Graduate with internationally recognized certifications from {program.partner}.</p>
 
-                        {/* Certificate images with names - hidden for personality-softskills */}
-                        {program.category !== 'personality-softskills' && (
-                            <div className={`certificates-gallery count-${program.certifications.length}`}>
-                                {program.certifications.map((cert, idx) => (
-                                    <div key={idx} className="certificate-item-combined">
-                                        <div className="certificate-image-card">
-                                            <img src={cert.image} alt={`${cert.code} - ${cert.name} Certificate`} className="certificate-img" />
-                                            <div className="certificate-overlay">
-                                                <span className="cert-badge-label">{cert.code}</span>
-                                            </div>
-                                        </div>
-                                        <div className="credential-card">
-                                            <div className="credential-logo">
-                                                <span className="logo-text"><span className="logo-accent">{cert.code.charAt(0)}</span>{cert.code.slice(1)}</span>
-                                                <span className="logo-label">{cert.name}</span>
-                                            </div>
+                        {/* Certificate images with names */}
+                        <div className={`certificates-gallery count-${program.certifications.length}`}>
+                            {program.certifications.map((cert, idx) => (
+                                <div key={idx} className="certificate-item-combined">
+                                    <div className="certificate-image-card">
+                                        <img src={cert.image} alt={`${cert.code} - ${cert.name} Certificate`} className="certificate-img" />
+                                        <div className="certificate-overlay">
+                                            <span className="cert-badge-label">{cert.code}</span>
                                         </div>
                                     </div>
-                                ))}
-                            </div>
-                        )}
+                                    <div className="credential-card">
+                                        <div className="credential-logo">
+                                            <span className="logo-text"><span className="logo-accent">{cert.code.charAt(0)}</span>{cert.code.slice(1)}</span>
+                                            <span className="logo-label">{cert.name}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
 
                         <div className="credentials-cta">
                             <a href="tel:+919886035330" className="btn-inquire">Inquire Now <span>→</span></a>
@@ -569,8 +567,8 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </section>
 
-            {/* Hands-On Labs Section - Only for Cybersecurity Programs */}
-            {!['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category) && program.certifications.length > 0 && (
+            {/* Hands-On Labs Section */}
+            {(program.certifications.length > 0 || ['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category)) && (
                 <div id="labs">
                     <ProgramLabsWrapper
                         certificationCodes={program.certifications.map(cert => cert.code)}
@@ -579,6 +577,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     />
                 </div>
             )}
+
 
             {/* Pricing Details */}
             <section className="pricing-section">
@@ -589,102 +588,117 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
 
                     <div className="pricing-content-wrapper">
-                        <div className="pricing-main-column">
-                            {program.pricing.applicationFee && (
-                                <div className="fee-section">
-                                    <div className="fee-row">
-                                        <span className="fee-label-text">
-                                            <span className="fee-icon-wrapper"><FileText size={18} /></span>
-                                            Application Fee
-                                        </span>
-                                        <span className="fee-value">{program.pricing.applicationFee}</span>
-                                    </div>
-                                    <p className="fee-note-text">Will be adjusted in the program fee. *GST as applicable</p>
-                                </div>
-                            )}
-                            {program.pricing.admissionFee && (
-                                <div className="fee-section primary">
-                                    <div className="fee-row">
-                                        <span className="fee-label-text">
-                                            <span className="fee-icon-wrapper primary"><Gem size={18} /></span>
-                                            Program Admission Fee
-                                        </span>
-                                        <span className="fee-value-large">{program.pricing.admissionFee}</span>
-                                    </div>
-                                    <p className="fee-note-text">*GST as applicable</p>
-                                </div>
-                            )}
-                            {(program.pricing.companyEMI || program.pricing.upfrontAmount) && (
-                                <div className="payment-plans-section">
-                                    <h3 className="section-heading">Payment Plans</h3>
-                                    {program.pricing.companyEMI && (
-                                        <div className="plan-option">
-                                            <div className="plan-header">
-                                                <div className="plan-title-group">
-                                                    <span className="plan-icon"><BriefcaseBusiness size={20} /></span>
-                                                    <h4 className="plan-name">Company EMI Plan</h4>
-                                                </div>
-                                                <span className="plan-price">{program.pricing.companyEMI}</span>
-                                            </div>
-                                            <p className="plan-description">Complete flexibility with company-sponsored EMI option</p>
-                                        </div>
-                                    )}
-                                    {program.pricing.upfrontAmount && (
-                                        <div className="plan-option">
-                                            <div className="plan-header">
-                                                <div className="plan-title-group">
-                                                    <span className="plan-icon"><Banknote size={20} /></span>
-                                                    <h4 className="plan-name">{program.pricing.upfrontPercentage} Upfront Payment</h4>
-                                                </div>
-                                                <span className="plan-price">{program.pricing.upfrontAmount}</span>
-                                            </div>
-                                            <p className="plan-description">Balance payable in {program.pricing.emiCount} equal EMIs of {program.pricing.emiAmount} each</p>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </div>
+                        {(() => {
+                            const hasPaymentPlans = program.pricing.companyEMI || program.pricing.upfrontAmount;
 
-                        <div className="pricing-side-column">
-                            <div className="financing-box">
-                                <h3 className="section-heading">
-                                    <span className="heading-icon"><Landmark size={20} /></span>
-                                    Financing Options
-                                </h3>
-                                <p className="financing-description">We offer multiple financing solutions to make our programs accessible to all students.</p>
-                                <div className="financing-list">
-                                    <div className="financing-item">
-                                        <div className="financing-icon"><Shield size={24} /></div>
-                                        <div>
-                                            <h4 className="financing-name">No Cost EMI (Internal)</h4>
-                                            <p className="financing-desc">Zero interest installments through our internal program</p>
-                                        </div>
-                                    </div>
-                                    <div className="financing-item">
-                                        <div className="financing-icon"><CreditCard size={24} /></div>
-                                        <div>
-                                            <h4 className="financing-name">Bank/NBFC Financing</h4>
-                                            <p className="financing-desc">Flexible payment plans through partner banks and NBFCs</p>
-                                        </div>
-                                    </div>
+                            const WhatsIncludedContent = (
+                                <div className="whats-included-box" style={!hasPaymentPlans ? { marginTop: '24px' } : undefined}>
+                                    <h3 className="section-heading">
+                                        <span className="heading-icon"><CheckCircle size={20} /></span>
+                                        What's Included
+                                    </h3>
+                                    <ul className="included-list">
+                                        <li>{program.certifications.length} {program.category === 'cybersecurity' ? 'Global EC-Council' : 'eHack'} Certifications</li>
+                                        <li>{program.stats.totalHours} of Hands-on Training</li>
+                                        <li>Real-Time Labs & Practice Environment</li>
+                                        <li>{program.stats.membership} Post-Training Support</li>
+                                        <li>Program Completion Certificate</li>
+                                        <li>{program.slug === "masters-ethical-hacking" ? "100% Placement Assistance" : "Internship Opportunities"}</li>
+                                    </ul>
                                 </div>
-                            </div>
+                            );
 
-                            <div className="whats-included-box">
-                                <h3 className="section-heading">
-                                    <span className="heading-icon"><CheckCircle size={20} /></span>
-                                    What's Included
-                                </h3>
-                                <ul className="included-list">
-                                    <li>{program.certifications.length} {program.category === 'cybersecurity' ? 'Global EC-Council' : 'eHack'} Certifications</li>
-                                    <li>{program.stats.totalHours} of Hands-on Training</li>
-                                    <li>Real-Time Labs & Practice Environment</li>
-                                    <li>{program.stats.membership} Post-Training Support</li>
-                                    <li>Program Completion Certificate</li>
-                                    <li>{program.slug === "masters-ethical-hacking" ? "100% Placement Assistance" : "Internship Opportunities"}</li>
-                                </ul>
-                            </div>
-                        </div>
+                            return (
+                                <>
+                                    <div className="pricing-main-column">
+                                        {program.pricing.applicationFee && (
+                                            <div className="fee-section">
+                                                <div className="fee-row">
+                                                    <span className="fee-label-text">
+                                                        <span className="fee-icon-wrapper"><FileText size={18} /></span>
+                                                        Application Fee
+                                                    </span>
+                                                    <span className="fee-value">{program.pricing.applicationFee}</span>
+                                                </div>
+                                                <p className="fee-note-text">Will be adjusted in the program fee. *GST as applicable</p>
+                                            </div>
+                                        )}
+                                        {program.pricing.admissionFee && (
+                                            <div className="fee-section primary">
+                                                <div className="fee-row">
+                                                    <span className="fee-label-text">
+                                                        <span className="fee-icon-wrapper primary"><Gem size={18} /></span>
+                                                        Program Admission Fee
+                                                    </span>
+                                                    <span className="fee-value-large">{program.pricing.admissionFee}</span>
+                                                </div>
+                                                <p className="fee-note-text">*GST as applicable</p>
+                                            </div>
+                                        )}
+
+                                        {!hasPaymentPlans && WhatsIncludedContent}
+
+                                        {hasPaymentPlans && (
+                                            <div className="payment-plans-section">
+                                                <h3 className="section-heading">Payment Plans</h3>
+                                                {program.pricing.companyEMI && (
+                                                    <div className="plan-option">
+                                                        <div className="plan-header">
+                                                            <div className="plan-title-group">
+                                                                <span className="plan-icon"><BriefcaseBusiness size={20} /></span>
+                                                                <h4 className="plan-name">Company EMI Plan</h4>
+                                                            </div>
+                                                            <span className="plan-price">{program.pricing.companyEMI}</span>
+                                                        </div>
+                                                        <p className="plan-description">Complete flexibility with company-sponsored EMI option</p>
+                                                    </div>
+                                                )}
+                                                {program.pricing.upfrontAmount && (
+                                                    <div className="plan-option">
+                                                        <div className="plan-header">
+                                                            <div className="plan-title-group">
+                                                                <span className="plan-icon"><Banknote size={20} /></span>
+                                                                <h4 className="plan-name">{program.pricing.upfrontPercentage} Upfront Payment</h4>
+                                                            </div>
+                                                            <span className="plan-price">{program.pricing.upfrontAmount}</span>
+                                                        </div>
+                                                        <p className="plan-description">Balance payable in {program.pricing.emiCount} equal EMIs of {program.pricing.emiAmount} each</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <div className="pricing-side-column">
+                                        <div className="financing-box">
+                                            <h3 className="section-heading">
+                                                <span className="heading-icon"><Landmark size={20} /></span>
+                                                Financing Options
+                                            </h3>
+                                            <p className="financing-description">We offer multiple financing solutions to make our programs accessible to all students.</p>
+                                            <div className="financing-list">
+                                                <div className="financing-item">
+                                                    <div className="financing-icon"><Shield size={24} /></div>
+                                                    <div>
+                                                        <h4 className="financing-name">No Cost EMI (Internal)</h4>
+                                                        <p className="financing-desc">Zero interest installments through our internal program</p>
+                                                    </div>
+                                                </div>
+                                                <div className="financing-item">
+                                                    <div className="financing-icon"><CreditCard size={24} /></div>
+                                                    <div>
+                                                        <h4 className="financing-name">Bank/NBFC Financing</h4>
+                                                        <p className="financing-desc">Flexible payment plans through partner banks and NBFCs</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {hasPaymentPlans && WhatsIncludedContent}
+                                    </div>
+                                </>
+                            );
+                        })()}
                     </div>
 
                     <div className="pricing-cta-section">
@@ -868,39 +882,39 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
 
 
-            {/* 13. NEWS SECTION - Industry Validation & Urgency - Hidden for non-cybersecurity programs */}
-            {!program.slug.includes('digital-marketing') && !program.slug.includes('robotics') && !program.slug.includes('personality') && program.category !== 'personality-softskills' && <section className="news-section">
-                <div className="news-container ">
-                    <span className="news-badge">CYBER THREATS ARE RISING</span>
-                    <h2 className="news-title">Why Cybersecurity Skills Matter Now</h2>
-                    <div className="news-grid">
-                        <article className="news-card">
-                            <div className="news-image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" alt="Cybersecurity" /></div>
-                            <div className="news-content">
-                                <span className="news-date">December 2024</span>
-                                <h3 className="news-headline">India Records 500% Increase in Cyberattacks - Skilled Professionals in High Demand</h3>
-                                <p className="news-source">Economic Times</p>
-                            </div>
-                        </article>
-                        <article className="news-card">
-                            <div className="news-image"><img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop" alt="Hacking" /></div>
-                            <div className="news-content">
-                                <span className="news-date">November 2024</span>
-                                <h3 className="news-headline">Cybersecurity Job Market Expected to Grow 35% by 2027 - CEH Certified Professionals Lead</h3>
-                                <p className="news-source">Forbes India</p>
-                            </div>
-                        </article>
-                        <article className="news-card">
-                            <div className="news-image"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop" alt="Data Security" /></div>
-                            <div className="news-content">
-                                <span className="news-date">October 2024</span>
-                                <h3 className="news-headline">Companies Willing to Pay Premium Salaries for Certified Ethical Hackers</h3>
-                                <p className="news-source">Business Standard</p>
-                            </div>
-                        </article>
+            {/* 13. NEWS SECTION - Industry Validation & Urgency */}
+            {program.newsItems && program.newsItems.length > 0 && (
+                <section className="news-section">
+                    <div className="news-container ">
+                        <span className="news-badge">
+                            {programType === 'digital-marketing' ? 'DIGITAL TRENDS' :
+                                programType === 'robotics' ? 'FUTURE TECH' :
+                                    program.category === 'data-science' ? 'DATA INSIGHTS' :
+                                        program.category === 'personality-softskills' ? 'CAREER GROWTH' :
+                                            'CYBER THREATS ARE RISING'}
+                        </span>
+                        <h2 className="news-title">
+                            {programType === 'digital-marketing' ? 'Why Digital Skills Matter Now' :
+                                programType === 'robotics' ? 'Why Robotics is the Future' :
+                                    program.category === 'data-science' ? 'Why Data Science Matters Now' :
+                                        program.category === 'personality-softskills' ? 'Why Soft Skills Matter' :
+                                            'Why Cybersecurity Skills Matter Now'}
+                        </h2>
+                        <div className="news-grid">
+                            {program.newsItems.map((item, idx) => (
+                                <article key={idx} className="news-card">
+                                    <div className="news-image"><img src={item.image} alt="Cybersecurity News" /></div>
+                                    <div className="news-content">
+                                        <span className="news-date">{item.date}</span>
+                                        <h3 className="news-headline">{item.headline}</h3>
+                                        <p className="news-source">{item.source}</p>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>}
+                </section>
+            )}
 
             {/* 14. FINAL CTA SECTION */}
             <section className="program-cta-section">

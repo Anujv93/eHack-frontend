@@ -21,6 +21,13 @@ export function ProgramLabsWrapper({ certificationCodes, programTitle, programSl
             return 'masters-comprehensive'; // Special slug for comprehensive labs
         }
 
+        // Mapping for new programs
+        if (programSlug?.includes('data-science')) return 'data-science';
+        if (programSlug?.includes('robotics')) return 'robotics-iot';
+        if (programSlug?.includes('digital-marketing')) return 'digital-marketing';
+        if (programSlug?.includes('personality') || programSlug?.includes('softskills')) return 'personality-softskills';
+
+
         // Priority order for determining which labs to show
         const priorityMap: { [key: string]: string } = {
             'CEH': 'ecc-ceh',

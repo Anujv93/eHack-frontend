@@ -167,7 +167,7 @@ export default function AboutPage() {
                 <div className="about-container">
                     <div className="hero-content-compact">
                         <span className="hero-badge-light">ABOUT US</span>
-                        <h1 className="hero-title-light">Global Leaders in Technology Education and Corporate Solutions</h1>
+                        <h1 className="hero-title-light">Global Leaders in Technology <span style={{ color: '#ff6b00' }}>Education and Corporate Solutions</span></h1>
                         <p className="hero-subtitle-light">
                             Empowering the World with Emerging Technologies & High-Impact Learning
                         </p>
