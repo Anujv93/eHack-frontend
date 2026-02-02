@@ -140,13 +140,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 1.0,
     }))
 
-    // Dynamic service pages
-    const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
-        url: `${baseUrl}/services/${service.id}`,
-        lastModified: currentDate,
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-    }))
 
     // Dynamic course/certificate pages from Strapi
     const coursePages: MetadataRoute.Sitemap = coursesData.map((course) => ({
@@ -163,7 +156,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...offerPages,
         ...categoryPages,
         ...programPages,
-        ...servicePages,
         ...coursePages,
     ]
 }
