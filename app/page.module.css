@@ -2192,60 +2192,38 @@
 /* Responsive styles for Empowerment Ribbon */
 @media (max-width: 992px) {
     .empowermentRibbon .ribbonImage {
-        height: 400px;
+        height: 240px;
     }
 
     .empowermentRibbon .ribbonContent {
-        margin-top: -70px;
+        margin-top: 0;
     }
 }
 
 @media (max-width: 768px) {
     .empowermentRibbon .ribbonImage {
-        height: 320px;
+        height: 240px;
     }
 
     .empowermentRibbon .ribbonContent {
-        margin-top: -50px;
+        margin-top: 0;
         padding: 1.5rem;
     }
 
     .empowermentRibbon .ribbonBadge {
-        font-size: 0.65rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .empowermentRibbon .ribbonTitle {
-        font-size: 1.5rem;
-    }
-
-    .empowermentRibbon .ribbonText {
-        font-size: 1rem;
+        /* Inherit global styles */
+        width: fit-content;
     }
 }
 
 @media (max-width: 480px) {
     .empowermentRibbon .ribbonImage {
-        height: 250px;
+        height: 240px;
     }
 
     .empowermentRibbon .ribbonContent {
-        margin-top: -30px;
+        margin-top: 0;
         padding: 1rem;
-    }
-
-    .empowermentRibbon .ribbonBadge {
-        font-size: 0.55rem;
-        padding: 0.4rem 0.75rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .empowermentRibbon .ribbonTitle {
-        font-size: 1.25rem;
-    }
-
-    .empowermentRibbon .ribbonText {
-        font-size: 0.9rem;
     }
 
     .empowermentRibbon .ribbonAction {
