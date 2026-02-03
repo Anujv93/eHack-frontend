@@ -840,7 +840,7 @@ p {
 /* Credentials Section - Swiss Minimal */
 .credentials-section {
     padding: var(--space-16) 0;
-    border-top: 1px solid #ff6b00;
+
     border-bottom: 1px solid #ff6b00;
 }
 
