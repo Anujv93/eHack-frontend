@@ -26,7 +26,7 @@ export default function CourseOutlineSection({ section }: CourseOutlineSectionPr
     };
 
     return (
-        <section className="section section-gray border-bottom" style={{ borderBottom: 'solid 3px #ff6b00' }} id="course-outline">
+        <section className="section section-gray border-bottom" style={{ borderBottom: 'solid 1px #ff6b00' }} id="course-outline">
             <div className="container">
                 {/* Section Header */}
                 <div className="section-header">
