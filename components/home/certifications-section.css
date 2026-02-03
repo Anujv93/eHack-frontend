@@ -225,4 +225,11 @@
         margin-top: 0.5rem;
         border-radius: 4px;
     }
+
+    .cert-logo-wrapper {
+        height: 45px;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        /* Allow wrapping if absolutely necessary, but size reduction should work */
+    }
 }
