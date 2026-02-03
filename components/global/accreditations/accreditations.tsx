@@ -16,7 +16,7 @@ export default function Accreditations({ title, accreditations }: Accreditations
     if (!accreditations || accreditations.length === 0) return null;
 
     return (
-        <section className="accreditations-section border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="accreditations">
+        <section className="accreditations-section border-bottom" style={{ borderBottom: 'solid 3px #ff6b00' }} id="accreditations">
             <div className="container">
                 {title && (
                     <div className="section-header">

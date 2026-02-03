@@ -18,7 +18,7 @@ export default function RelatedCertificates({
     }
 
     return (
-        <section className="related-certificates border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="related-certificates">
+        <section className="related-certificates border-bottom" style={{ borderBottom: 'solid 3px #ff6b00' }} id="related-certificates">
             <div className="related-certificates-container">
                 <div className="related-certificates-header">
                     <div className="header-badge">
