@@ -11,6 +11,7 @@ import {
   getStrapiMediaUrl
 } from '@/lib/strapi';
 import "./globals.css";
+import FloatingChat from "@/components/chat-bot/FloatingChat";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -86,6 +87,7 @@ export default async function RootLayout({
         <TopBar />
         <Header partners={partners} courses={coursesTransformed} />
         {children}
+        <FloatingChat />
         <Footer />
         <FranchisePopup />
         <BackToTop />
