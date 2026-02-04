@@ -27,6 +27,31 @@ export default function FloatingChat() {
     const [showLeadModal, setShowLeadModal] = useState(false);
     const [profile, setProfile] = useState({});
 
+    const [leadCollected, setLeadCollected] = useState(false);
+    function openChat() {
+        setOpen(true);
+        if (!leadCollected) {
+            setShowLeadModal(true);
+        }
+    }
+
+    async function handleLeadSubmit(lead: { name: string; phone: string }) {
+        await fetch("/api/lead", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(lead),
+        });
+
+        setLeadCollected(true);
+        setShowLeadModal(false);
+
+        setMessages([
+            {
+                role: "assistant",
+                content: `Hi ${lead.name}! 👋 How can I help you today?`,
+            },
+        ]);
+    }
 
     async function sendMessage(text: string) {
         if (!text.trim()) return;
@@ -39,7 +64,7 @@ export default function FloatingChat() {
         const res = await fetch("/api/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: text, history: newMessages, profile }),
+            body: JSON.stringify({ message: text, history: newMessages }),
         });
 
         const data = await res.json();
@@ -59,7 +84,7 @@ export default function FloatingChat() {
     return (
         <>
             {/* Floating Button */}
-            <button className="chat-fab flex justify-center items-center" onClick={() => setOpen(true)}>
+            <button className="chat-fab flex justify-center items-center" onClick={openChat}>
                 <MessageCircleIcon className="" />
             </button>
 
@@ -142,7 +167,7 @@ export default function FloatingChat() {
             )}
 
             {showLeadModal && (
-                <LeadModal onClose={() => setShowLeadModal(false)} />
+                <LeadModal onSubmit={handleLeadSubmit} onClose={() => setShowLeadModal(false)} />
             )}
         </>
     );

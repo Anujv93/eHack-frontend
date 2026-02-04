@@ -1,32 +1,27 @@
 "use client";
-
 import { useState } from "react";
-import { X } from "lucide-react";
 
-export default function LeadModal({ onClose }: { onClose: () => void }) {
+type Props = {
+    onSubmit: (lead: { name: string; phone: string }) => void;
+    onClose: () => void;
+};
+
+export default function LeadModal({ onSubmit, onClose }: Props) {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
-    const [loading, setLoading] = useState(false);
 
-    async function submit() {
+    function submit() {
         if (!name || !phone) return;
-        setLoading(true);
-        try {
-            await fetch("/api/lead", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, phone }),
-            });
-        } finally {
-            setLoading(false);
-            onClose();
-        }
+        onSubmit({ name, phone });
     }
 
     return (
-        <div className="lead-modal-backdrop">
-            <div className="lead-modal">
-                <button onClick={onClose} className="lead-close">×</button>
+        <div className="lead-modal-backdrop" onClick={onClose}>
+            <div
+                className="lead-modal"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <button className="lead-close" onClick={onClose}>×</button>
 
                 <h2 className="lead-title">Get Expert Guidance</h2>
                 <p className="lead-subtitle">
@@ -34,11 +29,19 @@ export default function LeadModal({ onClose }: { onClose: () => void }) {
                 </p>
 
                 <div className="lead-form">
-                    <input type="text" placeholder="Your name" />
-                    <input type="tel" placeholder="Phone number" />
+                    <input
+                        placeholder="Your name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                    <input
+                        placeholder="Phone number"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                    />
 
-                    <button className="lead-submit">
-                        Request Call Back
+                    <button className="lead-submit" onClick={submit}>
+                        Start Chat
                     </button>
                 </div>
             </div>
