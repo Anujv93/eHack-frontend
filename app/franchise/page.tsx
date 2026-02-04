@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone } from 'lucide-react';
 import './franchise.css';
+import CertificateHeader from "@/components/single-certificate/header/header";
 
 // SOP Data
 const sopData = [
@@ -232,65 +233,11 @@ export default function FranchisePage() {
                 </div>
             </nav>
 
-            {/* Hero Section */}
-            <section className="franchise-hero">
-                <div className="franchise-hero-container">
-                    <div className="franchise-hero-grid">
-                        <div className="franchise-hero-content">
-                            <span className="franchise-badge">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                                Franchise Opportunity
-                            </span>
-                            <h1>Partner with <span>eHack Academy</span></h1>
-                            <p className="franchise-hero-description">
-                                eHack Academy offers a structured and scalable franchise opportunity in the fast-growing domain of cybersecurity and emerging technologies. With over a decade of experience in professional training and enterprise security services, we&apos;ve built a strong reputation for industry-aligned education, ethical practices, and outcome-focused learning.
-                            </p>
-                            <div className="franchise-hero-stats">
-                                <div className="hero-stat">
-                                    <div className="hero-stat-value">10+</div>
-                                    <div className="hero-stat-label">Years of Experience</div>
-                                </div>
-                                <div className="hero-stat">
-                                    <div className="hero-stat-value">5+</div>
-                                    <div className="hero-stat-label">Program Domains</div>
-                                </div>
-                                <div className="hero-stat">
-                                    <div className="hero-stat-value">100%</div>
-                                    <div className="hero-stat-label">Support System</div>
-                                </div>
-                            </div>
-                            <div className="franchise-hero-cta">
-                                <a href="#" onClick={openFranchisePopup} className="franchise-btn-primary">
-                                    Enquire Now
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </a>
-                                <a href="#sop-framework" className="franchise-btn-secondary">
-                                    View SOP Framework
-                                </a>
-                            </div>
-                        </div>
-                        <div className="franchise-hero-image">
-                            <div className="hero-image-wrapper">
-                                <Image
-                                    src="/images/franchise-popup-image.jpg"
-                                    alt="eHack Academy Franchise Partnership"
-                                    fill
-                                    style={{ objectFit: 'cover' }}
-                                    priority
-                                />
-                                <div className="hero-image-overlay"></div>
-                            </div>
-                            <div className="hero-image-badge">
-                                <span className="badge-text">Join Our Network</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <CertificateHeader
+                title="Partner with eHack Academy"
+                subtitle="eHack Academy offers a structured and scalable franchise opportunity in the fast-growing domain of cybersecurity and emerging technologies. With over a decade of experience in professional training and enterprise security services, we've built a strong reputation for industry-aligned education, ethical practices, and outcome-focused learning."
+                backgroundImage="/images/franchise-popup-image.jpg"
+            />
 
             {/* Programs Offered Section */}
             <section id="programs" className="programs-section">
@@ -441,37 +388,115 @@ export default function FranchisePage() {
                     </div>
                     <div className="model-highlights-grid">
                         <div className="model-card">
-                            <h3><span className="text-orange">Low to Moderate</span> Investment</h3>
-                            <p>Accessible entry point with flexible investment options suited for various business scales.</p>
+                            <div className="model-card-image">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80"
+                                    alt="Low to Moderate Investment"
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                />
+                            </div>
+                            <div className="model-card-content">
+                                <h3><span className="text-orange">Low to Moderate</span> Investment</h3>
+                                <p>Accessible entry point with flexible investment options suited for various business scales.</p>
+                            </div>
                         </div>
                         <div className="model-card">
-                            <h3><span className="text-orange">Revenue Sharing</span> Structure</h3>
-                            <p>Transparent and fair revenue sharing model that aligns incentives for mutual growth.</p>
+                            <div className="model-card-image">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80"
+                                    alt="Revenue Sharing Structure"
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                />
+                            </div>
+                            <div className="model-card-content">
+                                <h3><span className="text-orange">Revenue Sharing</span> Structure</h3>
+                                <p>Transparent and fair revenue sharing model that aligns incentives for mutual growth.</p>
+                            </div>
                         </div>
                         <div className="model-card">
-                            <h3><span className="text-orange">Multiple</span> Revenue Streams</h3>
-                            <p>Diversified income from classroom, online, and corporate training segments.</p>
+                            <div className="model-card-image">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80"
+                                    alt="Multiple Revenue Streams"
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                />
+                            </div>
+                            <div className="model-card-content">
+                                <h3><span className="text-orange">Multiple</span> Revenue Streams</h3>
+                                <p>Diversified income from classroom, online, and corporate training segments.</p>
+                            </div>
                         </div>
                     </div>
                     <div className="revenue-streams">
                         <h3>Available Revenue Streams</h3>
                         <div className="streams-grid">
                             <div className="stream-item">
+                                <div className="stream-image">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80"
+                                        alt="Classroom Training Programs"
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </div>
                                 <span>Classroom Training Programs</span>
                             </div>
                             <div className="stream-item">
+                                <div className="stream-image">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80"
+                                        alt="Online & Hybrid Learning"
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </div>
                                 <span>Online & Hybrid Learning</span>
                             </div>
                             <div className="stream-item">
+                                <div className="stream-image">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80"
+                                        alt="Corporate Training & Upskilling"
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </div>
                                 <span>Corporate Training & Upskilling</span>
                             </div>
                             <div className="stream-item">
+                                <div className="stream-image">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80"
+                                        alt="Security Assessments"
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </div>
                                 <span>Security Assessments</span>
                             </div>
                             <div className="stream-item">
+                                <div className="stream-image">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80"
+                                        alt="Compliance Audits"
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </div>
                                 <span>Compliance Audits</span>
                             </div>
                             <div className="stream-item">
+                                <div className="stream-image">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80"
+                                        alt="Digital Forensics & Analysis"
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </div>
                                 <span>Digital Forensics & Analysis</span>
                             </div>
                         </div>

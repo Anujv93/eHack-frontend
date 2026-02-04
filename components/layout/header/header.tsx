@@ -38,6 +38,7 @@ const ehackPrograms = [
     { id: 104, slug: 'digital-marketing-masterprogram', title: 'Masters Program in Digital Marketing', duration: '4 Months', partnerSlug: 'ehack-originals' },
     { id: 105, slug: 'robotics-for-all', title: 'Robotics for Every One', duration: '60 Days', partnerSlug: 'ehack-originals' },
     { id: 106, slug: 'personality-softskill-development', title: 'Personality & Soft Skill Development', duration: '40 Hours', partnerSlug: 'ehack-originals' },
+    { id: 107, slug: 'internship-program', title: '3 Months Internship Program', duration: '3 Months', partnerSlug: 'ehack-originals' },
 ];
 
 const ehackOriginalPartner: Partner = {

@@ -33,6 +33,7 @@ const getHeroImage = (category: string, slug: string) => {
     if (slug === 'digital-marketing-masterprogram') return '/images/programs/digital-marketing-hero-bg.jpg';
     if (slug === 'robotics-for-all') return '/images/programs/robotics-hero-bg.jpg';
     if (slug === 'personality-softskill-development') return '/images/programs/softskills-hero-bg.jpg';
+    if (slug === 'internship-program') return 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80';
 
     // Fallbacks
     if (category === 'data-science') return '/images/programs/data-science-hero-bg.jpg';
@@ -122,7 +123,9 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
         setActiveModule(activeModule === idx ? -1 : idx);
     };
 
-    const programType = program.slug.includes('digital-marketing') ? 'digital-marketing' : program.slug.includes('robotics') ? 'robotics' : 'cybersecurity';
+    const programType = program.slug.includes('digital-marketing') ? 'digital-marketing' :
+        program.slug.includes('robotics') ? 'robotics' :
+            program.slug.includes('internship') ? 'internship' : 'cybersecurity';
 
     return (
         <div className="program-page">
@@ -133,7 +136,8 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         program.slug === 'data-science-analytics' ? 'hero-data-science' :
                             program.slug === 'masters-ethical-hacking' ? 'hero-masters' :
                                 program.slug === 'graduate-cybersecurity' ? 'hero-graduate' :
-                                    program.slug === 'masterclass-ethical-hacking-ceh-v13' ? 'hero-ceh-master' : ''
+                                    program.slug === 'masterclass-ethical-hacking-ceh-v13' ? 'hero-ceh-master' :
+                                        program.slug === 'internship-program' ? 'hero-internship' : ''
                 }`} id="overview">
                 <div className="hero-background">
                     <div className="hero-overlay"></div>
@@ -157,6 +161,11 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 <>
                                     {program.title.split('Digital Marketing')[0]}
                                     <span className="text-accent">Digital Marketing</span>
+                                </>
+                            ) : program.title.includes('Internship') ? (
+                                <>
+                                    {program.title.split('Internship')[0]}
+                                    <span className="text-accent">Internship Program</span>
                                 </>
                             ) : (
                                 program.title
@@ -225,7 +234,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 <div className="sticky-nav-container">
                     <div className="sticky-nav-links">
                         {NAV_SECTIONS
-                            .filter(section => section.id !== 'labs' || !['data-science', 'robotics-iot', 'digital-marketing'].includes(program.category))
+                            .filter(section => section.id !== 'labs' || !['data-science', 'robotics-iot', 'digital-marketing', 'internship'].includes(program.category))
                             .map((section) => (
                                 <button
                                     key={section.id}
@@ -385,7 +394,9 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         <p className="audience-subtitle-modern">
                             {programType === 'cybersecurity'
                                 ? "Whether you're a fresh graduate, a student, or looking to switch careers—this program is built for you. No prior cybersecurity experience needed."
-                                : `This program is designed for ambitious individuals ready to master ${programType === 'digital-marketing' ? 'digital marketing' : 'robotics'}.`
+                                : programType === 'internship'
+                                    ? "This program is perfectly designed for students and fresh graduates looking to gain real-world industry experience and launch their careers."
+                                    : `This program is designed for ambitious individuals ready to master ${programType === 'digital-marketing' ? 'digital marketing' : 'robotics'}.`
                             }
                         </p>
                     </div>
@@ -456,7 +467,8 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                         program.category === 'robotics-iot' ? 'Robotics Engineer' :
                                             program.category === 'data-science' ? 'Data Science Professional' :
                                                 program.category === 'personality-softskills' ? 'Corporate Professional' :
-                                                    'Cybersecurity Professional'}
+                                                    program.category === 'internship' ? 'Tech Professional' :
+                                                        'Cybersecurity Professional'}
                                 </span>
                             </h2>
                             <p className="curriculum-subtitle-modern">
@@ -468,7 +480,9 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                             ? 'Master data analysis, machine learning, and AI with industry-relevant projects.'
                                             : program.category === 'personality-softskills'
                                                 ? 'Enhance your communication and soft skills to excel in your career.'
-                                                : 'A structured learning path taking you from fundamentals to advanced penetration testing with globally recognized certifications.'
+                                                : program.category === 'internship'
+                                                    ? 'Work on real-world projects and build a portfolio that stands out to recruiters.'
+                                                    : 'A structured learning path taking you from fundamentals to advanced penetration testing with globally recognized certifications.'
                                 }
                             </p>
                         </div>

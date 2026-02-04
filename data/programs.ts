@@ -2079,6 +2079,138 @@ export const programs = [
                 source: "Business Insider"
             }
         ]
+    },
+    {
+        slug: "internship-program",
+        category: "internship",
+        title: "3 Months Internship Program",
+        subtitle: "Launch Your Career with Real-World Experience",
+        description: "Bridge the gap between academic learning and industry demands with our intensive 3-Month Internship Program. Work on live projects, receive mentorship from industry experts, and gain the practical skills needed to secure a high-paying job in Tech.",
+        features: "Live Project Experience, Industry Mentorship, Certificate of Completion, Job Placement Assistance, Hands-on Training, Portfolio Building.",
+        batchInfo: "Rolling Admissions",
+        partner: "eHack Academy",
+        partnerLogo: "/ehack-black.png",
+        ehackLogo: "/ehack-black.png",
+        stats: {
+            startDate: "Flexible Start",
+            duration: "3 Months",
+            mode: "Hybrid (Online + Offline)",
+            totalHours: "200+",
+            membership: "Alumni Network Access"
+        },
+        schedule: "Flexible Timings | Weekend & Weekday Options",
+        certifications: [
+            { code: "INTERN", name: "Internship Experience Certificate", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" }
+        ],
+        skills: [
+            { name: "Project Management", desc: "Learn Agile methodologies, sprint planning, and effective project execution strategies." },
+            { name: "Team Collaboration", desc: "Work in cross-functional teams to deliver real-world solutions." },
+            { name: "Technical Proficiency", desc: "Enhance your coding and problem-solving skills with practical implementation." },
+            { name: "Professional Communication", desc: "Master corporate communication, documentation, and presentation skills." },
+            { name: "Version Control Systems", desc: "Gain proficiency in Git and GitHub for effective code management and collaboration." },
+            { name: "Software Development Lifecycle", desc: "Understand the complete SDLC from requirement gathering to deployment and maintenance." }
+        ],
+        curriculum: [
+            {
+                number: "01",
+                title: "Onboarding & Skill Assessment",
+                duration: "2 Weeks",
+                certification: "",
+                description: "Orientation to company culture, toolset setup, and initial skill evaluation to tailor the internship path.",
+                topics: ["Company Culture", "Tool Installation", "Skill Gap Analysis", "Goal Setting"]
+            },
+            {
+                number: "02",
+                title: "Advanced Training & Mentorship",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Deep dive into advanced concepts relevant to your domain (Cybersecurity/Dev/Marketing) with expert mentorship.",
+                topics: ["Advanced Concepts", "Best Practices", "Industry Standards", "Code/Design Reviews"]
+            },
+            {
+                number: "03",
+                title: "Live Project Implementation",
+                duration: "6 Weeks",
+                certification: "",
+                description: "Work on a live industry project. Apply your skills to solve real problems and contribute to production-grade solutions.",
+                topics: ["Requirement Analysis", "Implementation", "Testing & QA", "Deployment"]
+            }
+        ],
+        targetAudience: [
+            { title: "Final Year Students", desc: "Students looking to gain industrial exposure before graduation.", tag: "Career Start" },
+            { title: "Fresh Graduates", desc: "Recent grads seeking practical experience to boost employablity.", tag: "Job Ready" },
+            { title: "Career Switchers", desc: "Professionals transitioning into a new tech domain.", tag: "New Path" },
+            { title: "Coding Bootcamp Grads", desc: "Bootcamp graduates looking for their first break in the industry.", tag: "Skill Apply" }
+        ],
+        jobRoles: [
+            "Software Developer Intern", "Security Analyst Intern", "Digital Marketing Intern", "Project Trainee",
+            "Full Stack Developer Intern", "QA Engineer Intern", "Product Management Intern", "UI/UX Design Intern"
+        ],
+        pricing: {
+            original: "₹30,000",
+            discounted: "₹15,000",
+            emi: "₹5,000/month",
+            applicationFee: "₹500",
+            admissionFee: "₹15,000",
+            companyEMI: "Contact for options",
+            upfrontPercentage: "50%",
+            upfrontAmount: "₹7,500",
+            emiCount: 2,
+            emiAmount: "₹3,750"
+        },
+        partnerLogos: [
+            "/ehack-black.png"
+        ],
+        careerROI: {
+            title: "Internship ROI",
+            subtitle: "Gain the experience that employers value most.",
+            chartTitle: "Employability Boost",
+            salaryIntro: "Interns with real project experience are 3x more likely to get hired.",
+            salaryLevels: [
+                { label: "1x", level: "Fresh Grad" },
+                { label: "3x", level: "With Internship" },
+                { label: "5x", level: "Experienced" }
+            ],
+            chartDesc: "Hiring Probability",
+            chartNote: "Practical experience is the #1 criterion for entry-level hiring."
+        },
+        whyEhack: [
+            { title: "Live Projects", desc: "Don't just learn, build. Work on real projects that go live." },
+            { title: "Expert Mentors", desc: "Learn from the best in the industry." },
+            { title: "Certification", desc: "Get a recognized internship certificate." },
+            { title: "Network", desc: "Connect with professionals and alumni." }
+        ],
+        programExcellence: [
+            { title: "Real Experience", desc: "Work on live projects.", icon: "lab" },
+            { title: "Mentorship", desc: "Guided by experts.", icon: "certificate" },
+            { title: "Placement Focus", desc: "Job assistance provided.", icon: "infrastructure" },
+            { title: "Skill Building", desc: "Practical hands-on learning.", icon: "global" }
+        ],
+        faq: [
+            {
+                category: "Program",
+                questions: [
+                    { q: "Is this a paid internship?", a: "This is a training-cum-internship program with a nominal fee to cover training and mentorship costs." },
+                    { q: "Will I get a job offer?", a: "Top performers may be offered full-time roles or placement assistance." },
+                    { q: "What is the duration?", a: "The standard duration is 3 months, but it can be extended based on performance." }
+                ]
+            },
+            {
+                category: "Eligibility",
+                questions: [
+                    { q: "Who can apply?", a: "Students, fresh graduates, and career switchers can apply." },
+                    { q: "Do I need prior experience?", a: "No, we provide training as part of the program." }
+                ]
+            }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+                date: "January 2025",
+                headline: "Internships: The New Gateway to Tech Careers",
+                source: "TechCrunch"
+            }
+        ]
     }
 ];
 
@@ -2135,6 +2267,14 @@ export const programCategories = [
         icon: '🎯',
         color: '#EC4899',
         backgroundImage: '/Personality-and-Softskill-Development.png'
+    },
+    {
+        slug: 'internship',
+        name: 'Internship Programs',
+        description: 'Gain real-world experience with industry experts',
+        icon: '💼',
+        color: '#3B82F6',
+        backgroundImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80'
     }
 ];
 

@@ -6,10 +6,13 @@ import './page.css';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
 
+import { ProgramLabsWrapper } from '@/components/global/certificate-labs/ProgramLabsWrapper';
+
 // Navigation sections for BSCS page
 const BSCS_NAV_SECTIONS = [
     { id: 'overview', label: 'Overview' },
     { id: 'curriculum', label: 'Curriculum' },
+    { id: 'live-labs', label: 'Hands-On Labs' },
     { id: 'criteria', label: 'Criteria' },
     { id: 'apply', label: 'Apply Now' },
 ];
@@ -381,6 +384,15 @@ export default function BSCSPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Hands-On Labs Section */}
+            <div id="live-labs">
+                <ProgramLabsWrapper
+                    certificationCodes={['CEH', 'CND', 'CHFI', 'CPENT', 'CCISO']}
+                    programTitle="Bachelor of Science in Cyber Security"
+                    programSlug="bscs"
+                />
+            </div>
 
             {/* Degree Award Criteria */}
             <section className="criteria-section border-bottom" id="criteria">
