@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import './page.css';
 
 // Program options
+//Added new program of internship
 const PROGRAMS = [
     { value: '', label: 'Select Program *' },
     { value: 'ceh-v13', label: 'Certified Ethical Hacker (CEH v13)' },
