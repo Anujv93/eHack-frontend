@@ -66,7 +66,7 @@ const program = {
     ],
     pricing: {
         applicationFee: "₹1,000",
-        admissionFee: "₹4,50,000",
+        admissionFee: "₹4,00,000",
         companyEMI: "₹5,00,000",
         upfrontPercentage: "50%",
         upfrontAmount: "₹2,50,000",
@@ -491,19 +491,19 @@ export default function IntegratedBSCSMSCSPage() {
                     <h2 className="section-title">Program <span className="accent">Overview</span></h2>
                     <div className="overview-grid">
                         <div className="overview-card">
-                            <h3>Dual Degree Program</h3>
+                            <h3>Dual <span className="text-accent">Degree</span> Program</h3>
                             <p>Earn both BSCS and MSCS degrees in just 15 months through an accelerated integration model.</p>
                         </div>
                         <div className="overview-card">
-                            <h3>180 Total Credits</h3>
+                            <h3>180 <span className="text-accent">Total</span> Credits</h3>
                             <p>120 UG credits + 60 PG credits delivered through an intensive industry-driven curriculum.</p>
                         </div>
                         <div className="overview-card">
-                            <h3>Complete Pathway</h3>
+                            <h3>Complete <span className="text-accent">Pathway</span></h3>
                             <p>From IT foundations to CISO-level leadership across 4 comprehensive parts.</p>
                         </div>
                         <div className="overview-card">
-                            <h3>Executive Leadership</h3>
+                            <h3>Executive <span className="text-accent">Leadership</span></h3>
                             <p>P|HISOᴬᴵ module prepares you for CISO/HISO-level strategic security roles.</p>
                         </div>
                     </div>
@@ -775,8 +775,8 @@ export default function IntegratedBSCSMSCSPage() {
                                     <div className="financing-item">
                                         <div className="financing-icon"><Shield size={24} /></div>
                                         <div>
-                                            <h4 className="financing-name">No Cost EMI (Internal)</h4>
-                                            <p className="financing-desc">Zero interest installments through our internal program</p>
+                                            <h4 className="financing-name p-2"> EMI (4,50,000)</h4>
+                                            {/* <p className="financing-desc">Zero interest installments through our internal program</p> */}
                                         </div>
                                     </div>
                                     <div className="financing-item">
@@ -921,32 +921,33 @@ export default function IntegratedBSCSMSCSPage() {
             {/* Degree Award Criteria */}
             <section className="criteria-section border-bottom" id="criteria">
                 <div className="section-container">
-                    <div className="criteria-card">
-                        <h2>Degree Award Criteria</h2>
-                        <p className="criteria-intro">The learner must:</p>
-                        <ul className="criteria-list">
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Earn a total of <strong>180 credits</strong></span>
-                            </li>
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Complete all <strong>UG + PG core, SOC, cloud, specialisation &amp; P|HISOᴬᴵ modules</strong></span>
-                            </li>
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Successfully complete <strong>internships/projects</strong></span>
-                            </li>
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Clear <strong>final evaluation</strong> &amp; viva voce</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="certificate-showcase">
-                        <div className="program-certificate">
-                            <img src="/Integrated MSCS Degree Certifcate.png" alt="Integrated BSCS + MSCS Degree Certificate" className="certificate-image" />
+                    <div className="criteria-unified-wrapper">
+                        <div className="criteria-grid">
+                            <div className="criteria-content">
+                                <h2>Degree Award Criteria</h2>
+                                <p className="criteria-intro">The learner must:</p>
+                                <ul className="criteria-list">
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Earn a total of <strong>180 credits</strong></span>
+                                    </li>
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Complete all <strong>UG + PG core, SOC, cloud, specialisation &amp; P|HISOᴬᴵ modules</strong></span>
+                                    </li>
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Successfully complete <strong>internships/projects</strong></span>
+                                    </li>
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Clear <strong>final evaluation</strong> &amp; viva voce</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="criteria-image-container">
+                                <img src="/Integrated MSCS Degree Certifcate.png" alt="Integrated BSCS + MSCS Degree Certificate" className="criteria-cert-image" />
+                            </div>
                         </div>
                     </div>
                 </div>

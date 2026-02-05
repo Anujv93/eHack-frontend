@@ -63,7 +63,7 @@ const program = {
     ],
     pricing: {
         applicationFee: "₹1,000",
-        admissionFee: "₹3,50,000",
+        admissionFee: "₹2,00,000",
         companyEMI: "₹4,00,000",
         upfrontPercentage: "50%",
         upfrontAmount: "₹2,00,000",
@@ -381,19 +381,19 @@ export default function BSCSPage() {
                     <h2 className="section-title">Program <span className="accent">Overview</span></h2>
                     <div className="overview-grid">
                         <div className="overview-card">
-                            <h3>Curriculum Framework</h3>
+                            <h3>Curriculum <span className="text-accent">Framework</span></h3>
                             <p>eHack Certificationsᴬᴵ - AI-powered curriculum aligned with industry standards and EC-Council certifications.</p>
                         </div>
                         <div className="overview-card">
-                            <h3>Fast Track Model</h3>
+                            <h3>Fast <span className="text-accent">Track</span> Model</h3>
                             <p>120 credits delivered in 12 months through an intensive, industry-focused learning model.</p>
                         </div>
                         <div className="overview-card">
-                            <h3>Practical Learning</h3>
+                            <h3>Practical <span className="text-accent">Learning</span></h3>
                             <p>Hands-on labs, real-world case studies, and a 6-month internship with industry mentors.</p>
                         </div>
                         <div className="overview-card">
-                            <h3>Specialisation Choice</h3>
+                            <h3>Specialisation <span className="text-accent">Choice</span></h3>
                             <p>Choose between Advanced Penetration Testing or Digital Forensics as your specialisation track.</p>
                         </div>
                     </div>
@@ -660,8 +660,8 @@ export default function BSCSPage() {
                                     <div className="financing-item">
                                         <div className="financing-icon"><Shield size={24} /></div>
                                         <div>
-                                            <h4 className="financing-name">No Cost EMI (Internal)</h4>
-                                            <p className="financing-desc">Zero interest installments through our internal program</p>
+                                            <h4 className="financing-name p-2"> EMI (2,50,000)</h4>
+                                            {/* <p className="financing-desc">Zero interest installments through our internal program</p> */}
                                         </div>
                                     </div>
                                     <div className="financing-item">
@@ -730,32 +730,33 @@ export default function BSCSPage() {
             {/* Degree Award Criteria */}
             <section className="criteria-section border-bottom" id="criteria">
                 <div className="section-container">
-                    <div className="criteria-card">
-                        <h2>Degree Award Criteria – Kennedy University</h2>
-                        <p className="criteria-intro">To be nominated and recommended by eHack Academy, the learner must:</p>
-                        <ul className="criteria-list">
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Earn a minimum of <strong>120 credits</strong></span>
-                            </li>
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Complete all <strong>mandatory courses</strong></span>
-                            </li>
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Successfully finish the <strong>6-month internship</strong> / industrial project</span>
-                            </li>
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Clear <strong>final evaluation</strong> and viva voce</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="certificate-showcase">
-                        <div className="program-certificate">
-                            <img src="/BSCS Degree Certificate.png" alt="BSCS Degree Certificate" className="certificate-image" />
+                    <div className="criteria-unified-wrapper">
+                        <div className="criteria-grid">
+                            <div className="criteria-content">
+                                <h2>Degree Award Criteria – Kennedy University</h2>
+                                <p className="criteria-intro">To be nominated and recommended by eHack Academy, the learner must:</p>
+                                <ul className="criteria-list">
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Earn a minimum of <strong>120 credits</strong></span>
+                                    </li>
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Complete all <strong>mandatory courses</strong></span>
+                                    </li>
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Successfully finish the <strong>6-month internship</strong> / industrial project</span>
+                                    </li>
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Clear <strong>final evaluation</strong> and viva voce</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="criteria-image-container">
+                                <img src="/BSCS Degree Certificate.png" alt="BSCS Degree Certificate" className="criteria-cert-image" />
+                            </div>
                         </div>
                     </div>
                 </div>
