@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone } from 'lucide-react';
+import { Phone, X } from 'lucide-react';
 import './franchise.css';
 import CertificateHeader from "@/components/single-certificate/header/header";
 
@@ -85,6 +85,39 @@ const sopData = [
 ];
 
 // Accordion Component
+const comparisonData = [
+    { param: "Investment", optionA: "₹30 Lakhs (± ₹5 Lakhs)", optionB: "₹75 Lakhs", optionC: "₹1.50 Crore" },
+    { param: "Franchise Type", optionA: "Single / City-Level Center", optionB: "State-Level Expansion Partner", optionC: "Master / State Super Partner" },
+    { param: "Revenue Model", optionA: "Fixed payout per enrollment", optionB: "Revenue sharing", optionC: "Revenue sharing" },
+    { param: "Franchise Share", optionA: "Fixed income (No sharing)", optionB: "60%", optionC: "70%" },
+    { param: "Sub-Franchise Rights", optionA: "Not Applicable", optionB: "Up to 15 (Same State)", optionC: "Up to 50 (Same State)" },
+    { param: "Programs Offered", optionA: "Cyber Security, Data Science, Robotics, Digital Marketing", optionB: "Same as Option A", optionC: "Same as Option A + Institutional" },
+    { param: "Monthly Revenue Potential*", optionA: "₹5 Lakhs", optionB: "₹15 – 30 Lakhs", optionC: "₹40 – 70 Lakhs" },
+    { param: "Monthly Net Earnings*", optionA: "₹3.8 – 4.0 Lakhs", optionB: "₹10 – 18 Lakhs", optionC: "₹30 – 50 Lakhs" },
+    { param: "Operating Cost (OPEX)", optionA: "₹1.0 – 1.2 Lakhs", optionB: "State-level operations", optionC: "Large-scale operations" },
+    { param: "Infrastructure", optionA: "1k–1.5k sq. ft. (1st/2nd Floor)", optionB: "State Hub + Franchise Network", optionC: "State HQ + Regional Hubs" },
+    { param: "Break-even Period*", optionA: "12 – 18 Months", optionB: "18 – 24 Months", optionC: "24 – 36 Months" },
+    { param: "Scalability", optionA: "Medium", optionB: "High", optionC: "Very High" },
+    { param: "Risk Profile", optionA: "Low", optionB: "Medium", optionC: "Medium–High" },
+    { param: "Ideal For", optionA: "First-time entrepreneurs", optionB: "State operators & investors", optionC: "Large edu groups & strategic investors" },
+];
+
+const selectionGuide = [
+    {
+        title: "Option A – Fixed Payout Model",
+        desc: "Predictable income with controlled risk. Ideal for first-time franchise owners and city-level operators."
+    },
+    {
+        title: "Option B – Revenue Sharing Model",
+        desc: "Scalable state expansion with recurring revenue. Best suited for regional partners and growth-focused investors."
+    },
+    {
+        title: "Option C – Strategic Revenue Sharing Model",
+        desc: "Long-term dominance and annuity-led growth. Designed for large education groups and strategic investors."
+    }
+];
+
+// Accordion Component
 function Accordion({ items }: { items: typeof sopData }) {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -134,6 +167,7 @@ function Accordion({ items }: { items: typeof sopData }) {
 export default function FranchisePage() {
     const [isNavVisible, setIsNavVisible] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+    const [showModelModal, setShowModelModal] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -300,8 +334,8 @@ export default function FranchisePage() {
                                 <h3>Robotics, IoT & AI</h3>
                                 <p>Hands-on learning with Arduino, Raspberry Pi, sensors & automation systems</p>
                                 <div className="program-card-stats">
-                                    <span><strong>Hands-on</strong> Labs</span>
-                                    <span><strong>Industry</strong> Projects</span>
+                                    <span><strong>100%</strong> Practical</span>
+                                    <span><strong>Live</strong> Projects</span>
                                 </div>
                             </div>
                         </div>
@@ -383,50 +417,75 @@ export default function FranchisePage() {
             <section id="business-model" className="business-model-section">
                 <div className="section-container">
                     <div className="section-header business-model-header">
-                        <h2>Franchise <span className="text-orange">Business Model</span> Highlights</h2>
-                        <p className="business-model-description">A balanced model designed for profitability with quality delivery</p>
+                        <h2>Franchise <span className="text-orange">Business Models</span></h2>
+                        <p className="business-model-description">Choose the model that fits your vision. Click any card to compare details.</p>
                     </div>
                     <div className="model-highlights-grid">
-                        <div className="model-card">
+                        <div className="model-card" onClick={() => setShowModelModal(true)} style={{ cursor: 'pointer' }}>
                             <div className="model-card-image">
                                 <Image
                                     src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80"
-                                    alt="Low to Moderate Investment"
+                                    alt="Fixed Payout Model"
                                     fill
                                     style={{ objectFit: 'cover' }}
                                 />
                             </div>
                             <div className="model-card-content">
-                                <h3><span className="text-orange">Low to Moderate</span> Investment</h3>
-                                <p>Accessible entry point with flexible investment options suited for various business scales.</p>
+                                <h3><span className="text-orange">Option A</span> – Fixed Payout</h3>
+                                <p>Predictable income with controlled risk. Ideal for first-time franchise owners and city-level operators.</p>
+                                <button
+                                    className="franchise-btn-secondary"
+                                    type="button"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowModelModal(true);
+                                    }}
+                                    style={{ marginTop: 'auto', width: '100%', justifyContent: 'center', padding: '0.75rem', fontSize: '0.9rem' }}
+                                >
+                                    View Details
+                                </button>
                             </div>
                         </div>
-                        <div className="model-card">
+                        <div className="model-card" onClick={() => setShowModelModal(true)} style={{ cursor: 'pointer' }}>
                             <div className="model-card-image">
                                 <Image
                                     src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80"
-                                    alt="Revenue Sharing Structure"
+                                    alt="Revenue Sharing Model"
                                     fill
                                     style={{ objectFit: 'cover' }}
                                 />
                             </div>
                             <div className="model-card-content">
-                                <h3><span className="text-orange">Revenue Sharing</span> Structure</h3>
-                                <p>Transparent and fair revenue sharing model that aligns incentives for mutual growth.</p>
+                                <h3><span className="text-orange">Option B</span> – Revenue Sharing</h3>
+                                <p>Scalable state expansion with recurring revenue. Best suited for regional partners and growth-focused investors.</p>
+                                <button
+                                    className="franchise-btn-secondary"
+                                    type="button"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowModelModal(true);
+                                    }}
+                                    style={{ marginTop: 'auto', width: '100%', justifyContent: 'center', padding: '0.75rem', fontSize: '0.9rem' }}
+                                >
+                                    View Details
+                                </button>
                             </div>
                         </div>
-                        <div className="model-card">
+                        <div className="model-card" onClick={() => setShowModelModal(true)} style={{ cursor: 'pointer' }}>
                             <div className="model-card-image">
                                 <Image
                                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80"
-                                    alt="Multiple Revenue Streams"
+                                    alt="Strategic Revenue Sharing"
                                     fill
                                     style={{ objectFit: 'cover' }}
                                 />
                             </div>
                             <div className="model-card-content">
-                                <h3><span className="text-orange">Multiple</span> Revenue Streams</h3>
-                                <p>Diversified income from classroom, online, and corporate training segments.</p>
+                                <h3><span className="text-orange">Option C</span> – Strategic Share</h3>
+                                <p>Long-term dominance and annuity-led growth. Designed for large education groups and strategic investors.</p>
+                                <button className="franchise-btn-secondary" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center', padding: '0.75rem', fontSize: '0.9rem' }}>
+                                    View Details
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -587,6 +646,58 @@ export default function FranchisePage() {
                     </div>
                 </div>
             </section>
+            {/* Model Comparison Modal */}
+            {showModelModal && (
+                <div className="modal-overlay" onClick={() => setShowModelModal(false)}>
+                    <div className="modal-content" onClick={e => e.stopPropagation()}>
+                        <div className="modal-header">
+                            <div className="modal-title">
+                                <h2>Ehack Academy – Franchise Models Comparison</h2>
+                            </div>
+                            <button className="modal-close-btn" onClick={() => setShowModelModal(false)}>
+                                <X size={24} />
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <div className="comparison-table-wrapper">
+                                <table className="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Parameter</th>
+                                            <th className="option-header">Option A<br />Fixed Payout</th>
+                                            <th className="option-header">Option B<br />Revenue Sharing</th>
+                                            <th className="option-header">Option C<br />Strategic Rev Share</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {comparisonData.map((row, index) => (
+                                            <tr key={index}>
+                                                <td className="feature-col">{row.param}</td>
+                                                <td>{row.optionA}</td>
+                                                <td>{row.optionB}</td>
+                                                <td>{row.optionC}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div className="selection-guide">
+                                <h3>Quick Selection Guide</h3>
+                                {selectionGuide.map((item, index) => (
+                                    <div key={index} className="guide-item">
+                                        <h4>{item.title}</h4>
+                                        <p>{item.desc}</p>
+                                    </div>
+                                ))}
+                                <p className="modal-disclaimer">
+                                    * Indicative figures. Actual results depend on execution, market conditions, and scale of operations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }

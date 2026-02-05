@@ -359,21 +359,63 @@ export const programs = [
         newsItems: [
             {
                 image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
-                date: "December 2024",
+                date: "February 2026",
+                headline: "Global Cybercrime Costs to Reach $10.5 Trillion Annually by 2025",
+                source: "Cybersecurity Ventures"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Cybersecurity Workforce Gap Widens to 3.4 Million Globally",
+                source: "ISC2 Study"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "AI-Driven Cyber Attacks on the Rise: How Organizations are Responding",
+                source: "TechCrunch"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Ransomware Attacks Increased by 93% in 2024",
+                source: "The Hacker News"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Zero Trust Architecture Becomes the New Standard for Enterprise Security",
+                source: "CSO Online"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1618060932014-4deda4932554?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Cloud Security Failures Will Account for 99% of Breaches Through 2025",
+                source: "Gartner"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1504384308090-c54be3855091?w=400&h=250&fit=crop",
+                date: "October 2025",
                 headline: "India Records 500% Increase in Cyberattacks - Skilled Professionals in High Demand",
                 source: "Economic Times"
             },
             {
-                image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
-                date: "November 2024",
-                headline: "Cybersecurity Job Market Expected to Grow 35% by 2027 - CEH Certified Professionals Lead",
-                source: "Forbes India"
+                image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "IoT Vulnerabilities: The Next Big Threat in Cybersecurity",
+                source: "Wired"
             },
             {
-                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
-                date: "October 2024",
-                headline: "Companies Willing to Pay Premium Salaries for Certified Ethical Hackers",
-                source: "Business Standard"
+                image: "https://images.unsplash.com/photo-1526374804325-e4d0d580e309?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Data Privacy Regulations Tighten Globally: GDPR and Beyond",
+                source: "Reuters"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "The Role of Machine Learning in Threat Detection and Response",
+                source: "MIT Tech Review"
             }
         ]
     },
@@ -686,21 +728,63 @@ export const programs = [
         newsItems: [
             {
                 image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=250&fit=crop",
-                date: "January 2025",
-                headline: "Huge Demand for Freshers in Cybersecurity - 3.5 Million Unfilled Jobs Globally",
-                source: "Times of India"
+                date: "February 2026",
+                headline: "Demand for Ethical Hackers Soars as Companies Face Frequent Breaches",
+                source: "Bloomberg"
             },
             {
                 image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
-                date: "December 2024",
+                date: "January 2026",
                 headline: "Degree + Certification: The Winning Combination for Early Career Success",
                 source: "Education Times"
             },
             {
                 image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop",
-                date: "November 2024",
+                date: "January 2026",
                 headline: "Start Your Career in Cyber Security with 50% Higher Salary than Peers",
                 source: "Naukri.com"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Cybersecurity Job Market Expected to Grow 35% by 2027",
+                source: "Forbes"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Why Every Company Needs a Cybersecurity Expert in 2025",
+                source: "Inc. Magazine"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Top 5 Cybersecurity Certifications to Boost Your Career",
+                source: "CIO.com"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "The Growing Importance of Network Defense in the Digital Age",
+                source: "Network World"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Huge Demand for Freshers in Cybersecurity - 3.5 Million Unfilled Jobs",
+                source: "Times of India"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1618060932014-4deda4932554?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "How to Land Your First Job in Cybersecurity",
+                source: "Career Builder"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1504384308090-c54be3855091?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Cybersecurity Salary Trends: What to Expect in 2025",
+                source: "Glassdoor"
             }
         ]
     },
@@ -890,21 +974,63 @@ export const programs = [
         newsItems: [
             {
                 image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop",
-                date: "January 2025",
+                date: "February 2026",
                 headline: "Digital Marketing Spend Set to Overtake Traditional Ads by 2026",
                 source: "Marketing Week"
             },
             {
                 image: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=400&h=250&fit=crop",
-                date: "December 2024",
+                date: "January 2026",
                 headline: "SEO and Content Marketing Top Skills for Modern Marketers",
                 source: "Search Engine Journal"
             },
             {
                 image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=400&h=250&fit=crop",
-                date: "November 2024",
+                date: "January 2026",
                 headline: "Social Media Managers in High Demand as Brands Shift Online",
                 source: "Social Media Today"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Video Marketing Dominance: Short-Form Content Rules Social Media",
+                source: "AdWeek"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "The Impact of AI on SEO: How Search is Evolving in 2025",
+                source: "Moz"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Personalization at Scale: The Future of Customer Experience",
+                source: "HubSpot"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Influencer Marketing Industry Set to Reach $21.1 Billion",
+                source: "Business Insider"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Social Commerce: Shopping Directly on Social Platforms is Exploding",
+                source: "Sprout Social"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Data-Driven Marketing: Using Analytics to Maximize ROI",
+                source: "Google Blog"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "The Resurgence of Email Marketing with AI-Powered Personalization",
+                source: "Salesforce"
             }
         ]
     },
@@ -1080,21 +1206,63 @@ export const programs = [
         newsItems: [
             {
                 image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=250&fit=crop",
-                date: "January 2025",
-                headline: "Robotics Industry to Create 2 Million New Jobs by 2030",
+                date: "February 2026",
+                headline: "Global Robotics Market Predicted to Hit $210 Billion by 2025",
                 source: "Robotics Business Review"
             },
             {
                 image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop",
-                date: "December 2024",
+                date: "January 2026",
+                headline: "AI-Powered Robots: The Next Frontier in Manufacturing Automation",
+                source: "TechCrunch"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "IoT and Automation Driving the Next Industrial Revolution",
+                source: "Industry 4.0 News"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Service Robots in Healthcare: assisting Surgeons and Nurses",
+                source: "HealthTech Magazine"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Collaborative Robots (Cobots) Market Growing at 40% CAGR",
+                source: "Automotive World"
+            },
+            {
+                image: "https://images.pexels.com/photos/4481258/pexels-photo-4481258.jpeg",
+                date: "November 2025",
+                headline: "Autonomous Mobile Robots (AMRs) Revolutionizing Logistics",
+                source: "Logistics Weekly"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Robotics in Agriculture: Precision Farming and Automation",
+                source: "AgriTech Today"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "The Rise of Humanoid Robots: From Sci-Fi to Reality",
+                source: "The Verge"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=250&fit=crop",
+                date: "October 2025",
                 headline: "STEM Education: Why Learning Robotics is Crucial for Future Engineers",
                 source: "EdTech Magazine"
             },
             {
-                image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400&h=250&fit=crop",
-                date: "November 2024",
-                headline: "IoT and Automation Driving the Next Industrial Revolution",
-                source: "Industry 4.0 News"
+                image: "https://images.pexels.com/photos/1087180/pexels-photo-1087180.jpeg",
+                date: "September 2025",
+                headline: "Drone Technology: Transforming Delivery and Surveillance",
+                source: "AeroTech News"
             }
         ]
     },
@@ -1278,21 +1446,63 @@ export const programs = [
         newsItems: [
             {
                 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-                date: "January 2025",
-                headline: "Data Scientist Named 'Sexiest Job of the 21st Century' for 5th Year Running",
+                date: "February 2026",
+                headline: "Data Science Market Size to Reach $322.9 Billion by 2026",
                 source: "Harvard Business Review"
             },
             {
                 image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=400&h=250&fit=crop",
-                date: "December 2024",
-                headline: "AI and Machine Learning Professionals Scarcity Hits Global Tech Market",
+                date: "January 2026",
+                headline: "Why Python Remains the King of Data Science Languages in 2025",
                 source: "TechCrunch"
             },
             {
                 image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&h=250&fit=crop",
-                date: "November 2024",
+                date: "January 2026",
                 headline: "Companies Investing Heavily in Data Analytics to Drive Business Growth",
                 source: "Bloomberg"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1509266272358-7701da638078?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "The Rise of Automated Machine Learning (AutoML) in Enterprise",
+                source: "VentureBeat"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Data Scientist: The Sexiest Job of the 21st Century Continues to Grow",
+                source: "Forbes"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Big Data Analytics in Healthcare: Revolutionizing Patient Care",
+                source: "Health IT News"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Predictive Analytics: Transforming Business Decision Making",
+                source: "McKinsey"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Demand for AI and Data Professionals Grows by 40% Year-over-Year",
+                source: "LinkedIn"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Ethics in AI and Data Science: A Growing Focus for Tech Giants",
+                source: "MIT Tech Review"
+            },
+            {
+                image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+                date: "September 2025",
+                headline: "Data Literacy: The New Must-Have Skill for All Professionals",
+                source: "HBR"
             }
         ]
     },
@@ -1697,21 +1907,63 @@ export const programs = [
         newsItems: [
             {
                 image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=250&fit=crop",
-                date: "January 2025",
+                date: "February 2026",
                 headline: "CEH Certified Professionals Earn 40% More Than Non-Certified Experts",
                 source: "PayScale Report"
             },
             {
                 image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
-                date: "December 2024",
+                date: "January 2026",
                 headline: "Specialized Skills in Penetration Testing & Cloud Security in High Demand",
                 source: "Hacker News"
             },
             {
                 image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=400&h=250&fit=crop",
-                date: "November 2024",
+                date: "January 2026",
                 headline: "Global Enterprises Mandating CEH v13 for InfoSec Roles",
                 source: "CSO Online"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Ethical Hacking: The First Line of Defense Against Cyber Threats",
+                source: "Dark Reading"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "The Evolution of Cyber Threats: Why Continuous Learning is Key",
+                source: "Security Magazine"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Women in Cybersecurity: Closing the Gender Gap in Ethical Hacking",
+                source: "Women in Tech"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1618060932014-4deda4932554?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Cybersecurity Audits: Essential for Regulatory Compliance",
+                source: "Compliance Week"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1504384308090-c54be3855091?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Freelance Ethical Hacking: A Lucrative Career Path",
+                source: "Upwork"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "The Future of Cybersecurity: AI and Automation Trends",
+                source: "TechRadar"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374804325-e4d0d580e309?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Protecting Critical Infrastructure: The Role of Ethical Hackers",
+                source: "GovTech"
             }
         ]
     },
@@ -2062,21 +2314,63 @@ export const programs = [
         newsItems: [
             {
                 image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=250&fit=crop",
-                date: "January 2025",
+                date: "February 2026",
                 headline: "Soft Skills Rated More Important Than Technical Skills by 80% of HR Managers",
                 source: "LinkedIn Talent Solutions"
             },
             {
                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=250&fit=crop",
-                date: "December 2024",
+                date: "January 2026",
                 headline: "Communication and EQ: The Key Differentiators for Leadership Roles",
                 source: "Forbes Leadership"
             },
             {
                 image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=250&fit=crop",
-                date: "November 2024",
+                date: "January 2026",
                 headline: "The Rising Importance of Personality Development for Career Growth",
                 source: "Business Insider"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Adaptability: The #1 Skill Wanted by Employers in 2025",
+                source: "World Economic Forum"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Why Empathy is a Business Imperative in the Modern Workplace",
+                source: "HBR"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Critical Thinking and Problem Solving: Essential for the AI Era",
+                source: "McKinsey"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Teamwork and Collaboration in Remote and Hybrid Work Environments",
+                source: "Slack Blog"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "The Power of Persuasion: Influencing without Authority",
+                source: "Inc.com"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Resilience: Bouncing Back from Setbacks in a High-Pressure World",
+                source: "Psychology Today"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Networking Skills: Building Professional Relationships for Career Growth",
+                source: "Entrepreneur"
             }
         ]
     },
@@ -2113,27 +2407,39 @@ export const programs = [
         curriculum: [
             {
                 number: "01",
-                title: "Onboarding & Skill Assessment",
-                duration: "2 Weeks",
+                title: "Track 1: Cybersecurity Internship",
+                duration: "3 Months",
                 certification: "",
-                description: "Orientation to company culture, toolset setup, and initial skill evaluation to tailor the internship path.",
-                topics: ["Company Culture", "Tool Installation", "Skill Gap Analysis", "Goal Setting"]
+                description: "A structured path from fundamentals to advanced security operations, culminating in real-world VAPT and SOC projects.",
+                topics: [
+                    "Month 1: Foundations - Networking, Linux/Windows Security, Threat Landscape",
+                    "Month 2: Specialization - Web VAPT (OWASP), SOC Operations, Digital Forensics",
+                    "Month 3: Real-Time Project - Enterprise VAPT, Incident Response, Red vs Blue Team"
+                ]
             },
             {
                 number: "02",
-                title: "Advanced Training & Mentorship",
-                duration: "4 Weeks",
+                title: "Track 2: Data Science Internship",
+                duration: "3 Months",
                 certification: "",
-                description: "Deep dive into advanced concepts relevant to your domain (Cybersecurity/Dev/Marketing) with expert mentorship.",
-                topics: ["Advanced Concepts", "Best Practices", "Industry Standards", "Code/Design Reviews"]
+                description: "Master the data pipeline from preprocessing to machine learning model deployment on real-world datasets.",
+                topics: [
+                    "Month 1: Data Foundations - Python, EDA, Statistics, Data Cleaning",
+                    "Month 2: Machine Learning - Regression, Classification, Model Evaluation",
+                    "Month 3: Real-Time Project - Customer Churn, Fraud Detection, Forecasting"
+                ]
             },
             {
                 number: "03",
-                title: "Live Project Implementation",
-                duration: "6 Weeks",
+                title: "Track 3: Digital Marketing Internship",
+                duration: "3 Months",
                 certification: "",
-                description: "Work on a live industry project. Apply your skills to solve real problems and contribute to production-grade solutions.",
-                topics: ["Requirement Analysis", "Implementation", "Testing & QA", "Deployment"]
+                description: "End-to-end digital marketing training covering strategy, performance channels, and campaign analytics.",
+                topics: [
+                    "Month 1: Foundations - Consumer Behavior, Content Strategy, Branding",
+                    "Month 2: Performance Channels - SEO, Social Media, Email Marketing, Leads",
+                    "Month 3: Real-Time Project - SEO Audit, Growth Plan, Campaign Analysis"
+                ]
             }
         ],
         targetAudience: [
@@ -2206,9 +2512,63 @@ export const programs = [
         newsItems: [
             {
                 image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
-                date: "January 2025",
-                headline: "Internships: The New Gateway to Tech Careers",
-                source: "TechCrunch"
+                date: "February 2026",
+                headline: "Internships Increase Full-Time Job Offer Probability by 70%",
+                source: "NACE Report"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Why Employers Value Practical Experience Over Grades",
+                source: "Harvard Business Review"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "The Gig Economy: How Internships Prepare You for Freelance Work",
+                source: "Forbes"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Networking During Internships: Building Your Professional Circle",
+                source: "LinkedIn"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "From Intern to Employee: Strategies for Converting Your Internship",
+                source: "The Muse"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "The Rise of Virtual Internships: Gaining Global Experience Remotely",
+                source: "Fast Company"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1531498860502-7c67cf02f657?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Project-Based Learning: The Future of Skill Acquisition",
+                source: "EdSurge"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Soft Skills You Learn Best Through Real-World Internships",
+                source: "Monster"
+            },
+            {
+                image: "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg",
+                date: "October 2025",
+                headline: "Mentorship in Internships: Accelerating Your Career Growth",
+                source: "Entrepreneur"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Building a Portfolio: Documenting Your Internship Achievements",
+                source: "Medium"
             }
         ]
     }

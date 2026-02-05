@@ -289,6 +289,18 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                         <span className="mega-cat-count">1 Program</span>
                                                     </div>
                                                 </Link>
+                                                <Link
+                                                    href="/programs/internship-program"
+                                                    className="mega-category-card"
+                                                    onClick={() => setMegaMenuOpen(false)}
+                                                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80')` }}
+                                                >
+                                                    <div className="mega-cat-overlay"></div>
+                                                    <div className="mega-cat-content">
+                                                        <span className="mega-cat-name">Internship Program</span>
+                                                        <span className="mega-cat-count">1 Program</span>
+                                                    </div>
+                                                </Link>
                                             </div>
                                         </div>
                                     ) : (

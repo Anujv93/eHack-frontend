@@ -914,17 +914,20 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                         program.category === 'personality-softskills' ? 'Why Soft Skills Matter' :
                                             'Why Cybersecurity Skills Matter Now'}
                         </h2>
-                        <div className="news-grid">
-                            {program.newsItems.map((item, idx) => (
-                                <article key={idx} className="news-card">
-                                    <div className="news-image"><img src={item.image} alt="Cybersecurity News" /></div>
-                                    <div className="news-content">
-                                        <span className="news-date">{item.date}</span>
-                                        <h3 className="news-headline">{item.headline}</h3>
-                                        <p className="news-source">{item.source}</p>
-                                    </div>
-                                </article>
-                            ))}
+                        <div className="news-marquee-container">
+                            <div className="news-marquee-track">
+                                {/* Duplicate items for seamless loop */}
+                                {[...program.newsItems, ...program.newsItems].map((item, idx) => (
+                                    <article key={idx} className="news-card">
+                                        <div className="news-image"><img src={item.image} alt="Cybersecurity News" /></div>
+                                        <div className="news-content">
+                                            <span className="news-date">{item.date}</span>
+                                            <h3 className="news-headline">{item.headline}</h3>
+                                            <p className="news-source">{item.source}</p>
+                                        </div>
+                                    </article>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>
