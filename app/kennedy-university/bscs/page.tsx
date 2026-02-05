@@ -1,24 +1,112 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import './page.css';
+import '../../programs/[slug]/program.css';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
+import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star, FileText, Gem, Banknote, Landmark, Shield, CreditCard } from 'lucide-react';
+
 
 import { ProgramLabsWrapper } from '@/components/global/certificate-labs/ProgramLabsWrapper';
 
 // Navigation sections for BSCS page
 const BSCS_NAV_SECTIONS = [
     { id: 'overview', label: 'Overview' },
+    { id: 'career', label: 'Career' },
+    { id: 'structure', label: 'Who Should Enroll' },
     { id: 'curriculum', label: 'Curriculum' },
     { id: 'live-labs', label: 'Hands-On Labs' },
+    { id: 'pricing', label: 'Investment' },
+    { id: 'faq', label: 'FAQ' },
     { id: 'criteria', label: 'Criteria' },
     { id: 'apply', label: 'Apply Now' },
 ];
 
+const program = {
+    title: "Bachelor of Science in Cyber Security",
+    slug: "bscs",
+    category: "cybersecurity",
+    subtitle: "Undergraduate Degree",
+    partner: "Kennedy University",
+    stats: {
+        totalHours: "1200+",
+        membership: "Alumni Network"
+    },
+    certifications: [
+        { code: "BSCS", name: "Bachelor of Science", image: "/images/certificates/bscs-cert.jpg" }
+    ],
+    jobRoles: [
+        "Network Security Engineer", "SOC Analyst", "Information Security Analyst",
+        "Vulnerability Assessment Analyst", "Junior Penetration Tester",
+        "Technical Support Engineer", "System Administrator", "IT Security Coordinator"
+    ],
+    careerROI: {
+        title: "Great Career ROI",
+        subtitle: "This BSCS program equips you with foundational and advanced cybersecurity skills, preparing you for high-impact roles in the industry.",
+        chartTitle: "Chart Your Earning Potential",
+        salaryIntro: "Cybersecurity graduates are in high demand with competitive starting salaries.",
+        salaryLevels: [
+            { label: "₹5L", level: "Entry" },
+            { label: "₹12L", level: "Mid" },
+            { label: "₹25L+", level: "Senior" }
+        ],
+        chartDesc: "A Cybersecurity Professional's Salary Progression",
+        chartNote: "Organizations offer highly competitive salaries to recruit qualified professionals."
+    },
+    targetAudience: [
+        { title: "12th Pass Outcomes", desc: "Completed your 12th grade? Start your journey towards a global degree in cybersecurity.", tag: "Undergraduate" },
+        { title: "Diploma Holders", desc: "Upgrade your diploma to a full-fledged degree with specialized cybersecurity skills.", tag: "Degree Upgrade" },
+        { title: "Career Starters", desc: "Looking for a high-growth career path? Cybersecurity offers immense opportunities.", tag: "High Groth" },
+        { title: "Tech Enthusiasts", desc: "Passionate about technology and security? Turn your interest into a profession.", tag: "Passion Driven" }
+    ],
+    pricing: {
+        applicationFee: "₹1,000",
+        admissionFee: "₹3,50,000",
+        companyEMI: "₹4,00,000",
+        upfrontPercentage: "50%",
+        upfrontAmount: "₹2,00,000",
+        emiCount: 4,
+        emiAmount: "₹50,000",
+        note: "*GST as applicable"
+    },
+    faq: [
+        {
+            category: "Program",
+            questions: [
+                { q: "Is this a recognized degree?", a: "Yes, the BSCS is a fully recognized undergraduate degree awarded by Kennedy University." },
+                { q: "What is the duration of the program?", a: "The program is an accelerated 12-month fast-track course." },
+                { q: "Who delivers the training?", a: "The training is delivered by eHack Academy's industry-certified experts." }
+            ]
+        },
+        {
+            category: "Admissions",
+            questions: [
+                { q: "What is the eligibility criteria?", a: "12th pass or diploma in any stream with a basic understanding of computers." },
+                { q: "Is there an entrance exam?", a: "Yes, there is a screening process to assess basic aptitude and interest." }
+            ]
+        },
+        {
+            category: "Career",
+            questions: [
+                { q: "What job roles can I apply for?", a: "Graduates can apply for roles like Network Engineer, SOC Analyst, and Junior Security Analyst." },
+                { q: "Is there placement assistance?", a: "Yes, eHack Academy provides placement assistance and internship opportunities." }
+            ]
+        }
+    ]
+};
+
+
 export default function BSCSPage() {
     const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set());
+    const [activeCategory, setActiveCategory] = useState(0);
+    const [openQuestion, setOpenQuestion] = useState<number | null>(0);
+
+    const toggleQuestion = (idx: number) => {
+        setOpenQuestion(openQuestion === idx ? null : idx);
+    };
+
 
     const toggleCourse = (courseCode: string) => {
         setExpandedCourses(prev => {
@@ -198,7 +286,7 @@ export default function BSCSPage() {
     ];
 
     return (
-        <div className="program-detail-bscs">
+        <div className="program-detail-bscs program-page">
             {/* Sticky Section Navigation */}
             <StickySectionNav
                 sections={BSCS_NAV_SECTIONS}
@@ -207,8 +295,10 @@ export default function BSCSPage() {
 
             {/* Hero Section */}
             <section className="program-hero border-bottom">
-
-                <div className="hero-grid-bg"></div>
+                <div className="hero-background">
+                    <div className="hero-overlay"></div>
+                    <div className="hero-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop')" }}></div>
+                </div>
                 <div className="hero-container">
                     <Link href="/kennedy-university" className="back-link">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -310,6 +400,115 @@ export default function BSCSPage() {
                 </div>
             </section>
 
+            {/* Great Career ROI Section */}
+            <section className="roi-section border-bottom" id="career">
+                <div className="section-container">
+                    <h2 className="roi-title">
+                        Great Career <span className="text-accent">ROI</span>
+                    </h2>
+                    <p className="roi-subtitle">{program.careerROI.subtitle}</p>
+
+                    <div className="roi-grid">
+                        <div className="salary-card">
+                            <h3 className="roi-section-title"><span className="text-accent">Earning</span> Potential</h3>
+                            <p className="salary-stat">{program.careerROI.salaryIntro}</p>
+                            <div className="salary-chart">
+                                <div className="salary-graph">
+                                    <div className="graph-grid">
+                                        <div className="grid-line"></div>
+                                        <div className="grid-line"></div>
+                                        <div className="grid-line"></div>
+                                    </div>
+                                    <svg className="graph-line" viewBox="0 0 300 120" preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.3" />
+                                                <stop offset="50%" stopColor="#FF6B00" stopOpacity="0.6" />
+                                                <stop offset="100%" stopColor="#FF6B00" stopOpacity="1" />
+                                            </linearGradient>
+                                            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.2" />
+                                                <stop offset="100%" stopColor="#FF6B00" stopOpacity="0.02" />
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M 30 100 L 30 85 Q 75 85 100 65 T 170 40 T 270 15 L 270 100 Z" fill="url(#areaGradient)" />
+                                        <path d="M 30 85 Q 75 85 100 65 T 170 40 T 270 15" stroke="url(#lineGradient)" strokeWidth="3" fill="none" strokeLinecap="round" />
+                                    </svg>
+                                    <div className="graph-points">
+                                        {program.careerROI.salaryLevels.map((level, idx) => (
+                                            <div key={idx} className={`graph-point point-${idx + 1}`}>
+                                                <div className="point-marker">
+                                                    <div className="point-pulse"></div>
+                                                    <div className="point-dot"></div>
+                                                </div>
+                                                <div className="point-info">
+                                                    <span className="point-value">{level.label}</span>
+                                                    <span className="point-label">{level.level}</span>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 className="chart-title"><span className="text-accent">Salary</span> Progression</h4>
+                            <p className="chart-desc">{program.careerROI.chartNote}</p>
+                        </div>
+
+                        <div className="jobroles-card-integrated">
+                            <h3 className="roi-section-title"><span className="text-accent">{program.jobRoles.length}+</span> Career Paths</h3>
+                            <div className="jobroles-grid-compact">
+                                {program.jobRoles.slice(0, 9).map((role, idx) => (
+                                    <div key={idx} className="job-role-tag">
+                                        <BriefcaseBusiness size={14} />
+                                        <span>{role}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Who Should Enroll Section */}
+            <section className="audience-section-modern border-bottom" id="structure">
+                <div className="section-container">
+                    <div className="audience-header-modern">
+                        <span className="audience-eyebrow">DESIGNED FOR BEGINNERS</span>
+                        <h2 className="audience-title-modern">
+                            <span className="text-accent">Who</span> should enroll?
+                        </h2>
+                        <p className="audience-subtitle-modern">
+                            Whether you&apos;re a student, a diploma holder, or looking to start a career in tech—this program is built for you. No prior cybersecurity experience needed.
+                        </p>
+                    </div>
+
+                    <div className="audience-grid-modern">
+                        {program.targetAudience.map((audience, idx) => (
+                            <div key={idx} className="audience-card-modern">
+                                <div className="audience-card-number">{String(idx + 1).padStart(2, '0')}</div>
+                                <div className="audience-card-content">
+                                    <h3 className="audience-card-title-modern">{audience.title}</h3>
+                                    <p className="audience-card-desc-modern">{audience.desc}</p>
+                                    <span className="audience-tag-modern">{audience.tag}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="audience-cta-modern">
+                        <div className="cta-content">
+                            <h3>Not sure if this is right for you?</h3>
+                            <p>Talk to our career counsellor for a personalized learning path recommendation.</p>
+                        </div>
+                        <a href="tel:+919886035330" className="btn-cta-modern">
+                            Get Free Career Advice
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
             {/* Curriculum Section */}
             <section className="curriculum-section border-bottom" id="curriculum">
                 <div className="section-container">
@@ -393,6 +592,140 @@ export default function BSCSPage() {
                     programSlug="bscs"
                 />
             </div>
+
+            {/* Pricing Section */}
+            <section className="pricing-section border-bottom">
+                <div className="pricing-container-full">
+                    <div className="pricing-header">
+                        <h2 className="pricing-title">Program Investment & <span className="text-accent">Financing</span></h2>
+                        <p className="pricing-subtitle">Flexible payment options designed to make quality education accessible</p>
+                    </div>
+
+                    <div className="pricing-content-wrapper">
+                        <div className="pricing-main-column">
+                            <div className="fee-section">
+                                <div className="fee-row">
+                                    <span className="fee-label-text">
+                                        <span className="fee-icon-wrapper"><FileText size={18} /></span>
+                                        Application Fee
+                                    </span>
+                                    <span className="fee-value">{program.pricing.applicationFee}</span>
+                                </div>
+                                <p className="fee-note-text">Will be adjusted in the program fee. {program.pricing.note}</p>
+                            </div>
+                            <div className="fee-section primary">
+                                <div className="fee-row">
+                                    <span className="fee-label-text">
+                                        <span className="fee-icon-wrapper primary"><Gem size={18} /></span>
+                                        Program Admission Fee
+                                    </span>
+                                    <span className="fee-value-large">{program.pricing.admissionFee}</span>
+                                </div>
+                                <p className="fee-note-text">{program.pricing.note}</p>
+                            </div>
+
+                            <div className="payment-plans-section">
+                                <h3 className="section-heading">Payment Plans</h3>
+                                <div className="plan-option">
+                                    <div className="plan-header">
+                                        <div className="plan-title-group">
+                                            <span className="plan-icon"><BriefcaseBusiness size={20} /></span>
+                                            <h4 className="plan-name">Company EMI Plan</h4>
+                                        </div>
+                                        <span className="plan-price">{program.pricing.companyEMI}</span>
+                                    </div>
+                                    <p className="plan-description">Complete flexibility with company-sponsored EMI option</p>
+                                </div>
+                                <div className="plan-option">
+                                    <div className="plan-header">
+                                        <div className="plan-title-group">
+                                            <span className="plan-icon"><Banknote size={20} /></span>
+                                            <h4 className="plan-name">{program.pricing.upfrontPercentage} Upfront Payment</h4>
+                                        </div>
+                                        <span className="plan-price">{program.pricing.upfrontAmount}</span>
+                                    </div>
+                                    <p className="plan-description">Balance payable in {program.pricing.emiCount} equal EMIs of {program.pricing.emiAmount} each</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="pricing-side-column">
+                            <div className="financing-box">
+                                <h3 className="section-heading">
+                                    <span className="heading-icon"><Landmark size={20} /></span>
+                                    Financing Options
+                                </h3>
+                                <p className="financing-description">We offer multiple financing solutions to make our programs accessible to all students.</p>
+                                <div className="financing-list">
+                                    <div className="financing-item">
+                                        <div className="financing-icon"><Shield size={24} /></div>
+                                        <div>
+                                            <h4 className="financing-name">No Cost EMI (Internal)</h4>
+                                            <p className="financing-desc">Zero interest installments through our internal program</p>
+                                        </div>
+                                    </div>
+                                    <div className="financing-item">
+                                        <div className="financing-icon"><CreditCard size={24} /></div>
+                                        <div>
+                                            <h4 className="financing-name">Bank/NBFC Financing</h4>
+                                            <p className="financing-desc">Flexible payment plans through partner banks and NBFCs</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="whats-included-box" style={{ marginTop: '24px' }}>
+                                <h3 className="section-heading">
+                                    <span className="heading-icon"><CheckCircle size={20} /></span>
+                                    What&apos;s Included
+                                </h3>
+                                <ul className="included-list">
+                                    <li>Kennedy University Degree</li>
+                                    <li>eHack Academy Certifications</li>
+                                    <li>{program.stats.totalHours} of Hands-on Training</li>
+                                    <li>Real-Time Labs & Practice Environment</li>
+                                    <li>{program.stats.membership} Post-Training Support</li>
+                                    <li>Internship & Placement Assistance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="pricing-cta-section">
+                        <button className="btn-enroll-primary">
+                            Enroll Now
+                            <ArrowRight size={18} />
+                        </button>
+                        <p className="cta-contact">Questions? Call us at <a href="tel:+919886035330">+91-9886035330</a></p>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="faq-section border-bottom" id="faq">
+                <div className="section-container">
+                    <h2 className="faq-title">Frequently Asked <span className="text-accent">Questions</span></h2>
+                    <div className="faq-container">
+                        <div className="faq-categories">
+                            {program.faq.map((cat, idx) => (
+                                <button key={idx} className={`faq-category-btn ${activeCategory === idx ? 'active' : ''}`} onClick={() => { setActiveCategory(idx); setOpenQuestion(0); }}>{cat.category}</button>
+                            ))}
+                        </div>
+                        <div className="faq-questions">
+                            {program.faq[activeCategory].questions.map((item, idx) => (
+                                <div key={idx} className={`faq-item ${openQuestion === idx ? 'open' : ''}`}>
+                                    <button className="faq-question" onClick={() => toggleQuestion(idx)}>
+                                        <span>{item.q}</span>
+                                        <span className="faq-icon">{openQuestion === idx ? '−' : '+'}</span>
+                                    </button>
+                                    {openQuestion === idx && <div className="faq-answer"><p>{item.a}</p></div>}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             {/* Degree Award Criteria */}
             <section className="criteria-section border-bottom" id="criteria">

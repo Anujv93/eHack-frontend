@@ -12,22 +12,12 @@
 /* Hero Section */
 .program-detail-bscs .program-hero {
     position: relative;
-    background: linear-gradient(180deg, #FFF7ED 0%, #FFF4E8 40%, #FFFFFF 100%);
+    /* Background removed for image */
     padding: 60px 0 80px;
     overflow: hidden;
 }
 
-.program-detail-bscs .hero-grid-bg {
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(223, 103, 24, 0.14) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(223, 103, 24, 0.14) 1px, transparent 1px);
-    background-size: 40px 40px;
-    transform: perspective(500px) rotateX(60deg) scale(2);
-    opacity: 0.55;
-    pointer-events: none;
-}
+/* Hero Grid BG removed */
 
 .program-detail-bscs .program-hero .hero-container {
     max-width: 1200px;
@@ -35,6 +25,7 @@
     padding: 0 24px;
     position: relative;
     z-index: 10;
+    display: block;
 }
 
 .program-detail-bscs .back-link {
@@ -69,18 +60,18 @@
 .program-detail-bscs .badge-plain {
     font-size: 14px;
     font-weight: 600;
-    color: #475569;
+    color: #ffffff;
 }
 
 .program-detail-bscs .badge-separator {
-    color: #CBD5E1;
+    color: #ffffff;
     font-weight: 300;
 }
 
 .program-detail-bscs .program-title {
     font-size: 3.5rem;
     font-weight: 800;
-    color: #0F172A;
+    color: #ffffff;
     line-height: 1.1;
     margin: 0 0 28px 0;
 }
@@ -91,7 +82,7 @@
 
 .program-detail-bscs .program-desc {
     font-size: 1.25rem;
-    color: #1f2937;
+    color: #ffffff;
     line-height: 1.7;
     margin: 0 0 36px 0;
     max-width: 560px;
@@ -112,7 +103,7 @@
 }
 
 .program-detail-bscs .partner-logos-hero .partner-logo.kennedy {
-    filter: invert(1);
+    filter: brightness(0) invert(1);
 }
 
 .program-detail-bscs .divider-line {
@@ -147,8 +138,8 @@
     align-items: center;
     gap: 10px;
     background: transparent;
-    color: #0F172A;
-    border: 2px solid #E2E8F0;
+    color: #ffffff;
+    border: 2px solid #ffffff;
     padding: 14px 28px;
     border-radius: 12px;
     font-size: 1rem;
