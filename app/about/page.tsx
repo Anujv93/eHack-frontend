@@ -218,7 +218,7 @@ export default function AboutPage() {
                             </p>
                         </div>
                         <div className="mission-image-column">
-                            <img src="/images/new-mission-aboutus.png" alt="Our Mission" className="mission-side-image" />
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" alt="Our Mission" className="mission-side-image" />
                         </div>
                     </div>
                 </div>
@@ -231,7 +231,7 @@ export default function AboutPage() {
 
                     <div className="promise-grid">
                         <div className="promise-image-col">
-                            <img src="/images/ehack_promise_realistic.png" alt="eHack Team" className="promise-feature-img" />
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000" alt="eHack Team Collaboration" className="promise-feature-img" />
                         </div>
                         <div className="promise-content-col">
                             <div className="promise-card">
