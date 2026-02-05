@@ -11,7 +11,7 @@ type Message = {
     role: "user" | "assistant";
     content: string;
 };
-//
+// added ;okme fprdeploy
 const SUGGESTIONS = [
     "Help me find the right career path",
     "Tell me about your courses",
