@@ -286,7 +286,7 @@ export default function BSCSPage() {
     ];
 
     return (
-        <div className="program-detail-bscs">
+        <div className="program-detail-bscs program-page">
             {/* Sticky Section Navigation */}
             <StickySectionNav
                 sections={BSCS_NAV_SECTIONS}
@@ -399,7 +399,7 @@ export default function BSCSPage() {
             </section>
 
             {/* Great Career ROI Section */}
-            <section className="roi-section" id="career">
+            <section className="roi-section border-bottom" id="career">
                 <div className="section-container">
                     <h2 className="roi-title">
                         Great Career <span className="text-accent">ROI</span>
@@ -468,7 +468,7 @@ export default function BSCSPage() {
             </section>
 
             {/* Who Should Enroll Section */}
-            <section className="audience-section-modern" id="structure">
+            <section className="audience-section-modern border-bottom" id="structure">
                 <div className="section-container">
                     <div className="audience-header-modern">
                         <span className="audience-eyebrow">DESIGNED FOR BEGINNERS</span>
@@ -592,10 +592,10 @@ export default function BSCSPage() {
             </div>
 
             {/* Pricing Section */}
-            <section className="pricing-section">
+            <section className="pricing-section border-bottom">
                 <div className="pricing-container-full">
                     <div className="pricing-header">
-                        <h2 className="pricing-title">Program Investment & Financing</h2>
+                        <h2 className="pricing-title">Program Investment & <span className="text-accent">Financing</span></h2>
                         <p className="pricing-subtitle">Flexible payment options designed to make quality education accessible</p>
                     </div>
 
@@ -700,7 +700,7 @@ export default function BSCSPage() {
             </section>
 
             {/* FAQ Section */}
-            <section className="faq-section" id="faq">
+            <section className="faq-section border-bottom" id="faq">
                 <div className="section-container">
                     <h2 className="faq-title">Frequently Asked <span className="text-accent">Questions</span></h2>
                     <div className="faq-container">
