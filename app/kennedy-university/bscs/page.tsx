@@ -295,8 +295,10 @@ export default function BSCSPage() {
 
             {/* Hero Section */}
             <section className="program-hero border-bottom">
-
-                <div className="hero-grid-bg"></div>
+                <div className="hero-background">
+                    <div className="hero-overlay"></div>
+                    <div className="hero-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop')" }}></div>
+                </div>
                 <div className="hero-container">
                     <Link href="/kennedy-university" className="back-link">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

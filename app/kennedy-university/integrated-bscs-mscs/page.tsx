@@ -404,7 +404,10 @@ export default function IntegratedBSCSMSCSPage() {
 
             {/* Hero Section */}
             <section className="program-hero border-bottom">
-                <div className="hero-grid-bg"></div>
+                <div className="hero-background">
+                    <div className="hero-overlay"></div>
+                    <div className="hero-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop')" }}></div>
+                </div>
                 <div className="hero-container">
                     <Link href="/kennedy-university" className="back-link">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

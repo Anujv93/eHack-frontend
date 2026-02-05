@@ -12,22 +12,34 @@
 /* Hero Section */
 .program-detail-mscs .program-hero {
     position: relative;
-    background: linear-gradient(180deg, #FFF7ED 0%, #FFF4E8 40%, #FFFFFF 100%);
+    /* Background removed for image */
     padding: 60px 0 80px;
     overflow: hidden;
 }
 
-.program-detail-mscs .hero-grid-bg {
+.program-detail-mscs .hero-background {
     position: absolute;
     inset: 0;
-    background-image:
-        linear-gradient(rgba(223, 103, 24, 0.14) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(223, 103, 24, 0.14) 1px, transparent 1px);
-    background-size: 40px 40px;
-    transform: perspective(500px) rotateX(60deg) scale(2);
-    opacity: 0.55;
-    pointer-events: none;
+    z-index: 0;
 }
+
+.program-detail-mscs .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10, 10, 26, 0.6) 0%, rgba(26, 26, 46, 0.5) 50%, rgba(10, 10, 26, 0.6) 100%);
+    z-index: 1;
+}
+
+.program-detail-mscs .hero-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* Hero Grid BG removed */
 
 .program-detail-mscs .program-hero .hero-container {
     max-width: 1200px;
@@ -70,18 +82,18 @@
 .program-detail-mscs .badge-plain {
     font-size: 14px;
     font-weight: 600;
-    color: #475569;
+    color: #ffffff;
 }
 
 .program-detail-mscs .badge-separator {
-    color: #CBD5E1;
+    color: #ffffff;
     font-weight: 300;
 }
 
 .program-detail-mscs .program-title {
     font-size: 3.5rem;
     font-weight: 800;
-    color: #0F172A;
+    color: #ffffff;
     line-height: 1.1;
     margin: 0 0 28px 0;
 }
@@ -92,7 +104,7 @@
 
 .program-detail-mscs .program-desc {
     font-size: 1.25rem;
-    color: #475569;
+    color: #ffffff;
     line-height: 1.7;
     margin: 0 0 36px 0;
     max-width: 560px;
@@ -113,7 +125,7 @@
 }
 
 .program-detail-mscs .partner-logos-hero .partner-logo.kennedy {
-    filter: invert(1);
+    filter: brightness(0) invert(1);
 }
 
 .program-detail-mscs .divider-line {
@@ -148,8 +160,8 @@
     align-items: center;
     gap: 10px;
     background: transparent;
-    color: #0F172A;
-    border: 2px solid #E2E8F0;
+    color: #ffffff;
+    border: 2px solid #ffffff;
     padding: 14px 28px;
     border-radius: 12px;
     font-size: 1rem;

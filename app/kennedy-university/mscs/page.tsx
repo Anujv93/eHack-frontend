@@ -319,7 +319,10 @@ export default function MSCSPage() {
 
             {/* Hero Section */}
             <section className="program-hero border-bottom">
-                <div className="hero-grid-bg"></div>
+                <div className="hero-background">
+                    <div className="hero-overlay"></div>
+                    <div className="hero-image" style={{ backgroundImage: "url('https://images.pexels.com/photos/5473312/pexels-photo-5473312.jpeg?auto=compress&cs=tinysrgb&w=1920')" }}></div>
+                </div>
                 <div className="hero-container">
                     <Link href="/kennedy-university" className="back-link">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
