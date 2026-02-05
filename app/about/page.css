@@ -253,7 +253,7 @@
 .mission-image-column {
     position: relative;
     height: 100%;
-    min-height: 400px;
+    min-height: 520px;
 }
 
 .mission-side-image {
@@ -261,7 +261,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 900px) {
@@ -333,9 +333,10 @@
 
 .promise-feature-img {
     width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
     transform: translateX(10px);
     /* Slight overlap potential */
 }

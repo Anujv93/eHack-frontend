@@ -63,7 +63,7 @@ const program = {
     ],
     pricing: {
         applicationFee: "₹1,000",
-        admissionFee: "₹3,50,000",
+        admissionFee: "₹3,00,000",
         companyEMI: "₹4,00,000",
         upfrontPercentage: "50%",
         upfrontAmount: "₹2,00,000",
@@ -405,19 +405,19 @@ export default function MSCSPage() {
                     <h2 className="section-title">Program <span className="accent">Overview</span></h2>
                     <div className="overview-grid">
                         <div className="overview-card">
-                            <h3>Curriculum Framework</h3>
+                            <h3>Curriculum <span className="text-accent">Framework</span></h3>
                             <p>eHack Certificationsᴬᴵ - AI-powered curriculum mapped to eHack Academy&apos;s Master-Level Cybersecurity Program.</p>
                         </div>
                         <div className="overview-card">
-                            <h3>Fast Track Model</h3>
+                            <h3>Fast <span className="text-accent">Track</span> Model</h3>
                             <p>90 credits delivered in 12 months through advanced research and capstone requirements.</p>
                         </div>
                         <div className="overview-card">
-                            <h3>SOC & Cloud Security</h3>
+                            <h3>SOC & <span className="text-accent">Cloud</span> Security</h3>
                             <p>Master Security Operations Center analysis and cloud security architecture.</p>
                         </div>
                         <div className="overview-card">
-                            <h3>Executive Leadership</h3>
+                            <h3>Executive <span className="text-accent">Leadership</span></h3>
                             <p>P|HISOᴬᴵ module prepares you for CISO-level strategic security leadership.</p>
                         </div>
                     </div>
@@ -689,8 +689,8 @@ export default function MSCSPage() {
                                     <div className="financing-item">
                                         <div className="financing-icon"><Shield size={24} /></div>
                                         <div>
-                                            <h4 className="financing-name">No Cost EMI (Internal)</h4>
-                                            <p className="financing-desc">Zero interest installments through our internal program</p>
+                                            <h4 className="financing-name p-2"> EMI (3,50,000)</h4>
+                                            {/* <p className="financing-desc">Zero interest installments through our internal program</p> */}
                                         </div>
                                     </div>
                                     <div className="financing-item">
@@ -759,32 +759,33 @@ export default function MSCSPage() {
             {/* Degree Award Criteria */}
             <section className="criteria-section border-bottom" id="criteria">
                 <div className="section-container">
-                    <div className="criteria-card">
-                        <h2>Degree Award Criteria – Kennedy University</h2>
-                        <p className="criteria-intro">To be recommended by eHack Academy, the learner must:</p>
-                        <ul className="criteria-list">
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Earn a minimum of <strong>90 credits</strong></span>
-                            </li>
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Complete all <strong>core, SOC, cloud, specialisation, research, and P|HISOᴬᴵ modules</strong></span>
-                            </li>
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Successfully complete the <strong>6-month internship / project / thesis</strong></span>
-                            </li>
-                            <li>
-                                <span className="check-icon">✓</span>
-                                <span>Clear <strong>final evaluation</strong> and viva voce</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="certificate-showcase">
-                        <div className="program-certificate">
-                            <img src="/MSCS Degree Certificate.png" alt="MSCS Degree Certificate" className="certificate-image" />
+                    <div className="criteria-unified-wrapper">
+                        <div className="criteria-grid">
+                            <div className="criteria-content">
+                                <h2>Degree Award Criteria – Kennedy University</h2>
+                                <p className="criteria-intro">To be recommended by eHack Academy, the learner must:</p>
+                                <ul className="criteria-list">
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Earn a minimum of <strong>90 credits</strong></span>
+                                    </li>
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Complete all <strong>core, SOC, cloud, specialisation, research, and P|HISOᴬᴵ modules</strong></span>
+                                    </li>
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Successfully complete the <strong>6-month internship / project / thesis</strong></span>
+                                    </li>
+                                    <li>
+                                        <span className="check-icon">✓</span>
+                                        <span>Clear <strong>final evaluation</strong> and viva voce</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="criteria-image-container">
+                                <img src="/MSCS Degree Certificate.png" alt="MSCS Degree Certificate" className="criteria-cert-image" />
+                            </div>
                         </div>
                     </div>
                 </div>

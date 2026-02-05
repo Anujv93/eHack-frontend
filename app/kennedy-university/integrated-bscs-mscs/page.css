@@ -114,6 +114,13 @@
     color: #DF6718;
 }
 
+.program-detail-integrated .overview-card p {
+    font-size: 0.9rem;
+    color: #1f2937;
+    line-height: 1.6;
+    margin: 0;
+}
+
 .program-detail-integrated .program-desc {
     font-size: 1.25rem;
     color: #ffffff;
@@ -741,28 +748,30 @@
 
 .program-detail-integrated .overview-card {
     background: #F8FAFC;
-    border: 1px solid rgba(223, 103, 24, 0.6);
-    border-radius: 20px;
-    padding: 32px 24px;
+    border-radius: 16px;
+    padding: 28px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
+    border: 1px solid rgba(223, 103, 24, 0.6);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    height: 100%;
 }
 
 .program-detail-integrated .overview-card:hover {
-    transform: translateY(-8px);
-    background: #FFFFFF;
-    border-color: #DF6718;
-    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
 .program-detail-integrated .overview-card h3 {
-    font-size: 1.25rem;
-    font-weight: 800;
+    font-size: 1.1rem;
+    font-weight: 700;
     color: #0F172A;
     margin: 0 0 16px 0;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     letter-spacing: -0.01em;
 }
 
@@ -792,6 +801,7 @@
 .program-detail-integrated .curriculum-section {
     padding: 80px 0;
     background: linear-gradient(180deg, #FFFFFF 0%, #FFF8F0 100%);
+    border-bottom: 1px solid #ff6b00;
 }
 
 .program-detail-integrated .curriculum-timeline {
@@ -1572,4 +1582,114 @@
     .program-detail-integrated .credit-summary-card .summary-value {
         font-size: 2rem;
     }
+}
+
+/* Unified Degree Criteria Section */
+.program-detail-integrated .criteria-unified-wrapper {
+    background-color: #0F172A;
+    border-radius: 20px;
+    padding: 50px;
+    color: white;
+    overflow: hidden;
+}
+
+.program-detail-integrated .criteria-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.program-detail-integrated .criteria-content h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.program-detail-integrated .criteria-content .criteria-intro {
+    color: #94A3B8;
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+.program-detail-integrated .criteria-content .criteria-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.program-detail-integrated .criteria-content .criteria-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 1.05rem;
+    color: #E2E8F0;
+    line-height: 1.5;
+}
+
+.program-detail-integrated .criteria-content .criteria-list li strong {
+    color: #DF6718;
+    /* Orange accent */
+    font-weight: 600;
+}
+
+.program-detail-integrated .criteria-content .check-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: #10B981;
+    /* Success Green */
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.program-detail-integrated .criteria-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.program-detail-integrated .criteria-cert-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.program-detail-integrated .criteria-cert-image:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .program-detail-integrated .criteria-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .program-detail-integrated .criteria-unified-wrapper {
+        padding: 30px;
+    }
+
+    .program-detail-integrated .criteria-content h2 {
+        font-size: 1.75rem;
+    }
+}
+
+.program-detail-integrated .text-accent {
+    color: #DF6718;
 }
