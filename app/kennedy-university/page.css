@@ -85,7 +85,7 @@
 }
 
 .border-bottom {
-    border-bottom: 3px solid var(--accent, #DF6718);
+    border-bottom: 1px solid #ff6b00;
 }
 
 .border-all {
@@ -3418,5 +3418,91 @@
         border-left: none;
         border-right: none;
         padding: var(--space-3);
+    }
+}
+
+/* =========================================
+   Combined Stats + Partnership Styling
+   ========================================= */
+
+/* Title Orange */
+.partnership-highlight {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Ensure text-accent is orange, but let main title revert to default */
+.partnership-highlight .partnership-title .text-accent {
+    color: #ff6b00 !important;
+}
+
+/* Stats Box Orange Border & Alignment */
+.partnership-highlight .stats-container {
+    border: 1px solid #ff6b00;
+    border-radius: 16px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    /* Minimized padding */
+    position: relative;
+    box-shadow: 0 10px 40px rgba(223, 103, 24, 0.1);
+    margin: 0 auto 20px;
+    /* Minimized margin */
+    max-width: 1200px;
+    min-height: 100px;
+    /* Uniform height enforcement */
+}
+
+/* Vertical Separators between stats */
+.partnership-highlight .stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-right: 1px solid rgba(223, 103, 24, 0.5);
+    /* Orange separator */
+    height: 100%;
+    padding: 0 10px;
+}
+
+.partnership-highlight .stat-item:last-child {
+    border-right: none;
+}
+
+.partnership-highlight .stat-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.partnership-highlight .stat-label {
+    color: #ff6b00 !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .partnership-highlight .stats-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        height: auto;
+    }
+
+    .partnership-highlight .stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(223, 103, 24, 0.3);
+        padding-bottom: 16px;
+        width: 100%;
+    }
+
+    .partnership-highlight .stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
     }
 }
