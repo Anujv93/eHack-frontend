@@ -358,6 +358,26 @@ export default function FranchisePage() {
                                 </div>
                             </div>
                         </div>
+                        <div className="program-image-card">
+                            <div className="program-image-wrapper">
+                                <Image
+                                    src="/images/corporate.jpeg"
+                                    alt="Corporate Services"
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                />
+                                <div className="program-image-overlay"></div>
+                            </div>
+                            <div className="program-card-content">
+                                <div className="program-card-badge">Essential</div>
+                                <h3>Corporate Services</h3>
+                                <p>Premium corporate solutions including VAPT, SOC Management, Cloud Security & Incident Response</p>
+                                <div className="program-card-stats">
+                                    <span><strong>VAPT</strong> Focused</span>
+                                    <span><strong>Enterprise</strong> Ready</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

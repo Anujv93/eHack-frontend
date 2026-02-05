@@ -438,8 +438,8 @@
 }
 
 .program-image-card {
-    flex: 0 0 calc(25% - 1.5rem);
-    max-width: calc(25% - 1.5rem);
+    flex: 0 0 calc(33.333% - 1.5rem);
+    max-width: calc(33.333% - 1.5rem);
 }
 
 .program-image-card {
