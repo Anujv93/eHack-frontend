@@ -268,6 +268,8 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
         { id: 'learning', label: 'Learning Options' },
         { id: 'placements', label: 'Placements' },
         { id: 'testimonials', label: 'Success Stories' },
+        { id: 'certifications', label: 'Globally Recognized & Authorized' },
+        { id: 'social-impact', label: 'Social Impact & Strategic Growth' },
     ];
 
     return (
@@ -653,7 +655,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
 
             {/* Ribbons Section */}
-            <section style={{ borderBottom: 'solid 2px orange', padding: '2rem 0', borderTop: 'solid 2px orange', marginTop: '2rem' }}>
+            <section id="social-impact" style={{ borderBottom: 'solid 2px orange', padding: '2rem 0', borderTop: 'solid 2px orange', marginTop: '2rem' }}>
                 <div className={styles.container}>
                     <div className="cert-header" style={{ marginBottom: '3rem' }}>
                         <h2 className="cert-title">Social Impact & <span className="cert-title-gradient">Strategic Growth</span></h2>
@@ -715,7 +717,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                             <div className={styles.ribbonImageWrapper}>
                                 <div className={styles.floatingImage}>
                                     <img
-                                        src="/impowerment.png"
+                                        src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                         alt="Cyber Empowerment for All"
                                         className={styles.ribbonImage}
                                     />

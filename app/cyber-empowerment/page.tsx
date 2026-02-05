@@ -101,7 +101,7 @@ export default function CyberEmpowermentPage() {
     return (
         <div className={styles.page}>
             {/* Hero Section */}
-            <section className={styles.hero}>
+            <section className={styles.hero} style={{ backgroundImage: "url('https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" }}>
                 <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
                     <div style={{ marginBottom: '2rem' }}></div>
@@ -155,7 +155,7 @@ export default function CyberEmpowermentPage() {
                             </div>
                             <div className={styles.introImageWrapper}>
                                 <img
-                                    src="/impowerment-2.png"
+                                    src="https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                     alt="Empowering Young Minds & Experienced Lives"
                                     className={styles.introImage}
                                 />
