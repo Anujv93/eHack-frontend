@@ -809,7 +809,7 @@ export const programs = [
         },
         schedule: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off)",
         certifications: [
-            { code: "DIGITAL", name: "eHack Digital Academy Certificate", image: "/images/certificates/digital-marketing-certificate.jpeg" }
+            { code: "DIGITAL", name: "eHack Digital Academy Certificate", image: "/images/certificates/new-digital-marketing-certification.jpeg" }
         ],
         skills: [
             { name: "Website Design", desc: "Create and design websites from scratch with zero-code knowledge using modern website builders and design tools." },
@@ -1055,7 +1055,7 @@ export const programs = [
         },
         schedule: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off)",
         certifications: [
-            { code: "ROBOTICS", name: "eHack Academy Robotics Certificate", image: "/images/certificates/robotics-image.jpeg" }
+            { code: "ROBOTICS", name: "eHack Academy Robotics Certificate", image: "/images/certificates/new-robotics-certification.jpeg" }
         ],
         skills: [
             { name: "Introduction to Robotics", desc: "Learn the fundamentals of robotics and control systems, understanding how robots work and interact with their environment." },
@@ -1287,7 +1287,7 @@ export const programs = [
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
-            { code: "DSDA", name: "Data Science & Data Analytics with AI", image: "/images/data_science certificate.jpeg" }
+            { code: "DSDA", name: "Data Science & Data Analytics with AI", image: "/images/certificates/new-data-science-certificate.jpeg" }
         ],
         skills: [
             { name: "Python Programming", desc: "Master Python for data analysis including syntax, data structures, functions, and libraries essential for data science workflows." },
@@ -2394,7 +2394,7 @@ export const programs = [
         },
         schedule: "Flexible Timings | Weekend & Weekday Options",
         certifications: [
-            { code: "INTERN", name: "Internship Experience Certificate", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" }
+            { code: "INTERN", name: "Internship Experience Certificate", image: "/images/certificates/internship-certification.jpeg" }
         ],
         skills: [
             { name: "Project Management", desc: "Learn Agile methodologies, sprint planning, and effective project execution strategies." },
