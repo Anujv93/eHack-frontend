@@ -572,10 +572,17 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 <h3>Want the complete curriculum details?</h3>
                                 <p>Download the detailed syllabus with module breakdowns, project details, and certification information.</p>
                             </div>
-                            <button className="btn-download-modern">
+                            <a
+                                href={program.brochureLink ? `/brochure/${program.brochureLink}` : '#'}
+                                className={`btn-download-modern ${!program.brochureLink ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                target={program.brochureLink ? "_blank" : undefined}
+                                rel={program.brochureLink ? "noopener noreferrer" : undefined}
+                                download={program.brochureLink ? true : undefined}
+                                onClick={(e) => !program.brochureLink && e.preventDefault()}
+                            >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                Download Curriculum PDF
-                            </button>
+                                {program.brochureLink ? "Download Brochure" : "Brochure Coming Soon"}
+                            </a>
                         </div>
                     </div>
                 </div>
