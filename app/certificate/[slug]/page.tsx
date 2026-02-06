@@ -30,7 +30,8 @@ import {
     CareerStatsSection as CareerStatsSectionType,
     JobRolesSection as JobRolesSectionType,
     CourseOutlineSection as CourseOutlineSectionType,
-    FAQSection as FAQSectionType
+    FAQSection as FAQSectionType,
+    getStrapiMediaUrl
 } from "@/lib/strapi";
 import { notFound } from "next/navigation";
 import CareerStatsSection from "@/components/single-certificate/career-stats-section/career-stats-section";
@@ -241,7 +242,7 @@ export default async function CertificatePage({ params }: PageProps) {
             {jobRolesSection && <JobRolesSection section={jobRolesSection} />}
 
             {/* Course Outline Section */}
-            {courseOutlineSection && <CourseOutlineSection section={courseOutlineSection} />}
+            {courseOutlineSection && <CourseOutlineSection section={courseOutlineSection} brochureUrl={certificate.brochure?.url ? getStrapiMediaUrl(certificate.brochure.url) : undefined} />}
 
             {/* FAQ Section */}
             {faqSection && <FAQSection section={faqSection} />}
