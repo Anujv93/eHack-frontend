@@ -155,17 +155,17 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                             {program.title.includes('Ethical Hacking') ? (
                                 <>
                                     {program.title.split('Ethical Hacking')[0]}
-                                    <span className="text-accent">Ethical Hacking & Cyber Security</span>
+                                    <span className="text-accent">Ethical Hacking & Cyber Security<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
                                 </>
                             ) : program.title.includes('Digital Marketing') ? (
                                 <>
                                     {program.title.split('Digital Marketing')[0]}
-                                    <span className="text-accent">Digital Marketing</span>
+                                    <span className="text-accent">Digital Marketing<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
                                 </>
                             ) : program.title.includes('Internship') ? (
                                 <>
                                     {program.title.split('Internship')[0]}
-                                    <span className="text-accent">Internship Program</span>
+                                    <span className="text-accent">Internship Program<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
                                 </>
                             ) : (
                                 program.title
