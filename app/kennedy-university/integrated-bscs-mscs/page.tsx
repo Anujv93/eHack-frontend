@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useRef, useEffect, useCallback } from 'react';
-import './page.css';
-import '../../programs/[slug]/program.css';
+
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
 import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star, FileText, Gem, Banknote, Landmark, Shield, CreditCard } from 'lucide-react';

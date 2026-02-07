@@ -45,9 +45,17 @@ export default function ProgramToolsSection() {
                                         onError={(e) => {
                                             // Fallback if image fails
                                             e.currentTarget.style.display = 'none';
-                                            e.currentTarget.parentElement!.innerText = tool.name[0];
-                                            e.currentTarget.parentElement!.style.backgroundColor = '#ccc';
-                                            e.currentTarget.parentElement!.style.borderRadius = '50%';
+                                            const parent = e.currentTarget.parentElement;
+                                            if (parent) {
+                                                parent.innerText = tool.name[0];
+                                                parent.style.backgroundColor = '#ccc';
+                                                parent.style.borderRadius = '50%';
+                                                parent.style.display = 'flex';
+                                                parent.style.alignItems = 'center';
+                                                parent.style.justifyContent = 'center';
+                                                parent.style.fontWeight = 'bold';
+                                                parent.style.color = '#333';
+                                            }
                                         }}
                                     />
                                 </div>

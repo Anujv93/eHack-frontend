@@ -16,6 +16,11 @@ interface ProgramLabsWrapperProps {
 export function ProgramLabsWrapper({ certificationCodes, programTitle, programSlug }: ProgramLabsWrapperProps) {
     // Map certification codes to slugs for the CertificateLabs component
     const primaryCertSlug = useMemo(() => {
+        // Special handling for Kennedy University degrees to show "Comprehensive Lab Suite"
+        if (programSlug === 'bscs' || programSlug === 'mscs' || programSlug === 'integrated-bscs-mscs') {
+            return 'degree-comprehensive';
+        }
+
         // Special handling for Masters program - show comprehensive labs
         if (programSlug === 'masters-ethical-hacking' || certificationCodes.length >= 5) {
             return 'masters-comprehensive'; // Special slug for comprehensive labs
@@ -26,6 +31,8 @@ export function ProgramLabsWrapper({ certificationCodes, programTitle, programSl
         if (programSlug?.includes('robotics')) return 'robotics-iot';
         if (programSlug?.includes('digital-marketing')) return 'digital-marketing';
         if (programSlug?.includes('personality') || programSlug?.includes('softskills')) return 'personality-softskills';
+
+
 
 
         // Priority order for determining which labs to show

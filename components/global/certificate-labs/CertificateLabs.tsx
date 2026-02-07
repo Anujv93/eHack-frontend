@@ -556,6 +556,98 @@ export interface CertificateLabsData {
     };
 }
 
+
+const COMPREHENSIVE_LABS: LabTool[] = [
+    {
+        id: 'metasploit-masters',
+        name: 'Metasploit Framework',
+        icon: '🎯',
+        description: 'Advanced penetration testing with Metasploit. Master exploitation, payload creation, and post-exploitation techniques.',
+        skills: ['Exploitation', 'Payload Creation', 'Post-Exploitation', 'Meterpreter', 'Pivoting'],
+        difficulty: 'Advanced',
+        duration: '20+ Hours',
+        thumbnail: '/images/labs/metasploit-lab.png',
+        exercises: 35
+    },
+    {
+        id: 'nmap-masters',
+        name: 'Nmap Network Scanner',
+        icon: '🔍',
+        description: 'Comprehensive network reconnaissance and vulnerability scanning with advanced NSE scripts.',
+        skills: ['Network Scanning', 'Port Analysis', 'Service Detection', 'NSE Scripts', 'Vulnerability Assessment'],
+        difficulty: 'Intermediate',
+        duration: '15+ Hours',
+        thumbnail: '/images/labs/nmap-lab.png',
+        exercises: 28
+    },
+    {
+        id: 'burpsuite-masters',
+        name: 'Burp Suite Pro',
+        icon: '🕷️',
+        description: 'Master web application security testing with Burp Suite Professional. Learn to find and exploit web vulnerabilities.',
+        skills: ['Web Security', 'SQL Injection', 'XSS', 'CSRF', 'API Testing'],
+        difficulty: 'Advanced',
+        duration: '25+ Hours',
+        thumbnail: '/images/labs/burpsuite-lab.png',
+        exercises: 40
+    },
+    {
+        id: 'wireshark-masters',
+        name: 'Wireshark Analysis',
+        icon: '📡',
+        description: 'Deep packet analysis and network forensics. Capture, analyze, and investigate network traffic.',
+        skills: ['Packet Analysis', 'Protocol Analysis', 'Network Forensics', 'Traffic Monitoring'],
+        difficulty: 'Intermediate',
+        duration: '18+ Hours',
+        thumbnail: '/images/labs/wireshark-lab.png',
+        exercises: 30
+    },
+    {
+        id: 'autopsy-masters',
+        name: 'Autopsy Digital Forensics',
+        icon: '🔬',
+        description: 'Digital forensics investigation platform. Analyze disk images, recover deleted files, and investigate incidents.',
+        skills: ['Digital Forensics', 'Evidence Collection', 'File Recovery', 'Timeline Analysis'],
+        difficulty: 'Advanced',
+        duration: '22+ Hours',
+        thumbnail: '/images/labs/autopsy-lab.png',
+        exercises: 32
+    },
+    {
+        id: 'splunk-masters',
+        name: 'Splunk SIEM',
+        icon: '📊',
+        description: 'Security Information and Event Management with Splunk. Monitor, detect, and respond to security threats.',
+        skills: ['SIEM', 'Log Analysis', 'Threat Detection', 'Incident Response', 'Security Monitoring'],
+        difficulty: 'Advanced',
+        duration: '20+ Hours',
+        thumbnail: '/images/labs/splunk-lab.png',
+        exercises: 28
+    },
+    {
+        id: 'kali-masters',
+        name: 'Kali Linux Advanced',
+        icon: '🐉',
+        description: 'Complete Kali Linux mastery. Learn all essential tools and techniques for professional penetration testing.',
+        skills: ['Linux Administration', 'Tool Mastery', 'Scripting', 'Automation', 'Custom Tools'],
+        difficulty: 'Advanced',
+        duration: '25+ Hours',
+        thumbnail: '/images/labs/kali-lab.png',
+        exercises: 45
+    },
+    {
+        id: 'more-tools-masters',
+        name: '20+ More Tools Covered',
+        icon: '🛠️',
+        description: 'Access to 20+ additional professional security tools including OWASP ZAP, SQLMap, Aircrack-ng, Volatility, Cobalt Strike, John the Ripper, Hashcat, Hydra, and many more.',
+        skills: ['Web Security', 'Wireless Hacking', 'Password Cracking', 'Memory Forensics', 'Red Teaming', 'Automation'],
+        difficulty: 'Advanced',
+        duration: '100+ Hours',
+        thumbnail: '/images/labs/tools-lab.png',
+        exercises: 150
+    }
+];
+
 // Comprehensive labs data mapped to certification codes/slugs
 const certificateLabsMapping: CertificateLabsData = {
     // CEH - Certified Ethical Hacker
@@ -893,96 +985,12 @@ const certificateLabsMapping: CertificateLabsData = {
     'masters-comprehensive': {
         title: <>Masters Program - Comprehensive Lab <span className="text-accent">Suite</span></>,
         description: 'Complete hands-on lab environment covering all 6 certifications with 300+ hours of practice',
-        labs: [
-            {
-                id: 'metasploit-masters',
-                name: 'Metasploit Framework',
-                icon: '🎯',
-                description: 'Advanced penetration testing with Metasploit. Master exploitation, payload creation, and post-exploitation techniques.',
-                skills: ['Exploitation', 'Payload Creation', 'Post-Exploitation', 'Meterpreter', 'Pivoting'],
-                difficulty: 'Advanced',
-                duration: '20+ Hours',
-                thumbnail: '/images/labs/metasploit-lab.png',
-                exercises: 35
-            },
-            {
-                id: 'nmap-masters',
-                name: 'Nmap Network Scanner',
-                icon: '🔍',
-                description: 'Comprehensive network reconnaissance and vulnerability scanning with advanced NSE scripts.',
-                skills: ['Network Scanning', 'Port Analysis', 'Service Detection', 'NSE Scripts', 'Vulnerability Assessment'],
-                difficulty: 'Intermediate',
-                duration: '15+ Hours',
-                thumbnail: '/images/labs/nmap-lab.png',
-                exercises: 28
-            },
-            {
-                id: 'burpsuite-masters',
-                name: 'Burp Suite Pro',
-                icon: '🕷️',
-                description: 'Master web application security testing with Burp Suite Professional. Learn to find and exploit web vulnerabilities.',
-                skills: ['Web Security', 'SQL Injection', 'XSS', 'CSRF', 'API Testing'],
-                difficulty: 'Advanced',
-                duration: '25+ Hours',
-                thumbnail: '/images/labs/burpsuite-lab.png',
-                exercises: 40
-            },
-            {
-                id: 'wireshark-masters',
-                name: 'Wireshark Analysis',
-                icon: '📡',
-                description: 'Deep packet analysis and network forensics. Capture, analyze, and investigate network traffic.',
-                skills: ['Packet Analysis', 'Protocol Analysis', 'Network Forensics', 'Traffic Monitoring'],
-                difficulty: 'Intermediate',
-                duration: '18+ Hours',
-                thumbnail: '/images/labs/wireshark-lab.png',
-                exercises: 30
-            },
-            {
-                id: 'autopsy-masters',
-                name: 'Autopsy Digital Forensics',
-                icon: '🔬',
-                description: 'Digital forensics investigation platform. Analyze disk images, recover deleted files, and investigate incidents.',
-                skills: ['Digital Forensics', 'Evidence Collection', 'File Recovery', 'Timeline Analysis'],
-                difficulty: 'Advanced',
-                duration: '22+ Hours',
-                thumbnail: '/images/labs/autopsy-lab.png',
-                exercises: 32
-            },
-            {
-                id: 'splunk-masters',
-                name: 'Splunk SIEM',
-                icon: '📊',
-                description: 'Security Information and Event Management with Splunk. Monitor, detect, and respond to security threats.',
-                skills: ['SIEM', 'Log Analysis', 'Threat Detection', 'Incident Response', 'Security Monitoring'],
-                difficulty: 'Advanced',
-                duration: '20+ Hours',
-                thumbnail: '/images/labs/splunk-lab.png',
-                exercises: 28
-            },
-            {
-                id: 'kali-masters',
-                name: 'Kali Linux Advanced',
-                icon: '🐉',
-                description: 'Complete Kali Linux mastery. Learn all essential tools and techniques for professional penetration testing.',
-                skills: ['Linux Administration', 'Tool Mastery', 'Scripting', 'Automation', 'Custom Tools'],
-                difficulty: 'Advanced',
-                duration: '25+ Hours',
-                thumbnail: '/images/labs/kali-lab.png',
-                exercises: 45
-            },
-            {
-                id: 'more-tools-masters',
-                name: '20+ More Tools Covered',
-                icon: '🛠️',
-                description: 'Access to 20+ additional professional security tools including OWASP ZAP, SQLMap, Aircrack-ng, Volatility, Cobalt Strike, John the Ripper, Hashcat, Hydra, and many more.',
-                skills: ['Web Security', 'Wireless Hacking', 'Password Cracking', 'Memory Forensics', 'Red Teaming', 'Automation'],
-                difficulty: 'Advanced',
-                duration: '100+ Hours',
-                thumbnail: '/images/labs/tools-lab.png',
-                exercises: 150
-            }
-        ]
+        labs: COMPREHENSIVE_LABS
+    },
+    'degree-comprehensive': {
+        title: <>Comprehensive Lab <span className="text-accent">Suite</span></>,
+        description: 'Complete hands-on lab environment covering all 6 certifications with 300+ hours of practice',
+        labs: COMPREHENSIVE_LABS
     },
 
     // Data Science & Analytics
