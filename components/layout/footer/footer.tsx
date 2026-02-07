@@ -196,6 +196,22 @@ export default function Footer() {
                                     </Link>
                                 </li>
                                 <li><Link href="/careers">Careers</Link></li>
+                                <li style={{ marginTop: '0.5rem' }}>
+                                    <a
+                                        href="/ehack-handbook/Ehack-Handbook.pdf"
+                                        download="Ehack-Handbook.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#DF6718', fontWeight: 600 }}
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                            <polyline points="7 10 12 15 17 10" />
+                                            <line x1="12" x2="12" y1="15" y2="3" />
+                                        </svg>
+                                        Download Handbook
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
