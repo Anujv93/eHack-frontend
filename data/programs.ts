@@ -3,6 +3,7 @@ export const programs = [
     {
         slug: "masters-ethical-hacking",
         category: "cybersecurity",
+        brochureLink: "master's program.pdf",
         title: "Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (6 Global Certification)",
         subtitle: "with 6 Global Certifications",
         description: "Equip yourself with the skills to protect IT infrastructure, perform vulnerability assessments, and secure organizations against cyber threats.",
@@ -423,6 +424,7 @@ export const programs = [
     {
         slug: "graduate-cybersecurity",
         category: "cybersecurity",
+        brochureLink: "Graduate Program in Ethical Hacking & Cyber Security.pdf.pdf",
         title: "Graduate Program in Ethical Hacking and Cybersecurityᴬᴵ (2 Global Certification)",
         subtitle: "with 2 Global Complimentary Certifications",
         description: "Equip yourself with skills to protect IT infrastructure, secure data, run risk analysis, architect cloud-based security, and achieve compliance.",
@@ -792,6 +794,7 @@ export const programs = [
     {
         slug: "digital-marketing-masterprogram",
         category: "digital-marketing",
+        brochureLink: "Digital Marketing.pdf.pdf",
         title: "Master's Program in Digital Marketing powered by AI",
         subtitle: "Build Digital Careers - Agency Style Training",
         description: "eHack Digital Academy equips you to build your career from scratch with hands-on agency-style training to bridge the industry gap in skilled digital marketing professionals.",
@@ -1038,6 +1041,7 @@ export const programs = [
     {
         slug: "robotics-for-all",
         category: "robotics-iot",
+        brochureLink: "Robotics.pdf.pdf",
         title: "Robotics for Every One - Build Your First Robot with AI",
         subtitle: "Sensors & Actuators | Line Following | Obstacle Avoidance | Bluetooth Control",
         description: "This comprehensive course is designed for absolute beginners who want to learn how to build and program their very own robots from scratch. It takes students on an exciting journey into the world of robotics, starting from basic electronics to building autonomous and remotely controlled robots.",
@@ -1270,6 +1274,7 @@ export const programs = [
     {
         slug: "data-science-analytics",
         category: "data-science",
+        brochureLink: "Data Science & Data Analytics Powered by AI.pdf.pdf",
         title: "Data Science & Data Analytics Powered by AI",
         subtitle: "with 100% Job Assistance & Industry Projects",
         description: "Master our AI-Powered Data Science and Data Analytics certification course. Gain exceptional experience and skills while working on industrial projects with hands-on training in Python, SQL, Machine Learning, and Power BI.",
@@ -1510,6 +1515,7 @@ export const programs = [
     {
         slug: "masterclass-ethical-hacking-ceh-v13",
         category: "cybersecurity",
+        brochureLink: "Certified Ethical Hacker Master Program  CEHᴬᴵ v13.pdf.pdf",
         title: "Certified Ethical Hacker Master Program | CEHᴬᴵ v13",
         subtitle: "with 3 Global EC-Council Certifications",
         description: "A best-in-class program designed to equip students with skills to become experts in cybersecurity. It covers comprehensive approaches to protecting IT infrastructure, securing data and information, running risk analysis and mitigation, architecting cloud-based security, and achieving compliance.",
@@ -1971,6 +1977,7 @@ export const programs = [
     {
         slug: "personality-softskill-development",
         category: "personality-softskills",
+        brochureLink: "Personality & Soft Skill Development Program.pdf.pdf",
         title: "Personality & Soft Skill Development Program",
         subtitle: "Module-wise Syllabus (40 Hours)",
         description: "A comprehensive personality development and soft skills program designed to support placement readiness for students pursuing Cybersecurity, Data Science, Robotics, and Digital Marketing. Master communication, interview skills, corporate readiness, and career planning to land your dream job.",
@@ -2377,6 +2384,7 @@ export const programs = [
     {
         slug: "internship-program",
         category: "internship",
+        brochureLink: "",
         title: "3 Months Internship Program",
         subtitle: "Launch Your Career with Real-World Experience",
         description: "Bridge the gap between academic learning and industry demands with our intensive 3-Month Internship Program. Work on live projects, receive mentorship from industry experts, and gain the practical skills needed to secure a high-paying job in Tech.",

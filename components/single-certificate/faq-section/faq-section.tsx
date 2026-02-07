@@ -41,7 +41,7 @@ export default function FAQSection({ section }: FAQSectionProps) {
     };
 
     return (
-        <section className="section section-white border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="faqs">
+        <section className="section section-white border-bottom" style={{ borderBottom: 'solid 1px #ff6b00' }} id="faqs">
             <div className="container">
                 {/* Section Header */}
                 <div className="section-header">

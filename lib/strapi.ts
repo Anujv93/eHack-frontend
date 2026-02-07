@@ -261,12 +261,18 @@ export interface Certificate {
     Subtitle: string;
     slug: string;
     pageContent: PageContent[];
+    brochure?: {
+        url: string;
+        name: string;
+    };
 }
 
 // Fetch a single certificate by slug
 export async function getCertificateBySlug(slug: string): Promise<Certificate | null> {
     try {
-        const url = `${STRAPI_URL}/api/certificates?filters[slug][$eq]=${encodeURIComponent(slug)}&populate[pageContent][populate]=*`;
+        // Use specific fields for brochure to avoid "Invalid key related at brochure.related" error
+        // when using wildcard population on media fields
+        const url = `${STRAPI_URL}/api/certificates?filters[slug][$eq]=${encodeURIComponent(slug)}&populate[pageContent][populate]=*&populate[brochure][fields][0]=url&populate[brochure][fields][1]=name`;
         console.log('Fetching from:', url);
 
         const res = await fetch(url, {

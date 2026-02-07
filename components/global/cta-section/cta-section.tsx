@@ -9,6 +9,7 @@ export interface CTASectionProps {
     features?: string[];
     certificateTitle?: string;
     certificateSlug?: string;
+    customContent?: React.ReactNode;
 }
 
 export default function CTASection({
@@ -22,6 +23,7 @@ export default function CTASection({
     ],
     certificateTitle = '',
     certificateSlug = '',
+    customContent,
 }: CTASectionProps) {
     const [formData, setFormData] = useState({
         firstName: '',
@@ -135,7 +137,7 @@ export default function CTASection({
     if (!title) return null;
 
     return (
-        <section className="cta-section border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="cta">
+        <section className="cta-section border-bottom" style={{ borderBottom: 'solid 1px #ff6b00' }} id="cta">
             <div className="container">
                 <div className="cta-content">
                     <h2>{title}</h2>
@@ -153,7 +155,9 @@ export default function CTASection({
                 </div>
 
                 <div className="cta-form-wrapper">
-                    {isSubmitted ? (
+                    {customContent ? (
+                        customContent
+                    ) : isSubmitted ? (
                         <div className="cta-form-success">
                             <div className="success-checkmark">✓</div>
                             <h3>Thank You!</h3>

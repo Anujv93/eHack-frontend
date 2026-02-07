@@ -55,7 +55,7 @@ export default function CertificateSummary({
     }
 
     return (
-        <section className="hero-main border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="summary">
+        <section className="hero-main border-bottom" style={{ borderBottom: 'solid 1px #ff6b00' }} id="summary">
             <div className="container">
                 <div className="hero-grid">
                     <div className="hero-left">

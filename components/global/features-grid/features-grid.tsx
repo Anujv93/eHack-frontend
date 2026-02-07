@@ -19,7 +19,7 @@ export default function FeaturesGrid({ title, features }: FeaturesGridProps) {
     }
 
     return (
-        <section className="section section-gray" id="whats-new">
+        <section className="section section-gray" style={{ borderBottom: 'solid 1px #ff6b00' }} id="whats-new">
             <div className="container">
                 {title && (
                     <div className="section-header">
