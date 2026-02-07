@@ -260,6 +260,7 @@ export interface Certificate {
     Title: string;
     Subtitle: string;
     slug: string;
+    pageContent: PageContent[];
     brochure?: {
         url: string;
         name: string;
