@@ -34,21 +34,21 @@
     display: inline-block;
     background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 1.75rem;
     border-radius: 50px;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
 .career-roi-title {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-size: clamp(2.25rem, 4vw, 3rem);
     font-weight: 800;
     color: #1f2937;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     letter-spacing: -0.02em;
 }
 
@@ -57,10 +57,11 @@
 }
 
 .career-roi-subtitle {
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: #4b5563;
-    max-width: 500px;
+    max-width: 100%;
     margin: 0 auto;
+    white-space: nowrap;
 }
 
 /* Main Grid - 4 Equal Columns */
