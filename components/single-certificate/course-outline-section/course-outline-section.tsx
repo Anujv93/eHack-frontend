@@ -49,9 +49,7 @@ export default function CourseOutlineSection({ section, brochureUrl }: CourseOut
                                     {' '}
                                     {module.ModuleTitle}
                                 </span>
-                                <span className={`expand-icon ${expandedModules.has(index) ? 'expanded' : ''}`}>
-                                    +
-                                </span>
+
                             </button>
 
                             {expandedModules.has(index) && module.Topics && module.Topics.length > 0 && (
