@@ -12,6 +12,7 @@ export default function CyberEmpowermentPage() {
     const sections = [
         { id: 'intro', label: 'Overview' },
         { id: 'why-matters', label: 'Why It Matters' },
+        { id: 'case-studies', label: 'Case Studies' },
         { id: 'leadership', label: 'Leadership' },
         { id: 'focus', label: 'Focus Areas' },
         { id: 'impact', label: 'Impact' },
@@ -96,6 +97,27 @@ export default function CyberEmpowermentPage() {
         'Senior Citizens Trained to identify fraud calls, phishing links, and fake messages',
         'Parents & Homemakers Empowered with safe digital practices',
         'Institutions & Colleges Engaged for awareness-driven learning'
+    ];
+
+    const caseStudies = [
+        {
+            title: "Foiling the 'KYC Update' Trap in Pune",
+            image: "https://images.unsplash.com/photo-1516733968668-dbdce39c4651?auto=format&fit=crop&q=60&w=800",
+            desc: "A senior couple was targeted by a sophisticated SMS phishing scam threatening immediate bank account blockage. Having attended eHack's 'Digital Safety for Seniors' workshop, they successfully identified the urgency triggers and fake link patterns.",
+            outcome: "eHack Impact: They ignored the link, contacted their bank directly, and saved their life savings of ₹15 Lakhs."
+        },
+        {
+            title: "Escaping the 'Part-Time Job' Scam in Hyderabad",
+            image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=60",
+            desc: "Recent graduates were lured by fake 'work from home' offers asking for security deposits. eHack's career guidance session highlighted how legitimate companies never ask for money to hire.",
+            outcome: "eHack Impact: 200+ job seekers identified the scam operation and reported it to the National Cyber Crime Portal."
+        },
+        {
+            title: "Preventing Ransomware at a Delhi SME",
+            image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=60",
+            desc: "A healthcare clinic received a malicious 'Invoice' attachment. Thanks to eHack's employee awareness training, the receptionist identified the suspicious sender extension (.exe instead of .pdf) and alerted IT immediately.",
+            outcome: "eHack Impact: A potential ransomware attack was thwarted, protecting sensitive patient data and ₹50L in demands."
+        }
     ];
 
     return (
@@ -198,6 +220,35 @@ export default function CyberEmpowermentPage() {
                     <p className={styles.whyConclusion}>
                         <strong>Cyber Empowerment for All</strong> bridges this gap by combining awareness, hands-on learning, and real-world guidance in a simple, relatable, and practical manner.
                     </p>
+                </div>
+            </section>
+
+            {/* Case Studies Section */}
+            <section id="case-studies" className={styles.caseStudiesSection}>
+                <div className={styles.container}>
+                    <h2 className={styles.sectionTitle}>
+                        Real Stories, <span className={styles.textAccent}>Real Impact</span>
+                    </h2>
+                    <p className={styles.sectionSubtitle}>
+                        See how our initiatives are making a tangible difference in people's digital lives.
+                    </p>
+                    <div className={styles.caseStudiesGrid}>
+                        {caseStudies.map((study, index) => (
+                            <div key={index} className={styles.caseStudyCard}>
+                                <div className={styles.caseStudyImageWrapper}>
+                                    <img src={study.image} alt={study.title} className={styles.caseStudyImage} />
+                                </div>
+                                <div className={styles.caseStudyContent}>
+                                    <h3 className={styles.caseStudyTitle}>{study.title}</h3>
+                                    <p className={styles.caseStudyDesc}>{study.desc}</p>
+                                    <div className={styles.caseStudyOutcome}>
+                                        <strong>Key Outcome</strong>
+                                        <p>{study.outcome}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
