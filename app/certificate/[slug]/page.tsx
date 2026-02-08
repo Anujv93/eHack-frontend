@@ -257,8 +257,7 @@ export default async function CertificatePage({ params }: PageProps) {
             {/* Why eHack Academy Section */}
             <WhyEhackSection programType="cybersecurity" />
 
-            {/* Why Cybersecurity Skills Matter Now Section */}
-            <SkillsMatterSection />
+
 
             {/* Inquiry Form Section */}
             {/* <CertificateInquirySection
@@ -279,6 +278,9 @@ export default async function CertificatePage({ params }: PageProps) {
                 subtitle="Discover other certifications that can help advance your career"
                 certificates={relatedCertificates}
             />
+
+            {/* Why Cybersecurity Skills Matter Now Section - Moved below Related Certificates */}
+            <SkillsMatterSection />
         </div>
     );
 }
