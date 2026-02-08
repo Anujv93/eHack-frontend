@@ -14,7 +14,7 @@ import ProgramToolsSection from '@/components/programs/program-tools-section';
 // Navigation sections configuration
 const NAV_SECTIONS = [
     { id: 'overview', label: 'Overview' },
-    { id: 'reviews', label: 'Reviews' },
+    { id: 'placements', label: 'Placements' }, // Renamed from Reviews
     { id: 'career', label: 'Career' },
     { id: 'certifications', label: 'Certifications' },
     { id: 'structure', label: 'Who Should Enroll' },
@@ -234,7 +234,22 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 <div className="sticky-nav-container">
                     <div className="sticky-nav-links">
                         {NAV_SECTIONS
-                            .filter(section => section.id !== 'labs' || !['data-science', 'robotics-iot', 'digital-marketing', 'internship'].includes(program.category))
+                            .filter(section => {
+                                // Filter Labs
+                                if (section.id === 'labs' && ['data-science', 'robotics-iot', 'digital-marketing', 'internship'].includes(program.category)) return false;
+
+                                // Filter Placements (only for specific programs)
+                                if (section.id === 'placements') {
+                                    const placementPrograms = [
+                                        'masters-ethical-hacking',
+                                        'graduate-cybersecurity',
+                                        'masterclass-ethical-hacking-ceh-v13'
+                                    ];
+                                    return placementPrograms.includes(program.slug);
+                                }
+
+                                return true;
+                            })
                             .map((section) => (
                                 <button
                                     key={section.id}
@@ -254,7 +269,9 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </nav>
 
-            {!['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category) && <PlacementSection />}
+            {!['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category) && (
+                <PlacementSection />
+            )}
 
             {/* 5. COMBINED ROI + JOB ROLES - Career Value Proposition */}
             {program.category !== 'personality-softskills' && (
@@ -601,7 +618,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
 
             {/* Pricing Details */}
-            <section className="pricing-section">
+            <section className="pricing-section" id="pricing">
                 <div className="pricing-container-full">
                     <div className="pricing-header">
                         <h2 className="pricing-title">Program Investment & Financing</h2>
