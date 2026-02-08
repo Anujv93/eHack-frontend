@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
 };
-
+//
 export default async function RootLayout({
   children,
 }: Readonly<{
