@@ -113,6 +113,18 @@ export default function CyberEmpowermentPage() {
             outcome: "eHack Impact: 200+ job seekers identified the scam operation and reported it to the National Cyber Crime Portal."
         },
         {
+            title: "The 'Digital Arrest' Panic in Bangalore",
+            image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&auto=format&fit=crop&q=60",
+            desc: "A software engineer received a video call from a 'CBI Officer' claiming his Aadhaar was linked to money laundering. Remembering eHack's 'Digital Arrest is Fake' campaign, he cut the call instead of transferring money.",
+            outcome: "eHack Impact: He reported the number to 1930 and saved ₹25 Lakhs from being transferred to a 'safe account'."
+        },
+        {
+            title: "FedEx 'Drugs in Parcel' Scam in Delhi",
+            image: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&auto=format&fit=crop&q=60",
+            desc: "A homemaker got a call about a 'confiscated parcel with drugs' addressed to her. She recalled eHack's tip: 'Couriers don't call you to the police station'. She verified with the official courier app.",
+            outcome: "eHack Impact: Zero panic, zero loss. She blocked the caller and warned her family group."
+        },
+        {
             title: "Preventing Ransomware at a Delhi SME",
             image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=60",
             desc: "A healthcare clinic received a malicious 'Invoice' attachment. Thanks to eHack's employee awareness training, the receptionist identified the suspicious sender extension (.exe instead of .pdf) and alerted IT immediately.",
@@ -232,22 +244,25 @@ export default function CyberEmpowermentPage() {
                     <p className={styles.sectionSubtitle}>
                         See how our initiatives are making a tangible difference in people's digital lives.
                     </p>
-                    <div className={styles.caseStudiesGrid}>
-                        {caseStudies.map((study, index) => (
-                            <div key={index} className={styles.caseStudyCard}>
-                                <div className={styles.caseStudyImageWrapper}>
-                                    <img src={study.image} alt={study.title} className={styles.caseStudyImage} />
-                                </div>
-                                <div className={styles.caseStudyContent}>
-                                    <h3 className={styles.caseStudyTitle}>{study.title}</h3>
-                                    <p className={styles.caseStudyDesc}>{study.desc}</p>
-                                    <div className={styles.caseStudyOutcome}>
-                                        <strong>Key Outcome</strong>
-                                        <p>{study.outcome}</p>
+                    <div className={styles.marqueeContainer}>
+                        <div className={styles.marqueeTrack}>
+                            {/* Duplicate items for seamless left-to-right loop */}
+                            {[...caseStudies, ...caseStudies].map((study, index) => (
+                                <div key={index} className={styles.caseStudyCard}>
+                                    <div className={styles.caseStudyImageWrapper}>
+                                        <img src={study.image} alt={study.title} className={styles.caseStudyImage} />
+                                    </div>
+                                    <div className={styles.caseStudyContent}>
+                                        <h3 className={styles.caseStudyTitle}>{study.title}</h3>
+                                        <p className={styles.caseStudyDesc}>{study.desc}</p>
+                                        <div className={styles.caseStudyOutcome}>
+                                            <strong>Key Outcome</strong>
+                                            <p>{study.outcome}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
