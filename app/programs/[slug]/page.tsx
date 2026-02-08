@@ -167,6 +167,18 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                     {program.title.split('Internship')[0]}
                                     <span className="text-accent">Internship Program<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
                                 </>
+                            ) : program.title.includes('Data Science') ? (
+                                <>
+                                    <span className="text-accent">Data Science & Data Analytics</span> Powered by AI
+                                </>
+                            ) : program.title.includes('Robotics') ? (
+                                <>
+                                    <span className="text-accent">Robotics for Every One</span> - Build Your First Robot with AI
+                                </>
+                            ) : program.title.includes('Personality') ? (
+                                <>
+                                    <span className="text-accent">Personality & Soft Skill Development</span> Program
+                                </>
                             ) : (
                                 program.title
                             )}
