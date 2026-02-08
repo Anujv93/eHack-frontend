@@ -902,11 +902,16 @@ export const programs = [
             "Business Development Executive", "PPC Specialist", "Email Marketing Manager", "Digital Marketing Consultant"
         ],
         pricing: {
-            original: "₹75,000",
-            discounted: "₹45,000",
-            emi: "Contact for EMI options",
+            original: "₹1,25,000",
+            discounted: "₹95,000",
+            emi: "₹13,750 X 4",
             applicationFee: "₹1,000",
-            admissionFee: "₹45,000"
+            admissionFee: "₹95,000",
+            companyEMI: "₹1,10,000",
+            upfrontPercentage: "50%",
+            upfrontAmount: "₹55,000",
+            emiCount: 4,
+            emiAmount: "13,750"
         },
         partnerLogos: [
             "/images/partners/google.png",
@@ -1373,14 +1378,14 @@ export const programs = [
         pricing: {
             original: "₹2,00,000",
             discounted: "₹1,10,000",
-            emi: "₹18,333/month",
+            emi: "₹17,500 X 4",
             applicationFee: "₹1,000",
             admissionFee: "₹1,10,000",
-            companyEMI: "₹1,30,000",
+            companyEMI: "₹1,40,000",
             upfrontPercentage: "50%",
-            upfrontAmount: "₹65,000",
+            upfrontAmount: "₹70,000",
             emiCount: 4,
-            emiAmount: "₹18,750"
+            emiAmount: "₹17,500"
         },
         partnerLogos: [
             "/images/partners/python.png",
@@ -1839,11 +1844,16 @@ export const programs = [
             "Chief Information Security Officer", "Network Engineer/Security Architect", "Incident Handler"
         ],
         pricing: {
-            original: "₹1,20,000",
+            original: "₹1,25,000",
             discounted: "₹95,000",
-            emi: "No Cost EMI Available",
+            emi: "₹28,750 X 2",
             applicationFee: "₹1,000",
-            admissionFee: "₹95,000"
+            admissionFee: "₹95,000",
+            companyEMI: "₹1,15,000",
+            upfrontPercentage: "50%",
+            upfrontAmount: "₹57,500",
+            emiCount: 2,
+            emiAmount: "28,750"
         },
         partnerLogos: [
             "/images/partners/checkpoint.png",
@@ -2257,11 +2267,11 @@ export const programs = [
             "Business Development Executive", "HR Executive", "Corporate Trainer", "Sales Executive"
         ],
         pricing: {
-            original: "₹40,000",
-            discounted: "₹25,000",
+            original: "₹50,000",
+            discounted: "₹35,000",
             emi: "Contact for EMI options",
             applicationFee: "₹1,000",
-            admissionFee: "₹25,000"
+            admissionFee: "₹35,000"
         },
         partnerLogos: [
             "/ehack-black.png"
@@ -2463,14 +2473,9 @@ export const programs = [
         pricing: {
             original: "₹30,000",
             discounted: "₹30,000",
-            emi: "₹5,000/month",
             applicationFee: "₹500",
             admissionFee: "₹30,000",
             companyEMI: "Contact for options",
-            upfrontPercentage: "50%",
-            upfrontAmount: "₹7,500",
-            emiCount: 2,
-            emiAmount: "₹3,750"
         },
         partnerLogos: [
             "/ehack-black.png"

@@ -65,12 +65,12 @@ const program = {
     ],
     pricing: {
         applicationFee: "₹1,000",
-        admissionFee: "₹2,25,000",
-        companyEMI: "₹2,75,000",
+        admissionFee: "₹4,00,000",
+        companyEMI: "₹4,50,000",
         upfrontPercentage: "50%",
-        upfrontAmount: "₹1,37,500",
+        upfrontAmount: "₹2,25,500",
         emiCount: 4,
-        emiAmount: "₹34,375",
+        emiAmount: "56,250",
         note: "*GST as applicable"
     },
     faq: [
