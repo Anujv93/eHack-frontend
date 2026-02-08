@@ -680,7 +680,7 @@ export default function BSCSPage() {
                                 <div className="fee-row">
                                     <span className="fee-label-text">
                                         <span className="fee-icon-wrapper primary"><Gem size={18} /></span>
-                                        Program Fee
+                                        Program Fee.
                                     </span>
                                     <span className="fee-value-large">{program.pricing.admissionFee}</span>
                                 </div>
