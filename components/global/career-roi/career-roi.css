@@ -1,0 +1,379 @@
+/* ============================================
+   Career ROI Section
+   4 Equal Grid Layout - Clean Design
+   ============================================ */
+
+.career-roi-section {
+    padding: var(--space-12) 0;
+    background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.career-roi-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23FF6B00" opacity="0.08"/><circle cx="80" cy="80" r="2" fill="%23FF6B00" opacity="0.08"/><circle cx="50" cy="50" r="1.5" fill="%23FF6B00" opacity="0.1"/></svg>');
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+/* Header */
+.career-roi-header {
+    text-align: center;
+    margin-bottom: var(--space-10);
+    position: relative;
+    z-index: 2;
+}
+
+.career-roi-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+.career-roi-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.career-roi-title .highlight-orange {
+    color: #ff6b00;
+}
+
+.career-roi-subtitle {
+    font-size: 1rem;
+    color: #4b5563;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Main Grid - 4 Equal Columns */
+.career-roi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+    position: relative;
+    z-index: 2;
+}
+
+/* ROI Cards - Equal Size */
+.roi-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: var(--space-6);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 107, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.roi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(255, 107, 0, 0.25);
+}
+
+.roi-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 var(--space-5) 0;
+    text-align: center;
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid rgba(255, 107, 0, 0.15);
+}
+
+/* Salary Card */
+.salary-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+    flex: 1;
+}
+
+.salary-bar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.salary-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.salary-value {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.salary-value.before {
+    color: #6b7280;
+}
+
+.salary-value.after {
+    color: #ff6b00;
+}
+
+.salary-bar-track {
+    height: 16px;
+    background: #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.salary-bar {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.before-bar {
+    background: linear-gradient(90deg, #9ca3af 0%, #6b7280 100%);
+}
+
+.after-bar {
+    background: linear-gradient(90deg, #ff6b00 0%, #ff9933 100%);
+    box-shadow: 0 2px 10px rgba(255, 107, 0, 0.3);
+}
+
+.increase-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.increase-value {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.increase-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* Demand Card */
+.demand-circle-container {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto var(--space-4);
+}
+
+.demand-circle {
+    width: 100%;
+    height: 100%;
+}
+
+.demand-circle-bg {
+    stroke: #e5e7eb;
+}
+
+.demand-circle-progress {
+    stroke: #ff6b00;
+    stroke-linecap: round;
+    transition: stroke-dasharray 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.demand-circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.demand-percent {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #ff6b00;
+    line-height: 1;
+}
+
+.demand-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #6b7280;
+    margin-top: 0.2rem;
+}
+
+.demand-growth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 107, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.growth-value {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ff6b00;
+}
+
+.growth-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+/* Stats Card */
+.stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    flex: 1;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0.75rem;
+    background: rgba(255, 107, 0, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(255, 107, 0, 0.12);
+}
+
+.stat-value {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #1f2937;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+/* Roles Card */
+.roles-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    flex: 1;
+}
+
+.role-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 107, 0, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.role-item:hover {
+    background: rgba(255, 107, 0, 0.12);
+    transform: translateX(3px);
+}
+
+.role-number {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.role-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .career-roi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .career-roi-section {
+        padding: var(--space-10) 0;
+    }
+
+    .career-roi-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .roi-card {
+        padding: var(--space-5);
+    }
+}
+
+@media (max-width: 480px) {
+    .career-roi-section {
+        padding: var(--space-8) 0;
+    }
+
+    .career-roi-title {
+        font-size: 1.5rem;
+    }
+
+    .career-roi-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .roi-card {
+        padding: var(--space-4);
+        border-radius: 12px;
+    }
+
+    .roi-card-title {
+        font-size: 1rem;
+    }
+}

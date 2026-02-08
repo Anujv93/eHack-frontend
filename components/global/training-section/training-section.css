@@ -2,8 +2,8 @@
    Ehack Training Section
    ============================================ */
 .ehack-training-section {
-    padding: var(--space-20) 0;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: var(--space-12) 0;
+    background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
     position: relative;
     overflow: hidden;
 }
@@ -31,7 +31,7 @@
 }
 
 .ehack-training-section .section-header h2 {
-    color: var(--ec-white);
+    color: #1f2937;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 800;
     margin-bottom: var(--space-2);
@@ -83,7 +83,7 @@
 
 .section-subtitle {
     font-size: var(--font-size-lg);
-    color: var(--ec-gray-400);
+    color: #374151;
     margin-top: var(--space-4);
 }
 
@@ -245,17 +245,18 @@
 
 /* Info Card */
 .ehack-info-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 107, 0, 0.2);
     border-radius: 16px;
     padding: var(--space-8);
     backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .ehack-info-card h4 {
     font-size: var(--font-size-xl);
     font-weight: 700;
-    color: var(--ec-white);
+    color: #1f2937;
     margin-bottom: var(--space-6);
 }
 
@@ -269,7 +270,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.9);
     padding: var(--space-4);
     border-radius: 12px;
     border: 1px solid rgba(255, 107, 0, 0.2);
@@ -288,13 +289,13 @@
 .batch-details h5 {
     font-size: var(--font-size-base);
     font-weight: 700;
-    color: var(--ec-white);
+    color: #1f2937;
     margin-bottom: var(--space-1);
 }
 
 .batch-details p {
     font-size: var(--font-size-sm);
-    color: var(--ec-gray-400);
+    color: #4b5563;
 }
 
 .batch-time {
@@ -317,23 +318,24 @@
 
 .academy-hours p {
     font-size: var(--font-size-sm);
-    color: var(--ec-gray-300);
+    color: #374151;
 }
 
 /* Admission Process */
 .admission-process {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 107, 0, 0.2);
     border-radius: 16px;
     padding: var(--space-10);
     margin-bottom: var(--space-10);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .admission-process h4 {
     text-align: center;
     font-size: var(--font-size-xl);
     font-weight: 700;
-    color: var(--ec-white);
+    color: #1f2937;
     margin-bottom: var(--space-8);
 }
 
@@ -374,13 +376,13 @@
 .step-content h5 {
     font-size: var(--font-size-base);
     font-weight: 700;
-    color: var(--ec-white);
+    color: #1f2937;
     margin-bottom: var(--space-2);
 }
 
 .step-content p {
     font-size: var(--font-size-sm);
-    color: var(--ec-gray-400);
+    color: #4b5563;
 }
 
 .process-connector {
@@ -405,7 +407,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    color: var(--ec-white);
+    color: #1f2937;
     font-size: var(--font-size-sm);
 }
 

@@ -14,6 +14,7 @@ import CertificateInquirySection from "@/components/global/certificate-inquiry/c
 import JobRolesSection from "@/components/single-certificate/job-roles-section/job-roles-section";
 import CourseOutlineSection from "@/components/single-certificate/course-outline-section/course-outline-section";
 import FAQSection from "@/components/single-certificate/faq-section/faq-section";
+import CareerROI from "@/components/global/career-roi/career-roi";
 import {
     getCertificateBySlug,
     getAdmissionProcess,
@@ -142,11 +143,18 @@ export default async function CertificatePage({ params }: PageProps) {
         dynamicNavSections.push({ id: 'exam-details', label: 'Exam Details' });
     }
 
-    // Always add Labs section for cybersecurity certifications
-    dynamicNavSections.push({ id: 'labs', label: 'Hands-On Labs' });
+    // Career ROI - Always show (hardcoded section)
+    dynamicNavSections.push({ id: 'career-roi', label: 'Career ROI' });
 
     if (targetAudienceSection?.Audiences && targetAudienceSection.Audiences.length > 0) {
         dynamicNavSections.push({ id: 'target-audience', label: 'Who Should Enroll' });
+    }
+
+    // Labs section - after Who Should Enroll
+    dynamicNavSections.push({ id: 'labs', label: 'Hands-On Labs' });
+
+    if (courseOutlineSection?.Modules && courseOutlineSection.Modules.length > 0) {
+        dynamicNavSections.push({ id: 'course-outline', label: 'Course Outline' });
     }
 
     if (accreditationsSection?.Accreditations && accreditationsSection.Accreditations.length > 0) {
@@ -160,10 +168,6 @@ export default async function CertificatePage({ params }: PageProps) {
 
     if (jobRolesSection?.JobRoles && jobRolesSection.JobRoles.length > 0) {
         dynamicNavSections.push({ id: 'job-roles', label: 'Job Roles' });
-    }
-
-    if (courseOutlineSection?.Modules && courseOutlineSection.Modules.length > 0) {
-        dynamicNavSections.push({ id: 'course-outline', label: 'Course Outline' });
     }
 
     if (faqSection?.FAQs && faqSection.FAQs.length > 0) {
@@ -206,6 +210,15 @@ export default async function CertificatePage({ params }: PageProps) {
                 audiences={targetAudienceSection?.Audiences}
             />
 
+            {/* Hands-On Labs Section - Moved to after Who Should Enroll */}
+            <CertificateLabsWrapper
+                certificateSlug={slug}
+                certificateTitle={certificate.Title}
+            />
+
+            {/* Course Outline Section */}
+            {courseOutlineSection && <CourseOutlineSection section={courseOutlineSection} brochureUrl={certificate.brochure?.url ? getStrapiMediaUrl(certificate.brochure.url) : undefined} />}
+
             <TrainingSection
                 badgeText={trainingSection?.BadgeText}
                 title={trainingSection?.Title}
@@ -227,22 +240,14 @@ export default async function CertificatePage({ params }: PageProps) {
                 examCards={examDetailsSection?.ExamCards}
             />
 
-            {/* Hands-On Labs Section */}
-            <CertificateLabsWrapper
-                certificateSlug={slug}
-                certificateTitle={certificate.Title}
-            />
-
-
+            {/* Career ROI Section - Hardcoded with certificate-specific data */}
+            <CareerROI certificateSlug={slug} />
 
             {/* Career Stats Section */}
             {careerStatsSection && <CareerStatsSection section={careerStatsSection} />}
 
             {/* Job Roles Section */}
             {jobRolesSection && <JobRolesSection section={jobRolesSection} />}
-
-            {/* Course Outline Section */}
-            {courseOutlineSection && <CourseOutlineSection section={courseOutlineSection} brochureUrl={certificate.brochure?.url ? getStrapiMediaUrl(certificate.brochure.url) : undefined} />}
 
             {/* FAQ Section */}
             {faqSection && <FAQSection section={faqSection} />}
