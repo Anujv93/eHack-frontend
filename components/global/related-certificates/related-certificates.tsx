@@ -27,7 +27,14 @@ export default function RelatedCertificates({
                         </svg>
                         Recommended For You
                     </div>
-                    <h2 className="related-certificates-title">{title}</h2>
+                    <h2 className="related-certificates-title">
+                        {title.split(' ').map((word, i) => {
+                            if (word.toLowerCase().includes('certifications') || word.toLowerCase().includes('more')) {
+                                return <span key={i} style={{ color: '#ff6b00' }}>{word} </span>;
+                            }
+                            return <span key={i}>{word} </span>;
+                        })}
+                    </h2>
                     <p className="related-certificates-subtitle">{subtitle}</p>
                 </div>
 

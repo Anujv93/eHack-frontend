@@ -12,9 +12,11 @@ import RelatedCertificates from "@/components/global/related-certificates/relate
 import CertificateLabsWrapper from "@/components/global/certificate-labs/CertificateLabsWrapper";
 import CertificateInquirySection from "@/components/global/certificate-inquiry/certificate-inquiry";
 import JobRolesSection from "@/components/single-certificate/job-roles-section/job-roles-section";
+import PlacementSection from "@/components/home/placement-section";
 import CourseOutlineSection from "@/components/single-certificate/course-outline-section/course-outline-section";
 import FAQSection from "@/components/single-certificate/faq-section/faq-section";
 import { WhyEhackSection } from "@/components/single-certificate/why-ehack-section/why-ehack-section";
+import SkillsMatterSection from "@/components/global/skills-matter/skills-matter";
 import CareerROI from "@/components/global/career-roi/career-roi";
 import {
     getCertificateBySlug,
@@ -232,6 +234,10 @@ export default async function CertificatePage({ params }: PageProps) {
                 pricingFeatures={trainingSection?.PricingFeatures}
                 admissionProcess={admissionProcess || undefined}
             />
+
+            {/* Placement Section - From Learning to Leading */}
+            <PlacementSection />
+
             <LearningFramework
                 title={learningFrameworkSection?.Title}
                 steps={learningFrameworkSection?.Steps}
@@ -256,6 +262,8 @@ export default async function CertificatePage({ params }: PageProps) {
             {/* Why eHack Academy Section */}
             <WhyEhackSection programType="cybersecurity" />
 
+
+
             {/* Inquiry Form Section */}
             {/* <CertificateInquirySection
                 certificateTitle={certificate.Title}
@@ -275,6 +283,9 @@ export default async function CertificatePage({ params }: PageProps) {
                 subtitle="Discover other certifications that can help advance your career"
                 certificates={relatedCertificates}
             />
+
+            {/* Why Cybersecurity Skills Matter Now Section - Moved below Related Certificates */}
+            <SkillsMatterSection />
         </div>
     );
 }

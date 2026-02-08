@@ -270,6 +270,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
         { id: 'testimonials', label: 'Success Stories' },
         { id: 'certifications', label: 'Globally Recognized & Authorized' },
         { id: 'social-impact', label: 'Social Impact & Strategic Growth' },
+        { id: 'cyber-empowerment', label: 'Cyber Empowerment for All' },
     ];
 
     return (
@@ -715,7 +716,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
 
             {/* Cyber Empowerment Initiative - Premium Showcase Section */}
-            <section className={styles.ceShowcaseSection}>
+            <section id="cyber-empowerment" className={styles.ceShowcaseSection}>
                 {/* Animated Background */}
                 <div className={styles.ceBackdrop}>
                     <div className={styles.ceGradientOrb}></div>

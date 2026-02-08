@@ -109,7 +109,7 @@ export default function TrainingSection({
                 {(badgeText || title) && (
                     <div className="section-header">
                         {badgeText && (
-                            <span className="anniversary-badge">🎉 {badgeText}</span>
+                            <span className="anniversary-badge">{badgeText}</span>
                         )}
                         {title && (
                             <>
