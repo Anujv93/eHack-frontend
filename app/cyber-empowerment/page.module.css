@@ -286,10 +286,40 @@
 }
 
 .caseStudiesGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* fallback */
+    display: flex;
+    overflow: hidden;
+}
+
+.marqueeContainer {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marqueeTrack {
+    display: flex;
     gap: 2rem;
-    margin-top: 3rem;
+    width: max-content;
+    animation: scrollRight 80s linear infinite;
+    /* Slower speed for better readability */
+}
+
+/* Pause on hover for readability */
+.marqueeTrack:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .caseStudyCard {
@@ -301,6 +331,9 @@
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    width: 400px;
+    /* Fixed width for marquee items */
+    flex-shrink: 0;
 }
 
 .caseStudyCard:hover {
