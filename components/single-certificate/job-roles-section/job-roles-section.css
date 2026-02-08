@@ -1,128 +1,346 @@
-/* Job Roles Section */
+/* ============================================
+   Career Paths Section - Light Theme Premium
+   Professional & Appealing Layout
+   ============================================ */
+
 .job-roles-section {
-    padding: var(--space-20) 0;
-    background: var(--neutral-white);
-}
-
-.job-roles-card {
-    background: var(--neutral-900);
-    border-radius: var(--radius-2xl);
-    padding: var(--space-16) var(--space-12);
+    padding: var(--space-6) 0;
+    background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
     position: relative;
-    border-bottom: 6px solid var(--brand-primary);
-    box-shadow: var(--shadow-xl);
+    overflow: hidden;
 }
 
-.job-roles-icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto var(--space-6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--brand-primary);
+/* Background decorative elements */
+.job-roles-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="1.5" fill="%23FF6B00" opacity="0.06"/><circle cx="75" cy="75" r="1.5" fill="%23FF6B00" opacity="0.06"/></svg>');
+    background-size: 50px 50px;
+    pointer-events: none;
 }
 
-.job-roles-icon svg {
-    width: 100%;
-    height: 100%;
+/* Header */
+.job-roles-header {
+    text-align: center;
+    margin-bottom: var(--space-10);
+    position: relative;
+    z-index: 2;
+}
+
+.job-roles-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
 .job-roles-title {
-    font-size: var(--font-size-3xl);
-    font-weight: 700;
-    color: var(--neutral-white);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.title-highlight {
+    color: #ff6b00;
+}
+
+.job-roles-subtitle {
+    font-size: 1.125rem;
+    color: #4b5563;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Showcase Layout */
+.job-roles-showcase {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-6);
+    position: relative;
+    z-index: 2;
+    margin-bottom: var(--space-8);
+}
+
+/* Featured Role Card */
+.featured-role-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #ff6b00;
+    border-radius: 16px;
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin: 0 0 var(--space-4) 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 240px;
+    box-shadow: 0 8px 30px rgba(255, 107, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.featured-role-card:hover {
+    border-color: #ff6b00;
+    box-shadow: 0 12px 35px rgba(255, 107, 0, 0.25);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.3);
+}
+
+.featured-role-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0;
     line-height: 1.3;
 }
 
-.job-roles-description {
-    font-size: var(--font-size-lg);
-    color: var(--neutral-300);
-    text-align: center;
-    margin: 0 0 var(--space-10) 0;
+.featured-decoration {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: var(--space-5);
 }
 
-.job-roles-grid {
+.decoration-line {
+    width: 35px;
+    height: 2px;
+    background: rgba(255, 107, 0, 0.4);
+}
+
+.decoration-dot {
+    width: 8px;
+    height: 8px;
+    background: #ff6b00;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+/* Roles Grid */
+.roles-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-10);
-    margin-top: var(--space-8);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
 }
 
-.job-roles-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.role-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #ff6b00;
+    border-radius: 12px;
+    padding: var(--space-4) var(--space-5);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.1);
+}
+
+.role-card:hover {
+    background: #ffffff;
+    border-color: #ff8533;
+    transform: translateX(6px);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.2);
+}
+
+.role-card:hover .indicator-line {
+    width: 20px;
+    background: #ff6b00;
+}
+
+.role-card:hover .role-name {
+    color: #1f2937;
+}
+
+.role-indicator {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indicator-line {
+    width: 12px;
+    height: 3px;
+    background: rgba(255, 107, 0, 0.4);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.role-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #374151;
+    transition: all 0.3s ease;
+}
+
+/* Footer Stats */
+.roles-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-16);
+    padding: var(--space-8) var(--space-12);
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #ff6b00;
+    border-radius: 16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 30px rgba(255, 107, 0, 0.15);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-stat {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    align-items: center;
+    text-align: center;
 }
 
-.job-role-item {
-    font-size: var(--font-size-base);
-    color: var(--neutral-white);
-    padding-left: var(--space-6);
-    position: relative;
-    line-height: 1.6;
-    font-weight: 500;
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff6b00;
+    line-height: 1;
 }
 
-.job-role-item::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--brand-primary);
-    font-size: var(--font-size-2xl);
-    font-weight: bold;
-    line-height: 1.6;
+.stat-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6b7280;
+    margin-top: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.footer-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255, 107, 0, 0.2);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .job-roles-section {
-        padding: var(--space-12) 0;
-    }
-
-    .job-roles-card {
-        padding: var(--space-10) var(--space-6);
-    }
-
-    .job-roles-grid {
+@media (max-width: 1024px) {
+    .job-roles-showcase {
         grid-template-columns: 1fr;
-        gap: var(--space-6);
     }
 
-    .job-roles-title {
-        font-size: var(--font-size-2xl);
+    .featured-role-card {
+        min-height: 180px;
     }
 
-    .job-roles-icon {
-        width: 52px;
-        height: 52px;
-    }
-
-    .job-roles-description {
-        font-size: var(--font-size-base);
-    }
-
-    .job-role-item {
-        font-size: var(--font-size-sm);
+    .roles-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 640px) {
-    .job-roles-card {
-        padding: var(--space-8) var(--space-5);
-        border-bottom-width: 4px;
+@media (max-width: 768px) {
+    .job-roles-section {
+        padding: var(--space-10) 0;
+    }
+
+    .roles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .roles-footer {
+        flex-wrap: wrap;
+        gap: var(--space-5);
+        padding: var(--space-5);
+    }
+
+    .footer-divider {
+        display: none;
+    }
+
+    .footer-stat {
+        flex: 1;
+        min-width: 90px;
     }
 
     .job-roles-title {
-        font-size: var(--font-size-xl);
+        font-size: 1.75rem;
     }
 
-    .job-role-item {
-        padding-left: var(--space-5);
+    .job-roles-subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-role-card {
+        padding: var(--space-6);
+        min-height: 160px;
+    }
+
+    .featured-role-name {
+        font-size: 1.25rem;
+    }
+
+    .featured-badge {
+        top: 14px;
+        right: 14px;
+        font-size: 0.6rem;
+        padding: 0.35rem 0.75rem;
+    }
+
+    .role-card {
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .role-name {
+        font-size: 0.85rem;
+    }
+
+    .stat-number {
+        font-size: 1.15rem;
+    }
+
+    .stat-text {
+        font-size: 0.7rem;
     }
 }

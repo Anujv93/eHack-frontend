@@ -710,46 +710,72 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                             </Link>
                         </div>
                     </div>
-                    {/* Cyber Empowerment Banner - Following Ribbon Card Structure */}
-                    <div className={styles.ribbonGridItem} style={{ marginTop: '2rem' }}>
-                        <div className={`${styles.ribbonTitleStrip} ${styles.empowermentTitleStrip}`}>Cyber Empowerment Initiative</div>
-                        <Link href="/cyber-empowerment" className={`${styles.ribbonCard} ${styles.empowermentRibbon}`}>
-                            <div className={styles.ribbonImageWrapper}>
-                                <div className={styles.floatingImage}>
-                                    <img
-                                        src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                                        alt="Cyber Empowerment for All"
-                                        className={styles.ribbonImage}
-                                    />
-                                </div>
+                </div>
+            </section>
+
+
+            {/* Cyber Empowerment Initiative - Premium Showcase Section */}
+            <section className={styles.ceShowcaseSection}>
+                {/* Animated Background */}
+                <div className={styles.ceBackdrop}>
+                    <div className={styles.ceGradientOrb}></div>
+                    <div className={styles.ceGradientOrb2}></div>
+                    <div className={styles.ceGridPattern}></div>
+                </div>
+
+
+                <div className={styles.container}>
+                    {/* Section Header */}
+                    <div className={styles.sectionHeader} style={{ textAlign: 'center', marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <span className={styles.sectionBadge}>Initiative by eHack Academy, Bangalore</span>
+                    </div>
+
+                    {/* Main Content Grid */}
+                    <div className={styles.ceMainGrid}>
+                        {/* Visual Side */}
+                        <div className={styles.ceVisualColumn}>
+                            <div className={styles.ceImageContainer}>
+                                <img
+                                    src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                    alt="Cyber Empowerment"
+                                    className={styles.ceMainImage}
+                                />
+                                <div className={styles.ceImageShine}></div>
                             </div>
-                            <div className={styles.ribbonContent}>
-                                <span className={styles.ribbonBadge}>A New Initiative by eHack Academy, Bangalore</span>
-                                <h3 className={styles.ribbonTitle}>Cyber Empowerment for All</h3>
-                                <p className={styles.ribbonText}>Empowering Young Minds & Experienced Lives in the Digital World. Our initiative bridges the digital divide by providing free cybersecurity awareness sessions to students, senior citizens, and communities across India – making online safety accessible to everyone.</p>
-                                <div className={styles.cyberEmpowermentStats}>
-                                    <div className={styles.cyberEmpowermentStat}>
-                                        <span className={styles.cyberEmpowermentStatValue}>1000+</span>
-                                        <span className={styles.cyberEmpowermentStatLabel}>Participants</span>
-                                    </div>
-                                    <div className={styles.cyberEmpowermentStat}>
-                                        <span className={styles.cyberEmpowermentStatValue}>100+</span>
-                                        <span className={styles.cyberEmpowermentStatLabel}>Sessions</span>
-                                    </div>
-                                    <div className={styles.cyberEmpowermentStat}>
-                                        <span className={styles.cyberEmpowermentStatValue}>50+</span>
-                                        <span className={styles.cyberEmpowermentStatLabel}>Institutions</span>
-                                    </div>
-                                </div>
-                                <div className={styles.ribbonAction}>
-                                    Learn More <ArrowRight size={20} />
-                                </div>
+                        </div>
+
+                        {/* Content Side */}
+                        <div className={styles.ceContentColumn}>
+                            <h2 className={styles.ceHeadline}>
+                                Cyber <span className={styles.ceHeadlineAccent}>Empowerment</span> for All
+                            </h2>
+
+                            <p className={styles.ceTagline}>
+                                Empowering Young Minds & Experienced Lives in the Digital World
+                            </p>
+
+                            <p className={styles.ceDescription}>
+                                Our initiative bridges the digital divide by providing <strong>free cybersecurity awareness sessions</strong> to students, senior citizens, and communities across India — making online safety accessible to everyone.
+                            </p>
+
+                            {/* Feature Pills */}
+                            <div className={styles.ceFeaturePills}>
+                                <span className={styles.cePill}>Free Sessions</span>
+                                <span className={styles.cePill}>Students</span>
+                                <span className={styles.cePill}>Senior Citizens</span>
+                                <span className={styles.cePill}>Communities</span>
                             </div>
-                            <div className={styles.ribbonPattern}></div>
-                        </Link>
+
+                            {/* CTA */}
+                            <Link href="/cyber-empowerment" className={styles.ceCTAButton}>
+                                <span>Explore Our Initiative</span>
+                                <ArrowRight size={20} />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
+
 
             {/* CTA Section */}
             <section className={styles.ctaSection}>
