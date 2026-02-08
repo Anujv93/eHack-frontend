@@ -59,12 +59,15 @@
     display: inline-block;
     background: linear-gradient(135deg, var(--ec-red) 0%, #ff9933 100%);
     color: var(--ec-white);
-    padding: 8px 24px;
+    padding: 10px 30px;
     border-radius: 50px;
-    font-size: var(--font-size-sm);
-    font-weight: 700;
+    font-size: var(--font-size-base);
+    font-weight: 800;
     margin-bottom: var(--space-4);
-    animation: pulse 2s ease-in-out infinite;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+    /* animation: pulse 2s ease-in-out infinite; */
 }
 
 @keyframes pulse {
@@ -110,6 +113,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ff6b00;
 }
 
 .ehack-pricing-card.featured::before {
@@ -246,7 +250,7 @@
 /* Info Card */
 .ehack-info-card {
     background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 107, 0, 0.2);
+    border: 1px solid #ff6b00;
     border-radius: 16px;
     padding: var(--space-8);
     backdrop-filter: blur(10px);
@@ -313,6 +317,7 @@
     padding: var(--space-4);
     background: rgba(255, 107, 0, 0.1);
     border-radius: 8px;
+    border: 1px solid #ff6b00;
     text-align: center;
 }
 
@@ -324,7 +329,7 @@
 /* Admission Process */
 .admission-process {
     background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 107, 0, 0.2);
+    border: 1px solid #ff6b00;
     border-radius: 16px;
     padding: var(--space-10);
     margin-bottom: var(--space-10);
@@ -408,13 +413,20 @@
     align-items: center;
     gap: var(--space-3);
     color: #1f2937;
-    font-size: var(--font-size-sm);
+    font-size: 1.125rem;
+    /* Increased size */
+    font-weight: 700;
+    /* Increased weight */
 }
 
 .contact-item svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    /* Increased size */
+    height: 24px;
+    /* Increased size */
     stroke: var(--ec-red);
+    stroke-width: 2.5;
+    /* Thicker stroke */
 }
 
 /* Responsive */

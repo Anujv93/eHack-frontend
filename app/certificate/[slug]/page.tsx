@@ -15,6 +15,7 @@ import JobRolesSection from "@/components/single-certificate/job-roles-section/j
 import CourseOutlineSection from "@/components/single-certificate/course-outline-section/course-outline-section";
 import FAQSection from "@/components/single-certificate/faq-section/faq-section";
 import { WhyEhackSection } from "@/components/single-certificate/why-ehack-section/why-ehack-section";
+import SkillsMatterSection from "@/components/global/skills-matter/skills-matter";
 import CareerROI from "@/components/global/career-roi/career-roi";
 import {
     getCertificateBySlug,
@@ -255,6 +256,9 @@ export default async function CertificatePage({ params }: PageProps) {
 
             {/* Why eHack Academy Section */}
             <WhyEhackSection programType="cybersecurity" />
+
+            {/* Why Cybersecurity Skills Matter Now Section */}
+            <SkillsMatterSection />
 
             {/* Inquiry Form Section */}
             {/* <CertificateInquirySection
