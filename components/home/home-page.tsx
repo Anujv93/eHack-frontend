@@ -728,7 +728,8 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                 <div className={styles.container}>
                     {/* Section Header */}
                     <div className={styles.sectionHeader} style={{ textAlign: 'center', marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <span className={styles.sectionBadge}>Initiative by eHack Academy, Bangalore</span>
+                        <span className={styles.sectionBadge}>Bytes with Brains
+                            Brains behind digital safety.</span>
                     </div>
 
                     {/* Main Content Grid */}
