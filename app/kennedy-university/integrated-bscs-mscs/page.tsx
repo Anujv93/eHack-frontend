@@ -66,11 +66,11 @@ const program = {
     pricing: {
         applicationFee: "₹1,000",
         admissionFee: "₹4,00,000",
-        companyEMI: "₹5,00,000",
+        companyEMI: "₹4,50,000",
         upfrontPercentage: "50%",
-        upfrontAmount: "₹2,50,000",
+        upfrontAmount: "₹2,25,500",
         emiCount: 4,
-        emiAmount: "₹62,500",
+        emiAmount: "56,250",
         note: "*GST as applicable"
     },
     faq: [
@@ -793,7 +793,7 @@ export default function IntegratedBSCSMSCSPage() {
                                 <div className="fee-row">
                                     <span className="fee-label-text">
                                         <span className="fee-icon-wrapper primary"><Gem size={18} /></span>
-                                        Program Admission Fee
+                                        Program Fee
                                     </span>
                                     <span className="fee-value-large">{program.pricing.admissionFee}</span>
                                 </div>
