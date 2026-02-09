@@ -85,7 +85,7 @@
     /* Nearly solid */
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 2px solid #ff6b00;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -156,7 +156,7 @@
     /* Strong, clean shadow */
     padding: 2.5rem 2rem;
     /* Increased padding */
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 2px solid #ff6b00;
 }
 
 .inquiry-form-card h3 {
