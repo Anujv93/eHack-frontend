@@ -247,18 +247,21 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <div className="sticky-nav-links">
                         {NAV_SECTIONS
                             .filter(section => {
-                                // Filter Labs
-                                if (section.id === 'labs' && ['data-science', 'robotics-iot', 'digital-marketing', 'internship'].includes(program.category)) return false;
+                                // Filter Labs - Allow for all programs now
+                                // if (section.id === 'labs' && ['data-science', 'robotics-iot', 'digital-marketing', 'internship'].includes(program.category)) return false;
 
-                                // Filter Placements (only for specific programs)
-                                if (section.id === 'placements') {
-                                    const placementPrograms = [
-                                        'masters-ethical-hacking',
-                                        'graduate-cybersecurity',
-                                        'masterclass-ethical-hacking-ceh-v13'
-                                    ];
-                                    return placementPrograms.includes(program.slug);
-                                }
+                                // Filter Career - Allow for all programs now
+                                // if (section.id === 'career' && program.category === 'personality-softskills') return false;
+
+                                // Filter Placements - Allow for all programs now
+                                // if (section.id === 'placements') {
+                                //     const placementPrograms = [
+                                //         'masters-ethical-hacking',
+                                //         'graduate-cybersecurity',
+                                //         'masterclass-ethical-hacking-ceh-v13'
+                                //     ];
+                                //     return placementPrograms.includes(program.slug);
+                                // }
 
                                 return true;
                             })
@@ -281,102 +284,100 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </nav>
 
-            {!['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category) && (
-                <PlacementSection />
-            )}
+            {/* Changed: Enable PlacementSection for all programs */}
+            <PlacementSection />
 
             {/* 5. COMBINED ROI + JOB ROLES - Career Value Proposition */}
-            {program.category !== 'personality-softskills' && (
-                <section className="roi-section" id="career">
-                    <div className="section-container">
-                        <h2 className="roi-title">
-                            {(() => {
-                                const title = program.careerROI?.title || 'Great Career';
-                                const words = title.split(' ');
-                                const lastWord = words.pop();
-                                return (
-                                    <>
-                                        {words.join(' ')} <span className="text-accent">{lastWord}</span>
-                                    </>
-                                );
-                            })()}
-                        </h2>
-                        <p className="roi-subtitle">{program.careerROI?.subtitle || "This program equips you with advanced skills essential for protecting organizations."}</p>
+            {/* Enabled for all programs including personality-softskills */}
+            <section className="roi-section" id="career">
+                <div className="section-container">
+                    <h2 className="roi-title">
+                        {(() => {
+                            const title = program.careerROI?.title || 'Great Career';
+                            const words = title.split(' ');
+                            const lastWord = words.pop();
+                            return (
+                                <>
+                                    {words.join(' ')} <span className="text-accent">{lastWord}</span>
+                                </>
+                            );
+                        })()}
+                    </h2>
+                    <p className="roi-subtitle">{program.careerROI?.subtitle || "This program equips you with advanced skills essential for protecting organizations."}</p>
 
-                        <div className="roi-grid">
-                            <div className="salary-card">
-                                <h3 className="roi-section-title"><span className="text-accent">Earning</span> {(program.careerROI?.chartTitle || 'Potential').replace('Earning ', '')}</h3>
-                                <p className="salary-stat">{program.careerROI?.salaryIntro || 'Professionals in this field are in high demand with competitive salaries.'}</p>
-                                <div className="salary-chart">
-                                    <div className="salary-graph">
-                                        {/* Graph Grid Background */}
-                                        <div className="graph-grid">
-                                            <div className="grid-line"></div>
-                                            <div className="grid-line"></div>
-                                            <div className="grid-line"></div>
-                                        </div>
+                    <div className="roi-grid">
+                        <div className="salary-card">
+                            <h3 className="roi-section-title"><span className="text-accent">Earning</span> {(program.careerROI?.chartTitle || 'Potential').replace('Earning ', '')}</h3>
+                            <p className="salary-stat">{program.careerROI?.salaryIntro || 'Professionals in this field are in high demand with competitive salaries.'}</p>
+                            <div className="salary-chart">
+                                <div className="salary-graph">
+                                    {/* Graph Grid Background */}
+                                    <div className="graph-grid">
+                                        <div className="grid-line"></div>
+                                        <div className="grid-line"></div>
+                                        <div className="grid-line"></div>
+                                    </div>
 
-                                        {/* Progression Line */}
-                                        <svg className="graph-line" viewBox="0 0 300 120" preserveAspectRatio="none">
-                                            <defs>
-                                                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                    <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.3" />
-                                                    <stop offset="50%" stopColor="#FF6B00" stopOpacity="0.6" />
-                                                    <stop offset="100%" stopColor="#FF6B00" stopOpacity="1" />
-                                                </linearGradient>
-                                                <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                                    <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.2" />
-                                                    <stop offset="100%" stopColor="#FF6B00" stopOpacity="0.02" />
-                                                </linearGradient>
-                                            </defs>
-                                            {/* Area fill */}
-                                            <path d="M 30 100 L 30 85 Q 75 85 100 65 T 170 40 T 270 15 L 270 100 Z" fill="url(#areaGradient)" />
-                                            {/* Line */}
-                                            <path d="M 30 85 Q 75 85 100 65 T 170 40 T 270 15" stroke="url(#lineGradient)" strokeWidth="3" fill="none" strokeLinecap="round" />
-                                        </svg>
+                                    {/* Progression Line */}
+                                    <svg className="graph-line" viewBox="0 0 300 120" preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.3" />
+                                                <stop offset="50%" stopColor="#FF6B00" stopOpacity="0.6" />
+                                                <stop offset="100%" stopColor="#FF6B00" stopOpacity="1" />
+                                            </linearGradient>
+                                            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.2" />
+                                                <stop offset="100%" stopColor="#FF6B00" stopOpacity="0.02" />
+                                            </linearGradient>
+                                        </defs>
+                                        {/* Area fill */}
+                                        <path d="M 30 100 L 30 85 Q 75 85 100 65 T 170 40 T 270 15 L 270 100 Z" fill="url(#areaGradient)" />
+                                        {/* Line */}
+                                        <path d="M 30 85 Q 75 85 100 65 T 170 40 T 270 15" stroke="url(#lineGradient)" strokeWidth="3" fill="none" strokeLinecap="round" />
+                                    </svg>
 
-                                        {/* Data Points */}
-                                        <div className="graph-points">
-                                            {(program.careerROI?.salaryLevels || [
-                                                { label: '₹8L', experience: '0-2 yrs' },
-                                                { label: '₹18L', experience: '3-5 yrs' },
-                                                { label: '₹35L+', experience: '6+ yrs' }
-                                            ]).map((level, idx) => (
-                                                <div key={idx} className={`graph-point point-${idx + 1}`}>
-                                                    <div className="point-marker">
-                                                        <div className="point-pulse"></div>
-                                                        <div className="point-dot"></div>
-                                                    </div>
-                                                    <div className="point-info">
-                                                        <span className="point-value">{level.label}</span>
-                                                        <span className="point-label">{level.level || ['Entry', 'Mid', 'Senior'][idx]}</span>
-                                                    </div>
+                                    {/* Data Points */}
+                                    <div className="graph-points">
+                                        {(program.careerROI?.salaryLevels || [
+                                            { label: '₹8L', experience: '0-2 yrs' },
+                                            { label: '₹18L', experience: '3-5 yrs' },
+                                            { label: '₹35L+', experience: '6+ yrs' }
+                                        ]).map((level, idx) => (
+                                            <div key={idx} className={`graph-point point-${idx + 1}`}>
+                                                <div className="point-marker">
+                                                    <div className="point-pulse"></div>
+                                                    <div className="point-dot"></div>
                                                 </div>
-                                            ))}
-                                        </div>
+                                                <div className="point-info">
+                                                    <span className="point-value">{level.label}</span>
+                                                    <span className="point-label">{level.level || ['Entry', 'Mid', 'Senior'][idx]}</span>
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
-                                <h4 className="chart-title"><span className="text-accent">Salary</span> {(program.careerROI?.chartDesc || 'Progression').replace('Salary ', '')}</h4>
-                                <p className="chart-desc">{program.careerROI?.chartNote || 'Companies offer competitive salaries to skilled professionals.'}</p>
                             </div>
+                            <h4 className="chart-title"><span className="text-accent">Salary</span> {(program.careerROI?.chartDesc || 'Progression').replace('Salary ', '')}</h4>
+                            <p className="chart-desc">{program.careerROI?.chartNote || 'Companies offer competitive salaries to skilled professionals.'}</p>
+                        </div>
 
-                            {/* Job Roles integrated here */}
-                            <div className="jobroles-card-integrated">
-                                <h3 className="roi-section-title"><span className="text-accent">{program.jobRoles.length}+</span> Career Paths</h3>
-                                <div className="jobroles-grid-compact">
-                                    {program.jobRoles.slice(0, 9).map((role, idx) => (
-                                        <div key={idx} className="job-role-tag">
-                                            <BriefcaseBusiness size={14} />
-                                            <span>{role}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                                {/* <a href="#pricing" className="btn-see-investment">See Your Investment →</a> */}
+                        {/* Job Roles integrated here */}
+                        <div className="jobroles-card-integrated">
+                            <h3 className="roi-section-title"><span className="text-accent">{program.jobRoles.length}+</span> Career Paths</h3>
+                            <div className="jobroles-grid-compact">
+                                {program.jobRoles.slice(0, 9).map((role, idx) => (
+                                    <div key={idx} className="job-role-tag">
+                                        <BriefcaseBusiness size={14} />
+                                        <span>{role}</span>
+                                    </div>
+                                ))}
                             </div>
+                            {/* <a href="#pricing" className="btn-see-investment">See Your Investment →</a> */}
                         </div>
                     </div>
-                </section>
-            )}
+                </div>
+            </section>
 
             {/* 6. CREDENTIALS - Authority & Trust */}
             <section className="credentials-section" id="certifications">
@@ -475,12 +476,14 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         </a>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Program Tools Section - Data Science Only */}
-            {program.slug === 'data-science-analytics' && (
-                <ProgramToolsSection />
-            )}
+            {
+                program.slug === 'data-science-analytics' && (
+                    <ProgramToolsSection />
+                )
+            }
 
             {/* 12. CURRICULUM SECTION - Modern Redesign */}
             <section className="curriculum-section-modern" id="curriculum">
@@ -618,15 +621,17 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* Hands-On Labs Section */}
-            {(program.certifications.length > 0 || ['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category)) && (
-                <div id="labs">
-                    <ProgramLabsWrapper
-                        certificationCodes={program.certifications.map(cert => cert.code)}
-                        programTitle={program.title}
-                        programSlug={program.slug}
-                    />
-                </div>
-            )}
+            {
+                (program.certifications.length > 0 || ['data-science', 'robotics-iot', 'digital-marketing', 'personality-softskills'].includes(program.category)) && (
+                    <div id="labs">
+                        <ProgramLabsWrapper
+                            certificationCodes={program.certifications.map(cert => cert.code)}
+                            programTitle={program.title}
+                            programSlug={program.slug}
+                        />
+                    </div>
+                )
+            }
 
 
             {/* Pricing Details */}
@@ -904,70 +909,74 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* 11. SKILLS SECTION - Hidden for personality-softskills */}
-            {program.category !== 'personality-softskills' && (
-                <section className="skills-section">
-                    <div className="section-container">
-                        <h2 className="skills-title">Master <span className="text-accent">{programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'}</span> Skills</h2>
-                        <div className="skills-grid">
-                            {program.skills.map((skill, idx) => (
-                                <div key={idx} className="skill-card">
-                                    <h3 className="skill-name">
-                                        {(() => {
-                                            const words = skill.name.split(' ');
-                                            const lastWord = words.pop();
-                                            return (
-                                                <>
-                                                    {words.join(' ')} <span className="text-accent">{lastWord}</span>
-                                                </>
-                                            );
-                                        })()}
-                                    </h3>
-                                    <p className="skill-desc">{skill.desc}</p>
-                                </div>
-                            ))}
+            {
+                program.category !== 'personality-softskills' && (
+                    <section className="skills-section">
+                        <div className="section-container">
+                            <h2 className="skills-title">Master <span className="text-accent">{programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'}</span> Skills</h2>
+                            <div className="skills-grid">
+                                {program.skills.map((skill, idx) => (
+                                    <div key={idx} className="skill-card">
+                                        <h3 className="skill-name">
+                                            {(() => {
+                                                const words = skill.name.split(' ');
+                                                const lastWord = words.pop();
+                                                return (
+                                                    <>
+                                                        {words.join(' ')} <span className="text-accent">{lastWord}</span>
+                                                    </>
+                                                );
+                                            })()}
+                                        </h3>
+                                        <p className="skill-desc">{skill.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                </section>
-            )}
+                    </section>
+                )
+            }
 
 
 
             {/* 13. NEWS SECTION - Industry Validation & Urgency */}
-            {program.newsItems && program.newsItems.length > 0 && (
-                <section className="news-section">
-                    <div className="news-container ">
-                        <span className="news-badge">
-                            {programType === 'digital-marketing' ? 'DIGITAL TRENDS' :
-                                programType === 'robotics' ? 'FUTURE TECH' :
-                                    program.category === 'data-science' ? 'DATA INSIGHTS' :
-                                        program.category === 'personality-softskills' ? 'CAREER GROWTH' :
-                                            'CYBER THREATS ARE RISING'}
-                        </span>
-                        <h2 className="news-title">
-                            {programType === 'digital-marketing' ? 'Why Digital Skills Matter Now' :
-                                programType === 'robotics' ? 'Why Robotics is the Future' :
-                                    program.category === 'data-science' ? 'Why Data Science Matters Now' :
-                                        program.category === 'personality-softskills' ? 'Why Soft Skills Matter' :
-                                            'Why Cybersecurity Skills Matter Now'}
-                        </h2>
-                        <div className="news-marquee-container">
-                            <div className="news-marquee-track">
-                                {/* Duplicate items for seamless loop */}
-                                {[...program.newsItems, ...program.newsItems].map((item, idx) => (
-                                    <article key={idx} className="news-card">
-                                        <div className="news-image"><img src={item.image} alt="Cybersecurity News" /></div>
-                                        <div className="news-content">
-                                            <span className="news-date">{item.date}</span>
-                                            <h3 className="news-headline">{item.headline}</h3>
-                                            <p className="news-source">{item.source}</p>
-                                        </div>
-                                    </article>
-                                ))}
+            {
+                program.newsItems && program.newsItems.length > 0 && (
+                    <section className="news-section">
+                        <div className="news-container ">
+                            <span className="news-badge">
+                                {programType === 'digital-marketing' ? 'DIGITAL TRENDS' :
+                                    programType === 'robotics' ? 'FUTURE TECH' :
+                                        program.category === 'data-science' ? 'DATA INSIGHTS' :
+                                            program.category === 'personality-softskills' ? 'CAREER GROWTH' :
+                                                'CYBER THREATS ARE RISING'}
+                            </span>
+                            <h2 className="news-title">
+                                {programType === 'digital-marketing' ? 'Why Digital Skills Matter Now' :
+                                    programType === 'robotics' ? 'Why Robotics is the Future' :
+                                        program.category === 'data-science' ? 'Why Data Science Matters Now' :
+                                            program.category === 'personality-softskills' ? 'Why Soft Skills Matter' :
+                                                'Why Cybersecurity Skills Matter Now'}
+                            </h2>
+                            <div className="news-marquee-container">
+                                <div className="news-marquee-track">
+                                    {/* Duplicate items for seamless loop */}
+                                    {[...program.newsItems, ...program.newsItems].map((item, idx) => (
+                                        <article key={idx} className="news-card">
+                                            <div className="news-image"><img src={item.image} alt="Cybersecurity News" /></div>
+                                            <div className="news-content">
+                                                <span className="news-date">{item.date}</span>
+                                                <h3 className="news-headline">{item.headline}</h3>
+                                                <p className="news-source">{item.source}</p>
+                                            </div>
+                                        </article>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            )}
+                    </section>
+                )
+            }
 
             {/* 14. FINAL CTA SECTION */}
             <section className="program-cta-section">
@@ -983,4 +992,3 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
         </div>
     );
 }
-// Git push commit
