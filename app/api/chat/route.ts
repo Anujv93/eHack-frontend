@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const BACKEND_URL = "http://66.116.226.107:8000/chat"; // or domain
-// const BACKEND_URL = "http://localhost:8000/chat";
+// const BACKEND_URL = "http://66.116.226.107:8000/chat"; // or domain
+const BACKEND_URL = "http://localhost:8000/chat";
 //
 export async function POST(req: NextRequest) {
     const body = await req.json();
