@@ -495,7 +495,7 @@ export default function IntegratedBSCSMSCSPage() {
 
                             <h1 className="program-title">
                                 Integrated Bachelor + Master<br />
-                                <span className="highlight">in Cyber Security</span>
+                                <span className="highlight">in Cyber Security<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
                             </h1>
                             <p className="program-desc">
                                 An accelerated 15-month integrated pathway enabling learners to earn both bachelor&apos;s and master&apos;s qualifications through an intensive academic + industry-driven model.

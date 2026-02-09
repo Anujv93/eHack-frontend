@@ -410,7 +410,7 @@ export default function MSCSPage() {
 
                             <h1 className="program-title">
                                 Master of Science in<br />
-                                <span className="highlight">Cyber Security</span>
+                                <span className="highlight">Cyber Security<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
                             </h1>
                             <p className="program-desc">
                                 An advanced 1-year MSCS focused on strategic, technical, and managerial cybersecurity skills for aspiring security leaders.
