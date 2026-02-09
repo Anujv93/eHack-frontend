@@ -55,46 +55,57 @@ export default function CertificateSummary({
     }
 
     return (
-        <section className="hero-main border-bottom" style={{ borderBottom: 'solid 1px #ff6b00' }} id="summary">
-            <div className="container">
+        <section className="hero-main" id="summary">
+
+
+            <div className="container relative z-10">
                 <div className="hero-grid">
                     <div className="hero-left">
                         {heading && (
-                            <>
+                            <div className="hero-header">
                                 <h2>{parseHeading(heading)}</h2>
-                                <div className="red-underline"></div>
-                            </>
+                                <div className="accent-line"></div>
+                            </div>
                         )}
 
-                        {description && <p>{description}</p>}
+                        {description && <div className="hero-description"><p>{description}</p></div>}
 
                         {features && features.length > 0 && (
-                            <ul className="hero-features-list">
-                                {features.map((feature) => (
-                                    <li key={feature.id}>{feature.FeatureName}</li>
-                                ))}
-                            </ul>
+                            <div className="features-wrapper">
+                                <ul className="hero-features-list">
+                                    {features.map((feature) => (
+                                        <li key={feature.id} className="feature-card">
+                                            <span className="check-icon">✓</span>
+                                            <span className="feature-text">{feature.FeatureName}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         )}
 
                         {/* Video Section - only show if videoLink exists */}
                         {videoLink && (
-                            <div className="video-container">
-                                <iframe
-                                    src={getEmbedUrl(videoLink)}
-                                    title="Certificate Video"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
+                            <div className="video-wrapper">
+                                <div className="video-container">
+                                    <iframe
+                                        src={getEmbedUrl(videoLink)}
+                                        title="Certificate Video"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
                             </div>
                         )}
                     </div>
 
-                    {/* Inquiry Form - Now with Zoho Integration */}
-                    <SummaryInquiryForm
-                        certificateTitle={certificateTitle}
-                        certificateSlug={certificateSlug}
-                    />
+                    {/* Inquiry Form */}
+                    <div className="form-wrapper">
+                        <SummaryInquiryForm
+                            certificateTitle={certificateTitle}
+                            certificateSlug={certificateSlug}
+                        />
+                    </div>
                 </div>
             </div>
         </section>

@@ -141,23 +141,25 @@ export default function SummaryInquiryForm({
             <h3>Course Inquiry</h3>
             {error && <div className="form-error-msg">{error}</div>}
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        placeholder="First Name *"
-                    />
-                </div>
-                <div className="form-group">
-                    <input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        placeholder="Last Name *"
-                    />
+                <div className="form-row two-col">
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleInputChange}
+                            placeholder="First Name *"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleInputChange}
+                            placeholder="Last Name *"
+                        />
+                    </div>
                 </div>
                 <div className="form-group">
                     <input

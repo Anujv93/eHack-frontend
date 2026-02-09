@@ -66,7 +66,7 @@ const newsItems = [
 
 export default function SkillsMatterSection() {
     return (
-        <section className="skills-matter-section">
+        <section className="skills-matter-section" id="news">
             <div className="skills-matter-container">
                 <span className="skills-matter-badge">
                     CYBER THREATS ARE RISING

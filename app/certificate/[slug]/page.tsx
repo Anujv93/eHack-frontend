@@ -125,60 +125,76 @@ export default async function CertificatePage({ params }: PageProps) {
     // Build dynamic navigation sections based on available content
     const dynamicNavSections = [];
 
-    // Check each section and add to navigation if it has content
+    // 1. Overview
     if (summarySection?.Heading || summarySection?.Description || (summarySection?.Features && summarySection.Features.length > 0)) {
         dynamicNavSections.push({ id: 'summary', label: 'Overview' });
     }
 
+    // 2. What's New
     if (featuresGridSection?.Features && featuresGridSection.Features.length > 0) {
         dynamicNavSections.push({ id: 'whats-new', label: "What's New" });
     }
 
-    if (trainingSection?.Title || trainingSection?.pricing) {
-        dynamicNavSections.push({ id: 'ehack-training', label: 'Training' });
-    }
-
-    if (learningFrameworkSection?.Steps && learningFrameworkSection.Steps.length > 0) {
-        dynamicNavSections.push({ id: 'learning-framework', label: 'Learning Path' });
-    }
-
-    if (examDetailsSection?.ExamCards && examDetailsSection.ExamCards.length > 0) {
-        dynamicNavSections.push({ id: 'exam-details', label: 'Exam Details' });
-    }
-
-    // Career ROI - Always show (hardcoded section)
-    dynamicNavSections.push({ id: 'career-roi', label: 'Career ROI' });
-
+    // 3. Who Should Enroll
     if (targetAudienceSection?.Audiences && targetAudienceSection.Audiences.length > 0) {
         dynamicNavSections.push({ id: 'target-audience', label: 'Who Should Enroll' });
     }
 
-    // Labs section - after Who Should Enroll
+    // 4. Hands-On Labs
     dynamicNavSections.push({ id: 'labs', label: 'Hands-On Labs' });
 
+    // 5. Course Outline
     if (courseOutlineSection?.Modules && courseOutlineSection.Modules.length > 0) {
         dynamicNavSections.push({ id: 'course-outline', label: 'Course Outline' });
     }
 
-    if (accreditationsSection?.Accreditations && accreditationsSection.Accreditations.length > 0) {
-        dynamicNavSections.push({ id: 'accreditations', label: 'Accreditations' });
+    // 6. Pricing (Training)
+    if (trainingSection?.Title || trainingSection?.pricing) {
+        dynamicNavSections.push({ id: 'ehack-training', label: 'Pricing' });
     }
 
-    // Add new sections to navigation
+    // 7. Placements
+    dynamicNavSections.push({ id: 'placements', label: 'Placements' });
+
+    // 8. Exam Details
+    if (examDetailsSection?.ExamCards && examDetailsSection.ExamCards.length > 0) {
+        dynamicNavSections.push({ id: 'exam-details', label: 'Exam Details' });
+    }
+
+    // 9. Career ROI
+    dynamicNavSections.push({ id: 'career-roi', label: 'Career ROI' });
+
+    // 10. Career Value
     if (careerStatsSection?.Stats && careerStatsSection.Stats.length > 0) {
         dynamicNavSections.push({ id: 'career-value', label: 'Career Value' });
     }
 
+    // 11. Job Roles
     if (jobRolesSection?.JobRoles && jobRolesSection.JobRoles.length > 0) {
         dynamicNavSections.push({ id: 'job-roles', label: 'Job Roles' });
     }
 
+    // 12. FAQs
     if (faqSection?.FAQs && faqSection.FAQs.length > 0) {
         dynamicNavSections.push({ id: 'faqs', label: 'FAQs' });
     }
 
-    // Always add Inquiry section
-    dynamicNavSections.push({ id: 'inquiry', label: 'Enquire Now' });
+    // 13. Why eHack
+    dynamicNavSections.push({ id: 'why-ehack', label: 'Why eHack' });
+
+    // 14. CTA (Enquire Now)
+    dynamicNavSections.push({ id: 'cta', label: 'Enquire Now' });
+
+    // 15. Accreditations
+    if (accreditationsSection?.Accreditations && accreditationsSection.Accreditations.length > 0) {
+        dynamicNavSections.push({ id: 'accreditations', label: 'Accreditations' });
+    }
+
+    // 16. Explore More
+    dynamicNavSections.push({ id: 'related-certificates', label: 'Explore More' });
+
+    // 17. News
+    dynamicNavSections.push({ id: 'news', label: 'News' });
 
     return (
         <div>
@@ -195,6 +211,8 @@ export default async function CertificatePage({ params }: PageProps) {
                 subtitle={heroSection?.Subtitle || certificate.Subtitle}
                 backgroundImage={heroSection?.BackgroundImage?.url}
             />
+
+            {/* 1. Overview */}
             <CertificateSummary
                 heading={summarySection?.Heading}
                 description={summarySection?.Description}
@@ -203,25 +221,29 @@ export default async function CertificatePage({ params }: PageProps) {
                 certificateTitle={certificate.Title}
                 certificateSlug={slug}
             />
+
+            {/* 2. What's New */}
             <FeaturesGrid
                 title={featuresGridSection?.Title}
                 features={featuresGridSection?.Features}
             />
 
+            {/* 3. Who Should Enroll */}
             <TargetAudience
                 title={targetAudienceSection?.Title}
                 audiences={targetAudienceSection?.Audiences}
             />
 
-            {/* Hands-On Labs Section - Moved to after Who Should Enroll */}
+            {/* 4. Hands-On Labs */}
             <CertificateLabsWrapper
                 certificateSlug={slug}
                 certificateTitle={certificate.Title}
             />
 
-            {/* Course Outline Section */}
+            {/* 5. Course Outline */}
             {courseOutlineSection && <CourseOutlineSection section={courseOutlineSection} brochureUrl={certificate.brochure?.url ? getStrapiMediaUrl(certificate.brochure.url) : undefined} />}
 
+            {/* 6. Pricing (Training) */}
             <TrainingSection
                 badgeText={trainingSection?.BadgeText}
                 title={trainingSection?.Title}
@@ -235,56 +257,63 @@ export default async function CertificatePage({ params }: PageProps) {
                 admissionProcess={admissionProcess || undefined}
             />
 
-            {/* Placement Section - From Learning to Leading */}
+            {/* 7. Placements */}
             <PlacementSection />
 
+            {/* Learning Framework - Kept in DOM but not in Nav as per request order? Or omitted? 
+                User didn't list it. I will keep it hidden/removed to strictly follow the list. 
+                Wait, if I remove it, I lose content. 
+                I'll place it after Placements but before Exam Details, as it fits the flow, 
+                BUT since it's not in the user's list, I am risking removing it.
+                User said "above i have mentioned the sequence wise section".
+                I'll place it here but NOT add to nav.
+            */}
             <LearningFramework
                 title={learningFrameworkSection?.Title}
                 steps={learningFrameworkSection?.Steps}
             />
+
+            {/* 8. Exam Details */}
             <ExamDetails
                 title={examDetailsSection?.Title}
                 examCards={examDetailsSection?.ExamCards}
             />
 
-            {/* Career ROI Section - Hardcoded with certificate-specific data */}
+            {/* 9. Career ROI */}
             <CareerROI certificateSlug={slug} />
 
-            {/* Career Stats Section */}
+            {/* 10. Career Value */}
             {careerStatsSection && <CareerStatsSection section={careerStatsSection} />}
 
-            {/* Job Roles Section */}
+            {/* 11. Job Roles */}
             {jobRolesSection && <JobRolesSection section={jobRolesSection} />}
 
-            {/* FAQ Section */}
+            {/* 12. FAQs */}
             {faqSection && <FAQSection section={faqSection} />}
 
-            {/* Why eHack Academy Section */}
+            {/* 13. Why eHack */}
             <WhyEhackSection programType="cybersecurity" />
 
-
-
-            {/* Inquiry Form Section */}
-            {/* <CertificateInquirySection
-                certificateTitle={certificate.Title}
-                certificateSlug={slug}
-            /> */}
+            {/* 14. CTA */}
             <CTASection
                 title={ctaSection?.Title}
                 subtitle={ctaSection?.Subtitle}
             />
+
+            {/* 15. Accreditations */}
             <Accreditations
                 title={accreditationsSection?.Title}
                 accreditations={accreditationsSection?.Accreditations}
             />
-            {/* Related Certificates Section */}
+
+            {/* 16. Explore More */}
             <RelatedCertificates
                 title="Explore More Certifications"
                 subtitle="Discover other certifications that can help advance your career"
                 certificates={relatedCertificates}
             />
 
-            {/* Why Cybersecurity Skills Matter Now Section - Moved below Related Certificates */}
+            {/* 17. News */}
             <SkillsMatterSection />
         </div>
     );
