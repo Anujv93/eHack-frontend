@@ -24,12 +24,20 @@ export default function CertificateHeader({
             return (
                 <>
                     {match[1]}
-                    <span className="ai-highlight">{match[2]}</span>
+                    <span className="ai-highlight">
+                        {match[2]}
+                        <sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup>
+                    </span>
                     {match[3]}
                 </>
             );
         }
-        return titleText;
+        return (
+            <>
+                {titleText}
+                <sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup>
+            </>
+        );
     };
 
     const backgroundStyle = backgroundImage ? {
