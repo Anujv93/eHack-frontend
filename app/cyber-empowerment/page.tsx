@@ -12,8 +12,8 @@ export default function CyberEmpowermentPage() {
     const sections = [
         { id: 'intro', label: 'Overview' },
         { id: 'why-matters', label: 'Why It Matters' },
-        { id: 'case-studies', label: 'Case Studies' },
         { id: 'leadership', label: 'Leadership' },
+        { id: 'case-studies', label: 'Case Studies' },
         { id: 'focus', label: 'Focus Areas' },
         { id: 'impact', label: 'Impact' },
         { id: 'audience', label: 'Who Is It For' },
@@ -235,6 +235,31 @@ export default function CyberEmpowermentPage() {
                 </div>
             </section>
 
+            {/* Leadership Section */}
+            <section id="leadership" className={styles.leadershipSection}>
+                <div className={styles.container}>
+                    <h2 className={styles.sectionTitle}>
+                        Leadership & <span className={styles.textAccent}>Vision</span>
+                    </h2>
+                    <div className={styles.leaderCard}>
+                        <div className={styles.leaderInfo}>
+                            <h3>Ms. Smitha C</h3>
+                            <span className={styles.leaderRole}>Center Head – eHack Academy, Bangalore</span>
+                            <p>
+                                With a strong passion for education and community upliftment, Ms. Smitha C leads this initiative with a
+                                people-first approach. Under her leadership, eHack Academy has successfully delivered cyber awareness
+                                programs, free webinars, and skill-based sessions that have positively impacted students, professionals,
+                                and senior citizens alike.
+                            </p>
+                            <div className={styles.visionBox}>
+                                <strong>Her Vision:</strong>
+                                <p>To create a cyber-aware society where people use technology with confidence, responsibility, and security.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Case Studies Section */}
             <section id="case-studies" className={styles.caseStudiesSection}>
                 <div className={styles.container}>
@@ -262,31 +287,6 @@ export default function CyberEmpowermentPage() {
                                     </div>
                                 </div>
                             ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Leadership Section */}
-            <section id="leadership" className={styles.leadershipSection}>
-                <div className={styles.container}>
-                    <h2 className={styles.sectionTitle}>
-                        Leadership & <span className={styles.textAccent}>Vision</span>
-                    </h2>
-                    <div className={styles.leaderCard}>
-                        <div className={styles.leaderInfo}>
-                            <h3>Ms. Smitha C</h3>
-                            <span className={styles.leaderRole}>Center Head – eHack Academy, Bangalore</span>
-                            <p>
-                                With a strong passion for education and community upliftment, Ms. Smitha C leads this initiative with a
-                                people-first approach. Under her leadership, eHack Academy has successfully delivered cyber awareness
-                                programs, free webinars, and skill-based sessions that have positively impacted students, professionals,
-                                and senior citizens alike.
-                            </p>
-                            <div className={styles.visionBox}>
-                                <strong>Her Vision:</strong>
-                                <p>To create a cyber-aware society where people use technology with confidence, responsibility, and security.</p>
-                            </div>
                         </div>
                     </div>
                 </div>
