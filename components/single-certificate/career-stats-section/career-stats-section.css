@@ -194,3 +194,55 @@
         font-size: var(--font-size-base);
     }
 }
+
+/* Split Layout for Video */
+.career-stats-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.career-stats-wrapper.has-video {
+    display: flex;
+    flex-direction: column;
+    /* Default stack on mobile */
+    gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+    .career-stats-wrapper.has-video {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .career-stats-wrapper.has-video .career-stats-cards {
+        flex: 1;
+        /* Adjust grid if needed, previously it was flex/grid */
+    }
+
+    .career-stats-video-container {
+        flex: 1;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.career-stats-video-container {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #000;
+    min-height: 300px;
+    /* Mobile height */
+    width: 100%;
+}
+
+.career-stats-video-frame {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border: none;
+    aspect-ratio: 16/9;
+}
