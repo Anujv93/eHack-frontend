@@ -227,12 +227,18 @@ export interface CourseModule {
     id?: number;
     ModuleNumber: string;
     ModuleTitle: string;
+    Description?: string;
     Topics?: ModuleTopic[];
 }
 
 export interface CourseOutlineSection {
     __component: 'global.course-outline-section';
     Title: string;
+    description?: string;
+    badge?: string;
+    total_hours?: number;
+    total_module?: number;
+    certification?: number;
     Modules: CourseModule[];
     CTAButtonText?: string;
     CTAButtonLink?: string;
