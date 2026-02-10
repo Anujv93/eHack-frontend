@@ -1,3 +1,6 @@
+import React from "react";
+import "./certificate.css";
+import InquiryForm from "@/components/global/inquiry-form/inquiry-form";
 import CertificateHeader from "@/components/single-certificate/header/header";
 import CertificateSummary from "@/components/single-certificate/summary/summary";
 import FeaturesGrid from "@/components/global/features-grid/features-grid";
@@ -196,8 +199,26 @@ export default async function CertificatePage({ params }: PageProps) {
     // 17. News
     dynamicNavSections.push({ id: 'news', label: 'News' });
 
+    // Helper to get embed URL
+    const getEmbedUrl = (url: string): string => {
+        // Handle youtube.com/watch?v=VIDEO_ID
+        const watchMatch = url.match(/youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/);
+        if (watchMatch) {
+            return `https://www.youtube.com/embed/${watchMatch[1]}`;
+        }
+
+        // Handle youtu.be/VIDEO_ID
+        const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
+        if (shortMatch) {
+            return `https://www.youtube.com/embed/${shortMatch[1]}`;
+        }
+
+        // Already an embed URL or other video URL
+        return url;
+    };
+
     return (
-        <div>
+        <div className="certificate-page">
             {/* Sticky Section Navigation - Only shows sections that exist */}
             {dynamicNavSections.length > 1 && (
                 <StickySectionNav
@@ -206,21 +227,126 @@ export default async function CertificatePage({ params }: PageProps) {
                 />
             )}
 
-            <CertificateHeader
-                title={heroSection?.Title || certificate.Title}
-                subtitle={heroSection?.Subtitle || certificate.Subtitle}
-                backgroundImage={heroSection?.BackgroundImage?.url}
-            />
+            {/* Hero Section Replaced CertificateHeader */}
+            <section className="hero-section" id="overview">
+                <div className="hero-background">
+                    <div className="hero-overlay"></div>
+                    <div
+                        className="hero-image"
+                        style={{
+                            backgroundImage: `url('${(heroSection?.BackgroundImage?.url ? getStrapiMediaUrl(heroSection.BackgroundImage.url) : "")}')`
+                        }}
+                    />
+                </div>
+                <div className="hero-container">
+                    <div className="hero-content">
+                        <h1 className="hero-title">
+                            {(() => {
+                                const title = heroSection?.Title || certificate.Title;
+                                // Add AI superscript logic if needed, similar to program page
+                                if (title.includes('Ethical Hacking')) {
+                                    return (
+                                        <>
+                                            {title.split('Ethical Hacking')[0]}
+                                            <span className="text-accent">Ethical Hacking & Cyber Security<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
+                                        </>
+                                    );
+                                } else if (title.includes('Digital Marketing')) {
+                                    return (
+                                        <>
+                                            {title.split('Digital Marketing')[0]}
+                                            <span className="text-accent">Digital Marketing<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
+                                        </>
+                                    );
+                                } else if (title.includes('Data Science')) {
+                                    return (
+                                        <>
+                                            <span className="text-accent">Data Science & Data Analytics</span> Powered by AI
+                                        </>
+                                    );
+                                }
+                                return (
+                                    <>
+                                        {title}
+                                        {/* Optional: Add AI superscript to all certificates if requested? User said "implement the saem ui... data remains the same". I'll stick to matching specific keywords or just displaying title. */}
+                                    </>
+                                );
+                            })()}
+                            {/* Subtitle/Cert count if applicable, maybe use subtitle from heroSection? */}
+                            {/* <span className="cert-count">{heroSection?.Subtitle}</span> */}
+                        </h1>
 
-            {/* 1. Overview */}
-            <CertificateSummary
-                heading={summarySection?.Heading}
-                description={summarySection?.Description}
-                features={summarySection?.Features}
-                videoLink={summarySection?.CertificateVideo?.VideoLink}
-                certificateTitle={certificate.Title}
-                certificateSlug={slug}
-            />
+                        {/* Use Summary Section Heading/Description as requested */}
+                        {summarySection?.Heading && (
+                            <div>
+                                <span className="hero-capsule-badge">
+                                    {summarySection.Heading}
+                                </span>
+                            </div>
+                        )}
+
+                        <p className="hero-description">
+                            {summarySection?.Description || heroSection?.Subtitle || certificate.Subtitle}
+                        </p>
+
+                        {/* Features from Summary Section as Tick Boxes */}
+                        {summarySection?.Features && summarySection.Features.length > 0 && (
+                            <ul className="hero-features-list">
+                                {summarySection.Features.map((f, idx) => (
+                                    <li key={idx} className="hero-feature-item">
+                                        <span className="check-icon">✓</span>
+                                        <span>{f.FeatureName}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+
+                        {/* Batch Info - Optional, if available in data. Currently mocked or omitted if not found. */}
+                        {/* <div className="batch-info">
+                            <span className="batch-label">NEXT BATCH STARTS</span>
+                            <span className="batch-date">Coming Soon</span>
+                        </div> */}
+                    </div>
+
+                    <InquiryForm
+                        courseName={certificate.Title}
+                        courseCode={slug}
+                        variant="hero"
+                        title="Get Course Information"
+                        subtitle="Our counselor will call you within 2 hours"
+                    />
+                </div>
+            </section>
+
+
+
+
+
+            {/* 2. STATS BAR - Quick Credibility */}
+            <section className="stats-bar">
+                <div className="cert-stats-container">
+                    <div className="cert-stat-item">
+                        <span className="cert-stat-label">START DATE</span>
+                        <div className="cert-stat-value"><strong>5th</strong> of Every Month</div>
+                    </div>
+                    <div className="cert-stat-item">
+                        <span className="cert-stat-label">DURATION</span>
+                        <div className="cert-stat-value"><strong>7-9</strong> Months</div>
+                    </div>
+                    <div className="cert-stat-item">
+                        <span className="cert-stat-label">MODE</span>
+                        <div className="cert-stat-value"><strong>Classroom</strong> + Live Online</div>
+                    </div>
+                    <div className="cert-stat-item">
+                        <span className="cert-stat-label">TOTAL HOURS</span>
+                        <div className="cert-stat-value"><strong>200+</strong>  Hours</div>
+                    </div>
+                    <div className="cert-stat-item">
+                        <span className="cert-stat-label">MEMBERSHIP</span>
+                        <div className="cert-stat-value"><strong>2 Years</strong> </div>
+                    </div>
+                </div>
+            </section>
 
             {/* 2. What's New */}
             <FeaturesGrid
@@ -228,11 +354,76 @@ export default async function CertificatePage({ params }: PageProps) {
                 features={featuresGridSection?.Features}
             />
 
-            {/* 3. Who Should Enroll */}
-            <TargetAudience
-                title={targetAudienceSection?.Title}
-                audiences={targetAudienceSection?.Audiences}
-            />
+            {/* 3. Who Should Enroll - Modern Design Replicated */}
+            {targetAudienceSection && (
+                <section className="audience-section-modern" id="target-audience" style={{ padding: 'var(--space-12) 0' }}>
+                    <div className="container">
+                        <div className="audience-header-modern">
+                            <span className="audience-eyebrow">BUILT FOR EVERYONE</span>
+                            <h2 className="audience-title-modern">
+                                {(() => {
+                                    const title = targetAudienceSection.Title || "Who Should Enroll";
+                                    const words = title.split(' ');
+                                    const firstWord = words[0];
+                                    const rest = words.slice(1).join(' ');
+                                    return (
+                                        <>
+                                            <span className="text-accent">{firstWord}</span> {rest}
+                                        </>
+                                    );
+                                })()}
+                            </h2>
+                        </div>
+
+                        {targetAudienceSection.Audiences && targetAudienceSection.Audiences.length > 0 && (
+                            <div className="audience-grid-modern">
+                                {targetAudienceSection.Audiences.map((audience, idx) => (
+                                    <React.Fragment key={audience.id || idx}>
+                                        <div className="audience-card-modern">
+                                            <div className="audience-card-number">{String(idx + 1).padStart(2, '0')}</div>
+                                            <div className="audience-card-content">
+                                                <h3 className="audience-card-title-modern">{audience.Title}</h3>
+                                                <p className="audience-card-desc-modern">{audience.Description}</p>
+                                                {/* <span className="audience-tag-modern">Recommended</span> -- Data doesn't have tag, omitted for now */}
+                                            </div>
+                                        </div>
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                        )}
+
+                        {/* Hardcoded Stats Row */}
+                        <div className="audience-stats-row">
+                            <div className="audience-stat-item">
+                                <span className="stat-number">85%</span>
+                                <span className="stat-text">of our students are fresh graduates or career changers</span>
+                            </div>
+                            <div className="audience-stat-divider"></div>
+                            <div className="audience-stat-item">
+                                <span className="stat-number">Zero</span>
+                                <span className="stat-text">prior experience required to get started</span>
+                            </div>
+                            <div className="audience-stat-divider"></div>
+                            <div className="audience-stat-item">
+                                <span className="stat-number">₹6-8 LPA</span>
+                                <span className="stat-text">average starting salary for freshers</span>
+                            </div>
+                        </div>
+
+                        {/* Modern CTA */}
+                        <div className="audience-cta-modern">
+                            <div className="cta-content">
+                                <h3>Not sure if this is right for you?</h3>
+                                <p>Talk to our career counsellor for a personalized learning path recommendation.</p>
+                            </div>
+                            <a href="tel:+919886035330" className="btn-cta-modern">
+                                Get Free Career Advice
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* 4. Hands-On Labs */}
             <CertificateLabsWrapper
@@ -280,10 +471,17 @@ export default async function CertificatePage({ params }: PageProps) {
             />
 
             {/* 9. Career ROI */}
-            <CareerROI certificateSlug={slug} />
+            <CareerROI
+                certificateSlug={slug}
+            />
 
             {/* 10. Career Value */}
-            {careerStatsSection && <CareerStatsSection section={careerStatsSection} />}
+            {careerStatsSection && (
+                <CareerStatsSection
+                    section={careerStatsSection}
+                    videoLink={summarySection?.CertificateVideo?.VideoLink}
+                />
+            )}
 
             {/* 11. Job Roles */}
             {jobRolesSection && <JobRolesSection section={jobRolesSection} />}

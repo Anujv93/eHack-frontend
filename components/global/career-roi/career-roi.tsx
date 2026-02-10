@@ -112,6 +112,7 @@ export default function CareerROI({ certificateSlug }: CareerROIProps) {
                     </p>
                 </div>
 
+                {/* Main Content Wrapper - Handles optional split layout */}
                 {/* Main Content Grid - 4 Equal Boxes */}
                 <div className="career-roi-grid">
                     {/* Salary Comparison Card */}
@@ -226,4 +227,5 @@ export default function CareerROI({ certificateSlug }: CareerROIProps) {
             </div>
         </section>
     );
+
 }
