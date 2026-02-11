@@ -728,8 +728,10 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                 <div className={styles.container}>
                     {/* Section Header */}
                     <div className={styles.sectionHeader} style={{ textAlign: 'center', marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <span className={styles.sectionBadge}>Bytes with Brains
-                            Brains behind digital safety.</span>
+                        <span className={styles.sectionBadge}>Bytes with Brains</span>
+                        <h2 className={styles.ceHeaderSubtitle}>
+                            Brains behind <span className={styles.textAccentOrange}>digital safety</span>
+                        </h2>
                     </div>
 
                     {/* Main Content Grid */}
@@ -748,9 +750,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
                         {/* Content Side */}
                         <div className={styles.ceContentColumn}>
-                            <h2 className={styles.ceHeadline}>
-                                Cyber <span className={styles.ceHeadlineAccent}>Empowerment</span> for All
-                            </h2>
+                            <span className={styles.sectionBadgeOutline} style={{ marginBottom: '1.5rem', display: 'inline-block' }}>
+                                Cyber Empowerment for All
+                            </span>
 
                             <p className={styles.ceTagline}>
                                 Empowering Young Minds & Experienced Lives in the Digital World
