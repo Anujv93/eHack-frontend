@@ -8,6 +8,7 @@
     background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid #ff6b00;
 }
 
 .career-roi-section::before {
