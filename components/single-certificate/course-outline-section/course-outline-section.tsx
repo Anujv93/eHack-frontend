@@ -29,11 +29,50 @@ export default function CourseOutlineSection({ section, brochureUrl }: CourseOut
                 {/* Header */}
                 <div className="curriculum-header-modern">
                     <div className="curriculum-header-content">
-                        {section.badge && (
-                            <span className="curriculum-eyebrow">{section.badge}</span>
-                        )}
+                        <span className="curriculum-eyebrow">
+                            {section.badge || "LEARNING PATH"}
+                        </span>
                         <h2 className="curriculum-title-modern">
-                            {section.Title}
+                            {(() => {
+                                const title = section.Title || '';
+
+                                // Helper to process **highlighted** text or <span>highlighted</span> text
+                                const processText = (text: string) => {
+                                    if (!text) return null;
+                                    const parts = text.split(/(\*\*.*?\*\*|<span>.*?<\/span>)/g);
+                                    let hasManualHighlight = false;
+
+                                    const processed = parts.map((part, i) => {
+                                        if (part.startsWith('**') && part.endsWith('**')) {
+                                            hasManualHighlight = true;
+                                            return <span key={i} className="text-accent">{part.slice(2, -2)}</span>;
+                                        }
+                                        if (part.startsWith('<span>') && part.endsWith('</span>')) {
+                                            hasManualHighlight = true;
+                                            return <span key={i} className="text-accent">{part.slice(6, -7)}</span>;
+                                        }
+                                        return part;
+                                    });
+
+                                    return { processed, hasManualHighlight };
+                                };
+
+                                const result = processText(title);
+
+                                // Fallback: If no manual highlight, highlight the first word
+                                if (!result?.hasManualHighlight && title) {
+                                    const words = title.split(' ');
+                                    if (words.length > 0) {
+                                        return (
+                                            <>
+                                                <span className="text-accent">{words[0]}</span> {words.slice(1).join(' ')}
+                                            </>
+                                        );
+                                    }
+                                }
+
+                                return result?.processed;
+                            })()}
                         </h2>
                         {section.description && (
                             <p className="curriculum-subtitle-modern">
