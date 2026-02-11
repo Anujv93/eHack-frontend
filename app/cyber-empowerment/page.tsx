@@ -139,9 +139,9 @@ export default function CyberEmpowermentPage() {
                 <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
                     <div style={{ marginBottom: '2rem' }}></div>
-                    <span className={styles.heroBadge}>A New Initiative by eHack Academy, Bangalore</span>
-                    <h1 className={styles.heroTitle}>
-                        <span className={styles.heroHighlight}>Cyber</span> Empowerment for All
+                    <h1 className={styles.heroCapsuleHeadline}>
+                        <span className={styles.heroHighlight}>Bytes with Brains</span>
+                        <span className={styles.heroBlackText}> Brains behind digital safety</span>
                     </h1>
                     {/* <p className={styles.heroSubtitle}>
                         Empowering Young Minds & Experienced Lives in the Digital World
@@ -244,7 +244,7 @@ export default function CyberEmpowermentPage() {
                     <div className={styles.leaderCard}>
                         <div className={styles.leaderInfo}>
                             <h3>Ms. Smitha C</h3>
-                            <span className={styles.leaderRole}>Center Head – eHack Academy, Bangalore</span>
+                            <span className={styles.leaderRole}>Center Head – eHack Group Technology, Bangalore</span>
                             <p>
                                 With a strong passion for education and community upliftment, Ms. Smitha C leads this initiative with a
                                 people-first approach. Under her leadership, eHack Academy has successfully delivered cyber awareness
