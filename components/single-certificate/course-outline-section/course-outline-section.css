@@ -392,6 +392,11 @@
     transform: translateY(-2px);
 }
 
+
+.text-accent {
+    color: #ff6b00 !important;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .curriculum-header-modern {
