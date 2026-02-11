@@ -1845,10 +1845,10 @@ export const programs = [
         ],
         pricing: {
             original: "₹1,25,000",
-            discounted: "₹95,000",
+            discounted: "₹1,00,000",
             emi: "₹28,750 X 2",
             applicationFee: "₹1,000",
-            admissionFee: "₹95,000",
+            admissionFee: "₹1,00,000",
             companyEMI: "₹1,15,000",
             upfrontPercentage: "50%",
             upfrontAmount: "₹57,500",
