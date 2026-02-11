@@ -339,12 +339,20 @@ export default async function CertificatePage({ params }: PageProps) {
                     </div>
                     <div className="cert-stat-item">
                         <span className="cert-stat-label">TOTAL HOURS</span>
-                        <div className="cert-stat-value"><strong>200+</strong>  Hours</div>
+                        <div className="cert-stat-value"><strong>40+</strong>  Hours</div>
                     </div>
                     <div className="cert-stat-item">
                         <span className="cert-stat-label">MEMBERSHIP</span>
-                        <div className="cert-stat-value"><strong>2 Years</strong> </div>
+                        <div className="cert-stat-value"><strong>6 Months</strong> </div>
                     </div>
+                </div>
+            </section>
+
+            {/* 2b. SCHEDULE BAR */}
+            <section className="schedule-bar">
+                <div className="banner-container">
+                    <span className="schedule-badge">Schedule Options</span>
+                    <span className="cert-text">Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day</span>
                 </div>
             </section>
 
@@ -356,7 +364,7 @@ export default async function CertificatePage({ params }: PageProps) {
 
             {/* 3. Who Should Enroll - Modern Design Replicated */}
             {targetAudienceSection && (
-                <section className="audience-section-modern" id="target-audience" style={{ padding: 'var(--space-12) 0' }}>
+                <section className="audience-section-modern" id="target-audience" style={{ padding: 'var(--space-12) 0', borderBottom: '1px solid #ff6b00' }}>
                     <div className="container">
                         <div className="audience-header-modern">
                             <span className="audience-eyebrow">BUILT FOR EVERYONE</span>

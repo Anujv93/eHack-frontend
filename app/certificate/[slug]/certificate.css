@@ -747,3 +747,35 @@
     font-size: 1.2rem;
     margin-right: 4px;
 }
+
+/* Schedule Bar */
+.schedule-bar {
+    background: rgba(255, 107, 0, 0.1);
+    padding: var(--space-4) var(--space-6);
+    border-top: 1px solid #ff6b00;
+    border-bottom: 1px solid #ff6b00;
+}
+
+.schedule-badge {
+    display: inline-block;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.banner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.cert-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--black);
+}

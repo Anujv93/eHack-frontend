@@ -11,7 +11,7 @@ export default function JobRolesSection({ section }: JobRolesSectionProps) {
     }
 
     return (
-        <section className="job-roles-section" id="job-roles">
+        <section className="job-roles-section border-bottom-1px-solid-#ff6b00" id="job-roles">
             <div className="container">
                 {/* Section Header */}
                 <div className="job-roles-header">
