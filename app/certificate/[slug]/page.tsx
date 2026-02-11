@@ -242,20 +242,55 @@ export default async function CertificatePage({ params }: PageProps) {
                     <div className="hero-content">
                         <h1 className="hero-title">
                             {(() => {
-                                const title = heroSection?.Title || certificate.Title;
-                                // Add AI superscript logic if needed, similar to program page
+                                const title = heroSection?.Title || certificate.Title || '';
+
+                                // Helper to process **highlighted** text or <span>highlighted</span> text
+                                const processText = (text: string) => {
+                                    if (!text) return null;
+                                    const parts = text.split(/(\*\*.*?\*\*|<span>.*?<\/span>)/g);
+                                    let hasManualHighlight = false;
+
+                                    const processed = parts.map((part, i) => {
+                                        if (part.startsWith('**') && part.endsWith('**')) {
+                                            hasManualHighlight = true;
+                                            return <span key={i} className="text-accent">{part.slice(2, -2)}</span>;
+                                        }
+                                        if (part.startsWith('<span>') && part.endsWith('</span>')) {
+                                            hasManualHighlight = true;
+                                            return <span key={i} className="text-accent">{part.slice(6, -7)}</span>;
+                                        }
+                                        return part;
+                                    });
+
+                                    return { processed, hasManualHighlight };
+                                };
+
+                                const result = processText(title);
+                                let finalContent = result?.processed;
+
+                                // Specialized rendering with AI superscripts and highlighting
                                 if (title.includes('Ethical Hacking')) {
                                     return (
                                         <>
-                                            {title.split('Ethical Hacking')[0]}
+                                            {processText(title.split('Ethical Hacking')[0])?.processed}
                                             <span className="text-accent">Ethical Hacking & Cyber Security<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
+                                            {processText(title.split('Ethical Hacking')[1] || '')?.processed}
                                         </>
                                     );
                                 } else if (title.includes('Digital Marketing')) {
                                     return (
                                         <>
-                                            {title.split('Digital Marketing')[0]}
+                                            {processText(title.split('Digital Marketing')[0])?.processed}
                                             <span className="text-accent">Digital Marketing<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
+                                            {processText(title.split('Digital Marketing')[1] || '')?.processed}
+                                        </>
+                                    );
+                                } else if (title.includes('Internship')) {
+                                    return (
+                                        <>
+                                            {processText(title.split('Internship')[0])?.processed}
+                                            <span className="text-accent">Internship Program<sup style={{ fontSize: '0.3em', color: '#FFFFFF', top: '-1.2em', marginLeft: '2px' }}>AI</sup></span>
+                                            {processText(title.split('Internship')[1] || '')?.processed}
                                         </>
                                     );
                                 } else if (title.includes('Data Science')) {
@@ -264,16 +299,34 @@ export default async function CertificatePage({ params }: PageProps) {
                                             <span className="text-accent">Data Science & Data Analytics</span> Powered by AI
                                         </>
                                     );
+                                } else if (title.includes('Robotics')) {
+                                    return (
+                                        <>
+                                            <span className="text-accent">Robotics for Every One</span> - Build Your First Robot with AI
+                                        </>
+                                    );
+                                } else if (title.includes('Personality')) {
+                                    return (
+                                        <>
+                                            <span className="text-accent">Personality & Soft Skill Development</span> Program
+                                        </>
+                                    );
                                 }
-                                return (
-                                    <>
-                                        {title}
-                                        {/* Optional: Add AI superscript to all certificates if requested? User said "implement the saem ui... data remains the same". I'll stick to matching specific keywords or just displaying title. */}
-                                    </>
-                                );
+
+                                // Fallback: If no manual highlight or specialized keyword, highlight the first word
+                                if (!result?.hasManualHighlight && title) {
+                                    const words = title.split(' ');
+                                    if (words.length > 0) {
+                                        return (
+                                            <>
+                                                <span className="text-accent">{words[0]}</span> {words.slice(1).join(' ')}
+                                            </>
+                                        );
+                                    }
+                                }
+
+                                return <>{finalContent}</>;
                             })()}
-                            {/* Subtitle/Cert count if applicable, maybe use subtitle from heroSection? */}
-                            {/* <span className="cert-count">{heroSection?.Subtitle}</span> */}
                         </h1>
 
                         {/* Use Summary Section Heading/Description as requested */}
