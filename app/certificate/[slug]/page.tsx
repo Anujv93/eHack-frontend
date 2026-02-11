@@ -410,10 +410,10 @@ export default async function CertificatePage({ params }: PageProps) {
             </section>
 
             {/* 2. What's New */}
-            <FeaturesGrid
+            {/* <FeaturesGrid
                 title={featuresGridSection?.Title}
                 features={featuresGridSection?.Features}
-            />
+            /> */}
 
             {/* 3. Who Should Enroll - Modern Design Replicated */}
             {targetAudienceSection && (
@@ -549,6 +549,12 @@ export default async function CertificatePage({ params }: PageProps) {
 
             {/* 12. FAQs */}
             {faqSection && <FAQSection section={faqSection} />}
+
+            {/* 2. What's New */}
+            <FeaturesGrid
+                title={featuresGridSection?.Title}
+                features={featuresGridSection?.Features}
+            />
 
             {/* 13. Why eHack */}
             <WhyEhackSection programType="cybersecurity" />
