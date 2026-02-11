@@ -384,7 +384,7 @@ export default async function CertificatePage({ params }: PageProps) {
                     </div>
                     <div className="cert-stat-item">
                         <span className="cert-stat-label">DURATION</span>
-                        <div className="cert-stat-value"><strong>7-9</strong> Months</div>
+                        <div className="cert-stat-value"><strong>2</strong> Months</div>
                     </div>
                     <div className="cert-stat-item">
                         <span className="cert-stat-label">MODE</span>
