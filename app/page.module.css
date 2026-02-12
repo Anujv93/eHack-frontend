@@ -2222,8 +2222,28 @@
     z-index: 2;
 }
 
-/* Responsive styles for Empowerment Ribbon */
+/* Responsive styles for Ribbon Cards */
 @media (max-width: 992px) {
+    .ribbonsGrid {
+        gap: 1.5rem;
+    }
+
+    .ribbonCard {
+        padding: 2rem 1.75rem;
+    }
+
+    .ribbonTitle {
+        font-size: 1.625rem;
+    }
+
+    .ribbonText {
+        font-size: 1rem;
+    }
+
+    .ribbonImage {
+        height: 220px;
+    }
+
     .empowermentRibbon .ribbonImage {
         height: 240px;
     }
@@ -2234,6 +2254,55 @@
 }
 
 @media (max-width: 768px) {
+    .ribbonsGrid {
+        gap: 1.25rem;
+        padding: 0;
+    }
+
+    .ribbonGridItem {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .ribbonCard {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ribbonContent {
+        padding: 1.5rem;
+    }
+
+    .csrRibbon .ribbonContent,
+    .franchiseRibbon .ribbonContent {
+        padding: 1.5rem;
+    }
+
+    .ribbonTitleStrip {
+        font-size: 0.9375rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .ribbonTitle {
+        font-size: 1.375rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .ribbonText {
+        font-size: 0.9375rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .ribbonAction {
+        font-size: 0.875rem;
+    }
+
+    .ribbonImage {
+        height: 200px;
+    }
+
     .empowermentRibbon .ribbonImage {
         height: 240px;
     }
@@ -2244,19 +2313,66 @@
     }
 
     .empowermentRibbon .ribbonBadge {
-        /* Inherit global styles */
         width: fit-content;
     }
 }
 
 @media (max-width: 480px) {
+    .ribbonsGrid {
+        gap: 1rem;
+    }
+
+    .ribbonCard {
+        border-radius: 16px;
+    }
+
+    .ribbonContent {
+        padding: 1.25rem;
+    }
+
+    .csrRibbon .ribbonContent,
+    .franchiseRibbon .ribbonContent {
+        padding: 1.25rem;
+    }
+
+    .ribbonTitleStrip {
+        font-size: 0.8125rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .ribbonTitle {
+        font-size: 1.125rem;
+        line-height: 1.3;
+    }
+
+    .ribbonText {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    .ribbonAction {
+        font-size: 0.8125rem;
+        gap: 0.5rem;
+    }
+
+    .ribbonImage {
+        height: 180px;
+    }
+
+    .ribbonBadge {
+        font-size: 0.625rem;
+        padding: 0.4rem 1rem;
+    }
+
     .empowermentRibbon .ribbonImage {
-        height: 240px;
+        height: 200px;
     }
 
     .empowermentRibbon .ribbonContent {
         margin-top: 0;
-        padding: 1rem;
+        padding: 1.25rem;
     }
 
     .empowermentRibbon .ribbonAction {
@@ -3199,7 +3315,7 @@
 /* Feature Pills */
 .ceFeaturePills {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 0.75rem;
     margin-bottom: 2.5rem;
 }
@@ -3216,6 +3332,7 @@
     font-weight: 600;
     color: #ea580c;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .cePill:hover {
@@ -3263,6 +3380,7 @@
 
     .ceHeadline {
         font-size: 2.75rem;
+        white-space: normal;
     }
 
     .ceFeaturePills {
@@ -3287,12 +3405,17 @@
         padding: 3rem 0;
     }
 
+    .ceMainGrid {
+        gap: 2rem;
+    }
+
     .ceHeadline {
-        font-size: 2.25rem;
+        font-size: 2rem;
+        white-space: normal;
     }
 
     .ceTagline {
-        font-size: 1rem;
+        font-size: 1.125rem;
     }
 
     .ceDescription {
@@ -3315,15 +3438,19 @@
         font-size: 1.25rem;
     }
 
+    .ceFeaturePills {
+        gap: 0.5rem;
+    }
+
     .cePill {
-        font-size: 0.8rem;
+        font-size: 0.8125rem;
         padding: 0.5rem 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .ceShowcaseSection {
-        padding: 2rem 0;
+        padding: 2.5rem 0;
     }
 
     .ceTopBadge {
@@ -3331,8 +3458,22 @@
         margin-bottom: 2rem;
     }
 
+    .ceMainGrid {
+        gap: 1.5rem;
+    }
+
     .ceHeadline {
         font-size: 1.75rem;
+        white-space: normal;
+    }
+
+    .ceTagline {
+        font-size: 1rem;
+    }
+
+    .ceDescription {
+        font-size: 0.9375rem;
+        line-height: 1.6;
     }
 
     .ceMainImage {
@@ -3345,11 +3486,12 @@
 
     .ceFeaturePills {
         gap: 0.5rem;
+        justify-content: center;
     }
 
     .cePill {
         font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
+        padding: 0.5rem 0.875rem;
     }
 
     .ceCTAButton {

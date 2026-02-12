@@ -47,8 +47,8 @@
     .back-to-top {
         width: 44px;
         height: 44px;
-        bottom: 1.5rem;
-        right: 1.5rem;
+        bottom: 5.5rem;
+        right: 1.25rem;
     }
 
     .back-to-top svg {
@@ -61,7 +61,7 @@
     .back-to-top {
         width: 40px;
         height: 40px;
-        bottom: 1rem;
+        bottom: 5rem;
         right: 1rem;
     }
 
