@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { programs, getProgramBySlug } from '@/data/programs';
-import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star, FileText, Gem, Banknote, Landmark, Shield, CreditCard } from 'lucide-react';
+import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star, FileText, Gem, Banknote, Landmark, Shield, CreditCard, X } from 'lucide-react';
 import './program.css';
 import PlacementSection from '@/components/home/placement-section';
 import { ProgramLabsWrapper } from '@/components/global/certificate-labs/ProgramLabsWrapper';
@@ -51,7 +51,48 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
     const [activeModule, setActiveModule] = useState(0);
     const [activeSection, setActiveSection] = useState('overview');
     const [showStickyNav, setShowStickyNav] = useState(false);
+    const [showBrochureModal, setShowBrochureModal] = useState(false);
+    const [showCareerModal, setShowCareerModal] = useState(false);
     const stickyNavRef = useRef<HTMLDivElement>(null);
+
+    const handleBrochureDownloadClick = (e: React.MouseEvent) => {
+        if (!program?.brochureLink) {
+            e.preventDefault();
+            return;
+        }
+        e.preventDefault();
+        setShowBrochureModal(true);
+    };
+
+    const handleCareerAdviceClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setShowCareerModal(true);
+    };
+
+    const handleCareerFormSuccess = () => {
+        // Close modal after a delay
+        setTimeout(() => {
+            setShowCareerModal(false);
+        }, 3000);
+    };
+
+
+    const handleBrochureFormSuccess = () => {
+        // Trigger download
+        if (program?.brochureLink) {
+            const link = document.createElement('a');
+            link.href = `/brochure/${program.brochureLink}`; // Assuming local path or full URL
+            link.target = '_blank';
+            link.download = 'brochure.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        // Close modal after a delay
+        setTimeout(() => {
+            setShowBrochureModal(false);
+        }, 2000);
+    };
 
     // Handle scroll to update active section and sticky nav visibility
     useEffect(() => {
@@ -470,7 +511,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                             <h3>Not sure if this is right for you?</h3>
                             <p>Talk to our career counsellor for a personalized learning path recommendation.</p>
                         </div>
-                        <a href="tel:+919886035330" className="btn-cta-modern">
+                        <a href="#" onClick={handleCareerAdviceClick} className="btn-cta-modern">
                             Get Free Career Advice
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                         </a>
@@ -610,7 +651,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                                 target={program.brochureLink ? "_blank" : undefined}
                                 rel={program.brochureLink ? "noopener noreferrer" : undefined}
                                 download={program.brochureLink ? true : undefined}
-                                onClick={(e) => !program.brochureLink && e.preventDefault()}
+                                onClick={handleBrochureDownloadClick}
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                                 {program.brochureLink ? "Download Brochure" : "Brochure Coming Soon"}
@@ -618,7 +659,63 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         </div>
                     </div>
                 </div>
-            </section>
+
+                {/* Download Brochure Modal */}
+                {
+                    showBrochureModal && (
+                        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.7)' }}>
+                            <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden" style={{ position: 'relative', width: '100%', maxWidth: '480px', backgroundColor: 'white', borderRadius: '1rem', overflow: 'hidden' }}>
+                                <button
+                                    onClick={() => setShowBrochureModal(false)}
+                                    className="absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 transition-colors z-10"
+                                    style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', background: 'white', borderRadius: '50%', border: 'none', cursor: 'pointer', zIndex: 10 }}
+                                >
+                                    <X size={20} />
+                                </button>
+
+                                <div className="p-6" style={{ padding: '0' }}>
+                                    <InquiryForm
+                                        courseName={program.title}
+                                        courseCode={program.slug}
+                                        variant="popup"
+                                        title="Download Brochure"
+                                        subtitle="Fill the form to download detailed curriculum"
+                                        onSuccess={handleBrochureFormSuccess}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }
+
+                {/* Career Advice Modal */}
+                {
+                    showCareerModal && (
+                        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.7)' }}>
+                            <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden" style={{ position: 'relative', width: '100%', maxWidth: '480px', backgroundColor: 'white', borderRadius: '1rem', overflow: 'hidden' }}>
+                                <button
+                                    onClick={() => setShowCareerModal(false)}
+                                    className="absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 transition-colors z-10"
+                                    style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', background: 'white', borderRadius: '50%', border: 'none', cursor: 'pointer', zIndex: 10 }}
+                                >
+                                    <X size={20} />
+                                </button>
+
+                                <div className="p-6" style={{ padding: '0' }}>
+                                    <InquiryForm
+                                        courseName={program.title}
+                                        courseCode={program.slug}
+                                        variant="popup"
+                                        title="Get Free Career Advice"
+                                        subtitle="Talk to our expert counselors"
+                                        onSuccess={handleCareerFormSuccess}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }
+            </section >
 
             {/* Hands-On Labs Section */}
             {
@@ -989,6 +1086,6 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
                 </div>
             </section>
-        </div>
+        </div >
     );
 }

@@ -61,13 +61,12 @@ export default function AboutPage() {
     };
 
     const founderFullProfile = {
-        quote: `"Skills create careers. Vision creates leaders."`,
-        intro: `My journey has been a long one — over 30 years across banking, finance, leasing, and cyber security — and if there's one thing I've learned, it's this: technology keeps changing, but the need for the right guidance never does.`,
-        education: `I have been privileged to learn at IIM Calcutta (Business Management), NIPM Calcutta (Personnel Management), along with Law and Commerce specialisation. These experiences shaped the way I think — not just about business or law, but about people, responsibility, and long-term growth.`,
-        experience: `Alongside eHack Academy, I also serve as Director of Operations at Byte Code Cyber Security Pvt. Ltd., where I deal with real cyber security challenges every day. This keeps me closely connected to industry realities — what companies truly expect and what young professionals genuinely need to succeed.`,
-        mission: `I started eHack Academy with a simple intention: to help people build real skills, gain confidence, and create a secure and meaningful career in cyber security. Whether someone is a student, a working professional, or restarting their journey, our focus has always been on clarity, honesty, and practical learning.`,
-        vision: `At eHack Academy, we don't just teach technology. We mentor, guide, and prepare individuals to face the real world with confidence.`,
-        closing: `If you're serious about your future in cyber security, we'll walk that journey with you.`
+        quote: `"Bridging Learning and Industry to Build Future-Ready Careers."`,
+        role: `Founder Director – eHack Academy & eHack Global Technology`,
+        messageP1: `eHack was established with a clear belief — careers must be shaped with clarity, relevance, and long-term purpose.`,
+        messageP2: `Through eHack Academy, students and professionals are guided toward high-impact careers in Cyber Security, Data Science & AI, Robotics & IoT, and Digital Marketing, with learning paths aligned to real-world roles rather than short-term trends.`,
+        messageP3: `In parallel, eHack Global Technology delivers enterprise-grade cyber security services including security assessments, GDPR consulting, PCI DSS compliance, malware analysis, and risk management. This strong integration between education and corporate practice ensures that learning remains practical, current, and globally relevant.`,
+        closing: `At eHack, knowledge is not just delivered — it is applied, validated, and transformed into meaningful careers.`
     };
 
     const debolinaFullProfile = {
@@ -413,29 +412,26 @@ export default function AboutPage() {
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
                                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                                 </svg>
-                                <p>Skills create careers. Vision creates leaders.</p>
+                                <p>{founderFullProfile.quote}</p>
                             </div>
                             <div className="founder-name-badge">
                                 <h3 className="founder-name">Sanjeev Gupta</h3>
-                                <p className="founder-role">Founder & Director</p>
+                                <p className="founder-role">{founderFullProfile.role}</p>
                             </div>
                         </div>
                         <div className="founder-content">
                             <p className="founder-bio">
-                                My journey has been a long one — over 30 years across banking, finance, leasing, and cyber security — and if there's one thing I've learned, it's this: <strong>technology keeps changing, but the need for the right guidance never does.</strong>
+                                {founderFullProfile.messageP1}
                             </p>
-                            <p className="founder-bio">
-                                I have been privileged to learn at IIM Calcutta (Business Management), NIPM Calcutta (Personnel Management), along with Law and Commerce specialisation. These experiences shaped the way I think — not just about business or law, but about people, responsibility, and long-term growth.
+                            <p className="founder-bio" style={{ marginTop: '1rem' }}>
+                                {founderFullProfile.messageP2}
                             </p>
-                            <div className="founder-education">
-                                <strong>I started eHack Academy with a simple intention:</strong> to help people build real skills, gain confidence, and create a secure and meaningful career in cyber security.
-                            </div>
-                            <button className="read-more-btn" onClick={() => setShowFounderModal(true)}>
-                                Read Full Message
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg>
-                            </button>
+                            <p className="founder-bio" style={{ marginTop: '1rem' }}>
+                                {founderFullProfile.messageP3}
+                            </p>
+                            <p className="founder-bio" style={{ marginTop: '1.5rem', fontWeight: '500', color: '#0f172a' }}>
+                                {founderFullProfile.closing}
+                            </p>
                         </div>
                     </div>
 
@@ -944,8 +940,7 @@ export default function AboutPage() {
                             <img src="/images/about-us/manager.jpeg" alt="Sanjeev Gupta" className="founder-modal-image" />
                             <div className="profile-modal-title-section">
                                 <h2 className="profile-modal-name">Sanjeev Gupta</h2>
-                                <p className="profile-modal-role">Founder & Director</p>
-                                <p className="profile-modal-specialization">Skill to Employability</p>
+                                <p className="profile-modal-role">{founderFullProfile.role}</p>
                             </div>
                         </div>
 
@@ -958,27 +953,12 @@ export default function AboutPage() {
 
                         <div className="profile-modal-content">
                             <div className="profile-modal-section">
-                                <h3 className="profile-section-heading">The Journey</h3>
-                                <p>{founderFullProfile.intro}</p>
-                            </div>
-
-                            <div className="profile-modal-section">
-                                <h3 className="profile-section-heading">Education & Growth</h3>
-                                <p>{founderFullProfile.education}</p>
-                            </div>
-
-                            <div className="profile-modal-section">
-                                <h3 className="profile-section-heading">Industry Experience</h3>
-                                <p>{founderFullProfile.experience}</p>
-                            </div>
-
-                            <div className="profile-modal-section">
-                                <h3 className="profile-section-heading">Our Mission</h3>
-                                <p>{founderFullProfile.mission}</p>
-                            </div>
-
-                            <div className="founder-modal-vision">
-                                <p>{founderFullProfile.vision}</p>
+                                <h3 className="profile-section-heading">Founder’s Message</h3>
+                                <p>{founderFullProfile.messageP1}</p>
+                                <br />
+                                <p>{founderFullProfile.messageP2}</p>
+                                <br />
+                                <p>{founderFullProfile.messageP3}</p>
                             </div>
 
                             <div className="profile-modal-section">
@@ -988,7 +968,7 @@ export default function AboutPage() {
                             <div className="founder-modal-signature">
                                 <div className="signature-line"></div>
                                 <p className="signature-name">Sanjeev Gupta</p>
-                                <p className="signature-title">Founder & Director</p>
+                                <p className="signature-title">{founderFullProfile.role}</p>
                                 <p className="signature-org">eHack Academy – Institute of Emerging Technologies</p>
                                 <p className="signature-domains">Cyber Security | Data Science | Robotics | Digital Marketing</p>
                             </div>

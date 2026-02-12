@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { CourseOutlineSection as CourseOutlineSectionType } from '@/lib/strapi';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, X } from 'lucide-react';
+import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
 import './course-outline-section.css';
 
 interface CourseOutlineSectionProps {
@@ -14,6 +15,33 @@ export default function CourseOutlineSection({ section, brochureUrl }: CourseOut
     // Match Program page behavior: one active module at a time, default first one open (0), or none (-1)
     // Program page defaults to 0. 
     const [activeModule, setActiveModule] = useState<number>(0);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleDownloadClick = (e: React.MouseEvent) => {
+        if (!brochureUrl) {
+            e.preventDefault();
+            return;
+        }
+        e.preventDefault();
+        setShowModal(true);
+    };
+
+    const handleFormSuccess = () => {
+        // Trigger download
+        if (brochureUrl) {
+            const link = document.createElement('a');
+            link.href = brochureUrl;
+            link.target = '_blank';
+            link.download = 'brochure.pdf'; // browser might ignore this for cross-origin but worth trying
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        // Close modal after a delay to show success message
+        setTimeout(() => {
+            setShowModal(false);
+        }, 2000);
+    };
 
     if (!section || !section.Modules || section.Modules.length === 0) {
         return null;
@@ -179,10 +207,7 @@ export default function CourseOutlineSection({ section, brochureUrl }: CourseOut
                         <a
                             href={brochureUrl || '#'}
                             className={`btn-download-modern ${!brochureUrl ? 'opacity-50 cursor-not-allowed' : ''}`}
-                            target={brochureUrl ? "_blank" : undefined}
-                            rel={brochureUrl ? "noopener noreferrer" : undefined}
-                            download={brochureUrl ? true : undefined}
-                            onClick={(e) => !brochureUrl && e.preventDefault()}
+                            onClick={handleDownloadClick}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                             {brochureUrl ? "Download Brochure" : "Brochure Coming Soon"}
@@ -190,6 +215,32 @@ export default function CourseOutlineSection({ section, brochureUrl }: CourseOut
                     </div>
                 </div>
             </div>
+
+            {/* Download Brochure Modal */}
+            {showModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.7)' }}>
+                    <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden" style={{ position: 'relative', width: '100%', maxWidth: '480px', backgroundColor: 'white', borderRadius: '1rem', overflow: 'hidden' }}>
+                        <button
+                            onClick={() => setShowModal(false)}
+                            className="absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 transition-colors z-10"
+                            style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', background: 'white', borderRadius: '50%', border: 'none', cursor: 'pointer', zIndex: 10 }}
+                        >
+                            <X size={20} />
+                        </button>
+
+                        <div className="p-6" style={{ padding: '0' }}>
+                            <InquiryForm
+                                courseName={section.Title || 'Course Brochure'}
+                                courseCode={section.Title?.toLowerCase().replace(/\s+/g, '-') || 'brochure-download'}
+                                variant="popup"
+                                title="Download Brochure"
+                                subtitle="Fill the form to download detailed curriculum"
+                                onSuccess={handleFormSuccess}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

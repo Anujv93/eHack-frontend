@@ -8,13 +8,14 @@ interface InquiryFormProps {
     courseName?: string;
     courseCode?: string;
     // Custom styling variant
-    variant?: 'hero' | 'sidebar' | 'section';
+    variant?: 'hero' | 'sidebar' | 'section' | 'popup';
     // Custom title/subtitle
     title?: string;
     subtitle?: string;
     // Pipeline configuration
     pipeline?: string;
     stage?: string;
+    onSuccess?: () => void;
 }
 
 interface FormData {
@@ -33,6 +34,7 @@ export default function InquiryForm({
     subtitle = 'Our counselor will call you within 2 hours',
     pipeline = 'Leads Pipeline Standard',
     stage = 'New Inquiry',
+    onSuccess,
 }: InquiryFormProps) {
     const [formData, setFormData] = useState<FormData>({
         firstName: '',
@@ -130,6 +132,9 @@ export default function InquiryForm({
             }
 
             setIsSubmitted(true);
+            if (onSuccess) {
+                onSuccess();
+            }
         } catch (err) {
             console.error('Error submitting inquiry:', err);
             setError('Failed to submit. Please call us at +91 98860 35330');
