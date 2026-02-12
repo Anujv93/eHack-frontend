@@ -893,6 +893,55 @@
     margin: 0;
 }
 
+/* Premium Badge Styles */
+.model-premium-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+    z-index: 10;
+}
+
+.model-premium-badge-master {
+    background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.model-premium-badge-titan {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+/* Responsive Badge */
+@media (max-width: 768px) {
+    .model-premium-badge {
+        top: 10px;
+        right: 10px;
+        font-size: 0.6875rem;
+        padding: 0.4rem 0.875rem;
+        letter-spacing: 0.8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .model-premium-badge {
+        top: 8px;
+        right: 8px;
+        font-size: 0.625rem;
+        padding: 0.375rem 0.75rem;
+        letter-spacing: 0.6px;
+    }
+}
+
 .revenue-streams {
     background: rgba(223, 103, 24, 0.05);
     border: 1px solid rgba(223, 103, 24, 0.2);

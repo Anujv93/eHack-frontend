@@ -428,6 +428,7 @@ export default function FranchisePage() {
                     </div>
                     <div className="model-highlights-grid">
                         <div className="model-card" onClick={() => setShowModelModal(true)} style={{ cursor: 'pointer' }}>
+                            <div className="model-premium-badge">PRIME</div>
                             <div className="model-card-image">
                                 <Image
                                     src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80"
@@ -453,6 +454,7 @@ export default function FranchisePage() {
                             </div>
                         </div>
                         <div className="model-card" onClick={() => setShowModelModal(true)} style={{ cursor: 'pointer' }}>
+                            <div className="model-premium-badge model-premium-badge-master">MASTER</div>
                             <div className="model-card-image">
                                 <Image
                                     src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80"
@@ -478,6 +480,7 @@ export default function FranchisePage() {
                             </div>
                         </div>
                         <div className="model-card" onClick={() => setShowModelModal(true)} style={{ cursor: 'pointer' }}>
+                            <div className="model-premium-badge model-premium-badge-titan">TITAN</div>
                             <div className="model-card-image">
                                 <Image
                                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80"
