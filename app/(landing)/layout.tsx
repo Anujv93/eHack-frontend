@@ -13,6 +13,10 @@ export const metadata: Metadata = {
     description: 'Launch your high-paying career in cybersecurity without a degree.',
 };
 
+import Footer from '@/components/layout/footer/footer';
+
+// ... existing imports
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -22,6 +26,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${montserrat.variable} antialiased font-montserrat`}>
                 {children}
+                <Footer />
             </body>
         </html>
     );
