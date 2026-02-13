@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Phone, ArrowRight } from 'lucide-react';
-import styles from '@/app/page.module.css';
+import styles from '@/app/(main)/page.module.css';
 import ProgramsSection from './programs-section';
 import MasterySection from './mastery-section';
 import PlacementSection from './placement-section';
