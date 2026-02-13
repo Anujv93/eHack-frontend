@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-montserrat: var(--font-montserrat);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+*/
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+/* Custom Utilities for High Converting Elements */
+@utility text-cta-orange {
+    color: #ff6b00;
+}
+
+@utility bg-cta-orange {
+    background-color: #ff6b00;
+}
+
+@utility bg-cta-orange-hover {
+    background-color: #e56000;
+}
+
+@utility scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@layer utilities {
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
