@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const navItems = [
     { id: 'home', label: 'Home' },
@@ -60,10 +61,9 @@ export default function StickyNavbar() {
                 }`}
         >
             <div className="flex items-center justify-between px-6">
-                {/* Logo Area - Optional, currently just text/icon or empty if relying on Hero */}
-                <span className={`font-black text-xl tracking-tighter transition-colors ${scrolled ? 'text-[#1f2937]' : 'text-white'}`}>
-                    eHack<span className="text-[#ff6b00]">.</span>
-                </span>
+
+
+
 
                 {/* Desktop Nav Items */}
                 <div
@@ -75,8 +75,8 @@ export default function StickyNavbar() {
                             key={item.id}
                             onClick={() => scrollToSection(item.id)}
                             className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 relative ${activeSection === item.id
-                                    ? 'text-white shadow-md'
-                                    : 'text-gray-500 hover:text-gray-900'
+                                ? 'text-white shadow-md'
+                                : 'text-gray-500 hover:text-gray-900'
                                 }`}
                         >
                             {activeSection === item.id && (
@@ -99,8 +99,8 @@ export default function StickyNavbar() {
                 <button
                     onClick={() => scrollToSection('programs')}
                     className={`hidden md:block px-5 py-2 rounded-full font-bold text-sm transition-all duration-300 ${scrolled
-                            ? 'bg-[#1f2937] text-white hover:bg-black opacity-100 translate-y-0'
-                            : 'bg-white text-[#1f2937] hover:bg-gray-100 opacity-0 -translate-y-4 pointer-events-none'
+                        ? 'bg-[#1f2937] text-white hover:bg-black opacity-100 translate-y-0'
+                        : 'bg-white text-[#1f2937] hover:bg-gray-100 opacity-0 -translate-y-4 pointer-events-none'
                         }`}
                 >
                     Apply Now

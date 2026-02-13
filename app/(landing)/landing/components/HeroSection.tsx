@@ -16,21 +16,25 @@ const HeroSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/40"></div>
             </div>
 
+            {/* Logo Container - Aligned with Grid */}
+            <div className="absolute top-0 left-0 w-full z-50 pointer-events-none">
+                <div className="container mx-auto px-6 lg:px-12 max-w-[1300px]">
+                    <div className="pt-8">
+                        <img
+                            src="/images/white-academy.png"
+                            alt="eHack Academy"
+                            className="w-40 md:w-48 lg:w-56 h-auto object-contain pointer-events-auto"
+                        />
+                    </div>
+                </div>
+            </div>
+
             <div className="container mx-auto px-6 lg:px-12 max-w-[1300px] relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
 
                     {/* Left Content - Copy & Direct Response */}
                     <div className="lg:w-[58%] text-center lg:text-left z-10">
-                        {/* Urgency / Authority Badge */}
-                        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-8 animate-fadeIn">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6b00] opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff6b00]"></span>
-                            </span>
-                            <span className="text-white font-bold text-xs uppercase tracking-wider">
-                                New Cohort Starting Soon
-                            </span>
-                        </div>
+
 
                         {/* Main Headline - Problem/Solution Oriented */}
                         <h1 className="font-montserrat font-black text-white text-3xl md:text-3xl lg:text-[1.85rem] xl:text-[2.5rem] 2xl:text-[3rem] leading-[1.2] mb-8 tracking-tight drop-shadow-lg">
