@@ -141,8 +141,8 @@ export default function CTASection() {
                                             className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937]"
                                         />
                                     </div>
-                                    <select className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937] appearance-none cursor-pointer">
-                                        <option value="" disabled selected>Select Your Program</option>
+                                    <select defaultValue="" className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937] appearance-none cursor-pointer">
+                                        <option value="" disabled>Select Your Program</option>
                                         <option value="masters">Masters Program (v13 AI)</option>
                                         <option value="graduate">Graduate Program</option>
                                         <option value="elite">Elite Program</option>

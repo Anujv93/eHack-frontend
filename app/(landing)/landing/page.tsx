@@ -6,6 +6,7 @@ import ProgramDetailsSection from "./components/ProgramDetailsSection";
 import FAQSection from "./components/FAQSection";
 import CTASection from "./components/CTASection";
 import StickyNavbar from "./components/StickyNavbar";
+import OurCoursesSection from "./components/OurCoursesSection";
 
 export default function Home() {
     return (
@@ -30,6 +31,10 @@ export default function Home() {
 
             <section id="programs">
                 <ProgramDetailsSection />
+            </section>
+
+            <section id="courses">
+                <OurCoursesSection />
             </section>
 
             <section id="faq">
