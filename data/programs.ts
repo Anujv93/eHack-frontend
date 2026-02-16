@@ -801,8 +801,8 @@ export const programs = [
         features: "Includes Website Design, Copywriting, Social Media Marketing, SEO, Paid Advertising, Digital Tools, ORM & Email Marketing, and complete Job Readiness training.",
         batchInfo: "5TH OF EVERY MONTH",
         partner: "eHack Digital Academy",
-        partnerLogo: "/ehack-black.png",
-        ehackLogo: "/ehack-black.png",
+        partnerLogo: "/ehack-logo.png",
+        ehackLogo: "/ehack-logo.png",
         stats: {
             startDate: "5th of Every Month",
             duration: "4 Months",
@@ -1053,8 +1053,8 @@ export const programs = [
         features: "Hands-on projects including Roach Bot, Obstacle Avoidance Robot, Line Follower Robot, and Bluetooth Controlled Robot with lifetime access to learning materials.",
         batchInfo: "5TH OF EVERY MONTH",
         partner: "eHack Academy",
-        partnerLogo: "/ehack-black.png",
-        ehackLogo: "/ehack-black.png",
+        partnerLogo: "/ehack-logo.png",
+        ehackLogo: "/ehack-logo.png",
         stats: {
             startDate: "5th of Every Month",
             duration: "60 Days",
@@ -1286,8 +1286,8 @@ export const programs = [
         features: "Includes Python Programming, SQL, Advanced Excel, Machine Learning, Supervised & Unsupervised Learning, Power BI Dashboard Creation, Exploratory Data Analysis with NumPy & Pandas, and 10+ Industry Projects.",
         batchInfo: "5TH OF EVERY MONTH",
         partner: "eHack Academy",
-        partnerLogo: "/ehack-black.png",
-        ehackLogo: "/ehack-black.png",
+        partnerLogo: "/ehack-logo.png",
+        ehackLogo: "/ehack-logo.png",
         stats: {
             startDate: "5th of Every Month",
             duration: "6 Months",

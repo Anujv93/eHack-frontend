@@ -77,20 +77,20 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.875rem 2rem;
-    background: #111827;
+    background: #FF6B00;
     color: #FFFFFF;
     font-size: 0.9375rem;
     font-weight: 600;
     border-radius: 10px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 14px rgba(255, 107, 0, 0.3);
 }
 
 .view-all-link:hover {
-    background: #FF6B00;
+    background: #e05e00;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
 }
 
 .view-all-link svg {
@@ -189,8 +189,6 @@
     width: auto;
     max-width: 100px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
 }
 
 .explore-card-content h4 {
