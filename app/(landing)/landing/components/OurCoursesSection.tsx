@@ -88,7 +88,7 @@ export default function OurCoursesSection() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-24 bg-white relative overflow-hidden">
+        <section id="certifications" ref={sectionRef} className="py-24 bg-white relative overflow-hidden">
             {/* Background Decoration to match theme */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ff6b00]/5 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
