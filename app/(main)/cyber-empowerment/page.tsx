@@ -2,12 +2,55 @@
 
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, Users, Shield, Smartphone, BookOpen, Award, Target, CheckCircle, Phone } from 'lucide-react';
+import { ArrowLeft, Users, Shield, Smartphone, BookOpen, Award, Target, CheckCircle, Phone, X } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function CyberEmpowermentPage() {
     const [isSticky, setIsSticky] = useState(false);
     const [activeSection, setActiveSection] = useState('intro');
+    const [showPopup, setShowPopup] = useState(false);
+    const [popupForm, setPopupForm] = useState({ name: '', email: '', phone: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [formError, setFormError] = useState('');
+
+    const handlePopupSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setFormError('');
+        if (!popupForm.name.trim()) { setFormError('Please enter your name'); return; }
+        if (!popupForm.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(popupForm.email)) { setFormError('Please enter a valid email'); return; }
+        if (!popupForm.phone.trim()) { setFormError('Please enter your phone number'); return; }
+
+        setIsSubmitting(true);
+        try {
+            const response = await fetch('/api/zoho/inquiry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: popupForm.name.split(' ')[0],
+                    lastName: popupForm.name.split(' ').slice(1).join(' ') || popupForm.name.split(' ')[0],
+                    email: popupForm.email,
+                    phone: popupForm.phone,
+                    city: '',
+                    inquiryName: `Website - ${popupForm.name} - Cyber Empowerment Partnership`,
+                    courses: [{ name: 'Cyber Empowerment Partnership', code: 'cyber-empowerment', price: 0, category: 'Partnership Inquiry' }],
+                    totalAmount: 0,
+                    message: 'Cyber Empowerment Partnership Inquiry',
+                    leadSource: 'Website Cyber Empowerment Page',
+                    agreeWhatsApp: true,
+                    pipeline: 'Leads Pipeline Standard',
+                    stage: 'New Inquiry',
+                }),
+            });
+            if (!response.ok) throw new Error('Failed to submit');
+            setIsSubmitted(true);
+            setTimeout(() => { setShowPopup(false); setIsSubmitted(false); setPopupForm({ name: '', email: '', phone: '' }); }, 3000);
+        } catch {
+            setFormError('Something went wrong. Please call us at +91 98860 35330');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     const sections = [
         { id: 'intro', label: 'Overview' },
@@ -418,9 +461,9 @@ export default function CyberEmpowermentPage() {
                             <strong>Together, let's build a safer, smarter, and cyber-aware society.</strong>
                         </p>
                         <div className={styles.ctaButtons}>
-                            <Link href="/inquiry" className={styles.ctaPrimaryBtn}>
+                            <button onClick={() => setShowPopup(true)} className={styles.ctaPrimaryBtn}>
                                 Partner With Us
-                            </Link>
+                            </button>
                             <Link href="/csr" className={styles.ctaSecondaryBtn}>
                                 Explore CSR Initiatives
                             </Link>
@@ -442,6 +485,60 @@ export default function CyberEmpowermentPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Popup Inquiry Form */}
+            {showPopup && (
+                <div className={styles.popupOverlay} onClick={() => setShowPopup(false)}>
+                    <div className={styles.popupContent} onClick={(e) => e.stopPropagation()}>
+                        <button className={styles.popupClose} onClick={() => setShowPopup(false)}>
+                            <X size={24} />
+                        </button>
+                        {isSubmitted ? (
+                            <div className={styles.popupSuccess}>
+                                <div className={styles.successIcon}>✓</div>
+                                <h3>Thank You!</h3>
+                                <p>Our team will get in touch within 24 hours.</p>
+                                <div className={styles.successActions}>
+                                    <a href="tel:+919886035330" className={styles.callBtn}>📞 Call Now</a>
+                                    <a href="https://wa.me/919886035330" className={styles.whatsappBtn}>💬 WhatsApp</a>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className={styles.popupForm}>
+                                <h3 className={styles.popupTitle}>Partner With Us</h3>
+                                <p className={styles.popupSubtitle}>Share your details and we'll get in touch within 24 hours</p>
+                                {formError && <div className={styles.popupError}>{formError}</div>}
+                                <form onSubmit={handlePopupSubmit}>
+                                    <input
+                                        type="text"
+                                        placeholder="Your Name *"
+                                        value={popupForm.name}
+                                        onChange={(e) => setPopupForm(prev => ({ ...prev, name: e.target.value }))}
+                                        className={styles.popupInput}
+                                    />
+                                    <input
+                                        type="email"
+                                        placeholder="Email Address *"
+                                        value={popupForm.email}
+                                        onChange={(e) => setPopupForm(prev => ({ ...prev, email: e.target.value }))}
+                                        className={styles.popupInput}
+                                    />
+                                    <input
+                                        type="tel"
+                                        placeholder="Phone Number *"
+                                        value={popupForm.phone}
+                                        onChange={(e) => setPopupForm(prev => ({ ...prev, phone: e.target.value }))}
+                                        className={styles.popupInput}
+                                    />
+                                    <button type="submit" className={styles.popupSubmitBtn} disabled={isSubmitting}>
+                                        {isSubmitting ? 'Submitting...' : 'Submit'}
+                                    </button>
+                                </form>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
