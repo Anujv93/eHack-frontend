@@ -53,6 +53,7 @@ const programs = [
         },
         badge: 'Fastest Path',
         accent: '#ff6b00',
+        link: 'https://www.ehackacademy.com/programs/masterclass-ethical-hacking-ceh-v13',
         certificateImages: [
             "/certificates/masterclass-2.jpeg",
             "/certificates/masterclass-3.jpeg",
@@ -77,6 +78,7 @@ const programs = [
         badge: 'Most Popular',
         accent: '#ff6b00',
         featured: true,
+        link: 'https://www.ehackacademy.com/programs/graduate-cybersecurity',
         certificateImages: [
             "/certificates/cert-cscu.jpg",
             "/certificates/certificate-cnd.jpg"
@@ -99,6 +101,7 @@ const programs = [
         },
         badge: 'Elite Level',
         accent: '#ff6b00',
+        link: 'https://www.ehackacademy.com/programs/masters-ethical-hacking',
         certificateImages: [
             "/certificates/cert-ceh.jpg",
             "/certificates/cert-cpent.jpg",
@@ -330,13 +333,16 @@ const SolutionSection = () => {
                                 </div>
                             )}
 
-                            <button className={`w-full py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn mt-auto ${program.featured
-                                ? 'bg-[#ff6b00] text-white hover:bg-[#e66000] shadow-md shadow-[#ff6b00]/20'
-                                : 'bg-gray-900 text-white hover:bg-black'
-                                }`}>
+                            <a
+                                href={program.link}
+                                className={`w-full py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 group/btn mt-auto ${program.featured
+                                    ? 'bg-[#ff6b00] text-white hover:bg-[#e66000] shadow-md shadow-[#ff6b00]/20'
+                                    : 'bg-gray-900 text-white hover:bg-black'
+                                    }`}
+                            >
                                 Explore Program
                                 <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
-                            </button>
+                            </a>
                         </div>
                     ))}
                 </div>

@@ -14,7 +14,7 @@ const courses = [
         tagColor: "bg-green-100 text-green-800 border-green-200",
         name: "Certified Information Systems Security Professional",
         acronym: "(CISSP)",
-        link: "#"
+        link: "https://www.ehackacademy.com/certificate/isc2-cissp"
     },
     {
         organization: "EC Council",
@@ -23,7 +23,7 @@ const courses = [
         tagColor: "bg-blue-100 text-blue-800 border-blue-200",
         name: "C|CISO (Certified Chief Information Security Officer)",
         acronym: "",
-        link: "#"
+        link: "https://www.ehackacademy.com/certificate/ecc-cciso"
     },
     {
         organization: "ISACA",
@@ -32,7 +32,7 @@ const courses = [
         tagColor: "bg-red-100 text-red-800 border-red-200",
         name: "Certified Information Systems Auditors",
         acronym: "(CISA)",
-        link: "#"
+        link: "https://www.ehackacademy.com/certificate/isaca-cisa"
     },
     {
         organization: "ISACA",
@@ -41,7 +41,7 @@ const courses = [
         tagColor: "bg-purple-100 text-purple-800 border-purple-200",
         name: "Certified Information Security Manager",
         acronym: "(CISM)",
-        link: "#"
+        link: "https://www.ehackacademy.com/certificate/isaca-cism"
     },
     {
         organization: "Offensive Security",
@@ -50,7 +50,7 @@ const courses = [
         tagColor: "bg-yellow-100 text-yellow-800 border-yellow-200",
         name: "OSCP (Offensive Security Certified Professional)",
         acronym: "",
-        link: "#"
+        link: "https://www.ehackacademy.com/certificate/oscp"
     },
     {
         organization: "EC Council",
@@ -59,7 +59,7 @@ const courses = [
         tagColor: "bg-cyan-100 text-cyan-800 border-cyan-200",
         name: "Certified Ethical Hacker",
         acronym: "(CEH AI)",
-        link: "#"
+        link: "https://www.ehackacademy.com/certificate/ceh-v13"
     }
 ];
 
