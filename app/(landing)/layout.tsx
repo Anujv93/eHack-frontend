@@ -11,7 +11,12 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
     title: 'Cybersecurity Career Accelerator | eHack Academy',
     description: 'Launch your high-paying career in cybersecurity without a degree.',
-    // icons are handled by file-based metadata (favicon.ico in app dir)
+    icons: {
+        icon: '/favicon.ico?v=2',
+        shortcut: '/favicon.ico?v=2',
+        apple: '/favicon.ico?v=2',
+    },
+
 };
 
 import Footer from '@/components/layout/footer/footer';

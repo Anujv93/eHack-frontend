@@ -57,7 +57,7 @@ const TerminalAnimation = ({ customLogs, onComplete, autoScroll = true, isPaused
                 currentIndexRef.current++;
                 return [...prev, nextLog];
             });
-        }, 1200); // Slower, uniform typing speed
+        }, 40); // Fast typing speed
 
         return () => clearInterval(interval);
     }, [customLogs, onComplete, isPaused]);

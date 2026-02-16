@@ -19,7 +19,7 @@ const FolderLoader = ({ onComplete, isPaused = false }: FolderLoaderProps) => {
                     return 100;
                 }
                 // Uniform speed
-                return prev + 1;
+                return prev + 3;
             });
         }, 25);
 

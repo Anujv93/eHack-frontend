@@ -34,7 +34,7 @@ const HeroRightPanel = () => {
         if (isPaused) return;
         setTimeout(() => {
             setAnimationState('unlocking');
-        }, 800);
+        }, 300);
     };
 
     const handleUnlockComplete = () => {
@@ -49,7 +49,7 @@ const HeroRightPanel = () => {
             resetTimer = setTimeout(() => {
                 setStoryIndex((prev) => (prev + 1) % studentStories.length);
                 setAnimationState('terminal');
-            }, 9000);
+            }, 4000);
         }
         return () => clearTimeout(resetTimer);
     }, [animationState, isPaused]);

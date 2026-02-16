@@ -29,13 +29,13 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "eHack Academy | Institute of Emerging Technologies",
   description: "Transform your career with industry-leading courses in Cybersecurity, Digital Marketing, Data Science & AI, and IoT & Robotics. Get certified from EC-Council, ISACA, OffSec, Cisco, and CompTIA.",
-  keywords: "professional training, cybersecurity, digital marketing, data science, AI, IoT, robotics, certification training, ethical hacking, SEO, machine learning",
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' }
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.ico?v=2',
+    shortcut: '/favicon.ico?v=2',
+    apple: '/favicon.ico?v=2',
   },
+  keywords: "professional training, cybersecurity, digital marketing, data science, AI, IoT, robotics, certification training, ethical hacking, SEO, machine learning",
+
 };
 //
 export default async function RootLayout({
