@@ -120,7 +120,8 @@ export default function CourseOutlineSection({ section, brochureUrl }: CourseOut
                         {/* Hours Stat */}
                         {(section.total_hours !== undefined) && (
                             <div className="curr-stat-modern">
-                                <div className="curr-stat-value-modern">{section.total_hours}</div>
+                                {/* <div className="curr-stat-value-modern">{section.total_hours}</div> */}
+                                <div className="curr-stat-value-modern">40+</div>
                                 <div className="curr-stat-label-modern">Hours</div>
                             </div>
                         )}
@@ -128,7 +129,8 @@ export default function CourseOutlineSection({ section, brochureUrl }: CourseOut
                         {/* Certifications Stat */}
                         {(section.certification !== undefined) && (
                             <div className="curr-stat-modern">
-                                <div className="curr-stat-value-modern">{section.certification}</div>
+                                {/* <div className="curr-stat-value-modern">{section.certification}</div> */}
+                                <div className="curr-stat-value-modern">1</div>
                                 <div className="curr-stat-label-modern">Certifications</div>
                             </div>
                         )}

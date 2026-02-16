@@ -28,7 +28,7 @@ export default function CareerStatsSection({ section, videoLink }: CareerStatsSe
     console.log("CareerStatsSection videoLink:", videoLink);
 
     return (
-        <section className="section section-gray border-bottom" style={{ borderBottom: 'solid 1px #ff6b00' }} id="career-value">
+        <section className="section section-gray border-bottom" style={{ borderBottom: 'solid 1px #ff6b00', backgroundColor: '#ffff' }} id="career-value">
             <div className="container">
                 {/* Section Header */}
                 <div className="section-header">

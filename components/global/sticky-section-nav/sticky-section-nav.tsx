@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Phone } from 'lucide-react';
 import './sticky-section-nav.css';
 
@@ -23,6 +23,8 @@ export default function StickySectionNav({
 }: StickySectionNavProps) {
     const [activeSection, setActiveSection] = useState(sections[0]?.id || '');
     const [showStickyNav, setShowStickyNav] = useState(false);
+
+    const navContainerRef = useRef<HTMLDivElement>(null);
 
     // Handle scroll to update active section and sticky nav visibility
     useEffect(() => {
@@ -58,6 +60,22 @@ export default function StickySectionNav({
         return () => window.removeEventListener('scroll', handleScroll);
     }, [sections, scrollThreshold]);
 
+    // Auto-scroll the nav container to keep active tab in view
+    useEffect(() => {
+        if (activeSection && navContainerRef.current) {
+            const activeBtn = navContainerRef.current.querySelector<HTMLButtonElement>(`.sticky-nav-link.active`);
+            if (activeBtn) {
+                const container = navContainerRef.current;
+                const scrollLeft = activeBtn.offsetLeft - (container.offsetWidth / 2) + (activeBtn.offsetWidth / 2);
+
+                container.scrollTo({
+                    left: scrollLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [activeSection]);
+
     // Smooth scroll to section
     const scrollToSection = useCallback((sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -76,7 +94,7 @@ export default function StickySectionNav({
     return (
         <nav className={`sticky-section-nav ${showStickyNav ? 'visible' : ''}`}>
             <div className="sticky-nav-container">
-                <div className="sticky-nav-links">
+                <div className="sticky-nav-links" ref={navContainerRef}>
                     {sections.map((section) => (
                         <button
                             key={section.id}

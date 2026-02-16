@@ -19,15 +19,15 @@ export default function FeaturesGrid({ title, features }: FeaturesGridProps) {
     }
 
     return (
-        <section className="section section-gray" style={{ borderBottom: 'solid 1px #ff6b00' }} id="whats-new">
-            <div className="container">
+        <section className="section section-gray" style={{ borderBottom: 'solid 1px #ff6b00', backgroundColor: '#ffff' }} id="whats-new">
+            <div className="container" style={{ backgroundColor: '#ffff' }}>
                 {title && (
                     <div className="section-header">
                         <h2>{title}</h2>
                         <div className="red-underline-center"></div>
                     </div>
                 )}
-                <div className="features-grid-ec">
+                <div className="features-grid-ec" style={{ backgroundColor: '#ffff' }}>
                     {features.map((feature) => (
                         <div key={feature.id} className="feature-item-ec">
                             {feature.svgIcon && (

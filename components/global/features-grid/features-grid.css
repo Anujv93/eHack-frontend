@@ -43,7 +43,7 @@
     text-align: center;
     padding: var(--space-10);
     /* Increased padding to compensate for reduced gap */
-    background-color: var(--ec-gray-100);
+    background-color: #ffff;
     /* Match section bg to mask container bg */
 }
 
