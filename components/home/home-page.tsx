@@ -728,8 +728,10 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                 <div className={styles.container}>
                     {/* Section Header */}
                     <div className={styles.sectionHeader} style={{ textAlign: 'center', marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <span className={styles.sectionBadge}>Bytes with Brains</span>
-                        <h2 className={styles.ceHeaderSubtitle}>
+                        <span style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>
+                            <span style={{ color: '#FF6B00' }}>Bytes</span> <span style={{ color: '#000000' }}>with Brains</span>
+                        </span>
+                        <h2 className={styles.ceHeaderSubtitle} style={{ marginTop: '0px' }}>
                             Brains behind <span className={styles.textAccentOrange}>digital safety</span>
                         </h2>
                     </div>
