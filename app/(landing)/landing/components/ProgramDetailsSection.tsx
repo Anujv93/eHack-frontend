@@ -67,7 +67,82 @@ const rows = [
 ];
 
 const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+    const [formData, setFormData] = React.useState({
+        fullName: '',
+        email: '',
+        phone: ''
+    });
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [isSubmitted, setIsSubmitted] = React.useState(false);
+    const [error, setError] = React.useState('');
+
+    // Reset state when modal opens
+    useEffect(() => {
+        if (isOpen) {
+            setIsSubmitted(false);
+            setError('');
+            setFormData({ fullName: '', email: '', phone: '' });
+        }
+    }, [isOpen]);
+
     if (!isOpen) return null;
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFormData({ ...formData, [e.target.type === 'tel' ? 'phone' : e.target.type === 'email' ? 'email' : 'fullName']: e.target.value });
+        setError('');
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (!formData.fullName || !formData.email || !formData.phone) {
+            setError('Please fill in all fields');
+            return;
+        }
+
+        setIsSubmitting(true);
+        setError('');
+
+        try {
+            const response = await fetch('/api/zoho/inquiry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: formData.fullName,
+                    lastName: '-',
+                    email: formData.email,
+                    phone: formData.phone,
+                    city: '',
+                    totalAmount: 0,
+                    inquiryName: `Website - ${formData.fullName} - Choose Your Path`,
+                    leadSource: 'Website Landing Page',
+                    courses: [{
+                        name: 'Choose Your Path Inquiry',
+                        code: 'choose-your-path',
+                        category: 'General',
+                        price: 0
+                    }],
+                    message: 'Inquiry from Choose Your Path Section',
+                    agreeWhatsApp: true,
+                    pipeline: 'Leads Pipeline Standard',
+                    stage: 'New Inquiry',
+                }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                console.error('Submission failed:', errorData);
+                throw new Error(errorData.details || 'Failed to submit');
+            }
+
+            setIsSubmitted(true);
+        } catch (err: any) {
+            console.error('Error submitting form:', err);
+            setError(err.message || 'Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
@@ -85,39 +160,69 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
                     </svg>
                 </button>
 
-                <div className="text-center mb-8">
-                    <h3 className="text-2xl font-black text-[#1f2937] mb-2">Enquire Now</h3>
-                    <p className="text-gray-500 text-sm">Get detailed counseling for your career path.</p>
-                </div>
+                {isSubmitted ? (
+                    <div className="text-center py-8 animate-fadeIn">
+                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+                        <p className="text-gray-600 mb-6">We have received your enquiry. Our team will contact you shortly to guide you on your path.</p>
+                        <button
+                            onClick={onClose}
+                            className="w-full bg-[#ff6b00] text-white rounded-xl py-3 font-bold shadow-lg hover:bg-[#e66000] transition-colors"
+                        >
+                            Close
+                        </button>
+                    </div>
+                ) : (
+                    <>
+                        <div className="text-center mb-8">
+                            <h3 className="text-2xl font-black text-[#1f2937] mb-2">Enquire Now</h3>
+                            <p className="text-gray-500 text-sm">Get detailed counseling for your career path.</p>
+                        </div>
 
-                <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); onClose(); }}>
-                    <div>
-                        <input
-                            type="text"
-                            placeholder="Full Name"
-                            className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
-                        />
-                    </div>
-                    <div>
-                        <input
-                            type="email"
-                            placeholder="Email Address *"
-                            required
-                            className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
-                        />
-                    </div>
-                    <div>
-                        <input
-                            type="tel"
-                            placeholder="Phone Number *"
-                            required
-                            className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
-                        />
-                    </div>
-                    <button className="w-full bg-[#ff6b00] text-white rounded-xl py-4 font-bold shadow-lg shadow-[#ff6b00]/20 hover:bg-[#e66000] hover:shadow-xl hover:shadow-[#ff6b00]/30 transition-all transform hover:-translate-y-0.5">
-                        Submit Enquiry
-                    </button>
-                </form>
+                        {error && <div className="mb-4 p-3 text-sm text-red-600 bg-red-50 rounded-xl border border-red-100 text-center">{error}</div>}
+
+                        <form className="space-y-4" onSubmit={handleSubmit}>
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Full Name"
+                                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
+                                    value={formData.fullName}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="email"
+                                    placeholder="Email Address *"
+                                    required
+                                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="tel"
+                                    placeholder="Phone Number *"
+                                    required
+                                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                className="w-full bg-[#ff6b00] text-white rounded-xl py-4 font-bold shadow-lg shadow-[#ff6b00]/20 hover:bg-[#e66000] hover:shadow-xl hover:shadow-[#ff6b00]/30 transition-all transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
+                            </button>
+                        </form>
+                    </>
+                )}
             </div>
         </div>
     );
