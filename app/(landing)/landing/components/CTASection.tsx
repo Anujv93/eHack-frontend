@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -10,6 +10,75 @@ export default function CTASection() {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const formRef = useRef<HTMLDivElement>(null);
+
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        program: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState('');
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+        setError('');
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (!formData.fullName || !formData.email || !formData.phone || !formData.program) {
+            setError('Please fill in all fields');
+            return;
+        }
+
+        setIsSubmitting(true);
+        setError('');
+
+        try {
+            const response = await fetch('/api/zoho/inquiry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: formData.fullName,
+                    lastName: '-',
+                    email: formData.email,
+                    phone: formData.phone,
+                    city: '',
+                    totalAmount: 0,
+                    inquiryName: `Website - ${formData.fullName} - Blueprint CTA`,
+                    leadSource: 'Website Landing Page',
+                    courses: [{
+                        name: `Blueprint Inquiry - ${formData.program}`,
+                        code: 'blueprint-cta',
+                        category: 'General',
+                        price: 0
+                    }],
+                    message: `Inquiry from Blueprint Section. Selected Program: ${formData.program}`,
+                    agreeWhatsApp: true,
+                    pipeline: 'Leads Pipeline Standard',
+                    stage: 'New Inquiry',
+                }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                console.error('Submission failed:', errorData);
+                throw new Error(errorData.details || 'Failed to submit');
+            }
+
+            setIsSubmitted(true);
+            setFormData({ fullName: '', email: '', phone: '', program: '' });
+        } catch (err: any) {
+            console.error('Error submitting form:', err);
+            setError(err.message || 'Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -115,52 +184,84 @@ export default function CTASection() {
                         <div className="absolute -inset-4 bg-[#ff6b00]/5 blur-3xl rounded-full opacity-60"></div>
 
                         <div className="bg-white border border-gray-100 rounded-[2.5rem] p-8 md:p-12 relative shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)]">
-                            <div className="mb-8">
-                                <h3 className="text-2xl font-black text-[#1f2937] mb-2 tracking-tight">Request Your Blueprint</h3>
-                                <p className="text-gray-500 text-sm">Fill in your details and our career architects will reach out within 24 hours.</p>
-                            </div>
-
-                            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-                                <div className="space-y-4">
-                                    <div className="relative group">
-                                        <input
-                                            type="text"
-                                            placeholder="Full Name"
-                                            className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937]"
-                                        />
+                            {isSubmitted ? (
+                                <div className="text-center py-12 animate-fadeIn">
+                                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                        <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                                     </div>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <input
-                                            type="email"
-                                            placeholder="Email Address"
-                                            className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937]"
-                                        />
-                                        <input
-                                            type="tel"
-                                            placeholder="Phone Number"
-                                            className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937]"
-                                        />
+                                    <h3 className="text-3xl font-black text-[#1f2937] mb-3">Blueprint Requested!</h3>
+                                    <p className="text-gray-600 text-lg">Our career architects will review your profile and contact you within 24 hours.</p>
+                                </div>
+                            ) : (
+                                <>
+                                    <div className="mb-8">
+                                        <h3 className="text-2xl font-black text-[#1f2937] mb-2 tracking-tight">Request Your Blueprint</h3>
+                                        <p className="text-gray-500 text-sm">Fill in your details and our career architects will reach out within 24 hours.</p>
                                     </div>
-                                    <select defaultValue="" className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937] appearance-none cursor-pointer">
-                                        <option value="" disabled>Select Your Program</option>
-                                        <option value="masters">Masters Program (v13 AI)</option>
-                                        <option value="graduate">Graduate Program</option>
-                                        <option value="elite">Elite Program</option>
-                                    </select>
-                                </div>
 
-                                <button className="w-full bg-[#1f2937] text-white rounded-2xl py-5 font-black text-lg shadow-xl hover:bg-[#ff6b00] transition-all flex items-center justify-center gap-3 active:scale-95 group">
-                                    SUBMIT REQUEST
-                                    <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                                </button>
+                                    {error && <div className="mb-6 p-4 text-sm text-red-600 bg-red-50 rounded-2xl border border-red-100 text-center">{error}</div>}
 
-                                <div className="flex items-center justify-center gap-2 pt-2 opacity-50">
-                                    <svg className="w-4 h-4 text-[#ff6b00]" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                                    </svg>
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#1f2937]">Secure & 100% Confidential</span>
-                                </div>
-                            </form>
+                                    <form className="space-y-5" onSubmit={handleSubmit}>
+                                        <div className="space-y-4">
+                                            <div className="relative group">
+                                                <input
+                                                    type="text"
+                                                    name="fullName"
+                                                    placeholder="Full Name"
+                                                    className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937]"
+                                                    value={formData.fullName}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </div>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    placeholder="Email Address"
+                                                    className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937]"
+                                                    value={formData.email}
+                                                    onChange={handleInputChange}
+                                                />
+                                                <input
+                                                    type="tel"
+                                                    name="phone"
+                                                    placeholder="Phone Number"
+                                                    className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937]"
+                                                    value={formData.phone}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </div>
+                                            <select
+                                                name="program"
+                                                className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 outline-none focus:border-[#ff6b00] focus:ring-4 focus:ring-[#ff6b00]/5 transition-all font-medium text-[#1f2937] appearance-none cursor-pointer"
+                                                value={formData.program}
+                                                onChange={handleInputChange}
+                                            >
+                                                <option value="" disabled>Select Your Program</option>
+                                                <option value="masters">Masters Program (v13 AI)</option>
+                                                <option value="graduate">Graduate Program</option>
+                                                <option value="elite">Elite Program</option>
+                                            </select>
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            className="w-full bg-[#1f2937] text-white rounded-2xl py-5 font-black text-lg shadow-xl hover:bg-[#ff6b00] transition-all flex items-center justify-center gap-3 active:scale-95 group disabled:opacity-70 disabled:cursor-not-allowed disabled:active:scale-100"
+                                            disabled={isSubmitting}
+                                        >
+                                            {isSubmitting ? 'SUBMITTING...' : 'SUBMIT REQUEST'}
+                                            {!isSubmitting && <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>}
+                                        </button>
+
+                                        <div className="flex items-center justify-center gap-2 pt-2 opacity-50">
+                                            <svg className="w-4 h-4 text-[#ff6b00]" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#1f2937]">Secure & 100% Confidential</span>
+                                        </div>
+                                    </form>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
