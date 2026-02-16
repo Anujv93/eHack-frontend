@@ -220,9 +220,9 @@
 /* Footer Stats */
 .roles-footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: var(--space-16);
+    gap: var(--space-4);
     padding: var(--space-8) var(--space-12);
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid #ff6b00;
@@ -230,7 +230,8 @@
     position: relative;
     z-index: 2;
     box-shadow: 0 8px 30px rgba(255, 107, 0, 0.15);
-    max-width: 800px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -239,6 +240,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    flex: 1;
 }
 
 .stat-number {
