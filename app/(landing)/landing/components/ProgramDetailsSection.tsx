@@ -251,21 +251,22 @@ export default function ProgramDetailsSection() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-10 bg-white relative overflow-hidden">
+        <section ref={sectionRef} className="py-6 sm:py-10 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 max-w-6xl relative z-10">
                 <div className="text-center mb-12">
                     <span className="text-[#ff6b00] font-bold tracking-widest uppercase mb-4 text-sm md:text-base block">
                         Compare Programs
                     </span>
-                    <h3 className="text-3xl md:text-5xl font-black mb-6 leading-tight text-[#1f2937]">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-black mb-4 sm:mb-6 leading-tight text-[#1f2937]">
                         Choose Your <span className="text-[#ff6b00]">Path</span>
                     </h3>
-                    <p className="text-[#1f2937] text-lg md:text-xl max-w-2xl mx-auto">
+                    <p className="text-[#1f2937] text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
                         Detailed breakdown of our elite cybersecurity programs to help you decide.
                     </p>
                 </div>
 
-                <div ref={tableRef} className="overflow-hidden bg-white rounded-3xl shadow-xl border-2 border-[#ff6b00]">
+                <div ref={tableRef} className="overflow-hidden bg-white rounded-2xl sm:rounded-3xl shadow-xl border-2 border-[#ff6b00]">
+                    <p className="text-center text-xs text-gray-400 py-2 bg-gray-50 border-b border-gray-100 md:hidden">← Swipe to compare programs →</p>
                     <div className="overflow-x-auto">
                         <table className="w-full min-w-[800px] border-collapse">
                             <thead>
@@ -366,7 +367,7 @@ export default function ProgramDetailsSection() {
                 <div className="mt-12 text-center">
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="inline-flex items-center gap-3 bg-[#ff6b00] text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl shadow-[#ff6b00]/20 hover:bg-[#e66000] hover:scale-105 transition-all group"
+                        className="inline-flex items-center gap-2 sm:gap-3 bg-[#ff6b00] text-white px-6 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-black text-base sm:text-lg shadow-xl shadow-[#ff6b00]/20 hover:bg-[#e66000] hover:scale-105 transition-all group"
                     >
                         ENQUIRE NOW
                         <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -124,7 +124,7 @@ const HeroRightPanel = () => {
     };
 
     return (
-        <div className="flex flex-col w-full max-w-[550px] mx-auto perspective-1000 relative z-20">
+        <div className="flex flex-col w-full max-w-[450px] sm:max-w-[550px] mx-auto perspective-1000 relative z-20">
 
             {/* ================= MONITOR CONTENT (FRAMELESS) ================= */}
             <div className="group relative z-30">
@@ -132,14 +132,14 @@ const HeroRightPanel = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
 
                 {/* Screen Container - No Bezel */}
-                <div className="relative w-full h-[300px] sm:h-[340px] bg-black rounded-t-2xl rounded-b-none overflow-hidden shadow-2xl border border-gray-800 border-b-0">
+                <div className="relative w-full h-[240px] sm:h-[300px] md:h-[340px] bg-black rounded-t-2xl rounded-b-none overflow-hidden shadow-2xl border border-gray-800 border-b-0">
 
                     {/* 1. START / RESUME OVERLAY */}
                     {(!isPlaying || isPaused) && (
                         <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] cursor-pointer" onClick={isPlaying ? handleResume : startAnimation}>
                             <div className="group-hover:scale-105 transition-transform duration-300">
-                                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-[#ff6b00] hover:border-[#ff6b00] transition-colors duration-300 shadow-lg">
-                                    <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-[#ff6b00] hover:border-[#ff6b00] transition-colors duration-300 shadow-lg">
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
                                 </div>
                             </div>
                             <p className="mt-3 text-white/80 font-sans text-xs font-medium tracking-widest uppercase">
@@ -201,7 +201,7 @@ const HeroRightPanel = () => {
 
             {/* ================= SEPARATE FORM CARD ================= */}
             <div className="bg-white rounded-b-2xl rounded-t-none shadow-xl border border-gray-200 border-t-0 overflow-hidden relative z-20">
-                <div className="p-4">
+                <div className="p-3 sm:p-4">
                     {isSubmitted ? (
                         <div className="text-center py-8 animate-fadeIn">
                             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -212,8 +212,8 @@ const HeroRightPanel = () => {
                         </div>
                     ) : (
                         <>
-                            <div className="flex items-center justify-between mb-3">
-                                <h3 className="font-bold text-gray-900 text-lg">
+                            <div className="flex items-center justify-between mb-2 sm:mb-3">
+                                <h3 className="font-bold text-gray-900 text-base sm:text-lg">
                                     Request <span className="text-[#ff6b00]">Access</span>
                                 </h3>
                                 <div className="flex items-center gap-2 px-2 py-1 bg-green-50 rounded-full border border-green-100">
@@ -224,12 +224,12 @@ const HeroRightPanel = () => {
 
                             {error && <div className="mb-3 p-2 text-xs text-red-600 bg-red-50 rounded-md border border-red-100 text-center">{error}</div>}
 
-                            <form className="space-y-4" onSubmit={handleSubmit}>
-                                <div className="grid grid-cols-2 gap-4">
+                            <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                                     <input
                                         type="text"
                                         placeholder="Full Name"
-                                        className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00] transition-all"
+                                        className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00] transition-all"
                                         value={formData.fullName}
                                         onChange={(e) => {
                                             setFormData(prev => ({ ...prev, fullName: e.target.value }));
@@ -239,7 +239,7 @@ const HeroRightPanel = () => {
                                     <input
                                         type="tel"
                                         placeholder="Phone"
-                                        className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00] transition-all"
+                                        className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00] transition-all"
                                         value={formData.phone}
                                         onChange={(e) => {
                                             setFormData(prev => ({ ...prev, phone: e.target.value }));
@@ -250,7 +250,7 @@ const HeroRightPanel = () => {
                                 <input
                                     type="email"
                                     placeholder="Email Address"
-                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00] transition-all"
+                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00] transition-all"
                                     value={formData.email}
                                     onChange={(e) => {
                                         setFormData(prev => ({ ...prev, email: e.target.value }));
@@ -260,7 +260,7 @@ const HeroRightPanel = () => {
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-[#1a1a1a] hover:bg-black text-white font-bold py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                                    className="w-full bg-[#1a1a1a] hover:bg-black text-white font-bold py-3 sm:py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed text-sm sm:text-base"
                                     disabled={isSubmitting}
                                 >
                                     {isSubmitting ? 'Processing...' : 'Book Your Spot'}
@@ -268,7 +268,7 @@ const HeroRightPanel = () => {
                                 </button>
                             </form>
 
-                            <p className="text-center text-[10px] text-gray-400 mt-4">
+                            <p className="text-center text-[10px] text-gray-400 mt-2 sm:mt-4">
                                 Limited spots available for the upcoming cohort.
                             </p>
                         </>

@@ -88,7 +88,7 @@ export default function OurCoursesSection() {
     }, []);
 
     return (
-        <section id="certifications" ref={sectionRef} className="py-24 bg-white relative overflow-hidden">
+        <section id="certifications" ref={sectionRef} className="py-14 sm:py-24 bg-white relative overflow-hidden">
             {/* Background Decoration to match theme */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ff6b00]/5 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
@@ -97,7 +97,7 @@ export default function OurCoursesSection() {
                     <span className="text-[#ff6b00] font-bold tracking-widest uppercase mb-4 text-sm md:text-base block">
                         Explore More Options
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-black text-[#1f2937] leading-tight mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#1f2937] leading-tight mb-4 sm:mb-6">
                         Looking for a <span className="text-[#ff6b00]">Specific Certification</span>?
                     </h2>
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -105,11 +105,11 @@ export default function OurCoursesSection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
                     {courses.map((course, index) => (
                         <div
                             key={index}
-                            className="course-card group relative bg-white border border-[#ff6b00] rounded-3xl p-8 hover:shadow-xl hover:shadow-[#ff6b00]/10 transition-all duration-300 flex flex-col h-full"
+                            className="course-card group relative bg-white border border-[#ff6b00] rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:shadow-xl hover:shadow-[#ff6b00]/10 transition-all duration-300 flex flex-col h-full"
                         >
                             <div className="flex justify-between items-start mb-6 h-16">
                                 <div className="h-full flex items-center">

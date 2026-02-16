@@ -19,15 +19,15 @@ const CTAButton: React.FC<CTAButtonProps> = ({
             className={`
         group relative flex flex-col items-center justify-center overflow-hidden
         bg-[#ff6b00] hover:bg-[#e56000] text-white
-        py-4 px-8 rounded-lg shadow-lg hover:shadow-xl hover:scale-105
+        py-3 sm:py-4 px-6 sm:px-8 rounded-lg shadow-lg hover:shadow-xl hover:scale-105
         transition-all duration-300 ease-in-out
-        w-full md:w-auto min-w-[300px]
+        w-full md:w-auto min-w-0 sm:min-w-[300px]
         border-b-4 border-[#cc5500] active:border-b-0 active:translate-y-1
         cursor-pointer
         ${className}
       `}
         >
-            <span className="text-xl md:text-2xl font-bold uppercase tracking-wide font-montserrat z-10 relative">
+            <span className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold uppercase tracking-wide font-montserrat z-10 relative">
                 {text}
             </span>
             {subtext && (

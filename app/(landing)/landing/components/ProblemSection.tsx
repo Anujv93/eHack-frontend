@@ -107,7 +107,7 @@ const ProblemSection = () => {
     };
 
     return (
-        <section ref={sectionRef} className="py-8 bg-slate-50 text-gray-900 overflow-hidden relative">
+        <section ref={sectionRef} className="py-6 sm:py-8 bg-slate-50 text-gray-900 overflow-hidden relative">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{
@@ -116,12 +116,12 @@ const ProblemSection = () => {
                 }}
             ></div>
 
-            <div className="container mx-auto px-6 lg:px-12 max-w-[1300px] relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1300px] relative z-10">
 
                 {/* Header */}
                 <div className="text-center mb-8 max-w-4xl mx-auto">
                     <h2 className="text-[#ff6b00] font-bold tracking-widest uppercase mb-4 text-sm md:text-base">The Reality Check</h2>
-                    <h3 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-black mb-4 sm:mb-6 leading-tight">
                         Why You Are <span className="text-[#ff6b00]">Not An Ethical Hacker</span> Yet
                         <span className="text-gray-900">...</span>
                     </h3>
@@ -131,10 +131,10 @@ const ProblemSection = () => {
                 </div>
 
                 {/* Problems Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
 
                     {/* Problem 1: Tutorial Hell */}
-                    <div ref={addToRefs} className="bg-white border border-[#ff6b00] rounded-2xl p-8 transition-all duration-300 group shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    <div ref={addToRefs} className="bg-white border border-[#ff6b00] rounded-2xl p-5 sm:p-8 transition-all duration-300 group shadow-lg hover:shadow-xl hover:-translate-y-1">
                         <div className="h-48 bg-gray-900 rounded-xl mb-6 overflow-hidden relative border border-gray-800 shadow-inner flex flex-col">
                             {/* Browser Header */}
                             <div className="absolute top-0 left-0 w-full h-8 bg-gray-800 flex items-center px-3 gap-2 z-10 border-b border-gray-700">
@@ -198,7 +198,7 @@ const ProblemSection = () => {
                     </div>
 
                     {/* Problem 2: Theory Over Practice */}
-                    <div ref={addToRefs} className="bg-white border border-[#ff6b00] rounded-2xl p-8 transition-all duration-300 group shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    <div ref={addToRefs} className="bg-white border border-[#ff6b00] rounded-2xl p-5 sm:p-8 transition-all duration-300 group shadow-lg hover:shadow-xl hover:-translate-y-1">
                         <div className="h-48 bg-gray-50 rounded-xl mb-6 relative border border-gray-100 shadow-inner overflow-hidden flex flex-col items-center justify-center p-4">
                             {/* Book Container */}
                             <div className="book-container relative w-32 h-40 perspective-[1000px] -mt-5">
@@ -244,7 +244,7 @@ const ProblemSection = () => {
                     </div>
 
                     {/* Problem 3: Zero Career Guidance */}
-                    <div ref={addToRefs} className="bg-white border border-[#ff6b00] rounded-2xl p-8 transition-all duration-300 group shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    <div ref={addToRefs} className="bg-white border border-[#ff6b00] rounded-2xl p-5 sm:p-8 transition-all duration-300 group shadow-lg hover:shadow-xl hover:-translate-y-1">
                         <div className="h-48 bg-gray-50 rounded-xl mb-6 relative overflow-hidden border border-gray-100 shadow-inner flex justify-center">
                             {/* Trash Can */}
                             <div className="absolute bottom-4 w-16 h-20 border-2 border-gray-400 rounded-b-lg border-t-0 flex justify-center items-end pb-2 z-10 bg-gray-100">
@@ -273,7 +273,7 @@ const ProblemSection = () => {
                     </div>
 
                     {/* Problem 4: No Valid Certification */}
-                    <div ref={addToRefs} className="bg-white border border-[#ff6b00] rounded-2xl p-8 transition-all duration-300 group lg:col-start-1 lg:justify-self-end shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    <div ref={addToRefs} className="bg-white border border-[#ff6b00] rounded-2xl p-5 sm:p-8 transition-all duration-300 group lg:col-start-1 lg:justify-self-end shadow-lg hover:shadow-xl hover:-translate-y-1">
                         <div className="h-48 bg-gray-50 rounded-xl mb-6 relative flex items-center justify-center border border-gray-100 overflow-hidden shadow-inner">
                             {/* Certificate */}
                             <div className="relative w-32 h-24 bg-[#fffaeb] rounded border-4 border-[#92400e] flex flex-col items-center justify-center p-2 shadow-lg">
@@ -296,7 +296,7 @@ const ProblemSection = () => {
                     </div>
 
                     {/* Problem 5: Unguided Path */}
-                    <div ref={addToRefs} className="bg-white border border-[#ff6b00] rounded-2xl p-8 transition-all duration-300 group lg:col-start-2 lg:justify-self-start lg:col-span-2 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    <div ref={addToRefs} className="bg-white border border-[#ff6b00] rounded-2xl p-5 sm:p-8 transition-all duration-300 group lg:col-start-2 lg:justify-self-start lg:col-span-2 shadow-lg hover:shadow-xl hover:-translate-y-1">
                         <div className="h-48 bg-gray-50 rounded-xl mb-6 relative border border-gray-100 overflow-hidden flex items-center justify-center shadow-inner">
                             {/* Chaos Path SVG */}
                             <svg className="w-full h-full absolute inset-0 text-red-500 pointer-events-none opacity-30" viewBox="0 0 300 200">

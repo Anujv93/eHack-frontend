@@ -146,8 +146,8 @@ export default function CTASection() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff6b00]/5 rounded-bl-[200px] pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#ff6b00]/5 rounded-tr-[150px] pointer-events-none"></div>
 
-            <div className="container mx-auto px-6 lg:px-12 max-w-[1300px] relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1300px] relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center">
 
                     {/* Left Column: Narrative */}
                     <div ref={contentRef} className="space-y-8">
@@ -155,13 +155,13 @@ export default function CTASection() {
                             <span className="text-[#ff6b00] font-black uppercase tracking-[0.3em] text-xs mb-4 block">
                                 The Master Plan
                             </span>
-                            <h2 className="text-4xl md:text-6xl xl:text-7xl font-black text-[#1f2937] leading-[1.1] tracking-tight mb-8">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#1f2937] leading-[1.1] tracking-tight mb-6 sm:mb-8">
                                 The Blueprint is Ready.<br />
                                 <span className="bg-gradient-to-r from-[#ff6b00] to-[#ff8c3a] bg-clip-text text-transparent">
                                     Now, It's Your Turn to Build.
                                 </span>
                             </h2>
-                            <p className="text-[#4b5563] text-lg md:text-xl font-medium leading-relaxed max-w-xl">
+                            <p className="text-[#4b5563] text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-xl">
                                 You’ve seen how others engineered their success. We have the architecture, the labs, and the placement engine ready for you.
                             </p>
                         </div>
@@ -183,7 +183,7 @@ export default function CTASection() {
                         {/* Designer Shadow Accent */}
                         <div className="absolute -inset-4 bg-[#ff6b00]/5 blur-3xl rounded-full opacity-60"></div>
 
-                        <div className="bg-white border border-gray-100 rounded-[2.5rem] p-8 md:p-12 relative shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)]">
+                        <div className="bg-white border border-gray-100 rounded-2xl sm:rounded-[2.5rem] p-6 sm:p-8 md:p-12 relative shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)]">
                             {isSubmitted ? (
                                 <div className="text-center py-12 animate-fadeIn">
                                     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">

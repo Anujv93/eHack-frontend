@@ -172,12 +172,12 @@ const SolutionSection = () => {
                 }}
             ></div>
 
-            <div className="container mx-auto px-6 lg:px-12 max-w-[1300px] relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1300px] relative z-10">
 
                 {/* Header - Contradicting the Problem Section */}
                 <div className="text-center mb-16 max-w-4xl mx-auto">
                     <h2 className="text-[#ff6b00] font-bold tracking-widest uppercase mb-4 text-sm md:text-base">The Roadmap</h2>
-                    <h3 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-black mb-4 sm:mb-6 leading-tight">
                         How You Can <span className="text-[#ff6b00]">Finally Become</span> An Ethical Hacker
                     </h3>
                     <p className="text-[#1f2937] text-lg md:text-xl max-w-2xl mx-auto">
@@ -186,12 +186,12 @@ const SolutionSection = () => {
                 </div>
 
                 {/* Solutions Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                     {programs.map((program, index) => (
                         <div
                             key={index}
                             ref={addToRefs}
-                            className={`bg-white border rounded-2xl p-8 transition-all duration-500 group shadow-lg flex flex-col h-full relative ${index === hoveredCard
+                            className={`bg-white border rounded-2xl p-5 sm:p-8 transition-all duration-500 group shadow-lg flex flex-col h-full relative ${index === hoveredCard
                                 ? 'z-[100] border-[#ff6b00] ring-4 ring-[#ff6b00]/10 shadow-2xl'
                                 : (program.featured ? 'border-[#ff6b00] ring-1 ring-[#ff6b00]/20 z-10' : 'border-gray-200 z-0 hover:border-[#ff6b00]/30 shadow-md')
                                 }`}
@@ -272,7 +272,7 @@ const SolutionSection = () => {
                             {/* Certification Spread in Cards */}
                             {program.certificateImages && (
                                 <div
-                                    className="relative h-44 mb-14 mt-4 flex justify-center items-center cursor-pointer"
+                                    className="relative h-32 sm:h-44 mb-10 sm:mb-14 mt-4 flex justify-center items-center cursor-pointer"
                                     onMouseEnter={() => handleMouseEnter(index)}
                                     onMouseLeave={handleMouseLeave}
                                 >

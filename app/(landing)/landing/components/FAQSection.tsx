@@ -63,24 +63,24 @@ export default function FAQSection() {
     };
 
     return (
-        <section ref={sectionRef} className="py-24 bg-[#fffaf5] relative overflow-hidden">
+        <section ref={sectionRef} className="py-14 sm:py-24 bg-[#fffaf5] relative overflow-hidden">
             {/* Restored Background Decorations */}
             <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full mix-blend-soft-light filter blur-3xl opacity-60 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#ff6b00]/5 rounded-full mix-blend-multiply filter blur-3xl opacity-40 translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
 
             <div className="container mx-auto px-4 max-w-5xl relative z-10">
-                <div className="text-center mb-20">
+                <div className="text-center mb-12 sm:mb-20">
                     <span className="text-[#ff6b00] font-black tracking-[0.2em] uppercase mb-4 text-sm md:text-base block">
                         Got Questions?
                     </span>
                     {/* Restored Heading Style */}
-                    <h2 className="text-4xl md:text-6xl font-black text-[#1f2937] leading-tight mb-8">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-[#1f2937] leading-tight mb-6 sm:mb-8">
                         Frequently Asked <span className="text-[#ff6b00] relative inline-block">
                             Questions
                             <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#ff6b00] opacity-30" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C2.00025 6.99997 64.9198 3.84232 121.5 2C178.08 0.157675 198 6.99997 198 6.99997" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
                         </span>
                     </h2>
-                    <p className="text-[#1f2937] text-xl font-medium max-w-2xl mx-auto">
+                    <p className="text-[#1f2937] text-base sm:text-xl font-medium max-w-2xl mx-auto">
                         Everything you need to know about starting your high-paying career in cybersecurity.
                     </p>
                 </div>
@@ -96,9 +96,9 @@ export default function FAQSection() {
                         >
                             <button
                                 onClick={() => toggleAccordion(index)}
-                                className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none group"
+                                className="w-full flex items-center justify-between p-4 sm:p-6 md:p-8 text-left focus:outline-none group"
                             >
-                                <span className={`text-lg md:text-xl font-bold pr-8 transition-colors ${openIndex === index ? 'text-[#ff6b00]' : 'text-gray-900 group-hover:text-black'}`}>
+                                <span className={`text-base sm:text-lg md:text-xl font-bold pr-4 sm:pr-8 transition-colors ${openIndex === index ? 'text-[#ff6b00]' : 'text-gray-900 group-hover:text-black'}`}>
                                     {faq.question}
                                 </span>
                                 <span className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-200 ${openIndex === index
@@ -114,7 +114,7 @@ export default function FAQSection() {
                                 className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                                     }`}
                             >
-                                <div className="p-6 md:p-8 pt-0 text-[#1f2937] text-base md:text-lg leading-relaxed font-medium">
+                                <div className="p-4 sm:p-6 md:p-8 pt-0 text-[#1f2937] text-sm sm:text-base md:text-lg leading-relaxed font-medium">
                                     {faq.answer}
                                 </div>
                             </div>

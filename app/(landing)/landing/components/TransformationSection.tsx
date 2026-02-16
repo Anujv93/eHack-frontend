@@ -111,7 +111,7 @@ export default function TransformationSection() {
     }, []);
 
     return (
-        <section ref={containerRef} className="py-20 bg-white overflow-hidden border-t border-gray-100 relative">
+        <section ref={containerRef} className="py-12 sm:py-20 bg-white overflow-hidden border-t border-gray-100 relative">
             {/* Background Decorative Elements */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ff6b00]/5 rounded-full blur-[120px] -mr-64 -mt-64 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#ff6b00]/5 rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none"></div>
@@ -121,11 +121,11 @@ export default function TransformationSection() {
                     <span className="text-[#ff6b00] font-bold tracking-widest uppercase mb-4 text-sm md:text-base block">
                         The Proof
                     </span>
-                    <h3 className="text-3xl md:text-5xl font-black mb-6 leading-tight text-[#1f2937]">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-black mb-4 sm:mb-6 leading-tight text-[#1f2937]">
                         The Architecture of <span className="text-[#ff6b00]">Success</span><br />
                         Just Like How They All Did It.
                     </h3>
-                    <p className="text-[#1f2937] text-lg md:text-xl max-w-2xl mx-auto">
+                    <p className="text-[#1f2937] text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
                         Real transformations from our elite programs. From standard IT roles to high-stakes cybersecurity leadership.
                     </p>
                 </div>
@@ -155,9 +155,9 @@ export default function TransformationSection() {
                         {[...testimonials, ...testimonials, ...testimonials].map((story, index) => (
                             <div
                                 key={`${story.id}-${index}`}
-                                className="inline-block w-[450px] group transition-all duration-500 whitespace-normal"
+                                className="inline-block w-[300px] sm:w-[380px] md:w-[450px] group transition-all duration-500 whitespace-normal"
                             >
-                                <div className="bg-white border border-gray-100 rounded-3xl p-8 h-full shadow-xl hover:shadow-2xl hover:border-[#ff6b00]/30 transition-all relative overflow-hidden flex flex-col justify-between min-h-[320px]">
+                                <div className="bg-white border border-gray-100 rounded-3xl p-5 sm:p-8 h-full shadow-xl hover:shadow-2xl hover:border-[#ff6b00]/30 transition-all relative overflow-hidden flex flex-col justify-between min-h-[280px] sm:min-h-[320px]">
 
                                     {/* Quote Icon Background */}
                                     <div className="absolute top-4 right-6 text-8xl text-gray-50 opacity-[0.4] font-serif font-black pointer-events-none select-none group-hover:scale-110 transition-transform duration-500">
@@ -181,7 +181,7 @@ export default function TransformationSection() {
                                         </div>
 
                                         {/* Quote */}
-                                        <blockquote className="text-gray-600 text-[1.05rem] leading-relaxed mb-6 italic relative z-10 font-medium">
+                                        <blockquote className="text-gray-600 text-sm sm:text-[1.05rem] leading-relaxed mb-4 sm:mb-6 italic relative z-10 font-medium">
                                             "{story.quote}"
                                         </blockquote>
                                     </div>
@@ -214,7 +214,7 @@ export default function TransformationSection() {
                             </div>
                         ))}
                     </div>
-                    <p className="text-[#4b5563] text-lg md:text-xl font-bold">
+                    <p className="text-[#4b5563] text-base sm:text-lg md:text-xl font-bold">
                         Joined 5,000+ graduates in <span className="text-[#1f2937] font-black underline decoration-[#ff6b00] decoration-4">Elite Security Roles</span>
                     </p>
                 </div>
