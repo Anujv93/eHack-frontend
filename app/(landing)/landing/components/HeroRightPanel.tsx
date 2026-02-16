@@ -86,28 +86,38 @@ const HeroRightPanel = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    firstName: formData.fullName, // Zoho expects firstName, passing full string is okay or split if needed
-                    lastName: '-', // Fallback
+                    firstName: formData.fullName,
+                    lastName: '-',
                     email: formData.email,
                     phone: formData.phone,
+                    city: '',
+                    totalAmount: 0,
                     inquiryName: `Website - ${formData.fullName} - Landing Page Hero`,
                     leadSource: 'Website Landing Page',
                     courses: [{
                         name: 'Landing Page Hero Inquiry',
                         code: 'landing-hero',
-                        category: 'General'
+                        category: 'General',
+                        price: 0
                     }],
-                    message: 'Inquiry from Landing Page Hero Section'
+                    message: 'Inquiry from Landing Page Hero Section',
+                    agreeWhatsApp: true,
+                    pipeline: 'Leads Pipeline Standard',
+                    stage: 'New Inquiry',
                 }),
             });
 
-            if (!response.ok) throw new Error('Failed to submit');
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                console.error('Submission failed:', errorData);
+                throw new Error(errorData.details || 'Failed to submit');
+            }
 
             setIsSubmitted(true);
             setFormData({ fullName: '', email: '', phone: '' });
-        } catch (err) {
-            console.error(err);
-            setError('Something went wrong. Please try again.');
+        } catch (err: any) {
+            console.error('Error submitting form:', err);
+            setError(err.message || 'Something went wrong. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
