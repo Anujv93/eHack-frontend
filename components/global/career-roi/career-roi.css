@@ -62,7 +62,7 @@
     color: #4b5563;
     max-width: 100%;
     margin: 0 auto;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 /* Main Grid - 4 Equal Columns */

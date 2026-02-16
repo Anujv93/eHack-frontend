@@ -779,3 +779,91 @@
     font-weight: 600;
     color: var(--black);
 }
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .cert-stats-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        border-radius: 8px;
+    }
+
+    .certificate-page .cert-stat-item:nth-child(3n) {
+        border-right: none;
+    }
+
+    .certificate-page .cert-stat-item:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+
+    /* This grid logic is a bit complex for 5 items, sticking to flex wrap might be safer or just stack */
+}
+
+@media (max-width: 768px) {
+    .cert-stats-container {
+        display: flex !important;
+        flex-direction: column;
+        border: 2px solid #ff6b00;
+    }
+
+    .certificate-page .cert-stat-item {
+        width: 100%;
+        border-right: none !important;
+        border-bottom: 1px solid #ff6b00;
+    }
+
+    .certificate-page .cert-stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .banner-container {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-2);
+    }
+
+    .cert-text {
+        font-size: 0.95rem;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-features-list {
+        text-align: left;
+        /* Keep features left aligned even if container is centered */
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        /* Ensure it fits */
+        width: fit-content;
+    }
+
+    /* Adjust Title Size */
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 2.5rem);
+    }
+
+    .audience-stats-row {
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+
+    .audience-stat-divider {
+        width: 80px;
+        height: 1px;
+        margin: 0 auto;
+    }
+}
