@@ -16,7 +16,10 @@ const programs = [
             mode: "Classroom + Live Online",
             hours: "100+ Hours",
             membership: "6 Months Membership",
-            certifications: "3 Global Certifications"
+            certifications: "3 Global Certifications",
+            ecCouncilCerts: "CEH v13, CEH Practicals, CEH Masters",
+            ehackCerts: "Nil",
+            careerTraining: "Nil"
         }
     },
     {
@@ -28,7 +31,10 @@ const programs = [
             mode: "Classroom + Live Online",
             hours: "200+ Hours",
             membership: "2 Years",
-            certifications: "2 Global Certifications"
+            certifications: "2 Global Certifications",
+            ecCouncilCerts: "CSCU, CND v3",
+            ehackCerts: "Cyber Security Fundamentals, Ethical Hacking, Penetration Testing / Digital Forensics, OWASP 10",
+            careerTraining: "Personality Development & Soft Skills"
         }
     },
     {
@@ -40,7 +46,10 @@ const programs = [
             mode: "Classroom + Live Online",
             hours: "300+ Hours",
             membership: "2 Years Support",
-            certifications: "6 Global Certifications"
+            certifications: "6 Global Certifications",
+            ecCouncilCerts: "CSCU, CND v3, CEH v13, Cpent v2+LPT, CHFI v11",
+            ehackCerts: "Cyber Security Fundamentals, OWASP 10",
+            careerTraining: "Personality Development & Soft Skills"
         }
     }
 ];
@@ -52,6 +61,9 @@ const rows = [
     { label: "Total Hours", key: "hours" },
     { label: "Membership", key: "membership" },
     { label: "Global Certification", key: "certifications" },
+    { label: "EC Council Certifications", key: "ecCouncilCerts" },
+    { label: "Ehack Academy Certifications", key: "ehackCerts" },
+    { label: "Career Development Training", key: "careerTraining" },
 ];
 
 const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
