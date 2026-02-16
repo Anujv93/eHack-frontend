@@ -129,14 +129,13 @@ export default async function CertificatePage({ params }: PageProps) {
     const dynamicNavSections = [];
 
     // 1. Overview
-    if (summarySection?.Heading || summarySection?.Description || (summarySection?.Features && summarySection.Features.length > 0)) {
-        dynamicNavSections.push({ id: 'summary', label: 'Overview' });
-    }
+    // Always show Overview (Hero)
+    dynamicNavSections.push({ id: 'overview', label: 'Overview' });
 
-    // 2. What's New
-    if (featuresGridSection?.Features && featuresGridSection.Features.length > 0) {
-        dynamicNavSections.push({ id: 'whats-new', label: "What's New" });
-    }
+    // 2. What's New - Removed as per request
+    // if (featuresGridSection?.Features && featuresGridSection.Features.length > 0) {
+    //     dynamicNavSections.push({ id: 'whats-new', label: "What's New" });
+    // }
 
     // 3. Who Should Enroll
     if (targetAudienceSection?.Audiences && targetAudienceSection.Audiences.length > 0) {
@@ -551,10 +550,10 @@ export default async function CertificatePage({ params }: PageProps) {
             {faqSection && <FAQSection section={faqSection} />}
 
             {/* 2. What's New */}
-            <FeaturesGrid
+            {/* <FeaturesGrid
                 title={featuresGridSection?.Title}
                 features={featuresGridSection?.Features}
-            />
+            /> */}
 
             {/* 13. Why eHack */}
             <WhyEhackSection programType="cybersecurity" />
