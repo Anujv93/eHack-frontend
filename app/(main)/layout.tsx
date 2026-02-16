@@ -11,7 +11,6 @@ import {
   getStrapiMediaUrl
 } from '@/lib/strapi';
 import "./globals.css";
-import FloatingChat from "@/components/chat-bot/FloatingChat";
 import Script from "next/script";
 
 const montserrat = Montserrat({
@@ -105,7 +104,20 @@ export default async function RootLayout({
         <TopBar />
         <Header partners={partners} courses={coursesTransformed} />
         {children}
-        <FloatingChat />
+        {/* Tawk.to Script */}
+        <Script id="tawk-to" strategy="lazyOnload">
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/5f2fba4e5c885a1b7fb7822a/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+          `}
+        </Script>
         <Footer />
         <FranchisePopup />
         <BackToTop />
