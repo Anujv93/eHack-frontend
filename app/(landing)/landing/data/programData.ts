@@ -99,6 +99,8 @@ export const studentStories = [
         role: "APV-DELIVERY",
         company: "Ampcus Cyber",
         package: "₹9 LPA",
+        hike: "Start",
+        companyLogo: "/images/ampcuscyber.png",
         prevRole: "B.Tech Student",
         image: "/testimonials/person1.jpg",
         logs: [
@@ -117,6 +119,8 @@ export const studentStories = [
         role: "Advisor",
         company: "Fiserv",
         package: "₹18 LPA",
+        hike: "200%",
+        companyLogo: "/images/fiserv.png",
         prevRole: "IT Manager",
         image: "/testimonials/person8.jpg",
         logs: [
@@ -131,10 +135,12 @@ export const studentStories = [
         ]
     },
     {
-        name: "Snigdha Suresh",
+        name: "Snigdha Suresh Poonghat",
         role: "Tech Support Eng.",
         company: "ASK4",
         package: "₹10 LPA",
+        hike: "150%",
+        companyLogo: "/images/ask4_limited_logo.jpg",
         prevRole: "IT Support",
         image: "/testimonials/person7.jpg",
         logs: [
@@ -153,6 +159,8 @@ export const studentStories = [
         role: "Cyber Engineer",
         company: "Anuvu",
         package: "₹14 LPA",
+        hike: "120%",
+        companyLogo: "/images/anuvu.png",
         prevRole: "Software Dev",
         image: "/testimonials/person4.jpg",
         logs: [
@@ -171,6 +179,8 @@ export const studentStories = [
         role: "Red Teamer",
         company: "SISA",
         package: "₹12 LPA",
+        hike: "300%",
+        companyLogo: "/images/sisa.webp",
         prevRole: "Support Eng.",
         image: "/testimonials/person3.jpg",
         logs: [
@@ -189,6 +199,8 @@ export const studentStories = [
         role: "Head TA",
         company: "GT Compution",
         package: "₹15 LPA",
+        hike: "140%",
+        companyLogo: "/images/gtlogo.jpg",
         prevRole: "System Admin",
         image: "/testimonials/person2.jpg",
         logs: [
@@ -207,6 +219,8 @@ export const studentStories = [
         role: "Director Security",
         company: "Ampcus Cyber",
         package: "₹24 LPA",
+        hike: "160%",
+        companyLogo: "/images/ampcuscyber.png",
         prevRole: "Network Admin",
         image: "/testimonials/person5.jpg",
         logs: [
@@ -225,6 +239,8 @@ export const studentStories = [
         role: "Assoc. Director",
         company: "SISA",
         package: "₹22 LPA",
+        hike: "200%",
+        companyLogo: "/images/sisa.webp",
         prevRole: "IT Manager",
         image: "/testimonials/person6.jpg",
         logs: [

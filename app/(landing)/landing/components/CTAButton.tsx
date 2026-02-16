@@ -17,7 +17,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
         <button
             onClick={onClick}
             className={`
-        group relative flex flex-col items-center justify-center
+        group relative flex flex-col items-center justify-center overflow-hidden
         bg-[#ff6b00] hover:bg-[#e56000] text-white
         py-4 px-8 rounded-lg shadow-lg hover:shadow-xl hover:scale-105
         transition-all duration-300 ease-in-out

@@ -6,6 +6,8 @@ interface SuccessCardProps {
         role: string;
         company: string;
         package: string;
+        hike?: string;
+        companyLogo?: string;
         prevRole: string;
         image: string;
     };
@@ -72,8 +74,24 @@ const SuccessCard = ({ data }: SuccessCardProps) => {
                     <div>
                         <h4 className="text-lg font-bold text-gray-900 leading-tight">{data.name}</h4>
                         <div className="flex items-center gap-1.5 mt-0.5">
-                            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                            <span className="text-xs font-semibold text-green-700 uppercase tracking-wide">Placed at {data.company}</span>
+                            {data.companyLogo && (
+                                <img
+                                    src={data.companyLogo}
+                                    alt={data.company}
+                                    className="w-auto object-contain h-10 origin-left"
+                                    style={{
+                                        transform:
+                                            data.company === 'Ampcus Cyber' ? 'scale(2.5)' :
+                                                data.company === 'Fiserv' ? 'scale(2.0)' :
+                                                    data.company === 'Anuvu' ? 'scale(2.2)' :
+                                                        data.company === 'SISA' ? 'scale(1.0)' :
+                                                            'scale(1.2)'
+                                    }}
+                                />
+                            )}
+                            {!data.companyLogo && (
+                                <span className="text-xs font-bold text-gray-700">{data.company}</span>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -85,8 +103,8 @@ const SuccessCard = ({ data }: SuccessCardProps) => {
 
                     <div className="flex items-center justify-between relative z-10">
                         <div className="text-center">
-                            <p className="text-[10px] text-gray-400 uppercase font-bold">Was</p>
-                            <p className="text-sm text-gray-500 line-through font-medium">{data.prevRole}</p>
+                            <p className="text-[10px] text-gray-400 uppercase font-bold">Role</p>
+                            <p className="text-xs text-gray-500 font-medium truncate max-w-[80px]">{data.prevRole}</p>
                         </div>
 
                         <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
@@ -94,8 +112,8 @@ const SuccessCard = ({ data }: SuccessCardProps) => {
                         </div>
 
                         <div className="text-center">
-                            <p className="text-[10px] text-green-600 uppercase font-bold">Now</p>
-                            <p className="text-xl font-black text-gray-900">{data.package}</p>
+                            <p className="text-[10px] text-green-600 uppercase font-bold">Salary Hike</p>
+                            <p className="text-xl font-black text-gray-900">{data.hike || data.package}</p>
                         </div>
                     </div>
                 </div>

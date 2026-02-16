@@ -73,11 +73,41 @@ const HeroSection = () => {
                         </div>
 
                         {/* Social Proof - Trust Indicators */}
-                        <div className="pt-8 border-t border-white/10">
-                            <p className="text-xs uppercase tracking-widest text-gray-400 font-bold mb-4">Trusted by 500+ Alumni Working At:</p>
-                            <div className="flex flex-wrap justify-center lg:justify-start gap-8 opacity-80 hover:opacity-100 transition-all duration-300">
-                                {['GOOGLE', 'MICROSOFT', 'DELOITTE', 'INFOSEC', 'HCL'].map((company, i) => (
-                                    <span key={i} className="text-xl font-bold text-gray-300 hover:text-white cursor-default transition-colors">{company}</span>
+                        <style>
+                            {`
+                                    @keyframes marquee {
+                                        0% { transform: translateX(0); }
+                                        100% { transform: translateX(-50%); }
+                                    }
+                                    .animate-marquee {
+                                        animation: marquee 30s linear infinite;
+                                    }
+                                    .animate-marquee:hover {
+                                        animation-play-state: paused;
+                                    }
+                                `}
+                        </style>
+                        <p className="text-xs uppercase tracking-widest text-gray-400 font-bold mb-4">Trusted by 500+ Alumni Working At:</p>
+                        <div className="w-full overflow-hidden relative">
+                            <div className="flex animate-marquee whitespace-nowrap items-center hover:pause">
+                                {[...Array(6)].map((_, i) => (
+                                    <div key={i} className="flex items-center gap-24 mx-8">
+                                        {[
+                                            { name: 'Ampcus Cyber', logo: '/images/ampcuscyber.png', className: 'h-16 scale-[2.2] hover:scale-[2.3] mx-6' },
+                                            { name: 'Anuvu', logo: '/images/anuvu.png', className: 'h-14 scale-[1.8] hover:scale-[1.9] mx-6' },
+                                            { name: 'SISA', logo: '/images/sisa.webp', className: 'h-8 scale-100' },
+                                            { name: 'Google', logo: '/images/Google_2015_logo.svg.webp', className: 'h-10 scale-100 rounded-sm' },
+                                            { name: 'Microsoft', logo: '/images/Microsoft-logo-5-removebg-preview.png', className: 'h-10 scale-100 rounded-sm' },
+                                            // { name: 'Meta', logo: '/images/Meta-Logo.png', className: 'h-10 scale-100 rounded-sm' },
+                                        ].map((company, index) => (
+                                            <img
+                                                key={`${i}-${index}`}
+                                                src={company.logo}
+                                                alt={company.name}
+                                                className={`${company.className} w-auto object-contain transition-all duration-300 cursor-pointer`}
+                                            />
+                                        ))}
+                                    </div>
                                 ))}
                             </div>
                         </div>
@@ -90,7 +120,7 @@ const HeroSection = () => {
 
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 
