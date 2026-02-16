@@ -39,7 +39,7 @@ const newsItems = [
         source: "Gartner"
     },
     {
-        image: "https://images.unsplash.com/photo-1504384308090-c54be3855091?w=400&h=250&fit=crop",
+        image: "https://images.pexels.com/photos/5380590/pexels-photo-5380590.jpeg?auto=compress&cs=tinysrgb&w=600",
         date: "October 2025",
         headline: "India Records 500% Increase in Cyberattacks - Skilled Professionals in High Demand",
         source: "Economic Times"
@@ -51,7 +51,7 @@ const newsItems = [
         source: "Wired"
     },
     {
-        image: "https://images.unsplash.com/photo-1526374804325-e4d0d580e309?w=400&h=250&fit=crop",
+        image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600",
         date: "September 2025",
         headline: "Data Privacy Regulations Tighten Globally: GDPR and Beyond",
         source: "Reuters"
