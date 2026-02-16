@@ -142,7 +142,82 @@ export default function FAQSection() {
 }
 
 const QuestionModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        question: '',
+        phone: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsSubmitted(false);
+            setError('');
+            setFormData({ fullName: '', question: '', phone: '' });
+        }
+    }, [isOpen]);
+
     if (!isOpen) return null;
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+        setError('');
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (!formData.fullName || !formData.phone || !formData.question) {
+            setError('Please fill in all required fields');
+            return;
+        }
+
+        setIsSubmitting(true);
+        setError('');
+
+        try {
+            const response = await fetch('/api/zoho/inquiry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: formData.fullName,
+                    lastName: '-',
+                    email: 'no-email@provided.com', // Placeholder as email is not collected
+                    phone: formData.phone,
+                    city: '',
+                    totalAmount: 0,
+                    inquiryName: `Website - ${formData.fullName} - FAQ Question`,
+                    leadSource: 'Website Landing Page',
+                    courses: [{
+                        name: 'FAQ Question',
+                        code: 'faq-question',
+                        category: 'General',
+                        price: 0
+                    }],
+                    message: `Question: ${formData.question}`,
+                    agreeWhatsApp: true,
+                    pipeline: 'Leads Pipeline Standard',
+                    stage: 'New Inquiry',
+                }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                console.error('Submission failed:', errorData);
+                throw new Error(errorData.details || 'Failed to submit');
+            }
+
+            setIsSubmitted(true);
+        } catch (err: any) {
+            console.error('Error submitting form:', err);
+            setError(err.message || 'Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
@@ -160,45 +235,78 @@ const QuestionModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
                     </svg>
                 </button>
 
-                <div className="text-center mb-6">
-                    <h3 className="text-2xl font-black text-[#1f2937] mb-2">Ask Your Question</h3>
-                    <p className="text-gray-500 text-sm">We'll answer it via WhatsApp or Call.</p>
-                </div>
+                {isSubmitted ? (
+                    <div className="text-center py-8 animate-fadeIn">
+                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Question Received!</h3>
+                        <p className="text-gray-600 mb-6">Our team will get back to you via WhatsApp or Call shortly.</p>
+                        <button
+                            onClick={onClose}
+                            className="w-full bg-[#ff6b00] text-white rounded-xl py-3 font-bold shadow-lg hover:bg-[#e66000] transition-colors"
+                        >
+                            Close
+                        </button>
+                    </div>
+                ) : (
+                    <>
+                        <div className="text-center mb-6">
+                            <h3 className="text-2xl font-black text-[#1f2937] mb-2">Ask Your Question</h3>
+                            <p className="text-gray-500 text-sm">We'll answer it via WhatsApp or Call.</p>
+                        </div>
 
-                <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); onClose(); }}>
-                    <div>
-                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Full Name <span className="text-[#ff6b00]">*</span></label>
-                        <input
-                            type="text"
-                            placeholder="Enter your name"
-                            required
-                            className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
-                        />
-                    </div>
-                    <div>
-                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Your Question</label>
-                        <textarea
-                            rows={3}
-                            placeholder="e.g., Do you offer job guarantee for freshers?"
-                            className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937] resize-none"
-                        ></textarea>
-                    </div>
-                    <div>
-                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Phone Number <span className="text-[#ff6b00]">*</span></label>
-                        <input
-                            type="tel"
-                            placeholder="Enter your registered number"
-                            required
-                            className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
-                        />
-                    </div>
-                    <button className="w-full bg-[#ff6b00] text-white rounded-xl py-4 font-bold shadow-lg shadow-[#ff6b00]/20 hover:bg-[#e66000] hover:shadow-xl hover:shadow-[#ff6b00]/30 transition-all transform hover:-translate-y-0.5">
-                        Submit Question
-                    </button>
-                    <p className="text-[10px] text-center text-gray-400 font-medium">
-                        Your details are safe with us. No spam.
-                    </p>
-                </form>
+                        {error && <div className="mb-4 p-3 text-sm text-red-600 bg-red-50 rounded-xl border border-red-100 text-center">{error}</div>}
+
+                        <form className="space-y-4" onSubmit={handleSubmit}>
+                            <div>
+                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Full Name <span className="text-[#ff6b00]">*</span></label>
+                                <input
+                                    type="text"
+                                    name="fullName"
+                                    placeholder="Enter your name"
+                                    required
+                                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
+                                    value={formData.fullName}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Your Question</label>
+                                <textarea
+                                    name="question"
+                                    rows={3}
+                                    placeholder="e.g., Do you offer job guarantee for freshers?"
+                                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937] resize-none"
+                                    value={formData.question}
+                                    onChange={handleInputChange}
+                                ></textarea>
+                            </div>
+                            <div>
+                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Phone Number <span className="text-[#ff6b00]">*</span></label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Enter your registered number"
+                                    required
+                                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                className="w-full bg-[#ff6b00] text-white rounded-xl py-4 font-bold shadow-lg shadow-[#ff6b00]/20 hover:bg-[#e66000] hover:shadow-xl hover:shadow-[#ff6b00]/30 transition-all transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? 'Submitting...' : 'Submit Question'}
+                            </button>
+                            <p className="text-[10px] text-center text-gray-400 font-medium">
+                                Your details are safe with us. No spam.
+                            </p>
+                        </form>
+                    </>
+                )}
             </div>
         </div>
     );
