@@ -236,13 +236,13 @@ export default function ProgramDetailsSection() {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.from(tableRef.current, {
-                y: 50,
+                y: 10,
                 opacity: 0,
-                duration: 0.8,
-                ease: "power3.out",
+                duration: 0.3,
+                ease: "power2.out",
                 scrollTrigger: {
                     trigger: tableRef.current,
-                    start: "top 85%"
+                    start: "top 98%"
                 }
             });
         }, sectionRef);
@@ -374,8 +374,8 @@ export default function ProgramDetailsSection() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </button>
-                    <p className="mt-4 text-gray-500 text-sm font-medium">
-                        Speak to our career counselors starting at <span className="text-[#1f2937] font-bold">₹0</span>
+                    <p className="mt-4 text-gray-600 text-lg sm:text-xl font-semibold">
+                        Speak to our career counselors starting at <span className="text-[#1f2937] font-bold text-xl sm:text-2xl">₹0</span>
                     </p>
                 </div>
 

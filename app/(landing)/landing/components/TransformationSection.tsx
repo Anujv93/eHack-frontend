@@ -96,13 +96,13 @@ export default function TransformationSection() {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.from(headerRef.current, {
-                y: 50,
+                y: 10,
                 opacity: 0,
-                duration: 1,
-                ease: "power3.out",
+                duration: 0.3,
+                ease: "power2.out",
                 scrollTrigger: {
                     trigger: headerRef.current,
-                    start: "top 85%",
+                    start: "top 98%",
                 }
             });
         }, containerRef);

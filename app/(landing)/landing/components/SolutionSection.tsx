@@ -131,30 +131,7 @@ const SolutionSection = () => {
         }, 200); // Increased buffer to 200ms for total stability
     };
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            cardsRef.current.forEach((card, index) => {
-                if (card) {
-                    gsap.fromTo(card,
-                        { opacity: 0, y: 50 },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.8,
-                            delay: index * 0.2,
-                            scrollTrigger: {
-                                trigger: card,
-                                start: "top 85%",
-                                toggleActions: "play none none reverse"
-                            }
-                        }
-                    );
-                }
-            });
-        }, sectionRef);
-
-        return () => ctx.revert();
-    }, []);
+    // Cards are always visible - no scroll-triggered opacity animations
 
     const addToRefs = (el: HTMLDivElement | null) => {
         if (el && !cardsRef.current.includes(el)) {

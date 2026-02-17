@@ -69,16 +69,16 @@ export default function OurCoursesSection() {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo(".course-card",
-                { y: 30, opacity: 0 },
+                { y: 10, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 0.6,
-                    stagger: 0.1,
+                    duration: 0.25,
+                    stagger: 0.04,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: sectionRef.current,
-                        start: "top 80%"
+                        start: "top 95%"
                     }
                 }
             );

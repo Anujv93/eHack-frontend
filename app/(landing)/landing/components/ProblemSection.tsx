@@ -12,26 +12,6 @@ const ProblemSection = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Animate each problem card on scroll
-            problemsRef.current.forEach((card, index) => {
-                if (card) {
-                    gsap.fromTo(card,
-                        { opacity: 0, y: 50 },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.8,
-                            delay: index * 0.2,
-                            scrollTrigger: {
-                                trigger: card,
-                                start: "top 85%",
-                                toggleActions: "play none none reverse"
-                            }
-                        }
-                    );
-                }
-            });
-
             // Specific Animations for Visuals
 
             // 1. YouTube/Tutorial Hell - Infinite Scroll

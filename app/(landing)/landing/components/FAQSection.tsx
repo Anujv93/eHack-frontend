@@ -41,15 +41,15 @@ export default function FAQSection() {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo(".faq-item",
-                { y: 20, opacity: 0 },
+                { y: 5, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.1,
+                    duration: 0.2,
+                    stagger: 0.03,
                     scrollTrigger: {
                         trigger: sectionRef.current,
-                        start: "top 85%"
+                        start: "top 95%"
                     }
                 }
             );

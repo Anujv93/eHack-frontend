@@ -84,27 +84,26 @@ export default function CTASection() {
         const ctx = gsap.context(() => {
             // Text Animate
             gsap.from(".cta-text-reveal", {
-                x: -50,
+                x: -15,
                 opacity: 0,
-                duration: 1,
-                stagger: 0.2,
-                ease: "power3.out",
+                duration: 0.3,
+                stagger: 0.05,
+                ease: "power2.out",
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 75%",
+                    start: "top 90%",
                 }
             });
 
             // Form Animate
             gsap.from(formRef.current, {
-                x: 50,
+                x: 15,
                 opacity: 0,
-                duration: 1.2,
-                delay: 0.3,
-                ease: "power4.out",
+                duration: 0.35,
+                ease: "power2.out",
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 75%",
+                    start: "top 90%",
                 }
             });
 
