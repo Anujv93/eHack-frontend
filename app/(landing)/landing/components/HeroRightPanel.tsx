@@ -7,52 +7,32 @@ import FolderLoader from "./FolderLoader";
 import { studentTransformationLogs, studentStories } from "../data/programData";
 
 const HeroRightPanel = () => {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [isPaused, setIsPaused] = useState(false);
+    const [isPlaying] = useState(true);
     const [storyIndex, setStoryIndex] = useState(0);
     const [animationState, setAnimationState] = useState<'terminal' | 'unlocking' | 'success'>('terminal');
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const startAnimation = () => {
-        setIsPlaying(true);
-        setIsPaused(false);
-        setStoryIndex(0); // Start from first story
-        setAnimationState('terminal');
-    };
-
-    const handlePause = (e: React.MouseEvent) => {
-        e.stopPropagation();
-        setIsPaused(true);
-    };
-
-    const handleResume = (e: React.MouseEvent) => {
-        e.stopPropagation();
-        setIsPaused(false);
-    };
-
     const handleTerminalComplete = () => {
-        if (isPaused) return;
         setTimeout(() => {
             setAnimationState('unlocking');
         }, 300);
     };
 
     const handleUnlockComplete = () => {
-        if (isPaused) return;
         setAnimationState('success');
     };
 
     // Auto-loop logic
     useEffect(() => {
         let resetTimer: NodeJS.Timeout;
-        if (animationState === 'success' && !isPaused) {
+        if (animationState === 'success') {
             resetTimer = setTimeout(() => {
                 setStoryIndex((prev) => (prev + 1) % studentStories.length);
                 setAnimationState('terminal');
             }, 4000);
         }
         return () => clearTimeout(resetTimer);
-    }, [animationState, isPaused]);
+    }, [animationState]);
 
 
     const [formData, setFormData] = useState({
@@ -134,61 +114,22 @@ const HeroRightPanel = () => {
                 {/* Screen Container - No Bezel */}
                 <div className="relative w-full h-[240px] sm:h-[300px] md:h-[340px] bg-black rounded-t-2xl rounded-b-none overflow-hidden shadow-2xl border border-gray-800 border-b-0">
 
-                    {/* 1. START / RESUME OVERLAY */}
-                    {(!isPlaying || isPaused) && (
-                        <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] cursor-pointer" onClick={isPlaying ? handleResume : startAnimation}>
-                            <div className="group-hover:scale-105 transition-transform duration-300">
-                                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-[#ff6b00] hover:border-[#ff6b00] transition-colors duration-300 shadow-lg">
-                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                                </div>
-                            </div>
-                            <p className="mt-3 text-white/80 font-sans text-xs font-medium tracking-widest uppercase">
-                                {isPlaying ? 'Resume Simulation' : 'Run Simulation'}
-                            </p>
-                        </div>
-                    )}
-
-                    {/* CONTROL: PAUSE OVERLAY (Hover Only, when Playing & Not Paused) */}
-                    {isPlaying && !isPaused && (
-                        <div
-                            className="absolute inset-0 z-50 flex items-center justify-center bg-black/10 backdrop-blur-[0px] opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-                            onClick={handlePause}
-                        >
-                            <div className="transform hover:scale-110 transition-transform duration-300">
-                                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-red-500/80 hover:border-red-500 hover:text-white text-white/90 shadow-2xl transition-all">
-                                    <svg className="w-8 h-8 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* 2. TERMINAL LAYER */}
+                    {/* TERMINAL LAYER */}
                     <div className={`absolute inset-0 transition-opacity duration-500 bg-[#0c0c0c] ${animationState === 'success' ? 'opacity-0' : 'opacity-100'}`}>
-                        {isPlaying && (
-                            <TerminalAnimation
-                                key={storyIndex}
-                                customLogs={studentStories[storyIndex].logs}
-                                onComplete={handleTerminalComplete}
-                                autoScroll={true}
-                                isPaused={isPaused}
-                            />
-                        )}
-                        {!isPlaying && (
-                            <div className="h-full w-full flex flex-col items-center justify-center">
-                                <div className="text-gray-500 font-mono text-xs tracking-widest">
-                                    [ SYSTEM STANDBY ]
-                                </div>
-                            </div>
-                        )}
+                        <TerminalAnimation
+                            key={storyIndex}
+                            customLogs={studentStories[storyIndex].logs}
+                            onComplete={handleTerminalComplete}
+                            autoScroll={true}
+                            isPaused={false}
+                        />
                     </div>
 
                     {/* 3. UNLOCK & 4. SUCCESS */}
-                    {isPlaying && animationState === 'unlocking' && (
-                        <div className="absolute inset-0 z-30"><FolderLoader onComplete={handleUnlockComplete} isPaused={isPaused} /></div>
+                    {animationState === 'unlocking' && (
+                        <div className="absolute inset-0 z-30"><FolderLoader onComplete={handleUnlockComplete} isPaused={false} /></div>
                     )}
-                    {isPlaying && animationState === 'success' && (
+                    {animationState === 'success' && (
                         <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fadeIn">
                             <SuccessCard data={studentStories[storyIndex]} />
                         </div>
