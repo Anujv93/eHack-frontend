@@ -265,10 +265,55 @@ export default function ProgramDetailsSection() {
                     </p>
                 </div>
 
-                <div ref={tableRef} className="overflow-hidden bg-white rounded-2xl sm:rounded-3xl shadow-xl border-2 border-[#ff6b00]">
-                    <p className="text-center text-xs text-gray-400 py-2 bg-gray-50 border-b border-gray-100 md:hidden">← Swipe to compare programs →</p>
-                    <div className="overflow-x-auto">
-                        <table className="w-full min-w-[800px] border-collapse">
+                <div ref={tableRef}>
+                    {/* ===== MOBILE: Stacked Program Cards (visible below md) ===== */}
+                    <div className="md:hidden space-y-4">
+                        {programs.map((prog, idx) => (
+                            <div key={idx} className={`rounded-2xl shadow-lg border-2 overflow-hidden ${prog.highlight ? 'border-[#ff6b00]' : 'border-gray-200'}`}>
+                                {/* Card Header */}
+                                <div className={`p-4 text-center ${prog.highlight ? 'bg-[#ff6b00] text-white' : 'bg-gray-50 text-[#1f2937]'}`}>
+                                    {prog.highlight && (
+                                        <span className="inline-block bg-white text-[#ff6b00] text-[10px] font-black uppercase tracking-widest px-3 py-0.5 rounded-full mb-2">Most Popular</span>
+                                    )}
+                                    <h4 className="text-xl font-black">{prog.name}</h4>
+                                </div>
+                                {/* Card Body - Feature Rows */}
+                                <div className="divide-y divide-gray-100">
+                                    {rows.map((row, rIdx) => (
+                                        <div key={rIdx} className="flex justify-between items-start px-4 py-3">
+                                            <span className="text-xs font-bold text-gray-500 uppercase tracking-wide w-[40%] shrink-0">{row.label}</span>
+                                            <span className="text-sm font-medium text-[#1f2937] text-right">{prog.details[row.key as keyof typeof prog.details]}</span>
+                                        </div>
+                                    ))}
+                                    {/* Common features */}
+                                    {["Placement Support", "Internship", "24/7 Labs", "EMI Options"].map((feature, fIdx) => (
+                                        <div key={fIdx} className="flex justify-between items-center px-4 py-3">
+                                            <span className="text-xs font-bold text-gray-500 uppercase tracking-wide w-[40%] shrink-0">{feature}</span>
+                                            <span className="inline-flex items-center gap-1.5 text-sm font-medium text-green-600">
+                                                <span className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </span>
+                                                {fIdx === 3 ? 'Available' : 'Included'}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+
+                        {/* Mobile Schedule Footer */}
+                        <div className="bg-gray-900 text-white p-5 rounded-2xl text-center">
+                            <h5 className="font-bold uppercase tracking-widest text-[#ff6b00] text-xs mb-2">Schedule Options</h5>
+                            <p className="text-sm font-medium">
+                                <span className="block mb-1">Weekday (Tue-Fri): <span className="font-bold">2 hrs/day</span></span>
+                                <span className="block">Weekend (Sat-Sun): <span className="font-bold">4 hrs/day</span></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* ===== DESKTOP: Original Comparison Table (visible md+) ===== */}
+                    <div className="hidden md:block overflow-hidden bg-white rounded-3xl shadow-xl border-2 border-[#ff6b00]">
+                        <table className="w-full border-collapse">
                             <thead>
                                 <tr>
                                     <th className="p-6 text-left w-1/4 bg-gray-50 border-b border-r border-gray-300 border-gray-100">
@@ -286,7 +331,7 @@ export default function ProgramDetailsSection() {
                             <tbody>
                                 {rows.map((row, idx) => (
                                     <tr key={idx} className="hover:bg-gray-50/50 transition-colors">
-                                        <td className="p-5 border-b border-r border-gray-300 border-gray-100 font-bold text-[#1f2937] text-sm md:text-base pl-8">
+                                        <td className="p-5 border-b border-r border-gray-300 border-gray-100 font-bold text-[#1f2937] text-base pl-8">
                                             {row.label}
                                         </td>
                                         {programs.map((prog, pIdx) => (
@@ -297,70 +342,38 @@ export default function ProgramDetailsSection() {
                                     </tr>
                                 ))}
                                 {/* Common Features Rows */}
-                                <tr className="hover:bg-gray-50/50 transition-colors">
-                                    <td className="p-5 border-b border-r border-gray-300 border-gray-100 font-bold text-[#1f2937] text-sm md:text-base pl-8">
-                                        Placement Support
-                                    </td>
-                                    {programs.map((prog, idx) => (
-                                        <td key={idx} className={`p-5 text-center border-b border-r border-gray-300 last:border-r-0 border-gray-100 text-gray-600 font-medium ${prog.highlight ? 'bg-[#ff6b00]/5' : ''}`}>
-                                            <span className="inline-flex items-center justify-center w-6 h-6 bg-green-100 text-green-600 rounded-full">
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                            </span>
-                                            <span className="ml-2">Included</span>
+                                {[
+                                    { label: "Placement Support", value: "Included" },
+                                    { label: "Internship", value: "Included" },
+                                    { label: "24/7 Labs", value: "Included" },
+                                    { label: "EMI Options", value: "Available" },
+                                ].map((common, cIdx) => (
+                                    <tr key={cIdx} className="hover:bg-gray-50/50 transition-colors">
+                                        <td className="p-5 border-b border-r border-gray-300 border-gray-100 font-bold text-[#1f2937] text-base pl-8">
+                                            {common.label}
                                         </td>
-                                    ))}
-                                </tr>
-                                <tr className="hover:bg-gray-50/50 transition-colors">
-                                    <td className="p-5 border-b border-r border-gray-300 border-gray-100 font-bold text-[#1f2937] text-sm md:text-base pl-8">
-                                        Internship
-                                    </td>
-                                    {programs.map((prog, idx) => (
-                                        <td key={idx} className={`p-5 text-center border-b border-r border-gray-300 last:border-r-0 border-gray-100 text-gray-600 font-medium ${prog.highlight ? 'bg-[#ff6b00]/5' : ''}`}>
-                                            <span className="inline-flex items-center justify-center w-6 h-6 bg-green-100 text-green-600 rounded-full">
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                            </span>
-                                            <span className="ml-2">Included</span>
-                                        </td>
-                                    ))}
-                                </tr>
-                                <tr className="hover:bg-gray-50/50 transition-colors">
-                                    <td className="p-5 border-b border-r border-gray-300 border-gray-100 font-bold text-[#1f2937] text-sm md:text-base pl-8">
-                                        24/7 Labs
-                                    </td>
-                                    {programs.map((prog, idx) => (
-                                        <td key={idx} className={`p-5 text-center border-b border-r border-gray-300 last:border-r-0 border-gray-100 text-gray-600 font-medium ${prog.highlight ? 'bg-[#ff6b00]/5' : ''}`}>
-                                            <span className="inline-flex items-center justify-center w-6 h-6 bg-green-100 text-green-600 rounded-full">
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                            </span>
-                                            <span className="ml-2">Included</span>
-                                        </td>
-                                    ))}
-                                </tr>
-                                <tr className="hover:bg-gray-50/50 transition-colors">
-                                    <td className="p-5 border-b border-r border-gray-300 border-gray-100 font-bold text-[#1f2937] text-sm md:text-base pl-8">
-                                        EMI Options
-                                    </td>
-                                    {programs.map((prog, idx) => (
-                                        <td key={idx} className={`p-5 text-center border-b border-r border-gray-300 last:border-r-0 border-gray-100 text-gray-600 font-medium ${prog.highlight ? 'bg-[#ff6b00]/5' : ''}`}>
-                                            <span className="inline-flex items-center justify-center w-6 h-6 bg-green-100 text-green-600 rounded-full">
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                            </span>
-                                            <span className="ml-2">Available</span>
-                                        </td>
-                                    ))}
-                                </tr>
+                                        {programs.map((prog, idx) => (
+                                            <td key={idx} className={`p-5 text-center border-b border-r border-gray-300 last:border-r-0 border-gray-100 text-gray-600 font-medium ${prog.highlight ? 'bg-[#ff6b00]/5' : ''}`}>
+                                                <span className="inline-flex items-center justify-center w-6 h-6 bg-green-100 text-green-600 rounded-full">
+                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </span>
+                                                <span className="ml-2">{common.value}</span>
+                                            </td>
+                                        ))}
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
-                    </div>
 
-                    {/* Schedule Footer */}
-                    <div className="bg-gray-900 text-white p-6 text-center">
-                        <h5 className="font-bold uppercase tracking-widest text-[#ff6b00] text-sm mb-3">Schedule Options</h5>
-                        <p className="md:text-lg font-medium">
-                            <span className="block md:inline mb-2 md:mb-0">Weekday (Tue-Fri): <span className="text-white font-bold">2 hrs/day</span></span>
-                            <span className="hidden md:inline mx-4 text-gray-600">|</span>
-                            <span className="block md:inline">Weekend (Sat-Sun): <span className="text-white font-bold">4 hrs/day</span></span>
-                        </p>
+                        {/* Schedule Footer */}
+                        <div className="bg-gray-900 text-white p-6 text-center">
+                            <h5 className="font-bold uppercase tracking-widest text-[#ff6b00] text-sm mb-3">Schedule Options</h5>
+                            <p className="text-lg font-medium">
+                                <span>Weekday (Tue-Fri): <span className="text-white font-bold">2 hrs/day</span></span>
+                                <span className="mx-4 text-gray-600">|</span>
+                                <span>Weekend (Sat-Sun): <span className="text-white font-bold">4 hrs/day</span></span>
+                            </p>
+                        </div>
                     </div>
                 </div>
 
