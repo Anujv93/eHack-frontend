@@ -141,7 +141,7 @@ const HeroRightPanel = () => {
             </div>
 
             {/* ================= SEPARATE FORM CARD ================= */}
-            <div className="bg-white rounded-b-2xl rounded-t-none shadow-xl border border-gray-200 border-t-0 overflow-hidden relative z-20">
+            <div id="hero-inquiry-form" className="bg-white rounded-b-2xl rounded-t-none shadow-xl border border-gray-200 border-t-0 overflow-hidden relative z-20">
                 <div className="p-3 sm:p-4">
                     {isSubmitted ? (
                         <div className="text-center py-8 animate-fadeIn">

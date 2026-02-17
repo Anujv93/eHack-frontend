@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import CTAButton from './CTAButton';
 import HeroRightPanel from './HeroRightPanel';
@@ -53,6 +55,16 @@ const HeroSection = () => {
                         <div className="flex flex-col items-center lg:items-start gap-4 sm:gap-6 mb-4 sm:mb-6 w-full">
                             <CTAButton
                                 className="shadow-orange-500/20 hover:shadow-orange-500/40"
+                                onClick={() => {
+                                    const form = document.getElementById('hero-inquiry-form');
+                                    if (form) {
+                                        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                        setTimeout(() => {
+                                            const firstInput = form.querySelector('input');
+                                            if (firstInput) firstInput.focus();
+                                        }, 500);
+                                    }
+                                }}
                             />
                             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-6 text-[10px] sm:text-xs md:text-sm text-gray-300 font-medium">
                                 <span className="flex items-center gap-2">
