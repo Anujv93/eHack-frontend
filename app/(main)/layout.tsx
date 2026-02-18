@@ -96,6 +96,17 @@ export default async function RootLayout({
             });
           `}
         </Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+              page_path: window.location.pathname,
+            });
+            gtag('config', 'AW-17944571400');
+          `}
+        </Script>
       </head>
       <body
         className={`${montserrat.variable} ${openSans.variable}`}

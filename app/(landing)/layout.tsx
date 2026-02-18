@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
+import Script from 'next/script';
 import './landing.css';
 
 const montserrat = Montserrat({
@@ -31,6 +32,17 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${montserrat.variable} antialiased font-montserrat`}>
+                {/* Google tag (gtag.js) */}
+                <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17944571400" />
+                <Script id="google-tag-aw" strategy="afterInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+
+                        gtag('config', 'AW-17944571400');
+                    `}
+                </Script>
                 {children}
                 <Footer />
             </body>
