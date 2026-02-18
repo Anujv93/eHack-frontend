@@ -62,8 +62,8 @@ const SuccessCard = ({ data }: SuccessCardProps) => {
                 <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-blue-50 rounded-full blur-[40px] sm:blur-[50px] -z-10 -translate-x-8 translate-y-8 sm:-translate-x-10 sm:translate-y-10"></div>
 
                 {/* Header: Image & Status */}
-                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                    <div className="relative">
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-5">
+                    <div className="relative shrink-0">
                         <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-green-500 p-0.5 shadow-lg">
                             <img src={data.image} alt={data.name} className="w-full h-full object-cover rounded-full" />
                         </div>
@@ -71,14 +71,14 @@ const SuccessCard = ({ data }: SuccessCardProps) => {
                             HIRED
                         </div>
                     </div>
-                    <div>
-                        <h4 className="text-base sm:text-lg font-bold text-gray-900 leading-tight">{data.name}</h4>
+                    <div className="min-w-0">
+                        <h4 className="text-sm sm:text-lg font-bold text-gray-900 leading-tight truncate pr-2">{data.name}</h4>
                         <div className="flex items-center gap-1.5 mt-0.5">
                             {data.companyLogo && (
                                 <img
                                     src={data.companyLogo}
                                     alt={data.company}
-                                    className="w-auto object-contain h-8 sm:h-10 origin-left"
+                                    className="w-auto object-contain h-6 sm:h-8 origin-left"
                                     style={{
                                         transform:
                                             data.company === 'Ampcus Cyber' ? 'scale(2.5)' :
@@ -96,32 +96,32 @@ const SuccessCard = ({ data }: SuccessCardProps) => {
                     </div>
                 </div>
 
-                {/* Central Value Prop - Salary Hike */}
-                <div className="bg-gray-50 rounded-xl p-3 sm:p-4 mb-4 sm:mb-6 border border-gray-100 relative overflow-hidden">
+                {/* TRANSFORM: Prev Role -> New Role */}
+                <div className="bg-gray-50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border border-gray-100 relative overflow-hidden">
                     {/* Shine Effect */}
                     <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-[shimmer_2s_infinite]"></div>
 
-                    <div className="flex items-center justify-between relative z-10">
-                        <div className="text-center">
-                            <p className="text-[9px] sm:text-[10px] text-gray-400 uppercase font-bold">Role</p>
-                            <p className="text-[10px] sm:text-xs text-gray-500 font-medium truncate max-w-[60px] sm:max-w-[80px]">{data.prevRole}</p>
+                    <div className="flex items-start justify-between relative z-10 gap-1">
+                        <div className="text-center w-[42%] flex flex-col items-start text-left">
+                            <p className="text-[9px] sm:text-[10px] text-gray-400 uppercase font-bold mb-0.5 pl-1">Was</p>
+                            <p className="text-[10px] sm:text-xs text-gray-600 font-bold leading-tight pl-1 line-clamp-2 min-h-[2.5em] mt-1">{data.prevRole}</p>
                         </div>
 
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-green-100 flex items-center justify-center">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-2">
                             <span className="text-green-600 font-bold text-base sm:text-lg">➜</span>
                         </div>
 
-                        <div className="text-center">
-                            <p className="text-[9px] sm:text-[10px] text-green-600 uppercase font-bold">Salary Hike</p>
-                            <p className="text-lg sm:text-xl font-black text-gray-900">{data.hike || data.package}</p>
+                        <div className="text-center w-[42%] flex flex-col items-end text-right">
+                            <p className="text-[9px] sm:text-[10px] text-gray-900 uppercase font-bold mb-0.5 pr-1">Now</p>
+                            <p className="text-[10px] sm:text-xs text-indigo-600 font-black leading-tight pr-1 line-clamp-2 min-h-[2.5em] mt-1">{data.role}</p>
                         </div>
                     </div>
                 </div>
 
-                {/* Footer details */}
-                <div className="border-t border-gray-100 pt-3 flex justify-between items-center text-[10px] sm:text-xs">
-                    <span className="text-gray-500">New Role:</span>
-                    <span className="font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">{data.role}</span>
+                {/* Footer: Salary Hike / Package */}
+                <div className="border-t border-gray-100 pt-2 sm:pt-3 flex justify-between items-center text-[10px] sm:text-xs">
+                    <span className="text-gray-500 font-medium shrink-0">Salary Hike Achieved:</span>
+                    <span className="font-black text-green-600 text-sm sm:text-base ml-2">{data.hike || data.package}</span>
                 </div>
             </div>
         </div>
