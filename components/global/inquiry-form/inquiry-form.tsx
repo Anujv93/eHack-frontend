@@ -132,6 +132,19 @@ export default function InquiryForm({
             }
 
             setIsSubmitted(true);
+
+            // Google Ads Conversion Event
+            if (typeof window !== 'undefined' && (window as any).gtag) {
+                const callback = () => {
+                    // Conversion reported
+                };
+                (window as any).gtag('event', 'conversion', {
+                    'send_to': 'AW-17944571400/8OiVCJHss_cbEIjc0exC',
+                    'value': 1.0,
+                    'currency': 'INR',
+                    'event_callback': callback
+                });
+            }
             if (onSuccess) {
                 onSuccess();
             }
