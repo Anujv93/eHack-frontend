@@ -1,12 +1,27 @@
+'use client';
+
 import './page.css';
 import Link from 'next/link';
-
-export const metadata = {
-    title: 'Free Laptop Offer | eHack Academy',
-    description: 'Get a FREE laptop worth ₹50,000 when you enroll in Masters or Graduate Program with CSA & CCSE Bundle. Transform your cybersecurity career today.',
-};
+import { useState } from 'react';
+import { X } from 'lucide-react';
+import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
 
 export default function LaptopOfferPage() {
+    const [showModal, setShowModal] = useState(false);
+    const [selectedProgram, setSelectedProgram] = useState('');
+
+    const handleCtaClick = (program: string) => {
+        setSelectedProgram(program);
+        setShowModal(true);
+    };
+
+    const handleFormSuccess = () => {
+        // Wait and then close modal
+        setTimeout(() => {
+            setShowModal(false);
+        }, 2000);
+    };
+
     return (
         <main>
             {/* Hero Section */}
@@ -513,18 +528,49 @@ export default function LaptopOfferPage() {
                         Don't miss this opportunity to gain world-class certifications, practical skills, and a <strong>FREE laptop</strong> to power your success.
                     </p>
                     <div className="cta-buttons">
-                        <Link href="/contact" className="cta-btn cta-btn-primary">
+                        <button
+                            onClick={() => handleCtaClick('Masters Program')}
+                            className="cta-btn cta-btn-primary"
+                        >
                             Enroll in Masters Program
-                        </Link>
-                        <Link href="/contact" className="cta-btn cta-btn-secondary">
+                        </button>
+                        <button
+                            onClick={() => handleCtaClick('Graduate Program')}
+                            className="cta-btn cta-btn-secondary"
+                        >
                             Enroll in Graduate Program
-                        </Link>
+                        </button>
                     </div>
                     <p className="cta-urgency">
                         Limited seats available — Offer valid while stocks last
                     </p>
                 </div>
             </section>
+            {/* Inquiry Form Modal */}
+            {showModal && (
+                <div className="brochure-modal-overlay">
+                    <div className="brochure-modal-container">
+                        <button
+                            className="modal-close-btn"
+                            onClick={() => setShowModal(false)}
+                            aria-label="Close modal"
+                        >
+                            <X size={24} />
+                        </button>
+
+                        <div className="modal-content">
+                            <InquiryForm
+                                courseName={`Laptop Offer - ${selectedProgram}`}
+                                courseCode={selectedProgram === 'Masters Program' ? 'laptop-masters' : 'laptop-graduate'}
+                                variant="popup"
+                                title={`Enroll in ${selectedProgram}`}
+                                subtitle="Please provide your details to learn more about the program and claim your free laptop."
+                                onSuccess={handleFormSuccess}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }
