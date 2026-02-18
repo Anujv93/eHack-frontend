@@ -4,11 +4,20 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Search, MapPin, Briefcase, ChevronRight, Filter } from 'lucide-react';
 import { dummyJobs, jobCategories, Job } from './data';
+import JobApplicationModal from './components/JobApplicationModal';
 import './career-page.css';
 
 export default function CareerPage() {
     const [searchQuery, setSearchQuery] = useState('');
     const [activeCategory, setActiveCategory] = useState('all');
+    const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleApplyClick = (e: React.MouseEvent, job: Job) => {
+        e.preventDefault();
+        setSelectedJob(job);
+        setIsModalOpen(true);
+    };
 
     const filteredJobs = useMemo(() => {
         return dummyJobs.filter((job) => {
@@ -82,7 +91,7 @@ export default function CareerPage() {
                         <div className="jobs-grid">
                             {filteredJobs.map((job) => (
                                 <div key={job.id} className="fade-in-up">
-                                    <div className="job-card">
+                                    <div className="job-card cursor-pointer" onClick={(e) => handleApplyClick(e, job)}>
                                         <div className="job-header">
                                             <span className="job-type-badge">{job.type}</span>
                                             <span className="job-date">Posted {job.postedDate}</span>
@@ -103,9 +112,9 @@ export default function CareerPage() {
 
                                         <div className="job-footer">
                                             <div className="salary-tag">{job.salary || 'Competitive'}</div>
-                                            <Link href={`/careers/${job.id}`} className="apply-link">
+                                            <button className="apply-link border-none bg-transparent cursor-pointer">
                                                 Apply Now <ChevronRight size={18} />
-                                            </Link>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -126,6 +135,12 @@ export default function CareerPage() {
                     )}
                 </div>
             </section>
+
+            <JobApplicationModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                job={selectedJob}
+            />
         </main>
     );
 }
