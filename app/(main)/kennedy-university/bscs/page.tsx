@@ -5,7 +5,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
-import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star, FileText, Gem, Banknote, Landmark, Shield, CreditCard } from 'lucide-react';
+import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star, FileText, Gem, Banknote, Landmark, Shield, CreditCard, X } from 'lucide-react';
 
 
 import { ProgramLabsWrapper } from '@/components/global/certificate-labs/ProgramLabsWrapper';
@@ -165,6 +165,9 @@ export default function BSCSPage() {
     const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set());
     const [activeCategory, setActiveCategory] = useState(0);
     const [openQuestion, setOpenQuestion] = useState<number | null>(0);
+    const [showModal, setShowModal] = useState(false);
+
+    const brochureUrl = '/brochure/Bachelor of Science in Cyber SecurityAI kennedy university.pdf';
 
     const toggleQuestion = (idx: number) => {
         setOpenQuestion(openQuestion === idx ? null : idx);
@@ -181,6 +184,27 @@ export default function BSCSPage() {
             }
             return newSet;
         });
+    };
+
+    const handleDownloadClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setShowModal(true);
+    };
+
+    const handleFormSuccess = () => {
+        // Trigger download
+        const link = document.createElement('a');
+        link.href = brochureUrl;
+        link.target = '_blank';
+        link.download = 'BSCS_Brochure.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        // Close modal after a delay to show success message
+        setTimeout(() => {
+            setShowModal(false);
+        }, 2000);
     };
 
     const curriculum = [
@@ -397,12 +421,12 @@ export default function BSCSPage() {
 
                             <div className="hero-ctas">
                                 <a href="#apply" className="btn-apply-now">Apply Now</a>
-                                <a href="/brochures/bscs-fast-track.pdf" className="btn-download" target="_blank">
+                                <button onClick={handleDownloadClick} className="btn-download">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
                                     </svg>
                                     Download Brochure
-                                </a>
+                                </button>
                             </div>
                         </div>
 
@@ -644,6 +668,19 @@ export default function BSCSPage() {
                             </div>
                         ))}
                     </div>
+
+                    <div className="curriculum-footer-modern">
+                        <div className="footer-content">
+                            <div className="footer-info">
+                                <h3>Want the complete curriculum details?</h3>
+                                <p>Download the detailed program brochure including all modules, lab exercises and certification details.</p>
+                            </div>
+                            <button onClick={handleDownloadClick} className="btn-download-modern">
+                                <FileText size={18} />
+                                Download Detailed Syllabus
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -865,6 +902,31 @@ export default function BSCSPage() {
                     </div>
                 </div>
             </section>
+            {/* Download Brochure Modal */}
+            {showModal && (
+                <div className="brochure-modal-overlay">
+                    <div className="brochure-modal-container">
+                        <button
+                            className="modal-close-btn"
+                            onClick={() => setShowModal(false)}
+                            aria-label="Close modal"
+                        >
+                            <X size={24} />
+                        </button>
+
+                        <div className="modal-content">
+                            <InquiryForm
+                                courseName="Kennedy University - BSCS (Cyber Security)"
+                                courseCode="kennedy-bscs"
+                                variant="popup"
+                                title="Download Detailed Syllabus"
+                                subtitle="Please provide your details to receive the complete program curriculum."
+                                onSuccess={handleFormSuccess}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
