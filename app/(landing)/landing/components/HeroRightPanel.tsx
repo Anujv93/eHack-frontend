@@ -125,7 +125,7 @@ const HeroRightPanel = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
 
                 {/* Screen Container - No Bezel */}
-                <div className="relative w-full h-[240px] sm:h-[300px] md:h-[340px] bg-black rounded-t-2xl rounded-b-none overflow-hidden shadow-2xl border border-gray-800 border-b-0">
+                <div className="relative w-full h-[260px] sm:h-[300px] md:h-[340px] bg-black rounded-t-2xl rounded-b-none overflow-hidden shadow-2xl border border-gray-800 border-b-0">
 
                     {/* TERMINAL LAYER */}
                     <div className={`absolute inset-0 transition-opacity duration-500 bg-[#0c0c0c] ${animationState === 'success' ? 'opacity-0' : 'opacity-100'}`}>
