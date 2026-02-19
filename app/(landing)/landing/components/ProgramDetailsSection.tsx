@@ -19,7 +19,8 @@ const programs = [
             certifications: "3 Global Certifications",
             ecCouncilCerts: "CEH v13, CEH Practicals, CEH Masters",
             ehackCerts: "Nil",
-            careerTraining: "Nil"
+            careerTraining: "Nil",
+            emi: "₹28,750"
         }
     },
     {
@@ -34,7 +35,8 @@ const programs = [
             certifications: "2 Global Certifications",
             ecCouncilCerts: "CSCU, CND v3",
             ehackCerts: "Cyber Security Fundamentals, Ethical Hacking, Penetration Testing / Digital Forensics, OWASP 10",
-            careerTraining: "Personality Development & Soft Skills"
+            careerTraining: "Personality Development & Soft Skills",
+            emi: "₹29,750"
         }
     },
     {
@@ -49,7 +51,8 @@ const programs = [
             certifications: "6 Global Certifications",
             ecCouncilCerts: "CSCU, CND v3, CEH v13, Cpent v2+LPT, CHFI v11",
             ehackCerts: "Cyber Security Fundamentals, OWASP 10",
-            careerTraining: "Personality Development & Soft Skills"
+            careerTraining: "Personality Development & Soft Skills",
+            emi: "₹50,000"
         }
     }
 ];
@@ -64,6 +67,7 @@ const rows = [
     { label: "EC Council Certifications", key: "ecCouncilCerts" },
     { label: "Ehack Academy Certifications", key: "ehackCerts" },
     { label: "Career Development Training", key: "careerTraining" },
+    { label: "EMI Options", key: "emi" },
 ];
 
 const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
@@ -295,18 +299,27 @@ export default function ProgramDetailsSection() {
                                     {rows.map((row, rIdx) => (
                                         <div key={rIdx} className="flex justify-between items-start px-4 py-3">
                                             <span className="text-xs font-bold text-gray-500 uppercase tracking-wide w-[40%] shrink-0">{row.label}</span>
-                                            <span className="text-sm font-medium text-[#1f2937] text-right">{prog.details[row.key as keyof typeof prog.details]}</span>
+                                            <span className="text-sm font-medium text-[#1f2937] text-right">
+                                                {row.key === 'emi' ? (
+                                                    <>
+                                                        <span className="font-bold text-gray-700">Starting at </span>
+                                                        {prog.details[row.key as keyof typeof prog.details]}
+                                                    </>
+                                                ) : (
+                                                    prog.details[row.key as keyof typeof prog.details]
+                                                )}
+                                            </span>
                                         </div>
                                     ))}
                                     {/* Common features */}
-                                    {["Placement Support", "Internship", "24/7 Labs", "EMI Options"].map((feature, fIdx) => (
+                                    {["Placement Support", "Internship", "24/7 Labs"].map((feature, fIdx) => (
                                         <div key={fIdx} className="flex justify-between items-center px-4 py-3">
                                             <span className="text-xs font-bold text-gray-500 uppercase tracking-wide w-[40%] shrink-0">{feature}</span>
                                             <span className="inline-flex items-center gap-1.5 text-sm font-medium text-green-600">
                                                 <span className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
                                                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                                                 </span>
-                                                {fIdx === 3 ? 'Available' : 'Included'}
+                                                Included
                                             </span>
                                         </div>
                                     ))}
@@ -349,17 +362,25 @@ export default function ProgramDetailsSection() {
                                         </td>
                                         {programs.map((prog, pIdx) => (
                                             <td key={pIdx} className={`p-5 text-center border-b border-r border-gray-300 last:border-r-0 border-gray-100 text-gray-600 font-medium ${prog.highlight ? 'bg-[#ff6b00]/5' : ''}`}>
-                                                {prog.details[row.key as keyof typeof prog.details]}
+                                                {row.key === 'emi' ? (
+                                                    <>
+                                                        <span className="font-bold text-gray-700">Starting at  </span>
+                                                        {prog.details[row.key as keyof typeof prog.details]}
+                                                    </>
+                                                ) : (
+                                                    prog.details[row.key as keyof typeof prog.details]
+                                                )}
                                             </td>
                                         ))}
                                     </tr>
                                 ))}
-                                {/* Common Features Rows */}
+                                {
+                                    /* Common Features Rows */
+                                }
                                 {[
                                     { label: "Placement Support", value: "Included" },
                                     { label: "Internship", value: "Included" },
                                     { label: "24/7 Labs", value: "Included" },
-                                    { label: "EMI Options", value: "Available" },
                                 ].map((common, cIdx) => (
                                     <tr key={cIdx} className="hover:bg-gray-50/50 transition-colors">
                                         <td className="p-5 border-b border-r border-gray-300 border-gray-100 font-bold text-[#1f2937] text-base pl-8">

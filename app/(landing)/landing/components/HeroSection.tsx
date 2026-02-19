@@ -99,7 +99,7 @@ const HeroSection = () => {
                                     }
                                 `}
                         </style>
-                        <p className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 font-bold mb-3 sm:mb-4">Trusted by 500+ Alumni Working At:</p>
+                        <p className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 font-bold mb-3 sm:mb-4">Trusted by 10,000+ Alumni Working At:</p>
                         <div className="w-full overflow-hidden relative">
                             <div className="flex animate-marquee whitespace-nowrap items-center hover:pause">
                                 {[...Array(6)].map((_, i) => (
