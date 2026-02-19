@@ -3,6 +3,7 @@ export const programs = [
     {
         slug: "masters-ethical-hacking",
         category: "cybersecurity",
+        heroImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1600",
         brochureLink: "master's program.pdf",
         title: "Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (6 Global Certification)",
         subtitle: "with 6 Global Certifications",
@@ -424,6 +425,7 @@ export const programs = [
     {
         slug: "graduate-cybersecurity",
         category: "cybersecurity",
+        heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1600",
         brochureLink: "Graduate Program in Ethical Hacking & Cyber Security.pdf.pdf",
         title: "Graduate Program in Ethical Hacking and Cybersecurityᴬᴵ (2 Global Certification)",
         subtitle: "with 2 Global Complimentary Certifications",
@@ -794,6 +796,7 @@ export const programs = [
     {
         slug: "digital-marketing-masterprogram",
         category: "digital-marketing",
+        heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600",
         brochureLink: "Digital Marketing.pdf.pdf",
         title: "Master's Program in Digital Marketing powered by AI",
         subtitle: "Build Digital Careers - Agency Style Training",
@@ -1046,6 +1049,7 @@ export const programs = [
     {
         slug: "robotics-for-all",
         category: "robotics-iot",
+        heroImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1600",
         brochureLink: "Robotics.pdf.pdf",
         title: "Robotics for Every One - Build Your First Robot with AI",
         subtitle: "Sensors & Actuators | Line Following | Obstacle Avoidance | Bluetooth Control",
@@ -1279,6 +1283,7 @@ export const programs = [
     {
         slug: "data-science-analytics",
         category: "data-science",
+        heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600",
         brochureLink: "Data Science & Data Analytics Powered by AI.pdf.pdf",
         title: "Data Science & Data Analytics Powered by AI",
         subtitle: "with 100% Job Assistance & Industry Projects",
@@ -1520,6 +1525,7 @@ export const programs = [
     {
         slug: "masterclass-ethical-hacking-ceh-v13",
         category: "cybersecurity",
+        heroImage: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=1600",
         brochureLink: "Certified Ethical Hacker Master Program  CEHᴬᴵ v13.pdf.pdf",
         title: "Certified Ethical Hacker Master Program | CEHᴬᴵ v13",
         subtitle: "with 3 Global EC-Council Certifications",
@@ -1987,6 +1993,7 @@ export const programs = [
     {
         slug: "personality-softskill-development",
         category: "personality-softskills",
+        heroImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1600",
         brochureLink: "Personality & Soft Skill Development Program.pdf.pdf",
         title: "Personality & Soft Skill Development Program",
         subtitle: "Module-wise Syllabus (40 Hours)",
@@ -2394,6 +2401,7 @@ export const programs = [
     {
         slug: "internship-program",
         category: "internship",
+        heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1600",
         brochureLink: "",
         title: "3 Months Internship Program",
         subtitle: "Launch Your Career with Real-World Experience",
