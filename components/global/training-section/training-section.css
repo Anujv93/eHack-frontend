@@ -116,8 +116,8 @@
 
 .pricing-ribbon {
     position: absolute;
-    top: 20px;
-    right: -35px;
+    top: 30px;
+    right: -55px;
     background: var(--ec-red);
     color: var(--ec-white);
     padding: 8px 40px;
@@ -571,8 +571,8 @@
     }
 
     .pricing-ribbon {
-        top: 15px;
-        right: -40px;
+        top: 25px;
+        right: -50px;
         padding: 6px 35px;
         font-size: 0.6rem;
     }
