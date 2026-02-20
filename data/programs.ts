@@ -428,7 +428,7 @@ export const programs = [
         heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1600",
         brochureLink: "Graduate Program in Ethical Hacking & Cyber Security.pdf.pdf",
         title: "Graduate Program in Ethical Hacking and Cybersecurityᴬᴵ (2 Global Certification)",
-        subtitle: "with 2 Global Complimentary Certifications",
+        subtitle: "with 2 Global Certifications",
         description: "Equip yourself with skills to protect IT infrastructure, secure data, run risk analysis, architect cloud-based security, and achieve compliance.",
         features: "Includes IT Fundamentals, CSCU, CND certifications, Ethical Hacking, Penetration Testing, Digital Forensics & OWASP Top 10.",
         batchInfo: "5TH OF EVERY MONTH",

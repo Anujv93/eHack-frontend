@@ -290,7 +290,7 @@ p {
     letter-spacing: -0.02em;
     color: #FFFFFF;
     margin-top: 0;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-6);
 }
 
 @media (min-width: 481px) {
@@ -326,45 +326,42 @@ p {
 }
 
 .hero-title .cert-count {
-    display: inline-block;
-    font-size: 0.875rem;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
     font-weight: 700;
-    color: #ff6b00 !important;
-    background: transparent;
-    border: none;
-    padding: 6px 12px;
-    margin-top: var(--space-4);
-    line-height: 1.5;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 18px;
+    margin-top: 1.5rem;
+    line-height: 1;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     border-radius: 100px;
     vertical-align: middle;
     position: relative;
     z-index: 1;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.hero-title .cert-count::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    padding: 2px;
-    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000);
-    background-size: 300% 300%;
-    border-radius: 100px;
-    animation: borderRun 3s linear infinite;
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+.hero-title .cert-count .badge-icon {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
+
+/* Multicolor border removed as per redesign */
 
 .hero-description {
     font-size: 1rem;
     color: #ffffff;
     line-height: 1.6;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-6);
     max-width: 600px;
     font-weight: 500;
 }
@@ -1193,6 +1190,30 @@ p {
 
 .credentials-cta {
     text-align: center;
+}
+
+/* Download Button in Hero */
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-download:hover {
+    border-color: #DF6718;
+    color: #DF6718;
+    background: transparent;
+    transform: translateY(-2px);
 }
 
 .btn-inquire {
@@ -5823,4 +5844,57 @@ p {
 
 .news-card:hover {
     transform: translateY(-5px);
+}
+
+/* Social Proof Styles */
+.social-proof-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-stack {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    margin-left: -12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-img:first-child {
+    margin-left: 0;
+}
+
+.enrollment-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.enrollment-text {
+    font-size: 0.85rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.enrollment-subtext {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .social-proof-container {
+        justify-content: center;
+        margin-top: 10px;
+    }
 }

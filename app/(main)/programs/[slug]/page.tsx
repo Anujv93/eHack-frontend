@@ -24,6 +24,41 @@ const NAV_SECTIONS = [
     { id: 'faq', label: 'FAQ' },
 ];
 
+const POPULAR_SOCIAL_PROOF: Record<string, { enrolled: string, avatars: string[] }> = {
+    'masters-ethical-hacking': {
+        enrolled: '140+',
+        avatars: ['/images/testimonials/person1.jpg', '/images/testimonials/person2.jpg', '/images/testimonials/person3.jpg']
+    },
+    'graduate-cybersecurity': {
+        enrolled: '95+',
+        avatars: ['/images/testimonials/person4.jpg', '/images/testimonials/person5.jpg', '/images/testimonials/person6.jpg']
+    },
+    'masterclass-ethical-hacking-ceh-v13': {
+        enrolled: '120+',
+        avatars: ['/images/testimonials/person7.jpg', '/images/testimonials/person8.jpg', '/images/testimonials/pp_person9.jpg']
+    },
+    'data-science-analytics': {
+        enrolled: '80+',
+        avatars: ['/images/testimonials/person1.jpg', '/images/testimonials/person4.jpg', '/images/testimonials/person7.jpg']
+    },
+    'digital-marketing-masterprogram': {
+        enrolled: '110+',
+        avatars: ['/images/testimonials/person2.jpg', '/images/testimonials/person5.jpg', '/images/testimonials/person8.jpg']
+    },
+    'robotics-for-all': {
+        enrolled: '65+',
+        avatars: ['/images/testimonials/person3.jpg', '/images/testimonials/person6.jpg', '/images/testimonials/pp_person9.jpg']
+    },
+    'personality-softskill-development': {
+        enrolled: '150+',
+        avatars: ['/images/testimonials/person1.jpg', '/images/testimonials/person5.jpg', '/images/testimonials/person8.jpg']
+    },
+    'internship-program': {
+        enrolled: '200+',
+        avatars: ['/images/testimonials/person2.jpg', '/images/testimonials/person4.jpg', '/images/testimonials/person7.jpg']
+    }
+};
+
 
 
 export default function ProgramPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -205,15 +240,52 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                             ) : (
                                 program.title
                             )}
-                            <span className="cert-count">{program.subtitle}</span>
+                            {program.category === 'cybersecurity' && (
+                                <span className="cert-count">
+                                    <img src="/images/ec-council-badge.png" alt="EC-Council Accredited" className="badge-icon" />
+                                    {program.subtitle}
+                                </span>
+                            )}
                         </h1>
 
-                        <p className="hero-description">{program.description}</p>
+                        <p className="hero-description">
+                            {program.description.length > 160
+                                ? `${program.description.substring(0, 160)}...`
+                                : program.description}
+                        </p>
                         <p className="hero-features">{program.features}</p>
 
-                        <div className="batch-info">
-                            <span className="batch-label">NEXT BATCH STARTS</span>
-                            <span className="batch-date">{program.batchInfo}</span>
+                        <div className="hero-ctas" style={{ marginTop: '32px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+                            <a
+                                href={program.brochureLink ? `/brochure/${program.brochureLink}` : '#'}
+                                className={`btn-download ${!program.brochureLink ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                target={program.brochureLink ? "_blank" : undefined}
+                                rel={program.brochureLink ? "noopener noreferrer" : undefined}
+                                download={program.brochureLink ? true : undefined}
+                                onClick={handleBrochureDownloadClick}
+                            >
+                                <FileText size={18} />
+                                {program.brochureLink ? "Download Brochure" : "Brochure Coming Soon"}
+                            </a>
+
+                            {POPULAR_SOCIAL_PROOF[program.slug] && (
+                                <div className="social-proof-container">
+                                    <div className="avatar-stack">
+                                        {POPULAR_SOCIAL_PROOF[program.slug].avatars.map((avatar, idx) => (
+                                            <img
+                                                key={idx}
+                                                src={avatar}
+                                                alt="Enrolled Student"
+                                                className="avatar-img"
+                                            />
+                                        ))}
+                                    </div>
+                                    <div className="enrollment-info">
+                                        <span className="enrollment-text">{POPULAR_SOCIAL_PROOF[program.slug].enrolled} enrolled</span>
+                                        <span className="enrollment-subtext">this month</span>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -642,61 +714,6 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
                 </div>
 
-                {/* Download Brochure Modal */}
-                {
-                    showBrochureModal && (
-                        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.7)' }}>
-                            <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden" style={{ position: 'relative', width: '100%', maxWidth: '480px', backgroundColor: 'white', borderRadius: '1rem', overflow: 'hidden' }}>
-                                <button
-                                    onClick={() => setShowBrochureModal(false)}
-                                    className="absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 transition-colors z-10"
-                                    style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', background: 'white', borderRadius: '50%', border: 'none', cursor: 'pointer', zIndex: 10 }}
-                                >
-                                    <X size={20} />
-                                </button>
-
-                                <div className="p-6" style={{ padding: '0' }}>
-                                    <InquiryForm
-                                        courseName={program.title}
-                                        courseCode={program.slug}
-                                        variant="popup"
-                                        title="Download Brochure"
-                                        subtitle="Fill the form to download detailed curriculum"
-                                        onSuccess={handleBrochureFormSuccess}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    )
-                }
-
-                {/* Career Advice Modal */}
-                {
-                    showCareerModal && (
-                        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.7)' }}>
-                            <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden" style={{ position: 'relative', width: '100%', maxWidth: '480px', backgroundColor: 'white', borderRadius: '1rem', overflow: 'hidden' }}>
-                                <button
-                                    onClick={() => setShowCareerModal(false)}
-                                    className="absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 transition-colors z-10"
-                                    style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', background: 'white', borderRadius: '50%', border: 'none', cursor: 'pointer', zIndex: 10 }}
-                                >
-                                    <X size={20} />
-                                </button>
-
-                                <div className="p-6" style={{ padding: '0' }}>
-                                    <InquiryForm
-                                        courseName={program.title}
-                                        courseCode={program.slug}
-                                        variant="popup"
-                                        title="Get Free Career Advice"
-                                        subtitle="Talk to our expert counselors"
-                                        onSuccess={handleCareerFormSuccess}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    )
-                }
             </section >
 
             {/* Hands-On Labs Section */}
@@ -1068,6 +1085,58 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     </div>
                 </div>
             </section>
+
+            {/* Download Brochure Modal */}
+            {showBrochureModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.7)' }}>
+                    <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden" style={{ position: 'relative', width: '100%', maxWidth: '480px', backgroundColor: 'white', borderRadius: '1rem', overflow: 'hidden' }}>
+                        <button
+                            onClick={() => setShowBrochureModal(false)}
+                            className="absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 transition-colors z-10"
+                            style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', background: 'white', borderRadius: '50%', border: 'none', cursor: 'pointer', zIndex: 10 }}
+                        >
+                            <X size={20} />
+                        </button>
+
+                        <div className="p-6" style={{ padding: '0' }}>
+                            <InquiryForm
+                                courseName={program.title}
+                                courseCode={program.slug}
+                                variant="popup"
+                                title="Download Brochure"
+                                subtitle="Fill the form to download detailed curriculum"
+                                onSuccess={handleBrochureFormSuccess}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Career Advice Modal */}
+            {showCareerModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.7)' }}>
+                    <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden" style={{ position: 'relative', width: '100%', maxWidth: '480px', backgroundColor: 'white', borderRadius: '1rem', overflow: 'hidden' }}>
+                        <button
+                            onClick={() => setShowCareerModal(false)}
+                            className="absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 transition-colors z-10"
+                            style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', background: 'white', borderRadius: '50%', border: 'none', cursor: 'pointer', zIndex: 10 }}
+                        >
+                            <X size={20} />
+                        </button>
+
+                        <div className="p-6" style={{ padding: '0' }}>
+                            <InquiryForm
+                                courseName={program.title}
+                                courseCode={program.slug}
+                                variant="popup"
+                                title="Get Free Career Advice"
+                                subtitle="Talk to our expert counselors"
+                                onSuccess={handleCareerFormSuccess}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
         </div >
     );
 }
