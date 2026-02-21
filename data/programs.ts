@@ -396,7 +396,7 @@ export const programs = [
                 source: "Gartner"
             },
             {
-                image: "https://images.unsplash.com/photo-1504384308090-c54be3855091?w=400&h=250&fit=crop",
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
                 date: "October 2025",
                 headline: "India Records 500% Increase in Cyberattacks - Skilled Professionals in High Demand",
                 source: "Economic Times"
@@ -408,7 +408,7 @@ export const programs = [
                 source: "Wired"
             },
             {
-                image: "https://images.unsplash.com/photo-1526374804325-e4d0d580e309?w=400&h=250&fit=crop",
+                image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
                 date: "September 2025",
                 headline: "Data Privacy Regulations Tighten Globally: GDPR and Beyond",
                 source: "Reuters"
@@ -785,7 +785,7 @@ export const programs = [
                 source: "Career Builder"
             },
             {
-                image: "https://images.unsplash.com/photo-1504384308090-c54be3855091?w=400&h=250&fit=crop",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
                 date: "September 2025",
                 headline: "Cybersecurity Salary Trends: What to Expect in 2025",
                 source: "Glassdoor"
@@ -1970,7 +1970,7 @@ export const programs = [
                 source: "Compliance Week"
             },
             {
-                image: "https://images.unsplash.com/photo-1504384308090-c54be3855091?w=400&h=250&fit=crop",
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
                 date: "October 2025",
                 headline: "Freelance Ethical Hacking: A Lucrative Career Path",
                 source: "Upwork"

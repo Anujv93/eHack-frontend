@@ -51,7 +51,7 @@ const newsItems = [
         source: "Wired"
     },
     {
-        image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600",
+        image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
         date: "September 2025",
         headline: "Data Privacy Regulations Tighten Globally: GDPR and Beyond",
         source: "Reuters"
