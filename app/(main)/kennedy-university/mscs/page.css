@@ -273,7 +273,7 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    border: 1px solid rgba(223, 103, 24, 0.4);
+    border: 2px solid #ff6b00;
 }
 
 .program-detail-mscs .stat-column {
@@ -283,7 +283,7 @@
     text-align: center;
     padding: 0 24px;
     flex: 1;
-    border-right: 1px solid #E2E8F0;
+    border-right: 1px solid rgba(255, 107, 0, 0.3);
 }
 
 .program-detail-mscs .stat-column:last-child {
@@ -293,7 +293,7 @@
 .program-detail-mscs .program-stats-bar .stat-label {
     font-size: 11px;
     font-weight: 700;
-    color: #94A3B8;
+    color: #ff6b00;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     margin-bottom: 8px;
