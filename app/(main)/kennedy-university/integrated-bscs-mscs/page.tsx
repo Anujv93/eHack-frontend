@@ -807,7 +807,7 @@ export default function IntegratedBSCSMSCSPage() {
             </div>
 
             {/* Pricing Section */}
-            <section className="pricing-section border-bottom">
+            <section id="pricing" className="pricing-section border-bottom">
                 <div className="pricing-container-full">
                     <div className="pricing-header">
                         <h2 className="pricing-title">Program Investment & <span className="text-accent">Financing</span></h2>

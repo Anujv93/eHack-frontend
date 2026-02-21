@@ -183,7 +183,10 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
     const programType = program.slug.includes('digital-marketing') ? 'digital-marketing' :
         program.slug.includes('robotics') ? 'robotics' :
-            program.slug.includes('internship') ? 'internship' : 'cybersecurity';
+            program.slug.includes('internship') ? 'internship' :
+                program.slug.includes('data-science') ? 'data-science' :
+                    program.slug.includes('personality-softskills') ? 'personality-softskills' :
+                        'cybersecurity';
 
     return (
         <div className="program-page">
@@ -981,7 +984,13 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
             <section className="why-ehack-section">
                 <div className="section-container">
                     <h2 className="roi-title">Why <span className="text-accent">eHack Academy</span>?</h2>
-                    <p className="roi-subtitle">{programType === 'digital-marketing' ? 'Passion for Excellence in Digital Marketing Training' : 'Passion for Excellence in Information Security'}</p>
+                    <p className="roi-subtitle">
+                        {program.category === 'digital-marketing' ? 'Passion for Excellence in Digital Marketing Training' :
+                            program.category === 'robotics-iot' ? 'Passion for Excellence in Robotics & IoT' :
+                                program.category === 'data-science' ? 'Passion for Excellence in Data Science & Analytics' :
+                                    program.category === 'personality-softskills' ? 'Passion for Excellence in Soft Skills Development' :
+                                        'Passion for Excellence in Information Security'}
+                    </p>
 
                     <div className="roi-grid">
                         <div className="salary-card">
@@ -1009,7 +1018,13 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 program.category !== 'personality-softskills' && (
                     <section className="skills-section">
                         <div className="section-container">
-                            <h2 className="skills-title">Master <span className="text-accent">{programType === 'digital-marketing' ? 'Digital Marketing' : programType === 'robotics' ? 'Robotics' : 'Cybersecurity'}</span> Skills</h2>
+                            <h2 className="skills-title">Master <span className="text-accent">
+                                {program.category === 'digital-marketing' ? 'Digital Marketing' :
+                                    program.category === 'robotics-iot' ? 'Robotics' :
+                                        program.category === 'data-science' ? 'Data Science' :
+                                            program.category === 'internship' ? 'Industry' :
+                                                'Cybersecurity'}
+                            </span> Skills</h2>
                             <div className="skills-grid">
                                 {program.skills.map((skill, idx) => (
                                     <div key={idx} className="skill-card">
@@ -1041,18 +1056,20 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <section className="news-section">
                         <div className="news-container ">
                             <span className="news-badge">
-                                {programType === 'digital-marketing' ? 'DIGITAL TRENDS' :
-                                    programType === 'robotics' ? 'FUTURE TECH' :
+                                {program.category === 'digital-marketing' ? 'DIGITAL TRENDS' :
+                                    program.category === 'robotics-iot' ? 'FUTURE TECH' :
                                         program.category === 'data-science' ? 'DATA INSIGHTS' :
                                             program.category === 'personality-softskills' ? 'CAREER GROWTH' :
-                                                'CYBER THREATS ARE RISING'}
+                                                program.category === 'internship' ? 'INDUSTRY UPDATES' :
+                                                    'CYBER THREATS ARE RISING'}
                             </span>
                             <h2 className="news-title">
-                                {programType === 'digital-marketing' ? 'Why Digital Skills Matter Now' :
-                                    programType === 'robotics' ? 'Why Robotics is the Future' :
+                                {program.category === 'digital-marketing' ? 'Why Digital Skills Matter Now' :
+                                    program.category === 'robotics-iot' ? 'Why Robotics is the Future' :
                                         program.category === 'data-science' ? 'Why Data Science Matters Now' :
                                             program.category === 'personality-softskills' ? 'Why Soft Skills Matter' :
-                                                'Why Cybersecurity Skills Matter Now'}
+                                                program.category === 'internship' ? 'Why Practical Experience Matters' :
+                                                    'Why Cybersecurity Skills Matter Now'}
                             </h2>
                             <div className="news-marquee-container">
                                 <div className="news-marquee-track">
