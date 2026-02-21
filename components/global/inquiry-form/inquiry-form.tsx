@@ -43,6 +43,7 @@ export default function InquiryForm({
         phone: '',
         agreeWhatsApp: true,
     });
+    const [botTrap, setBotTrap] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState('');
@@ -85,11 +86,18 @@ export default function InquiryForm({
 
         if (!validateForm()) return;
 
+        if (botTrap) {
+            console.log('Bot detected');
+            setIsSubmitted(true); // Silently succeed
+            return;
+        }
+
         setIsSubmitting(true);
         setError('');
 
         try {
-            const fullName = `${formData.firstName} ${formData.lastName || formData.firstName}`.trim();
+            const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+            const lastNameValue = formData.lastName.trim() || '-';
             const inquiryName = courseName
                 ? `Website - ${fullName} - ${courseName}`
                 : `Website Inquiry - ${fullName}`;
@@ -110,10 +118,10 @@ export default function InquiryForm({
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    firstName: formData.firstName,
-                    lastName: formData.lastName || formData.firstName,
-                    email: formData.email,
-                    phone: formData.phone,
+                    firstName: formData.firstName.trim(),
+                    lastName: lastNameValue,
+                    email: formData.email.trim(),
+                    phone: formData.phone.trim(),
                     city: '',
                     inquiryName,
                     courses,
@@ -185,6 +193,18 @@ export default function InquiryForm({
             </div>
 
             <form onSubmit={handleSubmit} className="inquiry-form-body">
+                {/* Honeypot field for bot protection */}
+                <div style={{ display: 'none' }} aria-hidden="true">
+                    <input
+                        type="text"
+                        name="website"
+                        value={botTrap}
+                        onChange={(e) => setBotTrap(e.target.value)}
+                        tabIndex={-1}
+                        autoComplete="off"
+                    />
+                </div>
+
                 {error && <div className="form-error">{error}</div>}
 
                 <div className="form-row">

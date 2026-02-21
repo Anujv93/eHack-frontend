@@ -269,6 +269,12 @@
     transform: translateY(-2px);
 }
 
+@media (max-width: 1024px) {
+    .inquiry-form-wrapper.hero {
+        margin: 0 auto;
+    }
+}
+
 /* Responsive */
 @media (max-width: 480px) {
     .inquiry-form-wrapper {

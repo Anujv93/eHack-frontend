@@ -12,6 +12,15 @@ export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
 
+        // 1. Honeypot check for bot protection
+        if (body.website) {
+            console.log('Bot submission blocked (honeypot):', body.email);
+            return NextResponse.json(
+                { success: true, message: 'Inquiry submitted successfully' },
+                { status: 200 }
+            );
+        }
+
         const {
             // Student data
             firstName,
@@ -33,10 +42,16 @@ export async function POST(request: NextRequest) {
             stage,
         } = body;
 
+        // Clean and sanitize inputs
+        const cleanFirstName = firstName?.trim() || '';
+        const cleanLastName = lastName?.trim() || '-';
+        const cleanEmail = email?.trim().toLowerCase() || '';
+        const cleanPhone = phone?.trim().replace(/\s+/g, '') || '';
+
         // Validate required fields
-        if (!firstName || !lastName || !email || !phone) {
+        if (!cleanFirstName || !cleanEmail || !cleanPhone) {
             return NextResponse.json(
-                { error: 'First name, last name, email, and phone are required' },
+                { error: 'First name, email, and phone are required' },
                 { status: 400 }
             );
         }
@@ -59,9 +74,9 @@ export async function POST(request: NextRequest) {
 Submitted: ${new Date().toISOString()}
 
 --- Student Information ---
-Name: ${firstName} ${lastName}
-Email: ${email}
-Phone: +91 ${phone}
+Name: ${cleanFirstName} ${cleanLastName}
+Email: ${cleanEmail}
+Phone: +91 ${cleanPhone}
 City: ${city || 'Not provided'}
 
 --- Courses Interested ---
@@ -77,11 +92,11 @@ WhatsApp Opt-in: ${agreeWhatsApp ? 'Yes' : 'No'}
 
         // Step 1: Create or update Student (Contact)
         const contactData = {
-            First_Name: firstName,
-            Last_Name: lastName,
-            Email: email,
-            Phone: phone,
-            Mobile: phone,
+            First_Name: cleanFirstName,
+            Last_Name: cleanLastName,
+            Email: cleanEmail,
+            Phone: cleanPhone,
+            Mobile: cleanPhone,
             City: city || '',
             Description: `Inquiry received on ${new Date().toLocaleDateString()}. Interested in: ${(courses as CourseInfo[]).map(c => c.name).join(', ')}`,
             Lead_Source: leadSource || 'Website Inquiry Form',
@@ -98,7 +113,7 @@ WhatsApp Opt-in: ${agreeWhatsApp ? 'Yes' : 'No'}
         closingDate.setDate(closingDate.getDate() + 30);
 
         const dealData = {
-            Deal_Name: inquiryName || `Website Inquiry - ${firstName} ${lastName}`,
+            Deal_Name: inquiryName || `Website Inquiry - ${cleanFirstName} ${cleanLastName}`,
             Pipeline: pipeline || 'Leads Pipeline Standard', // Actual Zoho Bigin pipeline name
             Stage: stage || 'New Inquiry',                    // Actual Zoho Bigin stage name
             Contact_Name: contactId,                          // Link to Student

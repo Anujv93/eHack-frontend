@@ -114,6 +114,7 @@ const initialFormData: FormData = {
 
 export default function InquiryPage() {
     const [formData, setFormData] = useState<FormData>(initialFormData);
+    const [botTrap, setBotTrap] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
@@ -191,6 +192,12 @@ export default function InquiryPage() {
 
         if (!validateForm()) return;
 
+        if (botTrap) {
+            console.log('Bot detected');
+            setIsSubmitted(true);
+            return;
+        }
+
         setIsSubmitting(true);
 
         try {
@@ -208,11 +215,11 @@ export default function InquiryPage() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     // Student data
-                    firstName: formData.firstName,
-                    lastName: formData.lastName,
-                    email: formData.email,
-                    phone: formData.phone,
-                    city: formData.city,
+                    firstName: formData.firstName.trim(),
+                    lastName: formData.lastName.trim() || '-',
+                    email: formData.email.trim(),
+                    phone: formData.phone.trim(),
+                    city: formData.city.trim(),
 
                     // Inquiry data
                     inquiryName: inquiryName,
@@ -325,6 +332,18 @@ export default function InquiryPage() {
                     {/* Form Section */}
                     <div className="form-section">
                         <form onSubmit={handleSubmit} className="inquiry-form">
+                            {/* Honeypot field for bot protection */}
+                            <div style={{ display: 'none' }} aria-hidden="true">
+                                <input
+                                    type="text"
+                                    name="website"
+                                    value={botTrap}
+                                    onChange={(e) => setBotTrap(e.target.value)}
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                />
+                            </div>
+
                             {/* Personal Information */}
                             <div className="form-section-header">
                                 <span className="section-number">1</span>

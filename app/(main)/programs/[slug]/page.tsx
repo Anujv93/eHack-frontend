@@ -240,13 +240,13 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                             ) : (
                                 program.title
                             )}
-                            {program.category === 'cybersecurity' && (
-                                <span className="cert-count">
-                                    <img src="/images/ec-council-badge.png" alt="EC-Council Accredited" className="badge-icon" />
-                                    {program.subtitle}
-                                </span>
-                            )}
                         </h1>
+                        {program.category === 'cybersecurity' && (
+                            <div className="hero-cert-badge">
+                                <img src="/images/ec-council-badge.png" alt="EC-Council Accredited" className="badge-icon" />
+                                {program.subtitle}
+                            </div>
+                        )}
 
                         <p className="hero-description">
                             {program.description.length > 160
@@ -255,7 +255,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                         </p>
                         <p className="hero-features">{program.features}</p>
 
-                        <div className="hero-ctas" style={{ marginTop: '32px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+                        <div className="hero-ctas">
                             <a
                                 href={program.brochureLink ? `/brochure/${program.brochureLink}` : '#'}
                                 className={`btn-download ${!program.brochureLink ? 'opacity-50 cursor-not-allowed' : ''}`}
