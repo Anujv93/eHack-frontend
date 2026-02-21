@@ -187,6 +187,18 @@ export default function IntegratedBSCSMSCSPage() {
         });
     };
 
+    const scrollToHeroForm = (e: React.MouseEvent) => {
+        e.preventDefault();
+        const formEl = document.getElementById('hero-inquiry-form');
+        if (formEl) {
+            formEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => {
+                const nameInput = formEl.querySelector('input[name="firstName"]') as HTMLInputElement;
+                if (nameInput) nameInput.focus();
+            }, 600);
+        }
+    };
+
     const handleDownloadClick = (e: React.MouseEvent) => {
         e.preventDefault();
         setShowModal(true);
@@ -528,7 +540,7 @@ export default function IntegratedBSCSMSCSPage() {
 
 
                             <div className="hero-ctas">
-                                <a href="#apply" className="btn-apply-now">Apply Now</a>
+                                <a href="#hero-inquiry-form" onClick={scrollToHeroForm} className="btn-apply-now">Apply Now</a>
                                 <button onClick={handleDownloadClick} className="btn-download">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
@@ -538,7 +550,7 @@ export default function IntegratedBSCSMSCSPage() {
                             </div>
                         </div>
 
-                        <div className="hero-right">
+                        <div className="hero-right" id="hero-inquiry-form">
                             {/* Lead Collection Form */}
                             <InquiryForm
                                 courseName="Kennedy University - Integrated BSCS + MSCS"
@@ -1085,7 +1097,7 @@ export default function IntegratedBSCSMSCSPage() {
                         <h2>Get Dual Degrees in 15 Months</h2>
                         <p>Join the Integrated BSCS + MSCS program and fast-track your cybersecurity career.</p>
                         <div className="cta-buttons">
-                            <a href="#" className="btn-primary-lg">Apply Now</a>
+                            <a href="#hero-inquiry-form" onClick={scrollToHeroForm} className="btn-primary-lg">Apply Now</a>
                             <a href="/kennedy-university#programs" className="btn-outline-lg">Explore Other Programs</a>
                         </div>
                     </div>

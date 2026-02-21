@@ -1324,7 +1324,7 @@ export function CertificateLabs({ certificateSlug, certificateTitle }: Certifica
                             {/* Skills */}
                             <div className="lab-skills">
                                 <h5>Skills You'll Master:</h5>
-                                <div className="skills-grid">
+                                <div className="cert-skills-chips">
                                     {activeLab.skills.map((skill, index) => (
                                         <span key={index} className="skill-chip">
                                             <Shield size={12} />

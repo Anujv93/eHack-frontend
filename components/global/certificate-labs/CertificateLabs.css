@@ -125,7 +125,7 @@
 
 /* Compact Lab Info - Below Cards */
 .lab-info-compact {
-    padding: var(--space-4);
+    padding: 12px 14px;
     background: var(--white);
     border: 1px solid rgba(255, 107, 0, 0.2);
     border-radius: 12px;
@@ -143,8 +143,8 @@
 .lab-info-compact .lab-info-description {
     font-size: var(--font-size-sm);
     color: var(--gray-600);
-    line-height: 1.6;
-    margin: 0 0 var(--space-3) 0;
+    line-height: 1.5;
+    margin: 0 0 8px 0;
 }
 
 .lab-info-compact .lab-skills {
@@ -152,12 +152,12 @@
 }
 
 .lab-info-compact .lab-skills h5 {
-    font-size: var(--font-size-xs);
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
     color: var(--gray-500);
-    margin: 0 0 var(--space-2) 0;
+    margin: 0 0 6px 0;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
 }
 
 
@@ -794,38 +794,49 @@
 
 /* Skills */
 .lab-skills {
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-4);
 }
 
 .lab-skills h5 {
-    font-size: var(--font-size-sm);
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
     color: var(--gray-500);
-    margin: 0 0 var(--space-3) 0;
+    margin: 0 0 8px 0;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
 }
 
-.skills-grid {
+.cert-skills-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 }
 
 .skill-chip {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 7px 14px;
-    background: rgba(255, 107, 0, 0.1);
-    border: none;
-    border-radius: 50px;
-    font-size: 0.925rem;
-    font-weight: 700;
-    color: #000000;
-    box-shadow: none;
+    gap: 6px;
+    padding: 9px 18px;
+    background: rgba(255, 107, 0, 0.08);
+    border: 1px solid rgba(255, 107, 0, 0.18);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a2e;
     width: max-content;
     flex: 0 0 auto;
+    letter-spacing: 0.01em;
+    transition: all 0.2s ease;
+}
+
+.skill-chip:hover {
+    background: rgba(255, 107, 0, 0.14);
+    border-color: rgba(255, 107, 0, 0.3);
+}
+
+.skill-chip svg {
+    color: #ff6b00;
+    flex-shrink: 0;
 }
 
 /* CTA Button */

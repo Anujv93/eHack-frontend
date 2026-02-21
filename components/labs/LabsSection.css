@@ -455,12 +455,12 @@
 .skills-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 .skills-label {
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
     color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -470,25 +470,28 @@
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
 }
 
 .skill-tag {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background: rgba(0, 245, 212, 0.1);
+    gap: 5px;
+    padding: 5px 12px;
+    background: rgba(0, 245, 212, 0.08);
     border: 1px solid rgba(0, 245, 212, 0.2);
     border-radius: 6px;
     font-size: 0.8rem;
+    font-weight: 600;
     color: #00f5d4;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    letter-spacing: 0.01em;
 }
 
 .skill-tag:hover {
-    background: rgba(0, 245, 212, 0.2);
-    transform: translateY(-2px);
+    background: rgba(0, 245, 212, 0.15);
+    border-color: rgba(0, 245, 212, 0.35);
+    transform: translateY(-1px);
 }
 
 /* Features Container */
