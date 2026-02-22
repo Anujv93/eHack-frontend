@@ -5,13 +5,16 @@
     background: #FFFFFF;
 }
 
-/* Page Header - Simple & Clean */
+/* Page Header - Hero with Background Image */
 .page-header {
-    padding-top: 25px;
-    padding-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 45px;
     margin-top: 0;
-    background: linear-gradient(180deg, #FFF7ED 0%, #FFF0E0 100%);
+    background:
+        linear-gradient(180deg, rgba(10, 10, 26, 0.75) 0%, rgba(26, 26, 46, 0.80) 100%),
+        url('https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&dpr=1') center center / cover no-repeat;
     text-align: center;
+    position: relative;
 }
 
 /* sd */
@@ -19,21 +22,25 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .page-header h1 {
     font-size: 3rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 50%, #FF6B00 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fff;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
     margin: 0 0 12px 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .page-header p {
     font-size: 1.1rem;
-    color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.85);
     font-weight: 500;
     margin: 0;
     max-width: 600px;

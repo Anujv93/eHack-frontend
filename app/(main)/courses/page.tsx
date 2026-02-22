@@ -68,7 +68,7 @@ export default async function CoursesPage({ searchParams }: PageProps) {
         <main className="courses-page">
             <div className="page-header">
                 <div className="container">
-                    <h1>Our Courses</h1>
+                    <h1><span style={{ color: '#FF6B00' }}>Our</span> Courses</h1>
                     <p>Explore industry-leading certifications from world-class partners and transform your career</p>
                 </div>
             </div>
