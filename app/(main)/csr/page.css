@@ -370,18 +370,20 @@
 
 .roadmap-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 .roadmap-card {
     background: linear-gradient(135deg, #FFF7ED 0%, #FFFBF5 100%);
-    border-radius: 20px;
-    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
     border: 2px solid #FF6B00;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .roadmap-card::before {
@@ -406,142 +408,204 @@
     transform: translateY(-4px);
 }
 
+.roadmap-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
 .roadmap-number {
-    display: inline-block;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 800;
-    color: #FF8533;
-    margin-bottom: 1rem;
-    opacity: 0.4;
+    color: #ff6b00;
+    line-height: 1;
+    flex-shrink: 0;
 }
 
 .roadmap-title {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: #0a0a1a;
-    margin-bottom: 0.75rem;
     line-height: 1.3;
 }
 
 .roadmap-desc {
-    font-size: 1rem;
+    font-size: 0.9375rem;
     color: #1f2937;
     line-height: 1.6;
+    margin-top: auto;
 }
 
-/* CTA Section */
-.csr-cta-section {
-    padding: 2rem 0;
-    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+/* CSR CTA Contact Section - Matches Certificate "Enquire Now" Design */
+.csr-cta-contact-section {
+    padding: 3rem 0;
+    background: #FFFFFF;
+}
+
+.csr-cta-box {
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+    border: 1px solid rgba(255, 107, 0, 0.15);
+    border-radius: 20px;
+    padding: 3.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.5rem;
     position: relative;
     overflow: hidden;
-    border-bottom: 2px solid #FF6B00;
 }
 
-.csr-cta-section::before {
+.csr-cta-box::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 70% 50%, rgba(255, 107, 0, 0.15) 0%, transparent 50%);
-    pointer-events: none;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B00, #ff8533, #FF6B00);
 }
 
-.cta-box {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
+.csr-cta-content {
+    flex: 1;
 }
 
-.cta-badge {
+.csr-cta-tagline {
     display: inline-block;
-    background: rgba(255, 107, 0, 0.2);
-    backdrop-filter: blur(10px);
-    color: #FF6B00;
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.15em;
-    margin-bottom: 24px;
-    border: 1px solid rgba(255, 107, 0, 0.3);
+    color: #FF6B00;
+    background: rgba(255, 107, 0, 0.12);
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
-.cta-content {
-    margin-bottom: 3rem;
-}
-
-.cta-title {
-    font-size: clamp(2rem, 4vw, 3rem);
+.csr-cta-title {
+    font-size: 2.75rem;
     font-weight: 800;
-    color: #FFFFFF;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
+    color: #0f172a;
     line-height: 1.2;
+    margin: 0 0 1rem 0;
 }
 
-.cta-subtitle {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.7;
-    max-width: 700px;
-    margin: 0 auto;
+.csr-cta-title span {
+    color: #FF6B00;
 }
 
-.cta-actions {
+.csr-cta-subtitle {
+    font-size: 1.15rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 520px;
+}
+
+.csr-cta-actions-box {
     display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-shrink: 0;
 }
 
-.cta-btn-primary {
+.csr-cta-btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 2rem;
-    font-size: 1.0625rem;
-    font-weight: 600;
-    color: white;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
-    border: none;
-    border-radius: 50px;
+    background: linear-gradient(135deg, #FF6B00, #ff8533);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
     text-decoration: none;
-    cursor: pointer;
+    border-radius: 10px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(255, 107, 0, 0.3);
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
-.cta-btn-primary:hover {
+.csr-cta-btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(255, 107, 0, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.45);
 }
 
-.cta-btn-secondary {
+.csr-cta-btn-whatsapp {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 2rem;
-    font-size: 1.0625rem;
+    background: #fff;
+    color: #0f172a;
+    font-size: 1.05rem;
     font-weight: 600;
-    color: white;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50px;
     text-decoration: none;
-    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    white-space: nowrap;
 }
 
-.cta-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
+.csr-cta-btn-whatsapp:hover {
+    background: #f8fafc;
+    border-color: #25D366;
     transform: translateY(-2px);
+}
+
+.csr-cta-btn-whatsapp svg {
+    fill: #25D366;
+}
+
+.csr-cta-btn-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    color: #0f172a;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.csr-cta-btn-email:hover {
+    background: #f8fafc;
+    border-color: #FF6B00;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .csr-cta-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .csr-cta-title {
+        font-size: 1.75rem;
+    }
+
+    .csr-cta-subtitle {
+        max-width: 100%;
+    }
+
+    .csr-cta-actions-box {
+        width: 100%;
+    }
+
+    .csr-cta-btn-primary,
+    .csr-cta-btn-whatsapp,
+    .csr-cta-btn-email {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* Quote Section */
@@ -614,6 +678,10 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
+
+    .roadmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -647,17 +715,6 @@
         gap: 1.5rem;
     }
 
-    .cta-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .cta-btn-primary,
-    .cta-btn-secondary {
-        width: 100%;
-        justify-content: center;
-    }
-
     .quote-card {
         padding: 2.5rem 2rem;
     }
@@ -666,13 +723,9 @@
         font-size: 1.25rem;
     }
 
-    .roadmap-grid {
-        gap: 1.25rem;
-    }
-
     .focus-card,
     .roadmap-card {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1.25rem;
     }
 }
 
