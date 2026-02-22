@@ -13,6 +13,7 @@ import OfferBanner from './offer-banner';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 import CertificationsSection from './certifications-section';
 import OnlineLibrarySection from './online-library-section';
+import CTAInquiryForm from './cta-inquiry-form';
 
 // Types for props
 interface Partner {
@@ -791,10 +792,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         <p className={styles.ctaSubtitle}>
                             Join thousands of professionals who have accelerated their careers with us
                         </p>
-                        <div className={styles.ctaButtons}>
-                            <button className={styles.ctaPrimaryBtn}>Start Learning Today</button>
-                            <button className={styles.ctaSecondaryBtn}>Talk to Advisor</button>
-                        </div>
+                        <CTAInquiryForm />
                     </div>
                 </div>
             </section>
