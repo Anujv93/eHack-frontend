@@ -1,16 +1,61 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import TerminalAnimation from "./TerminalAnimation";
 import SuccessCard from "./SuccessCard";
 import FolderLoader from "./FolderLoader";
 import { studentTransformationLogs, studentStories } from "../data/programData";
+
+// --- Validation Schema ---
+const inquirySchema = z.object({
+    fullName: z.string().trim()
+        .min(1, "Please enter your full name")
+        .min(2, "Name must be at least 2 characters"),
+    email: z.string().trim()
+        .min(1, "Please enter your email address")
+        .email("Please enter a valid email address"),
+    phone: z.string().trim()
+        .min(1, "Please enter your phone number")
+        .length(10, "Please enter a valid 10-digit phone number")
+        .regex(/^[6-9]/, "Phone number must start with 6, 7, 8, or 9")
+        .regex(/^\d+$/, "Phone number must contain only digits"),
+    website: z.string().optional(), // Honeypot field
+});
+
+type InquiryFormValues = z.infer<typeof inquirySchema>;
 
 const HeroRightPanel = () => {
     const [isPlaying] = useState(true);
     const [storyIndex, setStoryIndex] = useState(0);
     const [animationState, setAnimationState] = useState<'terminal' | 'unlocking' | 'success'>('terminal');
     const containerRef = useRef<HTMLDivElement>(null);
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [generalError, setGeneralError] = useState('');
+
+    // Time-based bot detection — record mount time
+    const mountTimeRef = useRef<number>(Date.now());
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+        watch,
+        setValue
+    } = useForm<InquiryFormValues>({
+        resolver: zodResolver(inquirySchema),
+        defaultValues: {
+            fullName: '',
+            email: '',
+            phone: '',
+            website: ''
+        }
+    });
 
     const handleTerminalComplete = () => {
         setTimeout(() => {
@@ -34,45 +79,34 @@ const HeroRightPanel = () => {
         return () => clearTimeout(resetTimer);
     }, [animationState]);
 
+    const onSubmit = async (data: InquiryFormValues) => {
+        // Bot check 1: Honeypot — if the hidden field is filled, silently "succeed"
+        if (data.website) {
+            setIsSubmitted(true);
+            return;
+        }
 
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        phone: ''
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [error, setError] = useState('');
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({ ...formData, [e.target.type === 'tel' ? 'phone' : e.target.type === 'email' ? 'email' : 'fullName']: e.target.value });
-        setError('');
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        // Basic Validation
-        if (!formData.fullName || !formData.email || !formData.phone) {
-            setError('Please fill in all fields');
+        // Bot check 2: Time-based — if submitted within 2 seconds of mount, silently "succeed"
+        if (Date.now() - mountTimeRef.current < 2000) {
+            setIsSubmitted(true);
             return;
         }
 
         setIsSubmitting(true);
-        setError('');
+        setGeneralError('');
 
         try {
             const response = await fetch('/api/zoho/inquiry', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    firstName: formData.fullName,
+                    firstName: data.fullName,
                     lastName: '-',
-                    email: formData.email,
-                    phone: formData.phone,
+                    email: data.email.toLowerCase(),
+                    phone: data.phone,
                     city: '',
                     totalAmount: 0,
-                    inquiryName: `Website - ${formData.fullName} - Landing Page Hero`,
+                    inquiryName: `Website - ${data.fullName} - Landing Page Hero`,
                     leadSource: 'Website Landing Page',
                     courses: [{
                         name: 'Landing Page Hero Inquiry',
@@ -84,12 +118,12 @@ const HeroRightPanel = () => {
                     agreeWhatsApp: true,
                     pipeline: 'Leads Pipeline Standard',
                     stage: 'New Inquiry',
+                    website: data.website,
                 }),
             });
 
             if (!response.ok) {
                 const errorData = await response.json().catch(() => ({}));
-                console.error('Submission failed:', errorData);
                 throw new Error(errorData.details || 'Failed to submit');
             }
 
@@ -97,20 +131,17 @@ const HeroRightPanel = () => {
 
             // Google Ads Conversion Event
             if (typeof window !== 'undefined' && (window as any).gtag) {
-                const callback = () => {
-                    // Conversion reported
-                };
                 (window as any).gtag('event', 'conversion', {
                     'send_to': 'AW-17944571400/8OiVCJHss_cbEIjc0exC',
                     'value': 1.0,
                     'currency': 'INR',
-                    'event_callback': callback
+                    'event_callback': () => { }
                 });
             }
-            setFormData({ fullName: '', email: '', phone: '' });
+            reset();
         } catch (err: any) {
             console.error('Error submitting form:', err);
-            setError(err.message || 'Something went wrong. Please try again.');
+            setGeneralError(err.message || 'Something went wrong. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -176,41 +207,55 @@ const HeroRightPanel = () => {
                                 </div>
                             </div>
 
-                            {error && <div className="mb-3 p-2 text-xs text-red-600 bg-red-50 rounded-md border border-red-100 text-center">{error}</div>}
+                            {generalError && <div className="mb-3 p-2 text-xs text-red-600 bg-red-50 rounded-md border border-red-100 text-center">{generalError}</div>}
 
-                            <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                                    <input
-                                        type="text"
-                                        placeholder="Full Name"
-                                        className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00] transition-all"
-                                        value={formData.fullName}
-                                        onChange={(e) => {
-                                            setFormData(prev => ({ ...prev, fullName: e.target.value }));
-                                            setError('');
-                                        }}
-                                    />
-                                    <input
-                                        type="tel"
-                                        placeholder="Phone"
-                                        className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00] transition-all"
-                                        value={formData.phone}
-                                        onChange={(e) => {
-                                            setFormData(prev => ({ ...prev, phone: e.target.value }));
-                                            setError('');
-                                        }}
-                                    />
-                                </div>
+                            <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate>
+                                {/* Honeypot field — invisible to real users, bots auto-fill it */}
                                 <input
-                                    type="email"
-                                    placeholder="Email Address"
-                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00] transition-all"
-                                    value={formData.email}
-                                    onChange={(e) => {
-                                        setFormData(prev => ({ ...prev, email: e.target.value }));
-                                        setError('');
-                                    }}
+                                    type="text"
+                                    autoComplete="off"
+                                    tabIndex={-1}
+                                    aria-hidden="true"
+                                    {...register("website")}
+                                    style={{ position: 'absolute', left: '-9999px', top: '-9999px', opacity: 0, height: 0, width: 0 }}
                                 />
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                                    <div>
+                                        <input
+                                            type="text"
+                                            placeholder="Full Name"
+                                            {...register("fullName")}
+                                            className={`w-full bg-gray-50 border rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none transition-all ${errors.fullName ? 'border-red-400 focus:border-red-500 focus:ring-1 focus:ring-red-400' : 'border-gray-200 focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]'}`}
+                                        />
+                                        {errors.fullName && <p className="mt-1 text-[11px] text-red-500">{errors.fullName.message}</p>}
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="text"
+                                            inputMode="numeric"
+                                            placeholder="Phone (10 digits)"
+                                            maxLength={10}
+                                            {...register("phone", {
+                                                onChange: (e) => {
+                                                    const val = e.target.value.replace(/\D/g, '').slice(0, 10);
+                                                    setValue("phone", val);
+                                                }
+                                            })}
+                                            className={`w-full bg-gray-50 border rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none transition-all ${errors.phone ? 'border-red-400 focus:border-red-500 focus:ring-1 focus:ring-red-400' : 'border-gray-200 focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]'}`}
+                                        />
+                                        {errors.phone && <p className="mt-1 text-[11px] text-red-500">{errors.phone.message}</p>}
+                                    </div>
+                                </div>
+                                <div>
+                                    <input
+                                        type="email"
+                                        placeholder="Email Address"
+                                        {...register("email")}
+                                        className={`w-full bg-gray-50 border rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm focus:outline-none transition-all ${errors.email ? 'border-red-400 focus:border-red-500 focus:ring-1 focus:ring-red-400' : 'border-gray-200 focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]'}`}
+                                    />
+                                    {errors.email && <p className="mt-1 text-[11px] text-red-500">{errors.email.message}</p>}
+                                </div>
 
                                 <button
                                     type="submit"
@@ -233,4 +278,5 @@ const HeroRightPanel = () => {
         </div>
     );
 };
+
 export default HeroRightPanel;

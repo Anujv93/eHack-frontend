@@ -1,12 +1,34 @@
-'use client';
+"use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// --- Validation Schema ---
+const faqSchema = z.object({
+    fullName: z.string().trim()
+        .min(1, "Please enter your full name")
+        .min(2, "Name must be at least 2 characters"),
+    phone: z.string().trim()
+        .min(1, "Please enter your phone number")
+        .length(10, "Please enter a valid 10-digit phone number")
+        .regex(/^[6-9]/, "Phone number must start with 6, 7, 8, or 9")
+        .regex(/^\d+$/, "Phone number must contain only digits"),
+    question: z.string().trim()
+        .min(1, "Please enter your question")
+        .min(5, "Question must be at least 5 characters"),
+    website: z.string().optional(), // Honeypot field
+});
+
+type FAQFormValues = z.infer<typeof faqSchema>;
+
 const faqs = [
+    // ... (faqs data remains the same)
     {
         question: "Is this program suitable for beginners with no IT background?",
         answer: "Absolutely. Our curriculum is engineered to take you from zero to hero. We start with fundamental networking and Linux concepts before moving to advanced cybersecurity tactics. 40% of our successful graduates come from non-IT backgrounds."
@@ -64,7 +86,7 @@ export default function FAQSection() {
 
     return (
         <section ref={sectionRef} className="py-14 sm:py-24 bg-[#fffaf5] relative overflow-hidden">
-            {/* Restored Background Decorations */}
+            {/* Background Decorations */}
             <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full mix-blend-soft-light filter blur-3xl opacity-60 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#ff6b00]/5 rounded-full mix-blend-multiply filter blur-3xl opacity-40 translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
 
@@ -73,7 +95,6 @@ export default function FAQSection() {
                     <span className="text-[#ff6b00] font-black tracking-[0.2em] uppercase mb-4 text-sm md:text-base block">
                         Got Questions?
                     </span>
-                    {/* Restored Heading Style */}
                     <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-[#1f2937] leading-tight mb-6 sm:mb-8">
                         Frequently Asked <span className="text-[#ff6b00] relative inline-block">
                             Questions
@@ -142,54 +163,69 @@ export default function FAQSection() {
 }
 
 const QuestionModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        question: '',
-        phone: ''
-    });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [error, setError] = useState('');
+    const [generalError, setGeneralError] = useState('');
 
+    // Time-based bot detection — record mount time when modal opens
+    const mountTimeRef = useRef<number>(0);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+        setValue
+    } = useForm<FAQFormValues>({
+        resolver: zodResolver(faqSchema),
+        defaultValues: {
+            fullName: '',
+            question: '',
+            phone: '',
+            website: ''
+        }
+    });
+
+    // Reset state and set mount time when modal opens
     useEffect(() => {
         if (isOpen) {
             setIsSubmitted(false);
-            setError('');
-            setFormData({ fullName: '', question: '', phone: '' });
+            setGeneralError('');
+            reset();
+            mountTimeRef.current = Date.now();
         }
-    }, [isOpen]);
+    }, [isOpen, reset]);
 
     if (!isOpen) return null;
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-        setError('');
-    };
+    const onSubmit = async (data: FAQFormValues) => {
+        // Bot check 1: Honeypot — if the hidden field is filled, silently "succeed"
+        if (data.website) {
+            setIsSubmitted(true);
+            return;
+        }
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        if (!formData.fullName || !formData.phone || !formData.question) {
-            setError('Please fill in all required fields');
+        // Bot check 2: Time-based — if submitted within 2 seconds of modal opening, silently "succeed"
+        if (Date.now() - mountTimeRef.current < 2000) {
+            setIsSubmitted(true);
             return;
         }
 
         setIsSubmitting(true);
-        setError('');
+        setGeneralError('');
 
         try {
             const response = await fetch('/api/zoho/inquiry', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    firstName: formData.fullName,
+                    firstName: data.fullName,
                     lastName: '-',
-                    email: 'no-email@provided.com', // Placeholder as email is not collected
-                    phone: formData.phone,
+                    email: 'no-email@provided.com', // Placeholder as email is not collected in this form
+                    phone: data.phone,
                     city: '',
                     totalAmount: 0,
-                    inquiryName: `Website - ${formData.fullName} - FAQ Question`,
+                    inquiryName: `Website - ${data.fullName} - FAQ Question`,
                     leadSource: 'Website Landing Page',
                     courses: [{
                         name: 'FAQ Question',
@@ -197,16 +233,16 @@ const QuestionModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
                         category: 'General',
                         price: 0
                     }],
-                    message: `Question: ${formData.question}`,
+                    message: `Question: ${data.question}`,
                     agreeWhatsApp: true,
                     pipeline: 'Leads Pipeline Standard',
                     stage: 'New Inquiry',
+                    website: data.website,
                 }),
             });
 
             if (!response.ok) {
                 const errorData = await response.json().catch(() => ({}));
-                console.error('Submission failed:', errorData);
                 throw new Error(errorData.details || 'Failed to submit');
             }
 
@@ -214,19 +250,16 @@ const QuestionModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
 
             // Google Ads Conversion Event
             if (typeof window !== 'undefined' && (window as any).gtag) {
-                const callback = () => {
-                    // Conversion reported
-                };
                 (window as any).gtag('event', 'conversion', {
                     'send_to': 'AW-17944571400/8OiVCJHss_cbEIjc0exC',
                     'value': 1.0,
                     'currency': 'INR',
-                    'event_callback': callback
+                    'event_callback': () => { }
                 });
             }
         } catch (err: any) {
             console.error('Error submitting form:', err);
-            setError(err.message || 'Something went wrong. Please try again.');
+            setGeneralError(err.message || 'Something went wrong. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -269,43 +302,55 @@ const QuestionModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
                             <p className="text-gray-500 text-sm">We'll answer it via WhatsApp or Call.</p>
                         </div>
 
-                        {error && <div className="mb-4 p-3 text-sm text-red-600 bg-red-50 rounded-xl border border-red-100 text-center">{error}</div>}
+                        {generalError && <div className="mb-4 p-3 text-sm text-red-600 bg-red-50 rounded-xl border border-red-100 text-center">{generalError}</div>}
 
-                        <form className="space-y-4" onSubmit={handleSubmit}>
+                        <form className="space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate>
+                            {/* Honeypot field — invisible to real users, bots auto-fill it */}
+                            <input
+                                type="text"
+                                autoComplete="off"
+                                tabIndex={-1}
+                                aria-hidden="true"
+                                {...register("website")}
+                                style={{ position: 'absolute', left: '-9999px', top: '-9999px', opacity: 0, height: 0, width: 0 }}
+                            />
+
                             <div>
                                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Full Name <span className="text-[#ff6b00]">*</span></label>
                                 <input
                                     type="text"
-                                    name="fullName"
                                     placeholder="Enter your name"
-                                    required
-                                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
-                                    value={formData.fullName}
-                                    onChange={handleInputChange}
+                                    {...register("fullName")}
+                                    className={`w-full bg-gray-50 border rounded-xl px-4 py-3 outline-none transition-all font-medium ${errors.fullName ? 'border-red-400 focus:ring-2 focus:ring-red-400/10' : 'border-gray-100 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10'}`}
                                 />
+                                {errors.fullName && <p className="mt-1 text-[11px] text-red-500 pl-1">{errors.fullName.message}</p>}
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Your Question</label>
+                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Your Question <span className="text-[#ff6b00]">*</span></label>
                                 <textarea
-                                    name="question"
                                     rows={3}
                                     placeholder="e.g., Do you offer job guarantee for freshers?"
-                                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937] resize-none"
-                                    value={formData.question}
-                                    onChange={handleInputChange}
+                                    {...register("question")}
+                                    className={`w-full bg-gray-50 border rounded-xl px-4 py-3 outline-none transition-all font-medium resize-none ${errors.question ? 'border-red-400 focus:ring-2 focus:ring-red-400/10' : 'border-gray-100 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10'}`}
                                 ></textarea>
+                                {errors.question && <p className="mt-1 text-[11px] text-red-500 pl-1">{errors.question.message}</p>}
                             </div>
                             <div>
                                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Phone Number <span className="text-[#ff6b00]">*</span></label>
                                 <input
-                                    type="tel"
-                                    name="phone"
+                                    type="text"
+                                    inputMode="numeric"
                                     placeholder="Enter your registered number"
-                                    required
-                                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10 transition-all font-medium text-[#1f2937]"
-                                    value={formData.phone}
-                                    onChange={handleInputChange}
+                                    maxLength={10}
+                                    {...register("phone", {
+                                        onChange: (e) => {
+                                            const val = e.target.value.replace(/\D/g, '').slice(0, 10);
+                                            setValue("phone", val);
+                                        }
+                                    })}
+                                    className={`w-full bg-gray-50 border rounded-xl px-4 py-3 outline-none transition-all font-medium ${errors.phone ? 'border-red-400 focus:ring-2 focus:ring-red-400/10' : 'border-gray-100 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/10'}`}
                                 />
+                                {errors.phone && <p className="mt-1 text-[11px] text-red-500 pl-1">{errors.phone.message}</p>}
                             </div>
                             <button
                                 type="submit"

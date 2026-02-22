@@ -56,6 +56,24 @@ export async function POST(request: NextRequest) {
             );
         }
 
+        // Validate email format
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(cleanEmail)) {
+            return NextResponse.json(
+                { error: 'Invalid email format', details: 'Please provide a valid email address' },
+                { status: 400 }
+            );
+        }
+
+        // Validate phone format (10-digit Indian mobile starting with 6-9)
+        const phoneDigits = cleanPhone.replace(/\D/g, '');
+        if (phoneDigits.length !== 10 || !/^[6-9]/.test(phoneDigits)) {
+            return NextResponse.json(
+                { error: 'Invalid phone number', details: 'Please provide a valid 10-digit phone number' },
+                { status: 400 }
+            );
+        }
+
         if (!courses || courses.length === 0) {
             return NextResponse.json(
                 { error: 'At least one course must be selected' },
