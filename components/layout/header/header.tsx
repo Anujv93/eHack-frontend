@@ -399,8 +399,8 @@ export default function Header({ partners, courses }: HeaderProps) {
                             <Link href="/learning-options#fly-trainer" className="dropdown-item">Fly-Me-a-Trainer</Link>
                             <Link href="/learning-options#flexi" className="dropdown-item">Flexi</Link>
                             <Link href="/learning-options#customized" className="dropdown-item">Customized Training</Link>
-                            <Link href="/learning-options#webinar" className="dropdown-item">Webinar as a Service</Link>
-                            <Link href="/learning-options#upcoming" className="dropdown-item">Upcoming Webinars</Link>
+                            <Link href="/learning-options#webinar-service" className="dropdown-item">Webinar as a Service</Link>
+                            <Link href="/learning-options#upcoming-webinars" className="dropdown-item">Upcoming Webinars</Link>
                         </div>
                     </div>
 
@@ -555,6 +555,15 @@ export default function Header({ partners, courses }: HeaderProps) {
                             </Link>
                             <Link href="/learning-options#flexi" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Flexi
+                            </Link>
+                            <Link href="/learning-options#customized" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Customized Training
+                            </Link>
+                            <Link href="/learning-options#webinar-service" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Webinar as a Service
+                            </Link>
+                            <Link href="/learning-options#upcoming-webinars" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Upcoming Webinars
                             </Link>
                         </div>
                     </div>
