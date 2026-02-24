@@ -1,24 +1,35 @@
 /* ============================================
    Features Grid Section
    ============================================ */
-.section {
-    padding: var(--space-12) 0;
+#whats-new.section {
+    padding-top: var(--space-6) !important;
+    padding-bottom: var(--space-6) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .section-gray {
-    background: var(--ec-gray-100);
+    background: #ffffff;
+    border-bottom: 1px solid #ff6b00;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: var(--space-12);
+    margin-top: 0 !important;
+    margin-bottom: var(--space-4);
 }
 
 .section-header h2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 800;
     color: var(--ec-black);
     margin-bottom: var(--space-2);
+}
+
+.text-orange {
+    color: var(--ec-red);
 }
 
 .section-header .red-underline-center {
@@ -31,50 +42,45 @@
 .features-grid-ec {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    /* Fading multicolor Tic-Tac-Toe separators */
-    background-image:
-        linear-gradient(to right, transparent, var(--ec-red) 15%, var(--ec-red) 70%, #2196F3 85%, transparent),
-        linear-gradient(to bottom, transparent, var(--ec-red) 15%, var(--ec-red) 70%, #2196F3 85%, transparent);
-    background-origin: border-box;
+    gap: var(--space-8);
+    background: transparent;
 }
 
 .feature-item-ec {
-    text-align: center;
-    padding: var(--space-10);
-    /* Increased padding to compensate for reduced gap */
-    background-color: #ffff;
-    /* Match section bg to mask container bg */
+    text-align: left;
+    padding: var(--space-8);
+    background-color: #ffffff;
+    border: 1px solid var(--ec-red);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.feature-item-ec:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.12);
+    background-color: #fffaf5;
 }
 
 .feature-icon-ec {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto var(--space-6);
-    background: var(--ec-white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.feature-icon-ec svg {
-    width: 40px;
-    height: 40px;
-    stroke: var(--ec-black);
+    display: none;
+    /* Icons commented out in TSX, hidden here just in case */
 }
 
 .feature-item-ec h3 {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-weight: 700;
     color: var(--ec-black);
     margin-bottom: var(--space-3);
+    position: relative;
 }
 
 .feature-item-ec p {
     font-size: var(--font-size-base);
-    color: var(--ec-gray-600);
+    color: #1f2937;
     line-height: 1.6;
 }
 

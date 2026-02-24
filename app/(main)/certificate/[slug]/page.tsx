@@ -551,10 +551,10 @@ export default async function CertificatePage({ params }: PageProps) {
             {faqSection && <FAQSection section={faqSection} />}
 
             {/* 2. What's New */}
-            {/* <FeaturesGrid
+            <FeaturesGrid
                 title={featuresGridSection?.Title}
                 features={featuresGridSection?.Features}
-            /> */}
+            />
 
             {/* 13. Why eHack */}
             <WhyEhackSection programType="cybersecurity" />
