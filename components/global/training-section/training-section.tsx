@@ -55,6 +55,7 @@ interface TrainingSectionProps {
     batchItems?: BatchItem[];
     pricingFeatures?: PricingFeature[];
     admissionProcess?: AdmissionProcess;
+    showEMI?: boolean;
 }
 
 export default function TrainingSection({
@@ -67,7 +68,8 @@ export default function TrainingSection({
     academyHours,
     batchItems,
     pricingFeatures,
-    admissionProcess
+    admissionProcess,
+    showEMI
 }: TrainingSectionProps) {
     // Don't render if no content
     if (!title && !pricing && !admissionProcess) {
@@ -100,6 +102,35 @@ export default function TrainingSection({
             );
         }
         return priceText;
+    };
+
+    // Calculate EMI (Divide by 2)
+    const renderEMI = (priceText: string) => {
+        if (!showEMI) return null;
+
+        // Extract number from price text (e.g., "3,50,000 + GST" -> "3,50,000" -> 350000)
+        const numericMatch = priceText.replace(/,/g, '').match(/\d+/);
+        if (!numericMatch) return null;
+
+        const fullPrice = parseInt(numericMatch[0]);
+        const emiPrice = Math.round(fullPrice / 2);
+
+        // Format back with commas
+        const formattedEMI = emiPrice.toLocaleString('en-IN');
+
+        return (
+            <div className="pricing-emi-box">
+                <div className="emi-label-row">
+                    <span className="emi-badge">No Cost EMI</span>
+                    <span className="emi-period">2 Month Plan</span>
+                </div>
+                <div className="emi-amount-row">
+                    <span className="emi-amount">₹{formattedEMI}</span>
+                    <span className="emi-per-month">/ month</span>
+                </div>
+                <p className="emi-info">Pay in two equal interest-free installments</p>
+            </div>
+        );
     };
 
     return (
@@ -140,6 +171,9 @@ export default function TrainingSection({
                                     )}
                                     <span className="offer-price">₹{formatPrice(pricing.DiscountedPrice)}</span>
                                 </div>
+
+                                {showEMI && renderEMI(pricing.DiscountedPrice)}
+
                                 {pricing.Duration && (
                                     <div className="pricing-duration">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

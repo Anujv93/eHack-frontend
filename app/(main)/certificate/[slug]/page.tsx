@@ -506,6 +506,7 @@ export default async function CertificatePage({ params }: PageProps) {
                 batchItems={trainingSection?.BatchItem}
                 pricingFeatures={trainingSection?.PricingFeatures}
                 admissionProcess={admissionProcess || undefined}
+                showEMI={true}
             />
 
             {/* 7. Placements */}
