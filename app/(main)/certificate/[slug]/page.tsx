@@ -181,6 +181,11 @@ export default async function CertificatePage({ params }: PageProps) {
         dynamicNavSections.push({ id: 'faqs', label: 'FAQs' });
     }
 
+    // 2. What's New
+    if (featuresGridSection?.Features && featuresGridSection.Features.length > 0) {
+        dynamicNavSections.push({ id: 'whats-new', label: "What's New" });
+    }
+
     // 13. Why eHack
     dynamicNavSections.push({ id: 'why-ehack', label: 'Why eHack' });
 
