@@ -2012,7 +2012,7 @@ export const programs = [
         },
         schedule: "20 Modules × 2 Hours each | Weekday & Weekend Batches Available",
         certifications: [
-            { code: "PSSD", name: "Personality & Soft Skill Development Certificate", image: "/Personality-and-Softskill-Development.png" }
+            { code: "PSSD", name: "Personality & Soft Skill Development Certificate", image: "/certificates/personility_cert.jpeg" }
         ],
         skills: [
             { name: "Communication Skills", desc: "Master verbal and non-verbal communication, public speaking, and professional vocabulary for workplace success." },
