@@ -234,16 +234,16 @@ export default function FranchisePage() {
                             Why Choose
                         </button>
                         <button
-                            className={`section-nav-link ${activeSection === 'sop-framework' ? 'active' : ''}`}
-                            onClick={() => scrollToSection('sop-framework')}
-                        >
-                            SOPs
-                        </button>
-                        <button
                             className={`section-nav-link ${activeSection === 'business-model' ? 'active' : ''}`}
                             onClick={() => scrollToSection('business-model')}
                         >
                             Business Model
+                        </button>
+                        <button
+                            className={`section-nav-link ${activeSection === 'sop-framework' ? 'active' : ''}`}
+                            onClick={() => scrollToSection('sop-framework')}
+                        >
+                            SOPs
                         </button>
                         <button
                             className={`section-nav-link ${activeSection === 'apply' ? 'active' : ''}`}
