@@ -64,50 +64,50 @@
 
 @media (max-width: 768px) {
     .top-bar {
-        padding: 0.5rem 0;
-    }
-
-    .top-bar-content {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .top-bar .contact-item {
-        font-size: 1.25rem;
-    }
-
-    .divider {
-        display: none;
-    }
-
-    .holiday-notice {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .top-bar {
-        display: block;
-        padding: 0.5rem 0;
+        padding: 0.25rem 0;
     }
 
     .top-bar-content {
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 0.5rem;
-        padding: 0 1rem;
+        justify-content: center;
+        gap: 0.4rem 0.8rem;
+        padding: 0 0.5rem;
+    }
+
+    .top-bar .contact-item {
+        font-size: 0.85rem;
+        font-weight: 600;
+        gap: 0.4rem;
     }
 
     .divider {
         display: inline;
-        color: rgba(255, 255, 255, 0.3);
-    }
-
-    .top-bar .contact-item {
-        font-size: 1.0rem;
+        font-size: 0.85rem;
+        opacity: 0.4;
     }
 
     .holiday-notice {
-        font-size: 1.0rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-underline-offset: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar-content {
+        gap: 0.3rem 0.6rem;
+    }
+
+    .top-bar .contact-item {
+        font-size: 0.8rem;
+    }
+
+    .holiday-notice {
+        font-size: 0.8rem;
+    }
+
+    .divider {
+        font-size: 0.8rem;
     }
 }
