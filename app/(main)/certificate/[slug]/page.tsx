@@ -1,4 +1,6 @@
 import React from "react";
+import { headers } from "next/headers";
+import { isInternationalUser } from "@/lib/geo";
 import "./certificate.css";
 import InquiryForm from "@/components/global/inquiry-form/inquiry-form";
 import CertificateHeader from "@/components/single-certificate/header/header";
@@ -50,6 +52,10 @@ interface PageProps {
 
 export default async function CertificatePage({ params }: PageProps) {
     const { slug } = await params;
+
+    // Detect visitor's country via Vercel geo header (server-side, zero latency)
+    const headersList = await headers();
+    const isIntl = isInternationalUser(headersList);
 
     // Fetch certificate and admission process in parallel
     const [certificate, admissionProcess] = await Promise.all([
@@ -511,7 +517,9 @@ export default async function CertificatePage({ params }: PageProps) {
                 batchItems={trainingSection?.BatchItem}
                 pricingFeatures={trainingSection?.PricingFeatures}
                 admissionProcess={admissionProcess || undefined}
-                showEMI={true}
+                showEMI={!isIntl}
+                isInternational={isIntl}
+                internationalPrice={certificate.InternationalPrice}
             />
 
             {/* 7. Placements */}

@@ -266,6 +266,8 @@ export interface Certificate {
     Title: string;
     Subtitle: string;
     slug: string;
+    /** Price in USD for international (non-India) visitors, set in Strapi admin */
+    InternationalPrice?: number;
     pageContent: PageContent[];
     brochure?: {
         url: string;

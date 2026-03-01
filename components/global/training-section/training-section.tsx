@@ -56,6 +56,10 @@ interface TrainingSectionProps {
     pricingFeatures?: PricingFeature[];
     admissionProcess?: AdmissionProcess;
     showEMI?: boolean;
+    /** Whether the visitor is outside India (server-detected via Vercel geo headers) */
+    isInternational?: boolean;
+    /** Price in USD for international visitors, from Strapi InternationalPrice field */
+    internationalPrice?: number;
 }
 
 export default function TrainingSection({
@@ -69,8 +73,12 @@ export default function TrainingSection({
     batchItems,
     pricingFeatures,
     admissionProcess,
-    showEMI
+    showEMI,
+    isInternational = false,
+    internationalPrice,
 }: TrainingSectionProps) {
+    // Determine if we should display international (USD) pricing
+    const showInternationalPrice = isInternational && typeof internationalPrice === 'number' && internationalPrice > 0;
     // Don't render if no content
     if (!title && !pricing && !admissionProcess) {
         return null;
@@ -158,21 +166,41 @@ export default function TrainingSection({
                         {/* Main Pricing Card */}
                         {pricing && (
                             <div className="ehack-pricing-card featured">
-                                {pricing.OfferBadge && (
+                                {pricing.OfferBadge && !showInternationalPrice && (
                                     <div className="pricing-ribbon">{pricing.OfferBadge}</div>
+                                )}
+                                {showInternationalPrice && (
+                                    <div className="pricing-ribbon intl-ribbon">International Pricing</div>
                                 )}
                                 <h3>{pricing.ProgramName}</h3>
                                 {pricing.SubTitle && (
                                     <p className="pricing-tagline">{pricing.SubTitle}</p>
                                 )}
-                                <div className="pricing-amount">
-                                    {pricing.OriginalPrice && (
-                                        <span className="original-price">₹{pricing.OriginalPrice}</span>
-                                    )}
-                                    <span className="offer-price">₹{formatPrice(pricing.DiscountedPrice)}</span>
-                                </div>
 
-                                {showEMI && renderEMI(pricing.DiscountedPrice)}
+                                {showInternationalPrice ? (
+                                    /* ── International (USD) pricing ── */
+                                    <>
+                                        <div className="pricing-amount">
+                                            <span className="offer-price intl-usd-price">
+                                                ${internationalPrice!.toLocaleString('en-US')} <span className="intl-currency-label">USD</span>
+                                            </span>
+                                        </div>
+                                        <p className="intl-price-note">
+                                            💳 Price shown in US Dollars. Taxes may apply based on your location.
+                                        </p>
+                                    </>
+                                ) : (
+                                    /* ── India (INR) pricing ── */
+                                    <>
+                                        <div className="pricing-amount">
+                                            {pricing.OriginalPrice && (
+                                                <span className="original-price">₹{pricing.OriginalPrice}</span>
+                                            )}
+                                            <span className="offer-price">₹{formatPrice(pricing.DiscountedPrice)}</span>
+                                        </div>
+                                        {showEMI && renderEMI(pricing.DiscountedPrice)}
+                                    </>
+                                )}
 
                                 {pricing.Duration && (
                                     <div className="pricing-duration">
@@ -198,7 +226,7 @@ export default function TrainingSection({
                                 <a href={pricing.ButtonLink || "#inquiry"} className="btn-enroll-now">
                                     {pricing.ButtonText || "Enroll Now"} →
                                 </a>
-                                {pricing.UrgencyText && (
+                                {pricing.UrgencyText && !showInternationalPrice && (
                                     <p className="seats-left">⚡ {pricing.UrgencyText}</p>
                                 )}
                             </div>
