@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import './mastery-section.css';
+import styles from './mastery-section.module.css';
 
 interface Program {
     title: string;
@@ -77,25 +77,25 @@ const programs: Program[] = [
 
 export default function MasterySection() {
     return (
-        <section className="mastery-section" style={{ borderBottom: 'solid 2px orange' }} id="programs">
-            <div className="mastery-container">
-                <div className="mastery-header">
-                    <span className="mastery-label">Comprehensive Curriculum</span>
-                    <h2 className="mastery-title">Choose Your Path to Mastery</h2>
+        <section className={styles['mastery-section']} style={{ borderBottom: 'solid 2px orange' }} id="programs">
+            <div className={styles['mastery-container']}>
+                <div className={styles['mastery-header']}>
+                    <span className={styles['mastery-label']}>Comprehensive Curriculum</span>
+                    <h2 className={styles['mastery-title']}>Choose Your Path to Mastery</h2>
                 </div>
 
-                <div className="programs-grid">
+                <div className={styles['programs-grid']}>
                     {programs.map((program, index) => (
                         <div
                             key={index}
-                            className={`program-card ${program.featured ? 'program-card-featured' : ''}`}
+                            className={`${styles['program-card']} ${program.featured ? styles['program-card-featured'] : ''}`}
                         >
                             {program.badge && (
-                                <div className={`program-badge badge-${program.badgeType}`}>
+                                <div className={`${styles['program-badge']} ${styles[`badge-${program.badgeType}`]}`}>
                                     {program.badge}
                                 </div>
                             )}
-                            <h3 className="program-title">
+                            <h3 className={styles['program-title']}>
                                 {program.title.includes('(') ? (
                                     <>
                                         {program.title.split('(')[0].trim()}
@@ -107,49 +107,49 @@ export default function MasterySection() {
                                 )}
                             </h3>
 
-                            <ul className="program-features">
+                            <ul className={styles['program-features']}>
                                 {program.features.map((feature, idx) => (
-                                    <li key={idx} className="program-feature">
+                                    <li key={idx} className={styles['program-feature']}>
                                         <span>{feature}</span>
                                     </li>
                                 ))}
                             </ul>
 
-                            <div className="program-meta">
-                                <div className="meta-item">
-                                    <span className="meta-label">Duration</span>
-                                    <span className="meta-value">{program.duration}</span>
+                            <div className={styles['program-meta']}>
+                                <div className={styles['meta-item']}>
+                                    <span className={styles['meta-label']}>Duration</span>
+                                    <span className={styles['meta-value']}>{program.duration}</span>
                                 </div>
-                                <div className="meta-item">
-                                    <span className="meta-label">Training Hours</span>
-                                    <span className="meta-value">{program.trainingHours}</span>
+                                <div className={styles['meta-item']}>
+                                    <span className={styles['meta-label']}>Training Hours</span>
+                                    <span className={styles['meta-value']}>{program.trainingHours}</span>
                                 </div>
-                                <div className="meta-item">
-                                    <span className="meta-label">Certifications</span>
-                                    <span className="meta-value">{program.certifications}</span>
+                                <div className={styles['meta-item']}>
+                                    <span className={styles['meta-label']}>Certifications</span>
+                                    <span className={styles['meta-value']}>{program.certifications}</span>
                                 </div>
-                                <div className="meta-item">
-                                    <span className="meta-label">Membership</span>
-                                    <span className="meta-value">{program.membership}</span>
+                                <div className={styles['meta-item']}>
+                                    <span className={styles['meta-label']}>Membership</span>
+                                    <span className={styles['meta-value']}>{program.membership}</span>
                                 </div>
                             </div>
 
-                            <div className="program-certificate">
+                            <div className={styles['program-certificate']}>
                                 {program.certificateImage ? (
                                     <img
                                         src={program.certificateImage}
                                         alt={`${program.title} Certificate`}
-                                        className="certificate-image"
+                                        className={styles['certificate-image']}
                                     />
                                 ) : (
-                                    <div className="certificate-placeholder">
+                                    <div className={styles['certificate-placeholder'] || 'certificate-placeholder'}>
                                         <span>🎓</span>
                                         <span>Certificate Preview</span>
                                     </div>
                                 )}
                             </div>
 
-                            <Link href={program.ctaLink} className="program-cta">
+                            <Link href={program.ctaLink} className={styles['program-cta']}>
                                 {program.ctaText}
                             </Link>
                         </div>

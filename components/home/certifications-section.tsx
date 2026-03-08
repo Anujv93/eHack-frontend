@@ -6,7 +6,7 @@ import './certifications-section.css';
 
 export default function CertificationsSection() {
     return (
-        <section className="cert-section" style={{ borderBottom: 'solid 2px orange' }} id="certifications">
+        <section className="cert-section" id="certifications">
             <div className="cert-container">
                 <div className="cert-header">
                     <h2 className="cert-title">Globally Recognized & <span className="cert-title-gradient">Authorized</span></h2>
@@ -18,6 +18,16 @@ export default function CertificationsSection() {
                     <div className="cert-card">
                         <div className="cert-entity-header">
                             <div className="cert-logo-wrapper">
+                                <Image
+                                    src="/images/ec-council-logo.png"
+                                    alt="EC-Council Logo"
+                                    width={180}
+                                    height={50}
+                                    className="cert-logo secondary-logo"
+                                    style={{ objectFit: 'contain' }}
+                                />
+                                <div className="cert-logo-divider" />
+
                                 <Image
                                     src="/images/ec-council-badge.png"
                                     alt="EC-Council Authorized Partner"

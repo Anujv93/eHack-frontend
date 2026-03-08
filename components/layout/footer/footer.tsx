@@ -70,17 +70,8 @@ export default function Footer() {
                     <div className="footer-grid">
                         {/* Brand Section */}
                         <div className="footer-brand">
-                            <div className="footer-logo-wrapper">
-                                <Image
-                                    src="/ehack-logo.png"
-                                    alt="eHack Academy"
-                                    width={160}
-                                    height={50}
-                                    className="footer-logo"
-                                />
-                            </div>
                             <p className="footer-description">
-                                Empowering careers through industry-leading professional training and globally recognized certifications. Your trusted partner for cybersecurity, digital marketing, and technology education.
+                                Empowering global careers through industry-leading training and certifications in Cybersecurity, Digital Marketing, and Emerging Technologies.
                             </p>
 
                             {/* Social Links */}
@@ -97,7 +88,7 @@ export default function Footer() {
                                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                                         </svg>
                                     </a>
-                                    <a href="https://www.linkedin.com/company/ehack-academy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                    <a href="https://www.linkedin.com/in/ehack-academy-2a7493217/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                         <svg viewBox="0 0 24 24" fill="currentColor">
                                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                                         </svg>
@@ -196,7 +187,7 @@ export default function Footer() {
                             </h4>
                             <ul className="footer-links-list">
                                 <li><Link href="/about">About Us</Link></li>
-                                <li><Link href="/services">Corporate Service</Link></li>
+                                <li><Link href="https://www.ehackglobaltechnology.com/services/web-application-security" target="_blank">Corporate Service</Link></li>
                                 <li><Link href="/csr">Corporate Social Responsibility</Link></li>
                                 <li>
                                     <Link href="/franchise">
@@ -205,14 +196,37 @@ export default function Footer() {
                                     </Link>
                                 </li>
                                 <li><Link href="/careers">Careers</Link></li>
+                                <li style={{ marginTop: '0.5rem' }}>
+                                    <a
+                                        href="/ehack-handbook/Ehack-Handbook.pdf"
+                                        download="Ehack-Handbook.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#DF6718', fontWeight: 600 }}
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                            <polyline points="7 10 12 15 17 10" />
+                                            <line x1="12" x2="12" y1="15" y2="3" />
+                                        </svg>
+                                        Download Handbook
+                                    </a>
+                                </li>
                             </ul>
-                            <h5 className="footer-subheading">Most Popular Certifications</h5>
-                            <ul className="footer-links-list partner-certs">
-                                <li><Link href="/certificate/ceh-v13">EC-Council CEH</Link></li>
-                                <li><Link href="/certificate/ecc-cnd">EC-Council CND</Link></li>
-                                <li><Link href="/certificate/ecc-cpent">EC-Council CPENT</Link></li>
-                                <li><Link href="/certificate/ecc-chfi">EC-Council CHFI</Link></li>
-                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Popular Certifications Horizontal Bar */}
+                    <div className="footer-certs-bar">
+                        <span className="certs-bar-title">Most Popular Certifications:</span>
+                        <div className="certs-bar-links">
+                            <Link href="/certificate/ceh-v13">EC-Council CEH</Link>
+                            <span className="certs-divider">|</span>
+                            <Link href="/certificate/ecc-cnd">EC-Council CND</Link>
+                            <span className="certs-divider">|</span>
+                            <Link href="/certificate/ecc-cpent">EC-Council CPENT</Link>
+                            <span className="certs-divider">|</span>
+                            <Link href="/certificate/ecc-chfi">EC-Council CHFI</Link>
                         </div>
                     </div>
 
@@ -245,7 +259,28 @@ export default function Footer() {
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
                                 <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span>Tue - Sun: 9:30 AM - 6:30 PM</span>
+                            <span>Tue - Sun: 9:00 AM - 9:00 PM , Monday: Sales Office Only</span>
+                        </div>
+                    </div>
+
+                    {/* Brand Initiative Strip */}
+                    <div className="footer-initiative-strip">
+                        <span className="parent-brand-text">DRIVING GLOBAL CYBERSECURITY EXCELLENCE AS A STRATEGIC INITIATIVE OF eHACK GROUP</span>
+                        <div className="initiative-logos">
+                            <Image
+                                src="/images/white-global.png"
+                                alt="eHack Global"
+                                width={200}
+                                height={75}
+                                className="footer-logo-global"
+                            />
+                            <Image
+                                src="/images/white-academy.png"
+                                alt="eHack Academy"
+                                width={240}
+                                height={70}
+                                className="footer-logo"
+                            />
                         </div>
                     </div>
                 </div>

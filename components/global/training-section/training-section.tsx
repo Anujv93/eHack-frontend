@@ -55,6 +55,11 @@ interface TrainingSectionProps {
     batchItems?: BatchItem[];
     pricingFeatures?: PricingFeature[];
     admissionProcess?: AdmissionProcess;
+    showEMI?: boolean;
+    /** Whether the visitor is outside India (server-detected via Vercel geo headers) */
+    isInternational?: boolean;
+    /** Price in USD for international visitors, from Strapi InternationalPrice field */
+    internationalPrice?: number;
 }
 
 export default function TrainingSection({
@@ -67,8 +72,13 @@ export default function TrainingSection({
     academyHours,
     batchItems,
     pricingFeatures,
-    admissionProcess
+    admissionProcess,
+    showEMI,
+    isInternational = false,
+    internationalPrice,
 }: TrainingSectionProps) {
+    // Determine if we should display international (USD) pricing
+    const showInternationalPrice = isInternational && typeof internationalPrice === 'number' && internationalPrice > 0;
     // Don't render if no content
     if (!title && !pricing && !admissionProcess) {
         return null;
@@ -102,14 +112,43 @@ export default function TrainingSection({
         return priceText;
     };
 
+    // Calculate EMI (Divide by 2)
+    const renderEMI = (priceText: string) => {
+        if (!showEMI) return null;
+
+        // Extract number from price text (e.g., "3,50,000 + GST" -> "3,50,000" -> 350000)
+        const numericMatch = priceText.replace(/,/g, '').match(/\d+/);
+        if (!numericMatch) return null;
+
+        const fullPrice = parseInt(numericMatch[0]);
+        const emiPrice = Math.round(fullPrice / 2);
+
+        // Format back with commas
+        const formattedEMI = emiPrice.toLocaleString('en-IN');
+
+        return (
+            <div className="pricing-emi-box">
+                <div className="emi-label-row">
+                    <span className="emi-badge">No Cost EMI</span>
+                    <span className="emi-period">2 Month Plan</span>
+                </div>
+                <div className="emi-amount-row">
+                    <span className="emi-amount">₹{formattedEMI}</span>
+                    <span className="emi-per-month">/ month</span>
+                </div>
+                <p className="emi-info">Pay in two equal interest-free installments</p>
+            </div>
+        );
+    };
+
     return (
-        <section className="ehack-training-section border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="ehack-training">
+        <section className="ehack-training-section border-bottom" style={{ borderBottom: 'solid 1px #ff6b00' }} id="ehack-training">
             <div className="container">
                 {/* Section Header */}
                 {(badgeText || title) && (
                     <div className="section-header">
                         {badgeText && (
-                            <span className="anniversary-badge">🎉 {badgeText}</span>
+                            <span className="anniversary-badge">{badgeText}</span>
                         )}
                         {title && (
                             <>
@@ -127,19 +166,42 @@ export default function TrainingSection({
                         {/* Main Pricing Card */}
                         {pricing && (
                             <div className="ehack-pricing-card featured">
-                                {pricing.OfferBadge && (
+                                {pricing.OfferBadge && !showInternationalPrice && (
                                     <div className="pricing-ribbon">{pricing.OfferBadge}</div>
+                                )}
+                                {showInternationalPrice && (
+                                    <div className="pricing-ribbon intl-ribbon">International Pricing</div>
                                 )}
                                 <h3>{pricing.ProgramName}</h3>
                                 {pricing.SubTitle && (
                                     <p className="pricing-tagline">{pricing.SubTitle}</p>
                                 )}
-                                <div className="pricing-amount">
-                                    {pricing.OriginalPrice && (
-                                        <span className="original-price">₹{pricing.OriginalPrice}</span>
-                                    )}
-                                    <span className="offer-price">₹{formatPrice(pricing.DiscountedPrice)}</span>
-                                </div>
+
+                                {showInternationalPrice ? (
+                                    /* ── International (USD) pricing ── */
+                                    <>
+                                        <div className="pricing-amount">
+                                            <span className="offer-price intl-usd-price">
+                                                ${internationalPrice!.toLocaleString('en-US')} <span className="intl-currency-label">USD</span>
+                                            </span>
+                                        </div>
+                                        <p className="intl-price-note">
+                                            💳 Price shown in US Dollars. Taxes may apply based on your location.
+                                        </p>
+                                    </>
+                                ) : (
+                                    /* ── India (INR) pricing ── */
+                                    <>
+                                        <div className="pricing-amount">
+                                            {pricing.OriginalPrice && (
+                                                <span className="original-price">₹{pricing.OriginalPrice}</span>
+                                            )}
+                                            <span className="offer-price">₹{formatPrice(pricing.DiscountedPrice)}</span>
+                                        </div>
+                                        {showEMI && renderEMI(pricing.DiscountedPrice)}
+                                    </>
+                                )}
+
                                 {pricing.Duration && (
                                     <div className="pricing-duration">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -164,7 +226,7 @@ export default function TrainingSection({
                                 <a href={pricing.ButtonLink || "#inquiry"} className="btn-enroll-now">
                                     {pricing.ButtonText || "Enroll Now"} →
                                 </a>
-                                {pricing.UrgencyText && (
+                                {pricing.UrgencyText && !showInternationalPrice && (
                                     <p className="seats-left">⚡ {pricing.UrgencyText}</p>
                                 )}
                             </div>

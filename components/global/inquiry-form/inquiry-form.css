@@ -1,8 +1,8 @@
 /* Inquiry Form Component Styles - Light Orange Theme */
 
 .inquiry-form-wrapper {
-    background: linear-gradient(145deg, #fff5eb, #fff1e5);
-    border: 1px solid rgba(234, 88, 12, 0.15);
+    background: #fff8f2;
+    border: 1px solid rgba(255, 107, 0, 0.1);
     border-radius: 16px;
     padding: 1.75rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
@@ -30,7 +30,7 @@
 
 .urgency-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #ea580c, #dc2626);
+    background: #ff6b00;
     color: #fff;
     font-size: 0.7rem;
     font-weight: 600;
@@ -100,7 +100,7 @@
 
 .form-input:focus {
     outline: none;
-    border-color: #ea580c;
+    border-color: #ff6b00;
     background: #fff;
     box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
 }
@@ -116,7 +116,7 @@
 }
 
 .phone-field-wrapper:focus-within {
-    border-color: #ea580c;
+    border-color: #ff6b00;
     background: #fff;
     box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
 }
@@ -148,7 +148,7 @@
 .submit-btn {
     width: 100%;
     padding: 1rem;
-    background: linear-gradient(135deg, #ea580c, #c2410c);
+    background: #ff6b00;
     color: #fff;
     font-size: 0.95rem;
     font-weight: 600;
@@ -164,7 +164,7 @@
 .submit-btn:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(234, 88, 12, 0.35);
-    background: linear-gradient(135deg, #f97316, #ea580c);
+    background: #e66000;
 }
 
 .submit-btn:disabled {
@@ -269,6 +269,12 @@
     transform: translateY(-2px);
 }
 
+@media (max-width: 1024px) {
+    .inquiry-form-wrapper.hero {
+        margin: 0 auto;
+    }
+}
+
 /* Responsive */
 @media (max-width: 480px) {
     .inquiry-form-wrapper {
@@ -286,4 +292,105 @@
     .success-actions {
         flex-direction: column;
     }
+}
+
+/* COMPACT HERO VARIANT - OVERRIDES */
+.inquiry-form-wrapper.hero {
+    padding: 1rem 1.25rem;
+}
+
+.inquiry-form-wrapper.hero .inquiry-form-header {
+    margin-bottom: 0.85rem;
+}
+
+.inquiry-form-wrapper.hero .urgency-badge {
+    margin-bottom: 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+}
+
+.inquiry-form-wrapper.hero .form-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.inquiry-form-wrapper.hero .form-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.inquiry-form-wrapper.hero .inquiry-form-body {
+    gap: 0.65rem;
+}
+
+.inquiry-form-wrapper.hero .form-row {
+    gap: 0.5rem;
+}
+
+.inquiry-form-wrapper.hero .form-input {
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9rem;
+}
+
+.inquiry-form-wrapper.hero .phone-field-wrapper .country-code {
+    padding: 0.6rem 0.6rem;
+}
+
+.inquiry-form-wrapper.hero .submit-btn {
+    padding: 0.85rem;
+    font-size: 0.9rem;
+}
+
+/* POPUP VARIANT - Styles */
+.inquiry-form-wrapper.popup {
+    max-width: 100%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 1.5rem;
+}
+
+/* Reuse compact styles for popup inputs/text */
+.inquiry-form-wrapper.popup .inquiry-form-header {
+    margin-bottom: 0.85rem;
+}
+
+.inquiry-form-wrapper.popup .urgency-badge {
+    margin-bottom: 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+}
+
+.inquiry-form-wrapper.popup .form-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.inquiry-form-wrapper.popup .form-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.inquiry-form-wrapper.popup .inquiry-form-body {
+    gap: 0.65rem;
+}
+
+.inquiry-form-wrapper.popup .form-row {
+    gap: 0.5rem;
+}
+
+.inquiry-form-wrapper.popup .form-input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background: #f9f9f9;
+}
+
+.inquiry-form-wrapper.popup .phone-field-wrapper .country-code {
+    padding: 0.75rem 0.75rem;
+    background: #f0f0f0;
+}
+
+.inquiry-form-wrapper.popup .submit-btn {
+    padding: 1rem;
+    font-size: 1rem;
 }

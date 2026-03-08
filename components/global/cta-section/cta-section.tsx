@@ -9,6 +9,7 @@ export interface CTASectionProps {
     features?: string[];
     certificateTitle?: string;
     certificateSlug?: string;
+    customContent?: React.ReactNode;
 }
 
 export default function CTASection({
@@ -22,6 +23,7 @@ export default function CTASection({
     ],
     certificateTitle = '',
     certificateSlug = '',
+    customContent,
 }: CTASectionProps) {
     const [formData, setFormData] = useState({
         firstName: '',
@@ -31,6 +33,7 @@ export default function CTASection({
         country: '',
         trainingMode: '',
     });
+    const [botTrap, setBotTrap] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState('');
@@ -70,6 +73,12 @@ export default function CTASection({
 
         if (!validateForm()) return;
 
+        if (botTrap) {
+            console.log('Bot detected');
+            setIsSubmitted(true);
+            return;
+        }
+
         setIsSubmitting(true);
         setError('');
 
@@ -102,11 +111,11 @@ export default function CTASection({
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    firstName: formData.firstName,
-                    lastName: formData.lastName,
-                    email: formData.email,
-                    phone: formData.phone,
-                    city: formData.country,
+                    firstName: formData.firstName.trim(),
+                    lastName: formData.lastName.trim() || '-',
+                    email: formData.email.trim(),
+                    phone: formData.phone.trim(),
+                    city: formData.country.trim(),
                     inquiryName,
                     courses,
                     totalAmount: 0,
@@ -135,7 +144,7 @@ export default function CTASection({
     if (!title) return null;
 
     return (
-        <section className="cta-section border-bottom" style={{ borderBottom: 'solid 3px orange' }} id="cta">
+        <section className="cta-section border-bottom" style={{ borderBottom: 'solid 1px #ff6b00' }} id="cta">
             <div className="container">
                 <div className="cta-content">
                     <h2>{title}</h2>
@@ -153,7 +162,9 @@ export default function CTASection({
                 </div>
 
                 <div className="cta-form-wrapper">
-                    {isSubmitted ? (
+                    {customContent ? (
+                        customContent
+                    ) : isSubmitted ? (
                         <div className="cta-form-success">
                             <div className="success-checkmark">✓</div>
                             <h3>Thank You!</h3>
@@ -174,6 +185,18 @@ export default function CTASection({
                             {error && <div className="form-error-msg">{error}</div>}
 
                             <form onSubmit={handleSubmit}>
+                                {/* Honeypot field for bot protection */}
+                                <div style={{ display: 'none' }} aria-hidden="true">
+                                    <input
+                                        type="text"
+                                        name="website"
+                                        value={botTrap}
+                                        onChange={(e) => setBotTrap(e.target.value)}
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                    />
+                                </div>
+
                                 <div className="form-row">
                                     <div className="form-group">
                                         <input

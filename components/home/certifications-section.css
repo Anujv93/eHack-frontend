@@ -85,11 +85,23 @@
     height: 60px;
     display: flex;
     align-items: center;
+    gap: 1.5rem;
 }
 
 .cert-logo {
     max-height: 100%;
     width: auto;
+}
+
+.cert-logo-divider {
+    width: 2px;
+    height: 30px;
+    background: #E2E8F0;
+    opacity: 0.8;
+}
+
+.secondary-logo {
+    max-height: 45px;
 }
 
 /* Invert/Darken specific logos if they are white/light on transparent */
@@ -204,5 +216,20 @@
         flex-direction: column;
         gap: 1rem;
         align-items: flex-start;
+    }
+
+    .cert-badge {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 0.5rem;
+        border-radius: 4px;
+    }
+
+    .cert-logo-wrapper {
+        height: 45px;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        /* Allow wrapping if absolutely necessary, but size reduction should work */
     }
 }

@@ -111,10 +111,11 @@
 
 .placement-subtitle {
     font-size: 1rem;
-    color: var(--neutral-600);
+    color: #1f2937;
     line-height: 1.5;
     max-width: 100%;
     margin: 0 auto;
+    text-align: center;
 }
 
 @media (min-width: 481px) {
@@ -131,6 +132,15 @@
         line-height: 1.6;
         max-width: 600px;
     }
+}
+
+.placement-subtitle .highlight {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #FF8A00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    display: inline-block;
 }
 
 /* Marquee Container */
@@ -303,7 +313,8 @@
 }
 
 .path-step {
-    flex: 1;
+    flex: 1 1 50%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -321,9 +332,6 @@
 .path-step.after {
     background: linear-gradient(145deg, #ec7c00 0%, #ff8a00 100%);
     box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .step-label {
@@ -402,8 +410,8 @@
 }
 
 .transformation-path .company-logo-wrapper {
-    height: 90px;
-    width: 200px;
+    height: 75px;
+    width: 170px;
     margin: 0 auto 0.75rem;
     display: flex;
     align-items: center;
@@ -426,6 +434,26 @@
     width: auto;
     height: auto;
     object-fit: contain;
+}
+
+.transformation-path .company-text-wrapper {
+    height: 75px;
+    width: 170px;
+    margin: 0 auto 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.transformation-path .company-logo-wrapper[data-company="Ampcuscyber"] .step-company-logo,
+.transformation-path .company-logo-wrapper[data-company="Anuvu"] .step-company-logo,
+.transformation-path .company-logo-wrapper[data-company="Fiserv"] .step-company-logo {
+    transform: scale(1.7);
+}
+
+.transformation-path .company-logo-wrapper[data-company="SISA"] .step-company-logo {
+    transform: scale(0.9);
 }
 
 /* Stats Strip */
@@ -547,5 +575,9 @@
     .transformation-path .company-logo-wrapper {
         width: 120px;
         height: 50px;
+    }
+
+    .transformation-path .company-text-wrapper {
+        width: 0;
     }
 }

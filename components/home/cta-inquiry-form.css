@@ -1,0 +1,211 @@
+/* CTA Inquiry Form Styles */
+.cta-inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+    width: 100%;
+}
+
+.cta-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.cta-form-input,
+.cta-form-select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #E5E7EB;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #1a1a2e;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.cta-form-input::placeholder {
+    color: #9CA3AF;
+}
+
+.cta-form-input:focus,
+.cta-form-select:focus {
+    border-color: #FF6B00;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.cta-form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+    color: #1a1a2e;
+}
+
+.cta-form-select option {
+    background: #fff;
+    color: #1a1a2e;
+}
+
+.cta-phone-wrapper {
+    display: flex;
+    align-items: center;
+    border: 2px solid #E5E7EB;
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.cta-phone-wrapper:focus-within {
+    border-color: #FF6B00;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.cta-phone-prefix {
+    padding: 0 0.75rem;
+    color: #4B5563;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    border-right: 1px solid #E5E7EB;
+    background: #F9FAFB;
+}
+
+.cta-phone-input {
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.cta-form-submit {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8C42 100%);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 220px;
+    align-self: center;
+    margin-top: 0.25rem;
+    box-shadow: 0 4px 14px rgba(255, 107, 0, 0.35);
+}
+
+.cta-form-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.45);
+}
+
+.cta-form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cta-form-error {
+    background: #FEF2F2;
+    color: #DC2626;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border: 1px solid #FECACA;
+    text-align: center;
+}
+
+.cta-form-terms {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #6B7280;
+    margin-top: 0.25rem;
+}
+
+.cta-form-terms a {
+    color: #FF6B00;
+    text-decoration: underline;
+}
+
+/* CTA Form Success */
+.cta-form-success {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.cta-success-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #FF6B00, #FF8C42);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 0.75rem;
+    box-shadow: 0 4px 14px rgba(255, 107, 0, 0.3);
+}
+
+.cta-form-success h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.4rem;
+}
+
+.cta-form-success p {
+    color: #4B5563;
+    margin-bottom: 1.25rem;
+}
+
+.cta-success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cta-success-call,
+.cta-success-whatsapp {
+    padding: 0.65rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.cta-success-call {
+    background: linear-gradient(135deg, #FF6B00, #FF8C42);
+    color: #fff;
+}
+
+.cta-success-whatsapp {
+    background: #25D366;
+    color: #fff;
+}
+
+.cta-success-call:hover,
+.cta-success-whatsapp:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .cta-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-success-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}

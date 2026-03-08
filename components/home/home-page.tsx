@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Phone, ArrowRight } from 'lucide-react';
-import styles from '@/app/page.module.css';
+import styles from '@/app/(main)/page.module.css';
 import ProgramsSection from './programs-section';
 import MasterySection from './mastery-section';
 import PlacementSection from './placement-section';
@@ -13,6 +13,7 @@ import OfferBanner from './offer-banner';
 import StickySectionNav from '@/components/global/sticky-section-nav/sticky-section-nav';
 import CertificationsSection from './certifications-section';
 import OnlineLibrarySection from './online-library-section';
+import CTAInquiryForm from './cta-inquiry-form';
 
 // Types for props
 interface Partner {
@@ -268,6 +269,9 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
         { id: 'learning', label: 'Learning Options' },
         { id: 'placements', label: 'Placements' },
         { id: 'testimonials', label: 'Success Stories' },
+        { id: 'certifications', label: 'Globally Recognized & Authorized' },
+        { id: 'social-impact', label: 'Social Impact & Strategic Growth' },
+        { id: 'cyber-empowerment', label: 'Cyber Empowerment for All' },
     ];
 
     return (
@@ -383,7 +387,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         <Link href="/categories/digital-marketing" className={styles.quickLink}>
                             Digital Marketing
                         </Link>
-                        <Link href="/services" className={styles.quickLinkHighlight}>
+                        <Link href="https://www.ehackglobaltechnology.com" target="_blank" className={styles.quickLinkHighlight}>
                             Corporate Services
                         </Link>
                     </div>
@@ -442,6 +446,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                                         className={styles.partnerCard}
                                     >
                                         <div className={styles.partnerLogoWrapper}>
+
                                             {partner.logoUrl ? (
                                                 <img
                                                     src={partner.logoUrl}
@@ -465,10 +470,10 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             < section id="courses" style={{ borderBottom: 'solid 2px orange' }} className={styles.coursesSection} >
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
-                        <h2 className={styles.sectionTitle}>Explore Our Courses</h2>
-                        <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                            <span className={styles.partnersLabel}>Choose from our comprehensive range of professional courses</span>
-                        </div>
+                        <span className={styles.sectionBadge}>Explore Our Courses</span>
+                        <h2 className={styles.sectionTitle}>
+                            Choose from our comprehensive range of <span className={styles.textAccent}>professional courses</span>
+                        </h2>
                     </div>
 
                     {/* Category Tabs */}
@@ -491,34 +496,25 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         {courses.slice(0, 6).map((course, index) => {
                             const partner = partners.find(p => p.slug === course.partnerSlug);
 
-                            // Define tags for specific courses
-                            let courseTag = null;
-                            if (course.title.includes('CISSP')) {
-                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagPopular}`}>Popular</span>;
-                            } else if (course.title.includes('OSCP')) {
-                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagBestseller}`}>Bestseller</span>;
-                            } else if (course.title.includes('CEH')) {
-                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagTrending}`}>Trending</span>;
-                            } else if (course.title.includes('C|CISO')) {
-                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagTrending}`}>In Demand</span>;
-                            } else if (course.title.includes('CISA')) {
-                                courseTag = <span className={`${styles.courseTag} ${styles.courseTagPopular}`}>Essential</span>;
-                            } else {
-                                // Fallback logic for all other courses
-                                const badgeTypes = [
-                                    { text: 'Popular', style: styles.courseTagPopular },
-                                    { text: 'Bestseller', style: styles.courseTagBestseller },
-                                    { text: 'Trending', style: styles.courseTagTrending },
-                                    { text: 'Top Rated', style: styles.courseTagBestseller },
-                                    { text: 'In Demand', style: styles.courseTagTrending },
-                                    { text: 'Essential', style: styles.courseTagPopular }
-                                ];
-                                // Use index to distribute badges evenly
-                                const badgeIndex = index % badgeTypes.length;
-                                const badge = badgeTypes[badgeIndex];
+                            // Determine badge color based on column (index % 3)
+                            // 0 -> Green, 1 -> Orange, 2 -> Blue
+                            let badgeClass = styles.courseTagGreen;
+                            if (index % 3 === 1) badgeClass = styles.courseTagOrange;
+                            if (index % 3 === 2) badgeClass = styles.courseTagBlue;
 
-                                courseTag = <span className={`${styles.courseTag} ${badge.style}`}>{badge.text}</span>;
+                            // Determine badge text
+                            let badgeText = 'Popular';
+                            if (course.title.includes('CISSP')) badgeText = 'Popular';
+                            else if (course.title.includes('OSCP')) badgeText = 'Bestseller';
+                            else if (course.title.includes('CEH')) badgeText = 'Trending';
+                            else if (course.title.includes('C|CISO')) badgeText = 'In Demand';
+                            else if (course.title.includes('CISA')) badgeText = 'Essential';
+                            else {
+                                const badgeTexts = ['Popular', 'Bestseller', 'Trending', 'Top Rated', 'In Demand', 'Essential'];
+                                badgeText = badgeTexts[index % badgeTexts.length];
                             }
+
+                            const courseTag = <span className={`${styles.courseTag} ${badgeClass}`}>{badgeText}</span>;
 
                             return (
                                 <Link
@@ -565,11 +561,11 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             {/* Learning Options */}
             <section className={styles.learningSection} style={{ padding: '2rem 0' }} id="learning">
                 <div className={styles.container}>
-                    <div className={styles.sectionHeader}>
-                        <h2 className={styles.sectionTitle}>Flexible Learning Options</h2>
-                        <div style={{ display: 'flex', justifyContent: 'center', width: '100%', height: '100px' }}>
-                            <span className={styles.partnersLabel}>Choose the learning format that works best for you</span>
-                        </div>
+                    <div className={styles.sectionHeader} style={{ textAlign: 'center', marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <span className={styles.sectionBadge}>Flexible Learning Options</span>
+                        <h2 className={styles.sectionTitle}>
+                            Choose the learning <span className={styles.textAccent}>format</span> that works best for you
+                        </h2>
                     </div>
 
                     <div className={styles.learningGrid}>
@@ -661,35 +657,132 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
 
             {/* Ribbons Section */}
-            <section style={{ borderBottom: 'solid 2px orange', padding: '2rem 0' }}>
+            <section id="social-impact" style={{ borderBottom: 'solid 2px orange', padding: '2rem 0', borderTop: 'solid 2px orange', marginTop: '2rem' }}>
                 <div className={styles.container}>
+                    <div className="cert-header" style={{ marginBottom: '3rem' }}>
+                        <h2 className="cert-title">Social Impact & <span className="cert-title-gradient">Strategic Growth</span></h2>
+                        <p className="cert-subtitle">Driving positive change through cyber literacy while expanding our global footprint through strategic partnerships.</p>
+                    </div>
                     <div className={styles.ribbonsGrid}>
-                        <Link href="/csr" className={`${styles.ribbonCard} ${styles.csrRibbon}`}>
-                            <div className={styles.ribbonContent}>
-                                <span className={styles.ribbonTag}>Empowering Society</span>
-                                <h3 className={styles.ribbonTitle}>Empowering Society Through Cybersecurity, Employability & Emerging Technologies</h3>
-                                <p className={styles.ribbonText}>Join our mission to bridge the skill gap and build a safer digital future for everyone.</p>
-                                <div className={styles.ribbonAction}>
-                                    Explore CSR Initiatives <ArrowRight size={20} />
+                        <div className={styles.ribbonGridItem}>
+                            <div className={`${styles.ribbonTitleStrip} ${styles.csrTitleStrip}`}>Corporate Social Responsibility </div>
+                            <Link href="/csr" className={`${styles.ribbonCard} ${styles.csrRibbon}`}>
+                                <div className={styles.ribbonImageWrapper}>
+                                    <div className={styles.floatingImage}>
+                                        <img
+                                            src="/images/csr-banner-image.jpg"
+                                            alt="eHack CSR Initiatives"
+                                            className={styles.ribbonImage}
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className={styles.ribbonPattern}></div>
-                        </Link>
+                                <div className={styles.ribbonContent}>
+                                    <span className={styles.ribbonBadge}>Cyber Literacy | AI Awareness</span>
+                                    <h3 className={styles.ribbonTitle}>Empowering Society Through Cybersecurity, Employability & Emerging Technologies</h3>
+                                    <p className={styles.ribbonText}>Join our mission to bridge the skill gap and build a safer digital future for everyone.</p>
+                                    <div className={styles.ribbonAction}>
+                                        Explore CSR Initiatives <ArrowRight size={20} />
+                                    </div>
+                                </div>
+                                <div className={styles.ribbonPattern}></div>
+                            </Link>
+                        </div>
 
-                        <Link href="/franchise" className={`${styles.ribbonCard} ${styles.franchiseRibbon}`}>
-                            <div className={styles.ribbonContent}>
-                                <span className={styles.ribbonTag}>Partnership Opportunity</span>
-                                <h3 className={styles.ribbonTitle}>Partner with eHack Academy</h3>
-                                <p className={styles.ribbonText}>Build a thriving educational venture with India's premier cybersecurity academy.</p>
-                                <div className={styles.ribbonAction}>
-                                    Start Your Franchise <ArrowRight size={20} />
+                        <div className={styles.ribbonGridItem}>
+                            <div className={`${styles.ribbonTitleStrip} ${styles.franchiseTitleStrip}`}>Franchise Opportunities</div>
+                            <Link href="/franchise" className={`${styles.ribbonCard} ${styles.franchiseRibbon}`}>
+                                <div className={styles.ribbonImageWrapper}>
+                                    <div className={styles.floatingImage}>
+                                        <img
+                                            src="/images/franchise-popup-image.jpg"
+                                            alt="Franchise Laboratory"
+                                            className={styles.ribbonImage}
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className={styles.ribbonPattern}></div>
-                        </Link>
+                                <div className={styles.ribbonContent}>
+                                    <span className={styles.ribbonBadge}>Collaborative Growth</span>
+                                    <h3 className={styles.ribbonTitle}>Build Your Educational Empire with eHack Academy Franchise</h3>
+                                    <p className={styles.ribbonText}>Build a thriving educational venture with India's premier cybersecurity academy.</p>
+                                    <div className={styles.ribbonAction}>
+                                        Start Your Franchise <ArrowRight size={20} />
+                                    </div>
+                                </div>
+                                <div className={styles.ribbonPattern}></div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
+
+
+            {/* Cyber Empowerment Initiative - Premium Showcase Section */}
+            <section id="cyber-empowerment" className={styles.ceShowcaseSection}>
+                {/* Animated Background */}
+                <div className={styles.ceBackdrop}>
+                    <div className={styles.ceGradientOrb}></div>
+                    <div className={styles.ceGradientOrb2}></div>
+                    <div className={styles.ceGridPattern}></div>
+                </div>
+
+
+                <div className={styles.container}>
+                    {/* Section Header */}
+                    <div className={styles.sectionHeader} style={{ textAlign: 'center', marginBottom: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <span style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>
+                            <span style={{ color: '#FF6B00' }}>Bytes</span> <span style={{ color: '#000000' }}>with Brains</span>
+                        </span>
+                        <h2 className={styles.ceHeaderSubtitle} style={{ marginTop: '0px' }}>
+                            Brains behind <span className={styles.textAccentOrange}>digital safety</span>
+                        </h2>
+                    </div>
+
+                    {/* Main Content Grid */}
+                    <div className={styles.ceMainGrid}>
+                        {/* Visual Side */}
+                        <div className={styles.ceVisualColumn}>
+                            <div className={styles.ceImageContainer}>
+                                <img
+                                    src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                    alt="Cyber Empowerment"
+                                    className={styles.ceMainImage}
+                                />
+                                <div className={styles.ceImageShine}></div>
+                            </div>
+                        </div>
+
+                        {/* Content Side */}
+                        <div className={styles.ceContentColumn}>
+                            <span className={styles.sectionBadgeOutline} style={{ marginBottom: '1.5rem', display: 'inline-block' }}>
+                                Cyber Empowerment for All
+                            </span>
+
+                            <p className={styles.ceTagline}>
+                                Empowering Young Minds & Experienced Lives in the Digital World
+                            </p>
+
+                            <p className={styles.ceDescription}>
+                                Our initiative bridges the digital divide by providing <strong>free cybersecurity awareness sessions</strong> to students, senior citizens, and communities across India — making online safety accessible to everyone.
+                            </p>
+
+                            {/* Feature Pills */}
+                            <div className={styles.ceFeaturePills}>
+                                <span className={styles.cePill}>Free Sessions</span>
+                                <span className={styles.cePill}>Students</span>
+                                <span className={styles.cePill}>Senior Citizens</span>
+                                <span className={styles.cePill}>Communities</span>
+                            </div>
+
+                            {/* CTA */}
+                            <Link href="/cyber-empowerment" className={styles.ceCTAButton}>
+                                <span>Explore Our Initiative</span>
+                                <ArrowRight size={20} />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             {/* CTA Section */}
             <section className={styles.ctaSection}>
@@ -699,10 +792,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
                         <p className={styles.ctaSubtitle}>
                             Join thousands of professionals who have accelerated their careers with us
                         </p>
-                        <div className={styles.ctaButtons}>
-                            <button className={styles.ctaPrimaryBtn}>Start Learning Today</button>
-                            <button className={styles.ctaSecondaryBtn}>Talk to Advisor</button>
-                        </div>
+                        <CTAInquiryForm />
                     </div>
                 </div>
             </section>

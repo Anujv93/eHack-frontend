@@ -1,9 +1,10 @@
 /* Header Search Bar Styling */
 .header-search-container {
     position: relative;
-    flex: 1;
+    /* flex: 1; - Removed to prevent pushing out */
     display: flex;
     justify-content: flex-end;
+    margin-left: 0.5rem;
 }
 
 .header-search-wrapper {
@@ -127,5 +128,16 @@
     .header-search-container {
         display: none;
         /* Hide on mobile for now, or adapt */
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .header-search-wrapper {
+        max-width: 160px;
+        padding-left: 10px;
+    }
+
+    .header-search-input {
+        font-size: 0.8125rem;
     }
 }

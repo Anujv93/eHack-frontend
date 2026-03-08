@@ -79,15 +79,17 @@ const placementStories = [
 
 const PlacementSection = () => {
     return (
-        <section className="placement-section" style={{ borderBottom: 'solid 2px orange' }} id="placements">
+        <section className="placement-section" style={{ borderBottom: 'solid 1px #ff6b00' }} id="placements">
             <div className="container">
                 <div className="placement-header">
                     <span className="placement-label">Career Transformations</span>
                     <h2 className="placement-title">
-                        From Learning to <span className="highlight">Leading</span>
+                        From Learning to Leading<br />
+                        <span className="highlight">eHack Academy</span>
                     </h2>
                     <p className="placement-subtitle">
-                        See how our students transformed their careers with eHack Academy
+                        See how our students transformed their careers with<br />
+                        <span className="highlight">eHack Academy</span>
                     </p>
                 </div>
 
@@ -112,14 +114,16 @@ const PlacementSection = () => {
                                 <div className="transformation-path">
                                     <div className="path-step before">
                                         <span className="step-label">Before eHack</span>
+                                        <div className="company-text-wrapper">
+                                            <p className="step-company">{story.before.company}</p>
+                                        </div>
                                         <p className="step-role">{story.before.role}</p>
-                                        <p className="step-company">{story.before.company}</p>
                                     </div>
                                     <div className="path-arrow">➜</div>
                                     <div className="path-step after">
                                         <span className="step-label">After eHack</span>
                                         {story.after.logo ? (
-                                            <div className="company-logo-wrapper">
+                                            <div className="company-logo-wrapper" data-company={story.after.company}>
                                                 <img
                                                     src={story.after.logo}
                                                     alt={story.after.company}

@@ -1,5 +1,5 @@
 .exam-details-section {
-    padding: 5rem 0;
+    padding: 2rem 0;
     background: #F8F9FA;
 }
 
@@ -32,6 +32,17 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+}
+
+.exam-cards-grid.single-card-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.exam-cards-grid.single-card-grid .exam-card {
+    max-width: 600px;
+    /* Optional: limit width for better aesthetics */
+    width: 100%;
 }
 
 .exam-card {
@@ -115,7 +126,7 @@
     }
 
     .exam-details-section {
-        padding: 3rem 0;
+        padding: 1.5rem 0;
     }
 
     .exam-details-section .section-header {
@@ -149,7 +160,7 @@
 
 @media (max-width: 480px) {
     .exam-details-section {
-        padding: 2.5rem 0;
+        padding: 1rem 0;
     }
 
     .exam-card {
@@ -185,5 +196,162 @@
 
     .exam-stat .stat-label {
         font-size: 0.625rem;
+    }
+}
+
+/* Single Exam Stats Bar - Table Style (Matches Hero Stats) */
+.single-exam-container {
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%);
+    border-radius: 12px;
+    padding: 30px;
+    color: #1f2937;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ff6b00;
+    box-shadow: 0 10px 30px -10px rgba(255, 107, 0, 0.1);
+}
+
+.single-exam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ff6b00;
+}
+
+.single-exam-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0;
+}
+
+.single-exam-badge {
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.single-exam-badge.required {
+    background: #FF6B00;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(255, 107, 0, 0.2);
+}
+
+.single-exam-badge.optional {
+    background: #F3F4F6;
+    color: #4B5563;
+}
+
+.single-exam-description {
+    color: #1f2937;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    font-size: 1rem;
+    max-width: 800px;
+}
+
+.single-exam-stats-bar {
+    display: flex;
+    border: 2px solid #ff6b00;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 1.5rem;
+}
+
+.single-stat-item {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: transparent;
+    border-right: 1px solid #ff6b00;
+}
+
+.single-stat-item:last-child {
+    border-right: none;
+}
+
+.single-stat-label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ff6b00;
+    background: rgba(255, 107, 0, 0.15);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 10px;
+    border-bottom: 1px solid rgba(255, 107, 0, 0.3);
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.single-stat-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000;
+    padding: 16px 10px;
+    background: rgba(255, 107, 0, 0.05);
+    white-space: nowrap;
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-stat-value strong {
+    font-weight: 800;
+    color: #ff6b00;
+    font-size: 1.35rem;
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .single-exam-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .single-exam-stats-bar {
+        flex-direction: column;
+        border: 2px solid #ff6b00;
+    }
+
+    .single-stat-item {
+        border-right: none;
+        border-bottom: 1px solid #ff6b00;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .single-stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .single-stat-label {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 107, 0, 0.3);
+    }
+
+    .single-stat-value {
+        width: 60%;
+        justify-content: flex-start;
+        padding-left: 1rem;
     }
 }

@@ -1,11 +1,13 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
+import { RoboticsSimulation, DataScienceSimulation, MarketingSimulation, SoftSkillsSimulation } from './LabSimulations';
 import { Terminal, Shield, Monitor, Server, Code, Database, Eye, Wifi, Bug } from 'lucide-react';
 import './CertificateLabs.css';
 
 // Terminal simulation outputs for different tools
 const terminalOutputs: { [key: string]: string[] } = {
+
     // Metasploit outputs
     'metasploit': [
         '┌──────────────────────────────────────────────────────────┐',
@@ -351,6 +353,90 @@ const terminalOutputs: { [key: string]: string[] } = {
         '<span class="term-success">[+]</span> <span class="term-highlight">Domain Controller compromised!</span>',
         '<span class="term-prompt">beacon></span> <span class="term-cursor">_</span>',
     ],
+    // Data Science - Python/Jupyter
+    'python': [
+        '<span class="term-prompt">In [1]:</span> <span class="term-command">import pandas as pd</span>',
+        '<span class="term-prompt">In [2]:</span> <span class="term-command">import numpy as np</span>',
+        '<span class="term-prompt">In [3]:</span> <span class="term-command">data = pd.read_csv("dataset.csv")</span>',
+        '<span class="term-prompt">In [4]:</span> <span class="term-command">data.head()</span>',
+        '',
+        '<span class="term-info">Out[4]:</span>',
+        '      UserID   Activity   Score   Retention',
+        '  0   U1001    Login      85.0    True',
+        '  1   U1002    Purchase   92.5    True',
+        '  2   U1003    Browse     45.0    False',
+        '',
+        '<span class="term-prompt">In [5]:</span> <span class="term-command">model = RandomForestClassifier()</span>',
+        '<span class="term-prompt">In [6]:</span> <span class="term-command">model.fit(X_train, y_train)</span>',
+        '<span class="term-success">Out[6]: RandomForestClassifier(n_estimators=100)</span>',
+        '',
+        '<span class="term-prompt">In [7]:</span> <span class="term-command">print(f"Accuracy: {model.score(X_test, y_test):.2%}")</span>',
+        '<span class="term-highlight">Accuracy: 94.85%</span>',
+        '<span class="term-prompt">In [8]:</span> <span class="term-cursor">_</span>',
+    ],
+    // Robotics - Arduino/Serial
+    'arduino': [
+        '<span class="term-info">Sketch uses 924 bytes (3%) of program storage space.</span>',
+        '<span class="term-info">Global variables use 9 bytes (0%) of dynamic memory.</span>',
+        '<span class="term-success">Done uploading.</span>',
+        '',
+        '<span class="term-highlight">--- Serial Monitor (9600 baud) ---</span>',
+        '',
+        'Initializing sensors...',
+        '<span class="term-success">[OK]</span> DHT11 Sensor connected',
+        '<span class="term-success">[OK]</span> WiFi Module initialized',
+        'Connecting to "HomeNetwork"...',
+        'Connected! IP: 192.168.1.105',
+        '',
+        'Reading Sensor Data:',
+        '  Temp: 24.5°C | Humidity: 60%',
+        '  Motion: DETECTED',
+        '  <span class="term-warning">ALERT: Sending notification to IoT Cloud...</span>',
+        '  Status: 200 OK',
+        '',
+        'Waiting for next cycle...',
+        '<span class="term-cursor">_</span>',
+    ],
+    // Digital Marketing - Analytics Log
+    'analytics': [
+        '<span class="term-info">[SEO_CRAWLER]</span> Starting site audit for client-site.com',
+        '<span class="term-success">[+]</span> Robots.txt found and valid',
+        '<span class="term-success">[+]</span> Sitemap.xml located (54 URLs)',
+        '',
+        'Analyzing Page Performance:',
+        '  - Homepage: <span class="term-success">98/100 (Mobile Friendly)</span>',
+        '  - Blog: <span class="term-warning">75/100 (LCP Issue Detected)</span>',
+        '',
+        '<span class="term-info">[ADS_MANAGER]</span> Optimizing Campaign #402',
+        '  - CTR: 2.4% -> <span class="term-success">3.1% (Optimized)</span>',
+        '  - CPC: $1.20 -> <span class="term-success">$0.95 (Reduced)</span>',
+        '  - Conversions: 45 this week',
+        '',
+        '<span class="term-highlight">SUCCESS: ROI increased by 15%</span>',
+        '<span class="term-prompt">next_action ></span> <span class="term-command">generate_report --pdf</span>',
+        '<span class="term-cursor">_</span>',
+    ],
+    // Soft Skills - Assessment/Roleplay
+    'simulation': [
+        '<span class="term-highlight">--- LEADERSHIP SCENARIO #4 ---</span>',
+        '',
+        '<span class="term-info">CONTEXT:</span> A team member is underperforming due to burnout.',
+        '<span class="term-info">YOUR ACTION:</span> Initiated 1-on-1 feedback session.',
+        '',
+        'Analyzing Communication Style...',
+        '  - Empathy Score: <span class="term-success">HIGH (90%)</span>',
+        '  - Clarity: <span class="term-success">HIGH (85%)</span>',
+        '  - Solution Focus: <span class="term-warning">MEDIUM (60%)</span>',
+        '',
+        '<span class="term-info">FEEDBACK:</span> Good active listening. Try to co-create a',
+        'recovery plan instead of prescribing one immediately.',
+        '',
+        '<span class="term-success">[+] EQ Capability Unlocked: Supportive Leadership</span>',
+        '<span class="term-success">[+] Trust Score Updated: +15 points</span>',
+        '',
+        '<span class="term-prompt">Scenario Complete. Loading next module...</span>',
+        '<span class="term-cursor">_</span>',
+    ],
 };
 
 // Map lab IDs to terminal output types
@@ -368,13 +454,56 @@ const getTerminalType = (labId: string): string => {
     if (labId.includes('kali') || labId.includes('privesc')) return 'kali';
     if (labId.includes('autopsy') || labId.includes('forensic') || labId.includes('chfi')) return 'forensics';
     if (labId.includes('risk') || labId.includes('cciso') || labId.includes('compliance') || labId.includes('incident')) return 'risk';
+
+    // New types - Specific mappings
+    // Data Science
+    if (labId.includes('python-data')) return 'datascience-python';
+    if (labId.includes('ml-models')) return 'datascience-ml';
+    if (labId.includes('viz-data')) return 'datascience-viz';
+    if (labId.includes('python') || labId.includes('pandas')) return 'datascience-python'; // fallback
+
+    // Robotics
+    if (labId.includes('arduino')) return 'robotics-arduino';
+    if (labId.includes('iot')) return 'robotics-iot';
+    if (labId.includes('robot')) return 'robotics-robot';
+
+    // Marketing
+    if (labId.includes('seo')) return 'marketing-seo';
+    if (labId.includes('ads')) return 'marketing-ads';
+    if (labId.includes('analytics')) return 'marketing-analytics';
+
+    // Soft Skills
+    if (labId.includes('comm-sim')) return 'softskills-chat';
+    if (labId.includes('leadership')) return 'softskills-leadership';
+    if (labId.includes('interview')) return 'softskills-interview';
+
     return 'default';
 };
 
 // Terminal Simulation Component
 function TerminalSimulation({ labId, labName }: { labId: string; labName: string }) {
-    const [visibleLines, setVisibleLines] = useState<number>(0);
     const terminalType = getTerminalType(labId);
+
+    // Render Creative Simulations
+    if (terminalType.startsWith('robotics-')) {
+        const mode = terminalType.split('-')[1] as 'arduino' | 'iot' | 'robot';
+        return <RoboticsSimulation mode={mode} />;
+    }
+    if (terminalType.startsWith('datascience-')) {
+        const mode = terminalType.split('-')[1] as 'python' | 'ml' | 'viz';
+        return <DataScienceSimulation mode={mode} />;
+    }
+    if (terminalType.startsWith('marketing-')) {
+        const mode = terminalType.split('-')[1] as 'seo' | 'ads' | 'analytics';
+        return <MarketingSimulation mode={mode} />;
+    }
+    if (terminalType.startsWith('softskills-')) {
+        const mode = terminalType.split('-')[1] as 'chat' | 'leadership' | 'interview';
+        return <SoftSkillsSimulation mode={mode} />;
+    }
+
+    // Render Standard Terminal
+    const [visibleLines, setVisibleLines] = useState<number>(0);
     const lines = terminalOutputs[terminalType] || terminalOutputs['default'];
 
     useEffect(() => {
@@ -406,6 +535,7 @@ function TerminalSimulation({ labId, labName }: { labId: string; labName: string
 }
 
 
+
 export interface LabTool {
     id: string;
     name: string;
@@ -420,11 +550,103 @@ export interface LabTool {
 
 export interface CertificateLabsData {
     [key: string]: {
-        title: string;
+        title: string | React.ReactNode;
         description: string;
         labs: LabTool[];
     };
 }
+
+
+const COMPREHENSIVE_LABS: LabTool[] = [
+    {
+        id: 'metasploit-masters',
+        name: 'Metasploit Framework',
+        icon: '🎯',
+        description: 'Advanced penetration testing with Metasploit. Master exploitation, payload creation, and post-exploitation techniques.',
+        skills: ['Exploitation', 'Payload Creation', 'Post-Exploitation', 'Meterpreter', 'Pivoting'],
+        difficulty: 'Advanced',
+        duration: '20+ Hours',
+        thumbnail: '/images/labs/metasploit-lab.png',
+        exercises: 35
+    },
+    {
+        id: 'nmap-masters',
+        name: 'Nmap Network Scanner',
+        icon: '🔍',
+        description: 'Comprehensive network reconnaissance and vulnerability scanning with advanced NSE scripts.',
+        skills: ['Network Scanning', 'Port Analysis', 'Service Detection', 'NSE Scripts', 'Vulnerability Assessment'],
+        difficulty: 'Intermediate',
+        duration: '15+ Hours',
+        thumbnail: '/images/labs/nmap-lab.png',
+        exercises: 28
+    },
+    {
+        id: 'burpsuite-masters',
+        name: 'Burp Suite Pro',
+        icon: '🕷️',
+        description: 'Master web application security testing with Burp Suite Professional. Learn to find and exploit web vulnerabilities.',
+        skills: ['Web Security', 'SQL Injection', 'XSS', 'CSRF', 'API Testing'],
+        difficulty: 'Advanced',
+        duration: '25+ Hours',
+        thumbnail: '/images/labs/burpsuite-lab.png',
+        exercises: 40
+    },
+    {
+        id: 'wireshark-masters',
+        name: 'Wireshark Analysis',
+        icon: '📡',
+        description: 'Deep packet analysis and network forensics. Capture, analyze, and investigate network traffic.',
+        skills: ['Packet Analysis', 'Protocol Analysis', 'Network Forensics', 'Traffic Monitoring'],
+        difficulty: 'Intermediate',
+        duration: '18+ Hours',
+        thumbnail: '/images/labs/wireshark-lab.png',
+        exercises: 30
+    },
+    {
+        id: 'autopsy-masters',
+        name: 'Autopsy Digital Forensics',
+        icon: '🔬',
+        description: 'Digital forensics investigation platform. Analyze disk images, recover deleted files, and investigate incidents.',
+        skills: ['Digital Forensics', 'Evidence Collection', 'File Recovery', 'Timeline Analysis'],
+        difficulty: 'Advanced',
+        duration: '22+ Hours',
+        thumbnail: '/images/labs/autopsy-lab.png',
+        exercises: 32
+    },
+    {
+        id: 'splunk-masters',
+        name: 'Splunk SIEM',
+        icon: '📊',
+        description: 'Security Information and Event Management with Splunk. Monitor, detect, and respond to security threats.',
+        skills: ['SIEM', 'Log Analysis', 'Threat Detection', 'Incident Response', 'Security Monitoring'],
+        difficulty: 'Advanced',
+        duration: '20+ Hours',
+        thumbnail: '/images/labs/splunk-lab.png',
+        exercises: 28
+    },
+    {
+        id: 'kali-masters',
+        name: 'Kali Linux Advanced',
+        icon: '🐉',
+        description: 'Complete Kali Linux mastery. Learn all essential tools and techniques for professional penetration testing.',
+        skills: ['Linux Administration', 'Tool Mastery', 'Scripting', 'Automation', 'Custom Tools'],
+        difficulty: 'Advanced',
+        duration: '25+ Hours',
+        thumbnail: '/images/labs/kali-lab.png',
+        exercises: 45
+    },
+    {
+        id: 'more-tools-masters',
+        name: '20+ More Tools Covered',
+        icon: '🛠️',
+        description: 'Access to 20+ additional professional security tools including OWASP ZAP, SQLMap, Aircrack-ng, Volatility, Cobalt Strike, John the Ripper, Hashcat, Hydra, and many more.',
+        skills: ['Web Security', 'Wireless Hacking', 'Password Cracking', 'Memory Forensics', 'Red Teaming', 'Automation'],
+        difficulty: 'Advanced',
+        duration: '100+ Hours',
+        thumbnail: '/images/labs/tools-lab.png',
+        exercises: 150
+    }
+];
 
 // Comprehensive labs data mapped to certification codes/slugs
 const certificateLabsMapping: CertificateLabsData = {
@@ -761,99 +983,180 @@ const certificateLabsMapping: CertificateLabsData = {
     },
     // Masters Comprehensive - All 6 Certifications (CSCU, CND, CEH, CHFI, CPENT, LPT)
     'masters-comprehensive': {
-        title: 'Masters Program - Comprehensive Lab Suite',
+        title: <>Masters Program - Comprehensive Lab <span className="text-accent">Suite</span></>,
         description: 'Complete hands-on lab environment covering all 6 certifications with 300+ hours of practice',
+        labs: COMPREHENSIVE_LABS
+    },
+    'degree-comprehensive': {
+        title: <>Comprehensive Lab <span className="text-accent">Suite</span></>,
+        description: 'Complete hands-on lab environment covering all 6 certifications with 300+ hours of practice',
+        labs: COMPREHENSIVE_LABS
+    },
+
+    // Data Science & Analytics
+    'data-science': {
+        title: 'Data Science & Analytics Labs',
+        description: 'Hands-on projects with Python, Pandas, and Machine Learning models.',
         labs: [
             {
-                id: 'metasploit-masters',
-                name: 'Metasploit Framework',
-                icon: '🎯',
-                description: 'Advanced penetration testing with Metasploit. Master exploitation, payload creation, and post-exploitation techniques.',
-                skills: ['Exploitation', 'Payload Creation', 'Post-Exploitation', 'Meterpreter', 'Pivoting'],
-                difficulty: 'Advanced',
-                duration: '20+ Hours',
-                thumbnail: '/images/labs/metasploit-lab.png',
-                exercises: 35
-            },
-            {
-                id: 'nmap-masters',
-                name: 'Nmap Network Scanner',
-                icon: '🔍',
-                description: 'Comprehensive network reconnaissance and vulnerability scanning with advanced NSE scripts.',
-                skills: ['Network Scanning', 'Port Analysis', 'Service Detection', 'NSE Scripts', 'Vulnerability Assessment'],
+                id: 'python-data',
+                name: 'Python for Data Science',
+                icon: '🐍',
+                description: 'Master data manipulation with Pandas and NumPy. Clean, analyze, and visualize complex datasets.',
+                skills: ['Python', 'Pandas', 'NumPy', 'Data Cleaning'],
                 difficulty: 'Intermediate',
                 duration: '15+ Hours',
-                thumbnail: '/images/labs/nmap-lab.png',
-                exercises: 28
-            },
-            {
-                id: 'burpsuite-masters',
-                name: 'Burp Suite Pro',
-                icon: '🕷️',
-                description: 'Master web application security testing with Burp Suite Professional. Learn to find and exploit web vulnerabilities.',
-                skills: ['Web Security', 'SQL Injection', 'XSS', 'CSRF', 'API Testing'],
-                difficulty: 'Advanced',
-                duration: '25+ Hours',
-                thumbnail: '/images/labs/burpsuite-lab.png',
-                exercises: 40
-            },
-            {
-                id: 'wireshark-masters',
-                name: 'Wireshark Analysis',
-                icon: '📡',
-                description: 'Deep packet analysis and network forensics. Capture, analyze, and investigate network traffic.',
-                skills: ['Packet Analysis', 'Protocol Analysis', 'Network Forensics', 'Traffic Monitoring'],
-                difficulty: 'Intermediate',
-                duration: '18+ Hours',
-                thumbnail: '/images/labs/wireshark-lab.png',
-                exercises: 30
-            },
-            {
-                id: 'autopsy-masters',
-                name: 'Autopsy Digital Forensics',
-                icon: '🔬',
-                description: 'Digital forensics investigation platform. Analyze disk images, recover deleted files, and investigate incidents.',
-                skills: ['Digital Forensics', 'Evidence Collection', 'File Recovery', 'Timeline Analysis'],
-                difficulty: 'Advanced',
-                duration: '22+ Hours',
-                thumbnail: '/images/labs/autopsy-lab.png',
-                exercises: 32
-            },
-            {
-                id: 'splunk-masters',
-                name: 'Splunk SIEM',
-                icon: '📊',
-                description: 'Security Information and Event Management with Splunk. Monitor, detect, and respond to security threats.',
-                skills: ['SIEM', 'Log Analysis', 'Threat Detection', 'Incident Response', 'Security Monitoring'],
-                difficulty: 'Advanced',
-                duration: '20+ Hours',
-                thumbnail: '/images/labs/splunk-lab.png',
-                exercises: 28
-            },
-            {
-                id: 'kali-masters',
-                name: 'Kali Linux Advanced',
-                icon: '🐉',
-                description: 'Complete Kali Linux mastery. Learn all essential tools and techniques for professional penetration testing.',
-                skills: ['Linux Administration', 'Tool Mastery', 'Scripting', 'Automation', 'Custom Tools'],
-                difficulty: 'Advanced',
-                duration: '25+ Hours',
                 thumbnail: '/images/labs/kali-lab.png',
-                exercises: 45
+                exercises: 20
             },
             {
-                id: 'more-tools-masters',
-                name: '20+ More Tools Covered',
-                icon: '🛠️',
-                description: 'Access to 20+ additional professional security tools including OWASP ZAP, SQLMap, Aircrack-ng, Volatility, Cobalt Strike, John the Ripper, Hashcat, Hydra, and many more.',
-                skills: ['Web Security', 'Wireless Hacking', 'Password Cracking', 'Memory Forensics', 'Red Teaming', 'Automation'],
+                id: 'ml-models',
+                name: 'Machine Learning Models',
+                icon: '🤖',
+                description: 'Build and train predictive models. Implement regression, classification, and clustering algorithms.',
+                skills: ['Scikit-Learn', 'Model Training', 'Validation', 'Algorithms'],
                 difficulty: 'Advanced',
-                duration: '100+ Hours',
-                thumbnail: '/images/labs/tools-lab.png',
-                exercises: 150
+                duration: '25+ Hours',
+                thumbnail: '/images/labs/metasploit-lab.png',
+                exercises: 15
+            },
+            {
+                id: 'viz-data',
+                name: 'Data Visualization',
+                icon: '📊',
+                description: 'Create compelling data stories using Matplotlib and Seaborn. Visualize trends and insights effectively.',
+                skills: ['Matplotlib', 'Seaborn', 'Storytelling', 'Dashboards'],
+                difficulty: 'Beginner',
+                duration: '10+ Hours',
+                thumbnail: '/images/labs/nmap-lab.png',
+                exercises: 18
             }
         ]
     },
+
+    // Robotics & IoT
+    'robotics-iot': {
+        title: 'Robotics & IoT Labs',
+        description: 'Build and program real-world robots and IoT devices.',
+        labs: [
+            {
+                id: 'arduino-basics',
+                name: 'Arduino Programming',
+                icon: '🔌',
+                description: 'Program microcontrollers to interact with sensors and actuators. Build your first smart devices.',
+                skills: ['C++', 'Circuit Design', 'Sensors', 'Logic Control'],
+                difficulty: 'Beginner',
+                duration: '12+ Hours',
+                thumbnail: '/images/labs/kali-lab.png',
+                exercises: 25
+            },
+            {
+                id: 'iot-connectivity',
+                name: 'IoT Connectivity',
+                icon: '📡',
+                description: 'Connect devices to the cloud. Implement MQTT and HTTP protocols for remote monitoring and control.',
+                skills: ['WiFi/ESP8266', 'MQTT', 'Cloud IoT', 'API Integration'],
+                difficulty: 'Intermediate',
+                duration: '15+ Hours',
+                thumbnail: '/images/labs/nmap-lab.png',
+                exercises: 20
+            },
+            {
+                id: 'robot-auto',
+                name: 'Autonomous Robotics',
+                icon: '🤖',
+                description: 'Design algorithms for obstacle avoidance and line following. Program autonomous behaviors.',
+                skills: ['Motor Control', 'Sensor Fusion', 'Algorithms', 'Automation'],
+                difficulty: 'Advanced',
+                duration: '20+ Hours',
+                thumbnail: '/images/labs/metasploit-lab.png',
+                exercises: 15
+            }
+        ]
+    },
+
+    // Digital Marketing
+    'digital-marketing': {
+        title: 'Digital Marketing Labs',
+        description: 'Run live campaigns and analyze performance in simulated environments.',
+        labs: [
+            {
+                id: 'seo-audit',
+                name: 'SEO Site Audit',
+                icon: '🔍',
+                description: 'Perform comprehensive technical SEO audits. Identify issues and optimize site structure for ranking.',
+                skills: ['Technical SEO', 'Site Crawling', 'Keyword Research', 'On-Page Optimization'],
+                difficulty: 'Intermediate',
+                duration: '10+ Hours',
+                thumbnail: '/images/labs/burpsuite-lab.png',
+                exercises: 12
+            },
+            {
+                id: 'ads-campaign',
+                name: 'PPC Campaign Manager',
+                icon: '💰',
+                description: 'Set up and optimize Google Ads campaigns. Manage budgets, targeting, and ad copy for maximum ROI.',
+                skills: ['Google Ads', 'Bidding Strategies', 'Ad Copywriting', 'Conversion Tracking'],
+                difficulty: 'Advanced',
+                duration: '15+ Hours',
+                thumbnail: '/images/labs/metasploit-lab.png',
+                exercises: 10
+            },
+            {
+                id: 'analytics-dash',
+                name: 'Analytics & Reporting',
+                icon: '📈',
+                description: 'Deep dive into web analytics. Set up goals, track events, and create actionable marketing reports.',
+                skills: ['Google Analytics', 'Data Analysis', 'Reporting', 'User Behavior'],
+                difficulty: 'Intermediate',
+                duration: '12+ Hours',
+                thumbnail: '/images/labs/nmap-lab.png',
+                exercises: 15
+            }
+        ]
+    },
+
+    // Personality & Soft Skills
+    'personality-softskills': {
+        title: 'Professional Development Labs',
+        description: 'Interactive simulations for leadership, communication, and emotional intelligence.',
+        labs: [
+            {
+                id: 'comm-sim',
+                name: 'Communication Simulator',
+                icon: '🗣️',
+                description: 'Practice difficult conversations and public speaking in controlled roleplay scenarios.',
+                skills: ['Active Listening', 'Conflict Resolution', 'Public Speaking', 'Persuasion'],
+                difficulty: 'Intermediate',
+                duration: '10+ Hours',
+                thumbnail: '/images/labs/kali-lab.png',
+                exercises: 20
+            },
+            {
+                id: 'leadership-role',
+                name: 'Leadership Scenarios',
+                icon: '👔',
+                description: 'Navigate complex team dynamics and management challenges. Make high-stakes leadership decisions.',
+                skills: ['Decision Making', 'Team Motivation', 'Delegation', 'Crisis Management'],
+                difficulty: 'Advanced',
+                duration: '12+ Hours',
+                thumbnail: '/images/labs/metasploit-lab.png',
+                exercises: 15
+            },
+            {
+                id: 'interview-prep',
+                name: 'Interview Masterclass',
+                icon: '🤝',
+                description: 'Simulated interview sessions with AI-driven feedback on body language, tone, and answer quality.',
+                skills: ['Interviewing', 'Storytelling', 'Body Language', 'Negotiation'],
+                difficulty: 'Beginner',
+                duration: '8+ Hours',
+                thumbnail: '/images/labs/nmap-lab.png',
+                exercises: 10
+            }
+        ]
+    },
+
     // Default labs for certifications without specific mapping
     'default': {
         title: 'Cybersecurity Practice Labs',
@@ -886,7 +1189,7 @@ const certificateLabsMapping: CertificateLabsData = {
 };
 
 // Helper function to match certificate slug to labs
-const getLabsForCertificate = (slug: string): { title: string; description: string; labs: LabTool[] } => {
+const getLabsForCertificate = (slug: string): { title: string | React.ReactNode; description: string; labs: LabTool[] } => {
     // Try exact match first
     if (certificateLabsMapping[slug]) {
         return certificateLabsMapping[slug];
@@ -969,7 +1272,7 @@ export function CertificateLabs({ certificateSlug, certificateTitle }: Certifica
     }, 0);
 
     return (
-        <section className="certificate-labs-section border-bottom" id="labs">
+        <section className="certificate-labs-section" id="labs">
             {/* Subtle Background */}
             <div className="cert-labs-bg-pattern"></div>
 
@@ -1021,7 +1324,7 @@ export function CertificateLabs({ certificateSlug, certificateTitle }: Certifica
                             {/* Skills */}
                             <div className="lab-skills">
                                 <h5>Skills You'll Master:</h5>
-                                <div className="skills-grid">
+                                <div className="cert-skills-chips">
                                     {activeLab.skills.map((skill, index) => (
                                         <span key={index} className="skill-chip">
                                             <Shield size={12} />

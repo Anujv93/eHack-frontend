@@ -7,28 +7,7 @@ import { Handshake } from 'lucide-react';
 import './header.css';
 import './header-search.css';
 
-// Corporate Services Data for dropdown
-const corporateServices = [
-    { id: 'web-application-security', title: 'Web Application ', icon: '🌐' },
-    { id: 'mobile-application-security', title: 'Mobile Application ', icon: '📱' },
-    { id: 'api-security', title: 'API', icon: '🔌' },
-    { id: 'secure-source-code-review', title: 'Secure Source Code Review', icon: '💻' },
-    { id: 'red-team-assessment', title: 'Red Team Assessment', icon: '🎯' },
-    { id: 'infrastructure-security', title: 'Infrastructure', icon: '🏗️' },
-    { id: 'thick-client-security', title: 'Thick Client', icon: '🖥️' },
-    { id: 'firewall-security', title: 'Firewall', icon: '🛡️' },
-];
 
-const forensicsServices = [
-    { id: 'malware-analysis', title: 'Malware Analysis & Root Cause Detection', icon: '🦠' },
-    { id: 'digital-forensics', title: 'Digital Forensics & Incident Response', icon: '🔍' },
-];
-
-const complianceServices = [
-    { id: 'gdpr-consulting', title: 'GDPR Consulting and Audit', icon: '🇪🇺' },
-    { id: 'pci-dss-compliance', title: 'PCI DSS Compliance Audit', icon: '💳' },
-    { id: 'iso-certification', title: 'ISO Certification Advisory', icon: '📋' },
-];
 
 interface Partner {
     id: number;
@@ -55,10 +34,11 @@ interface HeaderProps {
 const ehackPrograms = [
     { id: 101, slug: 'masters-ethical-hacking', title: 'Masters Program in Ethical Hacking', duration: '9-12 Months', partnerSlug: 'ehack-originals' },
     { id: 102, slug: 'graduate-cybersecurity', title: 'Graduate Program in Ethical Hacking', duration: '7-9 Months', partnerSlug: 'ehack-originals' },
-    { id: 103, slug: 'diploma-cybersecurity', title: 'Diploma in Ethical Hacking', duration: '4-6 Months', partnerSlug: 'ehack-originals' },
+    { id: 103, slug: 'masterclass-ethical-hacking-ceh-v13', title: 'Certified Ethical Hacker Master Program (CEH v13)', duration: '4 Months', partnerSlug: 'ehack-originals' },
     { id: 104, slug: 'digital-marketing-masterprogram', title: 'Masters Program in Digital Marketing', duration: '4 Months', partnerSlug: 'ehack-originals' },
     { id: 105, slug: 'robotics-for-all', title: 'Robotics for Every One', duration: '60 Days', partnerSlug: 'ehack-originals' },
     { id: 106, slug: 'personality-softskill-development', title: 'Personality & Soft Skill Development', duration: '40 Hours', partnerSlug: 'ehack-originals' },
+    { id: 107, slug: 'internship-program', title: '3 Months Internship Program', duration: '3 Months', partnerSlug: 'ehack-originals' },
 ];
 
 const ehackOriginalPartner: Partner = {
@@ -102,7 +82,7 @@ export default function Header({ partners, courses }: HeaderProps) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mobileMegaMenuOpen, setMobileMegaMenuOpen] = useState(false);
     const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
-    const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
+
     const [activePartner, setActivePartner] = useState<string | null>(
         allPartners.length > 0 ? allPartners[0].slug : null
     );
@@ -192,12 +172,12 @@ export default function Header({ partners, courses }: HeaderProps) {
             <div className="header-container">
                 <Link href="/" className="logo">
                     <div className="logo-container">
-                        <img src="/images/new-eHACK.png" alt="eHack Academy" className="logo-image" />
+                        <img src="/images/newnew-ehack.jpeg" alt="eHack Academy" className="logo-image" />
                     </div>
                 </Link>
 
                 <nav className="nav">
-                    <Link href="/" className="nav-link">Home</Link>
+                    {/* Home Link removed to save space - Logo acts as Home */}
                     {/* Mega Menu Wrapper */}
                     <div
                         className="mega-menu-wrapper"
@@ -243,7 +223,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                 </div>
 
                                 {/* Middle Section: Courses or Categories */}
-                                <div className="mega-menu-middle">
+                                <div className={`mega-menu-middle ${isEhackOriginals ? 'ehack-active' : ''}`}>
                                     {/* Show Categories for eHack Originals */}
                                     {isEhackOriginals ? (
                                         <div className="mega-menu-right">
@@ -262,7 +242,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/data-science"
+                                                    href="/programs/data-science-analytics"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/images/datascience.jpeg')` }}
@@ -274,7 +254,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/robotics-iot"
+                                                    href="/programs/robotics-for-all"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/images/robotics.jpeg')` }}
@@ -286,7 +266,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/digital-marketing"
+                                                    href="/programs/digital-marketing-masterprogram"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/images/social-media-marketing.jpg')` }}
@@ -298,7 +278,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     </div>
                                                 </Link>
                                                 <Link
-                                                    href="/categories/personality-softskills"
+                                                    href="/programs/personality-softskill-development"
                                                     className="mega-category-card"
                                                     onClick={() => setMegaMenuOpen(false)}
                                                     style={{ backgroundImage: `url('/Personality-and-Softskill-Development.png')` }}
@@ -306,6 +286,18 @@ export default function Header({ partners, courses }: HeaderProps) {
                                                     <div className="mega-cat-overlay"></div>
                                                     <div className="mega-cat-content">
                                                         <span className="mega-cat-name">Personality & Soft Skills</span>
+                                                        <span className="mega-cat-count">1 Program</span>
+                                                    </div>
+                                                </Link>
+                                                <Link
+                                                    href="/programs/internship-program"
+                                                    className="mega-category-card"
+                                                    onClick={() => setMegaMenuOpen(false)}
+                                                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80')` }}
+                                                >
+                                                    <div className="mega-cat-overlay"></div>
+                                                    <div className="mega-cat-content">
+                                                        <span className="mega-cat-name">Internship Program</span>
                                                         <span className="mega-cat-count">1 Program</span>
                                                     </div>
                                                 </Link>
@@ -407,88 +399,14 @@ export default function Header({ partners, courses }: HeaderProps) {
                             <Link href="/learning-options#fly-trainer" className="dropdown-item">Fly-Me-a-Trainer</Link>
                             <Link href="/learning-options#flexi" className="dropdown-item">Flexi</Link>
                             <Link href="/learning-options#customized" className="dropdown-item">Customized Training</Link>
-                            <Link href="/learning-options#webinar" className="dropdown-item">Webinar as a Service</Link>
-                            <Link href="/learning-options#upcoming" className="dropdown-item">Upcoming Webinars</Link>
+                            <Link href="/learning-options#webinar-service" className="dropdown-item">Webinar as a Service</Link>
+                            <Link href="/learning-options#upcoming-webinars" className="dropdown-item">Upcoming Webinars</Link>
                         </div>
                     </div>
 
-                    {/* Corporate Services Mega Menu Dropdown */}
-                    <div
-                        className={`services-dropdown-wrapper ${servicesMenuOpen ? 'open' : ''}`}
-                        onMouseEnter={() => setServicesMenuOpen(true)}
-                        onMouseLeave={() => setServicesMenuOpen(false)}
-                    >
-                        <button className="nav-link nav-dropdown-btn services-btn">
-                            Corporate Services
-                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
-                        <div className="services-dropdown-menu">
-                            <div className="services-dropdown-inner">
-                                {/* Security Assessment Services */}
-                                <div className="services-column">
-                                    <h4 className="services-column-title">Security Assessment</h4>
-                                    <div className="services-list">
-                                        {corporateServices.map((service) => (
-                                            <Link
-                                                key={service.id}
-                                                href={`/services/${service.id}`}
-                                                className="service-dropdown-item"
-                                                onClick={() => setServicesMenuOpen(false)}
-                                            >
-                                                <span className="service-item-icon">{service.icon}</span>
-                                                <span className="service-item-title">{service.title}</span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Forensics & Malware Services */}
-                                <div className="services-column">
-                                    <h4 className="services-column-title">Forensics & Malware</h4>
-                                    <div className="services-list">
-                                        {forensicsServices.map((service) => (
-                                            <Link
-                                                key={service.id}
-                                                href={`/services/${service.id}`}
-                                                className="service-dropdown-item"
-                                                onClick={() => setServicesMenuOpen(false)}
-                                            >
-                                                <span className="service-item-icon">{service.icon}</span>
-                                                <span className="service-item-title">{service.title}</span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Compliance Services */}
-                                <div className="services-column compliance-column">
-                                    <h4 className="services-column-title">Compliance Audit</h4>
-                                    <div className="services-list">
-                                        {complianceServices.map((service) => (
-                                            <Link
-                                                key={service.id}
-                                                href={`/services/${service.id}`}
-                                                className="service-dropdown-item"
-                                                onClick={() => setServicesMenuOpen(false)}
-                                            >
-                                                <span className="service-item-icon">{service.icon}</span>
-                                                <span className="service-item-title">{service.title}</span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                    <Link
-                                        href="/services"
-                                        className="services-view-all"
-                                        onClick={() => setServicesMenuOpen(false)}
-                                    >
-                                        View All Services →
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Link href="https://ehackglobaltechnology.com" className="nav-link" target="_blank">
+                        Corporate Services
+                    </Link>
 
                     <Link href="/codered" className="nav-link codered-link">
                         <span className="code-text">CODE</span>
@@ -589,7 +507,7 @@ export default function Header({ partners, courses }: HeaderProps) {
             {/* Mobile Menu Drawer */}
             <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
                 <div className="mobile-menu-header">
-                    <img src="/images/new-eHACK.png" alt="eHack Academy" className="mobile-menu-logo" />
+                    <img src="/images/newnew-ehack.jpeg" alt="eHack Academy" className="mobile-menu-logo" />
                     <button className="mobile-menu-close" onClick={closeMobileMenu} aria-label="Close menu">
                         ✕
                     </button>
@@ -638,39 +556,21 @@ export default function Header({ partners, courses }: HeaderProps) {
                             <Link href="/learning-options#flexi" className="mobile-nav-subitem" onClick={closeMobileMenu}>
                                 Flexi
                             </Link>
-                        </div>
-                    </div>
-
-                    {/* Services Dropdown */}
-                    <div className={`mobile-nav-dropdown ${mobileDropdown === 'services' ? 'open' : ''}`}>
-                        <button
-                            className="mobile-nav-dropdown-btn"
-                            onClick={() => toggleMobileDropdown('services')}
-                        >
-                            Corporate Services
-                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
-
-                        <div className="mobile-nav-dropdown-content">
-                            <Link href="/services" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                All Services
+                            <Link href="/learning-options#customized" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Customized Training
                             </Link>
-                            <Link href="/services/web-application-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Web Application Security
+                            <Link href="/learning-options#webinar-service" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Webinar as a Service
                             </Link>
-                            <Link href="/services/infrastructure-security" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Infrastructure Security
-                            </Link>
-                            <Link href="/services/malware-analysis" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Malware Analysis
-                            </Link>
-                            <Link href="/services/digital-forensics" className="mobile-nav-subitem" onClick={closeMobileMenu}>
-                                Digital Forensics
+                            <Link href="/learning-options#upcoming-webinars" className="mobile-nav-subitem" onClick={closeMobileMenu}>
+                                Upcoming Webinars
                             </Link>
                         </div>
                     </div>
+
+                    <Link href="https://ehackglobaltechnology.com" className="mobile-nav-item" target="_blank" onClick={closeMobileMenu}>
+                        Corporate Services
+                    </Link>
 
                     <Link href="/codered" className="mobile-nav-item codered-mobile" onClick={closeMobileMenu}>
                         CODE<span className="red-badge">RED</span>
@@ -765,7 +665,7 @@ export default function Header({ partners, courses }: HeaderProps) {
                     {activePartner && (
                         <div className="mobile-mega-section mobile-mega-courses-section">
                             <h4 className="mobile-mega-section-title">
-                                {activePartnerData ? (isKennedyUniversity ? 'Kennedy University Degrees' : `${activePartnerData.name} Courses`) : 'Courses'}
+                                {activePartnerData ? (isKennedyUniversity ? 'Kennedy University Degrees' : `${activePartnerData.name}`) : 'Courses'}
                             </h4>
                             <div className="mobile-mega-courses">
                                 {filteredCourses.length > 0 ? (
@@ -798,19 +698,19 @@ export default function Header({ partners, courses }: HeaderProps) {
                                     <span className="cat-icon">🛡️</span>
                                     <span className="cat-name">Cybersecurity Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/data-science" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/data-science-analytics" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">📊</span>
                                     <span className="cat-name">Data Science Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/robotics-iot" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/robotics-for-all" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">🤖</span>
                                     <span className="cat-name">Robotics & IoT Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/digital-marketing" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/digital-marketing-masterprogram" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">📈</span>
                                     <span className="cat-name">Digital Marketing Powered by AI</span>
                                 </Link>
-                                <Link href="/categories/personality-softskills" className="mobile-category-card" onClick={closeMobileMenu}>
+                                <Link href="/programs/personality-softskill-development" className="mobile-category-card" onClick={closeMobileMenu}>
                                     <span className="cat-icon">🎯</span>
                                     <span className="cat-name">Personality & Soft Skills</span>
                                 </Link>

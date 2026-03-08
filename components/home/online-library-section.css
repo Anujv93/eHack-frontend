@@ -32,7 +32,7 @@
 
 .section-badge {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: white;
     text-transform: uppercase;
@@ -44,13 +44,14 @@
     box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
-@media (min-width: 481px) {
+@media (max-width: 480px) {
     .section-badge {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
         letter-spacing: 0.12em;
-        margin-bottom: 1.25rem;
-        padding: 0.75rem 2rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem;
     }
+
 }
 
 .section-title {
@@ -68,8 +69,9 @@
 }
 
 .text-red {
-    color: #ff1818 !important;
-    /* Bright red */
+    color: #FF0000 !important;
+    /* Brighter red */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
 .section-subtitle {
@@ -236,7 +238,7 @@
 }
 
 .card-cta:hover {
-    background: #111;
+    background: #ca6b00;
     color: #fff;
 }
 
@@ -254,7 +256,7 @@
     align-items: center;
     justify-content: space-between;
     background: #fff;
-    padding: 1.25rem 3rem;
+    padding: 0.75rem 3rem;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     border: 1px solid #ec7c00;
@@ -265,7 +267,7 @@
     display: flex;
     align-items: center;
     /* Ensure stats are centered as a group */
-    gap: 4rem;
+    gap: 8rem;
 }
 
 .stat {
@@ -277,13 +279,13 @@
 .stat strong {
     color: #ec7c00;
     font-weight: 800;
-    font-size: 1.85rem;
+    font-size: 3rem;
     line-height: 1.1;
 }
 
 .stat span {
     color: #4b5563;
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -338,6 +340,7 @@
         gap: 1.5rem;
         text-align: center;
         padding: 1.5rem;
+        font-size: 0.75rem;
     }
 
     .footer-stats {

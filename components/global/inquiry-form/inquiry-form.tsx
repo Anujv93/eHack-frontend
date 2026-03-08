@@ -8,13 +8,14 @@ interface InquiryFormProps {
     courseName?: string;
     courseCode?: string;
     // Custom styling variant
-    variant?: 'hero' | 'sidebar' | 'section';
+    variant?: 'hero' | 'sidebar' | 'section' | 'popup';
     // Custom title/subtitle
     title?: string;
     subtitle?: string;
     // Pipeline configuration
     pipeline?: string;
     stage?: string;
+    onSuccess?: () => void;
 }
 
 interface FormData {
@@ -33,6 +34,7 @@ export default function InquiryForm({
     subtitle = 'Our counselor will call you within 2 hours',
     pipeline = 'Leads Pipeline Standard',
     stage = 'New Inquiry',
+    onSuccess,
 }: InquiryFormProps) {
     const [formData, setFormData] = useState<FormData>({
         firstName: '',
@@ -41,6 +43,7 @@ export default function InquiryForm({
         phone: '',
         agreeWhatsApp: true,
     });
+    const [botTrap, setBotTrap] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState('');
@@ -83,11 +86,18 @@ export default function InquiryForm({
 
         if (!validateForm()) return;
 
+        if (botTrap) {
+            console.log('Bot detected');
+            setIsSubmitted(true); // Silently succeed
+            return;
+        }
+
         setIsSubmitting(true);
         setError('');
 
         try {
-            const fullName = `${formData.firstName} ${formData.lastName || formData.firstName}`.trim();
+            const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+            const lastNameValue = formData.lastName.trim() || '-';
             const inquiryName = courseName
                 ? `Website - ${fullName} - ${courseName}`
                 : `Website Inquiry - ${fullName}`;
@@ -108,10 +118,10 @@ export default function InquiryForm({
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    firstName: formData.firstName,
-                    lastName: formData.lastName || formData.firstName,
-                    email: formData.email,
-                    phone: formData.phone,
+                    firstName: formData.firstName.trim(),
+                    lastName: lastNameValue,
+                    email: formData.email.trim(),
+                    phone: formData.phone.trim(),
                     city: '',
                     inquiryName,
                     courses,
@@ -130,6 +140,22 @@ export default function InquiryForm({
             }
 
             setIsSubmitted(true);
+
+            // Google Ads Conversion Event
+            if (typeof window !== 'undefined' && (window as any).gtag) {
+                const callback = () => {
+                    // Conversion reported
+                };
+                (window as any).gtag('event', 'conversion', {
+                    'send_to': 'AW-17944571400/8OiVCJHss_cbEIjc0exC',
+                    'value': 1.0,
+                    'currency': 'INR',
+                    'event_callback': callback
+                });
+            }
+            if (onSuccess) {
+                onSuccess();
+            }
         } catch (err) {
             console.error('Error submitting inquiry:', err);
             setError('Failed to submit. Please call us at +91 98860 35330');
@@ -167,6 +193,18 @@ export default function InquiryForm({
             </div>
 
             <form onSubmit={handleSubmit} className="inquiry-form-body">
+                {/* Honeypot field for bot protection */}
+                <div style={{ display: 'none' }} aria-hidden="true">
+                    <input
+                        type="text"
+                        name="website"
+                        value={botTrap}
+                        onChange={(e) => setBotTrap(e.target.value)}
+                        tabIndex={-1}
+                        autoComplete="off"
+                    />
+                </div>
+
                 {error && <div className="form-error">{error}</div>}
 
                 <div className="form-row">

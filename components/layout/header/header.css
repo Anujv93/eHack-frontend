@@ -11,7 +11,7 @@
 .header-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0.5rem 2rem;
+    padding: 0.35rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,6 +32,12 @@
     }
 }
 
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .header-container {
+        padding: 0.5rem 1rem;
+    }
+}
+
 .logo {
     display: flex;
     flex-direction: column;
@@ -39,6 +45,7 @@
     text-decoration: none;
     line-height: 1;
     flex-shrink: 0;
+    transform: translateY(-2px);
 }
 
 .logo-container {
@@ -49,23 +56,23 @@
 /* Mobile-first logo sizing */
 .logo-image {
     height: auto;
-    width: 140px;
-    min-width: 140px;
+    width: 120px;
+    min-width: 120px;
     max-height: none;
     transition: transform 0.2s ease;
 }
 
 @media (min-width: 481px) {
     .logo-image {
-        width: 170px;
-        min-width: 170px;
+        width: 150px;
+        min-width: 150px;
     }
 }
 
 @media (min-width: 1025px) {
     .logo-image {
-        width: 200px;
-        min-width: 200px;
+        width: 250px;
+        min-width: 250px;
     }
 }
 
@@ -98,7 +105,7 @@
     align-items: center;
     gap: 0.25rem;
     margin-left: auto;
-    padding-left: 2rem;
+    padding-left: 1rem;
     flex-wrap: nowrap;
     white-space: nowrap;
 }
@@ -111,7 +118,7 @@
 }
 
 .nav-link {
-    padding: 0.4rem 0.75rem;
+    padding: 0.4rem 0.5rem;
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--neutral-700);
@@ -323,7 +330,7 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s;
-    border: 1px solid var(--neutral-200);
+    border: 1px solid var(--brand-primary);
     background: #fff;
 }
 
@@ -340,49 +347,82 @@
 
 /* eHack Originals Partner Card - Special Styling */
 .mega-partner-card.ehack-originals-partner {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border: 1px solid #2a2a4e;
+    display: flex !important;
+    flex-direction: column !important;
+    background: #fff;
+    border: 2px solid var(--brand-primary);
     margin-top: 0.75rem;
     position: relative;
+    padding: 1rem 1.25rem;
+    height: auto !important;
+    min-height: 140px;
+    justify-content: flex-start !important;
+    align-items: flex-start;
+    overflow: visible !important;
 }
 
 .mega-partner-card.ehack-originals-partner::before {
-    content: '';
-    position: absolute;
-    top: -0.75rem;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--neutral-200);
+    display: none;
 }
 
 .mega-partner-card.ehack-originals-partner .partner-logo-img {
-    filter: brightness(0) invert(1);
+    display: block !important;
+    width: auto !important;
+    height: 28px !important;
+    max-width: 120px !important;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+    object-position: left;
+    flex-shrink: 0;
 }
 
-.mega-partner-card.ehack-originals-partner .partner-name {
-    color: #fff;
+/* Ensure partner-info container displays properly in column layout */
+.mega-partner-card.ehack-originals-partner .partner-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.25rem !important;
+    width: 100%;
+    overflow: visible !important;
+    flex: none !important;
 }
 
-.mega-partner-card.ehack-originals-partner .partner-count {
-    color: rgba(255, 255, 255, 0.7);
+.mega-partner-card.ehack-originals-partner .partner-info .partner-name {
+    color: var(--brand-primary) !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.125rem;
+    display: block !important;
+    line-height: 1.3;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+}
+
+.mega-partner-card.ehack-originals-partner .partner-info .partner-count {
+    color: var(--brand-primary) !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    display: block !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
 }
 
 .mega-partner-card.ehack-originals-partner .partner-arrow {
-    color: var(--brand-primary);
+    display: none;
 }
 
 .mega-partner-card.ehack-originals-partner:hover,
 .mega-partner-card.ehack-originals-partner.active {
-    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    background: linear-gradient(135deg, #FFF7F0 0%, #FFFFFF 100%);
     border-color: var(--brand-primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(223, 103, 24, 0.2);
 }
 
 /* Kennedy University Partner Card - Special Styling */
 .mega-partner-card.kennedy-university-partner {
     background: #fff;
-    border: 1px solid var(--neutral-200);
+    border: 1px solid var(--brand-primary);
     position: relative;
 }
 
@@ -588,15 +628,25 @@
     border-radius: 10px;
     text-decoration: none;
     transition: all 0.2s;
-    border: 2px solid var(--neutral-200);
+    border: 2px solid #FF6B00;
+    /* Persistent orange border for partners */
     background: #FAFAFA;
     min-width: 0;
 }
 
+.ehack-active .mega-course-item {
+    border-color: var(--neutral-200);
+    /* Persistent neutral border for eHack originals */
+}
+
 .mega-course-item:hover {
     background: #FFF7F0;
-    border-color: var(--brand-primary);
     transform: translateY(-2px);
+    /* Border color stays consistent with default state */
+}
+
+.ehack-active .mega-course-item:hover {
+    border-color: var(--neutral-200);
 }
 
 .mega-course-name {
@@ -679,6 +729,12 @@
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     border-color: rgba(255, 255, 255, 0.2);
+    /* Neutral by default */
+}
+
+.ehack-active .mega-category-card:hover {
+    border-color: var(--neutral-200);
+    /* Explicit neutral for eHack categories */
 }
 
 .mega-cat-name {
@@ -906,7 +962,7 @@
     transform: scale(1.02);
 }
 
-/* ========== Services Dropdown Mega Menu ========== */
+/* ========== Services Dropdown Mega Menu (Vertical Layered) ========== */
 .services-dropdown-wrapper {
     position: relative;
 }
@@ -914,7 +970,7 @@
 .services-dropdown-wrapper.open .services-dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
     pointer-events: auto;
 }
 
@@ -926,123 +982,175 @@
     color: var(--neutral-700);
 }
 
+/* Main Dropdown - Left Side Vertical List */
 .services-dropdown-menu {
     position: absolute;
-    top: 100%;
-    right: -180px;
-    width: 1100px;
-    max-width: calc(100vw - 40px);
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translate(-50%, 10px);
+    width: 250px;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    border: 1px solid var(--neutral-200);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.2s ease;
-    padding: 1.25rem;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.2s, transform 0.2s;
+    padding: 0.5rem;
     z-index: 9999;
 }
 
-.services-dropdown-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr 260px;
-    gap: 1.5rem;
-}
-
-.services-column {
+.vertical-menu-container {
     display: flex;
     flex-direction: column;
+    gap: 2px;
+    padding: 0.25rem;
 }
 
-.services-column-title {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--neutral-400);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--neutral-200);
+.vertical-menu-item {
+    position: relative;
+    /* Context for absolute submenu */
 }
 
-.services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-    max-height: none;
-    overflow-y: visible;
-    padding-right: 0;
-}
-
-.services-list::-webkit-scrollbar {
-    width: 3px;
-}
-
-.services-list::-webkit-scrollbar-track {
-    background: var(--neutral-100);
-    border-radius: 3px;
-}
-
-.services-list::-webkit-scrollbar-thumb {
-    background: var(--neutral-300);
-    border-radius: 3px;
-}
-
-.service-dropdown-item {
+/* Category Label (Button) */
+.vertical-menu-label {
     display: flex;
     align-items: center;
-    padding: 0.5rem 0.625rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.15s ease;
-}
-
-.service-dropdown-item:hover {
-    background: #FFF7F0;
-}
-
-.service-item-icon {
-    display: none;
-}
-
-.service-item-title {
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
     font-size: 0.9375rem;
     font-weight: 500;
     color: var(--neutral-700);
-    line-height: 1.4;
+    transition: all 0.2s ease;
 }
 
-.service-dropdown-item:hover .service-item-title {
+.vertical-menu-label:hover {
+    background: #FFF7F0;
+    /* Orange Tint */
     color: var(--brand-primary);
 }
 
-.compliance-column {
-    background: #fafafa;
-    padding: 0.875rem;
-    margin: -0.5rem;
-    margin-left: 0;
-    border-radius: 8px;
-    border: 1px solid var(--neutral-200);
+.menu-arrow {
+    color: var(--neutral-400);
+    transition: transform 0.2s;
 }
 
-.services-view-all {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.625rem 1rem;
-    background: var(--brand-primary);
-    color: #fff;
+.vertical-menu-label:hover .menu-arrow {
+    color: var(--brand-primary);
+    transform: translateX(3px);
+}
+
+/* Submenu (Flyout) */
+/* Submenu (Flyout) - Modified to fly out to the LEFT */
+.vertical-menu-submenu {
+    position: absolute;
+    right: calc(100% + 8px);
+    /* Fly out to the left */
+    left: auto;
+    top: -10px;
+    width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    /* Slide in from right */
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 10000;
+}
+
+/* Show Submenu on Item Hover */
+.vertical-menu-item:hover .vertical-menu-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Keeping the label active when hovering the submenu */
+.vertical-menu-item:hover .vertical-menu-label {
+    background: #FFF7F0;
+    color: var(--brand-primary);
+}
+
+/* Submenu Header */
+.submenu-header {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--neutral-400);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--neutral-100);
+}
+
+/* Grid for Security Assessment (2 Cols) */
+.submenu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+}
+
+/* Simple List for others */
+.submenu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Individual Service Links */
+.vertical-submenu-item {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -0.75rem;
+    border-radius: 6px;
+    color: var(--neutral-600);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.vertical-submenu-item:hover {
+    background: var(--neutral-50);
+    color: var(--brand-primary);
+    transform: translateX(4px);
+}
+
+.submenu-item-title {
+    display: block;
+}
+
+/* Footer Section in Submenu */
+.submenu-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--neutral-100);
+}
+
+.submenu-view-all-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem;
+    background: transparent;
+    border: 1px solid var(--brand-primary);
+    color: var(--brand-primary);
     font-size: 0.875rem;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
-    text-align: center;
-    transition: background 0.2s;
+    transition: all 0.2s ease;
 }
 
-.services-view-all:hover {
-    background: #c45815;
+.submenu-view-all-btn:hover {
+    background: var(--brand-primary);
     color: #fff;
+    box-shadow: 0 4px 12px rgba(223, 103, 24, 0.2);
 }
 
 /* Responsive */
@@ -1097,9 +1205,20 @@
     }
 }
 
-/* Small Tablets (max-width: 768px) */
-@media (max-width: 768px) {
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .nav-link {
+        padding: 0.35rem 0.4rem;
+        font-size: 0.75rem;
+    }
+
     .nav {
+        padding-left: 0.5rem;
+        gap: 0;
+    }
+
+    .logo-image {
+        /* Slight reduction if absolutely needed, but trying to keep 300px target as much as possible.
+           If 300px is strict, we just squeeze content. */
         gap: 0.25rem;
     }
 
@@ -1108,24 +1227,18 @@
         font-size: 0.875rem;
     }
 
+    /* Restoring horizontal layout for 1366px screens */
     .mega-menu {
-        width: 95vw;
-        max-width: 700px;
+        width: calc(100vw - 40px);
+        max-width: 1280px;
         padding: 1.5rem;
     }
 
-    .mega-menu-inner {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+    /* Use default grid layout or max-width: 1280px layout */
 
-    .mega-menu-kennedy {
-        border-left: none;
-        border-top: 1px solid var(--neutral-200);
-        padding-left: 0;
-        padding-top: 1.5rem;
-        margin-top: 1.5rem;
-    }
+    /* 
+    .mega-menu-kennedy styles removed to restore left border and remove top margin 
+    */
 
     .mega-menu-heading {
         font-size: 0.625rem;
@@ -1591,6 +1704,44 @@
     pointer-events: none;
 }
 
+/* Larger Screens (15-17 inches) targeting typical resolutions */
+@media (min-width: 1441px) {
+    .header-container {
+        max-width: 1600px;
+        padding: 0.5rem 2.5rem;
+    }
+
+    .mega-menu {
+        max-width: 1400px;
+    }
+
+    .services-dropdown-menu {
+        width: 1200px;
+        right: -200px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .header-container {
+        max-width: 1800px;
+        padding: 0.5rem 3rem;
+    }
+
+    .mega-menu {
+        max-width: 1600px;
+    }
+
+    .logo-image {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .nav-link {
+        font-size: 0.9375rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
 .mobile-mega-menu.open {
     transform: translateX(0);
     visibility: visible;
@@ -1999,4 +2150,31 @@
 
 .mobile-mega-menu-trigger svg {
     flex-shrink: 0;
+}
+
+/* Fix for 1280px - 1440px responsiveness */
+@media (min-width: 1025px) and (max-width: 1439px) {
+    .header-container {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo-image {
+        width: 300px;
+    }
+
+
+    .nav {
+        padding-left: 0.75rem;
+        gap: 0;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.4rem;
+        font-size: 0.8125rem;
+    }
+
+    .cta-btn {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.875rem;
+    }
 }

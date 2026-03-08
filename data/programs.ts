@@ -3,6 +3,8 @@ export const programs = [
     {
         slug: "masters-ethical-hacking",
         category: "cybersecurity",
+        heroImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1600",
+        brochureLink: "master's program.pdf",
         title: "Master’s Program in Ethical Hacking & Cybersecurityᴬᴵ (6 Global Certification)",
         subtitle: "with 6 Global Certifications",
         description: "Equip yourself with the skills to protect IT infrastructure, perform vulnerability assessments, and secure organizations against cyber threats.",
@@ -37,11 +39,36 @@ export const programs = [
         ],
         curriculum: [
             {
+                number: "00",
+                title: "ICE Breaker, Program Kick-off & Orientation",
+                duration: "4 Hours",
+                certification: "",
+                description: "Your journey into a high-growth cyber security career begins from Day One. The ICE Breaker & Orientation session is a power-packed 4-hour onboarding experience designed to align learners with industry expectations, global certifications, and a clear career roadmap—before core technical training begins.",
+                topics: [
+                    "Interactive introductions to build confidence and collaboration",
+                    "Clear understanding of the Master’s Program structure",
+                    "Alignment on learning discipline, ethics, and performance standards",
+                    "Setting expectations for real-world cyber security careers",
+                    "Introduction to eHack Academy – Institute of Emerging Technologies",
+                    "Overview of EC-Council, the world’s leading cyber security certification body",
+                    "Academic, university, and industry partnerships",
+                    "Industry-aligned curriculum with real-world relevance",
+                    "Guided walkthrough of the EC-Council LMS",
+                    "Access to official courseware, labs, and licensed tools",
+                    "Importance of classroom training and hands-on practice",
+                    "Transparent evaluation, exam pattern, and certification process",
+                    "Cyber Security–specific resume building",
+                    "Understanding job roles, domains, and growth paths",
+                    "Smart job application strategies and LinkedIn optimization",
+                    "Long-term career success roadmap in cyber security"
+                ]
+            },
+            {
                 number: "01",
-                title: "IT Fundamentals",
+                title: "P|CSF - Professional | Cyber Security Fundamentals",
                 duration: "4 Weeks",
                 certification: "",
-                description: "Build a strong foundation in IT essentials covering hardware, operating systems, networking, servers, and cloud technologies.",
+                description: "Build a strong foundation in Cyber Security essentials covering hardware, operating systems, networking, servers, and cloud technologies.",
                 topics: [
                     "Computer Hardware & Architecture",
                     "Operating Systems (Windows/Linux/Mac)",
@@ -132,8 +159,33 @@ export const programs = [
                     "Cryptography and Data Protection Basics"
                 ]
             },
+
             {
                 number: "05",
+                title: "P|APTPᴬᴵ - Professional | Advanced Penetration Testing Programᴬᴵ",
+                duration: "10 Weeks",
+                certification: "EC-Council CPENT + EC-Council LPT",
+                description: "Elevate your skills with advanced red team techniques including IoT exploitation, OT/SCADA security, and live cyber range exercises.",
+                topics: [
+                    "Penetration Testing Foundations",
+                    "Testing Scope and Engagement Planning",
+                    "Open-Source Intelligence Techniques",
+                    "Social Engineering Assessment",
+                    "External Network Penetration Testing",
+                    "Internal Network Penetration Testing",
+                    "Perimeter Network Testing",
+                    "Web Application Penetration Testing",
+                    "Wireless Security Testing",
+                    "IoT Penetration Testing",
+                    "Operational Technology and SCADA Security Testing",
+                    "Cloud Penetration Testing",
+                    "Binary Analysis and Exploitation",
+                    "Reporting, Documentation, and Post-Test Actions"
+
+                ]
+            },
+            {
+                number: "06",
                 title: "P|DFIPᴬᴵ - Professional | Digital Forensics and Investigation Programᴬᴵ",
                 duration: "8 Weeks",
                 certification: "EC-Council CHFI",
@@ -157,50 +209,7 @@ export const programs = [
                 ]
             },
             {
-                number: "06",
-                title: "P|APTPᴬᴵ - Professional | Advanced Penetration Testing Programᴬᴵ",
-                duration: "10 Weeks",
-                certification: "EC-Council CPENT",
-                description: "Elevate your skills with advanced red team techniques including IoT exploitation, OT/SCADA security, and live cyber range exercises.",
-                topics: [
-                    "Penetration Testing Foundations",
-                    "Testing Scope and Engagement Planning",
-                    "Open-Source Intelligence Techniques",
-                    "Social Engineering Assessment",
-                    "External Network Penetration Testing",
-                    "Internal Network Penetration Testing",
-                    "Perimeter Network Testing",
-                    "Web Application Penetration Testing",
-                    "Wireless Security Testing",
-                    "IoT Penetration Testing",
-                    "Operational Technology and SCADA Security Testing",
-                    "Cloud Penetration Testing",
-                    "Binary Analysis and Exploitation",
-                    "Reporting, Documentation, and Post-Test Actions"
-
-                ]
-            },
-            {
                 number: "07",
-                title: "OWASP Top 10",
-                duration: "4 Weeks",
-                certification: "",
-                description: "Master the OWASP Top 10 web application security risks and learn how to identify, exploit, and mitigate them.",
-                topics: [
-                    "Injection Attacks (SQL, NoSQL, OS)",
-                    "Broken Authentication",
-                    "Sensitive Data Exposure",
-                    "XML External Entities (XXE)",
-                    "Broken Access Control",
-                    "Security Misconfigurations",
-                    "Cross-Site Scripting (XSS)",
-                    "Insecure Deserialization",
-                    "Using Components with Known Vulnerabilities",
-                    "Insufficient Logging & Monitoring"
-                ]
-            },
-            {
-                number: "08",
                 title: "Personality and Softskill Development",
                 duration: "2 Week",
                 certification: "",
@@ -227,8 +236,27 @@ export const programs = [
                 ]
             },
             {
+                number: "08",
+                title: "OWASP Top 10",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Master the OWASP Top 10 web application security risks and learn how to identify, exploit, and mitigate them.",
+                topics: [
+                    "Injection Attacks (SQL, NoSQL, OS)",
+                    "Broken Authentication",
+                    "Sensitive Data Exposure",
+                    "XML External Entities (XXE)",
+                    "Broken Access Control",
+                    "Security Misconfigurations",
+                    "Cross-Site Scripting (XSS)",
+                    "Insecure Deserialization",
+                    "Using Components with Known Vulnerabilities",
+                    "Insufficient Logging & Monitoring"
+                ]
+            },
+            {
                 number: "09",
-                title: "ADVANCED REAL-TIME INDUSTRY PROJECTS",
+                title: "3 Months Internship ",
                 duration: "3 Months",
                 description: "Each Master Program student must select ANY TWO advanced projects.",
                 topics: [
@@ -329,14 +357,78 @@ export const programs = [
                     { q: "Can working professionals join?", a: "Absolutely! We offer flexible weekend and evening batches designed for working professionals." }
                 ]
             }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                date: "February 2026",
+                headline: "Global Cybercrime Costs to Reach $10.5 Trillion Annually by 2025",
+                source: "Cybersecurity Ventures"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Cybersecurity Workforce Gap Widens to 3.4 Million Globally",
+                source: "ISC2 Study"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "AI-Driven Cyber Attacks on the Rise: How Organizations are Responding",
+                source: "TechCrunch"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Ransomware Attacks Increased by 93% in 2024",
+                source: "The Hacker News"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Zero Trust Architecture Becomes the New Standard for Enterprise Security",
+                source: "CSO Online"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1618060932014-4deda4932554?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Cloud Security Failures Will Account for 99% of Breaches Through 2025",
+                source: "Gartner"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "India Records 500% Increase in Cyberattacks - Skilled Professionals in High Demand",
+                source: "Economic Times"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "IoT Vulnerabilities: The Next Big Threat in Cybersecurity",
+                source: "Wired"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Data Privacy Regulations Tighten Globally: GDPR and Beyond",
+                source: "Reuters"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "The Role of Machine Learning in Threat Detection and Response",
+                source: "MIT Tech Review"
+            }
         ]
     },
 
     {
         slug: "graduate-cybersecurity",
         category: "cybersecurity",
+        heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1600",
+        brochureLink: "Graduate Program in Ethical Hacking & Cyber Security.pdf.pdf",
         title: "Graduate Program in Ethical Hacking and Cybersecurityᴬᴵ (2 Global Certification)",
-        subtitle: "with 2 Global Complimentary Certifications",
+        subtitle: "with 2 Global Certifications",
         description: "Equip yourself with skills to protect IT infrastructure, secure data, run risk analysis, architect cloud-based security, and achieve compliance.",
         features: "Includes IT Fundamentals, CSCU, CND certifications, Ethical Hacking, Penetration Testing, Digital Forensics & OWASP Top 10.",
         batchInfo: "5TH OF EVERY MONTH",
@@ -365,8 +457,33 @@ export const programs = [
         ],
         curriculum: [
             {
+                number: "00",
+                title: "ICE Breaker, Program Kick-off & Orientation",
+                duration: "4 Hours",
+                certification: "",
+                description: "Your journey into a high-growth cyber security career begins from Day One. The ICE Breaker & Orientation session is a power-packed 4-hour onboarding experience designed to align learners with industry expectations, global certifications, and a clear career roadmap—before core technical training begins.",
+                topics: [
+                    "Interactive introductions to build confidence and collaboration",
+                    "Clear understanding of the Master’s Program structure",
+                    "Alignment on learning discipline, ethics, and performance standards",
+                    "Setting expectations for real-world cyber security careers",
+                    "Introduction to eHack Academy – Institute of Emerging Technologies",
+                    "Overview of EC-Council, the world’s leading cyber security certification body",
+                    "Academic, university, and industry partnerships",
+                    "Industry-aligned curriculum with real-world relevance",
+                    "Guided walkthrough of the EC-Council LMS",
+                    "Access to official courseware, labs, and licensed tools",
+                    "Importance of classroom training and hands-on practice",
+                    "Transparent evaluation, exam pattern, and certification process",
+                    "Cyber Security–specific resume building",
+                    "Understanding job roles, domains, and growth paths",
+                    "Smart job application strategies and LinkedIn optimization",
+                    "Long-term career success roadmap in cyber security"
+                ]
+            },
+            {
                 number: "01",
-                title: "IT Fundamentals",
+                title: "P|CSFᴬᴵ - Professional | Cybersecurity Fundamentals Programᴬᴵ",
                 duration: "4 Weeks",
                 certification: "",
                 description: "Build a strong foundation in IT essentials covering hardware, operating systems, networking, servers, and cloud technologies.",
@@ -512,7 +629,7 @@ export const programs = [
             },
             {
                 number: "08",
-                title: "ADVANCED REAL-TIME INDUSTRY PROJECTS",
+                title: "3 Months Internship on real-time industry projects",
                 duration: "3 Months",
                 description: "Each Master Program student must select ANY TWO advanced projects.",
                 topics: [
@@ -603,6 +720,75 @@ export const programs = [
                     { q: "Is there any scholarship available?", a: "Merit-based scholarships are available up to ₹20,000 for exceptional candidates. Contact our counselors for eligibility." },
                     { q: "What does the fee include?", a: "The fee covers all training materials, lab access, certification exam vouchers, and 2 years of post-training support." }
                 ]
+            },
+            {
+                category: "Career",
+                questions: [
+                    { q: "What role can I get?", a: "You can start as a Security Analyst, Network Defender, or Junior Pen Tester." },
+                    { q: "Is this degree recognized?", a: "Yes, it's a legitimate specialized program recognized by industry partners." }
+                ]
+            }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=250&fit=crop",
+                date: "February 2026",
+                headline: "Demand for Ethical Hackers Soars as Companies Face Frequent Breaches",
+                source: "Bloomberg"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Degree + Certification: The Winning Combination for Early Career Success",
+                source: "Education Times"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Start Your Career in Cyber Security with 50% Higher Salary than Peers",
+                source: "Naukri.com"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Cybersecurity Job Market Expected to Grow 35% by 2027",
+                source: "Forbes"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Why Every Company Needs a Cybersecurity Expert in 2025",
+                source: "Inc. Magazine"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Top 5 Cybersecurity Certifications to Boost Your Career",
+                source: "CIO.com"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "The Growing Importance of Network Defense in the Digital Age",
+                source: "Network World"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Huge Demand for Freshers in Cybersecurity - 3.5 Million Unfilled Jobs",
+                source: "Times of India"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1618060932014-4deda4932554?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "How to Land Your First Job in Cybersecurity",
+                source: "Career Builder"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Cybersecurity Salary Trends: What to Expect in 2025",
+                source: "Glassdoor"
             }
         ]
     },
@@ -610,14 +796,16 @@ export const programs = [
     {
         slug: "digital-marketing-masterprogram",
         category: "digital-marketing",
+        heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600",
+        brochureLink: "Digital Marketing.pdf.pdf",
         title: "Master's Program in Digital Marketing powered by AI",
         subtitle: "Build Digital Careers - Agency Style Training",
         description: "eHack Digital Academy equips you to build your career from scratch with hands-on agency-style training to bridge the industry gap in skilled digital marketing professionals.",
         features: "Includes Website Design, Copywriting, Social Media Marketing, SEO, Paid Advertising, Digital Tools, ORM & Email Marketing, and complete Job Readiness training.",
         batchInfo: "5TH OF EVERY MONTH",
         partner: "eHack Digital Academy",
-        partnerLogo: "/ehack-black.png",
-        ehackLogo: "/ehack-black.png",
+        partnerLogo: "/ehack-logo.png",
+        ehackLogo: "/ehack-logo.png",
         stats: {
             startDate: "5th of Every Month",
             duration: "4 Months",
@@ -627,7 +815,7 @@ export const programs = [
         },
         schedule: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off)",
         certifications: [
-            { code: "DIGITAL", name: "eHack Digital Academy Certificate", image: "/images/certificates/digital-marketing-certificate.jpeg" }
+            { code: "DIGITAL", name: "eHack Digital Academy Certificate", image: "/images/certificates/new-digital-marketing-certification.jpeg" }
         ],
         skills: [
             { name: "Website Design", desc: "Create and design websites from scratch with zero-code knowledge using modern website builders and design tools." },
@@ -717,11 +905,16 @@ export const programs = [
             "Business Development Executive", "PPC Specialist", "Email Marketing Manager", "Digital Marketing Consultant"
         ],
         pricing: {
-            original: "₹75,000",
-            discounted: "₹45,000",
-            emi: "Contact for EMI options",
+            original: "₹1,25,000",
+            discounted: "₹95,000",
+            emi: "₹13,750 X 4",
             applicationFee: "₹1,000",
-            admissionFee: "₹45,000"
+            admissionFee: "₹95,000",
+            companyEMI: "₹1,10,000",
+            upfrontPercentage: "50%",
+            upfrontAmount: "₹55,000",
+            emiCount: 4,
+            emiAmount: "13,750"
         },
         partnerLogos: [
             "/images/partners/google.png",
@@ -788,20 +981,84 @@ export const programs = [
                     { q: "What tools will I learn?", a: "You'll learn industry-standard tools for SEO, social media management, paid advertising, email marketing, analytics, and design." }
                 ]
             }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop",
+                date: "February 2026",
+                headline: "Digital Marketing Spend Set to Overtake Traditional Ads by 2026",
+                source: "Marketing Week"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "SEO and Content Marketing Top Skills for Modern Marketers",
+                source: "Search Engine Journal"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Social Media Managers in High Demand as Brands Shift Online",
+                source: "Social Media Today"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Video Marketing Dominance: Short-Form Content Rules Social Media",
+                source: "AdWeek"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "The Impact of AI on SEO: How Search is Evolving in 2025",
+                source: "Moz"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Personalization at Scale: The Future of Customer Experience",
+                source: "HubSpot"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Influencer Marketing Industry Set to Reach $21.1 Billion",
+                source: "Business Insider"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Social Commerce: Shopping Directly on Social Platforms is Exploding",
+                source: "Sprout Social"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Data-Driven Marketing: Using Analytics to Maximize ROI",
+                source: "Google Blog"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "The Resurgence of Email Marketing with AI-Powered Personalization",
+                source: "Salesforce"
+            }
         ]
     },
 
     {
         slug: "robotics-for-all",
         category: "robotics-iot",
+        heroImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1600",
+        brochureLink: "Robotics.pdf.pdf",
         title: "Robotics for Every One - Build Your First Robot with AI",
         subtitle: "Sensors & Actuators | Line Following | Obstacle Avoidance | Bluetooth Control",
         description: "This comprehensive course is designed for absolute beginners who want to learn how to build and program their very own robots from scratch. It takes students on an exciting journey into the world of robotics, starting from basic electronics to building autonomous and remotely controlled robots.",
         features: "Hands-on projects including Roach Bot, Obstacle Avoidance Robot, Line Follower Robot, and Bluetooth Controlled Robot with lifetime access to learning materials.",
         batchInfo: "5TH OF EVERY MONTH",
         partner: "eHack Academy",
-        partnerLogo: "/ehack-black.png",
-        ehackLogo: "/ehack-black.png",
+        partnerLogo: "/ehack-logo.png",
+        ehackLogo: "/ehack-logo.png",
         stats: {
             startDate: "5th of Every Month",
             duration: "60 Days",
@@ -811,7 +1068,7 @@ export const programs = [
         },
         schedule: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off)",
         certifications: [
-            { code: "ROBOTICS", name: "eHack Academy Robotics Certificate", image: "/images/certificates/robotics-image.jpeg" }
+            { code: "ROBOTICS", name: "eHack Academy Robotics Certificate", image: "/images/certificates/new-robotics-certification.jpeg" }
         ],
         skills: [
             { name: "Introduction to Robotics", desc: "Learn the fundamentals of robotics and control systems, understanding how robots work and interact with their environment." },
@@ -956,8 +1213,69 @@ export const programs = [
                 questions: [
                     { q: "Will I get a certificate?", a: "Yes, you'll receive a Certificate of Completion from eHack Academy after successfully completing all projects." },
                     { q: "What support is available after the course?", a: "You get lifetime access to the learning management system with all course materials, videos, and documentation. You can revisit any topic anytime." },
-                    { q: "Can this help me get a job in robotics?", a: "This course provides foundational skills in robotics and electronics. It's perfect for starting a career in robotics, automation, or embedded systems." }
                 ]
+            }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=250&fit=crop",
+                date: "February 2026",
+                headline: "Global Robotics Market Predicted to Hit $210 Billion by 2025",
+                source: "Robotics Business Review"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "AI-Powered Robots: The Next Frontier in Manufacturing Automation",
+                source: "TechCrunch"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "IoT and Automation Driving the Next Industrial Revolution",
+                source: "Industry 4.0 News"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Service Robots in Healthcare: assisting Surgeons and Nurses",
+                source: "HealthTech Magazine"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Collaborative Robots (Cobots) Market Growing at 40% CAGR",
+                source: "Automotive World"
+            },
+            {
+                image: "https://images.pexels.com/photos/4481258/pexels-photo-4481258.jpeg",
+                date: "November 2025",
+                headline: "Autonomous Mobile Robots (AMRs) Revolutionizing Logistics",
+                source: "Logistics Weekly"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Robotics in Agriculture: Precision Farming and Automation",
+                source: "AgriTech Today"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "The Rise of Humanoid Robots: From Sci-Fi to Reality",
+                source: "The Verge"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "STEM Education: Why Learning Robotics is Crucial for Future Engineers",
+                source: "EdTech Magazine"
+            },
+            {
+                image: "https://images.pexels.com/photos/1087180/pexels-photo-1087180.jpeg",
+                date: "September 2025",
+                headline: "Drone Technology: Transforming Delivery and Surveillance",
+                source: "AeroTech News"
             }
         ]
     },
@@ -965,14 +1283,16 @@ export const programs = [
     {
         slug: "data-science-analytics",
         category: "data-science",
+        heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600",
+        brochureLink: "Data Science & Data Analytics Powered by AI.pdf.pdf",
         title: "Data Science & Data Analytics Powered by AI",
         subtitle: "with 100% Job Assistance & Industry Projects",
         description: "Master our AI-Powered Data Science and Data Analytics certification course. Gain exceptional experience and skills while working on industrial projects with hands-on training in Python, SQL, Machine Learning, and Power BI.",
         features: "Includes Python Programming, SQL, Advanced Excel, Machine Learning, Supervised & Unsupervised Learning, Power BI Dashboard Creation, Exploratory Data Analysis with NumPy & Pandas, and 10+ Industry Projects.",
         batchInfo: "5TH OF EVERY MONTH",
         partner: "eHack Academy",
-        partnerLogo: "/ehack-black.png",
-        ehackLogo: "/ehack-black.png",
+        partnerLogo: "/ehack-logo.png",
+        ehackLogo: "/ehack-logo.png",
         stats: {
             startDate: "5th of Every Month",
             duration: "6 Months",
@@ -982,7 +1302,7 @@ export const programs = [
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
-            { code: "DSDA", name: "Data Science & Data Analytics with AI", image: "/images/data_science certificate.jpeg" }
+            { code: "DSDA", name: "Data Science & Data Analytics with AI", image: "/images/certificates/new-data-science-certificate.jpeg" }
         ],
         skills: [
             { name: "Python Programming", desc: "Master Python for data analysis including syntax, data structures, functions, and libraries essential for data science workflows." },
@@ -1061,9 +1381,16 @@ export const programs = [
             "Power BI Developer", "Data Science Associate", "Applied Data Scientist", "Business Intelligence Analyst"
         ],
         pricing: {
-            original: "₹1,50,000",
-            discounted: "₹99,000",
-            emi: "No Cost EMI available"
+            original: "₹2,00,000",
+            discounted: "₹1,10,000",
+            emi: "₹17,500 X 4",
+            applicationFee: "₹1,000",
+            admissionFee: "₹1,10,000",
+            companyEMI: "₹1,40,000",
+            upfrontPercentage: "50%",
+            upfrontAmount: "₹70,000",
+            emiCount: 4,
+            emiAmount: "₹17,500"
         },
         partnerLogos: [
             "/images/partners/python.png",
@@ -1130,12 +1457,76 @@ export const programs = [
                     { q: "What projects will be included in my portfolio?", a: "Your portfolio will include projects like Vehicle Sales Analysis, Credit Card Fraud Detection, Heart Disease Prediction, Customer Pattern Matching, and more." }
                 ]
             }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                date: "February 2026",
+                headline: "Data Science Market Size to Reach $322.9 Billion by 2026",
+                source: "Harvard Business Review"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Why Python Remains the King of Data Science Languages in 2025",
+                source: "TechCrunch"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Companies Investing Heavily in Data Analytics to Drive Business Growth",
+                source: "Bloomberg"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1509266272358-7701da638078?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "The Rise of Automated Machine Learning (AutoML) in Enterprise",
+                source: "VentureBeat"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Data Scientist: The Sexiest Job of the 21st Century Continues to Grow",
+                source: "Forbes"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Big Data Analytics in Healthcare: Revolutionizing Patient Care",
+                source: "Health IT News"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Predictive Analytics: Transforming Business Decision Making",
+                source: "McKinsey"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Demand for AI and Data Professionals Grows by 40% Year-over-Year",
+                source: "LinkedIn"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Ethics in AI and Data Science: A Growing Focus for Tech Giants",
+                source: "MIT Tech Review"
+            },
+            {
+                image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+                date: "September 2025",
+                headline: "Data Literacy: The New Must-Have Skill for All Professionals",
+                source: "HBR"
+            }
         ]
     },
 
     {
         slug: "masterclass-ethical-hacking-ceh-v13",
         category: "cybersecurity",
+        heroImage: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=1600",
+        brochureLink: "Certified Ethical Hacker Master Program  CEHᴬᴵ v13.pdf.pdf",
         title: "Certified Ethical Hacker Master Program | CEHᴬᴵ v13",
         subtitle: "with 3 Global EC-Council Certifications",
         description: "A best-in-class program designed to equip students with skills to become experts in cybersecurity. It covers comprehensive approaches to protecting IT infrastructure, securing data and information, running risk analysis and mitigation, architecting cloud-based security, and achieving compliance.",
@@ -1459,11 +1850,16 @@ export const programs = [
             "Chief Information Security Officer", "Network Engineer/Security Architect", "Incident Handler"
         ],
         pricing: {
-            original: "₹1,20,000",
-            discounted: "₹95,000",
-            emi: "No Cost EMI Available",
+            original: "₹1,25,000",
+            discounted: "₹1,00,000",
+            emi: "₹28,750 X 2",
             applicationFee: "₹1,000",
-            admissionFee: "₹95,000"
+            admissionFee: "₹1,00,000",
+            companyEMI: "₹1,15,000",
+            upfrontPercentage: "50%",
+            upfrontAmount: "₹57,500",
+            emiCount: 2,
+            emiAmount: "28,750"
         },
         partnerLogos: [
             "/images/partners/checkpoint.png",
@@ -1529,12 +1925,76 @@ export const programs = [
                     { q: "Is there an interview?", a: "Yes, a telephonic interview with an industry expert is conducted to gauge your passion and eligibility for the program." }
                 ]
             }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=250&fit=crop",
+                date: "February 2026",
+                headline: "CEH Certified Professionals Earn 40% More Than Non-Certified Experts",
+                source: "PayScale Report"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Specialized Skills in Penetration Testing & Cloud Security in High Demand",
+                source: "Hacker News"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Global Enterprises Mandating CEH v13 for InfoSec Roles",
+                source: "CSO Online"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Ethical Hacking: The First Line of Defense Against Cyber Threats",
+                source: "Dark Reading"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "The Evolution of Cyber Threats: Why Continuous Learning is Key",
+                source: "Security Magazine"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Women in Cybersecurity: Closing the Gender Gap in Ethical Hacking",
+                source: "Women in Tech"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1618060932014-4deda4932554?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Cybersecurity Audits: Essential for Regulatory Compliance",
+                source: "Compliance Week"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Freelance Ethical Hacking: A Lucrative Career Path",
+                source: "Upwork"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "The Future of Cybersecurity: AI and Automation Trends",
+                source: "TechRadar"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374804325-e4d0d580e309?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Protecting Critical Infrastructure: The Role of Ethical Hackers",
+                source: "GovTech"
+            }
         ]
     },
 
     {
         slug: "personality-softskill-development",
         category: "personality-softskills",
+        heroImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1600",
+        brochureLink: "Personality & Soft Skill Development Program.pdf.pdf",
         title: "Personality & Soft Skill Development Program",
         subtitle: "Module-wise Syllabus (40 Hours)",
         description: "A comprehensive personality development and soft skills program designed to support placement readiness for students pursuing Cybersecurity, Data Science, Robotics, and Digital Marketing. Master communication, interview skills, corporate readiness, and career planning to land your dream job.",
@@ -1552,7 +2012,7 @@ export const programs = [
         },
         schedule: "20 Modules × 2 Hours each | Weekday & Weekend Batches Available",
         certifications: [
-            { code: "PSSD", name: "Personality & Soft Skill Development Certificate", image: "/Personality-and-Softskill-Development.png" }
+            { code: "PSSD", name: "Personality & Soft Skill Development Certificate", image: "/certificates/personility_cert.jpeg" }
         ],
         skills: [
             { name: "Communication Skills", desc: "Master verbal and non-verbal communication, public speaking, and professional vocabulary for workplace success." },
@@ -1814,11 +2274,11 @@ export const programs = [
             "Business Development Executive", "HR Executive", "Corporate Trainer", "Sales Executive"
         ],
         pricing: {
-            original: "₹40,000",
-            discounted: "₹25,000",
+            original: "₹50,000",
+            discounted: "₹35,000",
             emi: "Contact for EMI options",
             applicationFee: "₹1,000",
-            admissionFee: "₹25,000"
+            admissionFee: "₹35,000"
         },
         partnerLogos: [
             "/ehack-black.png"
@@ -1869,10 +2329,267 @@ export const programs = [
             {
                 category: "Fees & Admission",
                 questions: [
-                    { q: "What is the program fee?", a: "Original Price: ₹50,000 | Offer Price: ₹35,000. Application fee of ₹1,000 is adjustable in the program fee." },
+                    { q: "What is the program fee?", a: "Original Price: ₹40,000 | Offer Price: ₹25,000. Application fee of ₹1,000 is adjustable in the program fee." },
                     { q: "Are EMI options available?", a: "Yes, we offer flexible EMI options. Contact our counselors for detailed payment plans." },
                     { q: "Is there placement assistance?", a: "Yes, we provide complete placement support including resume building, interview preparation, and mock interviews." }
                 ]
+            }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=250&fit=crop",
+                date: "February 2026",
+                headline: "Soft Skills Rated More Important Than Technical Skills by 80% of HR Managers",
+                source: "LinkedIn Talent Solutions"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Communication and EQ: The Key Differentiators for Leadership Roles",
+                source: "Forbes Leadership"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "The Rising Importance of Personality Development for Career Growth",
+                source: "Business Insider"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Adaptability: The #1 Skill Wanted by Employers in 2025",
+                source: "World Economic Forum"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Why Empathy is a Business Imperative in the Modern Workplace",
+                source: "HBR"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Critical Thinking and Problem Solving: Essential for the AI Era",
+                source: "McKinsey"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Teamwork and Collaboration in Remote and Hybrid Work Environments",
+                source: "Slack Blog"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "The Power of Persuasion: Influencing without Authority",
+                source: "Inc.com"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Resilience: Bouncing Back from Setbacks in a High-Pressure World",
+                source: "Psychology Today"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Networking Skills: Building Professional Relationships for Career Growth",
+                source: "Entrepreneur"
+            }
+        ]
+    },
+    {
+        slug: "internship-program",
+        category: "internship",
+        heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1600",
+        brochureLink: "",
+        title: "3 Months Internship Program",
+        subtitle: "Launch Your Career with Real-World Experience",
+        description: "Bridge the gap between academic learning and industry demands with our intensive 3-Month Internship Program. Work on live projects, receive mentorship from industry experts, and gain the practical skills needed to secure a high-paying job in Tech.",
+        features: "Live Project Experience, Industry Mentorship, Certificate of Completion, Job Placement Assistance, Hands-on Training, Portfolio Building.",
+        batchInfo: "Rolling Admissions",
+        partner: "eHack Academy",
+        partnerLogo: "/ehack-black.png",
+        ehackLogo: "/ehack-black.png",
+        stats: {
+            startDate: "Flexible Start",
+            duration: "3 Months",
+            mode: "Hybrid (Online + Offline)",
+            totalHours: "200+",
+            membership: "Alumni Network Access"
+        },
+        schedule: "Flexible Timings | Weekend & Weekday Options",
+        certifications: [
+            { code: "INTERN", name: "Internship Experience Certificate", image: "/images/certificates/internship-certification.jpeg" }
+        ],
+        skills: [
+            { name: "Project Management", desc: "Learn Agile methodologies, sprint planning, and effective project execution strategies." },
+            { name: "Team Collaboration", desc: "Work in cross-functional teams to deliver real-world solutions." },
+            { name: "Technical Proficiency", desc: "Enhance your coding and problem-solving skills with practical implementation." },
+            { name: "Professional Communication", desc: "Master corporate communication, documentation, and presentation skills." },
+            { name: "Version Control Systems", desc: "Gain proficiency in Git and GitHub for effective code management and collaboration." },
+            { name: "Software Development Lifecycle", desc: "Understand the complete SDLC from requirement gathering to deployment and maintenance." }
+        ],
+        curriculum: [
+            {
+                number: "01",
+                title: "Track 1: Cybersecurity Internship",
+                duration: "3 Months",
+                certification: "",
+                description: "A structured path from fundamentals to advanced security operations, culminating in real-world VAPT and SOC projects.",
+                topics: [
+                    "Month 1: Foundations - Networking, Linux/Windows Security, Threat Landscape",
+                    "Month 2: Specialization - Web VAPT (OWASP), SOC Operations, Digital Forensics",
+                    "Month 3: Real-Time Project - Enterprise VAPT, Incident Response, Red vs Blue Team"
+                ]
+            },
+            {
+                number: "02",
+                title: "Track 2: Data Science Internship",
+                duration: "3 Months",
+                certification: "",
+                description: "Master the data pipeline from preprocessing to machine learning model deployment on real-world datasets.",
+                topics: [
+                    "Month 1: Data Foundations - Python, EDA, Statistics, Data Cleaning",
+                    "Month 2: Machine Learning - Regression, Classification, Model Evaluation",
+                    "Month 3: Real-Time Project - Customer Churn, Fraud Detection, Forecasting"
+                ]
+            },
+            {
+                number: "03",
+                title: "Track 3: Digital Marketing Internship",
+                duration: "3 Months",
+                certification: "",
+                description: "End-to-end digital marketing training covering strategy, performance channels, and campaign analytics.",
+                topics: [
+                    "Month 1: Foundations - Consumer Behavior, Content Strategy, Branding",
+                    "Month 2: Performance Channels - SEO, Social Media, Email Marketing, Leads",
+                    "Month 3: Real-Time Project - SEO Audit, Growth Plan, Campaign Analysis"
+                ]
+            }
+        ],
+        targetAudience: [
+            { title: "Final Year Students", desc: "Students looking to gain industrial exposure before graduation.", tag: "Career Start" },
+            { title: "Fresh Graduates", desc: "Recent grads seeking practical experience to boost employablity.", tag: "Job Ready" },
+            { title: "Career Switchers", desc: "Professionals transitioning into a new tech domain.", tag: "New Path" },
+            { title: "Coding Bootcamp Grads", desc: "Bootcamp graduates looking for their first break in the industry.", tag: "Skill Apply" }
+        ],
+        jobRoles: [
+            "Software Developer Intern", "Security Analyst Intern", "Digital Marketing Intern", "Project Trainee",
+            "Full Stack Developer Intern", "QA Engineer Intern", "Product Management Intern", "UI/UX Design Intern"
+        ],
+        pricing: {
+            original: "₹30,000",
+            discounted: "₹30,000",
+            applicationFee: "₹500",
+            admissionFee: "₹30,000",
+            companyEMI: "Contact for options",
+        },
+        partnerLogos: [
+            "/ehack-black.png"
+        ],
+        careerROI: {
+            title: "Internship ROI",
+            subtitle: "Gain the experience that employers value most.",
+            chartTitle: "Employability Boost",
+            salaryIntro: "Interns with real project experience are 3x more likely to get hired.",
+            salaryLevels: [
+                { label: "1x", level: "Fresh Grad" },
+                { label: "3x", level: "With Internship" },
+                { label: "5x", level: "Experienced" }
+            ],
+            chartDesc: "Hiring Probability",
+            chartNote: "Practical experience is the #1 criterion for entry-level hiring."
+        },
+        whyEhack: [
+            { title: "Live Projects", desc: "Don't just learn, build. Work on real projects that go live." },
+            { title: "Expert Mentors", desc: "Learn from the best in the industry." },
+            { title: "Certification", desc: "Get a recognized internship certificate." },
+            { title: "Network", desc: "Connect with professionals and alumni." }
+        ],
+        programExcellence: [
+            { title: "Real Experience", desc: "Work on live projects.", icon: "lab" },
+            { title: "Mentorship", desc: "Guided by experts.", icon: "certificate" },
+            { title: "Placement Focus", desc: "Job assistance provided.", icon: "infrastructure" },
+            { title: "Skill Building", desc: "Practical hands-on learning.", icon: "global" }
+        ],
+        faq: [
+            {
+                category: "Program",
+                questions: [
+                    { q: "Is this a paid internship?", a: "This is a training-cum-internship program with a nominal fee to cover training and mentorship costs." },
+                    { q: "Will I get a job offer?", a: "Top performers may be offered full-time roles or placement assistance." },
+                    { q: "What is the duration?", a: "The standard duration is 3 months, but it can be extended based on performance." }
+                ]
+            },
+            {
+                category: "Eligibility",
+                questions: [
+                    { q: "Who can apply?", a: "Students, fresh graduates, and career switchers can apply." },
+                    { q: "Do I need prior experience?", a: "No, we provide training as part of the program." }
+                ]
+            }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+                date: "February 2026",
+                headline: "Internships Increase Full-Time Job Offer Probability by 70%",
+                source: "NACE Report"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Why Employers Value Practical Experience Over Grades",
+                source: "Harvard Business Review"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "The Gig Economy: How Internships Prepare You for Freelance Work",
+                source: "Forbes"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Networking During Internships: Building Your Professional Circle",
+                source: "LinkedIn"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "From Intern to Employee: Strategies for Converting Your Internship",
+                source: "The Muse"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "The Rise of Virtual Internships: Gaining Global Experience Remotely",
+                source: "Fast Company"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1531498860502-7c67cf02f657?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Project-Based Learning: The Future of Skill Acquisition",
+                source: "EdSurge"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Soft Skills You Learn Best Through Real-World Internships",
+                source: "Monster"
+            },
+            {
+                image: "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg",
+                date: "October 2025",
+                headline: "Mentorship in Internships: Accelerating Your Career Growth",
+                source: "Entrepreneur"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Building a Portfolio: Documenting Your Internship Achievements",
+                source: "Medium"
             }
         ]
     }
@@ -1931,6 +2648,14 @@ export const programCategories = [
         icon: '🎯',
         color: '#EC4899',
         backgroundImage: '/Personality-and-Softskill-Development.png'
+    },
+    {
+        slug: 'internship',
+        name: 'Internship Programs',
+        description: 'Gain real-world experience with industry experts',
+        icon: '💼',
+        color: '#3B82F6',
+        backgroundImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80'
     }
 ];
 

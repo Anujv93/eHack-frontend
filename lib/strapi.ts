@@ -227,12 +227,18 @@ export interface CourseModule {
     id?: number;
     ModuleNumber: string;
     ModuleTitle: string;
+    Description?: string;
     Topics?: ModuleTopic[];
 }
 
 export interface CourseOutlineSection {
     __component: 'global.course-outline-section';
     Title: string;
+    description?: string;
+    badge?: string;
+    total_hours?: number;
+    total_module?: number;
+    certification?: number;
     Modules: CourseModule[];
     CTAButtonText?: string;
     CTAButtonLink?: string;
@@ -260,13 +266,21 @@ export interface Certificate {
     Title: string;
     Subtitle: string;
     slug: string;
+    /** Price in USD for international (non-India) visitors, set in Strapi admin */
+    InternationalPrice?: number;
     pageContent: PageContent[];
+    brochure?: {
+        url: string;
+        name: string;
+    };
 }
 
 // Fetch a single certificate by slug
 export async function getCertificateBySlug(slug: string): Promise<Certificate | null> {
     try {
-        const url = `${STRAPI_URL}/api/certificates?filters[slug][$eq]=${encodeURIComponent(slug)}&populate[pageContent][populate]=*`;
+        // Use specific fields for brochure to avoid "Invalid key related at brochure.related" error
+        // when using wildcard population on media fields
+        const url = `${STRAPI_URL}/api/certificates?filters[slug][$eq]=${encodeURIComponent(slug)}&populate[pageContent][populate]=*&populate[brochure][fields][0]=url&populate[brochure][fields][1]=name`;
         console.log('Fetching from:', url);
 
         const res = await fetch(url, {
@@ -352,7 +366,7 @@ export async function getAdmissionProcess(): Promise<AdmissionProcess | null> {
 
 // Helper to get Strapi media URL
 export function getStrapiMediaUrl(url: string): string {
-    if (url.startsWith('http')) return url;
+    if (url.startsWith('http') || url.startsWith('/images/')) return url;
     return `${STRAPI_URL}${url}`;
 }
 

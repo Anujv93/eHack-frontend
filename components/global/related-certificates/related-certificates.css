@@ -1,5 +1,6 @@
 .related-certificates {
-    padding: 5rem 1.5rem;
+    padding: 3rem 1.5rem;
+    /* Reduced padding from 5rem */
     background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
     position: relative;
     overflow: hidden;
@@ -53,7 +54,8 @@
 
 .related-certificates-subtitle {
     font-size: 1.0625rem;
-    color: #6B7280;
+    color: #1f2937;
+    /* Changed to requested color */
     max-width: 500px;
     margin: 0 auto;
     line-height: 1.6;
@@ -75,20 +77,20 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.875rem 2rem;
-    background: #111827;
+    background: #FF6B00;
     color: #FFFFFF;
     font-size: 0.9375rem;
     font-weight: 600;
     border-radius: 10px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 14px rgba(255, 107, 0, 0.3);
 }
 
 .view-all-link:hover {
-    background: #FF6B00;
+    background: #e05e00;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
 }
 
 .view-all-link svg {
@@ -128,5 +130,125 @@
     .view-all-link {
         width: 100%;
         justify-content: center;
+    }
+}
+
+/* Explore Program Card Styles (Imported from Category Page) */
+.explore-programs-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.explore-program-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 260px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.1);
+    border: 2px solid #FF6B00;
+}
+
+.explore-program-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(255, 107, 0, 0.25);
+    border-color: #FF8533;
+}
+
+.explore-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.7) 60%,
+            rgba(0, 0, 0, 0.85) 100%);
+    z-index: 1;
+}
+
+.explore-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.explore-partner-logo {
+    height: 22px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+}
+
+.explore-card-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1.25;
+    min-height: 2.5em;
+    max-height: 6.5em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    word-break: break-word;
+}
+
+.explore-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.explore-duration {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.explore-price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FF8533;
+}
+
+.related-certificates-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.related-certificates-section-title span {
+    color: #FF6B00;
+}
+
+@media (max-width: 768px) {
+    .explore-programs-row {
+        grid-template-columns: 1fr;
+    }
+
+    .explore-program-card {
+        height: 200px;
     }
 }
