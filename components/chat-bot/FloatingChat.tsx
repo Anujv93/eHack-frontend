@@ -38,6 +38,7 @@ export default function FloatingChat() {
         message: "",
     });
     const [formErrors, setFormErrors] = useState<Partial<UserInfo>>({});
+    const [gitErrors, setGitErrors] = useState<{ name?: string; email?: string; phone?: string }>({});
     const [showGetInTouch, setShowGetInTouch] = useState(false);
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -61,7 +62,21 @@ export default function FloatingChat() {
         if (!userInfo.email.trim()) errors.email = "Email is required";
         else if (!/\S+@\S+\.\S+/.test(userInfo.email))
             errors.email = "Enter a valid email";
+        if (userInfo.phone.trim() && !/^\d{10}$/.test(userInfo.phone.trim()))
+            errors.phone = "Phone number must be exactly 10 digits";
         setFormErrors(errors);
+        return Object.keys(errors).length === 0;
+    }
+
+    function validateGitForm(): boolean {
+        const errors: { name?: string; email?: string; phone?: string } = {};
+        if (!userInfo.name.trim()) errors.name = "Name is required";
+        if (!userInfo.email.trim()) errors.email = "Email is required";
+        else if (!/\S+@\S+\.\S+/.test(userInfo.email))
+            errors.email = "Enter a valid email";
+        if (userInfo.phone.trim() && !/^\d{10}$/.test(userInfo.phone.trim()))
+            errors.phone = "Phone number must be exactly 10 digits";
+        setGitErrors(errors);
         return Object.keys(errors).length === 0;
     }
 
@@ -268,16 +283,37 @@ export default function FloatingChat() {
                                     <label className="form-label" htmlFor="user-phone">
                                         Phone
                                     </label>
-                                    <input
-                                        id="user-phone"
-                                        type="tel"
-                                        className="form-input"
-                                        placeholder="+91 98765 43210"
-                                        value={userInfo.phone}
-                                        onChange={(e) =>
-                                            setUserInfo({ ...userInfo, phone: e.target.value })
-                                        }
-                                    />
+                                    <div style={{ position: "relative" }}>
+                                        <input
+                                            id="user-phone"
+                                            type="tel"
+                                            className={`form-input ${formErrors.phone ? "form-input--error" : ""}`}
+                                            placeholder="98765 43210"
+                                            value={userInfo.phone}
+                                            maxLength={10}
+                                            onChange={(e) => {
+                                                const digits = e.target.value.replace(/\D/g, "").slice(0, 10);
+                                                setUserInfo({ ...userInfo, phone: digits });
+                                                if (formErrors.phone) setFormErrors({ ...formErrors, phone: undefined });
+                                            }}
+                                        />
+                                        {userInfo.phone.length > 0 && (
+                                            <span style={{
+                                                position: "absolute",
+                                                right: "12px",
+                                                top: "50%",
+                                                transform: "translateY(-50%)",
+                                                fontSize: "11px",
+                                                color: userInfo.phone.length === 10 ? "#22c55e" : "#94a3b8",
+                                                pointerEvents: "none",
+                                            }}>
+                                                {userInfo.phone.length}/10
+                                            </span>
+                                        )}
+                                    </div>
+                                    {formErrors.phone && (
+                                        <span className="form-error">{formErrors.phone}</span>
+                                    )}
                                 </div>
 
                                 <div className="form-group">
@@ -498,6 +534,7 @@ export default function FloatingChat() {
                             className="git-form"
                             onSubmit={async (e) => {
                                 e.preventDefault();
+                                if (!validateGitForm()) return;
                                 await fetch("/api/lead", {
                                     method: "POST",
                                     headers: { "Content-Type": "application/json" },
@@ -540,14 +577,37 @@ export default function FloatingChat() {
                                 <label className="form-label" htmlFor="git-phone">
                                     Phone
                                 </label>
-                                <input
-                                    id="git-phone"
-                                    type="tel"
-                                    className="form-input"
-                                    placeholder="+91 98765 43210"
-                                    value={userInfo.phone}
-                                    onChange={(e) => setUserInfo({ ...userInfo, phone: e.target.value })}
-                                />
+                                <div style={{ position: "relative" }}>
+                                    <input
+                                        id="git-phone"
+                                        type="tel"
+                                        className={`form-input ${gitErrors.phone ? "form-input--error" : ""}`}
+                                        placeholder="98765 43210"
+                                        value={userInfo.phone}
+                                        maxLength={10}
+                                        onChange={(e) => {
+                                            const digits = e.target.value.replace(/\D/g, "").slice(0, 10);
+                                            setUserInfo({ ...userInfo, phone: digits });
+                                            if (gitErrors.phone) setGitErrors({ ...gitErrors, phone: undefined });
+                                        }}
+                                    />
+                                    {userInfo.phone.length > 0 && (
+                                        <span style={{
+                                            position: "absolute",
+                                            right: "12px",
+                                            top: "50%",
+                                            transform: "translateY(-50%)",
+                                            fontSize: "11px",
+                                            color: userInfo.phone.length === 10 ? "#22c55e" : "#94a3b8",
+                                            pointerEvents: "none",
+                                        }}>
+                                            {userInfo.phone.length}/10
+                                        </span>
+                                    )}
+                                </div>
+                                {gitErrors.phone && (
+                                    <span className="form-error">{gitErrors.phone}</span>
+                                )}
                             </div>
 
                             <div className="form-group">
