@@ -745,6 +745,132 @@
     background: linear-gradient(90deg, #0ea5e9, #38bdf8);
 }
 
+/* ── Kennedy Degree List (compact) ──────────────── */
+.kennedy-degree-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.kennedy-degree-item {
+    background: #fff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 11px 13px;
+    border-left: 4px solid #0ea5e9;
+}
+
+.kennedy-degree-item--ms {
+    border-left-color: #06b6d4;
+}
+
+.kennedy-degree-item--integrated {
+    border-left-color: #ff6b00;
+    background: #fffaf7;
+}
+
+.kennedy-degree-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.kennedy-degree-level {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #0284c7;
+    background: #e0f2fe;
+    padding: 2px 7px;
+    border-radius: 99px;
+}
+
+.kennedy-degree-item--ms .kennedy-degree-level {
+    color: #0e7490;
+    background: #cffafe;
+}
+
+.kennedy-degree-item--integrated .kennedy-degree-level {
+    color: #c2410c;
+    background: #fff0e6;
+}
+
+.kennedy-degree-best-value {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #ff6b00;
+    padding: 2px 8px;
+    border-radius: 99px;
+    margin-bottom: 5px;
+}
+
+.kennedy-degree-duration {
+    font-size: 10.5px;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.kennedy-degree-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.kennedy-degree-desc {
+    font-size: 11.5px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 9px;
+}
+
+.kennedy-degree-actions {
+    display: flex;
+    gap: 7px;
+}
+
+.kdeg-btn {
+    flex: 1;
+    padding: 5px 10px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.15s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1.5px solid #0ea5e9;
+}
+
+.kdeg-btn--outline {
+    background: transparent;
+    color: #0284c7;
+}
+
+.kdeg-btn--outline:hover {
+    background: #e0f2fe;
+}
+
+.kdeg-btn--fill {
+    background: #0ea5e9;
+    color: #fff;
+}
+
+.kdeg-btn--fill:hover {
+    background: #0284c7;
+    border-color: #0284c7;
+}
+
 .program-card--dm::before {
     background: linear-gradient(90deg, #10b981, #34d399);
 }

@@ -474,31 +474,49 @@ export default function FloatingChat() {
         );
 
         if (card.type === "kennedy-programs") return (
-            <div className="guide-programs">
-                <div className="program-card program-card--kennedy">
-                    <div className="program-card-badge">University Degree</div>
-                    <div className="program-card-title">Kennedy University Partner Programs</div>
-                    <div className="program-card-subtitle">Internationally Recognized Degrees in Cybersecurity</div>
-                    <ul className="program-card-bullets">
-                        <li>Formal university degree credential</li>
-                        <li>Internationally recognized qualification</li>
-                        <li>Cybersecurity & related disciplines</li>
-                        <li>eHack Academy facilitation & support</li>
-                        <li>Industry-aligned curriculum</li>
-                    </ul>
-                    <div className="program-card-note">
-                        A great option if you want both practical skills <em>and</em> a formal degree for career advancement or further studies.
+            <div className="kennedy-degree-list">
+                {/* BSCS */}
+                <div className="kennedy-degree-item kennedy-degree-item--bs">
+                    <div className="kennedy-degree-meta">
+                        <span className="kennedy-degree-level">Undergraduate</span>
+                        <span className="kennedy-degree-duration">Fast Track · 12 Months · 120 Credits</span>
                     </div>
-                    <a href="https://www.ehackacademy.com/kennedy-university" target="_blank" rel="noopener noreferrer" className="program-card-link">
-                        Explore Kennedy University Programs →
-                    </a>
+                    <div className="kennedy-degree-name">Bachelor of Science in Cyber Security (BSCS)</div>
+                    <div className="kennedy-degree-desc">Covers IT foundations, network defense & ethical hacking. Includes a 6-month internship.</div>
+                    <div className="kennedy-degree-actions">
+                        <button className="kdeg-btn kdeg-btn--outline" onClick={() => sendMessage("Tell me more about the BSCS program at Kennedy University")}>Learn More</button>
+                        <a href="https://www.ehackacademy.com/kennedy-university/bscs" target="_blank" rel="noopener noreferrer" className="kdeg-btn kdeg-btn--fill">View Program</a>
+                    </div>
                 </div>
-                <button
-                    className="guide-ask-btn"
-                    onClick={() => sendMessage("Tell me more about Kennedy University degree programs")}
-                >
-                    Ask about Kennedy University
-                </button>
+
+                {/* MSCS */}
+                <div className="kennedy-degree-item kennedy-degree-item--ms">
+                    <div className="kennedy-degree-meta">
+                        <span className="kennedy-degree-level">Postgraduate</span>
+                        <span className="kennedy-degree-duration">Fast Track · 12 Months · 90 Credits</span>
+                    </div>
+                    <div className="kennedy-degree-name">Master of Science in Cyber Security (MSCS)</div>
+                    <div className="kennedy-degree-desc">Advanced SOC operations, cloud security & executive leadership. Includes research & thesis.</div>
+                    <div className="kennedy-degree-actions">
+                        <button className="kdeg-btn kdeg-btn--outline" onClick={() => sendMessage("Tell me more about the MSCS program at Kennedy University")}>Learn More</button>
+                        <a href="https://www.ehackacademy.com/kennedy-university/mscs" target="_blank" rel="noopener noreferrer" className="kdeg-btn kdeg-btn--fill">View Program</a>
+                    </div>
+                </div>
+
+                {/* Integrated */}
+                <div className="kennedy-degree-item kennedy-degree-item--integrated">
+                    <div className="kennedy-degree-best-value">Best Value</div>
+                    <div className="kennedy-degree-meta">
+                        <span className="kennedy-degree-level">Dual Degree</span>
+                        <span className="kennedy-degree-duration">Accelerated · 15 Months · 180 Credits</span>
+                    </div>
+                    <div className="kennedy-degree-name">Integrated BSCS + MSCS in Cyber Security</div>
+                    <div className="kennedy-degree-desc">Complete UG + PG in one accelerated program. CISO leadership track, 2 internships & dual degree award.</div>
+                    <div className="kennedy-degree-actions">
+                        <button className="kdeg-btn kdeg-btn--outline" onClick={() => sendMessage("Tell me more about the Integrated BSCS+MSCS program at Kennedy University")}>Learn More</button>
+                        <a href="https://www.ehackacademy.com/kennedy-university/integrated-bscs-mscs" target="_blank" rel="noopener noreferrer" className="kdeg-btn kdeg-btn--fill">View Program</a>
+                    </div>
+                </div>
             </div>
         );
 
