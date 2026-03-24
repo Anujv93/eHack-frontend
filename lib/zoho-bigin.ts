@@ -188,6 +188,15 @@ export async function createZohoDeal(dealData: ZohoDeal): Promise<string> {
                 layoutId: '1182543000000000173',
                 subPipeline: 'Sales Pipeline Standard'
             },
+            // Admission Pipeline (renamed from Sales Pipeline)
+            'Admission Pipeline': {
+                layoutId: '1182543000000000173',
+                subPipeline: 'Sales Pipeline Standard'
+            },
+            'Admission Pipeline Standard': {
+                layoutId: '1182543000000000173',
+                subPipeline: 'Sales Pipeline Standard'
+            },
         };
 
         // If pipeline not in static config, try to find it dynamically
