@@ -432,3 +432,162 @@
         max-height: 120px;
     }
 }
+
+/* Animated top edge loader */
+.offer-banner-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: #ff6b00;
+    animation: loaderFill 10s linear forwards;
+    z-index: 100;
+}
+
+@keyframes loaderFill {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Offer Toggle Control (Centered between items) */
+.offer-toggle-wrapper {
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.offer-toggle-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(180deg, #FF8C00 0%, #E67700 100%);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 107, 0, 0.4);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.offer-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 107, 0, 0.5);
+    background: linear-gradient(180deg, #FFA033 0%, #FF8000 100%);
+}
+
+.offer-banner-image.ceh-image img.ceh-offer-img {
+    height: 115%;
+    width: auto;
+    max-height: 340px;
+    object-fit: contain;
+    object-position: bottom;
+    border-radius: 0;
+    box-shadow: none;
+    margin-right: 4rem;
+}
+
+@media (max-width: 768px) {
+    .offer-toggle-wrapper {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: 1.5rem auto 0;
+        z-index: 20;
+    }
+
+    .offer-toggle-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .offer-banner-image.ceh-image img.ceh-offer-img {
+        max-height: 200px;
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+        border-radius: 0;
+        box-shadow: none;
+        object-position: bottom center;
+        margin-right: 0;
+    }
+}
+
+/* CEH Blue Theme Modifications */
+.offer-banner.offer-banner-blue {
+    background: linear-gradient(135deg, #F4F8FC 0%, #E6EFFF 30%, #D8E7FF 60%, #EAF1FF 100%);
+}
+
+.offer-banner.offer-banner-blue .offer-banner-loader {
+    background-color: #0A58CA;
+}
+
+.offer-banner.offer-banner-blue::before {
+    background-image:
+        radial-gradient(circle, rgba(10, 88, 202, 0.25) 2px, transparent 2px),
+        linear-gradient(90deg, transparent 0%, transparent 45%, rgba(10, 88, 202, 0.2) 50%, transparent 55%, transparent 100%);
+}
+
+.offer-banner.offer-banner-blue::after {
+    background-image:
+        radial-gradient(circle, rgba(10, 88, 202, 0.22) 2px, transparent 2px),
+        linear-gradient(90deg, transparent 0%, transparent 45%, rgba(10, 88, 202, 0.18) 50%, transparent 55%, transparent 100%);
+}
+
+.offer-ribbon.offer-ribbon-blue {
+    background: linear-gradient(180deg, #0D6EFD 0%, #0A58CA 100%);
+    box-shadow: 0 3px 10px rgba(10, 88, 202, 0.4);
+}
+
+.offer-banner.offer-banner-blue .offer-banner-title {
+    color: #0A58CA;
+}
+
+.offer-banner.offer-banner-blue .offer-banner-cta {
+    background: linear-gradient(180deg, #0D6EFD 0%, #0B5ED7 100%);
+    box-shadow: 0 3px 10px rgba(10, 88, 202, 0.3);
+}
+
+.offer-banner.offer-banner-blue .offer-banner-cta:hover {
+    box-shadow: 0 5px 15px rgba(10, 88, 202, 0.4);
+    background: linear-gradient(180deg, #0D6EFD 0%, #0A58CA 100%);
+}
+
+.offer-banner.offer-banner-blue .offer-toggle-btn {
+    background: linear-gradient(180deg, #0A58CA 0%, #073B8A 100%);
+    box-shadow: 0 4px 10px rgba(10, 88, 202, 0.4);
+}
+
+.offer-banner.offer-banner-blue .offer-toggle-btn:hover {
+    box-shadow: 0 6px 15px rgba(10, 88, 202, 0.5);
+    background: linear-gradient(180deg, #0D6EFD 0%, #0A58CA 100%);
+}
+
+.offer-banner.offer-banner-blue .offer-banner-content {
+    min-height: 245px;
+}
+
+.offer-banner.offer-banner-blue .offer-banner-pretitle,
+.offer-banner.offer-banner-blue .offer-banner-title {
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .offer-banner.offer-banner-blue .offer-banner-pretitle {
+        font-size: 0.95rem;
+    }
+
+    .offer-banner.offer-banner-blue .offer-banner-title {
+        font-size: 1.15rem;
+    }
+}
