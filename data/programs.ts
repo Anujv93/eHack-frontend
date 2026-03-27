@@ -796,7 +796,7 @@ export const programs = [
     {
         slug: "advanced-diploma-cybersecurity",
         category: "cybersecurity",
-        heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1600",
+        heroImage: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1600",
         brochureLink: "",
         title: "Advanced Diploma in Cybersecurity Powered by AI ",
         subtitle: "",
