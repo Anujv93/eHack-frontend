@@ -141,7 +141,7 @@ export default function CehOfferModal({ isOpen, onClose }: CehOfferModalProps) {
                     <div className="ceh-modal-right">
                         <div className="ceh-modal-sticky-sidebar">
                             <InquiryForm
-                                courseName="Certified Ethical Hacker (CEH v13)"
+                                courseName="15000 - Certified Ethical Hacker (CEH v13)"
                                 courseCode="masterclass-ethical-hacking-ceh-v13"
                                 variant="hero"
                                 title="Claim CEH Offer"
