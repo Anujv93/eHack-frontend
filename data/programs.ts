@@ -794,6 +794,372 @@ export const programs = [
     },
 
     {
+        slug: "advanced-diploma-cybersecurity",
+        category: "cybersecurity",
+        heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1600",
+        brochureLink: "",
+        title: "Advanced Diploma in Cybersecurity Powered by AI ",
+        subtitle: "",
+        description: "Equip yourself with skills to protect IT infrastructure, secure data, run risk analysis, architect cloud-based security, and achieve compliance.",
+        features: "Includes IT Fundamentals, Ethical Hacking, Penetration Testing, Digital Forensics & OWASP Top 10.",
+        batchInfo: "5TH OF EVERY MONTH",
+        ehackLogo: "/ehack-black.png",
+        stats: {
+            startDate: "5th of Every Month",
+            duration: "7-9 Months",
+            mode: "Classroom + Live Online",
+            totalHours: "200+ ",
+            membership: "2 Years "
+        },
+        schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
+        certifications: [],
+        skills: [
+            { name: "Application Security", desc: "Input parameter validation, User/Role Authentication & Authorization, Session management, parameter manipulation & exception management, Auditing and logging." },
+            { name: "Information Security", desc: "Protects information from unauthorized access, identity theft prevention, privacy protection through identification, authentication, authorization & cryptography." },
+            { name: "Disaster Recovery", desc: "Risk assessment, establishing priorities, developing recovery strategies to resume normal business operations as quickly as possible after a disaster." },
+            { name: "Network Security", desc: "Anti-virus, anti-spyware, Firewall configuration, Intrusion prevention systems (IPS), and Virtual Private Networks (VPNs) for secure remote access." },
+            { name: "Penetration Testing", desc: "Learn vulnerability assessment, ethical hacking methodologies, and real-world penetration testing techniques used by security professionals." },
+            { name: "Digital Forensics", desc: "Evidence collection, forensic analysis, incident investigation, and reporting techniques for cybercrime cases." }
+        ],
+        curriculum: [
+            {
+                number: "00",
+                title: "ICE Breaker, Program Kick-off & Orientation",
+                duration: "4 Hours",
+                certification: "",
+                description: "Your journey into a high-growth cyber security career begins from Day One. The ICE Breaker & Orientation session is a power-packed 4-hour onboarding experience designed to align learners with industry expectations, global certifications, and a clear career roadmap—before core technical training begins.",
+                topics: [
+                    "Interactive introductions to build confidence and collaboration",
+                    "Clear understanding of the Master’s Program structure",
+                    "Alignment on learning discipline, ethics, and performance standards",
+                    "Setting expectations for real-world cyber security careers",
+                    "Introduction to eHack Academy – Institute of Emerging Technologies",
+                    "Overview of EC-Council, the world’s leading cyber security certification body",
+                    "Academic, university, and industry partnerships",
+                    "Industry-aligned curriculum with real-world relevance",
+                    "Guided walkthrough of the EC-Council LMS",
+                    "Access to official courseware, labs, and licensed tools",
+                    "Importance of classroom training and hands-on practice",
+                    "Transparent evaluation, exam pattern, and certification process",
+                    "Cyber Security–specific resume building",
+                    "Understanding job roles, domains, and growth paths",
+                    "Smart job application strategies and LinkedIn optimization",
+                    "Long-term career success roadmap in cyber security"
+                ]
+            },
+            {
+                number: "01",
+                title: "P|CSFᴬᴵ - Professional | Cybersecurity Fundamentals Programᴬᴵ",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Build a strong foundation in IT essentials covering hardware, operating systems, networking, servers, and cloud technologies.",
+                topics: [
+                    "Computer Hardware & Architecture",
+                    "Operating Systems (Windows/Linux/Mac)",
+                    "Networking Fundamentals",
+                    "TCP/IP & Network Protocols",
+                    "Server Administration Basics",
+                    "Cloud Computing Concepts",
+                    "Virtualization Technologies",
+                    "Basic Troubleshooting"
+                ]
+            },
+            {
+                number: "02",
+                title: "P|SCSPᴬᴵ - Professional | Secure Computer Systems Programᴬᴵ",
+                duration: "6 Weeks",
+                certification: "",
+                description: "Learn essential cybersecurity awareness and secure computing practices .",
+                topics: [
+                    "Introduction to Digital Security",
+                    "Operating System Protection Techniques",
+                    "Malicious Software and System Defense",
+                    "Internet Usage Security Practices",
+                    "Security AwarSecuring Emaeness for Social Media Platforms",
+                    "Email Communication Protection Methods",
+                    "Mobile Device Security Fundamentals",
+                    "Cloud Usage and Data Protection",
+                    "Network Connectivity and Access Security",
+                    "Data Backup and Business Continuity Planning",
+                    "Protection of Smart and Connected Devices",
+                    "Safe Digital Workspaces and Remote Access Security"
+                ]
+            },
+            {
+                number: "03",
+                title: "P|NDPᴬᴵ - Professional | Network Defense Programᴬᴵ",
+                duration: "8 Weeks",
+                certification: "",
+                description: "Master the protect, detect, respond, and predict approach to network security .",
+                topics: [
+                    "Network Attacks and Defense Approaches",
+                    "Administrative Network Security",
+                    "Technical Network Security",
+                    "Network Boundary and Perimeter Security",
+                    "Endpoint Protection for Windows Systems",
+                    "Endpoint Protection for Linux Systems",
+                    "Endpoint Protection for Mobile Devices",
+                    "Endpoint Protection for IoT and Smart Devices",
+                    "Administrative Application Security",
+                    "Data Security and Protection Controls",
+                    "Network Threat Analysis and Response",
+                    "Network Policy and Governance Management",
+                    "Secure Network Architecture Design",
+                    "Perimeter Monitoring and Defense Systems",
+                    "Windows Endpoint Hardening Techniques ",
+                    "Linux Endpoint Hardening Techniques",
+                    "IoT Security Administration",
+                    "Application Security Administration",
+                    "Enterprise Data Protection Strategies",
+                ]
+            },
+            {
+                number: "04",
+                title: "Ethical Hacking & Counter Measures",
+                duration: "6 Weeks",
+                certification: "",
+                description: "Think like an attacker to defend like a professional. Master reconnaissance, exploitation, and vulnerability assessment.",
+                topics: [
+                    "Footprinting & Reconnaissance",
+                    "Scanning Networks",
+                    "Enumeration Techniques",
+                    "Vulnerability Analysis",
+                    "System Hacking",
+                    "Malware Threats",
+                    "Sniffing & Packet Analysis",
+                    "Social Engineering",
+                    "Counter Measures & Defense"
+                ]
+            },
+            {
+                number: "05",
+                title: "Penetration Testing / Digital Forensics",
+                duration: "6 Weeks",
+                certification: "Choose One",
+                description: "Choose between Penetration Testing or Digital Forensic Investigator track based on your career goals.",
+                topics: [
+                    "Penetration Testing Methodologies",
+                    "Web Application Testing",
+                    "Network Penetration Testing",
+                    "Computer Forensics Process",
+                    "Evidence Acquisition & Analysis",
+                    "Memory & Disk Forensics",
+                    "Report Writing & Documentation"
+                ]
+            },
+            {
+                number: "06",
+                title: "OWASP Top 10",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Master the OWASP Top 10 web application security risks and learn how to identify, exploit, and mitigate them.",
+                topics: [
+                    "Injection Attacks (SQL, NoSQL, OS)",
+                    "Broken Authentication",
+                    "Sensitive Data Exposure",
+                    "XML External Entities (XXE)",
+                    "Broken Access Control",
+                    "Security Misconfigurations",
+                    "Cross-Site Scripting (XSS)",
+                    "Insecure Deserialization",
+                    "Using Components with Known Vulnerabilities",
+                    "Insufficient Logging & Monitoring"
+                ]
+            },
+            {
+                number: "07",
+                title: "Personality and Softskill Development",
+                duration: "2 Week",
+                certification: "",
+                description: "Understand the importance of personality in career growth, industry expectations, and placement readiness.",
+                topics: [
+                    "Self-Awareness & Confidence Building",
+                    "Attitude, Mindset & Professional Behavior",
+                    "Emotional Intelligence (EQ)",
+                    "Time Management & Productivity",
+                    "Verbal Communication Skills",
+                    "Non-Verbal Communication & Body Language",
+                    "Listening Skills & Question Handling",
+                    "Public Speaking & Presentation Skills",
+                    "Teamwork & Leadership Skills",
+                    "Corporate Communication Skills",
+                    "Problem-Solving & Critical Thinking",
+                    "Resume Building (ATS-Friendly)",
+                    "LinkedIn Profile & Personal Branding",
+                    "Group Discussion (GD) Techniques",
+                    "HR Interview Preparation",
+                    "Mock Interviews – HR & Technical",
+                    "Corporate Readiness & Workplace Ethics",
+                    "Placement Readiness & Career Roadmap"
+                ]
+            },
+            {
+                number: "08",
+                title: "3 Months Internship on real-time industry projects",
+                duration: "3 Months",
+                description: "Each Master Program student must select ANY TWO advanced projects.",
+                topics: [
+                    "1. Network Security & SOC Operations",
+                    "2. Application & Network Security Testing",
+                    "3. Digital Forensics & Incident Analysis",
+                    "4. Cloud Infrastructure Security",
+                ],
+            }
+        ],
+        careerROI: {
+            title: "Great Career ROI",
+            subtitle: "This program equips you with advanced cybersecurity skills essential for protecting organizations from cyber threats. Master ethical hacking, network defense, digital forensics, and penetration testing—preparing you for high-impact roles in the rapidly growing cybersecurity industry.",
+            chartTitle: "Chart Your Earning Potential",
+            salaryIntro: "Cybersecurity professionals are among the highest-paid IT specialists with average salaries exceeding ₹12,00,000 annually.",
+            salaryLevels: [
+                { label: "₹8L", level: "Entry" },
+                { label: "₹18L", level: "Mid" },
+                { label: "₹35L+", level: "Senior" }
+            ],
+            chartDesc: "A Cybersecurity Expert's Salary Progression",
+            chartNote: "Organizations offer highly competitive salaries to recruit and retain qualified cybersecurity professionals who can protect their digital assets."
+        },
+        whyEhack: [
+            { title: "Real Time Labs", desc: "Experience real time labs - how vulnerabilities are found and exploited, how pen testing is done for a network." },
+            { title: "World Class Infrastructure", desc: "Lab infrastructure built to industry standards with dedicated high speed broadband connectivity and well stacked library resources." },
+            { title: "Certified Faculties", desc: "Our experienced instructors provide the latest internationally practiced technological knowledge." },
+            { title: "Study Abroad Programs", desc: "International collaboration with universities and institutions worldwide to provide an enabling environment through constant engagement with global partners." }
+        ],
+        targetAudience: [
+            { title: "Fresh Graduates", desc: "Just completed your degree? Start your cybersecurity journey with zero experience. Our beginner-friendly curriculum covers everything from basics to advanced concepts.", tag: "Zero Experience OK" },
+            { title: "Students (2nd-4th Year)", desc: "Building your resume while in college? Get real-world skills that set you apart from other freshers.", tag: "Stand Out" },
+            { title: "Career Changers", desc: "Looking to switch from your current job? Our structured program helps you transition smoothly—regardless of your current field or technical background.", tag: "Any Background" },
+            { title: "Aspiring Hackers", desc: "Fascinated by ethical hacking? Learn to think like a hacker while building skills that companies are desperately hiring for—starting salaries of ₹6-8 LPA.", tag: "High Demand" }
+        ],
+        jobRoles: [
+            "Ethical Hacker", "Information Security Analyst", "Penetration Tester",
+            "Digital Forensic Analyst", "Security Software Developer", "Chief Information Security Officer",
+            "Network Engineer/Security Architect", "Incident Handler"
+        ],
+        pricing: {
+            original: "₹1,20,000",
+            discounted: "₹90,000",
+            emi: "₹17,500/month (4 EMIs after 30% upfront)",
+            applicationFee: "₹1,000",
+            admissionFee: "₹90,000",
+            companyEMI: "₹1,00,000",
+            upfrontPercentage: "30%",
+            upfrontAmount: "₹30,000",
+            emiCount: 4,
+            emiAmount: "₹17,500"
+        },
+        partnerLogos: [
+            "/images/partners/checkpoint.png",
+            "/images/partners/oracle.png",
+            "/images/partners/hpe.png",
+            "/images/partners/dell.png",
+            "/images/partners/ntt.png"
+        ],
+        programExcellence: [
+            { title: "Real Time Labs", desc: "Hands-on experience with industry-standard security tools and live environments.", icon: "lab" },
+            { title: "World Class Infrastructure", desc: "State-of-the-art training facilities with latest hardware and software.", icon: "infrastructure" },
+            { title: "Certified Faculties", desc: "Learn from expert instructors with real industry experience.", icon: "certificate" },
+            { title: "Study Abroad Programs", desc: "Global exposure through international training opportunities and partnerships.", icon: "global" }
+        ],
+        faq: [
+            {
+                category: "Program",
+                questions: [
+                    { q: "What is the Advanced Diploma in Cybersecurity?", a: "A 7-9 month comprehensive program covering IT Fundamentals, CSCU, CND certifications, Ethical Hacking, Penetration Testing, Digital Forensics & OWASP Top 10 with 200+ hours of training." },
+                    { q: "What certifications are included?", a: "This program focuses on practical skills and knowledge without international certification exams." },
+                    { q: "What are the schedule options?", a: "Weekday (Tuesday to Friday): 2 hrs/day OR Weekend (Saturday & Sunday): 4 hrs/day. Course starts 5th of every month." },
+                    { q: "What is the program fee?", a: "Program Fee: ₹1,20,000 | Offer Price: ₹90,000 | EMI Option: ₹1,00,000 (30% upfront: ₹30,000 + 4 EMIs of ₹17,500). Application fee: ₹1,000 (adjustable in program fee). GST as applicable." }
+                ]
+            },
+            {
+                category: "Eligibility",
+                questions: [
+                    { q: "What is the minimum qualification required?", a: "A basic understanding of computers and networking is helpful. Minimum qualification: 12th pass" },
+                    { q: "Is coding knowledge required?", a: "Basic programming knowledge is beneficial but not mandatory. We cover necessary scripting as part of the curriculum." },
+                    { q: "Can working professionals join?", a: "Absolutely! We offer flexible weekend and evening batches designed for working professionals." }
+                ]
+            },
+            {
+                category: "Fees",
+                questions: [
+                    { q: "Are there EMI options available?", a: "Yes, we offer flexible EMI options. EMI Option: ₹1,70,000 (30% upfront payment of ₹51,000 + 4 equal EMIs of ₹29,750)." },
+                    { q: "Is there any scholarship available?", a: "Merit-based scholarships are available up to ₹20,000 for exceptional candidates. Contact our counselors for eligibility." },
+                    { q: "What does the fee include?", a: "The fee covers all training materials, lab access, certification exam vouchers, and 2 years of post-training support." }
+                ]
+            },
+            {
+                category: "Career",
+                questions: [
+                    { q: "What role can I get?", a: "You can start as a Security Analyst, Network Defender, or Junior Pen Tester." },
+                    { q: "Is this degree recognized?", a: "Yes, it's a legitimate specialized program recognized by industry partners." }
+                ]
+            }
+        ],
+        newsItems: [
+            {
+                image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=250&fit=crop",
+                date: "February 2026",
+                headline: "Demand for Ethical Hackers Soars as Companies Face Frequent Breaches",
+                source: "Bloomberg"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Degree + Certification: The Winning Combination for Early Career Success",
+                source: "Education Times"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop",
+                date: "January 2026",
+                headline: "Start Your Career in Cyber Security with 50% Higher Salary than Peers",
+                source: "Naukri.com"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Cybersecurity Job Market Expected to Grow 35% by 2027",
+                source: "Forbes"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
+                date: "December 2025",
+                headline: "Why Every Company Needs a Cybersecurity Expert in 2025",
+                source: "Inc. Magazine"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "Top 5 Cybersecurity Certifications to Boost Your Career",
+                source: "CIO.com"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&h=250&fit=crop",
+                date: "November 2025",
+                headline: "The Growing Importance of Network Defense in the Digital Age",
+                source: "Network World"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "Huge Demand for Freshers in Cybersecurity - 3.5 Million Unfilled Jobs",
+                source: "Times of India"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1618060932014-4deda4932554?w=400&h=250&fit=crop",
+                date: "October 2025",
+                headline: "How to Land Your First Job in Cybersecurity",
+                source: "Career Builder"
+            },
+            {
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                date: "September 2025",
+                headline: "Cybersecurity Salary Trends: What to Expect in 2025",
+                source: "Glassdoor"
+            }
+        ]
+    },
+
+    {
         slug: "digital-marketing-masterprogram",
         category: "digital-marketing",
         heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600",
