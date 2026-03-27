@@ -66,13 +66,16 @@ export async function POST(request: NextRequest) {
         }
 
         // Validate phone format (10-digit Indian mobile starting with 6-9)
-        const phoneDigits = cleanPhone.replace(/\D/g, '');
+        // Strip leading +91 or 91 in case user typed it
+        const phoneDigits = cleanPhone.replace(/^\+?91/, '').replace(/\D/g, '');
         if (phoneDigits.length !== 10 || !/^[6-9]/.test(phoneDigits)) {
             return NextResponse.json(
                 { error: 'Invalid phone number', details: 'Please provide a valid 10-digit phone number' },
                 { status: 400 }
             );
         }
+        // Phone with country code for Zoho (required for WhatsApp automation)
+        const phoneWithCountryCode = `+91${phoneDigits}`;
 
         if (!courses || courses.length === 0) {
             return NextResponse.json(
@@ -113,8 +116,8 @@ WhatsApp Opt-in: ${agreeWhatsApp ? 'Yes' : 'No'}
             First_Name: cleanFirstName,
             Last_Name: cleanLastName,
             Email: cleanEmail,
-            Phone: cleanPhone,
-            Mobile: cleanPhone,
+            Phone: phoneWithCountryCode,
+            Mobile: phoneWithCountryCode,
             City: city || '',
             Description: `Inquiry received on ${new Date().toLocaleDateString()}. Interested in: ${(courses as CourseInfo[]).map(c => c.name).join(', ')}`,
             Lead_Source: leadSource || 'Website Inquiry Form',
