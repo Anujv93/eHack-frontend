@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import './offer-banner.css';
+import CehOfferModal from './ceh-offer-modal';
 
 const offers = [
     {
@@ -48,6 +49,7 @@ const offers = [
 
 export default function OfferBanner() {
     const [tick, setTick] = useState(0);
+    const [showCehModal, setShowCehModal] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -90,9 +92,15 @@ export default function OfferBanner() {
                     <p className="offer-banner-certifications">
                         {currentOffer.certifications}
                     </p>
-                    <Link href={currentOffer.ctaLink} className="offer-banner-cta">
-                        {currentOffer.ctaText}
-                    </Link>
+                    {currentOffer.id === 'ceh' ? (
+                        <button onClick={() => setShowCehModal(true)} className="offer-banner-cta">
+                            {currentOffer.ctaText}
+                        </button>
+                    ) : (
+                        <Link href={currentOffer.ctaLink} className="offer-banner-cta">
+                            {currentOffer.ctaText}
+                        </Link>
+                    )}
                 </div>
 
                 {/* Offer Toggle Control (Absolute Desktop / Centered Mobile flow) */}
@@ -117,6 +125,7 @@ export default function OfferBanner() {
                     />
                 </div>
             </div>
+            <CehOfferModal isOpen={showCehModal} onClose={() => setShowCehModal(false)} />
         </section>
     );
 }

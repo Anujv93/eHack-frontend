@@ -485,8 +485,12 @@
     background: linear-gradient(180deg, #FFA033 0%, #FF8000 100%);
 }
 
+.offer-banner-image.ceh-image {
+    align-items: flex-end;
+}
+
 .offer-banner-image.ceh-image img.ceh-offer-img {
-    height: 115%;
+    height: 100%;
     width: auto;
     max-height: 340px;
     object-fit: contain;
@@ -574,7 +578,7 @@
 }
 
 .offer-banner.offer-banner-blue .offer-banner-content {
-    min-height: 245px;
+    min-height: auto;
 }
 
 .offer-banner.offer-banner-blue .offer-banner-pretitle,
