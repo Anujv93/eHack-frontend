@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
 
         // Format courses list for description
         const coursesDetails = (courses as CourseInfo[]).map((c, idx) =>
-            `${idx + 1}. ${c.name} - ₹${c.price.toLocaleString('en-IN')} (${c.category})`
+            `${idx + 1}. ${c.name} - \u20B9${c.price.toLocaleString('en-IN')} (${c.category})`
         ).join('\n');
 
         // Build description
@@ -103,7 +103,7 @@ City: ${city || 'Not provided'}
 --- Courses Interested ---
 ${coursesDetails}
 
-Total Value: ₹${totalAmount.toLocaleString('en-IN')}
+Total Value: \u20B9${totalAmount.toLocaleString('en-IN')}
 
 --- Additional Information ---
 Message: ${message || 'None'}
@@ -153,27 +153,33 @@ WhatsApp Opt-in: ${agreeWhatsApp ? 'Yes' : 'No'}
         // Step 3: Create a Note on the deal with detailed form info
         // This makes career status, experience, etc. visible in Bigin's Notes tab
         try {
-            const noteTitle = `Lead Details — ${leadSource || 'Website Inquiry'}`;
-            const noteContent = [
-                `📋 LEAD INQUIRY DETAILS`,
-                `━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
-                ``,
-                `👤 Name: ${cleanFirstName} ${cleanLastName}`,
-                `📧 Email: ${cleanEmail}`,
-                `📱 Phone: +91 ${phoneDigits}`,
-                `📍 City: ${city || 'Not provided'}`,
-                ``,
-                `📚 Courses Interested:`,
-                coursesDetails,
-                `💰 Total Value: ₹${totalAmount.toLocaleString('en-IN')}`,
-                ``,
-                message ? `📝 Additional Info:` : '',
-                message ? message.split('\n').map((line: string) => `   ${line}`).join('\n') : '',
-                ``,
-                `🔗 Lead Source: ${leadSource || 'Website'}`,
-                `📲 WhatsApp Opt-in: ${agreeWhatsApp ? 'Yes ✅' : 'No ❌'}`,
-                `📅 Submitted: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`,
-            ].filter(Boolean).join('\n');
+            const noteTitle = `Lead Details - ${leadSource || 'Website Inquiry'}`;
+
+            // Parse the message field to extract structured info
+            const messageLines = message ? message.split('\n') : [];
+            const noteContentParts: string[] = [
+                'LEAD INQUIRY DETAILS',
+                '===========================',
+                '',
+                `Name: ${cleanFirstName} ${cleanLastName}`,
+                `Email: ${cleanEmail}`,
+                `Phone: +91 ${phoneDigits}`,
+                '',
+            ];
+
+            // Add each line from the message (contains Career Status, Experience, etc.)
+            for (const line of messageLines) {
+                const trimmed = line.trim();
+                if (trimmed && !trimmed.startsWith('Source:')) {
+                    noteContentParts.push(trimmed);
+                }
+            }
+
+            noteContentParts.push('');
+            noteContentParts.push(`Lead Source: ${leadSource || 'Website'}`);
+            noteContentParts.push(`Submitted: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`);
+
+            const noteContent = noteContentParts.join('\n');
 
             const noteId = await createZohoNote(dealId, noteTitle, noteContent);
             console.log('Note created on deal:', noteId);
