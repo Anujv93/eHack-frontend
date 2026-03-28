@@ -247,6 +247,7 @@ const QuestionModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
             }
 
             setIsSubmitted(true);
+            localStorage.setItem('ehack_hero_form_submitted', 'true');
 
             // Google Ads Conversion Event
             if (typeof window !== 'undefined' && (window as any).gtag) {

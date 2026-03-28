@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 };
 
 import Footer from '@/components/layout/footer/footer';
+import WhatsAppButton from '@/components/landing/WhatsAppButton';
 
 // ... existing imports
 
@@ -44,6 +45,7 @@ export default function RootLayout({
                     `}
                 </Script>
                 {children}
+                <WhatsAppButton />
                 <Footer />
             </body>
         </html>

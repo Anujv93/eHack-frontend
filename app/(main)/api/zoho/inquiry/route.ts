@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createZohoDeal, upsertZohoContact } from '@/lib/zoho-bigin';
+import { createZohoDeal, createZohoNote, upsertZohoContact } from '@/lib/zoho-bigin';
 
 interface CourseInfo {
     name: string;
@@ -150,10 +150,37 @@ WhatsApp Opt-in: ${agreeWhatsApp ? 'Yes' : 'No'}
         const dealId = await createZohoDeal(dealData);
         console.log('Inquiry (Deal) created:', dealId);
 
-        // Note: For Associated Courses (Products), you would need to use 
-        // Zoho's Products subform API which requires additional setup.
-        // The course details are captured in the Description field for now.
-        // If you want to add products to deals, that requires Bigin's Products association API.
+        // Step 3: Create a Note on the deal with detailed form info
+        // This makes career status, experience, etc. visible in Bigin's Notes tab
+        try {
+            const noteTitle = `Lead Details — ${leadSource || 'Website Inquiry'}`;
+            const noteContent = [
+                `📋 LEAD INQUIRY DETAILS`,
+                `━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+                ``,
+                `👤 Name: ${cleanFirstName} ${cleanLastName}`,
+                `📧 Email: ${cleanEmail}`,
+                `📱 Phone: +91 ${phoneDigits}`,
+                `📍 City: ${city || 'Not provided'}`,
+                ``,
+                `📚 Courses Interested:`,
+                coursesDetails,
+                `💰 Total Value: ₹${totalAmount.toLocaleString('en-IN')}`,
+                ``,
+                message ? `📝 Additional Info:` : '',
+                message ? message.split('\n').map((line: string) => `   ${line}`).join('\n') : '',
+                ``,
+                `🔗 Lead Source: ${leadSource || 'Website'}`,
+                `📲 WhatsApp Opt-in: ${agreeWhatsApp ? 'Yes ✅' : 'No ❌'}`,
+                `📅 Submitted: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`,
+            ].filter(Boolean).join('\n');
+
+            const noteId = await createZohoNote(dealId, noteTitle, noteContent);
+            console.log('Note created on deal:', noteId);
+        } catch (noteError) {
+            // Don't fail the entire submission if note creation fails
+            console.error('Failed to create note (non-critical):', noteError);
+        }
 
         return NextResponse.json({
             success: true,

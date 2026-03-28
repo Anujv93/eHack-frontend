@@ -290,6 +290,63 @@ export async function createZohoDeal(dealData: ZohoDeal): Promise<string> {
 
 
 /**
+ * Create a note on a Zoho Bigin record (e.g., a Pipeline/Deal record)
+ * This shows up in the "Notes" tab of the record in Zoho Bigin CRM.
+ */
+export async function createZohoNote(
+    parentId: string,
+    noteTitle: string,
+    noteContent: string,
+    parentModule: string = 'Pipelines'
+): Promise<string> {
+    const accessToken = await getAccessToken();
+    const apiUrl = process.env.ZOHO_BIGIN_API || 'https://www.zohoapis.in/bigin/v2';
+
+    const formattedData = {
+        data: [
+            {
+                Note_Title: noteTitle,
+                Note_Content: noteContent,
+                Parent_Id: parentId,
+                se_module: parentModule,
+            }
+        ]
+    };
+
+    console.log(`Creating Bigin Note on ${parentModule}/${parentId}:`, JSON.stringify(formattedData, null, 2));
+
+    try {
+        const response = await fetch(`${apiUrl}/Notes`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Zoho-oauthtoken ${accessToken}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formattedData),
+        });
+
+        const responseText = await response.text();
+        console.log('Zoho Note API Response:', response.status, responseText);
+
+        if (!response.ok) {
+            throw new Error(`Failed to create note: ${response.status} - ${responseText}`);
+        }
+
+        const result: ZohoApiResponse = JSON.parse(responseText);
+
+        if (result.data && result.data[0] && result.data[0].code === 'SUCCESS') {
+            console.log('Successfully created note with ID:', result.data[0].details.id);
+            return result.data[0].details.id;
+        } else {
+            throw new Error(`Failed to create note: ${result.data[0]?.message || 'Unknown error'}`);
+        }
+    } catch (error) {
+        console.error('Error creating Zoho note:', error);
+        throw error;
+    }
+}
+
+/**
  * Get available pipelines from Zoho Bigin
  */
 export async function getZohoPipelines(): Promise<any[]> {

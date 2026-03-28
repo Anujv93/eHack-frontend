@@ -129,6 +129,9 @@ const HeroRightPanel = () => {
 
             setIsSubmitted(true);
 
+            // Mark hero form as submitted for other sections
+            localStorage.setItem('ehack_hero_form_submitted', 'true');
+
             // Google Ads Conversion Event
             if (typeof window !== 'undefined' && (window as any).gtag) {
                 (window as any).gtag('event', 'conversion', {
