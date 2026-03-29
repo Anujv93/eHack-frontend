@@ -12,30 +12,30 @@ gsap.registerPlugin(ScrollTrigger);
 // =======================
 
 const SlideTools = ({ handleCtaClick }: { handleCtaClick: (source: string) => void }) => (
-    <div className="peeking-card overflow-hidden shadow-2xl bg-white border border-gray-100 flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 min-h-[320px] lg:min-h-[380px]">
+    <div className="peeking-card overflow-hidden shadow-2xl bg-white border border-gray-100 flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 min-h-0 lg:min-h-[380px]">
         {/* Left Content */}
-        <div className="p-6 lg:p-10 flex flex-col justify-center bg-white z-10 relative">
+        <div className="p-4 md:p-6 lg:p-10 flex flex-col justify-center bg-white z-10 relative">
             <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 leading-[1.1]">
                 Master Industry-{' '}<br className="hidden md:block" />Standard Tools
             </h3>
-            <p className="text-sm md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-lg font-medium">
+            <p className="text-xs md:text-lg text-gray-600 mb-4 md:mb-8 leading-relaxed max-w-lg font-medium">
                 Equip yourself with the tools the pros use. Master the arsenal required to defend and attack at an elite level.
             </p>
             <div>
-                <button onClick={() => handleCtaClick('Tools Mastery Inquiry')} className="inline-flex items-center gap-2 bg-[#ff6b00] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-[#e66000] transition-all hover:shadow-[0_0_20px_rgba(255,107,0,0.4)] hover:-translate-y-1 group">
+                <button onClick={() => handleCtaClick('Tools Mastery Inquiry')} className="inline-flex items-center gap-1.5 md:gap-2 bg-[#ff6b00] text-white px-4 py-2.5 md:px-8 md:py-4 rounded-lg md:rounded-xl text-xs md:text-base font-bold hover:bg-[#e66000] transition-all hover:shadow-[0_0_20px_rgba(255,107,0,0.4)] hover:-translate-y-1 group whitespace-nowrap">
                     Get Your Free Roadmap
-                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
             </div>
         </div>
         {/* Right Visual */}
-        <div className="bg-[#0f172a] p-4 md:p-6 lg:p-10 relative overflow-hidden flex items-center justify-center group border-l border-gray-100/10 min-h-[280px] md:min-h-[350px]">
+        <div className="bg-[#0f172a] p-3 md:p-6 lg:p-10 relative overflow-hidden flex items-center justify-center group border-l border-gray-100/10 min-h-[220px] md:min-h-[350px]">
             {/* Grid background effect */}
             <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#ffffff15 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-500 rounded-full blur-[80px] opacity-15 pointer-events-none"></div>
 
             {/* Orbit System Container */}
-            <div className="relative w-full h-full flex items-center justify-center max-w-[300px] md:max-w-[400px] min-h-[250px] md:min-h-[360px]">
+            <div className="relative w-full h-full flex items-center justify-center max-w-[300px] md:max-w-[400px] min-h-[200px] md:min-h-[360px]">
 
                 {/* Center Element */}
                 <div className="absolute z-20 w-16 h-16 md:w-24 md:h-24 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.3)] border border-white/20 z-30 overflow-hidden">
@@ -103,22 +103,22 @@ const SlideTools = ({ handleCtaClick }: { handleCtaClick: (source: string) => vo
 const SlideInternship = ({ handleCtaClick, terminalRef }: { handleCtaClick: (source: string) => void, terminalRef?: React.RefObject<HTMLDivElement | null> }) => (
     <div className="peeking-card overflow-hidden shadow-2xl bg-white border border-gray-100 flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 min-h-[320px] lg:min-h-[380px]">
         {/* Left Content */}
-        <div className="p-6 lg:p-10 flex flex-col justify-center bg-white z-10 relative">
+        <div className="p-4 md:p-6 lg:p-10 flex flex-col justify-center bg-white z-10 relative">
             <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 leading-[1.1]">
                 100% Stipend{' '}<br className="hidden md:block" />Internship
             </h3>
-            <p className="text-sm md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-lg font-medium">
+            <p className="text-xs md:text-lg text-gray-600 mb-4 md:mb-8 leading-relaxed max-w-lg font-medium">
                 Bypass the &quot;fresher&quot; tag by working on real-world vulnerabilities and live company projects through our guaranteed internship.
             </p>
             <div>
-                <button onClick={() => handleCtaClick('Internship Application')} className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-black transition-all hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] hover:-translate-y-1 group">
+                <button onClick={() => handleCtaClick('Internship Application')} className="inline-flex items-center gap-1.5 md:gap-2 bg-gray-900 text-white px-4 py-2.5 md:px-8 md:py-4 rounded-lg md:rounded-xl text-xs md:text-base font-bold hover:bg-black transition-all hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] hover:-translate-y-1 group whitespace-nowrap">
                     Apply For Internship
-                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
             </div>
         </div>
         {/* Right Visual - Terminal */}
-        <div className="bg-[#1e1e1e] p-4 md:p-6 lg:p-10 relative overflow-hidden flex flex-col items-center justify-center border-l border-gray-100/10">
+        <div className="bg-[#1e1e1e] p-3 md:p-6 lg:p-10 relative overflow-hidden flex flex-col items-center justify-center border-l border-gray-100/10">
             <div className="w-full max-w-md bg-[#0d0d0d] rounded-lg md:rounded-xl border border-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
                 {/* Terminal Header */}
                 <div className="h-7 md:h-8 bg-[#2d2d2d] flex items-center px-3 md:px-4 gap-1.5 md:gap-2">
@@ -128,7 +128,7 @@ const SlideInternship = ({ handleCtaClick, terminalRef }: { handleCtaClick: (sou
                     <div className="mx-auto text-[10px] md:text-xs text-gray-400 font-mono">root@kali:~</div>
                 </div>
                 {/* Terminal Body */}
-                <div className="p-3 md:p-6 font-mono text-[10px] md:text-sm leading-relaxed h-[180px] md:h-[240px] overflow-hidden relative">
+                <div className="p-2.5 md:p-6 font-mono text-[9px] md:text-sm leading-relaxed h-[140px] md:h-[240px] overflow-hidden relative">
                     <div ref={terminalRef} className="space-y-2">
                         <div className="text-green-400"><span className="text-blue-400">root@kali</span>:<span className="text-blue-400">~</span>$ msfconsole -q</div>
                         <div className="text-gray-300">msf6 &gt; use exploit/windows/smb/ms17_010_eternalblue</div>
@@ -153,26 +153,26 @@ const SlideInternship = ({ handleCtaClick, terminalRef }: { handleCtaClick: (sou
 const SlideDemand = ({ handleCtaClick }: { handleCtaClick: (source: string) => void }) => (
     <div className="peeking-card overflow-hidden shadow-2xl bg-white border border-gray-100 flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 min-h-[320px] lg:min-h-[380px]">
         {/* Left Content */}
-        <div className="p-6 lg:p-10 flex flex-col justify-center bg-white z-10 relative">
+        <div className="p-4 md:p-6 lg:p-10 flex flex-col justify-center bg-white z-10 relative">
             <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 leading-[1.1]">
                 Unprecedented{' '}<br className="hidden md:block" />Market Demand
             </h3>
-            <p className="text-sm md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-lg font-medium">
+            <p className="text-xs md:text-lg text-gray-600 mb-4 md:mb-8 leading-relaxed max-w-lg font-medium">
                 Enter an industry with zero clutter. Cybersecurity faces a global shortage. Be the specialized talent companies hunt for.
             </p>
             <div>
-                <button onClick={() => handleCtaClick('Market Demand Inquiry')} className="inline-flex items-center gap-2 bg-[#ff6b00] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-[#e66000] transition-all hover:shadow-[0_0_20px_rgba(255,107,0,0.4)] hover:-translate-y-1 group">
+                <button onClick={() => handleCtaClick('Market Demand Inquiry')} className="inline-flex items-center gap-1.5 md:gap-2 bg-[#ff6b00] text-white px-4 py-2.5 md:px-8 md:py-4 rounded-lg md:rounded-xl text-xs md:text-base font-bold hover:bg-[#e66000] transition-all hover:shadow-[0_0_20px_rgba(255,107,0,0.4)] hover:-translate-y-1 group whitespace-nowrap">
                     Claim Your Spot Now
-                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
             </div>
         </div>
         {/* Right Visual - Newspaper Cutouts */}
-        <div className="bg-[#f8fafc] p-4 md:p-6 lg:p-10 relative overflow-hidden flex flex-col items-center justify-center border-l border-gray-100 min-h-[280px] md:min-h-full">
+        <div className="bg-[#f8fafc] p-3 md:p-6 lg:p-10 relative overflow-hidden flex flex-col items-center justify-center border-l border-gray-100 min-h-[220px] md:min-h-full">
             {/* Subtle dot pattern background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#94a3b8 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
 
-            <div className="relative w-full max-w-[260px] md:max-w-md h-[240px] md:h-[320px] flex items-center justify-center group z-10">
+            <div className="relative w-full max-w-[260px] md:max-w-md h-[200px] md:h-[320px] flex items-center justify-center group z-10">
 
                 {/* 1. Base Newspaper (Main News) */}
                 <div className="absolute top-0 md:top-2 left-0 right-0 md:right-12 bg-[#fcf9f2] p-3 md:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.08)] transform -rotate-1 md:-rotate-2 hover:rotate-0 hover:z-40 hover:scale-[1.02] transition-all duration-300 border border-[#e5e0d8] z-10 cursor-pointer">
@@ -457,7 +457,7 @@ export default function MarketDemandSection() {
                 }
                 @media (max-width: 768px) {
                     .peeking-container {
-                        --card-w: 82vw;
+                        --card-w: 65vw;
                         --gap: 0.75rem;
                     }
                 }
