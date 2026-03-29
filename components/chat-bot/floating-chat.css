@@ -1424,3 +1424,269 @@
         right: 16px;
     }
 }
+
+/* ── Welcome Choice Buttons ─────────────────────── */
+.welcome-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.welcome-choice-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background: #ffffff;
+    border: 1.5px solid #e8eaf0;
+    border-radius: 12px;
+    padding: 10px 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.18s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    font-family: 'Inter', sans-serif;
+}
+
+.welcome-choice-btn:hover:not(:disabled) {
+    border-color: #ff6b00;
+    box-shadow: 0 4px 16px rgba(255, 107, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+.welcome-choice-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.welcome-choice-btn--done {
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
+}
+
+.welcome-choice-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+}
+
+.welcome-choice-label {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.3;
+}
+
+/* ── Inline Lead Form ───────────────────────────── */
+.inline-lead-form {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1.5px solid #e2e8f0;
+}
+
+.inline-lead-form .form-group {
+    margin-bottom: 10px;
+}
+
+.inline-lead-form .form-label {
+    font-size: 12px;
+    text-transform: none;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 4px;
+}
+
+.inline-lead-form .form-input {
+    height: 40px;
+    font-size: 13px;
+    border-radius: 8px;
+}
+
+.inline-lead-form select.form-input {
+    appearance: auto;
+    cursor: pointer;
+}
+
+.inline-lead-form .form-submit-btn {
+    width: 100%;
+    height: 44px;
+    border-radius: 10px;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.ilf-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+/* ── Comparison Table ───────────────────────────── */
+.comparison-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1.5px solid #e2e8f0;
+}
+
+.comparison-table th {
+    background: #ff6b00;
+    color: white;
+    padding: 8px 6px;
+    font-weight: 700;
+    font-size: 11px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.comparison-table td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #334155;
+    line-height: 1.4;
+}
+
+.comparison-table .ct-highlight {
+    background: #fff8f3;
+}
+
+.comparison-table .ct-highlight td {
+    font-weight: 600;
+}
+
+/* ── Conversion CTAs ────────────────────────────── */
+.conversion-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 11px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    box-sizing: border-box;
+}
+
+.cta-btn--primary {
+    background: #ff6b00;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+.cta-btn--primary:hover {
+    background: #e05c00;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+}
+
+.cta-btn--secondary {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1.5px solid #e2e8f0;
+}
+
+.cta-btn--secondary:hover {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+}
+
+.cta-btn--outline {
+    background: transparent;
+    color: #ff6b00;
+    border: 1.5px solid #ff6b00;
+}
+
+.cta-btn--outline:hover {
+    background: #fff8f3;
+}
+
+.cta-btn--whatsapp {
+    background: #25d366;
+    color: white;
+}
+
+.cta-btn--whatsapp:hover {
+    background: #1fad55;
+    transform: translateY(-1px);
+}
+
+/* ── Program Next Choices ───────────────────────── */
+.program-next-choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.pnc-btn {
+    padding: 7px 12px;
+    border-radius: 8px;
+    border: 1.5px solid #e2e8f0;
+    background: #f8fafc;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.pnc-btn:hover {
+    border-color: #ff6b00;
+    background: #fff8f3;
+    color: #ff6b00;
+}
+
+.pnc-btn--primary {
+    background: #ff6b00;
+    color: white;
+    border-color: #ff6b00;
+}
+
+.pnc-btn--primary:hover {
+    background: #e05c00;
+    border-color: #e05c00;
+    color: white;
+}
+
+/* ── CEH Program Card variant ───────────────────── */
+.program-card--ceh::before {
+    background: linear-gradient(90deg, #dc2626, #f87171);
+}
+
+.program-card--edu::before {
+    background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+}
+
+.program-card--dm::before {
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.program-card--ds::before {
+    background: linear-gradient(90deg, #7c3aed, #a78bfa);
+}
