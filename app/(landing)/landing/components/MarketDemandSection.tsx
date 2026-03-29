@@ -15,10 +15,10 @@ const SlideTools = ({ handleCtaClick }: { handleCtaClick: (source: string) => vo
     <div className="peeking-card overflow-hidden shadow-2xl bg-white border border-gray-100 flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 min-h-[320px] lg:min-h-[380px]">
         {/* Left Content */}
         <div className="p-6 lg:p-10 flex flex-col justify-center bg-white z-10 relative">
-            <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-4 leading-[1.1]">
-                Master Industry-<br className="hidden md:block" />Standard Tools
+            <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 leading-[1.1]">
+                Master Industry-{' '}<br className="hidden md:block" />Standard Tools
             </h3>
-            <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed max-w-lg font-medium">
+            <p className="text-sm md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-lg font-medium">
                 Equip yourself with the tools the pros use. Master the arsenal required to defend and attack at an elite level.
             </p>
             <div>
@@ -29,25 +29,25 @@ const SlideTools = ({ handleCtaClick }: { handleCtaClick: (source: string) => vo
             </div>
         </div>
         {/* Right Visual */}
-        <div className="bg-[#0f172a] p-6 lg:p-10 relative overflow-hidden flex items-center justify-center group border-l border-gray-100/10 min-h-[350px]">
+        <div className="bg-[#0f172a] p-4 md:p-6 lg:p-10 relative overflow-hidden flex items-center justify-center group border-l border-gray-100/10 min-h-[280px] md:min-h-[350px]">
             {/* Grid background effect */}
             <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#ffffff15 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-500 rounded-full blur-[80px] opacity-15 pointer-events-none"></div>
 
             {/* Orbit System Container */}
-            <div className="relative w-full h-full flex items-center justify-center max-w-[400px] min-h-[300px] md:min-h-[360px]">
+            <div className="relative w-full h-full flex items-center justify-center max-w-[300px] md:max-w-[400px] min-h-[250px] md:min-h-[360px]">
 
                 {/* Center Element */}
-                <div className="absolute z-20 w-20 h-20 md:w-24 md:h-24 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.3)] border border-white/20 z-30 overflow-hidden">
+                <div className="absolute z-20 w-16 h-16 md:w-24 md:h-24 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.3)] border border-white/20 z-30 overflow-hidden">
                     <div className="absolute inset-0 bg-blue-500 opacity-10"></div>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kalilinux/kalilinux-original.svg" alt="Kali Linux" className="w-12 h-12 md:w-16 md:h-16 object-contain relative z-10 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kalilinux/kalilinux-original.svg" alt="Kali Linux" className="w-10 h-10 md:w-16 md:h-16 object-contain relative z-10 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
                 </div>
 
                 {/* Orbit Ring 1 (Visual) */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 w-[clamp(150px,35vw,180px)] h-[clamp(150px,35vw,180px)]"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 w-[clamp(120px,30vw,180px)] h-[clamp(120px,30vw,180px)]"></div>
 
                 {/* Orbit Ring 2 (Visual) - Increased space */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5 border-dashed w-[clamp(270px,65vw,340px)] h-[clamp(270px,65vw,340px)]"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5 border-dashed w-[clamp(220px,55vw,340px)] h-[clamp(220px,55vw,340px)]"></div>
 
                 {/* Planets */}
                 <div className="absolute inset-0">
@@ -63,7 +63,7 @@ const SlideTools = ({ handleCtaClick }: { handleCtaClick: (source: string) => vo
                         { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg', name: "Go", ring: 2, angle: 285 },
                         { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg', name: "Git", ring: 2, angle: 345 }
                     ].map((tool, idx) => {
-                        const radiusExpr = tool.ring === 1 ? 'clamp(75px, 17.5vw, 90px)' : 'clamp(135px, 32.5vw, 170px)';
+                        const radiusExpr = tool.ring === 1 ? 'clamp(60px, 15vw, 90px)' : 'clamp(110px, 27.5vw, 170px)';
                         const duration = tool.ring === 1 ? '30s' : '45s';
                         const direction = tool.ring === 1 ? 'normal' : 'reverse';
 
@@ -82,10 +82,10 @@ const SlideTools = ({ handleCtaClick }: { handleCtaClick: (source: string) => vo
                                     }}
                                 >
                                     <div
-                                        className="w-14 h-14 bg-[#1f2937]/80 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center shadow-lg group hover:scale-125 hover:border-[#ff6b00]/70 hover:bg-[#1f2937] transition-all pointer-events-auto cursor-pointer z-40"
+                                        className="w-10 h-10 md:w-14 md:h-14 bg-[#1f2937]/80 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center shadow-lg group hover:scale-125 hover:border-[#ff6b00]/70 hover:bg-[#1f2937] transition-all pointer-events-auto cursor-pointer z-40"
                                         style={{ animation: `orbit-counter-spin ${duration} linear infinite ${direction}` }}
                                     >
-                                        <img src={tool.src} alt={tool.name} className={`w-7 h-7 md:w-8 md:h-8 object-contain ${tool.name === 'Bash' ? 'invert brightness-0 pt-1' : ''}`} />
+                                        <img src={tool.src} alt={tool.name} className={`w-5 h-5 md:w-8 md:h-8 object-contain ${tool.name === 'Bash' ? 'invert brightness-0 pt-0.5 md:pt-1' : ''}`} />
                                         <div className="absolute -top-7 bg-black text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none line-clamp-1">
                                             {tool.name}
                                         </div>
@@ -104,11 +104,11 @@ const SlideInternship = ({ handleCtaClick, terminalRef }: { handleCtaClick: (sou
     <div className="peeking-card overflow-hidden shadow-2xl bg-white border border-gray-100 flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 min-h-[320px] lg:min-h-[380px]">
         {/* Left Content */}
         <div className="p-6 lg:p-10 flex flex-col justify-center bg-white z-10 relative">
-            <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-4 leading-[1.1]">
-                100% Stipend<br className="hidden md:block" />Internship
+            <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 leading-[1.1]">
+                100% Stipend{' '}<br className="hidden md:block" />Internship
             </h3>
-            <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed max-w-lg font-medium">
-                Bypass the "fresher" tag by working on real-world vulnerabilities and live company projects through our guaranteed internship.
+            <p className="text-sm md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-lg font-medium">
+                Bypass the &quot;fresher&quot; tag by working on real-world vulnerabilities and live company projects through our guaranteed internship.
             </p>
             <div>
                 <button onClick={() => handleCtaClick('Internship Application')} className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-black transition-all hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] hover:-translate-y-1 group">
@@ -118,17 +118,17 @@ const SlideInternship = ({ handleCtaClick, terminalRef }: { handleCtaClick: (sou
             </div>
         </div>
         {/* Right Visual - Terminal */}
-        <div className="bg-[#1e1e1e] p-6 lg:p-10 relative overflow-hidden flex flex-col items-center justify-center border-l border-gray-100/10">
-            <div className="w-full max-w-md bg-[#0d0d0d] rounded-xl border border-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
+        <div className="bg-[#1e1e1e] p-4 md:p-6 lg:p-10 relative overflow-hidden flex flex-col items-center justify-center border-l border-gray-100/10">
+            <div className="w-full max-w-md bg-[#0d0d0d] rounded-lg md:rounded-xl border border-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
                 {/* Terminal Header */}
-                <div className="h-8 bg-[#2d2d2d] flex items-center px-4 gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <div className="mx-auto text-xs text-gray-400 font-mono">root@kali:~</div>
+                <div className="h-7 md:h-8 bg-[#2d2d2d] flex items-center px-3 md:px-4 gap-1.5 md:gap-2">
+                    <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500"></div>
+                    <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500"></div>
+                    <div className="mx-auto text-[10px] md:text-xs text-gray-400 font-mono">root@kali:~</div>
                 </div>
                 {/* Terminal Body */}
-                <div className="p-6 font-mono text-xs md:text-sm leading-relaxed h-[200px] md:h-[240px] overflow-hidden relative">
+                <div className="p-3 md:p-6 font-mono text-[10px] md:text-sm leading-relaxed h-[180px] md:h-[240px] overflow-hidden relative">
                     <div ref={terminalRef} className="space-y-2">
                         <div className="text-green-400"><span className="text-blue-400">root@kali</span>:<span className="text-blue-400">~</span>$ msfconsole -q</div>
                         <div className="text-gray-300">msf6 &gt; use exploit/windows/smb/ms17_010_eternalblue</div>
@@ -154,10 +154,10 @@ const SlideDemand = ({ handleCtaClick }: { handleCtaClick: (source: string) => v
     <div className="peeking-card overflow-hidden shadow-2xl bg-white border border-gray-100 flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 min-h-[320px] lg:min-h-[380px]">
         {/* Left Content */}
         <div className="p-6 lg:p-10 flex flex-col justify-center bg-white z-10 relative">
-            <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-4 leading-[1.1]">
-                Unprecedented<br className="hidden md:block" />Market Demand
+            <h3 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 leading-[1.1]">
+                Unprecedented{' '}<br className="hidden md:block" />Market Demand
             </h3>
-            <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed max-w-lg font-medium">
+            <p className="text-sm md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-lg font-medium">
                 Enter an industry with zero clutter. Cybersecurity faces a global shortage. Be the specialized talent companies hunt for.
             </p>
             <div>
@@ -168,19 +168,19 @@ const SlideDemand = ({ handleCtaClick }: { handleCtaClick: (source: string) => v
             </div>
         </div>
         {/* Right Visual - Newspaper Cutouts */}
-        <div className="bg-[#f8fafc] p-6 lg:p-10 relative overflow-hidden flex flex-col items-center justify-center border-l border-gray-100 min-h-full">
+        <div className="bg-[#f8fafc] p-4 md:p-6 lg:p-10 relative overflow-hidden flex flex-col items-center justify-center border-l border-gray-100 min-h-[280px] md:min-h-full">
             {/* Subtle dot pattern background */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#94a3b8 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
 
-            <div className="relative w-full max-w-[280px] md:max-w-md h-[260px] md:h-[320px] flex items-center justify-center group z-10">
+            <div className="relative w-full max-w-[260px] md:max-w-md h-[240px] md:h-[320px] flex items-center justify-center group z-10">
 
                 {/* 1. Base Newspaper (Main News) */}
-                <div className="absolute top-0 md:top-2 left-0 right-4 md:right-12 bg-[#fcf9f2] p-4 md:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.08)] transform -rotate-2 hover:rotate-0 hover:z-40 hover:scale-[1.02] transition-all duration-300 border border-[#e5e0d8] z-10 cursor-pointer">
+                <div className="absolute top-0 md:top-2 left-0 right-0 md:right-12 bg-[#fcf9f2] p-3 md:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.08)] transform -rotate-1 md:-rotate-2 hover:rotate-0 hover:z-40 hover:scale-[1.02] transition-all duration-300 border border-[#e5e0d8] z-10 cursor-pointer">
                     <div className="border-b-2 border-black pb-1 mb-2 md:mb-3 flex justify-between items-center">
                         <span className="font-serif font-black text-[10px] md:text-sm tracking-widest text-black">THE GLOBAL TIMES</span>
                         <span className="font-serif text-[8px] md:text-[10px] uppercase text-gray-600 font-bold">Industry Report</span>
                     </div>
-                    <h4 className="font-serif text-2xl md:text-4xl font-black text-black leading-[0.9] mb-2 md:mb-3 uppercase tracking-tighter">
+                    <h4 className="font-serif text-xl md:text-4xl font-black text-black leading-[0.9] mb-2 md:mb-3 uppercase tracking-tighter">
                         Cybersecurity Hits <br />
                         <span className="border-b-[3px] border-black">0% Unemployment</span>
                     </h4>
@@ -190,12 +190,12 @@ const SlideDemand = ({ handleCtaClick }: { handleCtaClick: (source: string) => v
                 </div>
 
                 {/* 2. Overlapping Cutout 1: 3.5 Million Jobs */}
-                <div className="absolute bottom-2 md:bottom-6 right-0 md:-right-4 w-[180px] md:w-[240px] bg-[#fffcf5] p-3 md:p-5 shadow-[0_15px_40px_rgba(0,0,0,0.15)] transform rotate-4 hover:rotate-0 hover:z-40 hover:scale-[1.05] transition-all duration-300 border border-[#d6d3cc] z-20 cursor-pointer">
+                <div className="absolute bottom-0 md:bottom-6 right-0 md:-right-4 w-[150px] md:w-[240px] bg-[#fffcf5] p-2 md:p-5 shadow-[0_15px_40px_rgba(0,0,0,0.15)] transform rotate-2 md:rotate-4 hover:rotate-0 hover:z-40 hover:scale-[1.05] transition-all duration-300 border border-[#d6d3cc] z-20 cursor-pointer">
                     <div className="flex items-start gap-2 md:gap-3">
                         <div className="w-1 md:w-1.5 h-full min-h-[30px] md:min-h-[40px] bg-black"></div>
                         <div>
                             <span className="font-sans text-[7px] md:text-[9px] font-bold text-gray-500 uppercase tracking-widest mb-1 block">Forbes Tech</span>
-                            <h5 className="font-serif text-sm md:text-lg font-black text-black leading-tight">
+                            <h5 className="font-serif text-xs md:text-lg font-black text-black leading-tight">
                                 3.5 Million <span className="bg-yellow-200/70 px-1">Unfilled</span> <br />Seats Globally
                             </h5>
                         </div>
@@ -205,7 +205,7 @@ const SlideDemand = ({ handleCtaClick }: { handleCtaClick: (source: string) => v
                 </div>
 
                 {/* 3. Overlapping Cutout 2: 150% Salary Surge */}
-                <div className="absolute bottom-16 md:bottom-20 -left-2 md:-left-8 w-[150px] md:w-[200px] bg-[#fefdfb] p-3 md:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.18)] transform -rotate-6 hover:rotate-0 hover:z-40 hover:scale-[1.05] transition-all duration-300 border border-[#e5e0d8] z-30 cursor-pointer">
+                <div className="absolute bottom-14 md:bottom-20 left-0 md:-left-8 w-[130px] md:w-[200px] bg-[#fefdfb] p-2 md:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.18)] transform -rotate-3 md:-rotate-6 hover:rotate-0 hover:z-40 hover:scale-[1.05] transition-all duration-300 border border-[#e5e0d8] z-30 cursor-pointer">
                     <p className="font-sans text-[7px] md:text-[9px] font-bold text-gray-600 uppercase tracking-wider mb-1 flex items-center gap-1">
                         <TrendingUp className="w-3 h-3 md:w-3 md:h-3" /> Market Spike
                     </p>
@@ -327,11 +327,11 @@ export default function MarketDemandSection() {
                 {/* Carousel Navigation/Dots */}
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
                     <div>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1f2937] leading-tight mb-4">
+                        <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#1f2937] leading-tight mb-3 md:mb-4">
                             The Industry standard.<br />
                             <span className="text-[#ff6b00]">Zero Compromise.</span>
                         </h2>
-                        <p className="text-gray-600 text-lg md:text-xl max-w-2xl font-medium">
+                        <p className="text-gray-600 text-sm md:text-xl max-w-2xl font-medium">
                             Step into a high-growth secure career with the right skills, real experience, and massive market demand.
                         </p>
                     </div>
@@ -429,15 +429,20 @@ export default function MarketDemandSection() {
                 .peeking-card {
                     width: var(--card-w);
                     margin: 0 calc(var(--gap) / 2);
-                    border-radius: 2.5rem;
+                    border-radius: 1.5rem;
                 }
                 .peeking-track {
                     /* gap defined in container */
                 }
+                @media (min-width: 769px) {
+                    .peeking-card {
+                        border-radius: 2.5rem;
+                    }
+                }
                 @media (max-width: 768px) {
                     .peeking-container {
-                        --card-w: 85vw;
-                        --gap: 1rem;
+                        --card-w: 92vw;
+                        --gap: 0.75rem;
                     }
                 }
                 @keyframes float {
