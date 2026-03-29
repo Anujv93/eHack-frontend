@@ -38,7 +38,7 @@ type GuideCardData =
     | { type: "dm-options" }
     | { type: "robotics-options" }
     | { type: "corporate-options" }
-    | { type: "conversion-cta" }
+    | { type: "conversion-cta"; programUrl?: string }
     | { type: "domain-select" }
     | { type: "cyber-path-select" }
     | { type: "ehack-programs" }
@@ -148,7 +148,7 @@ export default function FloatingChat() {
 
         if (choice === "Talk to a Counsellor") {
             setMessages(prev => [...prev, userMsg,
-                makeAssistantMsg("Our counsellors are ready to help! 😊\n\n📞 **+91 98860 35330**\n💬 [WhatsApp us →](https://wa.me/919886035330)\n✉️ info@ehackacademy.com\n\nThey'll guide you with zero pressure!", { type: "conversion-cta" })
+                makeAssistantMsg("Our counsellors are ready to help! 😊\n\n📞 **+91 98860 35330**\n💬 [WhatsApp us →](https://wa.me/919886035330)\n✉️ info@ehackacademy.com\n\nThey'll guide you with zero pressure!", { type: "conversion-cta", programUrl: "https://www.ehackacademy.com/programs/graduate-cybersecurity" })
             ]);
             return;
         }
@@ -448,7 +448,7 @@ export default function FloatingChat() {
                     <div className="program-next-choices">
                         <button className="pnc-btn" onClick={() => sendMessage("Compare with Master's Program")}>Compare with Master&apos;s Program</button>
                         <button className="pnc-btn" onClick={() => sendMessage("Compare with CEH v13 Master's")}>Compare with CEH v13</button>
-                        <button className="pnc-btn pnc-btn--primary" onClick={() => { setMessages(m => [...m, makeAssistantMsg("Please choose how you'd like to proceed:", { type: "conversion-cta" })]); }}>Apply Now</button>
+                        <button className="pnc-btn pnc-btn--primary" onClick={() => { setMessages(m => [...m, makeAssistantMsg("Please choose how you'd like to proceed:", { type: "conversion-cta", programUrl: "https://www.ehackacademy.com/programs/graduate-cybersecurity" })]); }}>Apply Now</button>
                         <button className="pnc-btn" onClick={() => { window.open("https://wa.me/919886035330", "_blank"); }}>Talk to Counsellor</button>
                     </div>
                 </div>
@@ -478,7 +478,7 @@ export default function FloatingChat() {
                     </div>
                     <div className="program-next-choices">
                         <button className="pnc-btn" onClick={() => { setMessages(m => [...m, makeUserMsg("Show Graduate Program"), makeAssistantMsg("Here's our best-value option:", { type: "graduate-program" })]); }}>See Graduate Program</button>
-                        <button className="pnc-btn pnc-btn--primary" onClick={() => { setMessages(m => [...m, makeAssistantMsg("Please choose how you'd like to proceed:", { type: "conversion-cta" })]); }}>Apply Now</button>
+                        <button className="pnc-btn pnc-btn--primary" onClick={() => { setMessages(m => [...m, makeAssistantMsg("Please choose how you'd like to proceed:", { type: "conversion-cta", programUrl: "https://www.ehackacademy.com/programs/masters-ethical-hacking" })]); }}>Apply Now</button>
                         <button className="pnc-btn" onClick={() => { window.open("https://wa.me/919886035330", "_blank"); }}>Talk to Counsellor</button>
                     </div>
                 </div>
@@ -505,6 +505,7 @@ export default function FloatingChat() {
                         💡 For broader career growth + better affordability, the <strong>Graduate Program</strong> is still our most recommended option.
                     </div>
                     <div className="program-next-choices">
+                        <button className="pnc-btn pnc-btn--primary" onClick={() => { setMessages(m => [...m, makeAssistantMsg("Please choose how you'd like to proceed:", { type: "conversion-cta", programUrl: "https://www.ehackacademy.com/programs/masterclass-ethical-hacking-ceh-v13" })]); }}>Apply Now</button>
                         <button className="pnc-btn" onClick={() => { setMessages(m => [...m, makeUserMsg("Show Graduate Program"), makeAssistantMsg("Here's our best-value option:", { type: "graduate-program" })]); }}>See Graduate Program</button>
                         <button className="pnc-btn" onClick={() => { setMessages(m => [...m, makeUserMsg("Compare all programs"), makeAssistantMsg("Here's a side-by-side comparison:", { type: "comparison-table" })]); }}>Compare All Programs</button>
                         <button className="pnc-btn" onClick={() => { window.open("https://wa.me/919886035330", "_blank"); }}>Talk to Counsellor</button>
@@ -576,7 +577,7 @@ export default function FloatingChat() {
                         💡 Best cost-effective option → <strong>Graduate Program</strong> | Premium multi-cert → <strong>Master&apos;s</strong> | CEH specialization → <strong>CEH v13</strong>
                     </p>
                     <div className="program-next-choices">
-                        <button className="pnc-btn pnc-btn--primary" onClick={() => { setMessages(m => [...m, makeAssistantMsg("Please choose how you'd like to proceed:", { type: "conversion-cta" })]); }}>Apply Now</button>
+                        <button className="pnc-btn pnc-btn--primary" onClick={() => { setMessages(m => [...m, makeAssistantMsg("Please choose how you'd like to proceed:", { type: "conversion-cta", programUrl: "https://www.ehackacademy.com/programs/graduate-cybersecurity" })]); }}>Apply Now</button>
                         <button className="pnc-btn" onClick={() => { window.open("https://wa.me/919886035330", "_blank"); }}>Talk to Counsellor</button>
                     </div>
                 </div>
@@ -584,9 +585,10 @@ export default function FloatingChat() {
         }
 
         if (card.type === "conversion-cta") {
+            const applyUrl = card.programUrl || "https://www.ehackacademy.com/programs/graduate-cybersecurity";
             return (
                 <div className="conversion-ctas">
-                    <a href="https://www.ehackacademy.com/register" target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn--primary">🚀 Apply Now</a>
+                    <a href={applyUrl} target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn--primary">🚀 Apply Now</a>
                     <button className="cta-btn cta-btn--secondary" onClick={() => setShowGetInTouch(true)}>📞 Request Callback</button>
                     <a href="https://www.ehackacademy.com/courses" target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn--outline">📄 Download Brochure</a>
                     <a href="https://wa.me/919886035330" target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn--whatsapp">💬 WhatsApp Counsellor</a>
@@ -609,6 +611,7 @@ export default function FloatingChat() {
                         <a href="https://www.ehackacademy.com/courses" target="_blank" rel="noopener noreferrer" className="program-card-link">See Data Science Details →</a>
                     </div>
                     <div className="program-next-choices">
+                        <button className="pnc-btn pnc-btn--primary" onClick={() => { setMessages(m => [...m, makeAssistantMsg("Please choose how you'd like to proceed:", { type: "conversion-cta", programUrl: "https://www.ehackacademy.com/courses" })]); }}>Apply Now</button>
                         <button className="pnc-btn" onClick={() => { setMessages(m => [...m, makeUserMsg("Compare with Cyber Security"), makeAssistantMsg("Here's a comparison:", { type: "comparison-table" })]); }}>Compare with Cyber Security</button>
                         <button className="pnc-btn" onClick={() => { window.open("https://wa.me/919886035330", "_blank"); }}>Talk to Counsellor</button>
                     </div>
@@ -630,6 +633,7 @@ export default function FloatingChat() {
                         <a href="https://www.ehackacademy.com/programs/digital-marketing-masterprogram" target="_blank" rel="noopener noreferrer" className="program-card-link">See Digital Marketing Details →</a>
                     </div>
                     <div className="program-next-choices">
+                        <button className="pnc-btn pnc-btn--primary" onClick={() => { setMessages(m => [...m, makeAssistantMsg("Please choose how you'd like to proceed:", { type: "conversion-cta", programUrl: "https://www.ehackacademy.com/programs/digital-marketing-masterprogram" })]); }}>Apply Now</button>
                         <button className="pnc-btn" onClick={() => { setMessages(m => [...m, makeUserMsg("Compare with Cyber Security"), makeAssistantMsg("Here's a comparison:", { type: "comparison-table" })]); }}>Compare with Cyber Security</button>
                         <button className="pnc-btn" onClick={() => { window.open("https://wa.me/919886035330", "_blank"); }}>Talk to Counsellor</button>
                     </div>
@@ -650,6 +654,7 @@ export default function FloatingChat() {
                         <a href="https://www.ehackacademy.com/programs/robotics-for-all" target="_blank" rel="noopener noreferrer" className="program-card-link">See Robotics Details →</a>
                     </div>
                     <div className="program-next-choices">
+                        <button className="pnc-btn pnc-btn--primary" onClick={() => { setMessages(m => [...m, makeAssistantMsg("Please choose how you'd like to proceed:", { type: "conversion-cta", programUrl: "https://www.ehackacademy.com/programs/robotics-for-all" })]); }}>Apply Now</button>
                         <button className="pnc-btn" onClick={() => { window.open("https://wa.me/919886035330", "_blank"); }}>Talk to Counsellor</button>
                         <button className="pnc-btn" onClick={() => { setMessages(m => [...m, makeUserMsg("Get course recommendation"), makeAssistantMsg("Based on your profile, I recommend:", { type: "graduate-program" })]); }}>Get Course Recommendation</button>
                     </div>
