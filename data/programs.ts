@@ -812,7 +812,9 @@ export const programs = [
             membership: "2 Years "
         },
         schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
-        certifications: [],
+        certifications: [
+            { code: "DIPLOMA", name: "eHack Advanced Diploma in Cybersecurity", image: "/images/diploma-program-cert-ehack.jpeg" }
+        ],
         skills: [
             { name: "Application Security", desc: "Input parameter validation, User/Role Authentication & Authorization, Session management, parameter manipulation & exception management, Auditing and logging." },
             { name: "Information Security", desc: "Protects information from unauthorized access, identity theft prevention, privacy protection through identification, authentication, authorization & cryptography." },
