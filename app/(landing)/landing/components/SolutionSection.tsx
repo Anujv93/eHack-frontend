@@ -150,9 +150,10 @@ const programs = [
 interface LeadModalProps {
     isOpen: boolean;
     onClose: () => void;
+    leadSource?: string;
 }
 
-const LeadCaptureModal: React.FC<LeadModalProps> = ({ isOpen, onClose }) => {
+const LeadCaptureModal: React.FC<LeadModalProps> = ({ isOpen, onClose, leadSource = 'Career Roadmap Request' }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [generalError, setGeneralError] = useState('');
@@ -225,15 +226,15 @@ const LeadCaptureModal: React.FC<LeadModalProps> = ({ isOpen, onClose }) => {
                     phone: data.phone,
                     city: '',
                     totalAmount: 0,
-                    inquiryName: `Website - ${data.fullName} - Career Roadmap Request`,
+                    inquiryName: `Website - ${data.fullName} - ${leadSource}`,
                     leadSource: 'Website Landing Page - Career Roadmap CTA',
                     courses: [{
-                        name: 'Career Roadmap Request',
-                        code: 'career-roadmap',
+                        name: leadSource,
+                        code: leadSource.toLowerCase().replace(/\s+/g, '-'),
                         category: 'Cybersecurity',
                         price: 0,
                     }],
-                    message: `Career Roadmap Request\nCurrent Status: ${data.currentStatus}\nExperience Level: ${data.experience}\nSource: Solution Section CTA`,
+                    message: `${leadSource}\nCurrent Status: ${data.currentStatus}\nExperience Level: ${data.experience}\nSource: ${leadSource}`,
                     agreeWhatsApp: true,
                     pipeline: 'Leads Pipeline Standard',
                     stage: 'New Inquiry',
@@ -430,6 +431,29 @@ const SolutionSection = () => {
 
     // Modal state
     const [modalOpen, setModalOpen] = useState(false);
+    const [leadSource, setLeadSource] = useState('Career Roadmap Request');
+
+    // Global event listener for modal
+    useEffect(() => {
+        const handleOpenModal = (e: Event) => {
+            const customEvent = e as CustomEvent;
+            if (customEvent.detail?.source) {
+                setLeadSource(customEvent.detail.source);
+            } else {
+                setLeadSource('Career Roadmap Request');
+            }
+            setModalOpen(true);
+        };
+        const handleCloseModal = () => setModalOpen(false);
+
+        window.addEventListener('openGlobalLeadModal', handleOpenModal);
+        window.addEventListener('closeGlobalLeadModal', handleCloseModal);
+
+        return () => {
+            window.removeEventListener('openGlobalLeadModal', handleOpenModal);
+            window.removeEventListener('closeGlobalLeadModal', handleCloseModal);
+        };
+    }, []);
 
     const handleMouseEnter = (index: number) => {
         if (leaveTimeout.current) clearTimeout(leaveTimeout.current);
@@ -644,6 +668,7 @@ const SolutionSection = () => {
             <LeadCaptureModal
                 isOpen={modalOpen}
                 onClose={() => setModalOpen(false)}
+                leadSource={leadSource}
             />
         </>
     );
