@@ -9,17 +9,17 @@ import CehOfferModal from './ceh-offer-modal';
 const offers = [
     {
         id: 'ceh',
-        ribbonTexts: ['Special Offer', 'CEH^AI @ ₹15K', 'Huge Discount!', 'EMI Available'],
-        pretitle: 'Certified Ethical Hacker^AI',
+        ribbonTexts: ['Special Offer', 'Hacking Masterclass @ ₹30K', 'Huge Discount!', 'EMI Available'],
+        pretitle: 'Practical Ethical Hacking Masterclass^AI',
         title: (
             <>
-                Just ₹15,000 <span style={{ textDecoration: 'line-through', opacity: 0.7, fontSize: '0.85em', marginLeft: '6px' }}>₹60,000</span>
+                Just ₹30,000 <span style={{ textDecoration: 'line-through', opacity: 0.7, fontSize: '0.85em', marginLeft: '6px' }}>₹1,00,000</span>
             </>
         ),
         description: 'Launch your cybersecurity career! Master advanced ethical hacking directly through hands-on Live Online or Offline sessions, and get fully certified upon completion.',
         certifications: (
             <>
-                <strong>Easy 3-Split EMI:</strong> ₹5,000 upfront and the remaining in two splits.
+                <strong>Easy 3-Split EMI:</strong> ₹10,000 upfront and the remaining in two splits.
             </>
         ),
         ctaText: 'View Offer Details',

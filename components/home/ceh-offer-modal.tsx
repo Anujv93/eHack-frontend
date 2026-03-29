@@ -76,9 +76,9 @@ export default function CehOfferModal({ isOpen, onClose }: CehOfferModalProps) {
                         {/* Header */}
                         <div className="ceh-modal-header">
                             <span className="ceh-modal-badge">Special Offer Details</span>
-                            <h2>Become a <span>Certified Ethical Hacker</span> (CEH v13)</h2>
+                            <h2>Master <span>Practical Ethical Hacking</span> — The Masterclass</h2>
                             <p>
-                                Designed with real-world attack simulations and hands-on labs, this training prepares you not just to pass the CEH exam, but to build a successful career in cybersecurity.
+                                Designed with real-world attack simulations and hands-on labs, this masterclass prepares you to think like a hacker and build a successful career in cybersecurity.
                             </p>
                         </div>
 
@@ -141,11 +141,11 @@ export default function CehOfferModal({ isOpen, onClose }: CehOfferModalProps) {
                     <div className="ceh-modal-right">
                         <div className="ceh-modal-sticky-sidebar">
                             <InquiryForm
-                                courseName="15000 - Certified Ethical Hacker (CEH v13)"
-                                courseCode="masterclass-ethical-hacking-ceh-v13"
+                                courseName="30000 - Practical Ethical Hacking Masterclass"
+                                courseCode="masterclass-practical-ethical-hacking"
                                 variant="hero"
-                                title="Claim CEH Offer"
-                                subtitle="Speak with our team to secure your special ₹15,000 offer"
+                                title="Claim Your Masterclass Offer"
+                                subtitle="Speak with our team to secure your special ₹30,000 offer"
                             />
                         </div>
                     </div>
