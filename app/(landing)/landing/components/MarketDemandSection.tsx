@@ -400,23 +400,39 @@ export default function MarketDemandSection() {
                 </div>
             </div>
 
-            {/* Mobile Dots */}
+            {/* Mobile Navigation: Arrows + Dots */}
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                <div className="flex justify-center gap-2 mt-2 md:hidden">
-                    {[1, 2, 3].map((realIdx) => (
-                        <button
-                            key={realIdx}
-                            onClick={() => {
-                                setIsTransitioning(true);
-                                setActiveIndex(realIdx);
-                            }}
-                            className={`h-2.5 rounded-full transition-all duration-500 ease-out ${activeIndex === realIdx || (activeIndex === 0 && realIdx === 3) || (activeIndex === 4 && realIdx === 1)
-                                ? 'w-10 bg-[#ff6b00]'
-                                : 'w-2.5 bg-gray-300'
-                                }`}
-                            aria-label={`Go to slide ${realIdx}`}
-                        />
-                    ))}
+                <div className="flex justify-center items-center gap-4 mt-2 md:hidden">
+                    <button
+                        onClick={handlePrev}
+                        className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 active:text-[#ff6b00] active:border-[#ff6b00] transition-colors bg-white shadow-sm"
+                        aria-label="Previous slide"
+                    >
+                        <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <div className="flex gap-2">
+                        {[1, 2, 3].map((realIdx) => (
+                            <button
+                                key={realIdx}
+                                onClick={() => {
+                                    setIsTransitioning(true);
+                                    setActiveIndex(realIdx);
+                                }}
+                                className={`h-2.5 rounded-full transition-all duration-500 ease-out ${activeIndex === realIdx || (activeIndex === 0 && realIdx === 3) || (activeIndex === 4 && realIdx === 1)
+                                    ? 'w-8 bg-[#ff6b00]'
+                                    : 'w-2.5 bg-gray-300'
+                                    }`}
+                                aria-label={`Go to slide ${realIdx}`}
+                            />
+                        ))}
+                    </div>
+                    <button
+                        onClick={handleNext}
+                        className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 active:text-[#ff6b00] active:border-[#ff6b00] transition-colors bg-white shadow-sm"
+                        aria-label="Next slide"
+                    >
+                        <ChevronRight className="w-5 h-5" />
+                    </button>
                 </div>
             </div>
 
@@ -441,7 +457,7 @@ export default function MarketDemandSection() {
                 }
                 @media (max-width: 768px) {
                     .peeking-container {
-                        --card-w: 92vw;
+                        --card-w: 82vw;
                         --gap: 0.75rem;
                     }
                 }
