@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { trackProgramEnquireCTAClicked, trackFormStarted, trackFormSubmitted, trackFormError } from '@/lib/posthog-events';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,6 +96,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [generalError, setGeneralError] = useState('');
+    const formStartedRef = useRef(false);
 
     // Time-based bot detection — record mount time when modal opens
     const mountTimeRef = useRef<number>(0);
@@ -176,6 +178,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
             }
 
             setIsSubmitted(true);
+            trackFormSubmitted('program_enquiry');
             localStorage.setItem('ehack_hero_form_submitted', 'true');
 
             // Google Ads Conversion Event
@@ -190,6 +193,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
         } catch (err: any) {
             console.error('Error submitting form:', err);
             setGeneralError(err.message || 'Something went wrong. Please try again.');
+            trackFormError('program_enquiry', err.message || 'Unknown error');
         } finally {
             setIsSubmitting(false);
         }
@@ -234,7 +238,14 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
 
                         {generalError && <div className="mb-4 p-3 text-sm text-red-600 bg-red-50 rounded-xl border border-red-100 text-center">{generalError}</div>}
 
-                        <form className="space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate>
+                        <form className="space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate
+                            onFocus={() => {
+                                if (!formStartedRef.current) {
+                                    formStartedRef.current = true;
+                                    trackFormStarted('program_enquiry');
+                                }
+                            }}
+                        >
                             {/* Honeypot field — invisible to real users, bots auto-fill it */}
                             <input
                                 type="text"
@@ -462,7 +473,7 @@ export default function ProgramDetailsSection() {
 
                 <div className="mt-12 text-center">
                     <button
-                        onClick={() => setIsModalOpen(true)}
+                        onClick={() => { trackProgramEnquireCTAClicked(); setIsModalOpen(true); }}
                         className="inline-flex items-center gap-2 sm:gap-3 bg-[#ff6b00] text-white px-6 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-black text-base sm:text-lg shadow-xl shadow-[#ff6b00]/20 hover:bg-[#e66000] hover:scale-105 transition-all group"
                     >
                         ENQUIRE NOW

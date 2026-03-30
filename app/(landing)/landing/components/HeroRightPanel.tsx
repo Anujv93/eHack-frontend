@@ -4,6 +4,7 @@ import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { trackFormStarted, trackFormSubmitted, trackFormError } from '@/lib/posthog-events';
 
 // --- Validation Schema ---
 const inquirySchema = z.object({
@@ -28,6 +29,7 @@ const HeroRightPanel = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [generalError, setGeneralError] = useState('');
+    const formStartedRef = useRef(false);
 
     // Time-based bot detection — record mount time
     const mountTimeRef = useRef<number>(Date.now());
@@ -100,6 +102,7 @@ const HeroRightPanel = () => {
             }
 
             setIsSubmitted(true);
+            trackFormSubmitted('hero');
 
             // Mark hero form as submitted for other sections
             localStorage.setItem('ehack_hero_form_submitted', 'true');
@@ -117,6 +120,7 @@ const HeroRightPanel = () => {
         } catch (err: any) {
             console.error('Error submitting form:', err);
             setGeneralError(err.message || 'Something went wrong. Please try again.');
+            trackFormError('hero', err.message || 'Unknown error');
         } finally {
             setIsSubmitting(false);
         }
@@ -167,7 +171,14 @@ const HeroRightPanel = () => {
 
                             {generalError && <div className="mb-3 p-2 text-xs text-red-600 bg-red-50 rounded-md border border-red-100 text-center">{generalError}</div>}
 
-                            <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate>
+                            <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate
+                                onFocus={() => {
+                                    if (!formStartedRef.current) {
+                                        formStartedRef.current = true;
+                                        trackFormStarted('hero');
+                                    }
+                                }}
+                            >
                                 {/* Honeypot field — invisible to real users, bots auto-fill it */}
                                 <input
                                     type="text"
