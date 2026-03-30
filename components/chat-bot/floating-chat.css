@@ -24,7 +24,7 @@
 }
 
 /* ── Floating Action Button ─────────────────────── */
-.chat-fab {
+button.chat-fab {
     position: fixed;
     bottom: 28px;
     right: 28px;
@@ -37,7 +37,7 @@
     font-size: 22px;
     cursor: pointer;
     box-shadow: 0 8px 28px rgba(255, 107, 0, 0.45);
-    z-index: 9990;
+    z-index: 9995;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1390,10 +1390,11 @@
     }
 
     .chat-fab {
-        bottom: 20px;
+        bottom: 110px;
         right: 20px;
         width: 54px;
         height: 54px;
+        z-index: 9995;
     }
 
     /* Shrink "Get in Touch" label on very small screens */

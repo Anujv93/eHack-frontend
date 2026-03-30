@@ -1,4 +1,4 @@
-.back-to-top {
+button.back-to-top {
     position: fixed;
     bottom: 6rem;
     right: 2rem;
@@ -17,7 +17,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    z-index: 998;
+    z-index: 9995;
 }
 
 .back-to-top.visible {
@@ -61,8 +61,10 @@
     .back-to-top {
         width: 40px;
         height: 40px;
-        bottom: 5rem;
-        right: 1rem;
+        /* Position above chat FAB (110px) + chat FAB height (54px) + gap (12px) = 176px */
+        bottom: 176px;
+        right: 1.25rem;
+        z-index: 9995;
     }
 
     .back-to-top svg {

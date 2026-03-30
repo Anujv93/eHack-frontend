@@ -87,6 +87,7 @@ export default async function RootLayout({
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
           strategy="afterInteractive"
         />
+        <meta name="google-site-verification" content="2DSFxgmHx2g5igVDZwHw122NVdz-cgCNg7cgqr_n1-Q" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
