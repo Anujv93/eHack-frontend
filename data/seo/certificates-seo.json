@@ -1,0 +1,107 @@
+{
+  "ecc-chfi": {
+    "title": "Digital Forensics Course Bangalore - CHFI Certification",
+    "description": "Enroll in digital forensics course in Bangalore with CHFI certification. Learn cyber investigation, evidence analysis and build a career in cybersecurity.",
+    "keywords": "digital forensics course Bangalore"
+  },
+  "ecc-cpent": {
+    "title": "Penetration Testing Course Bangalore - CPENT Training",
+    "description": "Join our penetration testing course in Bangalore with CPENT certification. Learn ethical hacking, real-world skills and advance your cybersecurity career.",
+    "keywords": "penetration testing course Bangalore"
+  },
+  "ecc-cnd": {
+    "title": "Network Security Training Bangalore - CND Certification",
+    "description": "Join network security training in Bangalore with CND certification. Learn cybersecurity fundamentals, threat protection and build a strong IT security career.",
+    "keywords": "network security training Bangalore"
+  },
+  "ecc-csoc": {
+    "title": "SOC Analyst Course Bangalore - CSOC Certification",
+    "description": "Enroll in SOC analyst course in Bangalore with CSOC certification. Learn threat monitoring, SIEM tools, and build a career as a security operations analyst.",
+    "keywords": "SOC analyst course Bangalore"
+  },
+  "oscp": {
+    "title": "OSCP Training Bangalore - Offensive Security Course",
+    "description": "Enroll in OSCP training Bangalore and master penetration testing skills. Learn real-world hacking techniques and prepare for OSCP certification today.",
+    "keywords": "OSCP training Bangalore"
+  },
+  "ecc-csse": {
+    "title": "Cloud Security Training Bangalore - CSSE Certification",
+    "description": "Join cloud security training in Bangalore and get certified. Learn cloud security, threat protection, and real-world skills to build a successful cybersecurity career.",
+    "keywords": "cloud security training Bangalore"
+  },
+  "ecc-ceh": {
+    "title": "Certified Ethical Hacker Training Bangalore - CEH Certification",
+    "description": "Get CEH certification with ethical hacker training in Bangalore. Learn penetration testing, vulnerability assessment, and hands-on hacking skills at eHack Academy.",
+    "keywords": "CEH training Bangalore, certified ethical hacker course Bangalore"
+  },
+  "ecc-cscu": {
+    "title": "Certified Secure Computer User Training Bangalore - CSCU",
+    "description": "Enroll in CSCU certification training in Bangalore. Learn secure computing practices, data protection, and cybersecurity awareness at eHack Academy.",
+    "keywords": "CSCU training Bangalore, secure computer user certification Bangalore"
+  },
+  "ecc-cct": {
+    "title": "Certified Cybersecurity Technician Training Bangalore - CCT",
+    "description": "Join CCT certification training in Bangalore. Learn cybersecurity fundamentals, network security, and IT security skills to start your cybersecurity career.",
+    "keywords": "CCT training Bangalore, cybersecurity technician course Bangalore"
+  },
+  "ecc-ctia": {
+    "title": "Threat Intelligence Training Bangalore - CTIA Certification",
+    "description": "Enroll in threat intelligence course in Bangalore with CTIA certification. Learn threat analysis, intelligence gathering, and cybersecurity defense strategies.",
+    "keywords": "threat intelligence course Bangalore, CTIA training Bangalore"
+  },
+  "ecc-ecih": {
+    "title": "Incident Handling Training Bangalore - ECIH Certification",
+    "description": "Join incident handling and response training in Bangalore with ECIH certification. Learn to manage and respond to cybersecurity incidents effectively.",
+    "keywords": "incident handling course Bangalore, ECIH training Bangalore"
+  },
+  "isaca-cisa": {
+    "title": "CISA Training Bangalore - IT Audit Certification Course",
+    "description": "Enroll in CISA training in Bangalore. Get certified in IT auditing, information systems security, and governance at eHack Academy.",
+    "keywords": "CISA training Bangalore, IT audit certification Bangalore"
+  },
+  "isaca-cism": {
+    "title": "CISM Training Bangalore - Information Security Management",
+    "description": "Join CISM certification training in Bangalore. Learn information security management, risk management, and governance at eHack Academy.",
+    "keywords": "CISM training Bangalore, information security management course Bangalore"
+  },
+  "comp-tia-a-plus": {
+    "title": "CompTIA A+ Training Bangalore - IT Fundamentals Certification",
+    "description": "Enroll in CompTIA A+ training in Bangalore. Learn IT fundamentals, hardware, networking, and troubleshooting skills for your IT career.",
+    "keywords": "CompTIA A+ training Bangalore, IT fundamentals course Bangalore"
+  },
+  "comp-tia-network-plus": {
+    "title": "CompTIA Network+ Training Bangalore - Networking Certification",
+    "description": "Join CompTIA Network+ certification training in Bangalore. Learn networking fundamentals, infrastructure, and security at eHack Academy.",
+    "keywords": "CompTIA Network+ training Bangalore, networking course Bangalore"
+  },
+  "comp-tia-security-plus": {
+    "title": "CompTIA Security+ Training Bangalore - Security Certification",
+    "description": "Enroll in CompTIA Security+ training in Bangalore. Learn cybersecurity fundamentals, threat management, and security operations at eHack Academy.",
+    "keywords": "CompTIA Security+ training Bangalore, security certification Bangalore"
+  },
+  "comp-tia-pentest-plus": {
+    "title": "CompTIA PenTest+ Training Bangalore - Penetration Testing",
+    "description": "Join CompTIA PenTest+ certification training in Bangalore. Learn penetration testing, vulnerability assessment, and ethical hacking skills.",
+    "keywords": "CompTIA PenTest+ training Bangalore, penetration testing certification Bangalore"
+  },
+  "ics-2-cissp": {
+    "title": "CISSP Training Bangalore - ISC2 Certification Course",
+    "description": "Enroll in CISSP training in Bangalore with ISC2 certification. Master information security, risk management, and enterprise security architecture.",
+    "keywords": "CISSP training Bangalore, ISC2 certification Bangalore"
+  },
+  "ics-2-cc": {
+    "title": "ISC2 CC Training Bangalore - Certified in Cybersecurity",
+    "description": "Join ISC2 Certified in Cybersecurity (CC) training in Bangalore. Start your cybersecurity career with foundational security knowledge and certification.",
+    "keywords": "ISC2 CC training Bangalore, certified in cybersecurity Bangalore"
+  },
+  "cisco-ccna": {
+    "title": "CCNA Training Bangalore - Cisco Networking Certification",
+    "description": "Enroll in CCNA training in Bangalore. Get Cisco certified with hands-on networking, routing, switching, and network security training at eHack Academy.",
+    "keywords": "CCNA training Bangalore, Cisco networking course Bangalore"
+  },
+  "offsec-oscp": {
+    "title": "OSCP Training Bangalore - OffSec Penetration Testing Course",
+    "description": "Get OSCP certified with OffSec penetration testing training in Bangalore. Master real-world hacking techniques and advance your cybersecurity career.",
+    "keywords": "OSCP training Bangalore, OffSec certification Bangalore"
+  }
+}
