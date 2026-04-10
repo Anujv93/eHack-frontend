@@ -5,7 +5,7 @@ import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
 import BackToTop from "@/components/back-to-top/back-to-top";
 import FloatingChat from "@/components/chat-bot/FloatingChat";
-import { FranchisePopup } from "@/components/global";
+import { FranchisePopup, WhatsAppButton } from "@/components/global";
 import {
   getCertificationPartners,
   getCoursesForListing,
@@ -121,6 +121,7 @@ export default async function RootLayout({
         <Footer />
         <FranchisePopup />
         <BackToTop />
+        <WhatsAppButton />
       </body>
     </html>
   );

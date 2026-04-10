@@ -16,6 +16,9 @@ export type {
 // Franchise Popup
 export { FranchisePopup } from "./franchise-popup";
 
+// WhatsApp Button
+export { default as WhatsAppButton } from "./whatsapp-button/whatsapp-button";
+
 // TODO: Add other component exports as they are developed
 // export { default as Accreditations } from "./accreditations/accreditations";
 // export { default as FAQ } from "./faq/faq";
