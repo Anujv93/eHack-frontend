@@ -1,13 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import TerminalAnimation from "./TerminalAnimation";
-import SuccessCard from "./SuccessCard";
-import FolderLoader from "./FolderLoader";
-import { studentTransformationLogs, studentStories } from "../data/programData";
+import { trackFormStarted, trackFormSubmitted, trackFormError } from '@/lib/posthog-events';
 
 // --- Validation Schema ---
 const inquirySchema = z.object({
@@ -28,14 +25,11 @@ const inquirySchema = z.object({
 type InquiryFormValues = z.infer<typeof inquirySchema>;
 
 const HeroRightPanel = () => {
-    const [isPlaying] = useState(true);
-    const [storyIndex, setStoryIndex] = useState(0);
-    const [animationState, setAnimationState] = useState<'terminal' | 'unlocking' | 'success'>('terminal');
-    const containerRef = useRef<HTMLDivElement>(null);
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [generalError, setGeneralError] = useState('');
+    const formStartedRef = useRef(false);
 
     // Time-based bot detection — record mount time
     const mountTimeRef = useRef<number>(Date.now());
@@ -57,27 +51,7 @@ const HeroRightPanel = () => {
         }
     });
 
-    const handleTerminalComplete = () => {
-        setTimeout(() => {
-            setAnimationState('unlocking');
-        }, 300);
-    };
 
-    const handleUnlockComplete = () => {
-        setAnimationState('success');
-    };
-
-    // Auto-loop logic
-    useEffect(() => {
-        let resetTimer: NodeJS.Timeout;
-        if (animationState === 'success') {
-            resetTimer = setTimeout(() => {
-                setStoryIndex((prev) => (prev + 1) % studentStories.length);
-                setAnimationState('terminal');
-            }, 4000);
-        }
-        return () => clearTimeout(resetTimer);
-    }, [animationState]);
 
     const onSubmit = async (data: InquiryFormValues) => {
         // Bot check 1: Honeypot — if the hidden field is filled, silently "succeed"
@@ -128,6 +102,7 @@ const HeroRightPanel = () => {
             }
 
             setIsSubmitted(true);
+            trackFormSubmitted('hero');
 
             // Mark hero form as submitted for other sections
             localStorage.setItem('ehack_hero_form_submitted', 'true');
@@ -145,6 +120,7 @@ const HeroRightPanel = () => {
         } catch (err: any) {
             console.error('Error submitting form:', err);
             setGeneralError(err.message || 'Something went wrong. Please try again.');
+            trackFormError('hero', err.message || 'Unknown error');
         } finally {
             setIsSubmitting(false);
         }
@@ -153,37 +129,20 @@ const HeroRightPanel = () => {
     return (
         <div className="flex flex-col w-full max-w-[450px] sm:max-w-[550px] mx-auto perspective-1000 relative z-20">
 
-            {/* ================= MONITOR CONTENT (FRAMELESS) ================= */}
+            {/* ================= YOUTUBE VIDEO ================= */}
             <div className="group relative z-30">
-                {/* Glow behind monitor */}
+                {/* Glow behind video */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
 
-                {/* Screen Container - No Bezel */}
-                <div className="relative w-full h-[260px] sm:h-[300px] md:h-[340px] bg-black rounded-t-2xl rounded-b-none overflow-hidden shadow-2xl border border-gray-800 border-b-0">
-
-                    {/* TERMINAL LAYER */}
-                    <div className={`absolute inset-0 transition-opacity duration-500 bg-[#0c0c0c] ${animationState === 'success' ? 'opacity-0' : 'opacity-100'}`}>
-                        <TerminalAnimation
-                            key={storyIndex}
-                            customLogs={studentStories[storyIndex].logs}
-                            onComplete={handleTerminalComplete}
-                            autoScroll={true}
-                            isPaused={false}
-                        />
-                    </div>
-
-                    {/* 3. UNLOCK & 4. SUCCESS */}
-                    {animationState === 'unlocking' && (
-                        <div className="absolute inset-0 z-30"><FolderLoader onComplete={handleUnlockComplete} isPaused={false} /></div>
-                    )}
-                    {animationState === 'success' && (
-                        <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fadeIn">
-                            <SuccessCard data={studentStories[storyIndex]} />
-                        </div>
-                    )}
-
-                    {/* Subtle Scanline Overlay */}
-                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] z-[60] bg-[length:100%_2px,3px_100%] opacity-20"></div>
+                {/* Video Container */}
+                <div className="relative w-full aspect-video bg-black rounded-t-2xl rounded-b-none overflow-hidden shadow-2xl border border-gray-800 border-b-0">
+                    <iframe
+                        className="absolute inset-0 w-full h-full"
+                        src="https://www.youtube.com/embed/UrH9MuspUjQ?rel=0"
+                        title="eHack Academy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                    />
                 </div>
             </div>
 
@@ -212,7 +171,14 @@ const HeroRightPanel = () => {
 
                             {generalError && <div className="mb-3 p-2 text-xs text-red-600 bg-red-50 rounded-md border border-red-100 text-center">{generalError}</div>}
 
-                            <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate>
+                            <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate
+                                onFocus={() => {
+                                    if (!formStartedRef.current) {
+                                        formStartedRef.current = true;
+                                        trackFormStarted('hero');
+                                    }
+                                }}
+                            >
                                 {/* Honeypot field — invisible to real users, bots auto-fill it */}
                                 <input
                                     type="text"

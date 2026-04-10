@@ -11,6 +11,10 @@ import './page.css';
 export const metadata: Metadata = {
     title: 'All Courses | eHack Academy',
     description: 'Explore our comprehensive catalog of cybersecurity certifications and training programs from leading partners like EC-Council, ISC2, and more.',
+    keywords: 'cybersecurity courses, ethical hacking courses, certification training Bangalore',
+    alternates: {
+        canonical: '/courses',
+    },
 };
 
 interface PageProps {

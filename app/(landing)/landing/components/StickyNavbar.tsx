@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Phone } from 'lucide-react';
+import { trackNavClicked, trackPhoneClicked } from '@/lib/posthog-events';
 
 const navItems = [
     { id: 'home', label: 'Home' },
@@ -97,7 +98,7 @@ export default function StickyNavbar() {
                         <button
                             key={item.id}
                             data-id={item.id}
-                            onClick={() => scrollToSection(item.id)}
+                            onClick={() => { trackNavClicked(item.id, item.label); scrollToSection(item.id); }}
                             className={`whitespace-nowrap px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md transition-all duration-200 relative ${activeSection === item.id
                                 ? 'text-[#ff6b00] bg-[#fff5ed] font-semibold'
                                 : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
@@ -115,6 +116,7 @@ export default function StickyNavbar() {
                 <div className="flex-shrink-0 pl-2 sm:pl-4 border-l border-gray-100">
                     <a
                         href="tel:+919886035330"
+                        onClick={() => trackPhoneClicked('navbar')}
                         className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#ff6b00] text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg font-bold text-xs sm:text-sm shadow-lg shadow-[#ff6b00]/20 hover:bg-[#e66000] hover:-translate-y-0.5 transition-all duration-300 group"
                     >
                         <Phone size={16} className="fill-current" />

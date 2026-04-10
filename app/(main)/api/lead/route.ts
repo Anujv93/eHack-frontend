@@ -4,7 +4,7 @@ import { upsertZohoContact, createZohoDeal } from "@/lib/zoho-bigin";
 export async function POST(req: NextRequest) {
     const lead = await req.json();
 
-    const { name, email, phone, message } = lead;
+    const { name, email, phone, message, city, qualification, interest } = lead;
 
     console.log("CHATBOT LEAD:", {
         name,
@@ -56,11 +56,14 @@ export async function POST(req: NextRequest) {
 === CHATBOT LEAD ===
 Submitted: ${new Date().toISOString()}
 
-Name   : ${name || "N/A"}
-Email  : ${email || "N/A"}
-Phone  : ${phone || "N/A"}
-Message: ${message || "None"}
-Source : eHack AI Chatbot
+Name          : ${name || "N/A"}
+Email         : ${email || "N/A"}
+Phone         : ${phone || "N/A"}
+City          : ${city || "N/A"}
+Qualification : ${qualification || "N/A"}
+Interest      : ${interest || "N/A"}
+Message       : ${message || "None"}
+Source        : eHack AI Chatbot
         `.trim();
 
         const dealId = await createZohoDeal({

@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { trackCourseClicked } from '@/lib/posthog-events';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -139,6 +140,7 @@ export default function OurCoursesSection() {
                             <div className="mt-auto">
                                 <a
                                     href={course.link}
+                                    onClick={() => trackCourseClicked(course.name, course.organization)}
                                     className="inline-flex items-center text-[#ff6b00] font-bold tracking-wide group-hover:text-[#e66000] transition-colors"
                                 >
                                     View Details

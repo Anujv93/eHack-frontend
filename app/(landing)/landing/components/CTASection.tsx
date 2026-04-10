@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { trackBlueprintCTAClicked, trackFormStarted, trackFormSubmitted, trackFormError } from '@/lib/posthog-events';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,6 +21,7 @@ export default function CTASection() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState('');
+    const formStartedRef = useRef(false);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -71,6 +73,7 @@ export default function CTASection() {
             }
 
             setIsSubmitted(true);
+            trackFormSubmitted('blueprint_cta', formData.program);
             localStorage.setItem('ehack_hero_form_submitted', 'true');
 
             // Google Ads Conversion Event
@@ -89,6 +92,7 @@ export default function CTASection() {
         } catch (err: any) {
             console.error('Error submitting form:', err);
             setError(err.message || 'Something went wrong. Please try again.');
+            trackFormError('blueprint_cta', err.message || 'Unknown error');
         } finally {
             setIsSubmitting(false);
         }
@@ -214,7 +218,14 @@ export default function CTASection() {
 
                                     {error && <div className="mb-6 p-4 text-sm text-red-600 bg-red-50 rounded-2xl border border-red-100 text-center">{error}</div>}
 
-                                    <form className="space-y-5" onSubmit={handleSubmit}>
+                                    <form className="space-y-5" onSubmit={(e) => { trackBlueprintCTAClicked(); handleSubmit(e); }}
+                                        onFocus={() => {
+                                            if (!formStartedRef.current) {
+                                                formStartedRef.current = true;
+                                                trackFormStarted('blueprint_cta');
+                                            }
+                                        }}
+                                    >
                                         <div className="space-y-4">
                                             <div className="relative group">
                                                 <input

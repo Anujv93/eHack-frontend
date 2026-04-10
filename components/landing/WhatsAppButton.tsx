@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import './whatsapp.css';
+import { trackWhatsAppClicked } from '@/lib/posthog-events';
 
 export default function WhatsAppButton() {
     return (
@@ -10,6 +11,7 @@ export default function WhatsAppButton() {
                 href="https://api.whatsapp.com/send/?phone=919886035330&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClicked()}
                 className="whatsapp-button"
                 aria-label="Chat with us on WhatsApp"
             >

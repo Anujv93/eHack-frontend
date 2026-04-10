@@ -27,15 +27,21 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "eHack Academy | Institute of Emerging Technologies",
-  description: "Transform your career with industry-leading courses in Cybersecurity, Digital Marketing, Data Science & AI, and IoT & Robotics. Get certified from EC-Council, ISACA, OffSec, Cisco, and CompTIA.",
+  title: {
+    default: "eHack Academy - Ethical Hacking Training in Bangalore",
+    template: "%s | eHack Academy",
+  },
+  description: "Join ethical hacking training Bangalore at eHack Academy. Get ethical hacking certification with expert-led CEH training in Bangalore and hands-on skills.",
   icons: {
     icon: '/favicon.ico?v=2',
     shortcut: '/favicon.ico?v=2',
     apple: '/favicon.ico?v=2',
   },
-  keywords: "professional training, cybersecurity, digital marketing, data science, AI, IoT, robotics, certification training, ethical hacking, SEO, machine learning",
-
+  keywords: "ethical hacking training Bangalore, ethical hacking certification Bangalore, CEH training Bangalore",
+  metadataBase: new URL('https://www.ehackacademy.com'),
+  alternates: {
+    canonical: '/',
+  },
 };
 //
 export default async function RootLayout({
@@ -87,6 +93,7 @@ export default async function RootLayout({
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
           strategy="afterInteractive"
         />
+        <meta name="google-site-verification" content="2DSFxgmHx2g5igVDZwHw122NVdz-cgCNg7cgqr_n1-Q" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];

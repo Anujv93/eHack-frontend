@@ -2,6 +2,7 @@
 
 import React from 'react';
 import CTAButton from './CTAButton';
+import { trackHeroCTAClicked } from '@/lib/posthog-events';
 import HeroRightPanel from './HeroRightPanel';
 
 const HeroSection = () => {
@@ -56,6 +57,7 @@ const HeroSection = () => {
                             <CTAButton
                                 className="shadow-orange-500/20 hover:shadow-orange-500/40"
                                 onClick={() => {
+                                    trackHeroCTAClicked();
                                     const form = document.getElementById('hero-inquiry-form');
                                     if (form) {
                                         form.scrollIntoView({ behavior: 'smooth', block: 'center' });
