@@ -120,12 +120,14 @@ export default async function RootLayout({
         className={`${montserrat.variable} ${openSans.variable}`}
         style={{ fontFamily: 'var(--font-montserrat), var(--font-open-sans), sans-serif' }}
       >
-        <TopBar />
-        <Header partners={partners} courses={coursesTransformed} />
-        {children}
+        <div style={{ overflowX: 'hidden', position: 'relative', width: '100%', maxWidth: '100vw' }}>
+          <TopBar />
+          <Header partners={partners} courses={coursesTransformed} />
+          {children}
+          <Footer />
+        </div>
         {/* eHack AI Chatbot */}
         <FloatingChat />
-        <Footer />
         <FranchisePopup />
         <BackToTop />
         <WhatsAppButton />

@@ -42,6 +42,7 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     flex: 1;
+    min-width: 0;
 }
 
 .sticky-nav-links::-webkit-scrollbar {
