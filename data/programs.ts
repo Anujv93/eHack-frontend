@@ -280,6 +280,7 @@ export const programs = [
             "Chief Information Security Officer", "Cybersecurity Consultant", "Incident Response Analyst", "Cloud Security Architect"
         ],
         pricing: {
+            international: "$ 12,000/-",
             original: "₹5,00,000",
             discounted: "₹3,50,000",
             emi: "₹23,333/month",
@@ -671,6 +672,7 @@ export const programs = [
             "Network Engineer/Security Architect", "Incident Handler"
         ],
         pricing: {
+            international: "$ 5,000",
             original: "₹2,05,000",
             discounted: "₹1,50,000",
             emi: "₹29,750/month (4 EMIs after 30% upfront)",
@@ -1039,6 +1041,7 @@ export const programs = [
             "Network Engineer/Security Architect", "Incident Handler"
         ],
         pricing: {
+            international: "$ 1,300",
             original: "₹1,20,000",
             discounted: "₹90,000",
             emi: "₹17,500/month (4 EMIs after 30% upfront)",
@@ -1273,6 +1276,7 @@ export const programs = [
             "Business Development Executive", "PPC Specialist", "Email Marketing Manager", "Digital Marketing Consultant"
         ],
         pricing: {
+            international: "$ 1,100",
             original: "₹1,25,000",
             discounted: "₹95,000",
             emi: "₹13,750 X 4",
@@ -1515,6 +1519,7 @@ export const programs = [
             "Robotics Instructor", "STEM Educator", "Mechatronics Engineer", "Electronics Technician"
         ],
         pricing: {
+            international: "$ 300",
             original: "₹30,000",
             discounted: "₹20,000",
             emi: "Contact for EMI options",
@@ -1749,6 +1754,7 @@ export const programs = [
             "Power BI Developer", "Data Science Associate", "Applied Data Scientist", "Business Intelligence Analyst"
         ],
         pricing: {
+            international: "$ 1,400",
             original: "₹2,00,000",
             discounted: "₹1,10,000",
             emi: "₹17,500 X 4",
@@ -2218,6 +2224,7 @@ export const programs = [
             "Chief Information Security Officer", "Network Engineer/Security Architect", "Incident Handler"
         ],
         pricing: {
+            international: "$ 3,500",
             original: "₹1,25,000",
             discounted: "₹1,00,000",
             emi: "₹28,750 X 2",
@@ -2642,6 +2649,7 @@ export const programs = [
             "Business Development Executive", "HR Executive", "Corporate Trainer", "Sales Executive"
         ],
         pricing: {
+            international: "$ 400",
             original: "₹50,000",
             discounted: "₹35,000",
             emi: "Contact for EMI options",
@@ -2847,6 +2855,7 @@ export const programs = [
             "Full Stack Developer Intern", "QA Engineer Intern", "Product Management Intern", "UI/UX Design Intern"
         ],
         pricing: {
+            international: "$ 350",
             original: "₹30,000",
             discounted: "₹30,000",
             applicationFee: "₹500",

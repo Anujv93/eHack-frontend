@@ -9,7 +9,7 @@ import { BriefcaseBusiness, CheckCircle, ArrowRight, Phone, Star, FileText, Gem,
 
 
 import { ProgramLabsWrapper } from '@/components/global/certificate-labs/ProgramLabsWrapper';
-
+import { useInternationalPricing } from '@/hooks/useInternationalPricing';
 // Navigation sections for Integrated BSCS+MSCS page
 const INTEGRATED_NAV_SECTIONS = [
     { id: 'overview', label: 'Overview' },
@@ -64,6 +64,7 @@ const program = {
         { title: "Tech Enthusiasts", desc: "Deep dive into cybersecurity from basics to advanced leadership concepts.", tag: "Comprehensive" }
     ],
     pricing: {
+        international: "$ 5,000",
         applicationFee: "₹1,000",
         admissionFee: "₹4,00,000",
         companyEMI: "₹4,50,000",
@@ -167,6 +168,7 @@ export default function IntegratedBSCSMSCSPage() {
     const [activeCategory, setActiveCategory] = useState(0);
     const [openQuestion, setOpenQuestion] = useState<number | null>(0);
     const [showModal, setShowModal] = useState(false);
+    const { isInternational, isReady } = useInternationalPricing();
 
     const brochureUrl = '/brochure/Integrated Bachelor + Master in Cyber SecurityAI kennedy university.pdf';
 
@@ -827,93 +829,113 @@ export default function IntegratedBSCSMSCSPage() {
                     </div>
 
                     <div className="pricing-content-wrapper">
-                        <div className="pricing-main-column">
-                            <div className="fee-section">
-                                <div className="fee-row">
-                                    <span className="fee-label-text">
-                                        <span className="fee-icon-wrapper"><FileText size={18} /></span>
-                                        Application Fee
-                                    </span>
-                                    <span className="fee-value">{program.pricing.applicationFee}</span>
-                                </div>
-                                <p className="fee-note-text">Will be adjusted in the program fee. {program.pricing.note}</p>
-                            </div>
-                            <div className="fee-section primary">
-                                <div className="fee-row">
-                                    <span className="fee-label-text">
-                                        <span className="fee-icon-wrapper primary"><Gem size={18} /></span>
-                                        Program Fee
-                                    </span>
-                                    <span className="fee-value-large">{program.pricing.admissionFee}</span>
-                                </div>
-                                <p className="fee-note-text">{program.pricing.note}</p>
-                            </div>
+                        {(() => {
+                            if (isReady && isInternational && program.pricing.international) {
+                                return (
+                                   <div className="pricing-main-column" style={{ width: '100%' }}>
+                                        <div className="plan-option" style={{ padding: '2rem', textAlign: 'center', border: '1px solid var(--accent)', borderRadius: '1rem', background: 'rgba(255,107,0,0.05)' }}>
+                                            <div className="plan-header" style={{ justifyContent: 'center' }}>
+                                                <div className="plan-title-group" style={{ justifyContent: 'center', margin: '0 auto' }}>
+                                                    <h4 className="plan-name" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>International Program Investment</h4>
+                                                </div>
+                                            </div>
+                                            <span className="plan-price" style={{ fontSize: '3rem', color: 'var(--accent)', display: 'block', margin: '1.5rem 0' }}>{program.pricing.international}</span>
+                                            <p className="plan-description" style={{ marginTop: '1rem', fontSize: '1.1rem' }}>Includes all global certifications, hands-on labs, and full program access.</p>
+                                        </div>
+                                   </div>
+                                );
+                            }
+                            return (
+                                <>
+                                    <div className="pricing-main-column">
+                                        <div className="fee-section">
+                                            <div className="fee-row">
+                                                <span className="fee-label-text">
+                                                    <span className="fee-icon-wrapper"><FileText size={18} /></span>
+                                                    Application Fee
+                                                </span>
+                                                <span className="fee-value">{program.pricing.applicationFee}</span>
+                                            </div>
+                                            <p className="fee-note-text">Will be adjusted in the program fee. {program.pricing.note}</p>
+                                        </div>
+                                        <div className="fee-section primary">
+                                            <div className="fee-row">
+                                                <span className="fee-label-text">
+                                                    <span className="fee-icon-wrapper primary"><Gem size={18} /></span>
+                                                    Program Fee
+                                                </span>
+                                                <span className="fee-value-large">{program.pricing.admissionFee}</span>
+                                            </div>
+                                            <p className="fee-note-text">{program.pricing.note}</p>
+                                        </div>
 
-                            <div className="payment-plans-section">
-                                <h3 className="section-heading">Payment Plans</h3>
-                                <div className="plan-option">
-                                    <div className="plan-header">
-                                        <div className="plan-title-group">
-                                            <span className="plan-icon"><BriefcaseBusiness size={20} /></span>
-                                            <h4 className="plan-name">Company EMI Plan</h4>
+                                        <div className="payment-plans-section">
+                                            <h3 className="section-heading">Payment Plans</h3>
+                                            <div className="plan-option">
+                                                <div className="plan-header">
+                                                    <div className="plan-title-group">
+                                                        <span className="plan-icon"><BriefcaseBusiness size={20} /></span>
+                                                        <h4 className="plan-name">Company EMI Plan</h4>
+                                                    </div>
+                                                    <span className="plan-price">{program.pricing.companyEMI}</span>
+                                                </div>
+                                                <p className="plan-description">Complete flexibility with company-sponsored EMI option</p>
+                                            </div>
+                                            <div className="plan-option">
+                                                <div className="plan-header">
+                                                    <div className="plan-title-group">
+                                                        <span className="plan-icon"><Banknote size={20} /></span>
+                                                        <h4 className="plan-name">{program.pricing.upfrontPercentage} Upfront Payment</h4>
+                                                    </div>
+                                                    <span className="plan-price">{program.pricing.upfrontAmount}</span>
+                                                </div>
+                                                <p className="plan-description">Balance payable in {program.pricing.emiCount} equal EMIs of {program.pricing.emiAmount} each</p>
+                                            </div>
                                         </div>
-                                        <span className="plan-price">{program.pricing.companyEMI}</span>
                                     </div>
-                                    <p className="plan-description">Complete flexibility with company-sponsored EMI option</p>
-                                </div>
-                                <div className="plan-option">
-                                    <div className="plan-header">
-                                        <div className="plan-title-group">
-                                            <span className="plan-icon"><Banknote size={20} /></span>
-                                            <h4 className="plan-name">{program.pricing.upfrontPercentage} Upfront Payment</h4>
-                                        </div>
-                                        <span className="plan-price">{program.pricing.upfrontAmount}</span>
-                                    </div>
-                                    <p className="plan-description">Balance payable in {program.pricing.emiCount} equal EMIs of {program.pricing.emiAmount} each</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div className="pricing-side-column">
-                            <div className="financing-box">
-                                <h3 className="section-heading">
-                                    <span className="heading-icon"><Landmark size={20} /></span>
-                                    Financing Options
-                                </h3>
-                                <p className="financing-description">We offer multiple financing solutions to make our programs accessible to all students.</p>
-                                <div className="financing-list">
-                                    <div className="financing-item">
-                                        <div className="financing-icon"><Shield size={24} /></div>
-                                        <div>
-                                            <h4 className="financing-name p-2"> EMI (4,50,000)</h4>
-                                            {/* <p className="financing-desc">Zero interest installments through our internal program</p> */}
+                                    <div className="pricing-side-column">
+                                        <div className="financing-box">
+                                            <h3 className="section-heading">
+                                                <span className="heading-icon"><Landmark size={20} /></span>
+                                                Financing Options
+                                            </h3>
+                                            <p className="financing-description">We offer multiple financing solutions to make our programs accessible to all students.</p>
+                                            <div className="financing-list">
+                                                <div className="financing-item">
+                                                    <div className="financing-icon"><Shield size={24} /></div>
+                                                    <div>
+                                                        <h4 className="financing-name p-2"> EMI (4,50,000)</h4>
+                                                    </div>
+                                                </div>
+                                                <div className="financing-item">
+                                                    <div className="financing-icon"><CreditCard size={24} /></div>
+                                                    <div>
+                                                        <h4 className="financing-name">Bank/NBFC Financing</h4>
+                                                        <p className="financing-desc">Flexible payment plans through partner banks and NBFCs</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="financing-item">
-                                        <div className="financing-icon"><CreditCard size={24} /></div>
-                                        <div>
-                                            <h4 className="financing-name">Bank/NBFC Financing</h4>
-                                            <p className="financing-desc">Flexible payment plans through partner banks and NBFCs</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div className="whats-included-box" style={{ marginTop: '24px' }}>
-                                <h3 className="section-heading">
-                                    <span className="heading-icon"><CheckCircle size={20} /></span>
-                                    What&apos;s Included
-                                </h3>
-                                <ul className="included-list">
-                                    <li>Kennedy University Degree</li>
-                                    <li>eHack Academy Certifications</li>
-                                    <li>{program.stats.totalHours} of Hands-on Training</li>
-                                    <li>Real-Time Labs & Practice Environment</li>
-                                    <li>{program.stats.membership} Post-Training Support</li>
-                                    <li>Internship & Placement Assistance</li>
-                                </ul>
-                            </div>
-                        </div>
+                                        <div className="whats-included-box" style={{ marginTop: '24px' }}>
+                                            <h3 className="section-heading">
+                                                <span className="heading-icon"><CheckCircle size={20} /></span>
+                                                What&apos;s Included
+                                            </h3>
+                                            <ul className="included-list">
+                                                <li>Kennedy University Degree</li>
+                                                <li>eHack Academy Certifications</li>
+                                                <li>{program.stats.totalHours} of Hands-on Training</li>
+                                                <li>Real-Time Labs & Practice Environment</li>
+                                                <li>{program.stats.membership} Post-Training Support</li>
+                                                <li>Internship & Placement Assistance</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </>
+                            );
+                        })()}
                     </div>
 
                     <div className="pricing-cta-section">

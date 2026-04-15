@@ -10,6 +10,7 @@ import PlacementSection from '@/components/home/placement-section';
 import { ProgramLabsWrapper } from '@/components/global/certificate-labs/ProgramLabsWrapper';
 import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
 import ProgramToolsSection from '@/components/programs/program-tools-section';
+import { useInternationalPricing } from '@/hooks/useInternationalPricing';
 
 // Navigation sections configuration
 const NAV_SECTIONS = [
@@ -71,6 +72,7 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
     const [showBrochureModal, setShowBrochureModal] = useState(false);
     const [showCareerModal, setShowCareerModal] = useState(false);
     const stickyNavRef = useRef<HTMLDivElement>(null);
+    const { isInternational, isReady } = useInternationalPricing();
 
     const handleBrochureDownloadClick = (e: React.MouseEvent) => {
         if (!program?.brochureLink) {
@@ -743,6 +745,22 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
                     <div className="pricing-content-wrapper">
                         {(() => {
+                            if (isReady && isInternational && program.pricing.international) {
+                                return (
+                                   <div className="pricing-main-column" style={{ width: '100%' }}>
+                                        <div className="plan-option" style={{ padding: '2rem', textAlign: 'center', border: '1px solid var(--accent)', borderRadius: '1rem', background: 'rgba(255,107,0,0.05)' }}>
+                                            <div className="plan-header" style={{ justifyContent: 'center' }}>
+                                                <div className="plan-title-group" style={{ justifyContent: 'center', margin: '0 auto' }}>
+                                                    <h4 className="plan-name" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>International Program Investment</h4>
+                                                </div>
+                                            </div>
+                                            <span className="plan-price" style={{ fontSize: '3rem', color: 'var(--accent)', display: 'block', margin: '1.5rem 0' }}>{program.pricing.international}</span>
+                                            <p className="plan-description" style={{ marginTop: '1rem', fontSize: '1.1rem' }}>Includes all global certifications, hands-on labs, and full program access.</p>
+                                        </div>
+                                   </div>
+                                );
+                            }
+
                             const hasPaymentPlans = program.pricing.companyEMI || program.pricing.upfrontAmount;
 
                             const WhatsIncludedContent = (
