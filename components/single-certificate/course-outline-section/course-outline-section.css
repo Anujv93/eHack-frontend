@@ -134,7 +134,7 @@
 }
 
 .timeline-dot.has-cert {
-    background: linear-gradient(135deg, var(--accent), #ff8c42);
+    background: linear-gradient(135deg, var(--accent), #ff6b00);
     border-color: var(--accent);
     color: white;
     font-size: 1rem;

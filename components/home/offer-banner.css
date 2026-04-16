@@ -159,7 +159,7 @@
 .offer-banner-cta:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
-    background: linear-gradient(180deg, #FFA033 0%, #FF8000 100%);
+    background: linear-gradient(180deg, #FFA033 0%, #ff6b00 100%);
 }
 
 /* Right Image Area */
@@ -482,7 +482,7 @@
 .offer-toggle-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 15px rgba(255, 107, 0, 0.5);
-    background: linear-gradient(180deg, #FFA033 0%, #FF8000 100%);
+    background: linear-gradient(180deg, #FFA033 0%, #ff6b00 100%);
 }
 
 .offer-banner-image.ceh-image {

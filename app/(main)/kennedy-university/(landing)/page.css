@@ -20,7 +20,7 @@
     --gray-900: #171717;
 
     /* Orange Accent */
-    --accent: #DF6718;
+    --accent: #ff6b00;
     --accent-light: #FFF4ED;
     --accent-dark: #C55A15;
     --accent-rgb: 223, 103, 24;
@@ -89,7 +89,7 @@
 }
 
 .border-all {
-    border: 3px solid var(--accent, #DF6718);
+    border: 3px solid var(--accent, #ff6b00);
 }
 
 .kennedy-page-wrapper {
@@ -3005,7 +3005,7 @@
     position: absolute;
     top: 20px;
     right: -35px;
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     font-size: 11px;
     font-weight: 700;
@@ -3064,7 +3064,7 @@
 }
 
 .kennedy-page-wrapper .pathway-badge.dual {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     margin-right: 4px;
     font-size: 8px;

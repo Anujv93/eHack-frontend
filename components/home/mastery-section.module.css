@@ -167,7 +167,7 @@
     background-color: #ff6b00;
     padding: 3.5rem 2rem 1rem 2rem;
     /* Increased top padding to clear badge */
-    border-bottom: 2px solid #df6718;
+    border-bottom: 2px solid #ff6b00;
     border-radius: 14px 14px 0 0;
     text-align: center;
 }
@@ -197,7 +197,7 @@
     top: 0.5rem;
     width: 6px;
     height: 6px;
-    background-color: #df6718;
+    background-color: #ff6b00;
     border-radius: 50%;
 }
 

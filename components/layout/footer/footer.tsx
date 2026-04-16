@@ -202,7 +202,7 @@ export default function Footer() {
                                         download="Ehack-Handbook.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#DF6718', fontWeight: 600 }}
+                                        style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#ff6b00', fontWeight: 600 }}
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />

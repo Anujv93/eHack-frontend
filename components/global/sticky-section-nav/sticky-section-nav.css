@@ -70,7 +70,7 @@
 }
 
 .sticky-nav-link.active {
-    color: #df6718;
+    color: #ff6b00;
     background: #FFF5ED;
     font-weight: 600;
 }
@@ -83,7 +83,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: #df6718;
+    background: #ff6b00;
     transition: width 0.2s ease;
     border-radius: 1px;
 }
@@ -103,7 +103,7 @@
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: #df6718;
+    background: #ff6b00;
     color: #FFFFFF;
     font-size: 0.875rem;
     font-weight: 600;
@@ -114,7 +114,7 @@
 }
 
 .sticky-nav-call-btn:hover {
-    background: #c45510;
+    background: #ff6b00;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(223, 103, 24, 0.4);
 }

@@ -63,7 +63,7 @@
 }
 
 .program-detail-integrated .back-link:hover {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-integrated .hero-content {
@@ -92,7 +92,7 @@
 }
 
 .program-detail-integrated .badge-dual {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     font-size: 12px;
     font-weight: 700;
@@ -111,7 +111,7 @@
 }
 
 .program-detail-integrated .program-title .highlight {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-integrated .overview-card p {
@@ -159,7 +159,7 @@
 }
 
 .program-detail-integrated .btn-apply-now {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 16px 36px;
     border-radius: 12px;
@@ -190,8 +190,8 @@
 }
 
 .program-detail-integrated .btn-download:hover {
-    border-color: #DF6718;
-    color: #DF6718;
+    border-color: #ff6b00;
+    color: #ff6b00;
 }
 
 /* Lead Form Card */
@@ -235,7 +235,7 @@
 
 .program-detail-integrated .form-input:focus {
     outline: none;
-    border-color: #DF6718;
+    border-color: #ff6b00;
     background: white;
 }
 
@@ -266,7 +266,7 @@
 }
 
 .program-detail-integrated .btn-submit-form {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 16px;
     border: none;
@@ -406,7 +406,7 @@
 
 /* Total Card Special Styling */
 .program-detail-integrated .credit-summary-card.total {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     border: none;
     box-shadow: 0 10px 25px rgba(223, 103, 24, 0.25);
 }
@@ -597,13 +597,13 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    color: #DF6718;
+    color: #ff6b00;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .program-detail-integrated .degree-item-card:hover .degree-icon-wrapper {
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
     transform: scale(1.1) rotate(-5deg);
     border-color: transparent;
@@ -659,7 +659,7 @@
 }
 
 .program-detail-integrated .degree-item-card:hover .degree-abbr {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 /* Responsiveness */
@@ -716,7 +716,7 @@
 }
 
 .program-detail-integrated .section-title .accent {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-integrated .section-subtitle {
@@ -818,7 +818,7 @@
 }
 
 .program-detail-integrated .curriculum-part.expanded {
-    border-color: #DF6718;
+    border-color: #ff6b00;
     box-shadow: 0 8px 30px rgba(223, 103, 24, 0.12);
 }
 
@@ -836,7 +836,7 @@
 }
 
 .program-detail-integrated .part-number-badge {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     font-size: 14px;
     font-weight: 700;
@@ -894,12 +894,12 @@
 }
 
 .program-detail-integrated .course-card.has-topics:hover {
-    border-color: #DF6718;
+    border-color: #ff6b00;
 }
 
 .program-detail-integrated .course-card.expanded {
     background: #FFF7ED;
-    border-color: #DF6718;
+    border-color: #ff6b00;
     box-shadow: 0 8px 24px rgba(223, 103, 24, 0.15);
 }
 
@@ -930,7 +930,7 @@
 }
 
 .program-detail-integrated .course-card.expanded .course-code {
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
 }
 
@@ -958,7 +958,7 @@
 }
 
 .program-detail-integrated .course-credits {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     font-size: 12px;
     font-weight: 700;
@@ -980,12 +980,12 @@
 }
 
 .program-detail-integrated .course-card.has-topics:hover .expand-icon {
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
 }
 
 .program-detail-integrated .expand-icon.rotated {
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
     transform: rotate(180deg);
 }
@@ -1033,7 +1033,7 @@
 }
 
 .program-detail-integrated .topic-bullet {
-    color: #DF6718;
+    color: #ff6b00;
     font-weight: 600;
     font-size: 14px;
     flex-shrink: 0;
@@ -1057,7 +1057,7 @@
 }
 
 .program-detail-integrated .assessment-info strong {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-integrated .outcome-info {
@@ -1136,7 +1136,7 @@
 }
 
 .program-detail-integrated .criteria-list li strong {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-integrated .certificate-showcase {
@@ -1219,7 +1219,7 @@
 }
 
 .program-detail-integrated .btn-primary-lg {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 18px 40px;
     border-radius: 12px;
@@ -1632,7 +1632,7 @@
 }
 
 .program-detail-integrated .criteria-content .criteria-list li strong {
-    color: #DF6718;
+    color: #ff6b00;
     /* Orange accent */
     font-weight: 600;
 }
@@ -1690,7 +1690,7 @@
 }
 
 .program-detail-integrated .text-accent {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 /* Curriculum Footer */
@@ -1705,7 +1705,7 @@
     gap: 32px;
     padding: 32px;
     background: rgba(223, 103, 24, 0.05);
-    border: 2px solid #DF6718;
+    border: 2px solid #ff6b00;
     border-radius: 16px;
 }
 
@@ -1729,7 +1729,7 @@
     align-items: center;
     gap: 8px;
     padding: 14px 28px;
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
     font-size: 0.95rem;
     font-weight: 700;

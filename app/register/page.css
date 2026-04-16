@@ -62,7 +62,7 @@
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #ff6b35, #ff8c42);
+    background: linear-gradient(90deg, #ff6b35, #ff6b00);
     border-radius: 3px;
     transition: width 0.4s ease;
 }
@@ -95,7 +95,7 @@
 }
 
 .progress-step.active .step-circle {
-    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    background: linear-gradient(135deg, #ff6b35, #ff6b00);
     color: #fff;
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
@@ -317,7 +317,7 @@
 }
 
 .next-btn {
-    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    background: linear-gradient(135deg, #ff6b35, #ff6b00);
     border: none;
     color: #fff;
     margin-left: auto;
@@ -424,7 +424,7 @@
 .home-btn {
     display: inline-block;
     padding: 14px 40px;
-    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    background: linear-gradient(135deg, #ff6b35, #ff6b00);
     color: #fff;
     text-decoration: none;
     border-radius: 10px;

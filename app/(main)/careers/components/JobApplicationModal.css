@@ -98,7 +98,7 @@
 }
 
 .highlight-text {
-    color: #f79652;
+    color: #ff6b00;
 }
 
 .job-category-tag {
@@ -185,7 +185,7 @@
 .input-group input:focus,
 .input-group textarea:focus {
     outline: none;
-    border-color: #df6718;
+    border-color: #ff6b00;
     background: white;
     box-shadow: 0 0 0 4px rgba(223, 103, 24, 0.1);
 }
@@ -202,7 +202,7 @@
 }
 
 .phone-input-prefix:focus-within {
-    border-color: #df6718;
+    border-color: #ff6b00;
     background: white;
     box-shadow: 0 0 0 4px rgba(223, 103, 24, 0.1);
 }
@@ -247,7 +247,7 @@
 }
 
 .submit-button:hover {
-    background: #df6718;
+    background: #ff6b00;
     transform: translateY(-2px);
     box-shadow: 0 10px 15px -3px rgba(223, 103, 24, 0.3);
 }
@@ -266,7 +266,7 @@
 }
 
 .form-footer a {
-    color: #df6718;
+    color: #ff6b00;
     text-decoration: none;
     font-weight: 600;
 }

@@ -33,7 +33,7 @@
 .back-link-content {
     display: inline-flex;
     align-items: center;
-    color: #df6718;
+    color: #ff6b00;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
@@ -92,7 +92,7 @@
     color: #111;
     position: relative;
     padding-left: 1rem;
-    border-left: 6px solid #df6718;
+    border-left: 6px solid #ff6b00;
     line-height: 1;
     letter-spacing: -0.5px;
 }
@@ -113,7 +113,7 @@
 
 .offer-card {
     background: #fff;
-    border: 1px solid #df6718;
+    border: 1px solid #ff6b00;
     /* Default orange border */
     padding: 2rem;
     border-radius: 12px;
@@ -168,7 +168,7 @@
     gap: 1rem;
     padding: 1.5rem;
     background: #ffffff;
-    border: 1px solid #df6718;
+    border: 1px solid #ff6b00;
     /* Default orange border */
     border-radius: 8px;
     transition: all 0.2s ease-in-out;
@@ -189,7 +189,7 @@
     height: 24px;
     margin-top: 2px;
     /* Visual alignment with text line-height */
-    color: #df6718;
+    color: #ff6b00;
     /* Brand color checkmark/icon */
     flex-shrink: 0;
 }
@@ -199,7 +199,7 @@
 .coverage-card:hover .coverage-icon-box svg {
     transform: none;
     background: transparent;
-    color: #df6718;
+    color: #ff6b00;
 }
 
 .coverage-text {
@@ -253,7 +253,7 @@
 }
 
 .sidebar-widget.bg-dark .widget-title {
-    color: #df6718;
+    color: #ff6b00;
 }
 
 .widget-text {
@@ -278,7 +278,7 @@
 }
 
 .sidebar-cta-btn:hover {
-    background: #df6718;
+    background: #ff6b00;
     transform: translateY(-2px);
 }
 

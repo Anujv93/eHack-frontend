@@ -19,9 +19,9 @@
     --gray-900: #171717;
 
     /* Brand Accent - Orange for Cybersecurity (matching AIML) */
-    --accent: #df6718;
+    --accent: #ff6b00;
     --accent-light: #FEECD6;
-    --accent-dark: #c45510;
+    --accent-dark: #ff6b00;
     --accent-glow: rgba(223, 103, 24, 0.4);
 
     /* Secondary Colors */
@@ -893,7 +893,7 @@ ul {
     width: 100%;
     max-width: 80px;
     border-radius: 8px 8px 0 0;
-    background: linear-gradient(180deg, #fde2c5 0%, #df6718 100%);
+    background: linear-gradient(180deg, #fde2c5 0%, #ff6b00 100%);
     transition: all 0.3s;
 }
 
@@ -2172,7 +2172,7 @@ ul {
 }
 
 .cert-card-blue .check-icon {
-    color: #df6718;
+    color: #ff6b00;
 }
 
 .cert-card-magenta .check-icon {
@@ -2180,7 +2180,7 @@ ul {
 }
 
 .cert-card-dark .check-icon {
-    color: #df6718;
+    color: #ff6b00;
 }
 
 .btn-counsellor {

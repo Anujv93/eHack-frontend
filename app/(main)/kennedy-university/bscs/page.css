@@ -41,7 +41,7 @@
 }
 
 .program-detail-bscs .back-link:hover {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-bscs .hero-content {
@@ -118,7 +118,7 @@
 }
 
 .program-detail-bscs .btn-apply-now {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 16px 36px;
     border-radius: 12px;
@@ -149,8 +149,8 @@
 }
 
 .program-detail-bscs .btn-download:hover {
-    border-color: #DF6718;
-    color: #DF6718;
+    border-color: #ff6b00;
+    color: #ff6b00;
 }
 
 /* Lead Form Card */
@@ -194,7 +194,7 @@
 
 .program-detail-bscs .form-input:focus {
     outline: none;
-    border-color: #DF6718;
+    border-color: #ff6b00;
     background: white;
 }
 
@@ -225,7 +225,7 @@
 }
 
 .program-detail-bscs .btn-submit-form {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 16px;
     border: none;
@@ -311,7 +311,7 @@
 }
 
 .program-detail-bscs .section-title .accent {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-bscs .section-subtitle {
@@ -389,7 +389,7 @@
 }
 
 .program-detail-bscs .curriculum-part.expanded {
-    border-color: #DF6718;
+    border-color: #ff6b00;
     box-shadow: 0 8px 30px rgba(223, 103, 24, 0.12);
 }
 
@@ -407,7 +407,7 @@
 }
 
 .program-detail-bscs .part-number-badge {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     font-size: 14px;
     font-weight: 700;
@@ -465,12 +465,12 @@
 }
 
 .program-detail-bscs .course-card.has-topics:hover {
-    border-color: #DF6718;
+    border-color: #ff6b00;
 }
 
 .program-detail-bscs .course-card.expanded {
     background: #FFF7ED;
-    border-color: #DF6718;
+    border-color: #ff6b00;
     box-shadow: 0 8px 24px rgba(223, 103, 24, 0.15);
 }
 
@@ -501,7 +501,7 @@
 }
 
 .program-detail-bscs .course-card.expanded .course-code {
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
 }
 
@@ -529,7 +529,7 @@
 }
 
 .program-detail-bscs .course-credits {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     font-size: 12px;
     font-weight: 700;
@@ -551,12 +551,12 @@
 }
 
 .program-detail-bscs .course-card.has-topics:hover .expand-icon {
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
 }
 
 .program-detail-bscs .expand-icon.rotated {
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
     transform: rotate(180deg);
 }
@@ -604,7 +604,7 @@
 }
 
 .program-detail-bscs .topic-bullet {
-    color: #DF6718;
+    color: #ff6b00;
     font-weight: 600;
     font-size: 14px;
     flex-shrink: 0;
@@ -628,7 +628,7 @@
 }
 
 .program-detail-bscs .assessment-info strong {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 /* Criteria Section */
@@ -694,7 +694,7 @@
 }
 
 .program-detail-bscs .criteria-list li strong {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-bscs .certificate-showcase {
@@ -777,7 +777,7 @@
 }
 
 .program-detail-bscs .btn-primary-lg {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 18px 40px;
     border-radius: 12px;
@@ -1199,7 +1199,7 @@
 }
 
 .program-detail-bscs .criteria-content .criteria-list li strong {
-    color: #DF6718;
+    color: #ff6b00;
     /* Orange accent */
     font-weight: 600;
 }
@@ -1257,7 +1257,7 @@
 }
 
 .program-detail-bscs .text-accent {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 /* Curriculum Footer */
@@ -1272,7 +1272,7 @@
     gap: 32px;
     padding: 32px;
     background: rgba(223, 103, 24, 0.05);
-    border: 2px solid #DF6718;
+    border: 2px solid #ff6b00;
     border-radius: 16px;
 }
 
@@ -1296,7 +1296,7 @@
     align-items: center;
     gap: 8px;
     padding: 14px 28px;
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
     font-size: 0.95rem;
     font-weight: 700;

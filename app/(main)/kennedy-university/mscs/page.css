@@ -63,7 +63,7 @@
 }
 
 .program-detail-mscs .back-link:hover {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-mscs .hero-content {
@@ -99,7 +99,7 @@
 }
 
 .program-detail-mscs .program-title .highlight {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-mscs .program-desc {
@@ -140,7 +140,7 @@
 }
 
 .program-detail-mscs .btn-apply-now {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 16px 36px;
     border-radius: 12px;
@@ -171,8 +171,8 @@
 }
 
 .program-detail-mscs .btn-download:hover {
-    border-color: #DF6718;
-    color: #DF6718;
+    border-color: #ff6b00;
+    color: #ff6b00;
 }
 
 /* Lead Form Card */
@@ -216,7 +216,7 @@
 
 .program-detail-mscs .form-input:focus {
     outline: none;
-    border-color: #DF6718;
+    border-color: #ff6b00;
     background: white;
 }
 
@@ -247,7 +247,7 @@
 }
 
 .program-detail-mscs .btn-submit-form {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 16px;
     border: none;
@@ -333,7 +333,7 @@
 }
 
 .program-detail-mscs .section-title .accent {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-mscs .section-subtitle {
@@ -411,7 +411,7 @@
 }
 
 .program-detail-mscs .curriculum-part.expanded {
-    border-color: #DF6718;
+    border-color: #ff6b00;
     box-shadow: 0 8px 30px rgba(223, 103, 24, 0.12);
 }
 
@@ -429,7 +429,7 @@
 }
 
 .program-detail-mscs .part-number-badge {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     font-size: 14px;
     font-weight: 700;
@@ -487,12 +487,12 @@
 }
 
 .program-detail-mscs .course-card.has-topics:hover {
-    border-color: #DF6718;
+    border-color: #ff6b00;
 }
 
 .program-detail-mscs .course-card.expanded {
     background: #FFF7ED;
-    border-color: #DF6718;
+    border-color: #ff6b00;
     box-shadow: 0 8px 24px rgba(223, 103, 24, 0.15);
 }
 
@@ -523,7 +523,7 @@
 }
 
 .program-detail-mscs .course-card.expanded .course-code {
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
 }
 
@@ -551,7 +551,7 @@
 }
 
 .program-detail-mscs .course-credits {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     font-size: 12px;
     font-weight: 700;
@@ -573,12 +573,12 @@
 }
 
 .program-detail-mscs .course-card.has-topics:hover .expand-icon {
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
 }
 
 .program-detail-mscs .expand-icon.rotated {
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
     transform: rotate(180deg);
 }
@@ -626,7 +626,7 @@
 }
 
 .program-detail-mscs .topic-bullet {
-    color: #DF6718;
+    color: #ff6b00;
     font-weight: 600;
     font-size: 14px;
     flex-shrink: 0;
@@ -650,7 +650,7 @@
 }
 
 .program-detail-mscs .assessment-info strong {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-mscs .outcome-info {
@@ -729,7 +729,7 @@
 }
 
 .program-detail-mscs .criteria-list li strong {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 .program-detail-mscs .certificate-showcase {
@@ -812,7 +812,7 @@
 }
 
 .program-detail-mscs .btn-primary-lg {
-    background: linear-gradient(135deg, #DF6718 0%, #F07A2E 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 18px 40px;
     border-radius: 12px;
@@ -1149,7 +1149,7 @@
 }
 
 .program-detail-mscs .criteria-content .criteria-list li strong {
-    color: #DF6718;
+    color: #ff6b00;
     /* Orange accent */
     font-weight: 600;
 }
@@ -1207,7 +1207,7 @@
 }
 
 .program-detail-mscs .text-accent {
-    color: #DF6718;
+    color: #ff6b00;
 }
 
 /* Curriculum Footer */
@@ -1222,7 +1222,7 @@
     gap: 32px;
     padding: 32px;
     background: rgba(223, 103, 24, 0.05);
-    border: 2px solid #DF6718;
+    border: 2px solid #ff6b00;
     border-radius: 16px;
 }
 
@@ -1246,7 +1246,7 @@
     align-items: center;
     gap: 8px;
     padding: 14px 28px;
-    background: #DF6718;
+    background: #ff6b00;
     color: white;
     font-size: 0.95rem;
     font-weight: 700;

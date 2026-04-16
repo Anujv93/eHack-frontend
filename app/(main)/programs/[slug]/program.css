@@ -1222,8 +1222,8 @@ p {
 }
 
 .btn-download:hover {
-    border-color: #DF6718;
-    color: #DF6718;
+    border-color: #ff6b00;
+    color: #ff6b00;
     background: transparent;
     transform: translateY(-2px);
 }
@@ -2370,7 +2370,7 @@ p {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #df6718, #c45510);
+    background: linear-gradient(135deg, #ff6b00, #ff6b00);
     color: var(--white);
     font-size: 0.75rem;
     font-weight: 700;
@@ -3919,7 +3919,7 @@ p {
 }
 
 .btn-enroll-primary {
-    background: #df6718;
+    background: #ff6b00;
     color: #ffffff;
     font-size: 16px;
     font-weight: 600;
@@ -3949,7 +3949,7 @@ p {
 }
 
 .cta-contact a {
-    color: #df6718;
+    color: #ff6b00;
     text-decoration: none;
     font-weight: 600;
 }
@@ -4313,7 +4313,7 @@ p {
     font-weight: 700;
     letter-spacing: 0.15em;
     color: white;
-    background: linear-gradient(135deg, var(--brand-primary) 0%, #FF8A00 100%);
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #ff6b00 100%);
     padding: 8px 16px;
     border-radius: 50px;
     margin-bottom: var(--space-4);
@@ -4365,7 +4365,7 @@ p {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(180deg, var(--accent), #ff8c42);
+    background: linear-gradient(180deg, var(--accent), #ff6b00);
     transition: background 0.3s ease;
 }
 
@@ -4714,7 +4714,7 @@ p {
 }
 
 .timeline-dot.has-cert {
-    background: linear-gradient(135deg, var(--accent), #ff8c42);
+    background: linear-gradient(135deg, var(--accent), #ff6b00);
     border-color: var(--accent);
     color: white;
     font-size: 1rem;
