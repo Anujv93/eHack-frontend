@@ -452,7 +452,7 @@
 }
 
 .hero-title .highlight {
-    background: linear-gradient(90deg, #f97316, #dc2626);
+    background: linear-gradient(90deg, #ff6b00, #dc2626);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -634,7 +634,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #dc2626, #f97316);
+    background: linear-gradient(90deg, #dc2626, #ff6b00);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -646,7 +646,7 @@
 .pillar-item:hover {
     transform: translateY(-8px);
     background: rgba(220, 38, 38, 0.08);
-    border-color: #f97316;
+    border-color: #ff6b00;
     box-shadow:
         0 12px 24px rgba(0, 0, 0, 0.1),
         0 4px 8px rgba(220, 38, 38, 0.15);
@@ -670,7 +670,7 @@
 }
 
 .pillar-item:hover .pillar-icon svg {
-    color: #f97316;
+    color: #ff6b00;
 }
 
 .pillar-title {
@@ -683,7 +683,7 @@
 }
 
 .pillar-item:hover .pillar-title {
-    background: linear-gradient(135deg, #dc2626 0%, #f97316 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #ff6b00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -772,7 +772,7 @@
 }
 
 .accent-text {
-    color: #f97316;
+    color: #ff6b00;
 }
 
 .highlights-list {
@@ -794,7 +794,7 @@
 }
 
 .highlight-item:hover {
-    border-left-color: #f97316;
+    border-left-color: #ff6b00;
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -829,7 +829,7 @@
 .feature-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-    border-color: #f97316;
+    border-color: #ff6b00;
 }
 
 .feature-icon-wrapper {
@@ -920,7 +920,7 @@
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(90deg, #dc2626, #f97316);
+    background: linear-gradient(90deg, #dc2626, #ff6b00);
     color: #fff;
     padding: 0.35rem 1rem;
     border-radius: 20px;
@@ -1057,7 +1057,7 @@
 
 .microdegrees-header .subtitle-accent {
     display: block;
-    background: linear-gradient(135deg, #dc2626 0%, #f97316 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #ff6b00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1208,7 +1208,7 @@
 }
 
 .microdegree-card-new:hover .card-title {
-    background: linear-gradient(135deg, #dc2626 0%, #f97316 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #ff6b00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1391,7 +1391,7 @@
     transform: translateX(-50%);
     width: 40px;
     height: 3px;
-    background: linear-gradient(90deg, #dc2626, #f97316);
+    background: linear-gradient(90deg, #dc2626, #ff6b00);
     border-radius: 2px;
 }
 
@@ -1399,7 +1399,7 @@
     display: block;
     font-size: 3rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #dc2626 0%, #f97316 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #ff6b00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1655,7 +1655,7 @@
 }
 
 .pricing-highlight {
-    background: linear-gradient(90deg, #dc2626, #f97316);
+    background: linear-gradient(90deg, #dc2626, #ff6b00);
     color: #fff;
     padding: 1rem;
     text-align: center;
@@ -1705,7 +1705,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: linear-gradient(90deg, #dc2626, #f97316);
+    background: linear-gradient(90deg, #dc2626, #ff6b00);
     color: #fff;
     padding: 1rem 2.5rem;
     border-radius: 8px;

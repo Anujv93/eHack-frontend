@@ -53,7 +53,7 @@
     letter-spacing: 1.5px;
     margin-bottom: 0.5rem;
     padding: 0.625rem 1.5rem;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    background: linear-gradient(135deg, #FF6B00 0%, #ff6b00 100%);
     border-radius: 100px;
     border: none;
     box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
@@ -240,7 +240,7 @@
     position: relative;
     z-index: 1;
     padding: 0.875rem 1rem;
-    background: #ec7c00;
+    background: #ff6b00;
     color: white;
     border-top: none;
     margin: 0;

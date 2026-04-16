@@ -399,7 +399,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
             {/* Partners Section */}
             {/* @ts-ignore */}
-            <section className={styles.partners} style={{ borderBottom: 'solid 2px orange' }} id="partners">
+            <section className={styles.partners} style={{ borderBottom: 'solid 2px #ff6b00' }} id="partners">
                 <div className={styles.container}>
                     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                         <span className={styles.partnersLabel}>Trusted by World&apos;s Leading Certification Partners</span>
@@ -467,7 +467,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             </section >
 
             {/* Course Categories */}
-            < section id="courses" style={{ borderBottom: 'solid 2px orange' }} className={styles.coursesSection} >
+            < section id="courses" style={{ borderBottom: 'solid 2px #ff6b00' }} className={styles.coursesSection} >
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
                         <span className={styles.sectionBadge}>Explore Our Courses</span>
@@ -594,7 +594,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
             </section>
 
             {/* Stats Section */}
-            <section className={styles.statsSection} style={{ borderBottom: 'solid 2px orange', padding: '2rem 0', marginTop: '2rem' }} id="stats">
+            <section className={styles.statsSection} style={{ borderBottom: 'solid 2px #ff6b00', padding: '2rem 0', marginTop: '2rem' }} id="stats">
                 <div className={styles.container}>
                     <div className={styles.statsGrid}>
                         {stats.map((stat, index) => (
@@ -657,7 +657,7 @@ export default function HomePage({ partners, courses, categories }: HomePageProp
 
 
             {/* Ribbons Section */}
-            <section id="social-impact" style={{ borderBottom: 'solid 2px orange', padding: '2rem 0', borderTop: 'solid 2px orange', marginTop: '2rem' }}>
+            <section id="social-impact" style={{ borderBottom: 'solid 2px #ff6b00', padding: '2rem 0', borderTop: 'solid 2px #ff6b00', marginTop: '2rem' }}>
                 <div className={styles.container}>
                     <div className="cert-header" style={{ marginBottom: '3rem' }}>
                         <h2 className="cert-title">Social Impact & <span className="cert-title-gradient">Strategic Growth</span></h2>

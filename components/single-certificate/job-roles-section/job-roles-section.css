@@ -34,7 +34,7 @@
 
 .job-roles-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 0.6rem 1.5rem;
     border-radius: 50px;
@@ -104,7 +104,7 @@
     position: absolute;
     top: 16px;
     right: 16px;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 0.4rem 1rem;
     border-radius: 20px;
@@ -180,7 +180,7 @@
 
 .role-card:hover {
     background: #ffffff;
-    border-color: #ff8533;
+    border-color: #ff6b00;
     transform: translateX(6px);
     box-shadow: 0 8px 25px rgba(255, 107, 0, 0.2);
 }

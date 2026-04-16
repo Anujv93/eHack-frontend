@@ -225,7 +225,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     border: none;
     display: flex;
     align-items: center;
@@ -535,7 +535,7 @@
     justify-content: center;
     gap: 12px;
     padding: 16px 32px;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     border: none;
     border-radius: 12px;
     font-size: 1rem;

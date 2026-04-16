@@ -67,7 +67,7 @@ button {
 }
 
 .hero-banner[style*="background-image"] .hero-title-main .ai-highlight {
-    color: #FF8533;
+    color: #ff6b00;
 }
 
 .hero-banner[style*="background-image"] .hero-subtitle-main {
@@ -90,7 +90,7 @@ button {
 /* Hero Badge */
 .hero-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    background: linear-gradient(135deg, #FF6B00 0%, #ff6b00 100%);
     color: #FFFFFF;
     padding: 10px 24px;
     border-radius: 50px;
@@ -118,7 +118,7 @@ button {
 .hero-underline {
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #FF6B00 0%, #FF8533 100%);
+    background: linear-gradient(90deg, #FF6B00 0%, #ff6b00 100%);
     margin: 0 0 20px;
     border-radius: 2px;
 }

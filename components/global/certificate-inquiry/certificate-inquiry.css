@@ -42,7 +42,7 @@
 }
 
 .inquiry-title .accent {
-    color: #f97316;
+    color: #ff6b00;
 }
 
 .inquiry-subtitle {
@@ -76,7 +76,7 @@
     justify-content: center;
     width: 24px;
     height: 24px;
-    background: #f97316;
+    background: #ff6b00;
     color: #fff;
     border-radius: 50%;
     font-size: 0.75rem;

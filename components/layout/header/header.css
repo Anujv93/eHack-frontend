@@ -2137,7 +2137,7 @@
     justify-content: space-between;
     width: 100%;
     text-align: left;
-    background: linear-gradient(135deg, var(--brand-primary) 0%, #FF8533 100%);
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #ff6b00 100%);
     color: #fff;
     border: none;
     cursor: pointer;

@@ -36,12 +36,12 @@
     border-radius: 100px;
     font-size: 0.8125rem;
     font-weight: 600;
-    color: #EA580C;
+    color: #ff6b00;
     margin-bottom: 1rem;
 }
 
 .header-badge svg {
-    color: #F97316;
+    color: #ff6b00;
 }
 
 .related-certificates-title {
@@ -162,7 +162,7 @@
 .explore-program-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 35px rgba(255, 107, 0, 0.25);
-    border-color: #FF8533;
+    border-color: #ff6b00;
 }
 
 .explore-card-overlay {
@@ -225,7 +225,7 @@
 .explore-price {
     font-size: 1rem;
     font-weight: 700;
-    color: #FF8533;
+    color: #ff6b00;
 }
 
 .related-certificates-section-title {

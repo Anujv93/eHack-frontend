@@ -405,7 +405,7 @@
 }
 
 .webinar-date-box {
-    background: linear-gradient(135deg, #FF6B00, #FF8533);
+    background: linear-gradient(135deg, #FF6B00, #ff6b00);
     color: #FFFFFF;
     border-radius: 12px;
     padding: 16px 20px;
@@ -506,7 +506,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, #FF6B00, #FF8533);
+    background: linear-gradient(135deg, #FF6B00, #ff6b00);
     color: #FFFFFF;
     padding: 14px 28px;
     border-radius: 50px;

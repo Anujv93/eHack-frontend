@@ -32,7 +32,7 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    background: var(--accent, #ea580c);
+    background: var(--accent, #ff6b00);
     color: var(--white, #ffffff);
     margin-bottom: 1rem;
     padding: 0.75rem 2rem;
@@ -78,7 +78,7 @@
 
 .card {
     background: var(--white, #ffffff);
-    border: 1px solid var(--accent, #ea580c);
+    border: 1px solid var(--accent, #ff6b00);
     border-radius: 12px;
     padding: 1.5rem;
     display: flex;
@@ -91,7 +91,7 @@
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent, #ea580c);
+    border-color: var(--accent, #ff6b00);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 

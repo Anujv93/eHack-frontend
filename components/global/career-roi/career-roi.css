@@ -33,7 +33,7 @@
 
 .career-roi-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     padding: 0.6rem 1.75rem;
     border-radius: 50px;
@@ -170,7 +170,7 @@
     align-items: center;
     gap: 0.25rem;
     padding: 0.75rem 1rem;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     border-radius: 10px;
     color: white;
     text-align: center;
@@ -321,7 +321,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 100%);
     color: white;
     font-size: 0.75rem;
     font-weight: 700;

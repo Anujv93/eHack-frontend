@@ -185,7 +185,7 @@
 .checkbox-label input[type="checkbox"] {
     width: 16px;
     height: 16px;
-    accent-color: #ea580c;
+    accent-color: #ff6b00;
 }
 
 /* Terms */
@@ -202,7 +202,7 @@
 }
 
 .terms-text a:hover {
-    color: #ea580c;
+    color: #ff6b00;
 }
 
 /* Success State */
@@ -254,7 +254,7 @@
 
 .call-now-btn {
     background: rgba(234, 88, 12, 0.1);
-    color: #ea580c;
+    color: #ff6b00;
     border: 1px solid rgba(234, 88, 12, 0.25);
 }
 

@@ -36,7 +36,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+    background: linear-gradient(135deg, #FF6B00 0%, #ff6b00 100%);
     color: white;
     padding: 1rem 2.5rem;
     /* Significantly Increased padding */

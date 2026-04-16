@@ -2,19 +2,19 @@
 
 :root {
   /* eHack Academy Brand Colors - Primary Orange Theme  #ff6b00 */
-  --brand-primary: #df6718;
-  --brand-primary-dark: #c4580f;
-  --brand-primary-light: #f07a2e;
+  --brand-primary: #ff6b00;
+  --brand-primary-dark: #e66000;
+  --brand-primary-light: #ff8533;
   --brand-primary-50: #fff7f0;
-  --brand-primary-100: #fef0e6;
-  --brand-primary-200: #fdd9c2;
-  --brand-primary-300: #fbb88a;
-  --brand-primary-400: #f79652;
-  --brand-primary-500: #df6718;
-  --brand-primary-600: #c4580f;
-  --brand-primary-700: #a3490d;
-  --brand-primary-800: #823a0b;
-  --brand-primary-900: #612c08;
+  --brand-primary-100: #ffecd9;
+  --brand-primary-200: #ffceaa;
+  --brand-primary-300: #ffaf7a;
+  --brand-primary-400: #ff8e47;
+  --brand-primary-500: #ff6b00;
+  --brand-primary-600: #e66000;
+  --brand-primary-700: #b34b00;
+  --brand-primary-800: #803600;
+  --brand-primary-900: #4d2000;
 
   /* Neutral Colors */
   --neutral-white: #FFFFFF;
