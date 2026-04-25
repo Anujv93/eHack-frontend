@@ -4,8 +4,11 @@ import React from 'react';
 import CTAButton from './CTAButton';
 import { trackHeroCTAClicked } from '@/lib/posthog-events';
 import HeroRightPanel from './HeroRightPanel';
+import { useInternationalPricing } from '@/hooks/useInternationalPricing';
 
 const HeroSection = () => {
+    const { isInternational } = useInternationalPricing();
+
     return (
         <section className="relative w-full min-h-[80vh] sm:min-h-[90vh] flex items-center pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-20 overflow-hidden">
 
@@ -81,7 +84,7 @@ const HeroSection = () => {
                                 <span className="hidden sm:inline text-gray-500">|</span>
                                 <span className="flex items-center gap-2">
                                     <span className="w-2 h-2 rounded-full bg-[#ff6b00] shadow-[0_0_8px_rgba(255,107,0,0.6)] animate-pulse"></span>
-                                    EMI Options Available
+                                    {isInternational ? 'Installment Options Available' : 'EMI Options Available'}
                                 </span>
                             </div>
                         </div>

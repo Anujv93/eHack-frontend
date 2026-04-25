@@ -7,6 +7,7 @@ import * as z from "zod";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { trackProgramEnquireCTAClicked, trackFormStarted, trackFormSubmitted, trackFormError } from '@/lib/posthog-events';
+import { useInternationalPricing } from '@/hooks/useInternationalPricing';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +43,8 @@ const programs = [
             ecCouncilCerts: "CEH v13, CEH Practicals, CEH Masters",
             ehackCerts: "Nil",
             careerTraining: "Nil",
-            emi: "₹28,750"
+            emi: "₹28,750",
+            emiInternational: "$345"
         }
     },
     {
@@ -58,7 +60,8 @@ const programs = [
             ecCouncilCerts: "CSCU, CND v3",
             ehackCerts: "Cyber Security Fundamentals, Ethical Hacking, Penetration Testing / Digital Forensics, OWASP 10",
             careerTraining: "Personality Development & Soft Skills",
-            emi: "₹29,750"
+            emi: "₹29,750",
+            emiInternational: "$357"
         }
     },
     {
@@ -74,7 +77,8 @@ const programs = [
             ecCouncilCerts: "CSCU, CND v3, CEH v13, Cpent v2+LPT, CHFI v11",
             ehackCerts: "Cyber Security Fundamentals, OWASP 10",
             careerTraining: "Personality Development & Soft Skills",
-            emi: "₹50,000"
+            emi: "₹50,000",
+            emiInternational: "$600"
         }
     }
 ];
@@ -309,6 +313,7 @@ export default function ProgramDetailsSection() {
     const sectionRef = useRef<HTMLElement>(null);
     const tableRef = useRef<HTMLDivElement>(null);
     const [isModalOpen, setIsModalOpen] = React.useState(false);
+    const { isInternational } = useInternationalPricing();
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -358,12 +363,12 @@ export default function ProgramDetailsSection() {
                                 <div className="divide-y divide-gray-100">
                                     {rows.map((row, rIdx) => (
                                         <div key={rIdx} className="flex justify-between items-start px-4 py-3">
-                                            <span className="text-xs font-bold text-gray-500 uppercase tracking-wide w-[40%] shrink-0">{row.label}</span>
+                                            <span className="text-xs font-bold text-gray-500 uppercase tracking-wide w-[40%] shrink-0">{row.key === 'emi' && isInternational ? 'Installment Options' : row.label}</span>
                                             <span className="text-sm font-medium text-[#1f2937] text-right">
                                                 {row.key === 'emi' ? (
                                                     <>
                                                         <span className="font-bold text-gray-700">Starting at </span>
-                                                        {prog.details[row.key as keyof typeof prog.details]}
+                                                        {isInternational ? prog.details.emiInternational : prog.details.emi}
                                                     </>
                                                 ) : (
                                                     prog.details[row.key as keyof typeof prog.details]
@@ -418,14 +423,14 @@ export default function ProgramDetailsSection() {
                                 {rows.map((row, idx) => (
                                     <tr key={idx} className="hover:bg-gray-50/50 transition-colors">
                                         <td className="p-5 border-b border-r border-gray-300 border-gray-100 font-bold text-[#1f2937] text-base pl-8">
-                                            {row.label}
+                                            {row.key === 'emi' && isInternational ? 'Installment Options' : row.label}
                                         </td>
                                         {programs.map((prog, pIdx) => (
                                             <td key={pIdx} className={`p-5 text-center border-b border-r border-gray-300 last:border-r-0 border-gray-100 text-gray-600 font-medium ${prog.highlight ? 'bg-[#ff6b00]/5' : ''}`}>
                                                 {row.key === 'emi' ? (
                                                     <>
                                                         <span className="font-bold text-gray-700">Starting at  </span>
-                                                        {prog.details[row.key as keyof typeof prog.details]}
+                                                        {isInternational ? prog.details.emiInternational : prog.details.emi}
                                                     </>
                                                 ) : (
                                                     prog.details[row.key as keyof typeof prog.details]
@@ -482,7 +487,7 @@ export default function ProgramDetailsSection() {
                         </svg>
                     </button>
                     <p className="mt-4 text-gray-600 text-lg sm:text-xl font-semibold">
-                        Speak to our career counselors starting at <span className="text-[#1f2937] font-bold text-xl sm:text-2xl">₹0</span>
+                        Speak to our career counselors starting at <span className="text-[#1f2937] font-bold text-xl sm:text-2xl">{isInternational ? '$0' : '₹0'}</span>
                     </p>
                 </div>
 

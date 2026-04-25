@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useInternationalPricing } from '@/hooks/useInternationalPricing';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,7 +52,8 @@ const faqs = [
     },
     {
         question: "What is the starting salary I can expect?",
-        answer: "While it varies by location and prior experience, our graduates typically start between ₹5 LPA to ₹12 LPA. With the right skill set—which we help you build—cybersecurity offers one of the fastest salary growth trajectories in tech."
+        answer: "While it varies by location and prior experience, our graduates typically start between ₹5 LPA to ₹12 LPA. With the right skill set—which we help you build—cybersecurity offers one of the fastest salary growth trajectories in tech.",
+        answerInternational: "While it varies by location and prior experience, our graduates typically start between $6,000 to $15,000 per year (varies by country). With the right skill set—which we help you build—cybersecurity offers one of the fastest salary growth trajectories in tech."
     }
 ];
 
@@ -59,6 +61,7 @@ export default function FAQSection() {
     const sectionRef = useRef<HTMLElement>(null);
     const [openIndex, setOpenIndex] = useState<number | null>(0);
     const [questionModalOpen, setQuestionModalOpen] = useState(false);
+    const { isInternational } = useInternationalPricing();
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -136,7 +139,7 @@ export default function FAQSection() {
                                     }`}
                             >
                                 <div className="p-4 sm:p-6 md:p-8 pt-0 text-[#1f2937] text-sm sm:text-base md:text-lg leading-relaxed font-medium">
-                                    {faq.answer}
+                                    {isInternational && (faq as any).answerInternational ? (faq as any).answerInternational : faq.answer}
                                 </div>
                             </div>
                         </div>
