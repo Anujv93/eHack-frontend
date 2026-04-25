@@ -1,4 +1,7 @@
+'use client';
+
 import "./training-section.css";
+import { useInternationalPricing } from '@/hooks/useInternationalPricing';
 
 // Types matching flattened Strapi structure
 export interface PricingFeature {
@@ -55,9 +58,9 @@ interface TrainingSectionProps {
     batchItems?: BatchItem[];
     pricingFeatures?: PricingFeature[];
     admissionProcess?: AdmissionProcess;
-    showEMI?: boolean;
+    showEMI?: boolean; // Note: We will now override this internally based on hook
     /** Whether the visitor is outside India (server-detected via Vercel geo headers) */
-    isInternational?: boolean;
+    isInternational?: boolean; // Note: We will now override this internally based on hook
     /** Price in USD for international visitors, from Strapi InternationalPrice field */
     internationalPrice?: number;
 }
@@ -73,10 +76,19 @@ export default function TrainingSection({
     batchItems,
     pricingFeatures,
     admissionProcess,
-    showEMI,
-    isInternational = false,
+    showEMI: initialShowEMI,
+    isInternational: initialIsInternational = false,
     internationalPrice,
 }: TrainingSectionProps) {
+    // Client-side international detection
+    const { isInternational: clientIsInternational, isReady } = useInternationalPricing();
+    
+    // Use client detection once ready, otherwise fallback to initial
+    const isInternational = isReady ? clientIsInternational : initialIsInternational;
+    
+    // Override showEMI based on client location
+    const showEMI = isReady ? !clientIsInternational : initialShowEMI;
+
     // Determine if we should display international (USD) pricing
     const showInternationalPrice = isInternational && typeof internationalPrice === 'number' && internationalPrice > 0;
     // Don't render if no content

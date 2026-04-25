@@ -44,6 +44,7 @@ import {
 } from "@/lib/strapi";
 import { notFound } from "next/navigation";
 import CareerStatsSection from "@/components/single-certificate/career-stats-section/career-stats-section";
+import { AudienceStats } from "@/components/single-certificate/target-audience/audience-stats";
 
 
 interface PageProps {
@@ -463,23 +464,8 @@ export default async function CertificatePage({ params }: PageProps) {
                             </div>
                         )}
 
-                        {/* Hardcoded Stats Row */}
-                        <div className="audience-stats-row">
-                            <div className="audience-stat-item">
-                                <span className="stat-number">85%</span>
-                                <span className="stat-text">of our students are fresh graduates or career changers</span>
-                            </div>
-                            <div className="audience-stat-divider"></div>
-                            <div className="audience-stat-item">
-                                <span className="stat-number">Zero</span>
-                                <span className="stat-text">prior experience required to get started</span>
-                            </div>
-                            <div className="audience-stat-divider"></div>
-                            <div className="audience-stat-item">
-                                <span className="stat-number">₹6-8 LPA</span>
-                                <span className="stat-text">average starting salary for freshers</span>
-                            </div>
-                        </div>
+                        {/* Dynamic Stats Row */}
+                        <AudienceStats />
 
                         {/* Modern CTA */}
                         <div className="audience-cta-modern">
