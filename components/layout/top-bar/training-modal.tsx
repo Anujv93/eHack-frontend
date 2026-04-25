@@ -110,8 +110,8 @@ export default function TrainingModal({ isOpen, onClose }: TrainingModalProps) {
                     message: messageParts,
                     leadSource: 'Website Training Banner',
                     agreeWhatsApp: contactMethod === 'whatsapp',
-                    pipeline: 'Leads Pipeline Standard',
-                    stage: 'New Inquiry',
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'Qualification',
                 }),
             });
 

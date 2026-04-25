@@ -38,8 +38,8 @@ export default function CyberEmpowermentPage() {
                     message: 'Cyber Empowerment Partnership Inquiry',
                     leadSource: 'Website Cyber Empowerment Page',
                     agreeWhatsApp: true,
-                    pipeline: 'Leads Pipeline Standard',
-                    stage: 'New Inquiry',
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'Qualification',
                 }),
             });
             if (!response.ok) throw new Error('Failed to submit');

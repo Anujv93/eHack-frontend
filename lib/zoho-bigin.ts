@@ -145,14 +145,29 @@ export async function createZohoDeal(dealData: ZohoDeal): Promise<string> {
     const accessToken = await getAccessToken();
     const apiUrl = process.env.ZOHO_BIGIN_API || 'https://www.zohoapis.in/bigin/v2';
 
-    // The module name in Zoho Bigin - default is "Pipelines", but user may have renamed it
+    // The module name in Zoho Bigin - default is "Pipelines"
     const moduleName = process.env.ZOHO_PIPELINES_MODULE || 'Pipelines';
 
-    // Format data for Zoho Bigin API v2
-    // Key insight: In Zoho Bigin, "Layout" determines the available stages
-    // Layout "Leads Pipeline" has stages like "New Inquiry", "Contacted", etc.
-    // Layout "Sales Pipeline" has stages like "Qualification", "Proposal", etc.
-    const biginData: any = {};
+    // -------------------------------------------------------------------------
+    // Verified live Zoho org data (fetched 2026-04-25):
+    //   Layout:       "Sales Pipeline"          id: 1183990000000000173
+    //   Sub_Pipeline: "Sales Pipeline Standard" (the only sub-pipeline)
+    //
+    // NOTE: The "Pipeline" field in the API is a reference object {id, name},
+    //       NOT a plain string. "Sub_Pipeline" is the string picklist value.
+    //       The user renamed sub-pipelines in Zoho UI; the actual/API values
+    //       stay as "Sales Pipeline Standard" regardless of display name.
+    // -------------------------------------------------------------------------
+
+    const SALES_LAYOUT_ID = '1183990000000000173';
+    const SALES_LAYOUT_NAME = 'Sales Pipeline';
+    const SALES_SUB_PIPELINE = 'Sales Pipeline Standard';
+
+    const biginData: any = {
+        // Always set the required Layout (as object reference) and Sub_Pipeline
+        Layout: { id: SALES_LAYOUT_ID, name: SALES_LAYOUT_NAME },
+        Sub_Pipeline: SALES_SUB_PIPELINE,
+    };
 
     // Deal_Name - The name of the inquiry/deal (required)
     if (dealData.Deal_Name) {
@@ -160,80 +175,11 @@ export async function createZohoDeal(dealData: ZohoDeal): Promise<string> {
     }
 
     // Stage - Required field
+    // Valid values for "Sales Pipeline": Qualification, Needs Analysis, Value Proposition,
+    // Identify Decision Makers, Perception Analysis, Proposal/Price Quote,
+    // Negotiation/Review, Closed Won, Closed Lost
     if (dealData.Stage) {
         biginData.Stage = dealData.Stage;
-    }
-
-    // Layout and Sub_Pipeline - Both required in Zoho Bigin
-    // Layout determines which stages are available
-    // Sub_Pipeline is also a mandatory field
-    // "Leads Pipeline" Layout ID: 1182543000000442086 (has New Inquiry, Contacted, etc.)
-    // "Sales Pipeline" Layout ID: 1182543000000000173 (has Qualification, Proposal, etc.)
-    if (dealData.Pipeline) {
-        // Map pipeline names to Layout IDs and Sub_Pipeline values
-        let pipelineConfig: { [key: string]: { layoutId: string; subPipeline: string } } = {
-            'Leads Pipeline Standard': {
-                layoutId: '1182543000000442086',
-                subPipeline: 'Leads Pipeline Standard'
-            },
-            'Leads Pipeline': {
-                layoutId: '1182543000000442086',
-                subPipeline: 'Leads Pipeline Standard'
-            },
-            'Sales Pipeline Standard': {
-                layoutId: '1182543000000000173',
-                subPipeline: 'Sales Pipeline Standard'
-            },
-            'Sales Pipeline': {
-                layoutId: '1182543000000000173',
-                subPipeline: 'Sales Pipeline Standard'
-            },
-            // Admission Pipeline (renamed from Sales Pipeline)
-            'Admission Pipeline': {
-                layoutId: '1182543000000000173',
-                subPipeline: 'Sales Pipeline Standard'
-            },
-            'Admission Pipeline Standard': {
-                layoutId: '1182543000000000173',
-                subPipeline: 'Sales Pipeline Standard'
-            },
-        };
-
-        // If pipeline not in static config, try to find it dynamically
-        if (!pipelineConfig[dealData.Pipeline]) {
-            try {
-                // Fetch all pipelines from Zoho
-                const pipelines = await getZohoPipelines();
-                const matchedPipeline = pipelines.find((p: any) =>
-                    p.display_value === dealData.Pipeline ||
-                    p.actual_value === dealData.Pipeline ||
-                    (p.maps && p.maps.some((m: any) => m.display_value === dealData.Pipeline))
-                );
-
-                if (matchedPipeline) {
-                    // Found it! Use its layout ID
-                    // Note: The API structure for pipelines might vary, we need the Layout ID
-                    // Usually available in the pipeline settings response
-                    console.log(`Found dynamic match for pipeline: ${dealData.Pipeline}`);
-
-                    // Note: This assumes the dynamic fetch returns usable IDs. 
-                    // If complex, we might need the user to run the discovery script first.
-                    // For now, we'll log it and let it fail if ID isn't clear, ensuring we don't break existing ones.
-                }
-            } catch (e) {
-                console.warn(`Could not dynamcially resolve pipeline: ${dealData.Pipeline}`);
-            }
-        }
-
-        const config = pipelineConfig[dealData.Pipeline];
-        if (config) {
-            biginData.Layout = { id: config.layoutId };
-            biginData.Sub_Pipeline = config.subPipeline;
-        } else {
-            // Fallback: Pass the raw pipeline name if we can't map it (Zoho might reject this without Layout ID)
-            // But for custom pipelines, we often MUST provide the Layout ID.
-            console.warn(`Pipeline '${dealData.Pipeline}' not found in static config. Ensure it exists in Zoho and update lib/zoho-bigin.ts with its Layout ID.`);
-        }
     }
 
     // Closing Date (optional)

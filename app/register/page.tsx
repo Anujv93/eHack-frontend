@@ -9,7 +9,7 @@ import './page.css';
 
 // Registration stages matching Zoho Bigin Admission Pipeline
 const REGISTRATION_STAGES = [
-    { step: 1, name: 'Personal Info', zohoStage: 'New Inquiry' },
+    { step: 1, name: 'Personal Info', zohoStage: 'Qualification' },
     { step: 2, name: 'Email Verification', zohoStage: 'Email Verified' },
     { step: 3, name: 'Document Upload', zohoStage: 'Documents Submitted' },
     { step: 4, name: 'Course Selection', zohoStage: 'Course Selected' },

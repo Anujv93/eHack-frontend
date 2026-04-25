@@ -235,8 +235,8 @@ const QuestionModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
                     }],
                     message: `Question: ${data.question}`,
                     agreeWhatsApp: true,
-                    pipeline: 'Leads Pipeline Standard',
-                    stage: 'New Inquiry',
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'Qualification',
                     website: data.website,
                 }),
             });

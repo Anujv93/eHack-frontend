@@ -122,8 +122,8 @@ export default function CTASection({
                     message: `Inquiry for: ${certificateTitle || 'General'}. ${trainingModeText}. ${countryText}`.trim(),
                     leadSource: 'Website CTA Section',
                     agreeWhatsApp: agreeWhatsApp,
-                    pipeline: 'Leads Pipeline Standard',
-                    stage: 'New Inquiry',
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'Qualification',
                 }),
             });
 

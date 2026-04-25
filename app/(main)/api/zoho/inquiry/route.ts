@@ -135,8 +135,8 @@ WhatsApp Opt-in: ${agreeWhatsApp ? 'Yes' : 'No'}
 
         const dealData = {
             Deal_Name: inquiryName || `Website Inquiry - ${cleanFirstName} ${cleanLastName}`,
-            Pipeline: pipeline || 'Leads Pipeline Standard', // Actual Zoho Bigin pipeline name
-            Stage: stage || 'New Inquiry',                    // Actual Zoho Bigin stage name
+            Pipeline: pipeline || 'eHack Academy Leads', // Actual Zoho Bigin pipeline name
+            Stage: stage || 'Qualification',              // First valid stage in "Sales Pipeline Standard"
             Contact_Name: contactId,                          // Link to Student
             Amount: totalAmount,                   // Total course value
             Closing_Date: closingDate.toISOString().split('T')[0],

@@ -166,8 +166,8 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
                     }],
                     message: 'Inquiry from Choose Your Path Section',
                     agreeWhatsApp: true,
-                    pipeline: 'Leads Pipeline Standard',
-                    stage: 'New Inquiry',
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'Qualification',
                     website: data.website,
                 }),
             });

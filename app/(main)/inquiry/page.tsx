@@ -230,8 +230,8 @@ export default function InquiryPage() {
                     agreeWhatsApp: formData.agreeWhatsApp,
 
                     // Pipeline info - using actual Zoho Bigin pipeline names
-                    pipeline: 'Leads Pipeline Standard',
-                    stage: 'New Inquiry',
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'Qualification',
                 }),
             });
 

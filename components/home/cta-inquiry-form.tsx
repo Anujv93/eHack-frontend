@@ -89,8 +89,8 @@ export default function CTAInquiryForm() {
                     message: `Home Page CTA Inquiry${formData.program ? ` | Interested in: ${formData.program}` : ''}`,
                     leadSource: 'Website Home Page CTA',
                     agreeWhatsApp: true,
-                    pipeline: 'Leads Pipeline Standard',
-                    stage: 'New Inquiry',
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'Qualification',
                 }),
             });
 

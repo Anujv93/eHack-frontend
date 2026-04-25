@@ -61,8 +61,8 @@ export default function CTASection() {
                     }],
                     message: `Inquiry from Blueprint Section. Selected Program: ${formData.program}`,
                     agreeWhatsApp: true,
-                    pipeline: 'Leads Pipeline Standard',
-                    stage: 'New Inquiry',
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'Qualification',
                 }),
             });
 

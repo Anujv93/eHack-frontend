@@ -109,8 +109,8 @@ export default function SummaryInquiryForm({
                     message: `Inquiry for: ${certificateTitle || 'General'}. ${trainingModeText}. ${countryText}`.trim(),
                     leadSource: 'Website Certificate Page',
                     agreeWhatsApp: true,
-                    pipeline: 'Leads Pipeline Standard',
-                    stage: 'New Inquiry',
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'Qualification',
                 }),
             });
 

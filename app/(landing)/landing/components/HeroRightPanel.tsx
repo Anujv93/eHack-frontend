@@ -90,8 +90,8 @@ const HeroRightPanel = () => {
                     }],
                     message: 'Inquiry from Landing Page Hero Section',
                     agreeWhatsApp: true,
-                    pipeline: 'Leads Pipeline Standard',
-                    stage: 'New Inquiry',
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'Qualification',
                     website: data.website,
                 }),
             });
