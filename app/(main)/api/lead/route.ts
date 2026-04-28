@@ -69,7 +69,7 @@ Source        : eHack AI Chatbot
         const dealId = await createZohoDeal({
             Deal_Name: `Chatbot Lead – ${name || email || "Unknown"}`,
             Pipeline: "eHack Academy Leads",
-            Stage: "Qualification",
+            Stage: "New Inquiry",
             Contact_Name: contactId,
             Closing_Date: closingDate.toISOString().split("T")[0],
             Description: dealDescription,

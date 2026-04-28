@@ -149,24 +149,44 @@ export async function createZohoDeal(dealData: ZohoDeal): Promise<string> {
     const moduleName = process.env.ZOHO_PIPELINES_MODULE || 'Pipelines';
 
     // -------------------------------------------------------------------------
-    // Verified live Zoho org data (fetched 2026-04-25):
-    //   Layout:       "Sales Pipeline"          id: 1183990000000000173
-    //   Sub_Pipeline: "Sales Pipeline Standard" (the only sub-pipeline)
+    // Verified live Zoho org data (fetched 2026-04-28 from correct account):
     //
-    // NOTE: The "Pipeline" field in the API is a reference object {id, name},
-    //       NOT a plain string. "Sub_Pipeline" is the string picklist value.
-    //       The user renamed sub-pipelines in Zoho UI; the actual/API values
-    //       stay as "Sales Pipeline Standard" regardless of display name.
+    //   Pipeline / Layout name          | Layout ID              | Sub_Pipeline actual value
+    //   --------------------------------|------------------------|----------------------------
+    //   "eHack Academy Leads"           | 1182543000000442086    | "Leads Pipeline Standard"
+    //   "Global Services Leads"         | 1182543000000498517    | "Leads Pipeline Standard"
+    //   "Sales Pipeline" (Admission)    | 1182543000000000173    | "Sales Pipeline Standard"
+    //
+    //   Valid Stage actual values (same across all layouts):
+    //   "New Enquiry" (display: "New Inquiry"), "Attempted Contact", "Contacted",
+    //   "Interested", "Demo/Counseling Scheduled", "Pitch/Demo", "Enrolled", etc.
+    //
+    // NOTE: "Pipeline" field must be passed as object {id, name}. "Sub_Pipeline"
+    //       is the string actual_value from the picklist.
     // -------------------------------------------------------------------------
 
-    const SALES_LAYOUT_ID = '1183990000000000173';
-    const SALES_LAYOUT_NAME = 'Sales Pipeline';
-    const SALES_SUB_PIPELINE = 'Sales Pipeline Standard';
+    // Pipeline config map: logical name → { layoutId, layoutName, subPipeline }
+    const PIPELINE_CONFIG: { [key: string]: { layoutId: string; layoutName: string; subPipeline: string } } = {
+        // eHack Academy Leads (main leads pipeline - website enquiries go here)
+        'eHack Academy Leads':          { layoutId: '1182543000000442086', layoutName: 'eHack Academy Leads',   subPipeline: 'Leads Pipeline Standard' },
+        'Leads Pipeline Standard':      { layoutId: '1182543000000442086', layoutName: 'eHack Academy Leads',   subPipeline: 'Leads Pipeline Standard' },
+        'Leads Pipeline':               { layoutId: '1182543000000442086', layoutName: 'eHack Academy Leads',   subPipeline: 'Leads Pipeline Standard' },
+        // Global Services Leads
+        'Global Services Leads':        { layoutId: '1182543000000498517', layoutName: 'Global Services Leads', subPipeline: 'Leads Pipeline Standard' },
+        'corporate services Pipeline':  { layoutId: '1182543000000498517', layoutName: 'Global Services Leads', subPipeline: 'Sales Pipeline Standard1' },
+        // Sales / Admission pipeline
+        'Sales Pipeline':               { layoutId: '1182543000000000173', layoutName: 'Sales Pipeline',        subPipeline: 'Sales Pipeline Standard' },
+        'Sales Pipeline Standard':      { layoutId: '1182543000000000173', layoutName: 'Sales Pipeline',        subPipeline: 'Sales Pipeline Standard' },
+        'Admission Pipeline':           { layoutId: '1182543000000000173', layoutName: 'Sales Pipeline',        subPipeline: 'Sales Pipeline Standard' },
+    };
+
+    // Resolve config — default to eHack Academy Leads if not specified
+    const pipelineKey = dealData.Pipeline || 'eHack Academy Leads';
+    const config = PIPELINE_CONFIG[pipelineKey] || PIPELINE_CONFIG['eHack Academy Leads'];
 
     const biginData: any = {
-        // Always set the required Layout (as object reference) and Sub_Pipeline
-        Layout: { id: SALES_LAYOUT_ID, name: SALES_LAYOUT_NAME },
-        Sub_Pipeline: SALES_SUB_PIPELINE,
+        Layout:       { id: config.layoutId, name: config.layoutName },
+        Sub_Pipeline: config.subPipeline,
     };
 
     // Deal_Name - The name of the inquiry/deal (required)
@@ -175,9 +195,8 @@ export async function createZohoDeal(dealData: ZohoDeal): Promise<string> {
     }
 
     // Stage - Required field
-    // Valid values for "Sales Pipeline": Qualification, Needs Analysis, Value Proposition,
-    // Identify Decision Makers, Perception Analysis, Proposal/Price Quote,
-    // Negotiation/Review, Closed Won, Closed Lost
+    // Common actual values: "New Enquiry", "Attempted Contact", "Contacted",
+    // "Interested", "Demo/Counseling Scheduled", "Enrolled", "Closed Won", "Closed Lost"
     if (dealData.Stage) {
         biginData.Stage = dealData.Stage;
     }

@@ -123,7 +123,7 @@ export default function CTASection({
                     leadSource: 'Website CTA Section',
                     agreeWhatsApp: agreeWhatsApp,
                     pipeline: 'eHack Academy Leads',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                 }),
             });
 

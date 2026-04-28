@@ -231,7 +231,7 @@ export default function InquiryPage() {
 
                     // Pipeline info - using actual Zoho Bigin pipeline names
                     pipeline: 'eHack Academy Leads',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                 }),
             });
 

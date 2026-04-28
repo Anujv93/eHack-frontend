@@ -1,10 +1,9 @@
 /**
- * Get Sub_Pipeline picklist values - what are the actual sub-pipeline names?
+ * DEFINITIVE FINAL TEST - New Inquiry stage in eHack Academy Leads
  */
-
 const CLIENT_ID     = '1000.HC3GTUDJ0MC86OT5SYI9UE5Q5LODEQ';
 const CLIENT_SECRET = 'a3facc221c8335ff94932f59458a377ef835608cf0';
-const REFRESH_TOKEN = '1000.6cb58ca5650148788587f540c34b4418.a4bf5576146973176b3b1a77925e6b41';
+const REFRESH_TOKEN = '1000.18637bf2641d4e4c9306b545401cd01b.292c3bcdc2bac725045949c8105406df';
 const ACCOUNTS_URL  = 'https://accounts.zoho.in';
 const BIGIN_API     = 'https://www.zohoapis.in/bigin/v2';
 
@@ -20,25 +19,44 @@ async function main() {
   const token = await getAccessToken();
   console.log('✅ Token OK');
 
-  // Get Sub_Pipeline field definition to see all sub-pipeline picklist values
-  const r = await fetch(`${BIGIN_API}/settings/fields?module=Pipelines`, {
-    headers: { Authorization: `Zoho-oauthtoken ${token}` }
+  // Contact
+  const cr = await fetch(`${BIGIN_API}/Contacts`, {
+    method: 'POST',
+    headers: { Authorization: `Zoho-oauthtoken ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data: [{ First_Name: 'Final', Last_Name: 'VerificationTest', Email: 'final-verify@ehack.test', Phone: '+919999999980' }] }),
   });
-  const d = await r.json();
+  const contactId = (await cr.json()).data?.[0]?.details?.id;
+  console.log('✅ Contact:', contactId);
 
-  const subPipelineField = (d.fields || []).find(f => f.api_name === 'Sub_Pipeline');
-  if (subPipelineField) {
-    console.log('\n=== SUB_PIPELINE PICKLIST VALUES ===');
-    console.log('count:', subPipelineField.pick_list_values?.length);
-    (subPipelineField.pick_list_values || []).forEach(v => {
-      console.log(`  display_value="${v.display_value}" | actual_value="${v.actual_value}" | id="${v.id}"`);
-      if (v.maps && v.maps.length > 0) {
-        v.maps.forEach(m => console.log(`    -> Stage: display="${m.display_value}" actual="${m.actual_value}"`));
-      }
-    });
+  // Deal - exactly what the website will now send
+  const dealRes = await fetch(`${BIGIN_API}/Pipelines`, {
+    method: 'POST',
+    headers: { Authorization: `Zoho-oauthtoken ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data: [{
+      Deal_Name:    'FINAL VERIFY - New Inquiry Stage - DELETE ME',
+      Layout:       { id: '1182543000000442086', name: 'eHack Academy Leads' },
+      Sub_Pipeline: 'Leads Pipeline Standard',
+      Stage:        'New Inquiry',
+      Contact_Name: contactId,
+      Closing_Date: '2026-05-30',
+      Description:  'Definitive test. Safe to delete.',
+    }]}),
+  });
+
+  const result = await dealRes.json();
+  const code = result.data?.[0]?.code;
+  const dealId = result.data?.[0]?.details?.id;
+
+  if (code === 'SUCCESS') {
+    console.log('\n✅✅✅ COMPLETE SUCCESS!');
+    console.log('Deal ID:', dealId);
+    console.log('\nConfiguration confirmed:');
+    console.log('  Pipeline  : eHack Academy Leads');
+    console.log('  Sub-pipe  : Leads Pipeline Standard');
+    console.log('  Stage     : New Inquiry ✅');
+    console.log('\nAll website forms will now submit directly to the NEW INQUIRY column!');
   } else {
-    console.log('Sub_Pipeline field not found. Available fields:');
-    (d.fields || []).forEach(f => console.log(' -', f.api_name));
+    console.log('❌ FAILED:', JSON.stringify(result));
   }
 }
 

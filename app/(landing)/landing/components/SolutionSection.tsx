@@ -237,7 +237,7 @@ const LeadCaptureModal: React.FC<LeadModalProps> = ({ isOpen, onClose, leadSourc
                     message: `${leadSource}\nCurrent Status: ${data.currentStatus}\nExperience Level: ${data.experience}\nSource: ${leadSource}`,
                     agreeWhatsApp: true,
                     pipeline: 'eHack Academy Leads',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                     website: data.website,
                 }),
             });

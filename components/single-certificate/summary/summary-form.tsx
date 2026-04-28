@@ -110,7 +110,7 @@ export default function SummaryInquiryForm({
                     leadSource: 'Website Certificate Page',
                     agreeWhatsApp: true,
                     pipeline: 'eHack Academy Leads',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                 }),
             });
 
