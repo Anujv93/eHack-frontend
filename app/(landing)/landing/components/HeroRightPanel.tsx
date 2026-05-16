@@ -91,7 +91,7 @@ const HeroRightPanel = () => {
                     message: 'Inquiry from Landing Page Hero Section',
                     agreeWhatsApp: true,
                     pipeline: 'eHack Academy Leads',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                     website: data.website,
                 }),
             });

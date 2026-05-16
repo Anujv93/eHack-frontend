@@ -62,7 +62,7 @@ export default function CTASection() {
                     message: `Inquiry from Blueprint Section. Selected Program: ${formData.program}`,
                     agreeWhatsApp: true,
                     pipeline: 'eHack Academy Leads',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                 }),
             });
 

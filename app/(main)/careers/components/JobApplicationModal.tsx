@@ -78,7 +78,7 @@ export default function JobApplicationModal({ isOpen, onClose, job }: JobApplica
                     message: `Application for ${job.title}. Category: ${job.category}. \n\nMessage: ${formData.message || 'No additional message provided.'}`,
                     agreeWhatsApp: true,
                     pipeline: 'eHack Academy Leads',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                 }),
             });
 

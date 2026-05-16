@@ -33,7 +33,7 @@ export default function InquiryForm({
     title = 'Get Course Information',
     subtitle = 'Our counselor will call you within 2 hours',
     pipeline = 'eHack Academy Leads',
-    stage = 'Qualification',
+    stage = 'New Inquiry',
     onSuccess,
 }: InquiryFormProps) {
     const [formData, setFormData] = useState<FormData>({

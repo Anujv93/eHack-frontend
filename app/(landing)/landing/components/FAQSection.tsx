@@ -239,7 +239,7 @@ const QuestionModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
                     message: `Question: ${data.question}`,
                     agreeWhatsApp: true,
                     pipeline: 'eHack Academy Leads',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                     website: data.website,
                 }),
             });

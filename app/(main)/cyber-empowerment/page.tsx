@@ -39,7 +39,7 @@ export default function CyberEmpowermentPage() {
                     leadSource: 'Website Cyber Empowerment Page',
                     agreeWhatsApp: true,
                     pipeline: 'eHack Academy Leads',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                 }),
             });
             if (!response.ok) throw new Error('Failed to submit');

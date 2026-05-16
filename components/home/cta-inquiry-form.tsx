@@ -90,7 +90,7 @@ export default function CTAInquiryForm() {
                     leadSource: 'Website Home Page CTA',
                     agreeWhatsApp: true,
                     pipeline: 'eHack Academy Leads',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                 }),
             });
 

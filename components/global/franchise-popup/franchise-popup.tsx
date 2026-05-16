@@ -87,7 +87,7 @@ export default function FranchisePopup() {
                     leadSource: 'Franchise Popup',
                     dealName: `Franchise Inquiry - ${formData.name} - ${formData.city}`,
                     pipeline: 'Sales Pipeline Standard',
-                    stage: 'Qualification',
+                    stage: 'New Inquiry',
                 }),
             });
 
