@@ -36,9 +36,13 @@ export interface ExamCard {
 export interface ExamDetailsProps {
     title?: string;
     examCards?: ExamCard[];
+    /** Official certification URL for partner compliance (e.g. EC-Council ISO/IEC 17024) */
+    certificationUrl?: string;
+    /** Partner name to display in the notice */
+    partnerName?: string;
 }
 
-export default function ExamDetails({ title, examCards }: ExamDetailsProps) {
+export default function ExamDetails({ title, examCards, certificationUrl, partnerName }: ExamDetailsProps) {
     if (!examCards || examCards.length === 0) return null;
 
     return (
@@ -111,6 +115,38 @@ export default function ExamDetails({ title, examCards }: ExamDetailsProps) {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                )}
+
+                {/* Official Certification Criteria Notice (EC-Council / ISO 17024 compliance) */}
+                {certificationUrl && (
+                    <div className="cert-official-notice">
+                        <div className="cert-notice-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <div className="cert-notice-content">
+                            <h4 className="cert-notice-title">
+                                Official {partnerName || 'Partner'} Certification Criteria
+                            </h4>
+                            <p className="cert-notice-text">
+                                For the most accurate and up-to-date certification passing criteria, eligibility requirements, and exam policies, please refer to the official {partnerName || 'partner'} certification page.
+                            </p>
+                            <a
+                                href={certificationUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="cert-notice-link"
+                            >
+                                <span>Visit Official Certification Page</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 )}
             </div>

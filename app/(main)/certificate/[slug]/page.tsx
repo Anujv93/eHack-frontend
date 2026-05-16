@@ -74,6 +74,11 @@ export default async function CertificatePage({ params }: PageProps) {
     const categoryIds = certWithRelations.certification_categories?.map((cat: { id: number }) => cat.id) || [];
     const partnerId = certWithRelations.certification_partner?.id;
 
+    // Detect EC-Council partner certifications for compliance (ISO/IEC 17024)
+    const partnerName: string = certWithRelations.certification_partner?.Name || '';
+    const partnerSlug: string = certWithRelations.certification_partner?.slug || '';
+    const isECCouncil = partnerName.toLowerCase().includes('ec-council') || partnerSlug.toLowerCase().includes('ec-council');
+
     // Fetch related certificates
     const relatedCertificates = await getRelatedCertificates(slug, categoryIds, partnerId, 4);
 
@@ -528,6 +533,8 @@ export default async function CertificatePage({ params }: PageProps) {
             <ExamDetails
                 title={examDetailsSection?.Title}
                 examCards={examDetailsSection?.ExamCards}
+                certificationUrl={isECCouncil ? 'https://cert.eccouncil.org' : undefined}
+                partnerName={isECCouncil ? 'EC-Council' : undefined}
             />
 
             {/* 9. Career ROI */}
