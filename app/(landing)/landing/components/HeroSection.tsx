@@ -4,10 +4,12 @@ import React from 'react';
 import CTAButton from './CTAButton';
 import { trackHeroCTAClicked } from '@/lib/posthog-events';
 import HeroRightPanel from './HeroRightPanel';
+import RoadmapModal from './RoadmapModal';
 import { useInternationalPricing } from '@/hooks/useInternationalPricing';
 
 const HeroSection = () => {
     const { isInternational } = useInternationalPricing();
+    const [isRoadmapModalOpen, setIsRoadmapModalOpen] = React.useState(false);
 
     return (
         <section className="relative w-full min-h-[80vh] sm:min-h-[90vh] flex items-center pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-20 overflow-hidden">
@@ -61,29 +63,22 @@ const HeroSection = () => {
                                 className="shadow-orange-500/20 hover:shadow-orange-500/40"
                                 onClick={() => {
                                     trackHeroCTAClicked();
-                                    const form = document.getElementById('hero-inquiry-form');
-                                    if (form) {
-                                        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                        setTimeout(() => {
-                                            const firstInput = form.querySelector('input');
-                                            if (firstInput) firstInput.focus();
-                                        }, 500);
-                                    }
+                                    setIsRoadmapModalOpen(true);
                                 }}
                             />
-                            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-6 text-[10px] sm:text-xs md:text-sm text-gray-300 font-medium">
-                                <span className="flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+                            <div className="flex flex-row items-center justify-center lg:justify-start gap-1 sm:gap-3 text-[9px] min-[375px]:text-[10px] sm:text-xs md:text-sm text-gray-300 font-medium w-full whitespace-nowrap">
+                                <span className="flex items-center gap-1 sm:gap-2">
+                                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
                                     100% Placement Assistance
                                 </span>
-                                <span className="hidden sm:inline text-gray-500">|</span>
-                                <span className="flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
+                                <span className="text-gray-500 mx-0.5 sm:mx-1">|</span>
+                                <span className="flex items-center gap-1 sm:gap-2">
+                                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
                                     Global Certifications
                                 </span>
-                                <span className="hidden sm:inline text-gray-500">|</span>
-                                <span className="flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-[#ff6b00] shadow-[0_0_8px_rgba(255,107,0,0.6)] animate-pulse"></span>
+                                <span className="text-gray-500 mx-0.5 sm:mx-1">|</span>
+                                <span className="flex items-center gap-1 sm:gap-2">
+                                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#ff6b00] shadow-[0_0_8px_rgba(255,107,0,0.6)] animate-pulse"></span>
                                     {isInternational ? 'Installment Options Available' : 'EMI Options Available'}
                                 </span>
                             </div>
@@ -137,6 +132,8 @@ const HeroSection = () => {
 
                 </div>
             </div>
+            
+            <RoadmapModal isOpen={isRoadmapModalOpen} onClose={() => setIsRoadmapModalOpen(false)} />
         </section >
     );
 };

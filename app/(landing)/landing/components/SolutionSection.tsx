@@ -71,6 +71,7 @@ const CloseIcon = () => (
 const programs = [
     {
         title: 'CEH Masterclass | v13 AI',
+        certInfo: null,
         subtitle: 'The Gold Standard in Hacking',
         features: [
             "Master Real-World Ethical Hacking with AI-Powered Labs",
@@ -94,8 +95,9 @@ const programs = [
         marqueeCerts: ["CEH", "CEH Practical", "CEH Master"]
     },
     {
-        title: 'Graduate Program',
-        subtitle: 'Comprehensive Cyber Career Foundation',
+        title: 'Job-Ready Program',
+        certInfo: '(2 Global Certifications)',
+        subtitle: 'Comprehensive Career Foundation',
         features: [
             "Industry-Integrated AI-Powered Curriculum",
             "Live Labs, Real Attack Simulations & Tool Mastery",
@@ -118,8 +120,9 @@ const programs = [
         marqueeCerts: ["CSCU", "CND"]
     },
     {
-        title: "Master's Program",
-        subtitle: 'Advanced Cyber Leadership Training',
+        title: "Advanced Program",
+        certInfo: '(6 Global Certifications)',
+        subtitle: 'Advanced Leadership Training',
         features: [
             "Advanced AI-Driven Cybersecurity Mastery",
             "Real-World Cyber Range & Enterprise Attack Simulations",
@@ -534,7 +537,12 @@ const SolutionSection = () => {
                                 </div>
 
                                 <div className="mb-6 mt-2">
-                                    <h4 className="text-2xl font-black mb-2 text-[#1f2937]">{program.title}</h4>
+                                    <h4 className="text-xl lg:text-2xl font-black mb-2 text-[#1f2937]">
+                                        {program.title}
+                                        {program.certInfo && (
+                                            <span className="block text-lg font-extrabold text-gray-500 mt-1">{program.certInfo}</span>
+                                        )}
+                                    </h4>
                                     <p className="text-[#ff6b00] font-bold text-sm uppercase tracking-wide">{program.subtitle}</p>
                                 </div>
 
