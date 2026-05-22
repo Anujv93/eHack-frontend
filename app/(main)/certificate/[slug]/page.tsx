@@ -205,7 +205,7 @@ export default async function CertificatePage({ params }: PageProps) {
     dynamicNavSections.push({ id: 'cta', label: 'Enquire Now' });
 
     // 15. Accreditations
-    if (accreditationsSection?.Accreditations && accreditationsSection.Accreditations.length > 0) {
+    if (isECCouncil || (accreditationsSection?.Accreditations && accreditationsSection.Accreditations.length > 0)) {
         dynamicNavSections.push({ id: 'accreditations', label: 'Accreditations' });
     }
 
@@ -595,10 +595,37 @@ export default async function CertificatePage({ params }: PageProps) {
             </section>
 
             {/* 15. Accreditations */}
-            <Accreditations
-                title={accreditationsSection?.Title}
-                accreditations={accreditationsSection?.Accreditations}
-            />
+            {(isECCouncil || (accreditationsSection?.Accreditations && accreditationsSection.Accreditations.length > 0)) && (
+                <Accreditations
+                    title={accreditationsSection?.Title || "Accreditations & Recognitions"}
+                    accreditations={isECCouncil ? [
+                        {
+                            id: 101,
+                            Name: "ANSI/ISO/IEC 17024",
+                            BadgeText: "ANSI",
+                            LogoUrl: "https://admin.ehackacademy.com/uploads/ANSI_7fb1c49744.webp"
+                        },
+                        {
+                            id: 102,
+                            Name: "United States Army",
+                            BadgeText: "Army",
+                            LogoUrl: "https://admin.ehackacademy.com/uploads/Army_2f23f2ffb4.webp"
+                        },
+                        {
+                            id: 103,
+                            Name: "American Council on Education",
+                            BadgeText: "American Council",
+                            LogoUrl: "https://admin.ehackacademy.com/uploads/american_council_36068cbe2b.webp"
+                        },
+                        {
+                            id: 104,
+                            Name: "NICE Cybersecurity Framework",
+                            BadgeText: "NICE",
+                            LogoUrl: "https://admin.ehackacademy.com/uploads/NICE_4086e6da8f.webp"
+                        }
+                    ] : accreditationsSection?.Accreditations}
+                />
+            )}
 
             {/* 16. Explore More */}
             <RelatedCertificates
