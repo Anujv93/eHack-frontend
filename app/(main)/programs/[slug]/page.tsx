@@ -336,6 +336,9 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                     <span className="schedule-badge">Schedule Options</span>
                     <span className="cert-text">{program.schedule}</span>
                 </div>
+                <div className="banner-container" style={{ borderTop: '1px solid rgba(255,107,0,0.2)', marginTop: '0.5rem', paddingTop: '0.5rem' }}>
+                    <span className="cert-text" style={{ fontStyle: 'italic', opacity: 0.85 }}>✦ Flexible batches are available for everyone, with immediate commencement based on student enrollment and requirements.</span>
+                </div>
             </section>
 
             {/* STICKY SECTION NAVIGATION */}

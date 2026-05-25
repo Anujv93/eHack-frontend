@@ -423,6 +423,9 @@ export default async function CertificatePage({ params }: PageProps) {
                     <span className="schedule-badge">Schedule Options</span>
                     <span className="cert-text">Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day</span>
                 </div>
+                <div className="banner-container" style={{ borderTop: '1px solid rgba(255,107,0,0.2)', marginTop: '0.5rem', paddingTop: '0.5rem' }}>
+                    <span className="cert-text" style={{ fontStyle: 'italic', opacity: 0.85 }}>✦ Flexible batches are available for everyone, with immediate commencement based on student enrollment and requirements.</span>
+                </div>
             </section>
 
             {/* 2. What's New */}
