@@ -17,18 +17,58 @@ const CounselingModal: React.FC<CounselingModalProps> = ({ isOpen, onClose }) =>
     });
 
     const [honeypot, setHoneypot] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     if (!isOpen) return null;
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         
         // Bot protection
         if (honeypot !== '') return;
 
-        // Form submission logic would go here
-        alert('Thank you! Our career counselor will contact you shortly.');
-        onClose();
+        setIsSubmitting(true);
+        
+        try {
+            const response = await fetch('/api/zoho/inquiry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: formData.name,
+                    lastName: '-',
+                    email: formData.email.toLowerCase(),
+                    phone: formData.contact,
+                    city: '',
+                    totalAmount: 0,
+                    inquiryName: `Website - ${formData.name} - Counseling Modal`,
+                    leadSource: 'Website Advanced Diploma Page',
+                    courses: [{
+                        name: 'Advanced Diploma in Cybersecurity',
+                        code: 'adv-diploma',
+                        category: 'Diploma',
+                        price: 0
+                    }],
+                    message: `Status: ${formData.status} | Mode: ${formData.mode}`,
+                    agreeWhatsApp: true,
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'New Inquiry',
+                    website: honeypot,
+                }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.details || 'Failed to submit');
+            }
+
+            alert('Thank you! Our career counselor will contact you shortly.');
+            onClose();
+        } catch (error) {
+            console.error('Error submitting counseling form:', error);
+            alert("Something went wrong. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -155,19 +195,28 @@ const CounselingModal: React.FC<CounselingModalProps> = ({ isOpen, onClose }) =>
                         <div className="mt-4">
                             <button 
                                 type="submit" 
-                                disabled={!formData.name || !formData.email || !formData.contact || !formData.status || !formData.mode}
+                                disabled={isSubmitting || !formData.name || !formData.email || !formData.contact || !formData.status || !formData.mode}
                                 className={`
                                     w-full py-4 rounded-xl font-bold text-base transition-all flex items-center justify-center gap-2
-                                    ${(!formData.name || !formData.email || !formData.contact || !formData.status || !formData.mode)
+                                    ${(isSubmitting || !formData.name || !formData.email || !formData.contact || !formData.status || !formData.mode)
                                         ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                                         : 'bg-[#ff6b00] text-white hover:bg-[#e65c00] shadow-[0_8px_20px_rgba(255,107,0,0.25)] hover:-translate-y-0.5'
                                     }
                                 `}
                             >
-                                Request Call Back
-                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
+                                {isSubmitting ? (
+                                    <svg className="animate-spin h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                ) : (
+                                    <>
+                                        Request Call Back
+                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                    </>
+                                )}
                             </button>
                             <p className="text-center text-xs text-gray-500 mt-3 flex items-center justify-center gap-1.5 font-medium">
                                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
