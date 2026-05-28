@@ -105,7 +105,17 @@ const LandingBanner = () => {
                 <div className="relative z-10 flex flex-col lg:flex-row w-full justify-between items-start lg:items-center p-6 md:p-8 lg:p-10 mb-8 lg:mb-0">
                     
                     {/* Left Column: $100M Offer Copy */}
-                    <div className="max-w-2xl text-white mb-8 lg:mb-0 mt-4 lg:mt-0 text-center lg:text-left flex flex-col items-center lg:items-start mx-auto lg:mx-0">
+                    <div className="max-w-2xl text-white mb-8 lg:mb-0 mt-0 text-center lg:text-left flex flex-col items-center lg:items-start mx-auto lg:mx-0">
+                        
+                        {/* Academy Logo */}
+                        <div className="-mt-2 lg:-mt-6 mb-1 animate-in fade-in slide-in-from-top-4 duration-700">
+                            <img 
+                                src="/images/white-academy.png" 
+                                alt="eHack Academy" 
+                                className="h-12 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_4px_20px_rgba(255,255,255,0.15)] hover:drop-shadow-[0_4px_30px_rgba(255,255,255,0.3)] transition-all duration-500 hover:scale-[1.03]"
+                            />
+                        </div>
+
                         <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl leading-[1.2] mb-4 tracking-tight">
                             Become a <span className="text-[#ff6b00]">Highly-Paid Cybersecurity</span> Expert in 9 Months. <br className="hidden sm:block" />
                             <span className="text-[#ff6b00] text-xl sm:text-2xl lg:text-3xl block mt-2 font-bold opacity-90">
