@@ -105,7 +105,7 @@ const LandingBanner = () => {
                 <div className="relative z-10 flex flex-col lg:flex-row w-full justify-between items-start lg:items-center p-6 md:p-8 lg:p-10 mb-8 lg:mb-0">
                     
                     {/* Left Column: $100M Offer Copy */}
-                    <div className="max-w-2xl text-white mb-8 lg:mb-0 mt-0 text-center lg:text-left flex flex-col items-center lg:items-start mx-auto lg:mx-0">
+                    <div className="max-w-2xl text-white mb-4 lg:mb-0 mt-0 text-center lg:text-left flex flex-col items-center lg:items-start mx-auto lg:mx-0">
                         
                         {/* Academy Logo */}
                         <div className="-mt-2 lg:-mt-6 mb-1 animate-in fade-in slide-in-from-top-4 duration-700">
@@ -122,12 +122,12 @@ const LandingBanner = () => {
                                 (Zero IT Experience Required)
                             </span>
                         </h1>
-                        <p className="text-white/90 text-sm sm:text-base lg:text-lg font-medium mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0 px-2 sm:px-0">
+                        <p className="text-white/90 text-sm sm:text-base lg:text-lg font-medium mb-4 sm:mb-5 leading-relaxed max-w-xl mx-auto lg:mx-0 px-2 sm:px-0">
                             Master Ethical Hacking, build job-ready skills through our <span className="font-bold text-white">Advanced Diploma</span>, and step into a ₹35L+ career with our real-time lab training.
                         </p>
 
                         {/* 1:1 Session CTA Button */}
-                        <div className="mt-2 sm:mt-6 w-full sm:w-auto">
+                        <div className="mt-0 w-full sm:w-auto">
                             <button 
                                 onClick={() => setIsModalOpen(true)}
                                 className="group flex justify-center items-center gap-2 sm:gap-3 bg-[#ff6b00] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-sm sm:text-base hover:bg-[#e65c00] hover:shadow-[0_8px_30px_rgba(255,107,0,0.3)] hover:-translate-y-1 transition-all active:scale-95 w-full sm:w-auto"
