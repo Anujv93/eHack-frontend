@@ -8,6 +8,7 @@ const navItems = [
     { id: 'who', label: 'Who Is This For' },
     { id: 'curriculum', label: 'Curriculum' },
     { id: 'testimonials', label: 'Success Stories' },
+    { id: 'pricing', label: 'Pricing' },
     { id: 'why', label: 'Why Cybersecurity' },
     { id: 'faq', label: 'FAQ' },
     { id: 'apply', label: 'Apply Now' },
@@ -29,20 +30,19 @@ export default function StickyNavbar() {
             // Show after 100px
             setScrolled(scrollY > 100);
 
-            // Find current active section
-            const sections = navItems.map(item => document.getElementById(item.id));
-            const scrollPosition = scrollY + 150; // Offset
-
-            for (const section of sections) {
+            // Use getBoundingClientRect for reliable viewport position tracking
+            let current = 'home';
+            for (const item of navItems) {
+                const section = document.getElementById(item.id);
                 if (section) {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        setActiveSection(section.id);
+                    const rect = section.getBoundingClientRect();
+                    // If the top of the section is at or above the navbar area (with some buffer)
+                    if (rect.top <= 200) {
+                        current = item.id;
                     }
                 }
             }
+            setActiveSection(current);
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });

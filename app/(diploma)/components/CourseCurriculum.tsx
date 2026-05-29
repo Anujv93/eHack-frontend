@@ -292,6 +292,26 @@ const FlippingToolsGrid = () => {
 const CourseCurriculum = () => {
     const [expandedModule, setExpandedModule] = useState<number | null>(0);
 
+    useEffect(() => {
+        const handleOpenModule = (e: Event) => {
+            const customEvent = e as CustomEvent;
+            if (customEvent.detail && typeof customEvent.detail.index === 'number') {
+                const targetIndex = customEvent.detail.index;
+                setExpandedModule(targetIndex);
+                
+                setTimeout(() => {
+                    const moduleElement = document.getElementById(`curriculum-module-${targetIndex}`);
+                    if (moduleElement) {
+                        moduleElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 300);
+            }
+        };
+
+        window.addEventListener('openCurriculumModule', handleOpenModule);
+        return () => window.removeEventListener('openCurriculumModule', handleOpenModule);
+    }, []);
+
     return (
         <section className="w-full bg-slate-50 py-16 relative overflow-hidden font-inter border-t border-gray-200">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -327,7 +347,7 @@ const CourseCurriculum = () => {
                                 const isExpanded = expandedModule === i;
 
                                 return (
-                                    <div key={i} className="relative flex flex-col md:flex-row gap-4 md:gap-8 group items-start">
+                                    <div key={i} id={`curriculum-module-${i}`} className="relative flex flex-col md:flex-row gap-4 md:gap-8 group items-start">
                                         
                                         {/* Timeline Node & Semantic Tools */}
                                         <div className="relative shrink-0 hidden md:block">

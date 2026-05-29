@@ -4,6 +4,7 @@ import WhoIsThisFor from '../components/WhoIsThisFor';
 import WhyCybersecurity from '../components/WhyCybersecurity';
 import CourseCurriculum from '../components/CourseCurriculum';
 import Testimonials from '../components/Testimonials';
+import Pricing from '../components/Pricing';
 import FAQ from '../components/FAQ';
 import FinalCTA from '../components/FinalCTA';
 import StickyNavbar from '../components/StickyNavbar';
@@ -32,6 +33,10 @@ export default function AdvancedDiplomaLandingPage() {
 
             <section id="testimonials">
                 <Testimonials />
+            </section>
+
+            <section id="pricing">
+                <Pricing />
             </section>
 
             <section id="why">
