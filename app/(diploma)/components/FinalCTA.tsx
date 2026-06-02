@@ -61,7 +61,7 @@ const FinalCTA = () => {
     };
 
     return (
-        <section className="w-full bg-white py-12 md:py-16 relative overflow-hidden font-inter border-t border-gray-100">
+        <section className="w-full bg-white py-12 md:py-16 relative overflow-hidden font-montserrat border-t border-gray-100">
             {/* Background glowing orbs */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute -top-[300px] -left-[300px] w-[800px] h-[800px] bg-[#ff6b00] opacity-[0.05] blur-[150px] rounded-full"></div>
@@ -90,30 +90,42 @@ const FinalCTA = () => {
                                 Stop waiting for the perfect moment. The industry needs you right now. Drop your details below to get the complete Advanced Diploma syllabus and a free career counseling session.
                             </p>
                             
-                            <div className="flex flex-col gap-4 text-left px-2 sm:px-0">
-                                <div className="flex items-center gap-3 group">
-                                    <div className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center shrink-0 group-hover:bg-orange-50 group-hover:border-orange-100 transition-colors">
-                                        <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                                        </svg>
+                            {/* Process Steps */}
+                            <div className="flex flex-col gap-6 text-left px-2 sm:px-0 mt-8 relative">
+                                {/* Connecting Line */}
+                                <div className="absolute left-[27px] top-8 bottom-8 w-0.5 bg-orange-100 hidden sm:block"></div>
+
+                                {/* Step 1 */}
+                                <div className="flex items-start gap-4 sm:gap-5 relative z-10 group">
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#ff6b00] text-white flex items-center justify-center shrink-0 font-black text-xl shadow-[0_8px_20px_rgba(255,107,0,0.3)] transition-transform group-hover:scale-110">
+                                        1
                                     </div>
-                                    <p className="text-[#0b162c] font-bold text-sm sm:text-base">100% Placement Assistance</p>
+                                    <div className="pt-1.5 sm:pt-2">
+                                        <h4 className="text-[#0b162c] font-bold text-lg sm:text-xl mb-1.5">Fill the Enquiry Form</h4>
+                                        <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-sm">Provide your basic details to register your interest and instantly download the syllabus.</p>
+                                    </div>
                                 </div>
-                                <div className="flex items-center gap-3 group">
-                                    <div className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center shrink-0 group-hover:bg-orange-50 group-hover:border-orange-100 transition-colors">
-                                        <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                                        </svg>
+
+                                {/* Step 2 */}
+                                <div className="flex items-start gap-4 sm:gap-5 relative z-10 group">
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border-2 border-orange-200 text-[#ff6b00] flex items-center justify-center shrink-0 font-black text-xl shadow-sm transition-colors group-hover:border-[#ff6b00]">
+                                        2
                                     </div>
-                                    <p className="text-[#0b162c] font-bold text-sm sm:text-base">Live Defensive & Offensive Labs</p>
+                                    <div className="pt-1.5 sm:pt-2">
+                                        <h4 className="text-[#0b162c] font-bold text-lg sm:text-xl mb-1.5">Get Your Career Blueprint</h4>
+                                        <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-sm">Our experts will call you shortly to understand your goals and map out a custom career blueprint.</p>
+                                    </div>
                                 </div>
-                                <div className="flex items-center gap-3 group">
-                                    <div className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center shrink-0 group-hover:bg-orange-50 group-hover:border-orange-100 transition-colors">
-                                        <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                                        </svg>
+
+                                {/* Step 3 */}
+                                <div className="flex items-start gap-4 sm:gap-5 relative z-10 group">
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border-2 border-orange-200 text-[#ff6b00] flex items-center justify-center shrink-0 font-black text-xl shadow-sm transition-colors group-hover:border-[#ff6b00]">
+                                        3
                                     </div>
-                                    <p className="text-[#0b162c] font-bold text-sm sm:text-base">Global Certification Ready</p>
+                                    <div className="pt-1.5 sm:pt-2">
+                                        <h4 className="text-[#0b162c] font-bold text-lg sm:text-xl mb-1.5">Enroll on Your Terms</h4>
+                                        <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-sm">Choose a suitable batch date and select your preferred training mode (Live Online or Offline).</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -117,7 +117,7 @@ const SessionBookingModal: React.FC<SessionBookingModalProps> = ({ isOpen, onClo
     };
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 font-inter">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 font-montserrat">
             <div className="bg-white rounded-[2rem] w-full max-w-4xl max-h-[95vh] overflow-y-auto shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
                 {/* Close Button */}
                 <button 

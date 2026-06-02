@@ -4,7 +4,7 @@
 
 // const HeroSection = () => {
 //     return (
-//         <section className="relative w-full min-h-screen bg-white font-inter pt-20 pb-16">
+//         <section className="relative w-full min-h-screen bg-white font-montserrat pt-20 pb-16">
             
 //             {/* Header / Logo */}
 //             <div className="absolute top-0 left-0 w-full z-50 p-6 lg:px-12 xl:px-20 max-w-[1400px] mx-auto">

@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import bgImage from '../diploma-images/diploma-landing.png.jpg';
 import SessionBookingModal from './SessionBookingModal';
+import SyllabusDownloadModal from './SyllabusDownloadModal';
 
 const LandingBanner = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isSyllabusModalOpen, setIsSyllabusModalOpen] = useState(false);
 
     // Banner Form State
     const [formData, setFormData] = useState({
@@ -65,7 +66,7 @@ const LandingBanner = () => {
     };
 
     return (
-        <div className="w-full bg-white px-4 sm:px-6 lg:px-8 pt-4 pb-10 font-inter">
+        <div className="w-full bg-white px-4 sm:px-6 lg:px-8 pt-2 pb-0 font-montserrat">
             <style>
                 {`
                     @keyframes marquee {
@@ -91,7 +92,7 @@ const LandingBanner = () => {
             <div 
                 className="relative w-full rounded-3xl lg:rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col justify-between min-h-[350px]"
                 style={{
-                    backgroundImage: `url(${bgImage.src})`,
+                    backgroundImage: `url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1920')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
@@ -102,32 +103,55 @@ const LandingBanner = () => {
                 */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0b162c]/95 via-[#0b162c]/70 to-[#0b162c]/30 z-0"></div>
 
-                <div className="relative z-10 flex flex-col lg:flex-row w-full justify-between items-start lg:items-center p-6 md:p-8 lg:p-10 mb-8 lg:mb-0">
+                <div className="relative z-10 flex flex-col lg:flex-row w-full justify-between items-start lg:items-center p-6 md:p-8 lg:p-8 mb-4 lg:mb-0">
                     
                     {/* Left Column: $100M Offer Copy */}
                     <div className="max-w-2xl text-white mb-4 lg:mb-0 mt-0 text-center lg:text-left flex flex-col items-center lg:items-start mx-auto lg:mx-0">
                         
                         {/* Academy Logo */}
-                        <div className="-mt-2 lg:-mt-6 mb-1 animate-in fade-in slide-in-from-top-4 duration-700">
+                        <div className="-mt-2 lg:-mt-4 mb-3 animate-in fade-in slide-in-from-top-4 duration-700">
                             <img 
                                 src="/images/white-academy.png" 
                                 alt="eHack Academy" 
-                                className="h-12 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_4px_20px_rgba(255,255,255,0.15)] hover:drop-shadow-[0_4px_30px_rgba(255,255,255,0.3)] transition-all duration-500 hover:scale-[1.03]"
+                                className="h-16 sm:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_4px_20px_rgba(255,255,255,0.15)] hover:drop-shadow-[0_4px_30px_rgba(255,255,255,0.3)] transition-all duration-500 hover:scale-[1.03]"
                             />
                         </div>
 
-                        <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl leading-[1.2] mb-4 tracking-tight">
-                            Become a <span className="text-[#ff6b00]">Highly-Paid Cybersecurity</span> Expert in 9 Months. <br className="hidden sm:block" />
-                            <span className="text-[#ff6b00] text-xl sm:text-2xl lg:text-3xl block mt-2 font-bold opacity-90">
-                                (Zero IT Experience Required)
-                            </span>
-                        </h1>
-                        <p className="text-white/90 text-sm sm:text-base lg:text-lg font-medium mb-4 sm:mb-5 leading-relaxed max-w-xl mx-auto lg:mx-0 px-2 sm:px-0">
-                            Master Ethical Hacking, build job-ready skills through our <span className="font-bold text-white">Advanced Diploma</span>, and step into a ₹35L+ career with our real-time lab training.
-                        </p>
+                        {/* Top Badge */}
+                        <div className="mb-4">
+                            <p className="text-white text-xs sm:text-sm font-bold bg-[#ff6b00]/20 text-[#ff6b00] px-4 py-1.5 rounded-full inline-block border border-[#ff6b00]/30 shadow-sm tracking-wider uppercase">
+                                India’s Top-Rated Practical Cybersecurity Diploma
+                            </p>
+                        </div>
 
-                        {/* 1:1 Session CTA Button */}
-                        <div className="mt-0 w-full sm:w-auto">
+                        <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl leading-[1.2] mb-6 tracking-tight text-white mt-1">
+                            <span className="text-[#ff6b00]">AI-Powered</span> Advanced <br className="hidden sm:block" />
+                            Diploma in Cybersecurity
+                        </h1>
+
+                        <ul className="flex flex-col gap-3.5 mb-8 text-white text-base sm:text-lg font-medium text-left max-w-xl mx-auto lg:mx-0">
+                            <li className="flex items-center gap-3">
+                                <div className="bg-[#ff6b00]/20 rounded-full p-1 shrink-0">
+                                    <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span>AI-Driven Ethical Hacking Labs</span>
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <div className="bg-[#ff6b00]/20 rounded-full p-1 shrink-0">
+                                    <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span>30+ Hands-On Security Tools</span>
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <div className="bg-[#ff6b00]/20 rounded-full p-1 shrink-0">
+                                    <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span>100% Placement Assistance</span>
+                            </li>
+                        </ul>
+
+                        {/* CTA Buttons */}
+                        <div className="mt-0 w-full flex flex-col sm:flex-row items-center gap-4">
                             <button 
                                 onClick={() => setIsModalOpen(true)}
                                 className="group flex justify-center items-center gap-2 sm:gap-3 bg-[#ff6b00] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-sm sm:text-base hover:bg-[#e65c00] hover:shadow-[0_8px_30px_rgba(255,107,0,0.3)] hover:-translate-y-1 transition-all active:scale-95 w-full sm:w-auto"
@@ -136,6 +160,16 @@ const LandingBanner = () => {
                                 <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
+                            </button>
+                            
+                            <button 
+                                onClick={() => setIsSyllabusModalOpen(true)}
+                                className="group flex justify-center items-center gap-2 sm:gap-3 bg-transparent border border-white/50 text-white px-6 py-3 sm:px-8 sm:py-3.5 rounded-full font-bold text-sm sm:text-base hover:bg-white/10 hover:border-white transition-all w-full sm:w-auto backdrop-blur-sm"
+                            >
+                                <svg className="w-5 h-5 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download Syllabus
                             </button>
                         </div>
                     </div>
@@ -249,6 +283,10 @@ const LandingBanner = () => {
             <SessionBookingModal 
                 isOpen={isModalOpen} 
                 onClose={() => setIsModalOpen(false)} 
+            />
+            <SyllabusDownloadModal 
+                isOpen={isSyllabusModalOpen} 
+                onClose={() => setIsSyllabusModalOpen(false)} 
             />
         </div>
     );

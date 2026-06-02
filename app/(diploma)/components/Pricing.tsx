@@ -71,7 +71,7 @@ const Pricing = () => {
     };
 
     return (
-        <section className="w-full bg-gray-50 py-10 lg:py-14 relative overflow-hidden font-inter border-t border-gray-100">
+        <section className="w-full bg-gray-50 py-8 lg:py-10 relative overflow-hidden font-montserrat border-t border-gray-100">
             {/* Background decorations */}
             <div className="absolute top-0 right-0 w-1/2 h-full bg-[#eef2f6] skew-x-12 -mr-20 z-0 hidden lg:block opacity-50"></div>
             <div className="absolute bottom-10 left-10 w-64 h-64 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 z-0"></div>
@@ -79,23 +79,14 @@ const Pricing = () => {
             <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 {/* Header */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 mb-6 shadow-sm mx-auto w-max">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6b00] opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff6b00]"></span>
-                        </span>
-                        <span className="text-[#ff6b00] font-bold text-[11px] uppercase tracking-widest">
-                            Investment
-                        </span>
-                    </div>
+                <div className="text-center max-w-5xl mx-auto mb-10 sm:mb-12">
                     
-                    <h2 className="font-montserrat font-black text-3xl sm:text-4xl md:text-5xl text-[#0b162c] leading-tight tracking-tight mb-6">
-                        Invest in Your Future: <br className="hidden sm:block" />
+                    <h2 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-[44px] text-[#0b162c] leading-tight tracking-tight mb-6">
+                        Invest in Your Future: <br />
                         <span className="text-[#ff6b00]">Real Industry Experience + Assured Stipend</span>
                     </h2>
                     
-                    <p className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto">
+                    <p className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto">
                         Unlock premium career-defining education. Choose a flexible monthly plan or save big with an upfront commitment.
                     </p>
                 </div>
@@ -144,9 +135,9 @@ const Pricing = () => {
                     </div>
 
                     {/* Upfront Plan Card (Highlighted) */}
-                    <div className="w-full lg:w-1/2 bg-[#0b162c] rounded-3xl p-8 sm:p-10 shadow-[0_20px_50px_rgb(255,107,0,0.15)] border-2 border-[#ff6b00] relative overflow-hidden transform lg:-translate-y-4">
+                    <div className="w-full lg:w-1/2 bg-white rounded-3xl p-8 sm:p-10 shadow-[0_20px_50px_rgb(255,107,0,0.15)] border-2 border-[#ff6b00] relative overflow-hidden transform lg:-translate-y-4">
                         {/* Background flare */}
-                        <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#ff6b00] rounded-full filter blur-[80px] opacity-40 z-0 pointer-events-none"></div>
+                        <div className="absolute -top-24 -right-24 w-48 h-48 bg-orange-50 rounded-full filter blur-[60px] opacity-80 z-0 pointer-events-none"></div>
                         
                         {/* "Best Value" Badge */}
                         <div className="absolute top-0 right-8 bg-[#ff6b00] text-white text-[11px] font-bold px-4 py-1.5 rounded-b-lg uppercase tracking-wider shadow-md">
@@ -154,45 +145,39 @@ const Pricing = () => {
                         </div>
                         
                         <div className="mb-8 relative z-10">
-                            <h3 className="font-montserrat font-bold text-2xl text-white mb-2">Upfront Payment</h3>
-                            <p className="text-gray-300 text-sm">Save massively by paying all at once</p>
+                            <h3 className="font-montserrat font-bold text-2xl text-[#0b162c] mb-2">Upfront Payment</h3>
+                            <p className="text-gray-500 text-sm">Save massively by paying all at once</p>
                         </div>
                         
                         <div className="mb-8 relative z-10">
-                            <div className="flex items-center gap-3 mb-2 opacity-80">
+                            <div className="flex items-center gap-3 mb-2">
                                 <span className="text-2xl text-gray-400 line-through font-semibold">₹1,35,000</span>
-                                <span className="text-[#ff6b00] text-xs font-bold bg-[#ff6b00]/10 px-2 py-1 rounded border border-[#ff6b00]/30 tracking-wide">SAVE ₹45,000</span>
+                                <span className="text-[#ff6b00] text-xs font-bold bg-orange-50 px-2 py-1 rounded border border-orange-100 tracking-wide">SAVE ₹45,000</span>
                             </div>
                             <div className="flex items-baseline gap-2">
-                                <span className="font-montserrat font-black text-5xl md:text-6xl text-white">₹90,000</span>
-                                <span className="text-gray-300 font-medium">/ one-time</span>
+                                <span className="font-montserrat font-black text-5xl md:text-6xl text-[#0b162c]">₹90,000</span>
+                                <span className="text-gray-500 font-medium">/ one-time</span>
                             </div>
                         </div>
                         
-                        <ul className="space-y-4 mb-10 text-gray-300 relative z-10">
+                        <ul className="space-y-4 mb-10 text-gray-600 relative z-10">
                             <li className="flex items-start gap-3">
-                                <div className="mt-0.5 rounded-full bg-[#ff6b00]/20 p-1 flex-shrink-0">
-                                    <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span>Flat <strong className="text-white">₹45,000 Instant Discount</strong></span>
+                                <svg className="w-6 h-6 text-[#ff6b00] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                                <span>Flat <strong className="text-[#0b162c]">₹45,000 Instant Discount</strong></span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <div className="mt-0.5 rounded-full bg-[#ff6b00]/20 p-1 flex-shrink-0">
-                                    <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                                </div>
+                                <svg className="w-6 h-6 text-[#ff6b00] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                                 <span>Complete value + real industry experience</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <div className="mt-0.5 rounded-full bg-[#ff6b00]/20 p-1 flex-shrink-0">
-                                    <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span className="text-white font-medium">Includes assured stipend phase</span>
+                                <svg className="w-6 h-6 text-[#ff6b00] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                                <span className="font-medium text-[#0b162c]">Includes assured stipend phase</span>
                             </li>
                         </ul>
                         
                         <button 
                             onClick={() => openModal('Upfront')}
-                            className="w-full py-4 rounded-xl bg-[#ff6b00] text-white font-bold text-lg hover:bg-[#e66000] shadow-[0_5px_20px_rgb(255,107,0,0.4)] hover:shadow-[0_8px_25px_rgb(255,107,0,0.5)] transition-all duration-300 relative z-10 hover:-translate-y-1">
+                            className="w-full py-4 rounded-xl bg-[#ff6b00] text-white font-bold text-lg hover:bg-[#e66000] shadow-[0_5px_20px_rgb(255,107,0,0.3)] hover:shadow-[0_8px_25px_rgb(255,107,0,0.4)] transition-all duration-300 relative z-10 hover:-translate-y-1">
                             Pay Upfront & Save Big
                         </button>
                     </div>

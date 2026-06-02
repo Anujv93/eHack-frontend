@@ -1,6 +1,5 @@
 'use client';
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import gsap from 'gsap';
+import React, { useState, useEffect } from 'react';
 
 const curriculum = [
     {
@@ -208,79 +207,29 @@ const toolsList = [
     { name: 'React', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
     { name: 'Kubernetes', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg' },
     { name: 'PostgreSQL', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' },
+    { name: 'Sprinto', url: 'https://www.google.com/s2/favicons?domain=sprinto.com&sz=128' },
+    { name: 'Nessus Pro', url: 'https://www.google.com/s2/favicons?domain=tenable.com&sz=128' },
+    { name: 'KisMAC', url: 'https://www.google.com/s2/favicons?domain=kismac-ng.org&sz=128' },
+    { name: 'Nexpose', url: 'https://www.google.com/s2/favicons?domain=rapid7.com&sz=128' },
+    { name: 'Forcepoint', url: 'https://www.google.com/s2/favicons?domain=forcepoint.com&sz=128' },
+    { name: 'Nikto', url: 'https://www.google.com/s2/favicons?domain=cirt.net&sz=128' },
+    { name: 'John the Ripper', url: 'https://www.google.com/s2/favicons?domain=openwall.com&sz=128' },
+    { name: 'Aircrack-ng', url: 'https://www.google.com/s2/favicons?domain=aircrack-ng.org&sz=128' },
+    { name: 'Cain and Abel', url: 'https://www.google.com/s2/favicons?domain=oxid.it&sz=128' }
 ];
 
-const FlippingToolsGrid = () => {
-    const VISIBLE = 6;
-    const [visibleTools, setVisibleTools] = useState(toolsList.slice(0, VISIBLE));
-    const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-    const getRandomTool = useCallback((exclude: typeof toolsList) => {
-        const available = toolsList.filter(t => !exclude.some(e => e.name === t.name));
-        return available[Math.floor(Math.random() * available.length)];
-    }, []);
-
-    useEffect(() => {
-        // Each cell gets a unique flip direction
-        const flipDirections = [
-            { prop: 'rotateY', out: 90, in: -90 },
-            { prop: 'rotateX', out: -90, in: 90 },
-            { prop: 'rotateY', out: -90, in: 90 },
-            { prop: 'rotateX', out: 90, in: -90 },
-            { prop: 'rotateY', out: 90, in: -90 },
-            { prop: 'rotateX', out: -90, in: 90 },
-        ];
-
-        const interval = setInterval(() => {
-            const cells = cellRefs.current.filter(Boolean) as HTMLDivElement[];
-            if (cells.length === 0) return;
-
-            const shuffled = [...toolsList].sort(() => 0.5 - Math.random());
-            const newTools = shuffled.slice(0, VISIBLE);
-
-            let completed = 0;
-            cells.forEach((cell, i) => {
-                const dir = flipDirections[i % flipDirections.length];
-                gsap.to(cell, {
-                    [dir.prop]: dir.out,
-                    duration: 0.3,
-                    ease: 'power2.in',
-                    delay: i * 0.08,
-                    onComplete: () => {
-                        completed++;
-                        if (completed === cells.length) {
-                            setVisibleTools(newTools);
-                            cells.forEach((c, j) => {
-                                const d = flipDirections[j % flipDirections.length];
-                                gsap.fromTo(c, { [d.prop]: d.in }, {
-                                    [d.prop]: 0,
-                                    duration: 0.3,
-                                    ease: 'power2.out',
-                                    delay: j * 0.08,
-                                });
-                            });
-                        }
-                    }
-                });
-            });
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, []);
-
+const StaticToolsGrid = () => {
     return (
-        <div className="grid grid-cols-3 gap-[1px] bg-gray-100 border border-gray-100 rounded-2xl overflow-hidden">
-            {visibleTools.map((tool, idx) => (
+        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-[1px] bg-gray-100 border border-gray-100 rounded-2xl overflow-hidden">
+            {toolsList.map((tool, idx) => (
                 <div
                     key={idx}
-                    ref={el => { cellRefs.current[idx] = el; }}
                     className="bg-white group relative flex flex-col items-center justify-center py-6 sm:py-8 lg:py-8 px-4 hover:bg-gray-50/50 transition-colors"
-                    style={{ perspective: '600px', transformStyle: 'preserve-3d' }}
                 >
                     <img
                         src={tool.url}
                         alt={tool.name}
-                        className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 object-contain drop-shadow-sm transition-all duration-300 group-hover:scale-110"
+                        className="w-10 h-10 sm:w-12 sm:h-12 lg:w-12 lg:h-12 object-contain drop-shadow-sm transition-all duration-300 group-hover:scale-110"
                         title={tool.name}
                     />
                 </div>
@@ -313,29 +262,23 @@ const CourseCurriculum = () => {
     }, []);
 
     return (
-        <section className="w-full bg-slate-50 py-16 relative overflow-hidden font-inter border-t border-gray-200">
+        <section className="w-full bg-slate-50 py-8 lg:py-12 relative overflow-hidden font-montserrat border-t border-gray-200">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
-                <div className="flex flex-col lg:flex-row gap-12 items-stretch">
+                <div className="flex flex-col gap-10 lg:gap-12 items-center">
                     
-                    {/* Left Static Column */}
-                    <div className="w-full lg:w-1/2 mb-4 lg:mb-0 text-center lg:text-left flex flex-col items-center lg:items-start self-start">
+                    {/* Headings */}
+                    <div className="w-full text-center flex flex-col items-center">
                         <h2 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl text-[#0b162c] mb-6 leading-tight">
-                            Complete <br className="hidden lg:block"/><span className="text-[#ff6b00]">Curriculum</span> Roadmap
+                            Complete <span className="text-[#ff6b00]">Curriculum</span> Roadmap
                         </h2>
-                        <p className="text-gray-600 text-base sm:text-lg mb-4 lg:mb-4 leading-relaxed max-w-sm mx-auto lg:mx-0">
+                        <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
                             A step-by-step path from the basics to advanced cyber security mastery, packed with real-world methodologies.
                         </p>
-                        
-                        {/* Tools UI box */}
-                        <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 w-full mt-2 mx-auto lg:mx-0">
-                            <h4 className="font-bold text-sm lg:text-base text-gray-400 uppercase tracking-widest mb-6 lg:mb-8 text-center">Tools You Will Master</h4>
-                            <FlippingToolsGrid />
-                        </div>
                     </div>
 
-                    {/* Right Internally Scrolling Column */}
-                    <div className="w-full lg:w-1/2 h-[500px] lg:h-[600px] overflow-y-auto pr-2 sm:pr-4 md:pr-6 custom-scrollbar relative bg-transparent rounded-3xl">
+                    {/* Curriculum List (No internal scroll) */}
+                    <div className="w-full max-w-4xl relative bg-transparent rounded-3xl">
                         <div className="relative pb-10">
                             {/* Vertical Timeline Line */}
                             <div className="absolute left-[27px] top-0 bottom-0 w-[2px] bg-gray-200 hidden md:block">
@@ -426,6 +369,16 @@ const CourseCurriculum = () => {
                                 );
                             })}
                         </div>
+                        </div>
+                    </div>
+
+                    {/* Tools UI box */}
+                    <div className="w-full max-w-5xl mx-auto mt-4">
+                        <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 w-full mx-auto">
+                            <h3 className="font-montserrat font-medium text-xl sm:text-2xl text-[#0b162c] mb-8 text-center tracking-tight">
+                                25+ Industry-Standard Tools You'll Master
+                            </h3>
+                            <StaticToolsGrid />
                         </div>
                     </div>
 

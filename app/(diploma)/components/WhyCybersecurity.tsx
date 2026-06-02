@@ -3,7 +3,7 @@ import React from 'react';
 
 const WhyCybersecurity = () => {
     return (
-        <section className="w-full bg-white py-12 relative overflow-hidden font-inter">
+        <section className="w-full bg-white py-12 relative overflow-hidden font-montserrat">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 {/* Main Headline for both contents */}

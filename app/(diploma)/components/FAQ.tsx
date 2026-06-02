@@ -32,43 +32,25 @@ const FAQ = () => {
     };
 
     return (
-        <section className="w-full bg-slate-50 py-16 sm:py-20 md:py-24 relative overflow-hidden font-inter border-t border-gray-200">
+        <section className="w-full bg-slate-50 py-8 lg:py-12 relative overflow-hidden font-montserrat border-t border-gray-200">
             {/* Background Accent */}
             <div className="absolute -top-[200px] -right-[200px] w-[600px] h-[600px] bg-orange-100 opacity-20 blur-[120px] rounded-full pointer-events-none"></div>
 
-            <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-12 items-stretch">
+            <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="flex flex-col gap-8 sm:gap-10 items-center">
                     
-                    {/* Left Column: Heading & CTA */}
-                    <div className="w-full lg:w-1/2 lg:sticky lg:top-32 self-start text-center lg:text-left">
-                        <div className="inline-block bg-[#ff6b00]/10 border border-[#ff6b00]/20 text-[#ff6b00] px-4 py-2 rounded-full text-[10px] sm:text-[11px] font-black uppercase tracking-widest mb-4 sm:mb-6">
-                            Got Questions?
-                        </div>
+                    {/* Header */}
+                    <div className="w-full text-center">
                         <h2 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl text-[#0b162c] mb-4 sm:mb-6 leading-[1.2] lg:leading-[1.1] tracking-tight">
-                            Frequently Asked <br className="hidden sm:block" />
-                            <span className="text-[#ff6b00]">Questions</span>
+                            Frequently Asked <span className="text-[#ff6b00]">Questions</span>
                         </h2>
-                        <p className="text-gray-600 text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed px-4 sm:px-0">
+                        <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
                             Everything you need to know about the Advanced Diploma, our curriculum, and how we engineer your career.
                         </p>
-                        
-                        <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100 relative overflow-hidden group hover:shadow-md transition-shadow text-left">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
-                            
-                            <h4 className="font-montserrat font-bold text-[#0b162c] text-xl mb-3 relative z-10">Still have questions?</h4>
-                            <p className="text-gray-500 text-sm mb-8 leading-relaxed relative z-10">Can't find the answer you're looking for? Chat with our friendly team directly on WhatsApp.</p>
-                            
-                            <a href="https://api.whatsapp.com/send/?phone=919886035330&text=Hi%20EHACK%20Academy%2C%20I%27d%20like%20to%20inquire%20about%20the%20%22Graduate%20cybersecurity%22%20program.%20Can%20you%20help%20me%20with%20the%20admission%20process%20and%20counselor%20details%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full px-6 py-4 bg-[#ff6b00] text-white font-bold rounded-xl hover:bg-[#e65c00] transition-colors shadow-lg hover:shadow-xl group/btn relative z-10">
-                                Chat on WhatsApp
-                                <svg className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </a>
-                        </div>
                     </div>
 
-                    {/* Right Column: Accordion */}
-                    <div className="w-full lg:w-1/2 flex flex-col gap-4">
+                    {/* Accordion */}
+                    <div className="w-full flex flex-col gap-4">
                         {faqs.map((faq, idx) => {
                             const isOpen = openIndex === idx;
                             return (
@@ -106,6 +88,23 @@ const FAQ = () => {
                                 </div>
                             );
                         })}
+                    </div>
+
+                    {/* CTA */}
+                    <div className="w-full mt-4 bg-white p-6 sm:p-8 rounded-3xl shadow-[0_8px_30px_rgb(11,22,44,0.04)] border border-gray-100 relative overflow-hidden group hover:shadow-md transition-shadow flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+                        
+                        <div className="text-center md:text-left relative z-10">
+                            <h4 className="font-montserrat font-bold text-[#0b162c] text-xl mb-2">Still have questions?</h4>
+                            <p className="text-gray-500 text-sm leading-relaxed">Can't find the answer you're looking for? Chat with our friendly team directly on WhatsApp.</p>
+                        </div>
+                        
+                        <a href="https://api.whatsapp.com/send/?phone=919886035330&text=Hi%20EHACK%20Academy%2C%20I%27d%20like%20to%20inquire%20about%20the%20%22Graduate%20cybersecurity%22%20program.%20Can%20you%20help%20me%20with%20the%20admission%20process%20and%20counselor%20details%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="shrink-0 inline-flex items-center justify-center w-full md:w-auto px-8 py-4 bg-[#ff6b00] text-white font-bold rounded-xl hover:bg-[#e65c00] transition-colors shadow-lg hover:shadow-xl group/btn relative z-10">
+                            Chat on WhatsApp
+                            <svg className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
                     </div>
 
                 </div>

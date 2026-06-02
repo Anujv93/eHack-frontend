@@ -6,154 +6,137 @@ import CounselingModal from './CounselingModal';
 const WhoIsThisFor = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const categories = [
-        {
-            id: 1,
-            title: <>12th Pass & <span className="text-[#ff6b00]">Beginners</span></>,
-            plainTitle: "12th Pass & Beginners",
-            subtitle: "Start Early, Get Ahead",
-            image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1470&auto=format&fit=crop",
-            description: "No coding background? No problem. Skip the traditional 4-year college wait. We build your foundation from scratch through practical labs, making you highly employable in just 9 months.",
-            tags: ["Zero Experience Needed", "Practical Labs", "Fast-Track Career"]
-        },
-        {
-            id: 2,
-            title: <>College Students & <span className="text-[#ff6b00]">Freshers</span></>,
-            plainTitle: "College Students & Freshers",
-            subtitle: "Don't Settle for Average Jobs",
-            image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop",
-            description: "Stand out in a ruthlessly competitive job market. Master highly sought-after, hands-on cybersecurity skills that top employers actively seek, and command top-tier MNC salaries right out of college.",
-            tags: ["Resume Building", "MNC Placements", "In-Demand Skills"]
-        },
-        {
-            id: 3,
-            title: <>Working <span className="text-[#ff6b00]">Professionals</span></>,
-            plainTitle: "Working Professionals",
-            subtitle: "Pivot & Multiply Your Salary",
-            image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1469&auto=format&fit=crop",
-            description: "Stuck in IT support or a dead-end tech role? Transition into the high-growth cybersecurity sector. Learn advanced penetration testing and drastically increase your earning potential.",
-            tags: ["Career Transition", "Salary Hike", "Advanced Skills"]
-        }
-    ];
-
     return (
-        <section className="w-full bg-white pt-0 pb-20 lg:pt-0 lg:pb-28 font-inter">
+        <section className="w-full bg-white pt-8 pb-12 lg:pt-12 lg:pb-16 font-montserrat">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 
-                {/* New Headline & Paragraph Pattern */}
-                <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8 lg:gap-12">
+                {/* Scroll Action / Pill */}
+                <div className="flex justify-center mb-12 lg:mb-16">
+                    <button 
+                        onClick={() => {
+                            const section = document.getElementById('why-join-grid');
+                            if (section) {
+                                const y = section.getBoundingClientRect().top + window.scrollY - 100;
+                                window.scrollTo({ top: y, behavior: 'smooth' });
+                            }
+                        }}
+                        className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-orange-50 border border-orange-100 shadow-sm hover:shadow-md hover:border-orange-200 transition-all cursor-pointer group"
+                    >
+                        <span className="relative flex h-2.5 w-2.5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6b00] opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#ff6b00]"></span>
+                        </span>
+                        <span className="text-[#ff6b00] font-bold text-xs sm:text-sm uppercase tracking-widest">
+                            Why Join This Program?
+                        </span>
+                        <svg className="w-4 h-4 text-[#ff6b00] animate-bounce group-hover:text-[#e65c00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Headline Section */}
+                <div className="flex flex-col md:flex-row justify-between items-center mb-12 lg:mb-16 gap-8 lg:gap-12">
                     <div className="w-full md:w-5/12 lg:w-2/5 flex flex-col items-center md:items-start text-center md:text-left">
-                        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 mb-6 shadow-sm mx-auto md:mx-0 w-max">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6b00] opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff6b00]"></span>
-                            </span>
-                            <span className="text-[#ff6b00] font-bold text-xs uppercase tracking-widest">
-                                Is This Program For You?
-                            </span>
-                        </div>
                         <h2 className="font-montserrat font-black text-[26px] sm:text-3xl lg:text-[42px] text-[#0b162c] leading-tight text-center md:text-left">
                             <span className="whitespace-nowrap">Designed for Ambitious</span> <br />
                             Action-Takers.
                         </h2>
                     </div>
                     <div className="w-full md:w-7/12 lg:w-1/2">
-                        <p className="text-gray-600 text-base sm:text-lg leading-relaxed border-l-4 border-[#ff6b00] pl-4 sm:pl-6 md:mt-8 lg:mt-10 text-left">
-                            Whether you are just starting out or looking to escape a stagnant career, this diploma is engineered to take you from your current level to a highly-paid cybersecurity expert.
+                        <p className="text-gray-600 text-base sm:text-lg leading-relaxed border-l-4 border-[#ff6b00] pl-4 sm:pl-6 md:mt-2 text-left">
+                            Build in-demand Cybersecurity & AI skills. Get hands-on with real-world projects, master an industry-aligned curriculum, and earn your globally recognized eHack certification.
                         </p>
                     </div>
                 </div>
 
-                {/* Original Cards Grid (Image on top) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {categories.map((category) => (
-                        <div 
-                            key={category.id} 
-                            className="bg-white rounded-2xl overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] border border-gray-200 hover:border-[#ff6b00]/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.12)] group flex flex-col"
-                        >
-                            {/* Image Container with Hover Zoom */}
-                            <div className="relative h-56 w-full overflow-hidden">
-                                <div className="absolute inset-0 bg-[#0b162c]/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
-                                <img 
-                                    src={category.image} 
-                                    alt={category.plainTitle} 
-                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                                />
-                                {/* Bottom Gradient for text readability */}
-                                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                                
-                                <div className="absolute bottom-4 left-6 z-20">
-                                    <h3 className="font-montserrat font-black text-2xl text-white tracking-tight">
-                                        {category.title}
-                                    </h3>
-                                </div>
-                            </div>
-
-                            {/* Card Content */}
-                            <div className="p-6 sm:p-8 flex-1 flex flex-col">
-                                <h4 className="text-[#ff6b00] font-bold text-sm mb-3">
-                                    {category.subtitle}
-                                </h4>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
-                                    {category.description}
-                                </p>
-                                
-                                {/* Tags */}
-                                <div className="flex flex-wrap gap-2 mt-auto">
-                                    {category.tags.map((tag, index) => (
-                                        <span 
-                                            key={index} 
-                                            className="bg-orange-50 border border-orange-100/50 text-gray-900 text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Bottom Stats & CTA Area */}
-                <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+                {/* Features Grid - 2x2 Clean Layout */}
+                <div id="why-join-grid" className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
-                    {/* Left Side: Stats */}
-                    <div className="grid grid-cols-2 sm:flex sm:items-center gap-6 sm:gap-8 md:gap-12 w-full md:w-auto pb-4 md:pb-0 sm:pl-8">
-                        <div className="flex flex-col">
-                            <span className="font-montserrat text-2xl sm:text-3xl font-black text-[#ff6b00]">3<span className="text-[#0b162c]">X</span></span>
-                            <span className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-1">Avg Salary Hike</span>
+                    {/* Feature 1: Cyber Meets AI */}
+                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.06)] border border-[#ff6b00]/40 hover:border-[#ff6b00] hover:shadow-[0_20px_50px_-10px_rgba(255,107,0,0.15)] transition-all duration-300 group flex flex-col">
+                        <div className="h-64 w-full overflow-hidden relative">
+                            <img 
+                                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1470&auto=format&fit=crop" 
+                                alt="Cyber Meets AI" 
+                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div className="absolute bottom-6 left-6 text-white">
+                                <div className="bg-[#ff6b00] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider w-max mb-2">Advanced Training</div>
+                                <h3 className="font-montserrat font-black text-2xl lg:text-3xl">Cyber Meets AI</h3>
+                            </div>
                         </div>
-                        <div className="w-px h-10 bg-gray-200 hidden sm:block"></div>
-                        <div className="flex flex-col">
-                            <span className="font-montserrat text-2xl sm:text-3xl font-black text-[#ff6b00]">100<span className="text-[#0b162c]">%</span></span>
-                            <span className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-1">Placement Aid</span>
-                        </div>
-                        <div className="w-px h-10 bg-gray-200 hidden sm:block"></div>
-                        <div className="flex flex-col">
-                            <span className="font-montserrat text-2xl sm:text-3xl font-black text-[#ff6b00]">12,000<span className="text-[#0b162c]">+</span></span>
-                            <span className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-1">Active Learners</span>
-                        </div>
-                        <div className="w-px h-10 bg-gray-200 hidden sm:block"></div>
-                        <div className="flex flex-col">
-                            <span className="font-montserrat text-2xl sm:text-3xl font-black text-[#ff6b00]">Paid</span>
-                            <span className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-1">Internship + Stipend</span>
+                        <div className="p-8 flex-1 flex flex-col">
+                            <p className="text-gray-600 text-base leading-relaxed">
+                                Intensive training in GenAI and offensive & defensive security. Attend live online and offline masterclasses from top cybersecurity experts on AI-powered threat intelligence and advanced defense strategies.
+                            </p>
                         </div>
                     </div>
 
-                    {/* Right Side: CTA */}
-                    <div className="flex flex-col items-center md:items-end w-full md:w-auto shrink-0 border-t md:border-t-0 border-gray-100 pt-8 md:pt-0 sm:pr-8 text-center md:text-right">
-                        <p className="text-gray-500 text-sm mb-3 font-medium">Still unsure if you qualify?</p>
-                        <button 
-                            onClick={() => setIsModalOpen(true)}
-                            className="inline-flex justify-center items-center gap-2 bg-[#ff6b00] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-bold text-sm sm:text-base hover:bg-[#e65c00] transition-colors shadow-[0_10px_20px_-10px_rgba(255,107,0,0.4)] group w-full sm:w-auto"
-                        >
-                            Talk to a Career Counselor
-                            <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </button>
+                    {/* Feature 2: Industry-Aligned Curriculum */}
+                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.06)] border border-[#ff6b00]/40 hover:border-[#ff6b00] hover:shadow-[0_20px_50px_-10px_rgba(255,107,0,0.15)] transition-all duration-300 group flex flex-col">
+                        <div className="h-64 w-full overflow-hidden relative">
+                            <img 
+                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1470&auto=format&fit=crop" 
+                                alt="eHack Certification" 
+                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div className="absolute bottom-6 left-6 text-white">
+                                <div className="bg-[#ff6b00] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider w-max mb-2">High Value Curriculum</div>
+                                <h3 className="font-montserrat font-black text-2xl lg:text-3xl">eHack Certification</h3>
+                            </div>
+                        </div>
+                        <div className="p-8 flex-1 flex flex-col">
+                            <p className="text-gray-600 text-base leading-relaxed">
+                                Master Network Defense, Ethical Hacking, Penetration Testing, and OWASP Top 10. Our curriculum is similar to leading global standards, giving you the real, high-impact value at a lower price.
+                            </p>
+                        </div>
                     </div>
+
+                    {/* Feature 3: Guaranteed Internship */}
+                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.06)] border border-[#ff6b00]/40 hover:border-[#ff6b00] hover:shadow-[0_20px_50px_-10px_rgba(255,107,0,0.15)] transition-all duration-300 group flex flex-col">
+                        <div className="h-64 w-full overflow-hidden relative">
+                            <img 
+                                src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1470&auto=format&fit=crop" 
+                                alt="Internship Guarantee" 
+                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div className="absolute bottom-6 left-6 text-white">
+                                <div className="bg-[#ff6b00] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider w-max mb-2">Guaranteed Internship</div>
+                                <h3 className="font-montserrat font-black text-2xl lg:text-3xl">Earn While You Learn</h3>
+                            </div>
+                        </div>
+                        <div className="p-8 flex-1 flex flex-col">
+                            <p className="text-gray-600 text-base leading-relaxed">
+                                Accelerate your career with a guaranteed 3-month internship on real-time industry projects. Select two advanced focus areas ranging from Network Security & SOC Operations, Application Testing, Digital Forensics to Cloud Infrastructure Security.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Feature 4: The eHack Advantage */}
+                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.06)] border border-[#ff6b00]/40 hover:border-[#ff6b00] hover:shadow-[0_20px_50px_-10px_rgba(255,107,0,0.15)] transition-all duration-300 group flex flex-col">
+                        <div className="h-64 w-full overflow-hidden relative">
+                            <img 
+                                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop" 
+                                alt="The eHack Advantage" 
+                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div className="absolute bottom-6 left-6 text-white">
+                                <div className="bg-[#ff6b00] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider w-max mb-2">EC-Council Partner</div>
+                                <h3 className="font-montserrat font-black text-2xl lg:text-3xl">The eHack Advantage</h3>
+                            </div>
+                        </div>
+                        <div className="p-8 flex-1 flex flex-col">
+                            <p className="text-gray-600 text-base leading-relaxed">
+                                Leverage our 10+ year legacy of excellence. As an official EC-Council partner training center, we've empowered over 50,000 ambitious students and professionals to achieve high-paying dream roles in cybersecurity.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>

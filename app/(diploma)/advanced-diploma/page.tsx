@@ -8,6 +8,7 @@ import Pricing from '../components/Pricing';
 import FAQ from '../components/FAQ';
 import FinalCTA from '../components/FinalCTA';
 import StickyNavbar from '../components/StickyNavbar';
+import CareerOpportunities from '../components/CareerOpportunities';
 
 export const metadata = {
     title: 'Advanced Diploma in Cybersecurity | eHack Academy',
@@ -37,6 +38,10 @@ export default function AdvancedDiplomaLandingPage() {
 
             <section id="pricing">
                 <Pricing />
+            </section>
+
+            <section id="career-opportunities">
+                <CareerOpportunities />
             </section>
 
             <section id="why">

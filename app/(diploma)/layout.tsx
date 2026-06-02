@@ -34,7 +34,7 @@ export default function DiplomaRootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${montserrat.variable} ${inter.variable} antialiased font-inter`}>
+            <body className={`${montserrat.variable} ${inter.variable} antialiased font-montserrat`}>
                 {/* Google tag (gtag.js) */}
                 <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17944571400" />
                 <Script id="google-tag-aw" strategy="afterInteractive">
