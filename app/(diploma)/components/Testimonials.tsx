@@ -100,11 +100,11 @@ const Testimonials = () => {
                 
                 {/* Centered Header with Controls */}
                 <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left mb-8 lg:mb-12 gap-6">
-                    <div>
-                        <h2 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl text-[#0b162c] leading-tight tracking-tight max-w-3xl">
+                    <div className="w-full">
+                        <h2 className="font-montserrat font-black text-3xl sm:text-4xl xl:text-5xl text-[#0b162c] leading-tight tracking-tight w-full whitespace-normal lg:whitespace-nowrap">
                             Don't Just Take <span className="text-[#ff6b00]">Our Word For It.</span>
                         </h2>
-                        <p className="mt-4 sm:mt-6 text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+                        <p className="mt-4 sm:mt-5 text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto md:mx-0">
                             Hear directly from our alumni who transformed from beginners into highly-paid security analysts, penetration testers, and directors at top-tier global companies.
                         </p>
                     </div>

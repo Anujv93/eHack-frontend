@@ -47,7 +47,7 @@ const CareerOpportunities = () => {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
-        <section className="w-full bg-slate-50 py-16 lg:py-24 relative overflow-hidden font-montserrat border-t border-gray-200">
+        <section className="w-full bg-slate-50 pt-10 pb-6 lg:pt-14 lg:pb-8 relative overflow-hidden font-montserrat border-t border-gray-200">
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div className="w-full text-center mb-10 sm:mb-14">

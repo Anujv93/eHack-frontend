@@ -277,74 +277,83 @@ const CourseCurriculum = () => {
                         </p>
                     </div>
 
-                    {/* Curriculum List (No internal scroll) */}
-                    <div className="w-full max-w-4xl relative bg-transparent rounded-3xl">
-                        <div className="relative pb-10">
-                            {/* Vertical Timeline Line */}
-                            <div className="absolute left-[27px] top-0 bottom-0 w-[2px] bg-gray-200 hidden md:block">
-                                <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-[#ff6b00] to-transparent opacity-50"></div>
-                            </div>
+                    {/* Curriculum List (Compact Vertical Timeline) */}
+                    <div className="w-full max-w-4xl relative bg-transparent rounded-3xl mx-auto pb-10 mt-6">
+                        {/* Vertical Timeline Line */}
+                        <div className="absolute left-[23px] top-0 bottom-0 w-[2px] bg-gray-200 hidden md:block">
+                            <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-[#ff6b00] to-transparent opacity-50"></div>
+                        </div>
 
-                            <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-4">
                             {curriculum.map((mod, i) => {
                                 const isExpanded = expandedModule === i;
 
                                 return (
-                                    <div key={i} id={`curriculum-module-${i}`} className="relative flex flex-col md:flex-row gap-4 md:gap-8 group items-start">
+                                    <div key={i} id={`curriculum-module-${i}`} className="relative flex flex-col md:flex-row gap-4 md:gap-6 group items-start">
                                         
-                                        {/* Timeline Node & Semantic Tools */}
-                                        <div className="relative shrink-0 hidden md:block">
+                                        {/* Timeline Node */}
+                                        <div className="relative shrink-0 hidden md:block z-20">
                                             <div 
                                                 onClick={() => setExpandedModule(isExpanded ? null : i)}
-                                                className="w-14 h-14 bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border-[3px] border-white ring-2 ring-gray-100 group-hover:ring-[#ff6b00] z-20 cursor-pointer transition-all duration-300 hover:scale-110 relative"
+                                                className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center border-[3px] border-white ring-1 ring-gray-200 group-hover:ring-[#ff6b00] cursor-pointer transition-all duration-300 hover:scale-105"
                                             >
                                                 <div className="absolute inset-1 rounded-full bg-gradient-to-br from-gray-50 to-gray-100 group-hover:from-orange-50 group-hover:to-orange-100 flex items-center justify-center transition-colors">
-                                                    <span className="font-montserrat font-black text-gray-400 group-hover:text-[#ff6b00] transition-colors">{mod.number}</span>
+                                                    <span className="font-montserrat font-bold text-gray-500 group-hover:text-[#ff6b00] transition-colors text-sm">{mod.number}</span>
                                                 </div>
                                             </div>
-
                                         </div>
 
                                         {/* Content Card */}
                                         <div className="w-full">
                                             <div 
-                                                className="bg-white rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/80 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 cursor-pointer relative overflow-hidden group/card"
+                                                className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_2px_15px_rgb(0,0,0,0.03)] border border-gray-100 hover:border-[#ff6b00]/30 hover:shadow-[0_8px_20px_rgb(0,0,0,0.06)] transition-all duration-300 cursor-pointer relative overflow-hidden group/card flex flex-col"
                                                 onClick={() => setExpandedModule(isExpanded ? null : i)}
                                             >
-                                                {/* Left soft hover glow instead of top border for vertical lists */}
-                                                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#ff6b00] to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+                                                {/* Left orange edge hover effect */}
+                                                <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-transparent via-[#ff6b00] to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300"></div>
                                                 
-                                                <div className="flex flex-wrap items-center gap-3 mb-4 md:mb-6">
-                                                    <span className="text-[11px] font-bold text-[#ff6b00] bg-orange-50/80 px-3 py-1.5 rounded-full uppercase tracking-wider hidden md:inline-flex">
-                                                        Module {mod.number}
-                                                    </span>
-                                                    <span className="text-[11px] font-bold text-[#ff6b00] bg-orange-50/80 px-3 py-1.5 rounded-full uppercase tracking-wider md:hidden flex items-center gap-1">
-                                                        <span className="w-5 h-5 bg-white text-[#ff6b00] rounded-full flex items-center justify-center -ml-1 text-[10px] shadow-sm">{mod.number}</span>
-                                                        Module
-                                                    </span>
-                                                    {mod.duration && (
-                                                        <span className="text-[11px] font-semibold text-gray-500 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">
-                                                            {mod.duration}
+                                                {/* Compact Header (Title & Badges on same line) */}
+                                                <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 w-full pl-2 sm:pl-0">
+                                                    <div className="flex items-center gap-3 md:gap-4 flex-wrap sm:flex-nowrap">
+                                                        <span className="text-[10px] font-black text-white bg-[#0b162c] px-2.5 py-1 rounded-md tracking-wider shadow-sm md:hidden shrink-0">
+                                                            MOD {mod.number}
                                                         </span>
-                                                    )}
+                                                        <h3 className="font-montserrat font-bold text-base sm:text-lg md:text-xl text-[#0b162c] leading-snug group-hover/card:text-[#ff6b00] transition-colors duration-300">
+                                                            {mod.title}
+                                                        </h3>
+                                                    </div>
+                                                    
+                                                    <div className="flex items-center gap-3 shrink-0 ml-auto sm:ml-0">
+                                                        {mod.duration && (
+                                                            <span className="text-[10px] sm:text-[11px] font-semibold text-[#ff6b00] bg-orange-50 px-2.5 py-1 rounded-md border border-orange-100 whitespace-nowrap">
+                                                                {mod.duration}
+                                                            </span>
+                                                        )}
+                                                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover/card:bg-orange-50 group-hover/card:text-[#ff6b00] transition-colors shadow-sm">
+                                                            <svg className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
                                                 </div>
 
-                                                <h3 className="font-montserrat font-bold text-xl text-[#0b162c] leading-snug mb-2 group-hover/card:text-[#ff6b00] transition-colors duration-300">
-                                                    {mod.title}
-                                                </h3>
-
-                                                <div className={`grid transition-all duration-500 ease-in-out ${isExpanded ? 'grid-rows-[1fr] opacity-100 mt-6 border-t border-gray-100 pt-6' : 'grid-rows-[0fr] opacity-0'}`}>
+                                                <div className={`grid transition-all duration-400 ease-in-out pl-2 sm:pl-0 ${isExpanded ? 'grid-rows-[1fr] opacity-100 mt-4 pt-4 border-t border-gray-100' : 'grid-rows-[0fr] opacity-0'}`}>
                                                     <div className="overflow-hidden">
-                                                        <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                                                        <p className="text-gray-500 text-base leading-relaxed mb-4">
                                                             {mod.description}
                                                         </p>
                                                         
-                                                        <div className="bg-gray-50 rounded-2xl p-5">
-                                                            <h4 className="font-bold text-[11px] text-gray-400 uppercase tracking-widest mb-4">Key Topics Covered</h4>
-                                                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                                                        <div className="bg-gray-50/80 rounded-xl p-4 border border-gray-100">
+                                                            <h4 className="font-bold text-xs text-[#0b162c] uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                                                                <svg className="w-3.5 h-3.5 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                                                </svg>
+                                                                Key Topics Covered
+                                                            </h4>
+                                                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 max-h-[200px] overflow-y-auto pr-2 custom-scrollbar">
                                                                 {mod.topics.map((topic, j) => (
-                                                                    <li key={j} className="flex items-start gap-3 text-sm text-gray-700 font-medium">
-                                                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ff6b00] shrink-0 mt-1.5 opacity-80"></div>
+                                                                    <li key={j} className="flex items-start gap-2 text-sm text-gray-700 font-medium">
+                                                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ff6b00] shrink-0 mt-[7px] opacity-80"></div>
                                                                         <span className="leading-snug">{topic}</span>
                                                                     </li>
                                                                 ))}
@@ -353,32 +362,62 @@ const CourseCurriculum = () => {
                                                     </div>
                                                 </div>
                                                 
-                                                {/* Expand/Collapse Indicator */}
-                                                {!isExpanded && (
-                                                    <div className="flex items-center gap-2 mt-4 md:mt-6">
-                                                        <span className="text-xs font-bold text-gray-400 uppercase tracking-wider group-hover/card:text-[#ff6b00] transition-colors">View details</span>
-                                                        <svg className="w-4 h-4 text-gray-300 group-hover/card:text-[#ff6b00] group-hover/card:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                                        </svg>
-                                                    </div>
-                                                )}
                                             </div>
                                         </div>
-
                                     </div>
                                 );
                             })}
                         </div>
-                        </div>
                     </div>
-
                     {/* Tools UI box */}
-                    <div className="w-full max-w-5xl mx-auto mt-4">
+                    <div className="w-full max-w-[1250px] mx-auto mt-4">
                         <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 w-full mx-auto">
                             <h3 className="font-montserrat font-medium text-xl sm:text-2xl text-[#0b162c] mb-8 text-center tracking-tight">
                                 25+ Industry-Standard Tools You'll Master
                             </h3>
                             <StaticToolsGrid />
+                        </div>
+                    </div>
+
+                    {/* CTA Boxes */}
+                    <div className="w-full max-w-[1250px] mx-auto mt-6 mb-8">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+                            
+                            {/* Corporate Training Box */}
+                            <div className="md:col-span-3 bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col sm:flex-row items-stretch justify-between overflow-hidden relative group">
+                                <div className="flex-1 z-10 p-6 sm:p-8 flex flex-col justify-center items-start">
+                                    <h4 className="font-montserrat font-bold text-2xl text-[#0b162c] mb-2">Corporate Training</h4>
+                                    <p className="text-gray-600 text-sm sm:text-base mb-6 max-w-[280px]">
+                                        Empower your workforce. Upskill your entire team with our customized enterprise cybersecurity programs.
+                                    </p>
+                                    <button className="px-6 py-2.5 rounded-lg border-2 border-[#ff6b00] text-[#ff6b00] font-semibold hover:bg-[#ff6b00] hover:text-white transition-all text-sm shadow-sm bg-white mt-auto sm:mt-0">
+                                        Contact Enterprise Sales
+                                    </button>
+                                </div>
+                                <div className="w-full sm:w-[45%] h-[200px] sm:h-auto shrink-0 relative overflow-hidden bg-gray-100">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop" 
+                                        alt="Corporate Training Team" 
+                                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent sm:block hidden"></div>
+                                    <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white to-transparent sm:hidden block"></div>
+                                </div>
+                            </div>
+
+                            {/* Advisor Box */}
+                            <div className="md:col-span-2 bg-[#f8f9fa] rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center text-center border-2 border-gray-200 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                                <h4 className="font-montserrat font-bold text-2xl text-[#0b162c] mb-3">Talk to an Advisor</h4>
+                                <div className="bg-white border border-gray-200 px-5 py-2.5 rounded-full mb-6 shadow-sm hover:border-[#ff6b00]/30 transition-colors">
+                                    <p className="text-[#0b162c] text-base sm:text-lg font-bold tracking-wide">
+                                        +91-9886035330
+                                    </p>
+                                </div>
+                                <button className="w-full max-w-[220px] px-6 py-2.5 rounded-lg border-2 border-[#ff6b00] text-[#ff6b00] font-semibold hover:bg-[#ff6b00] hover:text-white transition-all text-sm bg-white hover:shadow-md mt-auto sm:mt-0">
+                                    Schedule a Call
+                                </button>
+                            </div>
+
                         </div>
                     </div>
 

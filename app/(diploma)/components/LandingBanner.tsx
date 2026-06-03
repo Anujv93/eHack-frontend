@@ -8,65 +8,9 @@ const LandingBanner = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSyllabusModalOpen, setIsSyllabusModalOpen] = useState(false);
 
-    // Banner Form State
-    const [formData, setFormData] = useState({
-        name: '',
-        phone: '',
-        email: '',
-        status: ''
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [honeypot, setHoneypot] = useState('');
-
-    const handleBannerSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (honeypot !== '') return;
-        setIsSubmitting(true);
-        
-        try {
-            const response = await fetch('/api/zoho/inquiry', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    firstName: formData.name,
-                    lastName: '-',
-                    email: formData.email.toLowerCase(),
-                    phone: formData.phone,
-                    city: '',
-                    totalAmount: 0,
-                    inquiryName: `Website - ${formData.name} - Advanced Diploma Banner`,
-                    leadSource: 'Website Advanced Diploma Page',
-                    courses: [{
-                        name: 'Advanced Diploma in Cybersecurity',
-                        code: 'adv-diploma',
-                        category: 'Diploma',
-                        price: 0
-                    }],
-                    message: `Status: ${formData.status} | Inquiry from Banner`,
-                    agreeWhatsApp: true,
-                    pipeline: 'eHack Academy Leads',
-                    stage: 'New Inquiry',
-                    website: honeypot,
-                }),
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
-                throw new Error(errorData.details || 'Failed to submit');
-            }
-
-            alert("Thank you! Our team will contact you shortly.");
-            setFormData({ name: '', phone: '', email: '', status: '' });
-        } catch (error) {
-            console.error('Error submitting banner form:', error);
-            alert("Something went wrong. Please try again.");
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
 
     return (
-        <div className="w-full bg-white px-4 sm:px-6 lg:px-8 pt-2 pb-0 font-montserrat">
+        <div className="w-full bg-white pt-0 pb-0 font-montserrat overflow-hidden">
             <style>
                 {`
                     @keyframes marquee {
@@ -87,193 +31,131 @@ const LandingBanner = () => {
                     }
                 `}
             </style>
-            <div className="max-w-[1400px] mx-auto">
-                {/* Main Rectangular Banner Container */}
-            <div 
-                className="relative w-full rounded-3xl lg:rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col justify-between min-h-[350px]"
-                style={{
-                    backgroundImage: `url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1920')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                }}
-            >
-                {/* 
-                  Gradient overlay to ensure text readability against the background image.
-                  Blends dark blue into transparency to match the user's provided design aesthetic.
-                */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0b162c]/95 via-[#0b162c]/70 to-[#0b162c]/30 z-0"></div>
+            {/* Academy Logo Header */}
+            <div className="max-w-[1250px] mx-auto w-full flex flex-col items-center lg:items-start px-4 sm:px-6 lg:px-8 pt-2 pb-0 animate-in fade-in slide-in-from-top-4 duration-700">
+                <img 
+                    src="/images/newnew-ehack-removebg-preview.png" 
+                    alt="eHack Academy" 
+                    className="h-16 sm:h-20 lg:h-24 w-auto object-contain transition-all duration-500 hover:scale-[1.03]"
+                />
+            </div>
 
-                <div className="relative z-10 flex flex-col lg:flex-row w-full justify-between items-start lg:items-center p-6 md:p-8 lg:p-8 mb-4 lg:mb-0">
+            {/* TRULY Full Width Line Separator */}
+            <div className="w-full h-[1px] bg-gray-200"></div>
+
+            {/* Main Content Container */}
+            <div className="max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="relative w-full flex flex-col justify-between">
+                <div className="relative z-10 flex flex-col lg:flex-row w-full justify-between items-start lg:items-center py-4 md:py-5 lg:py-6 mb-0">
                     
                     {/* Left Column: $100M Offer Copy */}
-                    <div className="max-w-2xl text-white mb-4 lg:mb-0 mt-0 text-center lg:text-left flex flex-col items-center lg:items-start mx-auto lg:mx-0">
+                    <div className="max-w-2xl mb-4 lg:mb-0 mt-0 text-center lg:text-left flex flex-col items-center lg:items-start mx-auto lg:mx-0">
                         
-                        {/* Academy Logo */}
-                        <div className="-mt-2 lg:-mt-4 mb-3 animate-in fade-in slide-in-from-top-4 duration-700">
-                            <img 
-                                src="/images/white-academy.png" 
-                                alt="eHack Academy" 
-                                className="h-16 sm:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_4px_20px_rgba(255,255,255,0.15)] hover:drop-shadow-[0_4px_30px_rgba(255,255,255,0.3)] transition-all duration-500 hover:scale-[1.03]"
-                            />
-                        </div>
-
-                        {/* Top Badge */}
-                        <div className="mb-4">
-                            <p className="text-white text-xs sm:text-sm font-bold bg-[#ff6b00]/20 text-[#ff6b00] px-4 py-1.5 rounded-full inline-block border border-[#ff6b00]/30 shadow-sm tracking-wider uppercase">
-                                India’s Top-Rated Practical Cybersecurity Diploma
-                            </p>
-                        </div>
-
-                        <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl leading-[1.2] mb-6 tracking-tight text-white mt-1">
-                            <span className="text-[#ff6b00]">AI-Powered</span> Advanced <br className="hidden sm:block" />
-                            Diploma in Cybersecurity
+                        <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-[2.2rem] xl:text-[2.6rem] leading-[1.2] mb-3 tracking-tight text-[#0b162c] w-full text-center lg:text-left mt-2">
+                            <span className="text-[#ff6b00]">AI-Powered</span> Advanced <br className="hidden lg:block" /> Diploma in Cybersecurity
                         </h1>
+                        
+                        <div className="w-16 h-1 bg-[#ff6b00] rounded-full mb-4 mx-auto lg:mx-0"></div>
 
-                        <ul className="flex flex-col gap-3.5 mb-8 text-white text-base sm:text-lg font-medium text-left max-w-xl mx-auto lg:mx-0">
+                        <p className="text-gray-600 text-sm sm:text-base font-medium mb-6 w-full text-center lg:text-left">
+                            India’s Top-Rated Practical Cybersecurity Diploma
+                        </p>
+
+                        <ul className="flex flex-col gap-3.5 mb-6 text-gray-700 text-sm sm:text-base font-medium text-left max-w-xl mx-auto lg:mx-0 w-full">
                             <li className="flex items-center gap-3">
-                                <div className="bg-[#ff6b00]/20 rounded-full p-1 shrink-0">
-                                    <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0">
+                                    <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                                 </div>
-                                <span>AI-Driven Ethical Hacking Labs</span>
+                                <span>Master offensive and defensive tactics in AI-driven hacking labs</span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <div className="bg-[#ff6b00]/20 rounded-full p-1 shrink-0">
-                                    <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0">
+                                    <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                                 </div>
-                                <span>30+ Hands-On Security Tools</span>
+                                <span>Defend against live cyber threats with 30+ hands-on tools</span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <div className="bg-[#ff6b00]/20 rounded-full p-1 shrink-0">
-                                    <svg className="w-4 h-4 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0">
+                                    <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                                 </div>
-                                <span>100% Placement Assistance</span>
+                                <span>Earn globally recognized credentials to fast-track your career</span>
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0">
+                                    <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span>Land your dream cybersecurity role with comprehensive placement and interview support</span>
                             </li>
                         </ul>
 
+                        {/* Authorized Training Partners */}
+                        <div className="mb-6 w-full text-center lg:text-left flex flex-col items-center lg:items-start">
+                            <p className="text-gray-500 text-[11px] uppercase tracking-wider font-bold mb-2">Authorized Training Partners:</p>
+                            <div className="flex items-center gap-5">
+                                <img src="/images/ec-council-logo.png" alt="EC-Council" className="h-6 sm:h-8 object-contain" />
+                                <div className="w-px h-6 bg-gray-200"></div>
+                                <img src="/images/cropped-jiub-logo-Baptist.png" alt="JIUB" className="h-6 sm:h-8 object-contain" />
+                            </div>
+                        </div>
+
                         {/* CTA Buttons */}
-                        <div className="mt-0 w-full flex flex-col sm:flex-row items-center gap-4">
+                        <div className="mt-0 w-full flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                             <button 
                                 onClick={() => setIsModalOpen(true)}
-                                className="group flex justify-center items-center gap-2 sm:gap-3 bg-[#ff6b00] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-sm sm:text-base hover:bg-[#e65c00] hover:shadow-[0_8px_30px_rgba(255,107,0,0.3)] hover:-translate-y-1 transition-all active:scale-95 w-full sm:w-auto"
+                                className="group flex justify-center items-center gap-2 bg-[#ff6b00] text-white px-8 py-3.5 rounded-md font-bold text-sm hover:bg-[#e65c00] hover:-translate-y-0.5 shadow-[0_4px_14px_0_rgba(255,107,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,107,0,0.23)] transition-all w-full sm:w-auto"
                             >
                                 Book a Live 1:1 Session
-                                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
                             </button>
                             
                             <button 
                                 onClick={() => setIsSyllabusModalOpen(true)}
-                                className="group flex justify-center items-center gap-2 sm:gap-3 bg-transparent border border-white/50 text-white px-6 py-3 sm:px-8 sm:py-3.5 rounded-full font-bold text-sm sm:text-base hover:bg-white/10 hover:border-white transition-all w-full sm:w-auto backdrop-blur-sm"
+                                className="group flex justify-center items-center gap-2 bg-transparent border-2 border-gray-200 text-[#0b162c] px-8 py-3.5 rounded-md font-bold text-sm hover:bg-gray-50 hover:border-gray-300 transition-all w-full sm:w-auto backdrop-blur-sm"
                             >
-                                <svg className="w-5 h-5 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                </svg>
                                 Download Syllabus
                             </button>
                         </div>
                     </div>
 
                     {/* Right Column: Floating Elements */}
-                    <div className="relative flex flex-col items-center lg:items-end w-full lg:w-auto h-full justify-between gap-8 pt-4 lg:pt-0 mx-auto lg:mx-0">
+                    <div className="relative flex flex-col items-center lg:items-end w-full lg:w-[480px] xl:w-[560px] shrink-0 h-full justify-center pt-6 lg:pt-0 mx-auto lg:mx-0">
                         
-                        {/* Floating Stats Card & Form */}
-                        <div className="bg-white/95 backdrop-blur-xl border border-white/60 rounded-[1.5rem] p-6 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] w-full max-w-[340px] lg:-translate-y-4 transition-transform hover:-translate-y-5 duration-300">
-                            
-                            {/* Single Line Header */}
-                            <div className="flex items-center gap-3 mb-4">
-                                <h3 className="font-montserrat font-black text-4xl text-[#0b162c] tracking-tight leading-none">95<span className="text-2xl text-[#ff6b00]">%</span></h3>
-                                <p className="text-gray-600 text-[11px] font-medium leading-snug">
-                                    First-attempt pass rate for MNC examination.
-                                </p>
+                        {/* ================= YOUTUBE VIDEO ================= */}
+                        <div className="w-full">
+                            <div className="group relative z-30 mb-4">
+                                {/* Glow behind video */}
+                                <div className="absolute -inset-1 bg-gradient-to-r from-[#ff6b00]/20 to-orange-500/20 rounded-xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+
+                                {/* Video Container */}
+                                <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.4)] border border-white/20">
+                                    <iframe
+                                        className="absolute inset-0 w-full h-full"
+                                        src="https://www.youtube.com/embed/UrH9MuspUjQ?rel=0"
+                                        title="eHack Academy"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    />
+                                </div>
                             </div>
-                            
-                            {/* Gradient Divider */}
-                            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-5"></div>
-                            
-                            {/* Embedded Lead Capture Form */}
-                            <form className="flex flex-col gap-3 mb-5" onSubmit={handleBannerSubmit}>
-                                {/* Honeypot */}
-                                <div className="hidden" aria-hidden="true">
-                                    <input type="text" tabIndex={-1} value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+
+                            {/* Stats Pill below video */}
+                            <div className="w-full bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.1)] px-4 md:px-6 py-4 md:py-5 flex items-center justify-between text-[#0b162c] text-sm sm:text-base font-bold relative z-30 mt-4">
+                                <div className="flex items-center gap-2 sm:gap-3">
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                    <span>45+ Batches</span>
                                 </div>
-                                
-                                <input type="text" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} placeholder="Full Name" className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#ff6b00] transition-all text-xs font-medium" />
-                                <input type="tel" required pattern="^\+?[0-9\s\-]{10,15}$" title="Please enter a valid phone number (10-15 digits)" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} placeholder="Contact Number" className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#ff6b00] transition-all text-xs font-medium" />
-                                <input type="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Please enter a valid email address" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} placeholder="Email Address" className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#ff6b00] transition-all text-xs font-medium" />
-                                <select required value={formData.status} onChange={e => setFormData({...formData, status: e.target.value})} className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#ff6b00] transition-all text-xs font-medium outline-none cursor-pointer">
-                                    <option value="" disabled>Current Status...</option>
-                                    <option value="student">College Student</option>
-                                    <option value="professional">Working Professional</option>
-                                    <option value="job_seeker">Job Seeker</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <button type="submit" disabled={isSubmitting} className="w-full bg-[#ff6b00] text-white py-3 rounded-lg font-bold text-sm hover:bg-[#e65c00] transition-all shadow-md mt-1 flex justify-center items-center">
-                                    {isSubmitting ? (
-                                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                        </svg>
-                                    ) : (
-                                        "Apply Now"
-                                    )}
-                                </button>
-                                <p className="text-gray-500 text-[11px] flex items-center justify-center gap-1.5 mt-1">
-                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                    </svg>
-                                    Your information is secure.
-                                </p>
-                            </form>
-
-
-
-                        </div>
-
-
-
-                    </div>
-                </div>
-
-                {/* Full Width Social Proof Ribbon at Bottom */}
-                <div className="relative z-10 w-full bg-white/95 backdrop-blur-md border-t border-gray-100 py-3 px-6 md:px-8 flex items-center justify-between gap-6">
-                    
-                    {/* Placed Alumni (Left) */}
-                    <div className="flex items-center gap-4 shrink-0 border-r border-gray-200 pr-6 hidden sm:flex">
-                        <div className="flex -space-x-3">
-                            <img className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm" src="/testimonials/person1.jpg" alt="Alumni 1" />
-                            <img className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm" src="/testimonials/person2.jpg" alt="Alumni 2" />
-                            <img className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm" src="/testimonials/person3.jpg" alt="Alumni 3" />
-                            <img className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm" src="/images/testimonials/person4.jpg" alt="Alumni 4" />
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="text-sm font-black text-[#0b162c] leading-tight">2000+</span>
-                            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">Placed Alumni</span>
-                        </div>
-                    </div>
-
-                    {/* Hiring Partners Marquee (Right) */}
-                    <div className="flex-1 overflow-hidden mask-fade-edges">
-                        <div className="flex animate-marquee whitespace-nowrap items-center">
-                            {[...Array(6)].map((_, i) => (
-                                <div key={i} className="flex items-center gap-16 mx-8">
-                                    {[
-                                        { name: 'Google', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg' },
-                                        { name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg' },
-                                        { name: 'Amazon', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' },
-                                        { name: 'IBM', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg' },
-                                        { name: 'Cisco', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg' },
-                                    ].map((company, index) => (
-                                        <img
-                                            key={`${i}-${index}`}
-                                            src={company.logo}
-                                            alt={company.name}
-                                            className="h-5 sm:h-6 w-auto object-contain"
-                                        />
-                                    ))}
+                                <div className="w-px h-8 bg-gray-200"></div>
+                                <div className="flex items-center gap-2 sm:gap-3">
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff6b00]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <span>4.7 Ratings</span>
                                 </div>
-                            ))}
+                                <div className="w-px h-8 bg-gray-200"></div>
+                                <div className="flex items-center gap-2 sm:gap-3">
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                                    <span>3.5K Learners</span>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 

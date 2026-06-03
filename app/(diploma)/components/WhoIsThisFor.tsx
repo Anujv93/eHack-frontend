@@ -8,31 +8,52 @@ const WhoIsThisFor = () => {
 
     return (
         <section className="w-full bg-white pt-8 pb-12 lg:pt-12 lg:pb-16 font-montserrat">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-8">
                 
-                {/* Scroll Action / Pill */}
-                <div className="flex justify-center mb-12 lg:mb-16">
-                    <button 
-                        onClick={() => {
-                            const section = document.getElementById('why-join-grid');
-                            if (section) {
-                                const y = section.getBoundingClientRect().top + window.scrollY - 100;
-                                window.scrollTo({ top: y, behavior: 'smooth' });
-                            }
-                        }}
-                        className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-orange-50 border border-orange-100 shadow-sm hover:shadow-md hover:border-orange-200 transition-all cursor-pointer group"
-                    >
-                        <span className="relative flex h-2.5 w-2.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6b00] opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#ff6b00]"></span>
-                        </span>
-                        <span className="text-[#ff6b00] font-bold text-xs sm:text-sm uppercase tracking-widest">
-                            Why Join This Program?
-                        </span>
-                        <svg className="w-4 h-4 text-[#ff6b00] animate-bounce group-hover:text-[#e65c00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                        </svg>
-                    </button>
+                {/* Stats Section replacing the scroll pill */}
+                <div className="flex justify-center mb-12 lg:mb-16 relative z-20 -mt-2 sm:-mt-4 lg:-mt-6">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center gap-8 sm:gap-0 w-full bg-white rounded-3xl p-6 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100">
+                        
+                        {/* Stat 1: Admission */}
+                        <div className="flex items-center gap-4 sm:px-8 lg:px-16">
+                            <div className="flex items-center justify-center shrink-0">
+                                <svg className="w-8 h-8 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500 font-semibold mb-0.5">Flexible Enrollment</p>
+                                <p className="text-lg font-bold text-[#0b162c]">Start Anytime</p>
+                            </div>
+                        </div>
+
+                        {/* Stat 2: Duration */}
+                        <div className="flex items-center gap-4 sm:px-8 lg:px-16 sm:border-l sm:border-gray-200">
+                            <div className="flex items-center justify-center shrink-0">
+                                <svg className="w-8 h-8 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500 font-semibold mb-0.5">Program Duration</p>
+                                <p className="text-lg font-bold text-[#0b162c]">7 months</p>
+                            </div>
+                        </div>
+
+                        {/* Stat 3: Format */}
+                        <div className="flex items-center gap-4 sm:px-8 lg:px-16 sm:border-l sm:border-gray-200">
+                            <div className="flex items-center justify-center shrink-0">
+                                <svg className="w-8 h-8 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500 font-semibold mb-0.5">Learning Format</p>
+                                <p className="text-lg font-bold text-[#0b162c]">Live- Online, offline</p>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
                 {/* Headline Section */}
@@ -50,93 +71,180 @@ const WhoIsThisFor = () => {
                     </div>
                 </div>
 
-                {/* Features Grid - 2x2 Clean Layout */}
-                <div id="why-join-grid" className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Features List & Lead Form Split Layout */}
+                <div id="why-join-grid" className="flex flex-col lg:flex-row gap-12 lg:gap-16">
                     
-                    {/* Feature 1: Cyber Meets AI */}
-                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.06)] border border-[#ff6b00]/40 hover:border-[#ff6b00] hover:shadow-[0_20px_50px_-10px_rgba(255,107,0,0.15)] transition-all duration-300 group flex flex-col">
-                        <div className="h-64 w-full overflow-hidden relative">
-                            <img 
-                                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1470&auto=format&fit=crop" 
-                                alt="Cyber Meets AI" 
-                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div className="absolute bottom-6 left-6 text-white">
-                                <div className="bg-[#ff6b00] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider w-max mb-2">Advanced Training</div>
-                                <h3 className="font-montserrat font-black text-2xl lg:text-3xl">Cyber Meets AI</h3>
+                    {/* Left Column: Features List */}
+                    <div className="flex-1 flex flex-col gap-8 lg:gap-10 border border-gray-100 bg-white rounded-3xl p-6 sm:p-8 shadow-[0_2px_15px_rgba(0,0,0,0.03)]">
+                        {/* Feature 1 */}
+                        <div className="flex items-start gap-5 sm:gap-6">
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm">
+                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-16.5v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 className="font-montserrat font-bold text-xl text-[#0b162c] mb-2">Cyber Meets AI</h3>
+                                <ul className="flex flex-col gap-2.5 mt-3">
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Intensive training integrating <strong>GenAI</strong> with offensive & defensive security.</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Master AI-powered threat intelligence and advanced defense strategies.</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Live expert-led masterclasses available in both online & offline formats.</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <div className="p-8 flex-1 flex flex-col">
-                            <p className="text-gray-600 text-base leading-relaxed">
-                                Intensive training in GenAI and offensive & defensive security. Attend live online and offline masterclasses from top cybersecurity experts on AI-powered threat intelligence and advanced defense strategies.
-                            </p>
+
+                        {/* Feature 2 */}
+                        <div className="flex items-start gap-5 sm:gap-6">
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm">
+                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 className="font-montserrat font-bold text-xl text-[#0b162c] mb-2">eHack Certification</h3>
+                                <ul className="flex flex-col gap-2.5 mt-3">
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Master Network Defense, Penetration Testing, and the <strong>OWASP Top 10</strong>.</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Industry-aligned curriculum meeting the highest global security standards.</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">High-impact, practical learning designed for immediate real-world application.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* Feature 3 */}
+                        <div className="flex items-start gap-5 sm:gap-6">
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm">
+                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.896 1.989-2 1.989H5.75c-1.104 0-2-.895-2-1.989v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 className="font-montserrat font-bold text-xl text-[#0b162c] mb-2">Earn While You Learn</h3>
+                                <ul className="flex flex-col gap-2.5 mt-3">
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Guaranteed <strong>3-month internship</strong> working on real-time industry projects.</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Specialize in 2 advanced focus areas of your choice to build expertise.</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Hands-on experience in SOC Operations, Cloud Security, or Forensics.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* Feature 4 */}
+                        <div className="flex items-start gap-5 sm:gap-6">
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm">
+                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 className="font-montserrat font-bold text-xl text-[#0b162c] mb-2">The eHack Advantage</h3>
+                                <ul className="flex flex-col gap-2.5 mt-3">
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Backed by a <strong>10+ year legacy</strong> of proven cybersecurity excellence.</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Recognized officially as an EC-Council partner training center.</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Joined by <strong>50,000+ alumni</strong> successfully securing high-paying dream roles.</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Feature 2: Industry-Aligned Curriculum */}
-                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.06)] border border-[#ff6b00]/40 hover:border-[#ff6b00] hover:shadow-[0_20px_50px_-10px_rgba(255,107,0,0.15)] transition-all duration-300 group flex flex-col">
-                        <div className="h-64 w-full overflow-hidden relative">
-                            <img 
-                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1470&auto=format&fit=crop" 
-                                alt="eHack Certification" 
-                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div className="absolute bottom-6 left-6 text-white">
-                                <div className="bg-[#ff6b00] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider w-max mb-2">High Value Curriculum</div>
-                                <h3 className="font-montserrat font-black text-2xl lg:text-3xl">eHack Certification</h3>
-                            </div>
-                        </div>
-                        <div className="p-8 flex-1 flex flex-col">
-                            <p className="text-gray-600 text-base leading-relaxed">
-                                Master Network Defense, Ethical Hacking, Penetration Testing, and OWASP Top 10. Our curriculum is similar to leading global standards, giving you the real, high-impact value at a lower price.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Feature 3: Guaranteed Internship */}
-                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.06)] border border-[#ff6b00]/40 hover:border-[#ff6b00] hover:shadow-[0_20px_50px_-10px_rgba(255,107,0,0.15)] transition-all duration-300 group flex flex-col">
-                        <div className="h-64 w-full overflow-hidden relative">
-                            <img 
-                                src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1470&auto=format&fit=crop" 
-                                alt="Internship Guarantee" 
-                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div className="absolute bottom-6 left-6 text-white">
-                                <div className="bg-[#ff6b00] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider w-max mb-2">Guaranteed Internship</div>
-                                <h3 className="font-montserrat font-black text-2xl lg:text-3xl">Earn While You Learn</h3>
-                            </div>
-                        </div>
-                        <div className="p-8 flex-1 flex flex-col">
-                            <p className="text-gray-600 text-base leading-relaxed">
-                                Accelerate your career with a guaranteed 3-month internship on real-time industry projects. Select two advanced focus areas ranging from Network Security & SOC Operations, Application Testing, Digital Forensics to Cloud Infrastructure Security.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Feature 4: The eHack Advantage */}
-                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.06)] border border-[#ff6b00]/40 hover:border-[#ff6b00] hover:shadow-[0_20px_50px_-10px_rgba(255,107,0,0.15)] transition-all duration-300 group flex flex-col">
-                        <div className="h-64 w-full overflow-hidden relative">
-                            <img 
-                                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop" 
-                                alt="The eHack Advantage" 
-                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div className="absolute bottom-6 left-6 text-white">
-                                <div className="bg-[#ff6b00] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider w-max mb-2">EC-Council Partner</div>
-                                <h3 className="font-montserrat font-black text-2xl lg:text-3xl">The eHack Advantage</h3>
-                            </div>
-                        </div>
-                        <div className="p-8 flex-1 flex flex-col">
-                            <p className="text-gray-600 text-base leading-relaxed">
-                                Leverage our 10+ year legacy of excellence. As an official EC-Council partner training center, we've empowered over 50,000 ambitious students and professionals to achieve high-paying dream roles in cybersecurity.
-                            </p>
+                    {/* Right Column: Lead Capture Form */}
+                    <div className="w-full lg:w-[450px] shrink-0">
+                        <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.12)] border border-gray-100 lg:sticky lg:top-32">
+                            <h3 className="font-montserrat font-black text-2xl text-[#0b162c] mb-2">Secure Your Future</h3>
+                            <p className="text-gray-500 text-sm mb-6">Drop your details below and our career advisors will guide you to the right path.</p>
+                            
+                            <form className="flex flex-col gap-4">
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Full Name *</label>
+                                    <input type="text" placeholder="John Doe" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm" required />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email Address *</label>
+                                    <input type="email" placeholder="john@example.com" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm" required />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number *</label>
+                                    <input type="tel" placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm" required />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Current State *</label>
+                                    <select className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm text-gray-700 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px_auto] bg-no-repeat bg-[position:right_16px_center]" required defaultValue="">
+                                        <option value="" disabled>Select your current stage...</option>
+                                        <option value="high_school">High School Student (Looking for right career)</option>
+                                        <option value="college">College Student (Building skills for placements)</option>
+                                        <option value="working_it">IT Professional (Upskilling / Salary hike)</option>
+                                        <option value="working_non_it">Non-IT Professional (Transition to Cyber)</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <button type="submit" className="w-full mt-2 bg-[#ff6b00] hover:bg-[#e65c00] text-white font-bold py-3.5 px-6 rounded-xl transition-all flex justify-center items-center gap-2 group shadow-[0_4px_15px_rgba(255,107,0,0.3)]">
+                                    Request Free Consultation
+                                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </button>
+                                <p className="text-xs text-center text-gray-400 mt-2">Your information is 100% secure with us.</p>
+                            </form>
                         </div>
                     </div>
-
                 </div>
 
             </div>

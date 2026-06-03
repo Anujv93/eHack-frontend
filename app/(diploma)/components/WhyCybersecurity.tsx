@@ -4,7 +4,7 @@ import React from 'react';
 const WhyCybersecurity = () => {
     return (
         <section className="w-full bg-white py-12 relative overflow-hidden font-montserrat">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 {/* Main Headline for both contents */}
                 <div className="text-center mb-16 sm:mb-20 md:mb-24 relative px-4 sm:px-0">
