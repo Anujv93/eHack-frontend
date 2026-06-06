@@ -1,6 +1,7 @@
 import React from 'react';
 import LandingBanner from '../components/LandingBanner';
 import WhoIsThisFor from '../components/WhoIsThisFor';
+import CybersecurityPrograms from '../components/CybersecurityPrograms';
 import WhyCybersecurity from '../components/WhyCybersecurity';
 import CourseCurriculum from '../components/CourseCurriculum';
 import Testimonials from '../components/Testimonials';
@@ -30,6 +31,7 @@ export default function AdvancedDiplomaLandingPage() {
                 <WhoIsThisFor />
             </section>
 
+
             <section id="curriculum">
                 <CourseCurriculum />
             </section>
@@ -48,6 +50,10 @@ export default function AdvancedDiplomaLandingPage() {
 
             <section id="essential-skills">
                 <EssentialSkills />
+            </section>
+
+            <section id="programs">
+                <CybersecurityPrograms />
             </section>
 
             <section id="why">

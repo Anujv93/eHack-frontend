@@ -4,11 +4,17 @@ import Link from 'next/link';
 import './whatsapp.css';
 import { trackWhatsAppClicked } from '@/lib/posthog-events';
 
-export default function WhatsAppButton() {
+interface WhatsAppButtonProps {
+    message?: string;
+}
+
+export default function WhatsAppButton({ message }: WhatsAppButtonProps) {
+    const textParam = message ? `&text=${encodeURIComponent(message)}` : '&text';
+
     return (
         <div className="whatsapp-floating-container">
             <Link
-                href="https://api.whatsapp.com/send/?phone=919886035330&text&type=phone_number&app_absent=0"
+                href={`https://api.whatsapp.com/send/?phone=919886035330${textParam}&type=phone_number&app_absent=0`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClicked()}

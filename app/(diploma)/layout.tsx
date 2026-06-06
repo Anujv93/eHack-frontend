@@ -46,7 +46,7 @@ export default function DiplomaRootLayout({
                     `}
                 </Script>
                 {children}
-                <WhatsAppButton />
+                <WhatsAppButton message="Hi EHACK Academy, I'd like to inquire about the Advanced Diploma in Cybersecurity program. Can you help me with the admission process and counselor details?" />
                 <Footer />
             </body>
         </html>

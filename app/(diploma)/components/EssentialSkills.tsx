@@ -3,24 +3,23 @@ import React from 'react';
 const skills = [
     "OS and Network Security",
     "Cryptography and PKI",
-    "Application Security",
-    "Artificial Intelligence",
-    "Machine Learning",
-    "SOC Operations",
-    "Enterprise Security",
     "Ethical Hacking",
-    "Generative AI",
-    "Incident Response and Forensics",
-    "Malware and Ransomware Analysis",
-    "AI in SIEM SOAR and Detection",
-    "AI Augmented Recon and Exploits",
     "Penetration Testing",
-    "Prompt Engineering",
+    "Red Teaming and Exploitation",
+    "Web & Mobile App Pentesting",
+    "Social Engineering and OSINT",
+    "Vulnerability Assessment",
+    "SOC Operations",
+    "Incident Response and Forensics",
+    "Blue Teaming and Threat Hunting",
+    "Malware and Ransomware Analysis",
+    "SIEM and Threat Detection",
+    "Endpoint Security and EDR",
+    "Cloud Security and CSPM",
+    "Cyber Threat Intelligence",
     "Secure Coding and Application Security",
     "Security Architecture",
-    "Adversarial AI and Attack Simulation",
-    "SIEM and Threat Detection",
-    "Vulnerability Assessment"
+    "Enterprise Security"
 ];
 
 const EssentialSkills = () => {

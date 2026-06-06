@@ -30,7 +30,7 @@ const ProgramAdvisor = () => {
                     <div className="w-full md:w-[35%] bg-gray-50 flex flex-col items-center justify-center p-8 border-b md:border-b-0 md:border-r border-gray-100 relative overflow-hidden">
                         <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] relative z-10 mb-4 ring-2 ring-gray-100 group-hover:ring-[#ff6b00] transition-colors duration-500">
                             <img 
-                                src="/images/about-us/manager.jpeg" 
+                                src="https://media.licdn.com/dms/image/v2/D5603AQGej8OwHHuMTA/profile-displayphoto-scale_400_400/B56ZkynTF5HcAg-/0/1757490788077?e=1782345600&v=beta&t=bxNpnL_YfJw5U-P9KaJt1T7S17RtR26qz_efJBXhm6o" 
                                 alt="Sanjeev Gupta" 
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                             />
@@ -38,9 +38,20 @@ const ProgramAdvisor = () => {
                         <h3 className="font-montserrat font-bold text-xl text-[#0b162c] text-center mb-1">
                             Sanjeev Gupta
                         </h3>
-                        <p className="text-[#ff6b00] font-semibold text-sm text-center">
+                        <p className="text-[#ff6b00] font-semibold text-sm text-center mb-4">
                             Founder and CEO - eHack Academy
                         </p>
+                        <a 
+                            href="https://www.linkedin.com/in/sanjeev-gupta-59865214/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 bg-[#0077b5] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#005582] transition-colors shadow-sm"
+                        >
+                            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            Connect on LinkedIn
+                        </a>
                     </div>
 
                     {/* Right Side - Content */}

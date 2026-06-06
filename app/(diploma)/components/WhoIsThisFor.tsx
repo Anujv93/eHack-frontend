@@ -1,10 +1,124 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import CounselingModal from './CounselingModal';
 
 const WhoIsThisFor = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Form State & Logic
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        state: ''
+    });
+    const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string; state?: string }>({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [honeypot, setHoneypot] = useState('');
+    const formOpenedAt = useRef<number>(0);
+
+    useEffect(() => {
+        formOpenedAt.current = Date.now();
+    }, []);
+
+    const validateName = (name: string): string | undefined => {
+        const trimmed = name.trim();
+        if (!trimmed) return 'Full name is required';
+        if (trimmed.length < 2) return 'Name must be at least 2 characters';
+        if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) return 'Name can only contain letters, spaces, dots, and hyphens';
+        return undefined;
+    };
+
+    const validatePhone = (phone: string): string | undefined => {
+        const digits = phone.replace(/\D/g, '');
+        const cleaned = digits.replace(/^91/, '');
+        if (!cleaned) return 'Phone number is required';
+        if (cleaned.length !== 10) return 'Enter a valid 10-digit mobile number';
+        if (!/^[6-9]/.test(cleaned)) return 'Indian mobile numbers start with 6, 7, 8, or 9';
+        return undefined;
+    };
+
+    const validateEmail = (email: string): string | undefined => {
+        const trimmed = email.trim().toLowerCase();
+        if (!trimmed) return 'Email address is required';
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(trimmed)) return 'Enter a valid email address';
+        const blockedDomains = ['test.com', 'example.com', 'temp.com', 'fake.com', 'mailinator.com', 'guerrillamail.com', 'throwaway.email', 'yopmail.com'];
+        const domain = trimmed.split('@')[1];
+        if (blockedDomains.includes(domain)) return 'Please use a real email address';
+        return undefined;
+    };
+
+    const validateAll = (): boolean => {
+        const newErrors: typeof errors = {};
+        newErrors.name = validateName(formData.name);
+        newErrors.phone = validatePhone(formData.phone);
+        newErrors.email = validateEmail(formData.email);
+        if (!formData.state) newErrors.state = 'Please select your current stage';
+        setErrors(newErrors);
+        return !Object.values(newErrors).some(Boolean);
+    };
+
+    const handlePhoneChange = (value: string) => {
+        const cleaned = value.replace(/[^0-9+\-\s]/g, '');
+        setFormData({ ...formData, phone: cleaned });
+        if (errors.phone) setErrors({ ...errors, phone: validatePhone(cleaned) });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (honeypot !== '') return;
+        if (Date.now() - formOpenedAt.current < 3000) return;
+        if (!validateAll()) return;
+
+        setIsSubmitting(true);
+
+        const phoneDigits = formData.phone.replace(/\D/g, '').replace(/^91/, '');
+
+        try {
+            const response = await fetch('/api/zoho/inquiry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: formData.name.trim(),
+                    lastName: '-',
+                    email: formData.email.trim().toLowerCase(),
+                    phone: phoneDigits,
+                    city: '',
+                    totalAmount: 0,
+                    inquiryName: `Diploma Landing Page - WhoIsThisFor Consultation`,
+                    leadSource: 'Website Consultation Request',
+                    courses: [{
+                        name: 'Advanced Diploma in Cybersecurity',
+                        code: 'adv-diploma',
+                        category: 'Diploma',
+                        price: 0
+                    }],
+                    message: `Stage: ${formData.state} | Consultation Request`,
+                    agreeWhatsApp: true,
+                    pipeline: 'eHack Academy Leads',
+                    stage: 'New Inquiry',
+                    website: honeypot,
+                }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.details || 'Failed to submit');
+            }
+
+            setFormData({ name: '', phone: '', email: '', state: '' });
+            setErrors({});
+            alert("Thanks for your request! Our career advisor will contact you shortly.");
+        } catch (error) {
+            console.error('Error submitting consultation form:', error);
+            alert("Something went wrong. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <section className="w-full bg-white pt-8 pb-12 lg:pt-12 lg:pb-16 font-montserrat">
@@ -90,7 +204,7 @@ const WhoIsThisFor = () => {
                                         <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Intensive training integrating <strong>GenAI</strong> with offensive & defensive security.</span>
+                                        <span className="text-gray-600 text-sm sm:text-base leading-relaxed">Intensive, hands-on training in both offensive & defensive security.</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -211,22 +325,64 @@ const WhoIsThisFor = () => {
                             <h3 className="font-montserrat font-black text-2xl text-[#0b162c] mb-2">Secure Your Future</h3>
                             <p className="text-gray-500 text-sm mb-6">Drop your details below and our career advisors will guide you to the right path.</p>
                             
-                            <form className="flex flex-col gap-4">
+                            <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
+                                <div className="hidden" aria-hidden="true">
+                                    <input type="text" tabIndex={-1} value={honeypot} onChange={(e) => setHoneypot(e.target.value)} autoComplete="off" />
+                                </div>
+                                
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-1.5">Full Name *</label>
-                                    <input type="text" placeholder="John Doe" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm" required />
+                                    <input 
+                                        type="text" 
+                                        value={formData.name}
+                                        onChange={(e) => {
+                                            setFormData({...formData, name: e.target.value});
+                                            if (errors.name) setErrors({...errors, name: validateName(e.target.value)});
+                                        }}
+                                        onBlur={() => setErrors({...errors, name: validateName(formData.name)})}
+                                        className={`w-full px-4 py-3 rounded-xl border ${errors.name ? 'border-red-400 ring-1 ring-red-400' : 'border-gray-200'} bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm`} 
+                                        placeholder="John Doe" 
+                                    />
+                                    {errors.name && <p className="text-red-500 text-xs mt-1 font-medium">{errors.name}</p>}
                                 </div>
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email Address *</label>
-                                    <input type="email" placeholder="john@example.com" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm" required />
+                                    <input 
+                                        type="email" 
+                                        value={formData.email}
+                                        onChange={(e) => {
+                                            setFormData({...formData, email: e.target.value});
+                                            if (errors.email) setErrors({...errors, email: validateEmail(e.target.value)});
+                                        }}
+                                        onBlur={() => setErrors({...errors, email: validateEmail(formData.email)})}
+                                        className={`w-full px-4 py-3 rounded-xl border ${errors.email ? 'border-red-400 ring-1 ring-red-400' : 'border-gray-200'} bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm`} 
+                                        placeholder="john@example.com" 
+                                    />
+                                    {errors.email && <p className="text-red-500 text-xs mt-1 font-medium">{errors.email}</p>}
                                 </div>
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number *</label>
-                                    <input type="tel" placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm" required />
+                                    <input 
+                                        type="tel" 
+                                        value={formData.phone}
+                                        onChange={(e) => handlePhoneChange(e.target.value)}
+                                        onBlur={() => setErrors({...errors, phone: validatePhone(formData.phone)})}
+                                        className={`w-full px-4 py-3 rounded-xl border ${errors.phone ? 'border-red-400 ring-1 ring-red-400' : 'border-gray-200'} bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm`} 
+                                        placeholder="+91 98765 43210" 
+                                        maxLength={15}
+                                    />
+                                    {errors.phone && <p className="text-red-500 text-xs mt-1 font-medium">{errors.phone}</p>}
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Current State *</label>
-                                    <select className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm text-gray-700 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px_auto] bg-no-repeat bg-[position:right_16px_center]" required defaultValue="">
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Current Stage *</label>
+                                    <select 
+                                        value={formData.state}
+                                        onChange={(e) => {
+                                            setFormData({...formData, state: e.target.value});
+                                            if (errors.state) setErrors({...errors, state: undefined});
+                                        }}
+                                        className={`w-full px-4 py-3 rounded-xl border ${errors.state ? 'border-red-400 ring-1 ring-red-400' : 'border-gray-200'} bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b00]/20 focus:border-[#ff6b00] transition-all text-sm text-gray-700 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px_auto] bg-no-repeat bg-[position:right_16px_center]`}
+                                    >
                                         <option value="" disabled>Select your current stage...</option>
                                         <option value="high_school">High School Student (Looking for right career)</option>
                                         <option value="college">College Student (Building skills for placements)</option>
@@ -234,12 +390,22 @@ const WhoIsThisFor = () => {
                                         <option value="working_non_it">Non-IT Professional (Transition to Cyber)</option>
                                         <option value="other">Other</option>
                                     </select>
+                                    {errors.state && <p className="text-red-500 text-xs mt-1 font-medium">{errors.state}</p>}
                                 </div>
-                                <button type="submit" className="w-full mt-2 bg-[#ff6b00] hover:bg-[#e65c00] text-white font-bold py-3.5 px-6 rounded-xl transition-all flex justify-center items-center gap-2 group shadow-[0_4px_15px_rgba(255,107,0,0.3)]">
-                                    Request Free Consultation
-                                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
+                                <button type="submit" disabled={isSubmitting} className="w-full mt-2 bg-[#ff6b00] hover:bg-[#e65c00] text-white font-bold py-3.5 px-6 rounded-xl transition-all flex justify-center items-center gap-2 group shadow-[0_4px_15px_rgba(255,107,0,0.3)]">
+                                    {isSubmitting ? (
+                                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                    ) : (
+                                        <>
+                                            Request Free Consultation
+                                            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                            </svg>
+                                        </>
+                                    )}
                                 </button>
                                 <p className="text-xs text-center text-gray-400 mt-2">Your information is 100% secure with us.</p>
                             </form>
