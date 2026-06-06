@@ -33,7 +33,7 @@ const EligibilityCriteria = () => {
                                     <h3 className="font-montserrat font-bold text-lg sm:text-xl text-[#0b162c]">Who Is This Program For?</h3>
                                 </div>
                                 <div className="flex flex-wrap gap-2">
-                                    {['Eligible student for this program', 'Cybersecurity Analysts', 'Ethical Hackers', 'IT Professionals'].map((badge, idx) => (
+                                    {['Fresh Graduates', 'Cybersecurity Analysts', 'Ethical Hackers', 'IT Professionals'].map((badge, idx) => (
                                         <span key={idx} className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-50 border border-gray-200 text-gray-700 font-medium text-xs sm:text-sm">
                                             {badge}
                                         </span>
@@ -52,31 +52,28 @@ const EligibilityCriteria = () => {
                                     <h3 className="font-montserrat font-bold text-lg sm:text-xl text-[#0b162c]">Required Qualifications</h3>
                                 </div>
                                 <ul className="flex flex-col gap-3">
-                                    <li className="flex items-start gap-2.5">
-                                        <div className="mt-1 shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                                            <svg className="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <span className="text-gray-700 text-sm sm:text-base leading-snug font-medium">Bachelor's degree with an average score of at least 50%</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <div className="mt-1 shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                                            <svg className="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <span className="text-gray-700 text-sm sm:text-base leading-snug font-medium">Basic understanding of programming concepts</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <div className="mt-1 shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                                            <svg className="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <span className="text-gray-700 text-sm sm:text-base leading-snug font-medium">2 years of work experience is preferred</span>
-                                    </li>
+                                    {[
+                                        "Minimum age: 18 years",
+                                        "Basic understanding of English language",
+                                        "Basic knowledge of computers and internet usage",
+                                        "Candidates who have completed 10th Standard (SSLC) or above are eligible to apply",
+                                        "Students, graduates, working professionals, and career changers with an interest in Cyber Security are welcome"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-2.5">
+                                            <div className="mt-1 shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                                                <svg className="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </div>
+                                            <span className="text-gray-700 text-sm sm:text-base leading-snug font-medium">{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
+                                <div className="mt-5 p-4 bg-orange-50/80 rounded-xl border border-orange-100/50">
+                                    <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                                        <strong className="text-[#0b162c]">Note:</strong> No prior Cyber Security or programming experience is required. The program is designed to train candidates from the fundamentals to advanced-level Cyber Security skills.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>

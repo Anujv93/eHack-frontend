@@ -191,9 +191,9 @@ const WhoIsThisFor = () => {
                     {/* Left Column: Features List */}
                     <div className="flex-1 flex flex-col gap-8 lg:gap-10 border border-gray-100 bg-white rounded-3xl p-6 sm:p-8 shadow-[0_2px_15px_rgba(0,0,0,0.03)]">
                         {/* Feature 1 */}
-                        <div className="flex items-start gap-5 sm:gap-6">
-                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm">
-                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                            <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm mt-0.5 sm:mt-0">
+                                <svg className="w-6 h-6 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-16.5v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
                                 </svg>
                             </div>
@@ -223,9 +223,9 @@ const WhoIsThisFor = () => {
                         </div>
 
                         {/* Feature 2 */}
-                        <div className="flex items-start gap-5 sm:gap-6">
-                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm">
-                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                            <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm mt-0.5 sm:mt-0">
+                                <svg className="w-6 h-6 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
                                 </svg>
                             </div>
@@ -255,9 +255,9 @@ const WhoIsThisFor = () => {
                         </div>
 
                         {/* Feature 3 */}
-                        <div className="flex items-start gap-5 sm:gap-6">
-                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm">
-                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                            <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm mt-0.5 sm:mt-0">
+                                <svg className="w-6 h-6 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.896 1.989-2 1.989H5.75c-1.104 0-2-.895-2-1.989v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
                                 </svg>
                             </div>
@@ -287,9 +287,9 @@ const WhoIsThisFor = () => {
                         </div>
 
                         {/* Feature 4 */}
-                        <div className="flex items-start gap-5 sm:gap-6">
-                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm">
-                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                            <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-orange-50 flex items-center justify-center shrink-0 border border-orange-100 shadow-sm mt-0.5 sm:mt-0">
+                                <svg className="w-6 h-6 sm:w-10 sm:h-10 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                                 </svg>
                             </div>

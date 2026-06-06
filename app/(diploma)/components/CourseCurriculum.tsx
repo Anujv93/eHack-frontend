@@ -390,9 +390,12 @@ const CourseCurriculum = () => {
                                     <p className="text-gray-600 text-sm sm:text-base mb-6 max-w-[280px]">
                                         Empower your workforce. Upskill your entire team with our customized enterprise cybersecurity programs.
                                     </p>
-                                    <button className="w-full sm:w-auto px-6 py-2.5 rounded-lg border-2 border-[#ff6b00] text-[#ff6b00] font-semibold hover:bg-[#ff6b00] hover:text-white transition-all text-sm shadow-sm bg-white mt-auto sm:mt-0 text-center">
+                                    <a 
+                                        href="tel:+919886035330" 
+                                        className="w-full sm:w-auto px-6 py-2.5 rounded-lg border-2 border-[#ff6b00] text-[#ff6b00] font-semibold hover:bg-[#ff6b00] hover:text-white transition-all text-sm shadow-sm bg-white mt-auto sm:mt-0 text-center block sm:inline-block"
+                                    >
                                         Contact Enterprise Sales
-                                    </button>
+                                    </a>
                                 </div>
                                 <div className="w-full sm:w-[45%] h-[200px] sm:h-auto shrink-0 relative overflow-hidden bg-gray-100">
                                     <img 
@@ -408,14 +411,20 @@ const CourseCurriculum = () => {
                             {/* Advisor Box */}
                             <div className="md:col-span-2 bg-[#f8f9fa] rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center text-center border-2 border-gray-200 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
                                 <h4 className="font-montserrat font-bold text-2xl text-[#0b162c] mb-3">Talk to an Advisor</h4>
-                                <div className="bg-white border border-gray-200 px-5 py-2.5 rounded-full mb-6 shadow-sm hover:border-[#ff6b00]/30 transition-colors w-full sm:w-auto">
-                                    <p className="text-[#0b162c] text-base sm:text-lg font-bold tracking-wide">
+                                <a 
+                                    href="tel:+919886035330" 
+                                    className="bg-white border border-gray-200 px-5 py-2.5 rounded-full mb-6 shadow-sm hover:border-[#ff6b00] transition-colors w-full sm:w-auto flex items-center justify-center group"
+                                >
+                                    <p className="text-[#0b162c] group-hover:text-[#ff6b00] text-base sm:text-lg font-bold tracking-wide transition-colors">
                                         +91-9886035330
                                     </p>
-                                </div>
-                                <button className="w-full max-w-full sm:max-w-[220px] px-6 py-2.5 rounded-lg border-2 border-[#ff6b00] text-[#ff6b00] font-semibold hover:bg-[#ff6b00] hover:text-white transition-all text-sm bg-white hover:shadow-md mt-auto sm:mt-0">
+                                </a>
+                                <a 
+                                    href="tel:+919886035330" 
+                                    className="w-full max-w-full sm:max-w-[220px] px-6 py-2.5 rounded-lg border-2 border-[#ff6b00] text-[#ff6b00] font-semibold hover:bg-[#ff6b00] hover:text-white transition-all text-sm bg-white hover:shadow-md mt-auto sm:mt-0 block text-center"
+                                >
                                     Schedule a Call
-                                </button>
+                                </a>
                             </div>
 
                         </div>
