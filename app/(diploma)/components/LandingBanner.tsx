@@ -7,7 +7,7 @@ import SyllabusDownloadModal from './SyllabusDownloadModal';
 const LandingBanner = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSyllabusModalOpen, setIsSyllabusModalOpen] = useState(false);
-
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
     return (
         <div className="w-full bg-white pt-0 pb-0 font-montserrat overflow-hidden">
@@ -131,19 +131,41 @@ const LandingBanner = () => {
                         
                         {/* ================= YOUTUBE VIDEO ================= */}
                         <div className="w-full">
-                            <div className="group relative z-30 mb-4">
+                            <div className="group relative z-30 mb-6 mt-4">
                                 {/* Glow behind video */}
-                                <div className="absolute -inset-1 bg-gradient-to-r from-[#ff6b00]/20 to-orange-500/20 rounded-xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+                                <div className="absolute -inset-4 bg-gradient-to-r from-[#ff6b00]/40 via-orange-500/20 to-[#ff6b00]/40 rounded-[2rem] blur-2xl opacity-80 group-hover:opacity-100 group-hover:blur-3xl transition-all duration-1000 z-0"></div>
 
                                 {/* Video Container */}
-                                <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.4)] border border-white/20">
-                                    <iframe
-                                        className="absolute inset-0 w-full h-full"
-                                        src="https://www.youtube.com/embed/UrH9MuspUjQ?rel=0"
-                                        title="eHack Academy"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowFullScreen
-                                    />
+                                <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/20 z-10 group/container">
+                                    {!isVideoPlaying ? (
+                                        <div 
+                                            className="absolute inset-0 w-full h-full cursor-pointer group/play"
+                                            onClick={() => setIsVideoPlaying(true)}
+                                        >
+                                            <img 
+                                                src="https://img.youtube.com/vi/UrH9MuspUjQ/maxresdefault.jpg" 
+                                                alt="eHack Academy Video Thumbnail"
+                                                className="w-full h-full object-cover transition-transform duration-700 group-hover/play:scale-105"
+                                            />
+
+                                            {/* Play Button Overlay */}
+                                            <div className="absolute inset-0 flex items-center justify-center">
+                                                <div className="relative w-12 h-12 sm:w-16 sm:h-16 bg-[#ff6b00] rounded-full flex items-center justify-center shadow-lg group-hover/play:bg-[#e66000] group-hover/play:scale-105 transition-all duration-300">
+                                                    <svg className="relative w-5 h-5 sm:w-7 sm:h-7 text-white ml-1 sm:ml-1.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M8 5v14l11-7z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <iframe
+                                            className="absolute inset-0 w-full h-full"
+                                            src="https://www.youtube.com/embed/UrH9MuspUjQ?rel=0&autoplay=1&modestbranding=1"
+                                            title="eHack Academy"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                        />
+                                    )}
                                 </div>
                             </div>
 
