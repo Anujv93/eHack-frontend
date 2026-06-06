@@ -11,7 +11,9 @@ import FinalCTA from '../components/FinalCTA';
 import StickyNavbar from '../components/StickyNavbar';
 import CareerOpportunities from '../components/CareerOpportunities';
 import EssentialSkills from '../components/EssentialSkills';
+import EligibilityCriteria from '../components/EligibilityCriteria';
 import ProgramAdvisor from '../components/ProgramAdvisor';
+import CurrentCybersecurity from '../components/CurrentCybersecurity';
 
 export const metadata = {
     title: 'Advanced Diploma in Cybersecurity | eHack Academy',
@@ -52,6 +54,10 @@ export default function AdvancedDiplomaLandingPage() {
                 <EssentialSkills />
             </section>
 
+            <section id="eligibility">
+                <EligibilityCriteria />
+            </section>
+
             <section id="programs">
                 <CybersecurityPrograms />
             </section>
@@ -62,6 +68,10 @@ export default function AdvancedDiplomaLandingPage() {
 
             <section id="advisor">
                 <ProgramAdvisor />
+            </section>
+
+            <section id="current-cybersecurity">
+                <CurrentCybersecurity />
             </section>
 
             <section id="faq">

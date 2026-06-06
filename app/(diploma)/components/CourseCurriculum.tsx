@@ -220,16 +220,16 @@ const toolsList = [
 
 const StaticToolsGrid = () => {
     return (
-        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-[1px] bg-gray-100 border border-gray-100 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-[1px] bg-gray-100 border border-gray-100 rounded-2xl overflow-hidden">
             {toolsList.map((tool, idx) => (
                 <div
                     key={idx}
-                    className="bg-white group relative flex flex-col items-center justify-center py-6 sm:py-8 lg:py-8 px-4 hover:bg-gray-50/50 transition-colors"
+                    className="bg-white group relative flex flex-col items-center justify-center py-5 sm:py-8 px-2 sm:px-4 hover:bg-gray-50/50 transition-colors"
                 >
                     <img
                         src={tool.url}
                         alt={tool.name}
-                        className="w-10 h-10 sm:w-12 sm:h-12 lg:w-12 lg:h-12 object-contain drop-shadow-sm transition-all duration-300 group-hover:scale-110"
+                        className="w-9 h-9 sm:w-12 sm:h-12 object-contain drop-shadow-sm transition-all duration-300 group-hover:scale-110"
                         title={tool.name}
                     />
                 </div>
@@ -313,23 +313,23 @@ const CourseCurriculum = () => {
                                                 <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-transparent via-[#ff6b00] to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300"></div>
                                                 
                                                 {/* Compact Header (Title & Badges on same line) */}
-                                                <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 w-full pl-2 sm:pl-0">
-                                                    <div className="flex items-center gap-3 md:gap-4 flex-wrap sm:flex-nowrap">
-                                                        <span className="text-[10px] font-black text-white bg-[#0b162c] px-2.5 py-1 rounded-md tracking-wider shadow-sm md:hidden shrink-0">
+                                                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 w-full pl-1 sm:pl-0">
+                                                    <div className="flex items-start sm:items-center gap-2.5 sm:gap-4 w-full sm:w-auto">
+                                                        <span className="text-[10px] sm:text-xs font-black text-white bg-[#0b162c] px-2 py-1 rounded-md tracking-wider shadow-sm md:hidden shrink-0 mt-0.5 sm:mt-0">
                                                             MOD {mod.number}
                                                         </span>
-                                                        <h3 className="font-montserrat font-bold text-base sm:text-lg md:text-xl text-[#0b162c] leading-snug group-hover/card:text-[#ff6b00] transition-colors duration-300">
+                                                        <h3 className="font-montserrat font-bold text-[15px] sm:text-lg md:text-xl text-[#0b162c] leading-snug group-hover/card:text-[#ff6b00] transition-colors duration-300 flex-1">
                                                             {mod.title}
                                                         </h3>
                                                     </div>
                                                     
-                                                    <div className="flex items-center gap-3 shrink-0 ml-auto sm:ml-0">
+                                                    <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 w-full sm:w-auto mt-2 sm:mt-0 pt-3 sm:pt-0 border-t sm:border-t-0 border-gray-100">
                                                         {mod.duration && (
                                                             <span className="text-[10px] sm:text-[11px] font-semibold text-[#ff6b00] bg-orange-50 px-2.5 py-1 rounded-md border border-orange-100 whitespace-nowrap">
                                                                 {mod.duration}
                                                             </span>
                                                         )}
-                                                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover/card:bg-orange-50 group-hover/card:text-[#ff6b00] transition-colors shadow-sm">
+                                                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover/card:bg-orange-50 group-hover/card:text-[#ff6b00] transition-colors shadow-sm shrink-0">
                                                             <svg className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                                                             </svg>
@@ -390,7 +390,7 @@ const CourseCurriculum = () => {
                                     <p className="text-gray-600 text-sm sm:text-base mb-6 max-w-[280px]">
                                         Empower your workforce. Upskill your entire team with our customized enterprise cybersecurity programs.
                                     </p>
-                                    <button className="px-6 py-2.5 rounded-lg border-2 border-[#ff6b00] text-[#ff6b00] font-semibold hover:bg-[#ff6b00] hover:text-white transition-all text-sm shadow-sm bg-white mt-auto sm:mt-0">
+                                    <button className="w-full sm:w-auto px-6 py-2.5 rounded-lg border-2 border-[#ff6b00] text-[#ff6b00] font-semibold hover:bg-[#ff6b00] hover:text-white transition-all text-sm shadow-sm bg-white mt-auto sm:mt-0 text-center">
                                         Contact Enterprise Sales
                                     </button>
                                 </div>
@@ -408,12 +408,12 @@ const CourseCurriculum = () => {
                             {/* Advisor Box */}
                             <div className="md:col-span-2 bg-[#f8f9fa] rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center text-center border-2 border-gray-200 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
                                 <h4 className="font-montserrat font-bold text-2xl text-[#0b162c] mb-3">Talk to an Advisor</h4>
-                                <div className="bg-white border border-gray-200 px-5 py-2.5 rounded-full mb-6 shadow-sm hover:border-[#ff6b00]/30 transition-colors">
+                                <div className="bg-white border border-gray-200 px-5 py-2.5 rounded-full mb-6 shadow-sm hover:border-[#ff6b00]/30 transition-colors w-full sm:w-auto">
                                     <p className="text-[#0b162c] text-base sm:text-lg font-bold tracking-wide">
                                         +91-9886035330
                                     </p>
                                 </div>
-                                <button className="w-full max-w-[220px] px-6 py-2.5 rounded-lg border-2 border-[#ff6b00] text-[#ff6b00] font-semibold hover:bg-[#ff6b00] hover:text-white transition-all text-sm bg-white hover:shadow-md mt-auto sm:mt-0">
+                                <button className="w-full max-w-full sm:max-w-[220px] px-6 py-2.5 rounded-lg border-2 border-[#ff6b00] text-[#ff6b00] font-semibold hover:bg-[#ff6b00] hover:text-white transition-all text-sm bg-white hover:shadow-md mt-auto sm:mt-0">
                                     Schedule a Call
                                 </button>
                             </div>

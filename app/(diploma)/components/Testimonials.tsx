@@ -119,7 +119,7 @@ const Testimonials = () => {
                         const statRest = statParts.slice(1).join(' ');
 
                         return (
-                            <div key={`${t.name}-${currentIndex}-${idx}`} className={`bg-white rounded-[2rem] shadow-[0_15px_40px_rgba(11,22,44,0.04)] border border-gray-100 p-8 sm:p-10 relative overflow-hidden transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'}`}>
+                            <div key={`${t.name}-${currentIndex}-${idx}`} className={`bg-white rounded-[2rem] shadow-[0_15px_40px_rgba(11,22,44,0.04)] border border-gray-100 p-6 sm:p-8 lg:p-10 relative overflow-hidden transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'}`}>
                                 
                                 {/* Decorative internal blob */}
                                 <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-gradient-to-br from-orange-50 to-white rounded-full blur-3xl opacity-60 pointer-events-none"></div>
@@ -146,24 +146,24 @@ const Testimonials = () => {
                                     </div>
 
                                     {/* Footer: User Info & Logo */}
-                                    <div className="flex items-center justify-between pt-6 border-t border-gray-100 mt-auto">
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 pt-6 border-t border-gray-100 mt-auto">
                                         
                                         {/* User Info */}
-                                        <div className="flex items-center gap-4">
+                                        <div className="flex items-center gap-3 sm:gap-4 w-full sm:w-auto">
                                             <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-full overflow-hidden border-2 border-white shadow-[0_4px_10px_rgba(0,0,0,0.1)]">
                                                 <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
                                             </div>
-                                            <div className="flex flex-col">
-                                                <span className="font-black text-[#0b162c] text-sm sm:text-base">{t.name}</span>
+                                            <div className="flex flex-col flex-1">
+                                                <span className="font-black text-[#0b162c] text-sm sm:text-base leading-tight">{t.name}</span>
                                                 <span className="text-[#ff6b00] font-bold text-[10px] sm:text-xs tracking-wide uppercase mt-0.5">{t.title}</span>
                                             </div>
                                         </div>
 
                                         {/* Company Logo */}
-                                        <div className="flex items-center justify-center bg-gray-50/50 px-3 py-2 sm:px-4 sm:py-2 rounded-xl border border-gray-50">
+                                        <div className="flex items-center justify-start sm:justify-center bg-gray-50/50 px-3 py-2 sm:px-4 sm:py-2 rounded-xl border border-gray-50 w-full sm:w-auto">
                                             <img src={t.logo} alt="Company Logo" className={`w-auto object-contain ${
                                                 t.logo.includes('sisa') ? 'h-6 sm:h-8 max-w-[80px]' : 
-                                                (t.logo.includes('anuvu') || t.logo.includes('ampcuscyber') || t.logo.includes('gtlogo')) ? 'h-10 sm:h-16 max-w-[200px]' : 
+                                                (t.logo.includes('anuvu') || t.logo.includes('ampcuscyber') || t.logo.includes('gtlogo')) ? 'h-8 sm:h-10 max-w-[120px]' : 
                                                 'h-6 sm:h-8 max-w-[100px]'
                                             }`} />
                                         </div>

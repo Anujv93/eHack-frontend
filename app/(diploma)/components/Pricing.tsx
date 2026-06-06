@@ -82,7 +82,7 @@ const Pricing = () => {
                 <div className="text-center max-w-5xl mx-auto mb-10 sm:mb-12">
                     
                     <h2 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-[44px] text-[#0b162c] leading-tight tracking-tight mb-6">
-                        Invest in Your Future: <br />
+                        Invest in Your Future: <br className="hidden sm:block" />
                         <span className="text-[#ff6b00]">Real Industry Experience + Assured Stipend</span>
                     </h2>
                     
@@ -95,89 +95,89 @@ const Pricing = () => {
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10 max-w-5xl mx-auto">
                     
                     {/* EMI Plan Card */}
-                    <div className="w-full lg:w-1/2 bg-white rounded-3xl p-8 sm:p-10 shadow-[0_10px_40px_rgb(11,22,44,0.08)] border border-gray-100 hover:shadow-[0_15px_50px_rgb(11,22,44,0.12)] transition-shadow duration-300 relative overflow-hidden group">
+                    <div className="w-full lg:w-1/2 bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[0_10px_40px_rgb(11,22,44,0.08)] border border-gray-100 hover:shadow-[0_15px_50px_rgb(11,22,44,0.12)] transition-shadow duration-300 relative overflow-hidden group">
                         {/* Orange top border */}
                         <div className="absolute top-0 left-0 w-full h-2 bg-gray-200 group-hover:bg-[#ff6b00] transition-colors duration-300"></div>
                         
                         <div className="mb-8">
-                            <h3 className="font-montserrat font-bold text-2xl text-[#0b162c] mb-2">Flexible EMI Plan</h3>
-                            <p className="text-gray-500 text-sm">Spread your investment over 9 months</p>
+                            <h3 className="font-montserrat font-bold text-xl sm:text-2xl text-[#0b162c] mb-2">Flexible EMI Plan</h3>
+                            <p className="text-gray-500 text-xs sm:text-sm">Spread your investment over 9 months</p>
                         </div>
                         
                         <div className="mb-8">
-                            <div className="flex items-baseline gap-2">
-                                <span className="font-montserrat font-black text-5xl text-[#0b162c]">₹15,000</span>
-                                <span className="text-gray-500 font-medium">/ month</span>
+                            <div className="flex items-baseline gap-1 sm:gap-2">
+                                <span className="font-montserrat font-black text-4xl sm:text-5xl text-[#0b162c]">₹15,000</span>
+                                <span className="text-gray-500 font-medium text-sm sm:text-base">/ month</span>
                             </div>
-                            <p className="text-[#ff6b00] font-semibold mt-3 text-sm bg-orange-50 inline-block px-3 py-1.5 rounded-md border border-orange-100">Total: ₹1,35,000 (Over 9 months)</p>
+                            <p className="text-[#ff6b00] font-semibold mt-3 text-xs sm:text-sm bg-orange-50 inline-block px-3 py-1.5 rounded-md border border-orange-100">Total: ₹1,35,000 (Over 9 months)</p>
                         </div>
                         
-                        <ul className="space-y-4 mb-10 text-gray-600">
+                        <ul className="space-y-4 mb-10 text-gray-600 text-sm sm:text-base">
                             <li className="flex items-start gap-3">
-                                <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                 <span>Pay as you learn with 0% EMI</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                 <span>Complete value with industry experience</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                 <span>Includes assured stipend phase</span>
                             </li>
                         </ul>
                         
                         <button 
                             onClick={() => openModal('EMI')}
-                            className="w-full py-4 rounded-xl border-2 border-[#0b162c] text-[#0b162c] font-bold text-lg hover:bg-[#0b162c] hover:text-white transition-colors duration-300">
+                            className="w-full py-3 sm:py-4 rounded-xl border-2 border-[#0b162c] text-[#0b162c] font-bold text-base sm:text-lg hover:bg-[#0b162c] hover:text-white transition-colors duration-300">
                             Opt for EMI
                         </button>
                     </div>
 
                     {/* Upfront Plan Card (Highlighted) */}
-                    <div className="w-full lg:w-1/2 bg-white rounded-3xl p-8 sm:p-10 shadow-[0_20px_50px_rgb(255,107,0,0.15)] border-2 border-[#ff6b00] relative overflow-hidden transform lg:-translate-y-4">
+                    <div className="w-full lg:w-1/2 bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgb(255,107,0,0.15)] border-2 border-[#ff6b00] relative overflow-hidden transform lg:-translate-y-4">
                         {/* Background flare */}
                         <div className="absolute -top-24 -right-24 w-48 h-48 bg-orange-50 rounded-full filter blur-[60px] opacity-80 z-0 pointer-events-none"></div>
                         
                         {/* "Best Value" Badge */}
-                        <div className="absolute top-0 right-8 bg-[#ff6b00] text-white text-[11px] font-bold px-4 py-1.5 rounded-b-lg uppercase tracking-wider shadow-md">
+                        <div className="absolute top-0 right-4 sm:right-8 bg-[#ff6b00] text-white text-[10px] sm:text-[11px] font-bold px-3 sm:px-4 py-1.5 rounded-b-lg uppercase tracking-wider shadow-md">
                             Best Value
                         </div>
                         
                         <div className="mb-8 relative z-10">
-                            <h3 className="font-montserrat font-bold text-2xl text-[#0b162c] mb-2">Upfront Payment</h3>
-                            <p className="text-gray-500 text-sm">Save massively by paying all at once</p>
+                            <h3 className="font-montserrat font-bold text-xl sm:text-2xl text-[#0b162c] mb-2">Upfront Payment</h3>
+                            <p className="text-gray-500 text-xs sm:text-sm">Save massively by paying all at once</p>
                         </div>
                         
                         <div className="mb-8 relative z-10">
-                            <div className="flex items-center gap-3 mb-2">
-                                <span className="text-2xl text-gray-400 line-through font-semibold">₹1,35,000</span>
-                                <span className="text-[#ff6b00] text-xs font-bold bg-orange-50 px-2 py-1 rounded border border-orange-100 tracking-wide">SAVE ₹45,000</span>
+                            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
+                                <span className="text-xl sm:text-2xl text-gray-400 line-through font-semibold">₹1,35,000</span>
+                                <span className="text-[#ff6b00] text-[10px] sm:text-xs font-bold bg-orange-50 px-2 py-1 rounded border border-orange-100 tracking-wide">SAVE ₹45,000</span>
                             </div>
-                            <div className="flex items-baseline gap-2">
-                                <span className="font-montserrat font-black text-5xl md:text-6xl text-[#0b162c]">₹90,000</span>
-                                <span className="text-gray-500 font-medium">/ one-time</span>
+                            <div className="flex items-baseline gap-1 sm:gap-2">
+                                <span className="font-montserrat font-black text-4xl sm:text-5xl md:text-6xl text-[#0b162c]">₹90,000</span>
+                                <span className="text-gray-500 font-medium text-sm sm:text-base">/ one-time</span>
                             </div>
                         </div>
                         
-                        <ul className="space-y-4 mb-10 text-gray-600 relative z-10">
+                        <ul className="space-y-4 mb-10 text-gray-600 text-sm sm:text-base relative z-10">
                             <li className="flex items-start gap-3">
-                                <svg className="w-6 h-6 text-[#ff6b00] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                                <svg className="w-5 h-5 sm:w-6 h-6 text-[#ff6b00] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                                 <span>Flat <strong className="text-[#0b162c]">₹45,000 Instant Discount</strong></span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <svg className="w-6 h-6 text-[#ff6b00] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                                <svg className="w-5 h-5 sm:w-6 h-6 text-[#ff6b00] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                                 <span>Complete value + real industry experience</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <svg className="w-6 h-6 text-[#ff6b00] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                                <svg className="w-5 h-5 sm:w-6 h-6 text-[#ff6b00] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                                 <span className="font-medium text-[#0b162c]">Includes assured stipend phase</span>
                             </li>
                         </ul>
                         
                         <button 
                             onClick={() => openModal('Upfront')}
-                            className="w-full py-4 rounded-xl bg-[#ff6b00] text-white font-bold text-lg hover:bg-[#e66000] shadow-[0_5px_20px_rgb(255,107,0,0.3)] hover:shadow-[0_8px_25px_rgb(255,107,0,0.4)] transition-all duration-300 relative z-10 hover:-translate-y-1">
+                            className="w-full py-3 sm:py-4 rounded-xl bg-[#ff6b00] text-white font-bold text-base sm:text-lg hover:bg-[#e66000] shadow-[0_5px_20px_rgb(255,107,0,0.3)] hover:shadow-[0_8px_25px_rgb(255,107,0,0.4)] transition-all duration-300 relative z-10 hover:-translate-y-1">
                             Pay Upfront & Save Big
                         </button>
                     </div>
@@ -185,16 +185,16 @@ const Pricing = () => {
                 </div>
                 
                 {/* Stipend Assurance Banner */}
-                <div className="mt-16 max-w-4xl mx-auto bg-white rounded-2xl border border-gray-100 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_8px_30px_rgb(11,22,44,0.04)] relative overflow-hidden">
+                <div className="mt-12 sm:mt-16 max-w-4xl mx-auto bg-white rounded-2xl border border-gray-100 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_8px_30px_rgb(11,22,44,0.04)] relative overflow-hidden">
                     <div className="absolute left-0 top-0 w-2 h-full bg-[#ff6b00]"></div>
-                    <div className="flex items-center gap-5 z-10 relative">
-                        <div className="w-16 h-16 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 border border-orange-100">
-                            <svg className="w-8 h-8 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start md:items-center gap-4 sm:gap-5 z-10 relative text-center sm:text-left">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 border border-orange-100">
+                            <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                         </div>
                         <div>
-                            <h4 className="font-montserrat font-bold text-xl text-[#0b162c]">Earn while you learn!</h4>
+                            <h4 className="font-montserrat font-bold text-lg sm:text-xl text-[#0b162c]">Earn while you learn!</h4>
                             <p className="text-gray-600 text-sm mt-1 leading-relaxed">Both plans include our signature industry experience phase with an assured stipend, giving you massive ROI right from the start.</p>
                         </div>
                     </div>
@@ -207,7 +207,7 @@ const Pricing = () => {
                                 window.dispatchEvent(new CustomEvent('openCurriculumModule', { detail: { index: 8 } }));
                             }
                         }}
-                        className="flex-shrink-0 text-[#ff6b00] font-bold text-sm bg-orange-50 px-5 py-3 rounded-lg hover:bg-[#ff6b00] hover:text-white transition-colors duration-300">
+                        className="w-full md:w-auto flex-shrink-0 text-[#ff6b00] font-bold text-sm bg-orange-50 px-5 py-3 rounded-lg hover:bg-[#ff6b00] hover:text-white transition-colors duration-300 text-center">
                         View Curriculum
                     </button>
                 </div>

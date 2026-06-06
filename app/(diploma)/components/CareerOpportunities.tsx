@@ -65,7 +65,7 @@ const CareerOpportunities = () => {
                             <button
                                 key={idx}
                                 onClick={() => setActiveTab(idx)}
-                                className={`flex-1 py-4 sm:py-6 px-4 text-center font-semibold text-sm sm:text-base transition-all duration-300 relative ${
+                                className={`flex-1 py-4 sm:py-6 px-4 text-center sm:text-center font-semibold text-sm sm:text-base transition-all duration-300 relative ${
                                     activeTab === idx 
                                         ? 'text-[#ff6b00] bg-white' 
                                         : 'text-gray-500 hover:text-[#0b162c] hover:bg-gray-50'
@@ -73,7 +73,7 @@ const CareerOpportunities = () => {
                             >
                                 {role.title}
                                 {activeTab === idx && (
-                                    <div className="absolute top-0 left-0 w-full h-1 bg-[#ff6b00]"></div>
+                                    <div className="absolute top-0 left-0 w-1 sm:w-full h-full sm:h-1 bg-[#ff6b00]"></div>
                                 )}
                             </button>
                         ))}
@@ -85,19 +85,19 @@ const CareerOpportunities = () => {
                             
                             {/* Left Side: Description and Companies */}
                             <div className="flex flex-col animate-fadeIn">
-                                <p className="font-montserrat font-medium text-gray-700 text-sm sm:text-base leading-relaxed mb-10 text-justify sm:text-left">
+                                <p className="font-montserrat font-medium text-gray-700 text-sm sm:text-base leading-relaxed mb-10 text-left">
                                     {careerRoles[activeTab].description}
                                 </p>
                                 
                                 <div>
-                                    <h4 className="font-semibold text-[#0b162c] text-base mb-6">Hiring Companies</h4>
-                                    <div className="grid grid-cols-3 gap-6 sm:gap-8 items-center justify-items-center sm:justify-items-start">
+                                    <h4 className="font-semibold text-[#0b162c] text-base mb-6 text-center sm:text-left">Hiring Companies</h4>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 items-center justify-items-center sm:justify-items-start">
                                         {careerRoles[activeTab].companies.map((company, idx) => (
                                             <div key={idx} className="h-10 sm:h-12 w-full flex items-center justify-center sm:justify-start hover:scale-105 transition-transform duration-300">
                                                 <img 
                                                     src={company.url} 
                                                     alt={company.name} 
-                                                    className="max-h-full max-w-[100px] object-contain"
+                                                    className="max-h-full max-w-[90px] sm:max-w-[100px] object-contain"
                                                     title={company.name}
                                                 />
                                             </div>
@@ -110,7 +110,7 @@ const CareerOpportunities = () => {
                             <div className="flex flex-col items-center justify-center pt-8 lg:pt-0 border-t lg:border-t-0 lg:border-l border-gray-100 lg:pl-16 h-full min-h-[300px]">
                                 <h4 className="font-semibold text-gray-600 text-base mb-12">Average Salary</h4>
                                 
-                                <div className="flex items-end justify-center gap-6 sm:gap-10 h-48 sm:h-56 w-full max-w-sm mt-4">
+                                <div className="flex items-end justify-center gap-4 sm:gap-10 h-48 sm:h-56 w-full max-w-sm mt-4 mx-auto">
                                     
                                     {/* Min Bar */}
                                     <div className="flex flex-col items-center justify-end h-full w-14 sm:w-16">

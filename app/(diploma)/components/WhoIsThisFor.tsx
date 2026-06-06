@@ -126,10 +126,10 @@ const WhoIsThisFor = () => {
                 
                 {/* Stats Section replacing the scroll pill */}
                 <div className="flex justify-center mb-12 lg:mb-16 relative z-20 -mt-2 sm:-mt-4 lg:-mt-6">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center gap-8 sm:gap-0 w-full bg-white rounded-3xl p-6 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100">
+                    <div className="grid grid-cols-1 md:grid-cols-3 w-full bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 divide-y md:divide-y-0 md:divide-x divide-gray-200">
                         
                         {/* Stat 1: Admission */}
-                        <div className="flex items-center gap-4 sm:px-8 lg:px-16">
+                        <div className="flex items-center gap-4 p-6 lg:p-8 justify-center md:justify-start">
                             <div className="flex items-center justify-center shrink-0">
                                 <svg className="w-8 h-8 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -142,7 +142,7 @@ const WhoIsThisFor = () => {
                         </div>
 
                         {/* Stat 2: Duration */}
-                        <div className="flex items-center gap-4 sm:px-8 lg:px-16 sm:border-l sm:border-gray-200">
+                        <div className="flex items-center gap-4 p-6 lg:p-8 justify-center md:justify-start">
                             <div className="flex items-center justify-center shrink-0">
                                 <svg className="w-8 h-8 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -155,7 +155,7 @@ const WhoIsThisFor = () => {
                         </div>
 
                         {/* Stat 3: Format */}
-                        <div className="flex items-center gap-4 sm:px-8 lg:px-16 sm:border-l sm:border-gray-200">
+                        <div className="flex items-center gap-4 p-6 lg:p-8 justify-center md:justify-start">
                             <div className="flex items-center justify-center shrink-0">
                                 <svg className="w-8 h-8 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -171,15 +171,15 @@ const WhoIsThisFor = () => {
                 </div>
 
                 {/* Headline Section */}
-                <div className="flex flex-col md:flex-row justify-between items-center mb-12 lg:mb-16 gap-8 lg:gap-12">
-                    <div className="w-full md:w-5/12 lg:w-2/5 flex flex-col items-center md:items-start text-center md:text-left">
-                        <h2 className="font-montserrat font-black text-[26px] sm:text-3xl lg:text-[42px] text-[#0b162c] leading-tight text-center md:text-left">
-                            <span className="whitespace-nowrap">Designed for Ambitious</span> <br />
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-12 lg:mb-16 gap-6 lg:gap-12">
+                    <div className="w-full md:w-5/12 lg:w-2/5 flex flex-col items-start text-left">
+                        <h2 className="font-montserrat font-black text-[26px] sm:text-3xl lg:text-[42px] text-[#0b162c] leading-tight text-left">
+                            <span className="whitespace-nowrap sm:whitespace-normal">Designed for Ambitious</span> <br />
                             Action-Takers.
                         </h2>
                     </div>
                     <div className="w-full md:w-7/12 lg:w-1/2">
-                        <p className="text-gray-600 text-base sm:text-lg leading-relaxed border-l-4 border-[#ff6b00] pl-4 sm:pl-6 md:mt-2 text-left">
+                        <p className="text-gray-600 text-base sm:text-lg leading-relaxed border-l-4 border-[#ff6b00] pl-4 sm:pl-6 text-left">
                             Build in-demand Cybersecurity & AI skills. Get hands-on with real-world projects, master an industry-aligned curriculum, and earn your globally recognized eHack certification.
                         </p>
                     </div>

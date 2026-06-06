@@ -46,10 +46,10 @@ const LandingBanner = () => {
             {/* Main Content Container */}
             <div className="max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="relative w-full flex flex-col justify-between">
-                <div className="relative z-10 flex flex-col lg:flex-row w-full justify-between items-start lg:items-center py-4 md:py-5 lg:py-6 mb-0">
+                <div className="relative z-10 flex flex-col lg:flex-row w-full justify-between items-center gap-8 lg:gap-12 py-6 lg:py-10 mb-0">
                     
-                    {/* Left Column: $100M Offer Copy */}
-                    <div className="max-w-2xl mb-4 lg:mb-0 mt-0 text-center lg:text-left flex flex-col items-center lg:items-start mx-auto lg:mx-0">
+                    {/* Left Column: Offer Copy */}
+                    <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0">
                         
                         <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-[2.2rem] xl:text-[2.6rem] leading-[1.2] mb-3 tracking-tight text-[#0b162c] w-full text-center lg:text-left mt-2">
                             <span className="text-[#ff6b00]">AI-Powered</span> Advanced <br className="hidden lg:block" /> Diploma in Cybersecurity
@@ -61,30 +61,30 @@ const LandingBanner = () => {
                             India’s Top-Rated Practical Cybersecurity Diploma
                         </p>
 
-                        <ul className="flex flex-col gap-3.5 mb-6 text-gray-700 text-sm sm:text-base font-medium text-left max-w-xl mx-auto lg:mx-0 w-full">
-                            <li className="flex items-center gap-3">
-                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0">
+                        <ul className="flex flex-col gap-3 mb-6 text-gray-700 text-sm sm:text-base font-medium text-left w-full">
+                            <li className="flex items-start sm:items-center gap-3">
+                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0 mt-0.5 sm:mt-0">
                                     <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <span>Master offensive and defensive tactics in AI-driven hacking labs</span>
                             </li>
-                            <li className="flex items-center gap-3">
-                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0">
+                            <li className="flex items-start sm:items-center gap-3">
+                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0 mt-0.5 sm:mt-0">
                                     <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <span>Defend against live cyber threats with 30+ hands-on tools</span>
                             </li>
-                            <li className="flex items-center gap-3">
-                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0">
+                            <li className="flex items-start sm:items-center gap-3">
+                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0 mt-0.5 sm:mt-0">
                                     <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <span>Earn globally recognized credentials to fast-track your career</span>
                             </li>
-                            <li className="flex items-center gap-3">
-                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0">
+                            <li className="flex items-start sm:items-center gap-3">
+                                <div className="bg-[#ff6b00] rounded-full p-0.5 shrink-0 mt-0.5 sm:mt-0">
                                     <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                                 </div>
-                                <span>Land your dream cybersecurity role with comprehensive placement and interview support</span>
+                                <span>Land your dream cybersecurity role with comprehensive placement support</span>
                             </li>
                         </ul>
 
@@ -93,7 +93,7 @@ const LandingBanner = () => {
                             <p className="text-gray-500 text-[11px] uppercase tracking-wider font-bold mb-3">Authorized Training Partners:</p>
                             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6">
                                 <img src="/images/ec-council-logo.png" alt="EC-Council" className="h-8 sm:h-10 object-contain" />
-                                <div className="hidden sm:block w-px h-10 bg-gray-300"></div>
+                                <div className="w-px h-8 sm:h-10 bg-gray-300"></div>
                                 <div className="flex items-center gap-3 bg-white px-2 py-1 rounded-lg">
                                     <img src="/images/cropped-jiub-logo-Baptist.png" alt="JIUB" className="h-10 sm:h-12 w-10 sm:w-12 object-contain" />
                                     <div className="flex flex-col text-left">
@@ -109,17 +109,17 @@ const LandingBanner = () => {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="mt-0 w-full flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <div className="w-full flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
                             <button 
                                 onClick={() => setIsModalOpen(true)}
-                                className="group flex justify-center items-center gap-2 bg-[#ff6b00] text-white px-8 py-3.5 rounded-md font-bold text-sm hover:bg-[#e65c00] hover:-translate-y-0.5 shadow-[0_4px_14px_0_rgba(255,107,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,107,0,0.23)] transition-all w-full sm:w-auto"
+                                className="group flex justify-center items-center gap-2 bg-[#ff6b00] text-white px-6 sm:px-8 py-3.5 rounded-md font-bold text-sm hover:bg-[#e65c00] hover:-translate-y-0.5 shadow-[0_4px_14px_0_rgba(255,107,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,107,0,0.23)] transition-all w-full sm:w-auto"
                             >
                                 Book a Live 1:1 Session
                             </button>
                             
                             <button 
                                 onClick={() => setIsSyllabusModalOpen(true)}
-                                className="group flex justify-center items-center gap-2 bg-transparent border-2 border-gray-200 text-[#0b162c] px-8 py-3.5 rounded-md font-bold text-sm hover:bg-gray-50 hover:border-gray-300 transition-all w-full sm:w-auto backdrop-blur-sm"
+                                className="group flex justify-center items-center gap-2 bg-transparent border-2 border-gray-200 text-[#0b162c] px-6 sm:px-8 py-3.5 rounded-md font-bold text-sm hover:bg-gray-50 hover:border-gray-300 transition-all w-full sm:w-auto backdrop-blur-sm"
                             >
                                 Download Syllabus
                             </button>
@@ -127,7 +127,7 @@ const LandingBanner = () => {
                     </div>
 
                     {/* Right Column: Floating Elements */}
-                    <div className="relative flex flex-col items-center lg:items-end w-full lg:w-[480px] xl:w-[560px] shrink-0 h-full justify-center pt-6 lg:pt-0 mx-auto lg:mx-0">
+                    <div className="w-full lg:w-1/2 max-w-xl relative flex flex-col items-center justify-center shrink-0 mx-auto">
                         
                         {/* ================= YOUTUBE VIDEO ================= */}
                         <div className="w-full">
@@ -148,20 +148,20 @@ const LandingBanner = () => {
                             </div>
 
                             {/* Stats Pill below video */}
-                            <div className="w-full bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.1)] px-4 md:px-6 py-4 md:py-5 flex items-center justify-between text-[#0b162c] text-sm sm:text-base font-bold relative z-30 mt-4">
-                                <div className="flex items-center gap-2 sm:gap-3">
-                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                    <span>150+ Batches</span>
+                            <div className="w-full bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.1)] px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between text-[#0b162c] text-[10px] sm:text-xs md:text-sm font-bold relative z-30 mt-4">
+                                <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                    <span className="text-center">150+ <span className="hidden sm:inline">Batches</span></span>
                                 </div>
-                                <div className="w-px h-8 bg-gray-200"></div>
-                                <div className="flex items-center gap-2 sm:gap-3">
-                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff6b00]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                    <span>4.9 Ratings</span>
+                                <div className="w-px h-6 sm:h-8 bg-gray-200"></div>
+                                <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff6b00]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <span className="text-center">4.9 <span className="hidden sm:inline">Ratings</span></span>
                                 </div>
-                                <div className="w-px h-8 bg-gray-200"></div>
-                                <div className="flex items-center gap-2 sm:gap-3">
-                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                                    <span>50K Learners</span>
+                                <div className="w-px h-6 sm:h-8 bg-gray-200"></div>
+                                <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff6b00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                                    <span className="text-center">50K+ <span className="hidden sm:inline">Learners</span></span>
                                 </div>
                             </div>
                         </div>

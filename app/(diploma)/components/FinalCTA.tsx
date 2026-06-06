@@ -82,49 +82,49 @@ const FinalCTA = () => {
                             <div className="inline-block bg-[#ff6b00]/10 border border-[#ff6b00]/20 text-[#ff6b00] px-3 py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-widest mb-6">
                                 Limited Seats Available
                             </div>
-                            <h2 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl text-[#0b162c] mb-6 leading-[1.2] lg:leading-[1.1] tracking-tight">
+                            <h2 className="font-montserrat font-black text-[28px] sm:text-4xl lg:text-5xl text-[#0b162c] mb-4 sm:mb-6 leading-[1.2] lg:leading-[1.1] tracking-tight">
                                 Secure Your Future in <br className="hidden sm:block" />
                                 <span className="text-[#ff6b00]">Cybersecurity.</span>
                             </h2>
-                            <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-8 px-2 sm:px-0">
+                            <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed mb-8 px-2 sm:px-0">
                                 Stop waiting for the perfect moment. The industry needs you right now. Drop your details below to get the complete Advanced Diploma syllabus and a free career counseling session.
                             </p>
                             
                             {/* Process Steps */}
                             <div className="flex flex-col gap-6 text-left px-2 sm:px-0 mt-8 relative">
                                 {/* Connecting Line */}
-                                <div className="absolute left-[27px] top-8 bottom-8 w-0.5 bg-orange-100 hidden sm:block"></div>
+                                <div className="absolute left-[23px] sm:left-[27px] top-8 bottom-8 w-0.5 bg-orange-100"></div>
 
                                 {/* Step 1 */}
                                 <div className="flex items-start gap-4 sm:gap-5 relative z-10 group">
-                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#ff6b00] text-white flex items-center justify-center shrink-0 font-black text-xl shadow-[0_8px_20px_rgba(255,107,0,0.3)] transition-transform group-hover:scale-110">
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#ff6b00] text-white flex items-center justify-center shrink-0 font-black text-xl shadow-[0_8px_20px_rgba(255,107,0,0.3)] transition-transform group-hover:scale-110 relative">
                                         1
                                     </div>
-                                    <div className="pt-1.5 sm:pt-2">
-                                        <h4 className="text-[#0b162c] font-bold text-lg sm:text-xl mb-1.5">Fill the Enquiry Form</h4>
-                                        <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-sm">Provide your basic details to register your interest and instantly download the syllabus.</p>
+                                    <div className="pt-1 sm:pt-2">
+                                        <h4 className="text-[#0b162c] font-bold text-lg sm:text-xl mb-1 sm:mb-1.5">Fill the Enquiry Form</h4>
+                                        <p className="text-gray-500 text-[13px] sm:text-base leading-relaxed max-w-sm">Provide your basic details to register your interest and instantly download the syllabus.</p>
                                     </div>
                                 </div>
 
                                 {/* Step 2 */}
                                 <div className="flex items-start gap-4 sm:gap-5 relative z-10 group">
-                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border-2 border-orange-200 text-[#ff6b00] flex items-center justify-center shrink-0 font-black text-xl shadow-sm transition-colors group-hover:border-[#ff6b00]">
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border-2 border-orange-200 text-[#ff6b00] flex items-center justify-center shrink-0 font-black text-xl shadow-sm transition-colors group-hover:border-[#ff6b00] relative">
                                         2
                                     </div>
-                                    <div className="pt-1.5 sm:pt-2">
-                                        <h4 className="text-[#0b162c] font-bold text-lg sm:text-xl mb-1.5">Get Your Career Blueprint</h4>
-                                        <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-sm">Our experts will call you shortly to understand your goals and map out a custom career blueprint.</p>
+                                    <div className="pt-1 sm:pt-2">
+                                        <h4 className="text-[#0b162c] font-bold text-lg sm:text-xl mb-1 sm:mb-1.5">Get Your Career Blueprint</h4>
+                                        <p className="text-gray-500 text-[13px] sm:text-base leading-relaxed max-w-sm">Our experts will call you shortly to understand your goals and map out a custom career blueprint.</p>
                                     </div>
                                 </div>
 
                                 {/* Step 3 */}
                                 <div className="flex items-start gap-4 sm:gap-5 relative z-10 group">
-                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border-2 border-orange-200 text-[#ff6b00] flex items-center justify-center shrink-0 font-black text-xl shadow-sm transition-colors group-hover:border-[#ff6b00]">
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border-2 border-orange-200 text-[#ff6b00] flex items-center justify-center shrink-0 font-black text-xl shadow-sm transition-colors group-hover:border-[#ff6b00] relative">
                                         3
                                     </div>
-                                    <div className="pt-1.5 sm:pt-2">
-                                        <h4 className="text-[#0b162c] font-bold text-lg sm:text-xl mb-1.5">Enroll on Your Terms</h4>
-                                        <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-sm">Choose a suitable batch date and select your preferred training mode (Live Online or Offline).</p>
+                                    <div className="pt-1 sm:pt-2">
+                                        <h4 className="text-[#0b162c] font-bold text-lg sm:text-xl mb-1 sm:mb-1.5">Enroll on Your Terms</h4>
+                                        <p className="text-gray-500 text-[13px] sm:text-base leading-relaxed max-w-sm">Choose a suitable batch date and select your preferred training mode (Live Online or Offline).</p>
                                     </div>
                                 </div>
                             </div>

@@ -7,12 +7,12 @@ const WhyCybersecurity = () => {
             <div className="max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 {/* Main Headline for both contents */}
-                <div className="text-center mb-16 sm:mb-20 md:mb-24 relative px-4 sm:px-0">
-                    <h2 className="font-montserrat font-black text-3xl sm:text-4xl md:text-5xl text-[#0b162c] mb-6 leading-tight">
-                        The Market Has Shifted. <br />
+                <div className="text-center mb-12 sm:mb-20 md:mb-24 relative px-4 sm:px-0">
+                    <h2 className="font-montserrat font-black text-[28px] sm:text-4xl md:text-5xl text-[#0b162c] mb-4 sm:mb-6 leading-tight">
+                        The Market Has Shifted. <br className="hidden sm:block" />
                         <span className="text-[#ff6b00]">Are You Ready?</span>
                     </h2>
-                    <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed italic">
+                    <p className="text-gray-600 text-[15px] sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed italic">
                         "Discover why traditional tech roles are fading, and why eHack Academy is your ultimate launchpad."
                     </p>
                 </div>
@@ -23,7 +23,7 @@ const WhyCybersecurity = () => {
                     {/* Left Column: Why Cybersecurity */}
                     <div className="flex flex-col">
                         <div className="mb-6 lg:mb-8 relative h-auto sm:h-12 flex items-end justify-center lg:justify-start">
-                            <h3 className="font-montserrat font-black text-2xl sm:text-3xl xl:text-4xl text-[#0b162c] tracking-tight whitespace-nowrap text-center lg:text-left">
+                            <h3 className="font-montserrat font-black text-[22px] sm:text-3xl xl:text-4xl text-[#0b162c] tracking-tight text-center lg:text-left">
                                 WHY <span className="text-red-500">CYBERSECURITY</span>
                             </h3>
                             {/* Floating Curved Arrow */}
@@ -97,9 +97,9 @@ const WhyCybersecurity = () => {
                     </div>
 
                     {/* Right Column: Why eHack */}
-                    <div className="flex flex-col mt-4 sm:mt-12 lg:mt-0">
+                    <div className="flex flex-col mt-10 sm:mt-12 lg:mt-0">
                         <div className="mb-6 lg:mb-8 relative h-auto sm:h-12 flex items-end justify-center lg:justify-start">
-                            <h3 className="font-montserrat font-black text-2xl sm:text-3xl xl:text-4xl text-[#0b162c] tracking-tight flex items-center gap-3 whitespace-nowrap text-center lg:text-left">
+                            <h3 className="font-montserrat font-black text-[22px] sm:text-3xl xl:text-4xl text-[#0b162c] tracking-tight flex items-center gap-3 text-center lg:text-left">
                                 WHY <span className="text-[#ff6b00]">EHACK</span>
                                 <span className="w-10 xl:w-12 h-[3px] bg-[#ff6b00] relative hidden lg:block">
                                     <span className="absolute -right-[2px] top-1/2 -translate-y-1/2 w-3 h-3 border-t-[3px] border-r-[3px] border-[#ff6b00] rotate-45 transform origin-center"></span>
