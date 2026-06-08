@@ -58,10 +58,6 @@ export default function AdvancedDiplomaLandingPage() {
                 <EligibilityCriteria />
             </section>
 
-            <section id="programs">
-                <CybersecurityPrograms />
-            </section>
-
             <section id="why">
                 <WhyCybersecurity />
             </section>
@@ -76,6 +72,10 @@ export default function AdvancedDiplomaLandingPage() {
 
             <section id="faq">
                 <FAQ />
+            </section>
+
+            <section id="programs">
+                <CybersecurityPrograms />
             </section>
 
             <section id="apply">

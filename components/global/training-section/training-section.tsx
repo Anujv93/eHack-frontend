@@ -107,21 +107,18 @@ export default function TrainingSection({
         );
     };
 
-    // Format price to make GST text smaller
+    // Format price to make GST text smaller and enforce "+ GST as applicable"
     const formatPrice = (priceText: string) => {
-        // Check if the price contains GST text
-        const gstMatch = priceText.match(/(\+\s*GST|\+\s*Taxes?)/i);
-        if (gstMatch) {
-            const parts = priceText.split(gstMatch[0]);
-            return (
-                <>
-                    {parts[0]}
-                    <span className="price-tax">{gstMatch[0]}</span>
-                    {parts[1]}
-                </>
-            );
-        }
-        return priceText;
+        // Strip out existing GST or taxes text so we can hardcode the specific format
+        let cleanPrice = priceText.replace(/\+\s*GST(\s*as\s*applicable)?/gi, '').trim();
+        cleanPrice = cleanPrice.replace(/\+\s*Taxes?/gi, '').trim();
+        
+        return (
+            <>
+                {cleanPrice}
+                <span className="price-tax">+ GST as applicable</span>
+            </>
+        );
     };
 
     // Calculate EMI (Divide by 2)

@@ -91,16 +91,16 @@ const LandingBanner = () => {
                         {/* Authorized Training Partners */}
                         <div className="mb-6 w-full text-center lg:text-left flex flex-col items-center lg:items-start">
                             <p className="text-gray-500 text-[11px] uppercase tracking-wider font-bold mb-3">Authorized Training Partners:</p>
-                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6">
-                                <img src="/images/ec-council-logo.png" alt="EC-Council" className="h-8 sm:h-10 object-contain" />
-                                <div className="w-px h-8 sm:h-10 bg-gray-300"></div>
-                                <div className="flex items-center gap-3 bg-white px-2 py-1 rounded-lg">
-                                    <img src="/images/cropped-jiub-logo-Baptist.png" alt="JIUB" className="h-10 sm:h-12 w-10 sm:w-12 object-contain" />
+                            <div className="flex flex-row flex-nowrap items-center justify-center lg:justify-start gap-2 sm:gap-6 w-full">
+                                <img src="/images/ec-council-logo.png" alt="EC-Council" className="h-6 sm:h-10 object-contain shrink-0" />
+                                <div className="w-px h-6 sm:h-10 bg-gray-300 shrink-0"></div>
+                                <div className="flex items-center gap-1.5 sm:gap-3 bg-white px-1 sm:px-2 py-1 rounded-lg shrink-0">
+                                    <img src="/images/cropped-jiub-logo-Baptist.png" alt="JIUB" className="h-8 sm:h-12 w-8 sm:w-12 object-contain shrink-0" />
                                     <div className="flex flex-col text-left">
-                                        <span className="text-[#0b162c] font-extrabold text-[10px] sm:text-[11px] leading-[1.2] tracking-wide">
+                                        <span className="text-[#0b162c] font-extrabold text-[8px] sm:text-[11px] leading-[1.2] tracking-wide whitespace-nowrap">
                                             JEFFERSON INTERNATIONAL
                                         </span>
-                                        <span className="text-gray-600 font-semibold text-[9px] sm:text-[10px] leading-[1.2] tracking-wide">
+                                        <span className="text-gray-600 font-semibold text-[7px] sm:text-[10px] leading-[1.2] tracking-wide whitespace-nowrap">
                                             UNIVERSITY OF BAPTIST
                                         </span>
                                     </div>
@@ -170,28 +170,28 @@ const LandingBanner = () => {
                             </div>
 
                             {/* Stats Pill below video */}
-                            <div className="w-full bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.1)] px-3 sm:px-6 md:px-8 py-3.5 sm:py-5 flex flex-row items-center justify-between text-[#0b162c] relative z-30 mt-4 overflow-hidden">
+                            <div className="w-full bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.1)] px-2 sm:px-6 md:px-8 py-3.5 sm:py-5 flex flex-row items-center justify-around text-[#0b162c] relative z-30 mt-4 overflow-hidden">
                                 <div className="flex items-center gap-1 sm:gap-2 shrink-0">
                                     <svg className="w-4 h-4 sm:w-6 sm:h-6 text-[#ff6b00] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                    <div className="flex flex-row items-baseline gap-1 sm:gap-1.5 whitespace-nowrap">
+                                    <div className="flex flex-col sm:flex-row items-center sm:items-baseline gap-0.5 sm:gap-1.5 whitespace-nowrap">
                                         <span className="text-[13px] sm:text-base md:text-lg font-black leading-none">150+</span>
-                                        <span className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider leading-none">Batches</span>
+                                        <span className="text-[9px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider leading-none">Batches</span>
                                     </div>
                                 </div>
                                 <div className="w-px h-6 sm:h-10 bg-gray-200 shrink-0 mx-1 sm:mx-2"></div>
                                 <div className="flex items-center gap-1 sm:gap-2 shrink-0">
                                     <svg className="w-4 h-4 sm:w-6 sm:h-6 text-[#ff6b00] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                    <div className="flex flex-row items-baseline gap-1 sm:gap-1.5 whitespace-nowrap">
+                                    <div className="flex flex-col sm:flex-row items-center sm:items-baseline gap-0.5 sm:gap-1.5 whitespace-nowrap">
                                         <span className="text-[13px] sm:text-base md:text-lg font-black leading-none">4.9</span>
-                                        <span className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider leading-none">Ratings</span>
+                                        <span className="text-[9px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider leading-none">Ratings</span>
                                     </div>
                                 </div>
                                 <div className="w-px h-6 sm:h-10 bg-gray-200 shrink-0 mx-1 sm:mx-2"></div>
                                 <div className="flex items-center gap-1 sm:gap-2 shrink-0">
                                     <svg className="w-4 h-4 sm:w-6 sm:h-6 text-[#ff6b00] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                                    <div className="flex flex-row items-baseline gap-1 sm:gap-1.5 whitespace-nowrap">
+                                    <div className="flex flex-col sm:flex-row items-center sm:items-baseline gap-0.5 sm:gap-1.5 whitespace-nowrap">
                                         <span className="text-[13px] sm:text-base md:text-lg font-black leading-none">50K+</span>
-                                        <span className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider leading-none">Learners</span>
+                                        <span className="text-[9px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider leading-none">Learners</span>
                                     </div>
                                 </div>
                             </div>
