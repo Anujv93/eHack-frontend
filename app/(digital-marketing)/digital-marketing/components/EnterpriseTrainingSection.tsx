@@ -4,18 +4,18 @@ import React from 'react';
 import { ArrowRight, Trophy, MessageSquare, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 const logos = [
-    { name: "Honeywell", url: "https://upload.wikimedia.org/wikipedia/commons/1/11/Honeywell_logo.svg" },
-    { name: "KPMG", url: "https://upload.wikimedia.org/wikipedia/commons/9/9d/KPMG_logo.svg" },
+    { name: "Google", url: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
     { name: "Microsoft", url: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
-    { name: "Standard Chartered", url: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Standard_Chartered_%282021%29.svg" },
-    { name: "Tata", url: "https://upload.wikimedia.org/wikipedia/commons/8/86/Tata_logo.svg" },
-    { name: "Thomson Reuters", url: "https://upload.wikimedia.org/wikipedia/commons/1/13/Thomson_Reuters_logo.svg" },
-    { name: "WeWork", url: "https://upload.wikimedia.org/wikipedia/commons/2/23/WeWork_logo.svg" },
-    { name: "L&T", url: "https://upload.wikimedia.org/wikipedia/commons/d/da/Larsen_%26_Toubro_logo.svg" },
+    { name: "Amazon", url: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+    { name: "Meta", url: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
     { name: "IBM", url: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
     { name: "Accenture", url: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" },
-    { name: "Viacom", url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Viacom_logo.svg" },
-    { name: "Micro Focus", url: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Micro_Focus_logo.svg" }
+    { name: "Cisco", url: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" },
+    { name: "Capgemini", url: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Capgemini_201x_logo.svg" },
+    { name: "SAP", url: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" },
+    { name: "Oracle", url: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" },
+    { name: "Salesforce", url: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" },
+    { name: "Infosys", url: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" }
 ];
 
 const features = [
@@ -79,7 +79,7 @@ export default function EnterpriseTrainingSection() {
                             <img 
                                 src={logo.url} 
                                 alt={logo.name} 
-                                className="max-w-[80%] max-h-[30px] sm:max-h-[35px] object-contain opacity-70 hover:opacity-100 transition-opacity" 
+                                className="max-w-[80%] max-h-[30px] sm:max-h-[35px] object-contain" 
                                 title={logo.name}
                             />
                         </div>
@@ -93,7 +93,7 @@ export default function EnterpriseTrainingSection() {
                             <img 
                                 src={logo.url} 
                                 alt={logo.name} 
-                                className="max-w-[80%] max-h-[30px] sm:max-h-[35px] object-contain opacity-70 hover:opacity-100 transition-opacity" 
+                                className="max-w-[80%] max-h-[30px] sm:max-h-[35px] object-contain" 
                                 title={logo.name}
                             />
                         </div>

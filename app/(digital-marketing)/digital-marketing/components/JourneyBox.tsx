@@ -6,82 +6,154 @@ import { Calendar, Download, ArrowRight, Building2, CheckCircle2, ChevronRight }
 const modules = [
     {
         id: 1,
-        title: "Module 1",
-        subtitle: "Introduction to Digital Marketing",
+        title: "MODULE 01",
+        subtitle: "MARKETING FOUNDATIONS & MINDSET",
         topics: [
-            "What is Digital Marketing?",
-            "Difference Between Traditional Marketing and Digital Marketing",
-            "Latest Digital Marketing Trends",
-            "Digital Marketing Strategies for B2B and B2C",
-            "Career Opportunities in Digital Marketing",
-            "How to Increase Visibility and People Engagement",
-            "Digital Marketing Techniques for Product Marketing and Service Marketing",
-            "Platforms, Functions, and Types of Digital Marketing"
+            "The evolution of marketing: Traditional → Digital → AI-driven",
+            "How the internet changed buyer behaviour forever",
+            "The Digital Marketing Ecosystem: Search, Social, Email, Content, Paid",
+            "Understanding the customer journey & Funnel thinking (TOFU, MOFU, BOFU)",
+            "Metrics that matter: CPC, CPM, CTR, CVR, ROAS, LTV, CAC",
+            "The Entrepreneurial Marketing Mindset",
+            "Risk-taking, iteration, and testing as core marketing skills",
+            "Building a data-driven culture from day one",
+            "Understanding your market: Starving crowd vs. crowded market"
         ]
     },
     {
         id: 2,
-        title: "Module 2",
-        subtitle: "SEO Training (Search Engine Optimization)",
+        title: "MODULE 02",
+        subtitle: "WORLD-CLASS MARKETING FRAMEWORKS",
         topics: [
-            "Introduction to SEO",
-            "On-page Optimization",
-            "Off-page Optimization",
-            "Technical SEO",
-            "Local SEO Strategies",
-            "SEO Audit and Tools"
+            "Alex Hormozi's $100M Offers & Leads Framework",
+            "The Value Equation & Creating a Grand Slam Offer",
+            "The Core Four Advertising Methods (Warm, Free, Cold, Paid)",
+            "Seth Godin's Purple Cow: Remarkable Marketing",
+            "The Innovation Adoption Curve & Targeting Sneezers",
+            "Al Ries & Jack Trout's 22 Immutable Laws of Marketing",
+            "Law of Leadership, Category, Mind, Perception, and Focus",
+            "Russell Brunson's Traffic Secrets Framework",
+            "Dream Customer Avatar & The Dream 100 Strategy",
+            "Hook, Story, Offer — the three-part framework"
         ]
     },
     {
         id: 3,
-        title: "Module 3",
-        subtitle: "SEM Training (Search Engine Marketing)",
+        title: "MODULE 03",
+        subtitle: "UX PSYCHOLOGY & LANDING PAGE SCIENCE",
         topics: [
-            "Introduction to SEM and Google Ads",
-            "Keyword Research and Planning",
-            "Creating Ad Campaigns",
-            "Bidding Strategies",
-            "Ad Extensions and Formats",
-            "Conversion Tracking"
+            "UX Design Psychology for Marketers",
+            "Cognitive Load Theory, Hick's Law, Fitts's Law",
+            "Gestalt Principles & F-Pattern / Z-Pattern reading",
+            "The psychology of colour & Social proof psychology",
+            "The Above-the-Fold Law & Landing Page Architecture",
+            "Headline formulas that stop the scroll",
+            "Optimal Landing Page Layout Structure (8 Sections)",
+            "ROI-Focused Conversion Optimization & A/B Testing",
+            "Heatmaps, Page speed, Mobile-first design, Reducing friction"
         ]
     },
     {
         id: 4,
-        title: "Module 4",
-        subtitle: "SMO Training (Social Media Optimization)",
+        title: "MODULE 04",
+        subtitle: "OFFER CREATION & LEAD GENERATION SYSTEMS",
         topics: [
-            "Introduction to Social Media Platforms",
-            "Building a Social Media Strategy",
-            "Facebook and Instagram Marketing",
-            "LinkedIn B2B Strategies",
-            "Twitter and Pinterest Marketing",
-            "Social Media Analytics"
+            "Identifying your Niche & The Dream Outcome formula",
+            "Pricing your offer, Bonus Stacking, and Guarantees",
+            "Offer naming: The MAGIC naming formula",
+            "Lead Magnet Design & Types (PDFs, checklists, free trials)",
+            "The Hook-Story-Offer framework applied to lead magnets",
+            "Sales funnel stages: Lead Funnel → Tripwire → Core Offer → Upsell → Retain",
+            "Squeeze page design & Thank you page strategy",
+            "Introduction to ClickFunnels, GoHighLevel, Systeme.io"
         ]
     },
     {
         id: 5,
-        title: "Module 5",
-        subtitle: "PPC Training (Pay Per Click)",
+        title: "MODULE 05",
+        subtitle: "GOOGLE ADS MASTERY",
         topics: [
-            "Understanding PPC Ecosystem",
-            "Display Network Advertising",
-            "Video Advertising on YouTube",
-            "Shopping Campaigns",
-            "Remarketing Strategies",
-            "Performance Optimization"
+            "Google Ads account structure & Campaign types",
+            "Keyword research, Match types, and Negative keywords",
+            "Quality Score & Bidding strategies (Target CPA, ROAS, Max Conversions)",
+            "Google AdSense for Publishers & Revenue metrics",
+            "Google Tag Manager (GTM) setup & variables",
+            "Implementing Google Analytics 4 (GA4) & Conversion tracking",
+            "UTM parameters & Data attribution",
+            "Competition Analysis with Google Transparency Center"
         ]
     },
     {
         id: 6,
-        title: "Blog Marketing Training",
-        subtitle: "Blog Marketing Training",
+        title: "MODULE 06",
+        subtitle: "META ADS & CREATIVE STRATEGY",
         topics: [
-            "Content Strategy and Planning",
-            "Writing Engaging Blog Posts",
-            "Content Distribution",
-            "Guest Blogging and Outreach",
-            "Monetizing Your Blog",
-            "Analytics and Measurement"
+            "Meta Ads Manager overview & Campaign objectives",
+            "Audience targeting: Core, Custom, and Lookalike Audiences",
+            "The Meta Pixel: Setup, event tracking, and conversion optimisation",
+            "Budget & bidding: CBO vs. ABO, Advantage+ Campaigns",
+            "The Hook-Story-Offer formula applied to Meta ad creatives",
+            "Creative formats, Primary text copywriting, and Headline formulas",
+            "UGC (User Generated Content) vs. Polished Creative",
+            "Competition Analysis with Meta Ads Library & Swipe Files"
+        ]
+    },
+    {
+        id: 7,
+        title: "MODULE 07",
+        subtitle: "LEADS NURTURING & CRM SYSTEMS",
+        topics: [
+            "Email list building strategies & platform setup",
+            "The Welcome Sequence & Segmenting leads",
+            "Email copywriting (AIDA framework) & Deliverability (SPF, DKIM, DMARC)",
+            "WhatsApp Business API & Automated nurturing sequences",
+            "CRM integration: Connecting WhatsApp with GoHighLevel or HubSpot",
+            "Google Display & Meta Retargeting campaigns",
+            "Dynamic retargeting & Cross-platform strategies",
+            "Follow-Up Call Strategy, CRM pipelines, and Sales alignment"
+        ]
+    },
+    {
+        id: 8,
+        title: "MODULE 08",
+        subtitle: "SEO, AEO, GEO & AIO",
+        topics: [
+            "SEO (Search Engine Optimisation): On-Page, Technical, Off-Page",
+            "Keyword research, Search intent analysis, and Content strategy",
+            "Local SEO: Google Business Profile, local citations",
+            "AEO (Answer Engine Optimisation): Featured snippets, Schema markup",
+            "Conversational keyword targeting for voice search",
+            "GEO (Generative Engine Optimisation): Optimising for AI-powered search",
+            "E-E-A-T signals and Structured content formats AI prefers",
+            "AIO (AI Optimisation): ChatGPT plugins and Perplexity citations"
+        ]
+    },
+    {
+        id: 9,
+        title: "MODULE 09",
+        subtitle: "AI-POWERED MARKETING",
+        topics: [
+            "AI for Marketing Strategy, Ideation, and Competitive analysis",
+            "AI Copywriting: High-converting ad copy, landing pages, email sequences",
+            "SEO content writing with AI (E-E-A-T-compliant)",
+            "The Human-AI Writing Workflow (Draft → Refine → Brand voice)",
+            "Midjourney, DALL-E, Adobe Firefly for AI-generated visuals",
+            "AI video creation tools (Runway, Pika, HeyGen)",
+            "AI for Campaign Analysis, Predictive Forecasting & CRO"
+        ]
+    },
+    {
+        id: 10,
+        title: "MODULE 10",
+        subtitle: "CAPSTONE PROJECT & PORTFOLIO",
+        topics: [
+            "Build a complete 360° digital marketing campaign",
+            "Market research and customer avatar development",
+            "Grand Slam Offer creation using the Hormozi framework",
+            "Landing page design with above-the-fold optimisation",
+            "Google Ads, Meta Ads, Email & WhatsApp sequences",
+            "SEO and AEO content strategy execution",
+            "Final presentation to a panel & Professional portfolio compilation"
         ]
     }
 ];
@@ -138,14 +210,14 @@ const hiringLogos = [
     "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
     "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
     "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/9/9d/Capgemini_201x_logo.svg",
     "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg",
     "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/1/11/Amazon_Web_Services_Logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
+    "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg"
 ];
 
 export default function JourneyBox() {
@@ -219,9 +291,13 @@ export default function JourneyBox() {
                             <h4 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight pr-4">
                                 {activeModule.subtitle}
                             </h4>
-                            <button className="flex-shrink-0 border border-[#ff6b00] text-[#ff6b00] hover:bg-[#ff6b00] hover:text-white transition-colors px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2">
+                            <a 
+                                href="/brochure/Digital-Marketing-MasterProgram-Brochure.pdf" 
+                                download="Digital_Marketing_Curriculum.pdf"
+                                className="flex-shrink-0 border border-[#ff6b00] text-[#ff6b00] hover:bg-[#ff6b00] hover:text-white transition-colors px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2"
+                            >
                                 <Download size={14} /> Download Syllabus
-                            </button>
+                            </a>
                         </div>
                         
                         <div className="p-5 sm:p-6 overflow-y-auto custom-scrollbar flex-grow bg-gray-50/50">
@@ -358,7 +434,7 @@ export default function JourneyBox() {
                     <div className="flex gap-4 w-max animate-scroll-left hover:pause">
                         {[...hiringLogos.slice(0, 4), ...hiringLogos.slice(0, 4), ...hiringLogos.slice(0, 4), ...hiringLogos.slice(0, 4)].map((logo, i) => (
                             <div key={i} className="bg-white rounded-xl shadow-sm border border-[#ffcca3] flex items-center justify-center w-[160px] h-[75px] flex-shrink-0">
-                                <img src={logo} alt="Company Logo" className="max-w-[100px] max-h-[35px] object-contain opacity-80" />
+                                <img src={logo} alt="Company Logo" className="max-w-[100px] max-h-[35px] object-contain" />
                             </div>
                         ))}
                     </div>
@@ -366,7 +442,7 @@ export default function JourneyBox() {
                     <div className="flex gap-4 w-max animate-scroll-right ml-[-80px] hover:pause">
                         {[...hiringLogos.slice(4, 8), ...hiringLogos.slice(4, 8), ...hiringLogos.slice(4, 8), ...hiringLogos.slice(4, 8)].map((logo, i) => (
                             <div key={i} className="bg-white rounded-xl shadow-sm border border-[#ffcca3] flex items-center justify-center w-[160px] h-[75px] flex-shrink-0">
-                                <img src={logo} alt="Company Logo" className="max-w-[100px] max-h-[35px] object-contain opacity-80" />
+                                <img src={logo} alt="Company Logo" className="max-w-[100px] max-h-[35px] object-contain" />
                             </div>
                         ))}
                     </div>
@@ -374,7 +450,7 @@ export default function JourneyBox() {
                     <div className="flex gap-4 w-max animate-scroll-left ml-[-40px] hover:pause">
                         {[...hiringLogos.slice(8, 12), ...hiringLogos.slice(8, 12), ...hiringLogos.slice(8, 12), ...hiringLogos.slice(8, 12)].map((logo, i) => (
                             <div key={i} className="bg-white rounded-xl shadow-sm border border-[#ffcca3] flex items-center justify-center w-[160px] h-[75px] flex-shrink-0">
-                                <img src={logo} alt="Company Logo" className="max-w-[100px] max-h-[35px] object-contain opacity-80" />
+                                <img src={logo} alt="Company Logo" className="max-w-[100px] max-h-[35px] object-contain" />
                             </div>
                         ))}
                     </div>

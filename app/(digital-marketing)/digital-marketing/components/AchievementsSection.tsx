@@ -6,19 +6,19 @@ const achievements = [
     {
         title: "Most Innovative EdTech Startup",
         description: "Recognized by Startup India for innovation in learning.",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Startup_India_Logo.png",
+        logo: "/images/companies/startup-india.png",
         fallbackIcon: "🚀"
     },
     {
         title: "Excellence in Digital Training",
         description: "National Education Awards by NASSCOM.",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Nasscom_logo.svg",
+        logo: "/images/companies/nasscom.svg",
         fallbackIcon: "🎓"
     },
     {
         title: "ISO 9001:2015 Certified",
         description: "Certified for Quality Education Management.",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/e/e3/ISO_Logo_%28Red_square%29.svg",
+        logo: "/images/companies/iso.svg",
         fallbackIcon: "🏆"
     }
 ];

@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Phone } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
 
 const navItems = [
     { id: 'key-features', label: 'Key Features' },

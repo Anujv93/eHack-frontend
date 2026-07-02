@@ -54,7 +54,7 @@ export default function HeroSection() {
     }, [pairs.length]);
 
     return (
-        <section className="relative w-full min-h-screen flex items-center pt-36 pb-8 overflow-hidden bg-[#f8fafc]">
+        <section className="relative w-full min-h-screen flex items-center pt-32 pb-8 overflow-hidden bg-[#f8fafc]">
             {/* Background elements to match the soft light theme */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#ff6b00]/10 rounded-full blur-3xl opacity-50 translate-x-1/3 -translate-y-1/4"></div>
@@ -62,12 +62,12 @@ export default function HeroSection() {
             </div>
 
             {/* Header/Logo */}
-            <div className="absolute top-0 left-0 w-full z-50 py-4 border-b border-gray-100 bg-white/80 backdrop-blur-sm">
+            <div className="absolute top-0 left-0 w-full z-50 py-4 border-none">
                 <div className="container mx-auto px-6 lg:px-12 max-w-[1300px] flex justify-between items-center">
                     <img
                         src="/images/newnew-ehack-removebg-preview.png"
                         alt="eHack Academy"
-                        className="h-12 sm:h-16 w-auto object-contain"
+                        className="h-16 sm:h-20 w-auto object-contain"
                     />
                 </div>
             </div>

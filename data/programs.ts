@@ -1168,7 +1168,7 @@ export const programs = [
         slug: "digital-marketing-masterprogram",
         category: "digital-marketing",
         heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600",
-        brochureLink: "Digital Marketing.pdf.pdf",
+        brochureLink: "Digital-Marketing-MasterProgram-Brochure.pdf",
         title: "Master's Program in Digital Marketing powered by AI",
         subtitle: "Build Digital Careers - Agency Style Training",
         description: "eHack Digital Academy equips you to build your career from scratch with hands-on agency-style training to bridge the industry gap in skilled digital marketing professionals.",
@@ -1201,67 +1201,175 @@ export const programs = [
         curriculum: [
             {
                 number: "01",
-                title: "Website Design & Development",
-                duration: "2 Weeks",
+                title: "MARKETING FOUNDATIONS & MINDSET",
+                duration: "3 Weeks",
                 certification: "",
-                description: "Learn to create professional websites from scratch without any coding knowledge using modern design tools and platforms.",
-                topics: ["Website Fundamentals", "No-Code Builders", "UI/UX Basics", "Responsive Design", "Website Launch"]
+                description: "Students understand the modern marketing landscape, consumer psychology, and the entrepreneurial mindset needed to win.",
+                topics: [
+                    "The evolution of marketing: Traditional → Digital → AI-driven",
+                    "How the internet changed buyer behaviour forever",
+                    "The Digital Marketing Ecosystem: Search, Social, Email, Content, Paid",
+                    "Understanding the customer journey & Funnel thinking (TOFU, MOFU, BOFU)",
+                    "Metrics that matter: CPC, CPM, CTR, CVR, ROAS, LTV, CAC",
+                    "The Entrepreneurial Marketing Mindset",
+                    "Risk-taking, iteration, and testing as core marketing skills",
+                    "Building a data-driven culture from day one",
+                    "Understanding your market: Starving crowd vs. crowded market"
+                ]
             },
             {
                 number: "02",
-                title: "Copywriting Mastery",
-                duration: "2 Weeks",
+                title: "WORLD-CLASS MARKETING FRAMEWORKS",
+                duration: "4 Weeks",
                 certification: "",
-                description: "Master the art of persuasive writing and creating compelling content that converts visitors into customers.",
-                topics: ["Copywriting Fundamentals", "Sales Copy", "Content Strategy", "Persuasion Techniques", "Call-to-Action"]
+                description: "Students master the most powerful frameworks from the greatest marketing minds and apply them to real business scenarios.",
+                topics: [
+                    "Alex Hormozi's $100M Offers & Leads Framework",
+                    "The Value Equation & Creating a Grand Slam Offer",
+                    "The Core Four Advertising Methods (Warm, Free, Cold, Paid)",
+                    "Seth Godin's Purple Cow: Remarkable Marketing",
+                    "The Innovation Adoption Curve & Targeting Sneezers",
+                    "Al Ries & Jack Trout's 22 Immutable Laws of Marketing",
+                    "Law of Leadership, Category, Mind, Perception, and Focus",
+                    "Russell Brunson's Traffic Secrets Framework",
+                    "Dream Customer Avatar & The Dream 100 Strategy",
+                    "Hook, Story, Offer — the three-part framework"
+                ]
             },
             {
                 number: "03",
-                title: "Social Media Marketing",
+                title: "UX PSYCHOLOGY & LANDING PAGE SCIENCE",
                 duration: "3 Weeks",
                 certification: "",
-                description: "Understand social media platforms dynamics and learn to generate consistent traffic and sales through strategic campaigns.",
-                topics: ["Platform Strategies", "Content Planning", "Community Management", "Social Analytics", "Influencer Marketing"]
+                description: "Students understand how human psychology drives online behaviour and can design high-converting landing pages that maximise ROI.",
+                topics: [
+                    "UX Design Psychology for Marketers",
+                    "Cognitive Load Theory, Hick's Law, Fitts's Law",
+                    "Gestalt Principles & F-Pattern / Z-Pattern reading",
+                    "The psychology of colour & Social proof psychology",
+                    "The Above-the-Fold Law & Landing Page Architecture",
+                    "Headline formulas that stop the scroll",
+                    "Optimal Landing Page Layout Structure (8 Sections)",
+                    "ROI-Focused Conversion Optimization & A/B Testing",
+                    "Heatmaps, Page speed, Mobile-first design, Reducing friction"
+                ]
             },
             {
                 number: "04",
-                title: "Search Engine Optimization (SEO)",
+                title: "OFFER CREATION & LEAD GENERATION SYSTEMS",
                 duration: "3 Weeks",
                 certification: "",
-                description: "Drive consistent organic traffic to websites through proven SEO techniques and best practices.",
-                topics: ["On-Page SEO", "Off-Page SEO", "Keyword Research", "Technical SEO", "Link Building"]
+                description: "Students can build a complete Grand Slam Offer and lead generation funnel from scratch.",
+                topics: [
+                    "Identifying your Niche & The Dream Outcome formula",
+                    "Pricing your offer, Bonus Stacking, and Guarantees",
+                    "Offer naming: The MAGIC naming formula",
+                    "Lead Magnet Design & Types (PDFs, checklists, free trials)",
+                    "The Hook-Story-Offer framework applied to lead magnets",
+                    "Sales funnel stages: Lead Funnel → Tripwire → Core Offer → Upsell → Retain",
+                    "Squeeze page design & Thank you page strategy",
+                    "Introduction to ClickFunnels, GoHighLevel, Systeme.io"
+                ]
             },
             {
                 number: "05",
-                title: "Paid Advertising & PPC",
-                duration: "3 Weeks",
+                title: "GOOGLE ADS MASTERY",
+                duration: "4 Weeks",
                 certification: "",
-                description: "Master paid advertising on Google Ads, Facebook Ads, and other platforms to maximize return on investment.",
-                topics: ["Google Ads", "Facebook Ads", "Campaign Setup", "Bid Management", "Conversion Tracking"]
+                description: "Students can independently set up, manage, and optimise Google Ads campaigns for maximum ROI.",
+                topics: [
+                    "Google Ads account structure & Campaign types",
+                    "Keyword research, Match types, and Negative keywords",
+                    "Quality Score & Bidding strategies (Target CPA, ROAS, Max Conversions)",
+                    "Google AdSense for Publishers & Revenue metrics",
+                    "Google Tag Manager (GTM) setup & variables",
+                    "Implementing Google Analytics 4 (GA4) & Conversion tracking",
+                    "UTM parameters & Data attribution",
+                    "Competition Analysis with Google Transparency Center"
+                ]
             },
             {
                 number: "06",
-                title: "Advanced Digital Tools",
-                duration: "2 Weeks",
+                title: "META ADS & CREATIVE STRATEGY",
+                duration: "4 Weeks",
                 certification: "",
-                description: "Learn to use professional digital marketing tools for analytics, automation, and campaign optimization.",
-                topics: ["Marketing Automation", "Analytics Tools", "Design Tools", "SEO Tools", "Social Media Tools"]
+                description: "Students master Facebook and Instagram advertising — from creative development to full campaign management.",
+                topics: [
+                    "Meta Ads Manager overview & Campaign objectives",
+                    "Audience targeting: Core, Custom, and Lookalike Audiences",
+                    "The Meta Pixel: Setup, event tracking, and conversion optimisation",
+                    "Budget & bidding: CBO vs. ABO, Advantage+ Campaigns",
+                    "The Hook-Story-Offer formula applied to Meta ad creatives",
+                    "Creative formats, Primary text copywriting, and Headline formulas",
+                    "UGC (User Generated Content) vs. Polished Creative",
+                    "Competition Analysis with Meta Ads Library & Swipe Files"
+                ]
             },
             {
                 number: "07",
-                title: "ORM & Email Marketing",
-                duration: "2 Weeks",
+                title: "LEADS NURTURING & CRM SYSTEMS",
+                duration: "3 Weeks",
                 certification: "",
-                description: "Manage online reputation and create effective email marketing campaigns to nurture leads and drive conversions.",
-                topics: ["Online Reputation Management", "Email Campaigns", "Lead Nurturing", "List Building", "Email Automation"]
+                description: "Students build complete automated lead nurturing systems that convert cold leads into paying customers.",
+                topics: [
+                    "Email list building strategies & platform setup",
+                    "The Welcome Sequence & Segmenting leads",
+                    "Email copywriting (AIDA framework) & Deliverability (SPF, DKIM, DMARC)",
+                    "WhatsApp Business API & Automated nurturing sequences",
+                    "CRM integration: Connecting WhatsApp with GoHighLevel or HubSpot",
+                    "Google Display & Meta Retargeting campaigns",
+                    "Dynamic retargeting & Cross-platform strategies",
+                    "Follow-Up Call Strategy, CRM pipelines, and Sales alignment"
+                ]
             },
             {
                 number: "08",
-                title: "Job Readiness & Portfolio",
-                duration: "1 Week",
+                title: "SEO, AEO, GEO & AIO",
+                duration: "4 Weeks",
+                certification: "",
+                description: "Students understand and implement all four pillars of organic search visibility in the modern search landscape.",
+                topics: [
+                    "SEO (Search Engine Optimisation): On-Page, Technical, Off-Page",
+                    "Keyword research, Search intent analysis, and Content strategy",
+                    "Local SEO: Google Business Profile, local citations",
+                    "AEO (Answer Engine Optimisation): Featured snippets, Schema markup",
+                    "Conversational keyword targeting for voice search",
+                    "GEO (Generative Engine Optimisation): Optimising for AI-powered search",
+                    "E-E-A-T signals and Structured content formats AI prefers",
+                    "AIO (AI Optimisation): ChatGPT plugins and Perplexity citations"
+                ]
+            },
+            {
+                number: "09",
+                title: "AI-POWERED MARKETING",
+                duration: "3 Weeks",
+                certification: "",
+                description: "Students integrate AI tools into every aspect of their marketing workflow to work 10x faster and smarter.",
+                topics: [
+                    "AI for Marketing Strategy, Ideation, and Competitive analysis",
+                    "AI Copywriting: High-converting ad copy, landing pages, email sequences",
+                    "SEO content writing with AI (E-E-A-T-compliant)",
+                    "The Human-AI Writing Workflow (Draft → Refine → Brand voice)",
+                    "Midjourney, DALL-E, Adobe Firefly for AI-generated visuals",
+                    "AI video creation tools (Runway, Pika, HeyGen)",
+                    "AI for Campaign Analysis, Predictive Forecasting & CRO"
+                ]
+            },
+            {
+                number: "10",
+                title: "CAPSTONE PROJECT & PORTFOLIO",
+                duration: "5 Weeks",
                 certification: "eHack Digital Academy",
-                description: "Prepare for the job market with portfolio development, interview preparation, and career guidance.",
-                topics: ["Portfolio Creation", "Resume Building", "Interview Skills", "Freelancing", "Career Planning"]
+                description: "Students graduate with a fully built, live digital marketing campaign and professional portfolio ready for clients or employers.",
+                topics: [
+                    "Build a complete 360° digital marketing campaign",
+                    "Market research and customer avatar development",
+                    "Grand Slam Offer creation using the Hormozi framework",
+                    "Landing page design with above-the-fold optimisation",
+                    "Google Ads, Meta Ads, Email & WhatsApp sequences",
+                    "SEO and AEO content strategy execution",
+                    "Final presentation to a panel & Professional portfolio compilation"
+                ]
             }
         ],
         targetAudience: [
