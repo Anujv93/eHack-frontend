@@ -100,16 +100,16 @@ export default function KeyFeaturesSection() {
                                                 <path d="M0,90 C20,90 30,50 50,50 C70,50 80,10 100,10 C120,10 130,40 150,40 C170,40 180,80 200,80" fill="none" stroke="#ff6b00" strokeWidth="2" />
                                                 
                                                 <circle cx="50" cy="50" r="4" fill="#ff6b00" className="stroke-white stroke-[2px]" />
-                                                <text x="50" y="38" textAnchor="middle" className="text-[11px] font-bold fill-gray-800">$35k</text>
-                                                <text x="50" y="110" textAnchor="middle" className="text-[10px] fill-gray-400 font-medium">Min</text>
+                                                <text x="50" y="38" textAnchor="middle" className="text-[14px] font-bold fill-gray-800">$35k</text>
+                                                <text x="50" y="110" textAnchor="middle" className="text-[12px] fill-gray-400 font-medium">Min</text>
 
                                                 <circle cx="100" cy="10" r="4" fill="#ff6b00" className="stroke-white stroke-[2px]" />
-                                                <text x="100" y="-2" textAnchor="middle" className="text-[11px] font-bold fill-gray-800">$135k</text>
-                                                <text x="100" y="110" textAnchor="middle" className="text-[10px] fill-gray-400 font-medium">Max</text>
+                                                <text x="100" y="-4" textAnchor="middle" className="text-[14px] font-bold fill-gray-800">$135k</text>
+                                                <text x="100" y="110" textAnchor="middle" className="text-[12px] fill-gray-400 font-medium">Max</text>
 
                                                 <circle cx="150" cy="40" r="4" fill="#ff6b00" className="stroke-white stroke-[2px]" />
-                                                <text x="150" y="28" textAnchor="middle" className="text-[11px] font-bold fill-gray-800">$61k</text>
-                                                <text x="150" y="110" textAnchor="middle" className="text-[10px] fill-gray-400 font-medium">Average</text>
+                                                <text x="150" y="26" textAnchor="middle" className="text-[14px] font-bold fill-gray-800">$61k</text>
+                                                <text x="150" y="110" textAnchor="middle" className="text-[12px] fill-gray-400 font-medium">Average</text>
                                             </svg>
                                         </div>
                                     </div>
@@ -121,17 +121,17 @@ export default function KeyFeaturesSection() {
                                         </div>
                                         <div className="mt-8 flex-grow flex items-center justify-center">
                                             <div className="grid grid-cols-3 gap-y-8 gap-x-3 sm:gap-x-4 w-full px-1 sm:px-2">
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" alt="Accenture" className="h-[14px] object-contain mx-auto opacity-80" />
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-4 object-contain mx-auto" />
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" className="h-4 object-contain mx-auto" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" alt="Accenture" className="h-8 object-contain mx-auto opacity-80" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-8 object-contain mx-auto" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" className="h-8 object-contain mx-auto" />
                                                 
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" className="h-4 object-contain mx-auto opacity-80" />
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" className="h-3.5 object-contain mx-auto" />
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-5 object-contain mx-auto opacity-80" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" className="h-8 object-contain mx-auto opacity-80" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" className="h-7 object-contain mx-auto" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-9 object-contain mx-auto opacity-80" />
                                                 
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/HCLTech_logo.svg" alt="HCLTech" className="h-3 object-contain mx-auto opacity-90" />
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg" alt="Intel" className="h-5 object-contain mx-auto" />
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg" alt="TCS" className="h-4 object-contain mx-auto" />
+                                                <img src="https://cdn.simpleicons.org/hcl" alt="HCLTech" className="h-10 object-contain mx-auto opacity-90" />
+                                                <img src="https://cdn.simpleicons.org/intel" alt="Intel" className="h-10 object-contain mx-auto" />
+                                                <img src="https://cdn.simpleicons.org/tata" alt="TCS" className="h-10 object-contain mx-auto" />
                                             </div>
                                         </div>
                                     </div>
@@ -160,8 +160,8 @@ export default function KeyFeaturesSection() {
                                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] aspect-square bg-gradient-to-b from-[#ff6b00]/20 to-transparent rounded-t-full"></div>
                                                 
                                                 <div className="absolute top-6 w-full text-center px-2">
-                                                    <h3 className="text-xl sm:text-[1.35rem] font-bold text-gray-900 leading-none">150,000+</h3>
-                                                    <p className="text-[10px] sm:text-[11px] text-gray-600 mt-1 sm:mt-1.5 leading-snug">
+                                                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-none">150,000+</h3>
+                                                    <p className="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-1.5 leading-snug">
                                                         Job Opening Annually<br/>for <strong className="text-gray-900">Digital Marketing</strong>
                                                     </p>
                                                 </div>

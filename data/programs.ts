@@ -1179,10 +1179,10 @@ export const programs = [
         ehackLogo: "/ehack-logo.png",
         stats: {
             startDate: "5th of Every Month",
-            duration: "4 Months",
+            duration: "7 Months",
             mode: "Classroom + Live Online",
-            totalHours: "160+ ",
-            membership: "Working Hours: Tue-Sun, 9:30 AM - 6:30 PM"
+            totalHours: "250+ ",
+            membership: "2 Years Support"
         },
         schedule: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off)",
         certifications: [
@@ -1431,7 +1431,7 @@ export const programs = [
             {
                 category: "Program",
                 questions: [
-                    { q: "What is the Digital Marketing Master's Program?", a: "A comprehensive 4-month program covering Website Design, Copywriting, Social Media Marketing, SEO, Paid Advertising, ORM & Email Marketing with agency-style hands-on training." },
+                    { q: "What is the Digital Marketing Master's Program?", a: "A comprehensive 7-month program covering Website Design, Copywriting, Social Media Marketing, SEO, Paid Advertising, ORM & Email Marketing with agency-style hands-on training." },
                     { q: "Who teaches the program?", a: "The program is taught by Prof. Dr. Murali & Dr. Sheenu Jain, experienced digital marketing professionals who serve as guides, coaches, consultants and advisors." },
                     { q: "What are the schedule options?", a: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off). New batches start on the 5th of every month." },
                     { q: "What is the program fee?", a: "Original Price: ₹75,000 | Discounted Offer: ₹45,000. Contact us for flexible EMI options." }

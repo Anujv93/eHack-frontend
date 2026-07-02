@@ -47,16 +47,23 @@ export default function CertificationSection() {
                         <div className="w-[80%] h-[120%] bg-gradient-to-bl from-green-100/40 to-transparent rotate-12 transform scale-150 rounded-full blur-3xl absolute -right-20"></div>
                     </div>
                     
-                    {/* Certificate Image */}
-                    <div className="relative z-10 w-full max-w-3xl rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border-4 sm:border-[12px] border-[#f8f9fa] bg-white ring-1 ring-gray-200">
-                        <Image 
-                            src="/images/certificates/new-digital-marketing-certification.jpeg" 
-                            alt="Digital Marketing Certificate" 
-                            width={1200}
-                            height={850}
-                            className="w-full h-auto object-contain transform hover:scale-[1.02] transition-transform duration-500"
-                            priority
-                        />
+                    {/* Certificate Image Frame */}
+                    <div className="relative z-10 w-full max-w-3xl rounded-lg overflow-hidden bg-gradient-to-br from-[#2c2c2c] via-[#1a1a1a] to-[#2c2c2c] shadow-[0_8px_24px_rgba(0,0,0,0.25),0_4px_8px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.1)] p-4 sm:p-[16px]">
+                        {/* Outer golden border */}
+                        <div className="absolute inset-[4px] pointer-events-none z-20 border-2" style={{ borderImage: 'linear-gradient(135deg, #d4af37 0%, #f4d675 25%, #d4af37 50%, #b8962e 75%, #d4af37 100%) 1' }}></div>
+                        {/* Inner golden accent line */}
+                        <div className="absolute inset-[10px] pointer-events-none z-20 border border-[#d4af37]/40"></div>
+                        
+                        <div className="relative z-10 shadow-[inset_0_0_20px_rgba(0,0,0,0.3),0_2px_8px_rgba(0,0,0,0.2)] bg-transparent w-full">
+                            <Image 
+                                src="/images/certificates/new-digital-marketing-certification.jpeg" 
+                                alt="Digital Marketing Certificate" 
+                                width={1200}
+                                height={850}
+                                className="w-full h-auto object-contain transform hover:scale-[1.02] transition-transform duration-500 rounded-[2px]"
+                                priority
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

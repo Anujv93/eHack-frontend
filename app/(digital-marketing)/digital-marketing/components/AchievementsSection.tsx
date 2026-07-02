@@ -6,19 +6,19 @@ const achievements = [
     {
         title: "Most Innovative EdTech Startup",
         description: "Recognized by Startup India for innovation in learning.",
-        logo: "/images/companies/startup-india.png",
+        logo: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'><text x='10' y='60' font-size='36' font-family='sans-serif' font-weight='bold' fill='%23F47321'>startup</text><text x='135' y='60' font-size='36' font-family='sans-serif' font-weight='bold' fill='%23000000'>india</text></svg>",
         fallbackIcon: "🚀"
     },
     {
         title: "Excellence in Digital Training",
         description: "National Education Awards by NASSCOM.",
-        logo: "/images/companies/nasscom.svg",
+        logo: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'><text x='10' y='65' font-size='38' font-family='sans-serif' font-weight='bold' fill='%23005b8f'>NASSCOM</text></svg>",
         fallbackIcon: "🎓"
     },
     {
         title: "ISO 9001:2015 Certified",
         description: "Certified for Quality Education Management.",
-        logo: "/images/companies/iso.svg",
+        logo: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='10' width='80' height='80' fill='none' stroke='%23b81d22' stroke-width='6'/><text x='50' y='60' font-size='32' font-family='sans-serif' font-weight='bold' fill='%23b81d22' text-anchor='middle'>ISO</text></svg>",
         fallbackIcon: "🏆"
     }
 ];
