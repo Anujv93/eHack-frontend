@@ -69,14 +69,14 @@ export default function StickyNavbar() {
 
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <div className="sticky top-0 z-50 flex flex-col bg-white border-b border-gray-200 shadow-md">
             {/* Top row of the bottom bar */}
             <div className="container mx-auto px-4 lg:px-8 max-w-7xl h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
-                
+
                 {/* Scrollable Links */}
                 <div
                     ref={navContainerRef}
@@ -115,7 +115,7 @@ export default function StickyNavbar() {
                     </a>
                 </div>
             </div>
-            
+
             {/* Floating WhatsApp Button override for bottom spacing (remove if not needed anymore since navbar is top) */}
             <style>{`
                 .whatsapp-float-button {
