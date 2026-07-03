@@ -77,7 +77,23 @@ const placementStories = [
     }
 ];
 
-const PlacementSection = () => {
+interface PlacementStory {
+    id: number;
+    name: string;
+    image?: string;
+    before: { role: string; company: string };
+    after: { role: string; company: string; logo?: string };
+    hike: string;
+    badge: string[];
+}
+
+interface PlacementSectionProps {
+    customStories?: PlacementStory[];
+}
+
+const PlacementSection = ({ customStories }: PlacementSectionProps = {}) => {
+    const storiesToUse = customStories || placementStories;
+
     return (
         <section className="placement-section" style={{ borderBottom: 'solid 1px #ff6b00' }} id="placements">
             <div className="container">
@@ -96,11 +112,17 @@ const PlacementSection = () => {
                 <div className="marquee-container">
                     <div className="marquee-track">
                         {/* Render twice for infinite loop */}
-                        {[...placementStories, ...placementStories].map((story, index) => (
+                        {[...storiesToUse, ...storiesToUse].map((story, index) => (
                             <div key={`${story.id}-${index}`} className="transformation-card">
                                 <div className="card-header-section">
                                     <div className="profile-image-wrapper">
-                                        <img src={story.image} alt={story.name} className="profile-image" />
+                                        {story.image ? (
+                                            <img src={story.image} alt={story.name} className="profile-image" />
+                                        ) : (
+                                            <div className="profile-image" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f3f4f6', color: '#9ca3af', fontWeight: 'bold', fontSize: '1.5rem', textTransform: 'uppercase' }}>
+                                                {story.name.charAt(0)}
+                                            </div>
+                                        )}
                                         <div className="hike-badge">{story.hike} Hike</div>
                                     </div>
                                     <h3 className="student-name">{story.name}</h3>

@@ -11,6 +11,7 @@ import { ProgramLabsWrapper } from '@/components/global/certificate-labs/Program
 import InquiryForm from '@/components/global/inquiry-form/inquiry-form';
 import ProgramToolsSection from '@/components/programs/program-tools-section';
 import { useInternationalPricing } from '@/hooks/useInternationalPricing';
+import CourseReviews from '@/app/(digital-marketing)/digital-marketing/components/CourseReviews';
 
 // Navigation sections configuration
 const NAV_SECTIONS = [
@@ -387,8 +388,45 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
                 </div>
             </nav>
 
-            {/* Changed: Enable PlacementSection for all programs */}
-            <PlacementSection />
+            {/* Placements Section */}
+            {program.slug === 'digital-marketing-masterprogram' ? (
+                <PlacementSection customStories={[
+                    {
+                        id: 1,
+                        name: "Rahul Sharma",
+                        before: { role: "Marketing Intern", company: "Local Agency" },
+                        after: { role: "Digital Marketing Specialist", company: "Google", logo: "/images/Google_2015_logo.svg.webp" },
+                        hike: "200%",
+                        badge: ["Digital Marketing"]
+                    },
+                    {
+                        id: 2,
+                        name: "Priya Desai",
+                        before: { role: "Content Writer", company: "Freelancer" },
+                        after: { role: "SEO Analyst", company: "Meta", logo: "/images/Meta-Logo.png" },
+                        hike: "250%",
+                        badge: ["Digital Marketing"]
+                    },
+                    {
+                        id: 3,
+                        name: "Amit Patel",
+                        before: { role: "Junior Marketer", company: "Startup" },
+                        after: { role: "Social Media Manager", company: "Microsoft", logo: "/images/Microsoft-logo-5-removebg-preview.png" },
+                        hike: "180%",
+                        badge: ["Digital Marketing"]
+                    },
+                    {
+                        id: 4,
+                        name: "Neha Gupta",
+                        before: { role: "BBA Student", company: "Fresher" },
+                        after: { role: "Content Strategist", company: "Google", logo: "/images/Google_2015_logo.svg.webp" },
+                        hike: "300%",
+                        badge: ["Digital Marketing"]
+                    }
+                ]} />
+            ) : (
+                <PlacementSection />
+            )}
 
             {/* 5. COMBINED ROI + JOB ROLES - Career Value Proposition */}
             {/* Enabled for all programs including personality-softskills */}
