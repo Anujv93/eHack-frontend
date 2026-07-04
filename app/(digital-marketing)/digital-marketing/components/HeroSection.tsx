@@ -54,15 +54,45 @@ export default function HeroSection() {
     }, [pairs.length]);
 
     return (
-        <section className="relative w-full min-h-screen flex items-center pt-32 pb-8 overflow-hidden bg-[#f8fafc]">
+        <section className="relative w-full min-h-screen flex items-center pt-[220px] sm:pt-[180px] lg:pt-[160px] pb-12 overflow-hidden bg-[#f8fafc]">
             {/* Background elements to match the soft light theme */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#ff6b00]/10 rounded-full blur-3xl opacity-50 translate-x-1/3 -translate-y-1/4"></div>
                 <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#ff6b00]/5 rounded-full blur-3xl opacity-50 -translate-x-1/4 translate-y-1/4"></div>
             </div>
 
+            {/* Announcement Strip */}
+            <div className="absolute top-0 left-0 w-full z-[60] bg-white border-b border-gray-200 py-2 px-4 flex justify-center items-center shadow-sm">
+                <div className="flex items-center justify-center gap-4 max-w-[1300px] w-full whitespace-nowrap">
+                    <div className="flex items-center gap-2.5">
+                        <span className="relative flex h-2 w-2 flex-shrink-0">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6b00] opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff6b00]"></span>
+                        </span>
+                        <span className="font-semibold text-gray-700 text-[12px] sm:text-sm">7-Day Live Masterclass — Early Bird: <span className="text-[#ff6b00] font-bold">40% OFF</span></span>
+                    </div>
+                    <button 
+                        onClick={() => {
+                            const section = document.getElementById('masterclass-section');
+                            if (section) {
+                                const offset = 80;
+                                const bodyRect = document.body.getBoundingClientRect().top;
+                                const elementRect = section.getBoundingClientRect().top;
+                                const elementPosition = elementRect - bodyRect;
+                                const offsetPosition = elementPosition - offset;
+                                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                            }
+                        }}
+                        className="group flex-shrink-0 flex items-center gap-1.5 bg-[#ff6b00]/10 hover:bg-[#ff6b00]/15 text-[#ff6b00] border border-[#ff6b00]/20 font-bold py-1 px-3.5 rounded-full text-[11px] sm:text-xs transition-colors duration-300"
+                    >
+                        Grab Offer
+                        <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                    </button>
+                </div>
+            </div>
+
             {/* Header/Logo */}
-            <div className="absolute top-0 left-0 w-full z-50 py-4 border-none">
+            <div className="absolute top-[85px] sm:top-12 left-0 w-full z-50 py-4 border-none">
                 <div className="container mx-auto px-6 lg:px-12 max-w-[1300px] flex justify-between items-center">
                     <img
                         src="/images/newnew-ehack-removebg-preview.png"

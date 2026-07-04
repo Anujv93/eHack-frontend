@@ -4,6 +4,8 @@ import React from 'react';
 import HeroSection from './components/HeroSection';
 import StickyNavbar from './components/StickyNavbar';
 import KeyFeaturesSection from './components/KeyFeaturesSection';
+import MasterclassBanner from '@/components/MasterclassBanner';
+import { masterclasses } from '@/data/masterclasses';
 
 export default function DigitalMarketingLandingPage() {
     return (
@@ -11,6 +13,7 @@ export default function DigitalMarketingLandingPage() {
             <HeroSection />
             <StickyNavbar />
             <KeyFeaturesSection />
+            <MasterclassBanner data={masterclasses["digital-marketing"]} />
         </main>
     );
 }
