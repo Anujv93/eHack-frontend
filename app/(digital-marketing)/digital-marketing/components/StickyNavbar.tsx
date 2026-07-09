@@ -75,20 +75,20 @@ export default function StickyNavbar() {
     return (
         <div className="sticky top-0 z-50 flex flex-col bg-white border-b border-gray-200 shadow-md">
             {/* Top row of the bottom bar */}
-            <div className="container mx-auto px-4 lg:px-8 max-w-7xl h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
+            <div className="container mx-auto px-2 sm:px-4 lg:px-8 max-w-7xl h-12 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
 
                 {/* Scrollable Links */}
                 <div
                     ref={navContainerRef}
-                    className="flex-1 flex items-center gap-4 sm:gap-8 overflow-x-auto no-scrollbar"
-                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    className="flex-1 flex items-center gap-3 sm:gap-8 overflow-x-auto no-scrollbar py-1"
+                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
                 >
                     {navItems.map((item) => (
                         <button
                             key={item.id}
                             data-id={item.id}
                             onClick={() => scrollToSection(item.id)}
-                            className={`whitespace-nowrap py-1.5 sm:py-2 text-xs sm:text-sm font-medium transition-all duration-200 relative ${activeSection === item.id
+                            className={`whitespace-nowrap py-1.5 sm:py-2 text-[11px] sm:text-sm font-medium transition-all duration-200 relative ${activeSection === item.id
                                 ? 'text-[#ff6b00] font-bold'
                                 : 'text-gray-500 hover:text-gray-800'
                                 }`}
@@ -103,15 +103,16 @@ export default function StickyNavbar() {
                 </div>
 
                 {/* Call Button */}
-                <div className="flex-shrink-0 flex items-center">
+                <div className="flex-shrink-0 flex items-center pr-1 sm:pr-0">
                     <a
                         href="tel:+919513393880"
-                        className="inline-flex items-center gap-2 border border-gray-300 bg-white text-gray-800 px-4 py-2 rounded-full font-bold text-xs sm:text-sm shadow-sm hover:bg-gray-50 transition-all duration-300"
+                        className="inline-flex items-center gap-1 sm:gap-2 border border-gray-300 bg-white text-gray-800 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold text-[10px] sm:text-sm shadow-sm hover:bg-gray-50 transition-all duration-300"
                     >
-                        <span className="bg-[#ff6b00] p-1 rounded-full text-white">
-                            <Phone size={14} className="fill-current" />
+                        <span className="bg-[#ff6b00] p-1 rounded-full text-white flex items-center justify-center">
+                            <Phone size={12} className="sm:w-[14px] sm:h-[14px] fill-current" />
                         </span>
                         <span className="hidden sm:inline">+91-9513393880</span>
+                        <span className="sm:hidden font-semibold ml-0.5 tracking-wide text-xs">Call</span>
                     </a>
                 </div>
             </div>

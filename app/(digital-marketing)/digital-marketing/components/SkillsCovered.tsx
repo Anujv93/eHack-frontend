@@ -26,20 +26,20 @@ const skills = [
 export default function SkillsCovered() {
     return (
         <div className="w-full bg-[#f8f9fa] rounded-2xl pt-2 sm:pt-3 pb-2 sm:pb-3 px-4 sm:px-8 border border-gray-200 relative overflow-hidden">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a202c] font-montserrat mb-4 pl-2 sm:pl-4 relative z-10">
+            <h2 className="text-xl sm:text-3xl font-bold text-[#1a202c] font-montserrat mb-3 sm:mb-4 pl-1 sm:pl-4 relative z-10 leading-tight">
                 Skills Covered
             </h2>
 
-            <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 border border-gray-200 shadow-sm relative z-10 overflow-hidden">
+            <div className="bg-white rounded-2xl p-4 sm:p-8 md:p-10 border border-gray-200 shadow-sm relative z-10 overflow-hidden">
                 {/* Decorative Backgrounds Inside Box */}
                 <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-purple-100/60 to-green-100/40 blur-3xl -translate-x-1/4 -translate-y-1/4 pointer-events-none"></div>
                 <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-orange-100/40 to-yellow-100/30 blur-3xl translate-x-1/4 translate-y-1/4 pointer-events-none"></div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 sm:gap-y-5 gap-x-8 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-8 relative z-10">
                     {skills.map((skill, index) => (
-                        <div key={index} className="flex items-start gap-3">
-                            <CheckCircle2 size={20} className="text-white flex-shrink-0 mt-0.5" fill="#7f9ab2" strokeWidth={2}/>
-                            <span className="text-gray-800 text-[15px] leading-snug">{skill}</span>
+                        <div key={index} className="flex items-start gap-2.5 sm:gap-3">
+                            <CheckCircle2 className="text-white flex-shrink-0 mt-0.5 sm:mt-1 w-[18px] h-[18px] sm:w-[20px] sm:h-[20px]" fill="#7f9ab2" strokeWidth={2}/>
+                            <span className="text-gray-800 text-sm sm:text-[15px] leading-snug">{skill}</span>
                         </div>
                     ))}
                 </div>

@@ -36,33 +36,33 @@ export default function KeyFeaturesSection() {
                     {/* Left Column: Key Features & Demand Growth */}
                     <div className="w-full lg:w-[72%] flex flex-col gap-8">
                         {/* Wrapper mimicking the soft gradient/shape background from image */}
-                        <div className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl p-6 sm:p-10 relative overflow-hidden border border-gray-200">
+                        <div className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl p-4 sm:p-10 relative overflow-hidden border border-gray-200">
                             {/* Subtle Color Design in Top Right Corner using Brand Color */}
                             <div className="absolute top-0 right-0 w-80 sm:w-96 h-80 sm:h-96 bg-gradient-to-bl from-[#ff6b00]/20 via-[#ff6b00]/5 to-transparent opacity-80 rounded-bl-[150px] transform translate-x-8 -translate-y-8 pointer-events-none z-0"></div>
                             
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#ff6b00]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
                             
                             <div className="relative z-10">
-                                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 font-montserrat">
+                                <h2 className="text-xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 font-montserrat">
                                     Digital Marketing Course Online - Key Features
                                 </h2>
 
-                                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sm:p-8">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8">
+                                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-8">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 sm:gap-y-6 gap-x-8">
                                         {features.map((feature, index) => (
-                                            <div key={index} className="flex items-start gap-3">
+                                            <div key={index} className="flex items-start gap-2.5 sm:gap-3">
                                                 <span className="mt-0.5 flex-shrink-0 text-[#ff6b00] bg-[#ff6b00]/10 p-0.5 rounded-full">
                                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                                                     </svg>
                                                 </span>
-                                                <span className="text-gray-700 text-sm font-medium leading-relaxed">{feature}</span>
+                                                <span className="text-gray-700 text-xs sm:text-sm font-medium leading-relaxed">{feature}</span>
                                             </div>
                                         ))}
                                     </div>
                                     
-                                    <div className="flex justify-center mt-10">
-                                        <button className="bg-[#ff6b00] hover:bg-[#e56000] text-white font-bold px-8 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-[#ff6b00]/20">
+                                    <div className="flex justify-center mt-6 sm:mt-10">
+                                        <button className="bg-[#ff6b00] hover:bg-[#e56000] text-white font-bold px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-[#ff6b00]/20 w-full sm:w-auto text-sm sm:text-base">
                                             Get Started <span className="text-lg leading-none">→</span>
                                         </button>
                                     </div>
@@ -71,19 +71,19 @@ export default function KeyFeaturesSection() {
                         </div>
 
                         {/* Significant Demand Growth Box */}
-                        <div className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl p-6 sm:p-10 relative overflow-hidden border border-gray-200">
+                        <div className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl p-4 sm:p-10 relative overflow-hidden border border-gray-200">
                             {/* Subtle Color Design in Top Left Corner */}
                             <div className="absolute top-0 left-0 w-80 h-80 bg-gradient-to-br from-[#ff6b00]/10 via-[#ff6b00]/5 to-transparent rounded-br-[150px] transform -translate-x-8 -translate-y-8 pointer-events-none z-0"></div>
                             
                             <div className="relative z-10">
-                                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 font-montserrat">
+                                <h2 className="text-xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 font-montserrat">
                                     Significant Demand Growth
                                 </h2>
 
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                                     
                                     {/* Annual Salary Card */}
-                                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 relative overflow-hidden flex flex-col h-[280px]">
+                                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6 relative overflow-hidden flex flex-col min-h-[260px] sm:h-[280px]">
                                         <div className="bg-[#e2e8f0] text-gray-700 font-bold text-[10px] sm:text-xs px-3 py-1.5 rounded-br-lg rounded-tl-xl absolute top-0 left-0">
                                             Annual Salary
                                         </div>
@@ -100,44 +100,44 @@ export default function KeyFeaturesSection() {
                                                 <path d="M0,90 C20,90 30,50 50,50 C70,50 80,10 100,10 C120,10 130,40 150,40 C170,40 180,80 200,80" fill="none" stroke="#ff6b00" strokeWidth="2" />
                                                 
                                                 <circle cx="50" cy="50" r="4" fill="#ff6b00" className="stroke-white stroke-[2px]" />
-                                                <text x="50" y="38" textAnchor="middle" className="text-[14px] font-bold fill-gray-800">$35k</text>
+                                                <text x="50" y="38" textAnchor="middle" className="text-[14px] font-bold fill-gray-800">₹6L</text>
                                                 <text x="50" y="110" textAnchor="middle" className="text-[12px] fill-gray-400 font-medium">Min</text>
 
                                                 <circle cx="100" cy="10" r="4" fill="#ff6b00" className="stroke-white stroke-[2px]" />
-                                                <text x="100" y="-4" textAnchor="middle" className="text-[14px] font-bold fill-gray-800">$135k</text>
+                                                <text x="100" y="-4" textAnchor="middle" className="text-[14px] font-bold fill-gray-800">₹24L</text>
                                                 <text x="100" y="110" textAnchor="middle" className="text-[12px] fill-gray-400 font-medium">Max</text>
 
                                                 <circle cx="150" cy="40" r="4" fill="#ff6b00" className="stroke-white stroke-[2px]" />
-                                                <text x="150" y="26" textAnchor="middle" className="text-[14px] font-bold fill-gray-800">$61k</text>
+                                                <text x="150" y="26" textAnchor="middle" className="text-[14px] font-bold fill-gray-800">₹12L</text>
                                                 <text x="150" y="110" textAnchor="middle" className="text-[12px] fill-gray-400 font-medium">Average</text>
                                             </svg>
                                         </div>
                                     </div>
 
                                     {/* Hiring Companies Card */}
-                                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 relative overflow-hidden flex flex-col h-[280px]">
+                                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6 relative overflow-hidden flex flex-col min-h-[260px] sm:h-[280px]">
                                         <div className="bg-[#e2e8f0] text-gray-700 font-bold text-[10px] sm:text-xs px-3 py-1.5 rounded-br-lg rounded-tl-xl absolute top-0 left-0">
                                             Hiring Companies
                                         </div>
                                         <div className="mt-8 flex-grow flex items-center justify-center">
-                                            <div className="grid grid-cols-3 gap-y-8 gap-x-3 sm:gap-x-4 w-full px-1 sm:px-2">
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" alt="Accenture" className="h-8 object-contain mx-auto opacity-80" />
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-8 object-contain mx-auto" />
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" className="h-8 object-contain mx-auto" />
+                                            <div className="grid grid-cols-3 gap-y-6 sm:gap-y-8 gap-x-2 sm:gap-x-4 w-full px-1">
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" alt="Accenture" className="h-5 sm:h-8 object-contain mx-auto opacity-80" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-5 sm:h-8 object-contain mx-auto" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" className="h-5 sm:h-8 object-contain mx-auto" />
                                                 
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" className="h-8 object-contain mx-auto opacity-80" />
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" className="h-7 object-contain mx-auto" />
-                                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-9 object-contain mx-auto opacity-80" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" className="h-5 sm:h-8 object-contain mx-auto opacity-80" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" className="h-4 sm:h-7 object-contain mx-auto" />
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-6 sm:h-9 object-contain mx-auto opacity-80" />
                                                 
-                                                <img src="https://cdn.simpleicons.org/hcl" alt="HCLTech" className="h-10 object-contain mx-auto opacity-90" />
-                                                <img src="https://cdn.simpleicons.org/intel" alt="Intel" className="h-10 object-contain mx-auto" />
-                                                <img src="https://cdn.simpleicons.org/tata" alt="TCS" className="h-10 object-contain mx-auto" />
+                                                <img src="https://cdn.simpleicons.org/hcl" alt="HCLTech" className="h-7 sm:h-10 object-contain mx-auto opacity-90" />
+                                                <img src="https://cdn.simpleicons.org/intel" alt="Intel" className="h-7 sm:h-10 object-contain mx-auto" />
+                                                <img src="https://cdn.simpleicons.org/tata" alt="TCS" className="h-7 sm:h-10 object-contain mx-auto" />
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* Available Jobs Card */}
-                                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 relative overflow-hidden flex flex-col h-[280px]">
+                                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6 relative overflow-hidden flex flex-col min-h-[260px] sm:h-[280px]">
                                         <div className="bg-[#e2e8f0] text-gray-700 font-bold text-[10px] sm:text-xs px-3 py-1.5 rounded-br-lg rounded-tl-xl absolute top-0 left-0 z-10">
                                             Available Jobs
                                         </div>
@@ -160,8 +160,8 @@ export default function KeyFeaturesSection() {
                                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] aspect-square bg-gradient-to-b from-[#ff6b00]/20 to-transparent rounded-t-full"></div>
                                                 
                                                 <div className="absolute top-6 w-full text-center px-2">
-                                                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-none">150,000+</h3>
-                                                    <p className="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-1.5 leading-snug">
+                                                    <h3 className="text-xl sm:text-3xl font-bold text-gray-900 leading-none mt-2 sm:mt-0">150,000+</h3>
+                                                    <p className="text-[10px] sm:text-sm text-gray-600 mt-1 sm:mt-1.5 leading-snug">
                                                         Job Opening Annually<br/>for <strong className="text-gray-900">Digital Marketing</strong>
                                                     </p>
                                                 </div>

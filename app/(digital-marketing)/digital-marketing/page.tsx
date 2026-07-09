@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection';
 import StickyNavbar from './components/StickyNavbar';
 import KeyFeaturesSection from './components/KeyFeaturesSection';
 import MasterclassBanner from '@/components/MasterclassBanner';
+import BlinkingMasterclassButton from './components/BlinkingMasterclassButton';
 import { masterclasses } from '@/data/masterclasses';
 
 export default function DigitalMarketingLandingPage() {
@@ -14,6 +15,7 @@ export default function DigitalMarketingLandingPage() {
             <StickyNavbar />
             <KeyFeaturesSection />
             <MasterclassBanner data={masterclasses["digital-marketing"]} />
+            <BlinkingMasterclassButton />
         </main>
     );
 }

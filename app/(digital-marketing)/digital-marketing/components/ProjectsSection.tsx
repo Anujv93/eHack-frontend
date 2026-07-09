@@ -39,17 +39,17 @@ export default function ProjectsSection() {
             {/* Decorative Background */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-purple-100/60 to-green-100/40 blur-3xl translate-x-1/4 -translate-y-1/4 pointer-events-none"></div>
 
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a202c] font-montserrat mb-4 pl-2 sm:pl-4 relative z-10">
+            <h2 className="text-xl sm:text-3xl font-bold text-[#1a202c] font-montserrat mb-3 sm:mb-4 pl-1 sm:pl-4 relative z-10 leading-tight">
                 Capstone Projects
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 relative z-10 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 relative z-10 mb-5 sm:mb-6">
                 {visibleProjects.map((project, index) => (
-                    <div key={index} className="bg-white rounded-xl p-5 sm:p-6 border border-gray-200 shadow-sm flex flex-col hover:shadow-md transition-shadow">
-                        <h3 className="text-[17px] font-bold text-gray-900 mb-2.5">
+                    <div key={index} className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200 shadow-sm flex flex-col hover:shadow-md transition-shadow">
+                        <h3 className="text-[16px] sm:text-[17px] font-bold text-gray-900 mb-2 sm:mb-2.5">
                             {project.title}
                         </h3>
-                        <p className="text-gray-600 text-[14px] leading-relaxed">
+                        <p className="text-gray-600 text-[13px] sm:text-[14px] leading-relaxed">
                             {project.description}
                         </p>
                     </div>
@@ -59,10 +59,10 @@ export default function ProjectsSection() {
             <div className="flex justify-center relative z-10">
                 <button 
                     onClick={() => setShowAll(!showAll)}
-                    className="flex items-center gap-2 bg-[#ff6b00]/10 text-[#ff6b00] font-bold py-2.5 px-6 rounded-lg hover:bg-[#ff6b00]/20 transition-colors text-[15px]"
+                    className="flex items-center gap-2 bg-[#ff6b00]/10 text-[#ff6b00] font-bold py-2 px-5 sm:py-2.5 sm:px-6 rounded-lg hover:bg-[#ff6b00]/20 transition-colors text-[14px] sm:text-[15px]"
                 >
                     {showAll ? "View Less" : "View All"} 
-                    {showAll ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                    {showAll ? <ChevronUp size={16} className="sm:w-[18px] sm:h-[18px]" /> : <ChevronDown size={16} className="sm:w-[18px] sm:h-[18px]" />}
                 </button>
             </div>
         </div>

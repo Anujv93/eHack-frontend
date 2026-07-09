@@ -14,35 +14,35 @@ export default function HeroSection() {
             bookAlt: "$100M Offers Book",
             author: "/images/books/Alex-Hermozi-Freelancing-removebg-preview.png",
             authorAlt: "Alex Hormozi",
-            authorClass: "h-[250px]"
+            authorClass: "h-[170px] sm:h-[210px]"
         },
         {
             book: "/images/books/100m-leads-original-imagvjkcv3cgu8mf.webp",
             bookAlt: "$100M Leads Book",
             author: "/images/books/Alex-Hermozi-Freelancing-removebg-preview.png",
             authorAlt: "Alex Hormozi",
-            authorClass: "h-[250px]"
+            authorClass: "h-[170px] sm:h-[210px]"
         },
         {
             book: "/images/books/purple-cow.jpg",
             bookAlt: "Purple Cow Book",
             author: "/images/books/seth%20godin.png",
             authorAlt: "Seth Godin",
-            authorClass: "h-[210px]"
+            authorClass: "h-[140px] sm:h-[180px]"
         },
         {
             book: "/images/books/traffic-secrets.jpg",
             bookAlt: "Traffic Secrets Book",
             author: "/images/books/Russell%20Brunson.png",
             authorAlt: "Russell Brunson",
-            authorClass: "h-[250px]"
+            authorClass: "h-[170px] sm:h-[210px]"
         },
         {
             book: "/images/books/22-laws.jpg",
             bookAlt: "22 Immutable Laws Book",
             author: "/images/books/al%20rise.png",
             authorAlt: "Al Ries",
-            authorClass: "h-[250px]"
+            authorClass: "h-[170px] sm:h-[210px]"
         }
     ];
 
@@ -54,22 +54,26 @@ export default function HeroSection() {
     }, [pairs.length]);
 
     return (
-        <section className="relative w-full min-h-screen flex items-center pt-[220px] sm:pt-[180px] lg:pt-[160px] pb-12 overflow-hidden bg-[#f8fafc]">
+        <section className="relative w-full min-h-screen flex items-center pt-[100px] sm:pt-[120px] lg:pt-[130px] pb-10 overflow-hidden bg-[#f8fafc]">
             {/* Background elements to match the soft light theme */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#ff6b00]/10 rounded-full blur-3xl opacity-50 translate-x-1/3 -translate-y-1/4"></div>
+                <div className="absolute top-0 right-0 w-[400px] sm:w-[800px] h-[400px] sm:h-[800px] bg-[#ff6b00]/10 rounded-full blur-2xl sm:blur-3xl opacity-50 translate-x-1/3 -translate-y-1/4"></div>
                 <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#ff6b00]/5 rounded-full blur-3xl opacity-50 -translate-x-1/4 translate-y-1/4"></div>
             </div>
 
             {/* Announcement Strip */}
-            <div className="absolute top-0 left-0 w-full z-[60] bg-white border-b border-gray-200 py-2 px-4 flex justify-center items-center shadow-sm">
-                <div className="flex items-center justify-center gap-4 max-w-[1300px] w-full whitespace-nowrap">
-                    <div className="flex items-center gap-2.5">
-                        <span className="relative flex h-2 w-2 flex-shrink-0">
+            <div className="absolute top-0 left-0 w-full z-[60] bg-white border-b border-gray-200 py-1.5 sm:py-2 px-1 sm:px-4 flex justify-center items-center shadow-sm">
+                <div className="flex flex-row items-center justify-center gap-2 sm:gap-4 max-w-[1300px] w-full whitespace-nowrap overflow-hidden">
+                    <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink">
+                        <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2 flex-shrink-0">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6b00] opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff6b00]"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-[#ff6b00]"></span>
                         </span>
-                        <span className="font-semibold text-gray-700 text-[12px] sm:text-sm">7-Day Live Masterclass — Early Bird: <span className="text-[#ff6b00] font-bold">40% OFF</span></span>
+                        <span className="font-semibold text-gray-700 text-[10px] sm:text-sm text-center truncate">
+                            <span className="hidden sm:inline">7-Day Live Masterclass — Early Bird: </span>
+                            <span className="sm:hidden">7-Day Live Masterclass: </span>
+                            <span className="text-[#ff6b00] font-bold">40% OFF</span>
+                        </span>
                     </div>
                     <button 
                         onClick={() => {
@@ -83,21 +87,21 @@ export default function HeroSection() {
                                 window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                             }
                         }}
-                        className="group flex-shrink-0 flex items-center gap-1.5 bg-[#ff6b00]/10 hover:bg-[#ff6b00]/15 text-[#ff6b00] border border-[#ff6b00]/20 font-bold py-1 px-3.5 rounded-full text-[11px] sm:text-xs transition-colors duration-300"
+                        className="group flex-shrink-0 flex items-center gap-1.5 bg-[#ff6b00]/10 hover:bg-[#ff6b00]/15 text-[#ff6b00] border border-[#ff6b00]/20 font-bold py-1 px-3 sm:px-3.5 rounded-full text-[9px] sm:text-xs transition-colors duration-300"
                     >
                         Grab Offer
-                        <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                        <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                     </button>
                 </div>
             </div>
 
             {/* Header/Logo */}
-            <div className="absolute top-[85px] sm:top-12 left-0 w-full z-50 py-4 border-none">
-                <div className="container mx-auto px-6 lg:px-12 max-w-[1300px] flex justify-between items-center">
+            <div className="absolute top-[32px] sm:top-[40px] left-0 w-full z-50 py-2 sm:py-4 border-none">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1300px] flex justify-between items-center">
                     <img
                         src="/images/newnew-ehack-removebg-preview.png"
                         alt="eHack Academy"
-                        className="h-16 sm:h-20 w-auto object-contain"
+                        className="h-10 sm:h-16 lg:h-20 w-auto object-contain"
                     />
                 </div>
             </div>
@@ -106,7 +110,7 @@ export default function HeroSection() {
                 <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
                     
                     {/* Left Content */}
-                    <div className="w-full lg:w-[55%] text-left pt-8 lg:pt-0">
+                    <div className="w-full lg:w-[55%] text-left pt-2 sm:pt-4 lg:pt-0">
                         
                         <h1 className="font-montserrat font-extrabold text-gray-900 text-3xl sm:text-4xl lg:text-[2.8rem] xl:text-[3rem] leading-[1.2] mb-4">
                             Digital Marketing Diploma That Builds Real Marketers.
@@ -152,32 +156,32 @@ export default function HeroSection() {
                             ))}
                         </ul>
 
-                        <div className="flex flex-wrap items-center gap-3 mb-6">
-                            <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-lg px-4 py-2.5 shadow-sm">
-                                <div className="flex flex-col items-center border-r border-gray-200 pr-6">
-                                    <div className="flex items-center gap-1 text-gray-900 font-bold mb-1">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-[#ff6b00]" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
+                        <div className="flex flex-nowrap items-center gap-3 sm:gap-4 bg-white border border-gray-200 rounded-lg p-2 sm:p-2.5 shadow-sm mb-5 w-full sm:w-auto max-w-full overflow-x-auto overflow-y-hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                            {/* Trustpilot */}
+                            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+                                <div className="flex flex-col">
+                                    <div className="flex items-center gap-1 text-gray-900 font-bold text-[11px] sm:text-xs">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-[#ff6b00]" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
                                         Trustpilot
                                     </div>
-                                    <div className="flex text-[#ff6b00] gap-0.5 mb-1">
-                                        {[...Array(5)].map((_, i) => <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>)}
+                                    <div className="flex text-[#ff6b00] gap-0.5 mt-0.5">
+                                        {[...Array(5)].map((_, i) => <svg key={i} width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>)}
                                     </div>
                                 </div>
-                                <div className="flex items-center justify-center font-bold text-gray-900 bg-gray-50 rounded-lg px-3 py-1">
-                                    4.6/5
-                                </div>
+                                <div className="font-bold text-gray-900 text-sm">4.6/5</div>
                             </div>
-
-                            <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-lg px-4 py-2.5 shadow-sm">
-                                <div className="flex flex-col items-center border-r border-gray-200 pr-6">
-                                    <img src="/images/Google_2015_logo.svg.webp" alt="Google" className="h-[20px] mb-1 object-contain" />
-                                    <div className="flex text-yellow-400 gap-0.5 mb-1">
-                                        {[...Array(5)].map((_, i) => <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>)}
+                            
+                            <div className="w-[1px] h-6 bg-gray-200 flex-shrink-0"></div>
+                            
+                            {/* Google */}
+                            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+                                <div className="flex flex-col">
+                                    <img src="/images/Google_2015_logo.svg.webp" alt="Google" className="h-[12px] object-contain mb-1" />
+                                    <div className="flex text-yellow-400 gap-0.5">
+                                        {[...Array(5)].map((_, i) => <svg key={i} width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>)}
                                     </div>
                                 </div>
-                                <div className="flex items-center justify-center font-bold text-gray-900 bg-gray-50 rounded-lg px-3 py-1">
-                                    4.8/5
-                                </div>
+                                <div className="font-bold text-gray-900 text-sm pr-2">4.8/5</div>
                             </div>
                         </div>
 
@@ -198,34 +202,34 @@ export default function HeroSection() {
                         <div className="w-full max-w-[400px] flex flex-col shadow-2xl shadow-[#ff6b00]/15 rounded-2xl overflow-hidden border border-gray-200/60 bg-white">
                             
                             {/* Book Panel (Top) */}
-                            <div className="w-full bg-[#fcfcfc] border-b border-gray-200 px-5 pt-3 pb-3 relative overflow-hidden flex flex-col items-center">
-                                <h3 className="text-[14px] sm:text-[15px] font-bold text-gray-800 mb-2 text-center leading-snug">
+                            <div className="w-full bg-[#fcfcfc] border-b border-gray-200 px-4 pt-3 pb-2 relative overflow-hidden flex flex-col items-center">
+                                <h3 className="text-[13px] sm:text-[14px] font-bold text-gray-800 mb-2 text-center leading-snug">
                                     Includes #1 marketing strategies that experts recommend worldwide.
                                 </h3>
                                 
-                                <div className="w-full relative h-[280px]">
+                                <div className="w-full relative h-[180px] sm:h-[220px]">
                                     {pairs.map((pair, idx) => (
                                         <div 
                                             key={idx}
-                                            className={`absolute inset-0 w-full h-full flex items-end justify-center gap-6 transition-opacity duration-1000 ${
+                                            className={`absolute inset-0 w-full h-full flex items-end justify-center gap-2 sm:gap-4 transition-opacity duration-1000 ${
                                                 idx === currentPair ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
                                             }`}
                                         >
                                             {/* Left: Book Cover Frame */}
-                                            <div className="w-[140px] h-[190px] rounded-lg p-1.5 bg-white border border-gray-300 shadow-xl flex-shrink-0 relative mb-4 hover:-translate-y-1 transition-transform">
+                                            <div className="w-[90px] sm:w-[120px] h-[130px] sm:h-[160px] rounded-lg p-1 bg-white border border-gray-300 shadow-xl flex-shrink-0 relative mb-3 hover:-translate-y-1 transition-transform">
                                                 <div className="w-full h-full rounded border border-gray-100 overflow-hidden">
                                                     <img src={pair.book} alt={pair.bookAlt} className="w-full h-full object-cover" />
                                                 </div>
                                             </div>
                                             
                                             {/* Right: Author Frame */}
-                                            <div className="w-[200px] h-[260px] rounded-xl p-2 bg-gradient-to-b from-white/60 to-white/90 border border-gray-200 shadow-lg flex items-end justify-center relative flex-shrink-0 group overflow-hidden mb-2">
+                                            <div className="w-[120px] sm:w-[160px] h-[160px] sm:h-[210px] rounded-xl p-1 bg-gradient-to-b from-white/60 to-white/90 border border-gray-200 shadow-xl flex items-end justify-center relative flex-shrink-0 group overflow-hidden mb-1">
                                                 {/* Background glow to make author pop */}
-                                                <div className="absolute bottom-6 w-[210px] h-[210px] bg-[#ff6b00]/15 rounded-full blur-2xl group-hover:bg-[#ff6b00]/25 transition-colors"></div>
+                                                <div className="absolute bottom-2 sm:bottom-4 w-[110px] sm:w-[150px] h-[110px] sm:h-[150px] bg-[#ff6b00]/15 rounded-full blur-xl group-hover:bg-[#ff6b00]/25 transition-colors"></div>
                                                 <img 
                                                     src={pair.author} 
                                                     alt={pair.authorAlt} 
-                                                    className={`${pair.authorClass} w-auto max-w-none object-contain relative z-10 bottom-0 drop-shadow-[0_10px_15px_rgba(0,0,0,0.15)] hover:scale-105 transition-transform origin-bottom`} 
+                                                    className={`${pair.authorClass} w-auto max-w-none object-contain relative z-10 bottom-0 drop-shadow-[0_8px_12px_rgba(0,0,0,0.15)] hover:scale-105 transition-transform origin-bottom`} 
                                                 />
                                             </div>
                                         </div>
