@@ -258,6 +258,7 @@ export default function HeroSection() {
                                     hideSubtitle={true}
                                     hideTerms={true}
                                     isCompact={true}
+                                    formSource="DM Hero Section"
                                 />
                             </div>    
                         </div>

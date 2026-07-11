@@ -256,6 +256,7 @@ export default function KeyFeaturesSection() {
                                 showDigitalMarketingTag={false}
                                 noShadow={true}
                                 paddingClass="p-0"
+                                formSource="DM Assist Sidebar"
                             />
                         </div>
 

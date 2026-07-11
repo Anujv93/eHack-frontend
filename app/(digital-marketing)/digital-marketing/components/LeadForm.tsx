@@ -34,6 +34,7 @@ interface LeadFormProps {
     hideSubtitle?: boolean;
     hideTerms?: boolean;
     isCompact?: boolean;
+    formSource?: string;
 }
 
 export default function LeadForm({
@@ -45,7 +46,8 @@ export default function LeadForm({
     paddingClass = 'p-6 sm:p-8',
     hideSubtitle = false,
     hideTerms = false,
-    isCompact = false
+    isCompact = false,
+    formSource = 'Digital Marketing Landing Page'
 }: LeadFormProps) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -109,14 +111,14 @@ export default function LeadForm({
                 city: '',
                 totalAmount: 0,
                 inquiryName: `DM Diploma - ${data.fullName} - ${purposeLabels[data.purpose] || data.purpose}`,
-                leadSource: 'Digital Marketing Landing Page',
+                leadSource: formSource,
                 courses: [{
                     name: 'Digital Marketing Diploma',
                     code: 'dm-diploma',
                     category: 'Digital Marketing',
                     price: 0
                 }],
-                message: `Purpose: ${purposeLabels[data.purpose] || data.purpose}\nSource: Digital Marketing Landing Page`,
+                message: `Purpose: ${purposeLabels[data.purpose] || data.purpose}\nSource: ${formSource}`,
                 agreeWhatsApp: true,
                 pipeline: 'Digital Marketing Leads',
                 stage: 'New Inquiry',
