@@ -35,6 +35,7 @@ interface LeadFormProps {
     hideTerms?: boolean;
     isCompact?: boolean;
     formSource?: string;
+    onSuccess?: () => void;
 }
 
 export default function LeadForm({
@@ -47,7 +48,8 @@ export default function LeadForm({
     hideSubtitle = false,
     hideTerms = false,
     isCompact = false,
-    formSource = 'Digital Marketing Landing Page'
+    formSource = 'Digital Marketing Landing Page',
+    onSuccess
 }: LeadFormProps) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -142,6 +144,9 @@ export default function LeadForm({
 
             console.log('[DM LeadForm] ✅ SUCCESS! Deal created:', responseData.dealId);
             setIsSubmitted(true);
+            if (onSuccess) {
+                onSuccess();
+            }
 
             // Mark DM form as submitted for other sections
             localStorage.setItem('ehack_dm_form_submitted', 'true');

@@ -1184,7 +1184,7 @@ export const programs = [
             totalHours: "250+ ",
             membership: "2 Years Support"
         },
-        schedule: "Tuesday to Sunday: 9:30 AM - 6:30 PM (Monday Off)",
+        schedule: "Weekday (Tue-Fri): 2 hrs/day | Weekend (Sat-Sun): 4 hrs/day",
         certifications: [
             { code: "DIGITAL", name: "eHack Digital Academy Certificate", image: "/images/certificates/new-digital-marketing-certification.jpeg" }
         ],

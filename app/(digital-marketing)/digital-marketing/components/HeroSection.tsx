@@ -96,12 +96,12 @@ export default function HeroSection() {
             </div>
 
             {/* Header/Logo */}
-            <div className="absolute top-[32px] sm:top-[40px] left-0 w-full z-50 py-2 sm:py-4 border-none">
+            <div className="absolute top-[16px] sm:top-[24px] left-0 w-full z-50 py-2 sm:py-4 border-none">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1300px] flex justify-between items-center">
                     <img
                         src="/images/newnew-ehack-removebg-preview.png"
                         alt="eHack Academy"
-                        className="h-10 sm:h-16 lg:h-20 w-auto object-contain"
+                        className="h-14 sm:h-20 lg:h-24 w-auto object-contain"
                     />
                 </div>
             </div>
@@ -168,7 +168,7 @@ export default function HeroSection() {
                                         {[...Array(5)].map((_, i) => <svg key={i} width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>)}
                                     </div>
                                 </div>
-                                <div className="font-bold text-gray-900 text-sm">4.6/5</div>
+                                <div className="font-bold text-gray-900 text-sm">4.9/5</div>
                             </div>
                             
                             <div className="w-[1px] h-6 bg-gray-200 flex-shrink-0"></div>
@@ -181,7 +181,7 @@ export default function HeroSection() {
                                         {[...Array(5)].map((_, i) => <svg key={i} width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>)}
                                     </div>
                                 </div>
-                                <div className="font-bold text-gray-900 text-sm pr-2">4.8/5</div>
+                                <div className="font-bold text-gray-900 text-sm pr-2">4.9/5</div>
                             </div>
                         </div>
 

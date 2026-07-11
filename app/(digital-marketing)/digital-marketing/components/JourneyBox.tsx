@@ -220,8 +220,11 @@ const hiringLogos = [
     "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg"
 ];
 
+import DownloadModal from './DownloadModal';
+
 export default function JourneyBox() {
     const [activeModule, setActiveModule] = useState(modules[0]);
+    const [isSyllabusModalOpen, setIsSyllabusModalOpen] = useState(false);
     const [activeTrack, setActiveTrack] = useState(careerTracks[0]);
 
     return (
@@ -312,13 +315,12 @@ export default function JourneyBox() {
                             <h4 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight pr-4">
                                 {activeModule.subtitle}
                             </h4>
-                            <a 
-                                href="/brochure/Digital-Marketing-MasterProgram-Brochure.pdf" 
-                                download="Digital_Marketing_Curriculum.pdf"
+                            <button 
+                                onClick={() => setIsSyllabusModalOpen(true)}
                                 className="flex-shrink-0 border border-[#ff6b00] text-[#ff6b00] hover:bg-[#ff6b00] hover:text-white transition-colors px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2"
                             >
                                 <Download size={14} /> Download Syllabus
-                            </a>
+                            </button>
                         </div>
                         
                         <div className="p-5 sm:p-6 overflow-y-auto custom-scrollbar flex-grow bg-gray-50/50">
@@ -605,6 +607,15 @@ export default function JourneyBox() {
                     animation-play-state: paused;
                 }
             `}</style>
+            
+            <DownloadModal 
+                isOpen={isSyllabusModalOpen}
+                onClose={() => setIsSyllabusModalOpen(false)}
+                title="Download Digital Marketing Syllabus"
+                downloadUrl="/brochure/Digital-Marketing-MasterProgram-Brochure.pdf"
+                downloadFilename="Digital_Marketing_Curriculum.pdf"
+                formSource="DM Syllabus Download"
+            />
         </div>
     );
 }

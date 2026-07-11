@@ -15,8 +15,12 @@ import IntroToDigitalMarketing from './IntroToDigitalMarketing';
 import EnterpriseTrainingSection from './EnterpriseTrainingSection';
 import FinalCTASection from './FinalCTASection';
 import { Download, MessageCircleQuestion } from 'lucide-react';
+import DownloadModal from './DownloadModal';
+import { useState } from 'react';
 
 export default function KeyFeaturesSection() {
+    const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
+    
     const features = [
         "Hands-on experience with Google Analytics and related tools.",
         "Real case studies from brands",
@@ -265,7 +269,10 @@ export default function KeyFeaturesSection() {
                             <h4 className="font-bold text-gray-900 text-lg mb-6 leading-snug">
                                 Discover the Ultimate<br />Brochure Now
                             </h4>
-                            <button className="w-full border-2 border-gray-800 text-gray-900 font-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors">
+                            <button 
+                                onClick={() => setIsBrochureModalOpen(true)}
+                                className="w-full border-2 border-gray-800 text-gray-900 font-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
+                            >
                                 Download Brochure <Download size={18} />
                             </button>
                         </div>
@@ -274,6 +281,15 @@ export default function KeyFeaturesSection() {
 
                 </div>
             </div>
+
+            <DownloadModal 
+                isOpen={isBrochureModalOpen}
+                onClose={() => setIsBrochureModalOpen(false)}
+                title="Download Digital Marketing Brochure"
+                downloadUrl="/brochure/Digital-Marketing-MasterProgram-Brochure.pdf"
+                downloadFilename="Digital_Marketing_Brochure.pdf"
+                formSource="DM Brochure Download"
+            />
         </section>
     );
 }
