@@ -89,8 +89,29 @@ export default function TrainingSection({
     // Override showEMI based on client location
     const showEMI = isReady ? !clientIsInternational : initialShowEMI;
 
+    /**
+     * Compute international USD price from a discounted INR price string.
+     * Formula: INR × 4 ÷ 100 = USD
+     * e.g. 1,50,000 (INR) → 6,000 USD
+     */
+    const computeIntlUSD = (discountedINR: string): number | null => {
+        if (!discountedINR) return null;
+        const numeric = discountedINR.replace(/[₹,\s]/g, '').match(/\d+/);
+        if (!numeric) return null;
+        const inrAmount = parseInt(numeric[0], 10);
+        return Math.round((inrAmount * 4) / 100);
+    };
+
+    // Resolve effective international price:
+    // 1. Use Strapi-provided internationalPrice if available
+    // 2. Otherwise auto-compute from DiscountedPrice (× 4 ÷ 100)
+    const effectiveIntlPrice: number | null =
+        typeof internationalPrice === 'number' && internationalPrice > 0
+            ? internationalPrice
+            : (pricing?.DiscountedPrice ? computeIntlUSD(pricing.DiscountedPrice) : null);
+
     // Determine if we should display international (USD) pricing
-    const showInternationalPrice = isInternational && typeof internationalPrice === 'number' && internationalPrice > 0;
+    const showInternationalPrice = isInternational && effectiveIntlPrice !== null && effectiveIntlPrice > 0;
     // Don't render if no content
     if (!title && !pricing && !admissionProcess) {
         return null;
@@ -191,12 +212,32 @@ export default function TrainingSection({
                                     <>
                                         <div className="pricing-amount">
                                             <span className="offer-price intl-usd-price">
-                                                ${internationalPrice!.toLocaleString('en-US')} <span className="intl-currency-label">USD</span>
+                                                ${effectiveIntlPrice!.toLocaleString('en-US')} <span className="intl-currency-label">USD</span>
                                             </span>
                                         </div>
-                                        <p className="intl-price-note">
-                                            💳 Price shown in US Dollars. Taxes may apply based on your location.
-                                        </p>
+
+                                        {/* Admission Fee Highlight */}
+                                        <div style={{ margin: '1.25rem auto 0', background: 'rgba(255,107,0,0.08)', border: '1px dashed rgba(255,107,0,0.4)', borderRadius: '0.75rem', padding: '0.875rem 1rem', textAlign: 'left' }}>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                                                <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>🎟️ Admission Fee</span>
+                                                <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '1rem' }}>$ 500 USD</span>
+                                            </div>
+                                            <p style={{ margin: 0, fontSize: '0.82rem', opacity: 0.85, lineHeight: 1.5 }}>
+                                                Fully credited toward your total program fee — you pay less later. Secure your seat today and let this count toward your investment.
+                                            </p>
+                                        </div>
+
+                                        {/* Payment Terms */}
+                                        <div style={{ marginTop: '0.75rem', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                                            <p style={{ margin: 0, fontSize: '0.82rem', display: 'flex', alignItems: 'flex-start', gap: '0.45rem' }}>
+                                                <span>📋</span>
+                                                <span><strong>Admission Fee</strong> is payable upon issuance of your <strong>Provisional Admission Letter</strong>.</span>
+                                            </p>
+                                            <p style={{ margin: 0, fontSize: '0.82rem', display: 'flex', alignItems: 'flex-start', gap: '0.45rem', opacity: 0.75 }}>
+                                                <span>⚠️</span>
+                                                <span>18% GST applicable as per prevailing government regulations.</span>
+                                            </p>
+                                        </div>
                                     </>
                                 ) : (
                                     /* ── India (INR) pricing ── */

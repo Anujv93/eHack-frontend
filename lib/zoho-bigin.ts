@@ -54,10 +54,20 @@ interface ZohoApiResponse {
     }>;
 }
 
+// --- Token cache to avoid Zoho rate-limiting on token refresh ---
+let cachedAccessToken: string | null = null;
+let tokenExpiresAt: number = 0;
+
 /**
- * Get a fresh access token using the refresh token
+ * Get an access token using the refresh token.
+ * Caches the token in memory and reuses it until ~10 minutes before expiry.
  */
 async function getAccessToken(): Promise<string> {
+    // Return cached token if still valid (with 10-min safety margin)
+    if (cachedAccessToken && Date.now() < tokenExpiresAt) {
+        return cachedAccessToken;
+    }
+
     const clientId = process.env.ZOHO_CLIENT_ID;
     const clientSecret = process.env.ZOHO_CLIENT_SECRET;
     const refreshToken = process.env.ZOHO_REFRESH_TOKEN;
@@ -83,8 +93,18 @@ async function getAccessToken(): Promise<string> {
         }
 
         const data: ZohoTokenResponse = await response.json();
+
+        // Cache the token — Zoho tokens expire in 3600s (1 hour).
+        // We cache for 50 minutes to leave a safety margin.
+        cachedAccessToken = data.access_token;
+        tokenExpiresAt = Date.now() + 50 * 60 * 1000; // 50 minutes
+
+        console.log('Zoho access token refreshed and cached');
         return data.access_token;
     } catch (error) {
+        // Clear cache on failure so next call retries
+        cachedAccessToken = null;
+        tokenExpiresAt = 0;
         console.error('Error getting Zoho access token:', error);
         throw error;
     }
@@ -174,10 +194,12 @@ export async function createZohoDeal(dealData: ZohoDeal): Promise<string> {
         // Global Services Leads
         'Global Services Leads':        { layoutId: '1182543000000498517', layoutName: 'Global Services Leads', subPipeline: 'Leads Pipeline Standard' },
         'corporate services Pipeline':  { layoutId: '1182543000000498517', layoutName: 'Global Services Leads', subPipeline: 'Sales Pipeline Standard1' },
-        // Sales / Admission pipeline
-        'Sales Pipeline':               { layoutId: '1182543000000000173', layoutName: 'Sales Pipeline',        subPipeline: 'Sales Pipeline Standard' },
-        'Sales Pipeline Standard':      { layoutId: '1182543000000000173', layoutName: 'Sales Pipeline',        subPipeline: 'Sales Pipeline Standard' },
-        'Admission Pipeline':           { layoutId: '1182543000000000173', layoutName: 'Sales Pipeline',        subPipeline: 'Sales Pipeline Standard' },
+        // Digital Marketing Leads (DM diploma page leads)
+        'Digital Marketing Leads':      { layoutId: '1182543000000000173', layoutName: 'Digital Marketing Leads', subPipeline: 'Admission Pipeline' },
+        // Sales / Admission pipeline (legacy — layout 1182543000000000173 is now "Digital Marketing Leads")
+        'Sales Pipeline':               { layoutId: '1182543000000000173', layoutName: 'Digital Marketing Leads', subPipeline: 'Admission Pipeline' },
+        'Sales Pipeline Standard':      { layoutId: '1182543000000000173', layoutName: 'Digital Marketing Leads', subPipeline: 'Admission Pipeline' },
+        'Admission Pipeline':           { layoutId: '1182543000000000173', layoutName: 'Digital Marketing Leads', subPipeline: 'Admission Pipeline' },
     };
 
     // Resolve config — default to eHack Academy Leads if not specified

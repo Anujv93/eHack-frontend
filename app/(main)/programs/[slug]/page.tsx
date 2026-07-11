@@ -62,6 +62,20 @@ const POPULAR_SOCIAL_PROOF: Record<string, { enrolled: string, avatars: string[]
 };
 
 
+/**
+ * Computes the international USD price from a discounted INR price string.
+ * Formula: INR price × 4 ÷ 100 = USD
+ * e.g. ₹1,50,000  →  1,50,000 × 4 / 100  =  6,000 USD
+ */
+function computeIntlUSD(discountedINR: string): string | null {
+    if (!discountedINR) return null;
+    // Strip ₹, commas and any trailing text, then parse
+    const numeric = discountedINR.replace(/[₹,\s]/g, '').match(/\d+/);
+    if (!numeric) return null;
+    const inrAmount = parseInt(numeric[0], 10);
+    const usd = Math.round((inrAmount * 4) / 100);
+    return `$ ${usd.toLocaleString('en-US')} USD`;
+}
 
 export default function ProgramPage({ params }: { params: Promise<{ slug: string }> }) {
     const [program, setProgram] = useState<typeof programs[0] | null>(null);
@@ -786,17 +800,42 @@ export default function ProgramPage({ params }: { params: Promise<{ slug: string
 
                     <div className="pricing-content-wrapper">
                         {(() => {
-                            if (isReady && isInternational && program.pricing.international) {
+                            // Compute international USD price from discounted INR (× 4 ÷ 100)
+                            const intlUSD = computeIntlUSD(program.pricing.discounted);
+                            if (isReady && isInternational && intlUSD) {
                                 return (
                                    <div className="pricing-main-column" style={{ width: '100%' }}>
                                         <div className="plan-option" style={{ padding: '2rem', textAlign: 'center', border: '1px solid var(--accent)', borderRadius: '1rem', background: 'rgba(255,107,0,0.05)' }}>
                                             <div className="plan-header" style={{ justifyContent: 'center' }}>
                                                 <div className="plan-title-group" style={{ justifyContent: 'center', margin: '0 auto' }}>
-                                                    <h4 className="plan-name" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>International Program Investment</h4>
+                                                    <h4 className="plan-name" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>International Program Fee</h4>
                                                 </div>
                                             </div>
-                                            <span className="plan-price" style={{ fontSize: '3rem', color: 'var(--accent)', display: 'block', margin: '1.5rem 0' }}>{program.pricing.international}</span>
-                                            <p className="plan-description" style={{ marginTop: '1rem', fontSize: '1.1rem' }}>Includes all global certifications, hands-on labs, and full program access.</p>
+                                            <span className="plan-price" style={{ fontSize: '3rem', color: 'var(--accent)', display: 'block', margin: '1.5rem 0' }}>{intlUSD}</span>
+                                            <p className="plan-description" style={{ marginTop: '0.5rem', fontSize: '1rem', opacity: 0.8 }}>Includes all global certifications, hands-on labs, and full program access.</p>
+
+                                            {/* Admission Fee Highlight */}
+                                            <div style={{ margin: '1.5rem auto', maxWidth: '480px', background: 'rgba(255,107,0,0.08)', border: '1px dashed rgba(255,107,0,0.4)', borderRadius: '0.75rem', padding: '1rem 1.25rem', textAlign: 'left' }}>
+                                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                                                    <span style={{ fontWeight: 600, fontSize: '0.95rem' }}>🎟️ Admission Fee</span>
+                                                    <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '1.05rem' }}>$ 500 USD</span>
+                                                </div>
+                                                <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.85, lineHeight: 1.5 }}>
+                                                    Fully credited toward your total program fee — you pay less later. Secure your seat today and let this count toward your investment.
+                                                </p>
+                                            </div>
+
+                                            {/* Payment Terms */}
+                                            <div style={{ margin: '0 auto', maxWidth: '480px', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                                                <p style={{ margin: 0, fontSize: '0.85rem', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                                                    <span>📋</span>
+                                                    <span><strong>Admission Fee</strong> is payable upon issuance of your <strong>Provisional Admission Letter</strong>.</span>
+                                                </p>
+                                                <p style={{ margin: 0, fontSize: '0.85rem', display: 'flex', alignItems: 'flex-start', gap: '0.5rem', opacity: 0.75 }}>
+                                                    <span>⚠️</span>
+                                                    <span>18% GST applicable as per prevailing government regulations.</span>
+                                                </p>
+                                            </div>
                                         </div>
                                    </div>
                                 );
