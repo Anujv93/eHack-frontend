@@ -4,9 +4,11 @@ import React, { useState, useEffect } from 'react';
 import LeadForm from './LeadForm';
 import { Download, Eye } from 'lucide-react';
 import Image from 'next/image';
+import DownloadModal from './DownloadModal';
 
 export default function HeroSection() {
     const [currentPair, setCurrentPair] = useState(0);
+    const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
     
     const pairs = [
         {
@@ -186,7 +188,10 @@ export default function HeroSection() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row items-center gap-3 mb-4">
-                            <button className="w-full sm:w-auto bg-[#ff6b00] hover:bg-[#e56000] text-white font-bold px-8 py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-md shadow-[#ff6b00]/20 text-base">
+                            <button 
+                                onClick={() => setIsBrochureModalOpen(true)}
+                                className="w-full sm:w-auto bg-[#ff6b00] hover:bg-[#e56000] text-white font-bold px-8 py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-md shadow-[#ff6b00]/20 text-base"
+                            >
                                 Download Brochure <Download size={20} />
                             </button>
                         </div>
@@ -266,6 +271,15 @@ export default function HeroSection() {
 
                 </div>
             </div>
+
+            <DownloadModal 
+                isOpen={isBrochureModalOpen}
+                onClose={() => setIsBrochureModalOpen(false)}
+                title="Download Digital Marketing Brochure"
+                downloadUrl="/brochure/Digital-Marketing-MasterProgram-Brochure.pdf"
+                downloadFilename="Digital_Marketing_Brochure.pdf"
+                formSource="DM Hero Section Brochure Download"
+            />
         </section>
     );
 }

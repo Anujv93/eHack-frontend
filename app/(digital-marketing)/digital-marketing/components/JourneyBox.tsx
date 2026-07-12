@@ -221,10 +221,12 @@ const hiringLogos = [
 ];
 
 import DownloadModal from './DownloadModal';
+import FormModal from './FormModal';
 
 export default function JourneyBox() {
     const [activeModule, setActiveModule] = useState(modules[0]);
     const [isSyllabusModalOpen, setIsSyllabusModalOpen] = useState(false);
+    const [isFormModalOpen, setIsFormModalOpen] = useState(false);
     const [activeTrack, setActiveTrack] = useState(careerTracks[0]);
 
     return (
@@ -541,7 +543,10 @@ export default function JourneyBox() {
                             </p>
                         </div>
                     </div>
-                    <button className="flex-shrink-0 flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 rounded-lg border-2 border-gray-900 text-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-colors w-full lg:w-auto text-[14px] sm:text-[15px]">
+                    <button 
+                        onClick={() => setIsFormModalOpen(true)}
+                        className="flex-shrink-0 flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 rounded-lg border-2 border-gray-900 text-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-colors w-full lg:w-auto text-[14px] sm:text-[15px]"
+                    >
                         Contact Us <ChevronRight size={18} />
                     </button>
                 </div>
@@ -615,6 +620,13 @@ export default function JourneyBox() {
                 downloadUrl="/brochure/Digital-Marketing-MasterProgram-Brochure.pdf"
                 downloadFilename="Digital_Marketing_Curriculum.pdf"
                 formSource="DM Syllabus Download"
+            />
+
+            <FormModal
+                isOpen={isFormModalOpen}
+                onClose={() => setIsFormModalOpen(false)}
+                title="Corporate Training Request"
+                formSource="DM Corporate Training Banner"
             />
         </div>
     );

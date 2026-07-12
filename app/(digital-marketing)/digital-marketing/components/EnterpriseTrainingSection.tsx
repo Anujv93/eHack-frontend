@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, Trophy, MessageSquare, CheckCircle2, ShieldCheck } from 'lucide-react';
+import FormModal from './FormModal';
 
 const logos = [
     { name: "Google", url: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
@@ -38,6 +39,8 @@ const features = [
 ];
 
 export default function EnterpriseTrainingSection() {
+    const [isFormModalOpen, setIsFormModalOpen] = useState(false);
+
     const topLogos = logos.slice(0, 6);
     const bottomLogos = logos.slice(6, 12);
     // Duplicate 4 times to ensure seamless infinite scroll on wide screens
@@ -57,7 +60,10 @@ export default function EnterpriseTrainingSection() {
                     </p>
                 </div>
                 <div className="flex-shrink-0 w-full sm:w-auto">
-                    <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-[#ff6b00] to-[#ff8c33] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
+                    <button 
+                        onClick={() => setIsFormModalOpen(true)}
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-[#ff6b00] to-[#ff8c33] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
+                    >
                         Skill Up Your Team <ArrowRight size={18} />
                     </button>
                 </div>
@@ -148,6 +154,12 @@ export default function EnterpriseTrainingSection() {
                     animation-play-state: paused;
                 }
             `}</style>
+            <FormModal
+                isOpen={isFormModalOpen}
+                onClose={() => setIsFormModalOpen(false)}
+                title="Corporate Training Request"
+                formSource="DM Enterprise Training"
+            />
         </div>
     );
 }

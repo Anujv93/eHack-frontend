@@ -159,13 +159,13 @@ export default function MasterclassBanner({ data }: MasterclassBannerProps) {
                    {/* Book Image */}
                    <img 
                       src={pair.book} 
-                      className="book-img absolute right-0 sm:-right-4 lg:-right-6 bottom-4 w-[110px] h-[155px] sm:w-[130px] sm:h-[180px] rounded-md shadow-[0_15px_30px_rgba(0,0,0,0.6)] object-cover z-10 border-[3px] border-white" 
+                      className="book-img absolute right-0 sm:-right-4 lg:right-2 bottom-4 w-[110px] h-[155px] sm:w-[130px] sm:h-[180px] rounded-md shadow-[0_15px_30px_rgba(0,0,0,0.6)] object-cover z-10 border-[3px] border-white" 
                       alt="Book Cover"
                    />
                    {/* Author Image */}
                    <img 
                       src={pair.author} 
-                      className={`author-img absolute left-0 sm:-left-4 lg:-left-10 bottom-0 ${pair.authorScale} w-auto object-contain z-20 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]`} 
+                      className={`author-img absolute left-0 sm:-left-4 lg:left-0 bottom-0 ${pair.authorScale} w-auto object-contain z-20 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]`} 
                       alt="Author"
                    />
                 </div>

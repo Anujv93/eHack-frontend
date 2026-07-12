@@ -16,10 +16,12 @@ import EnterpriseTrainingSection from './EnterpriseTrainingSection';
 import FinalCTASection from './FinalCTASection';
 import { Download, MessageCircleQuestion } from 'lucide-react';
 import DownloadModal from './DownloadModal';
+import FormModal from './FormModal';
 import { useState } from 'react';
 
 export default function KeyFeaturesSection() {
     const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
+    const [isFormModalOpen, setIsFormModalOpen] = useState(false);
     
     const features = [
         "Hands-on experience with Google Analytics and related tools.",
@@ -66,7 +68,10 @@ export default function KeyFeaturesSection() {
                                     </div>
                                     
                                     <div className="flex justify-center mt-6 sm:mt-10">
-                                        <button className="bg-[#ff6b00] hover:bg-[#e56000] text-white font-bold px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-[#ff6b00]/20 w-full sm:w-auto text-sm sm:text-base">
+                                        <button 
+                                            onClick={() => setIsFormModalOpen(true)}
+                                            className="bg-[#ff6b00] hover:bg-[#e56000] text-white font-bold px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-lg shadow-[#ff6b00]/20 w-full sm:w-auto text-sm sm:text-base"
+                                        >
                                             Get Started <span className="text-lg leading-none">→</span>
                                         </button>
                                     </div>
@@ -289,6 +294,13 @@ export default function KeyFeaturesSection() {
                 downloadUrl="/brochure/Digital-Marketing-MasterProgram-Brochure.pdf"
                 downloadFilename="Digital_Marketing_Brochure.pdf"
                 formSource="DM Brochure Download"
+            />
+
+            <FormModal
+                isOpen={isFormModalOpen}
+                onClose={() => setIsFormModalOpen(false)}
+                title="Get Started"
+                formSource="DM Key Features Get Started"
             />
         </section>
     );
