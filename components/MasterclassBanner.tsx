@@ -21,11 +21,11 @@ export default function MasterclassBanner({ data }: MasterclassBannerProps) {
   };
 
   const pairs = [
-      { text: "$100M Offers", book: "/images/books/100m-offers.jpg", author: "/images/books/Alex-Hermozi-Freelancing-removebg-preview.png", authorScale: "h-[140px] sm:h-[180px]" },
-      { text: "$100M Leads", book: "/images/books/100m-leads-original-imagvjkcv3cgu8mf.webp", author: "/images/books/Alex-Hermozi-Freelancing-removebg-preview.png", authorScale: "h-[140px] sm:h-[180px]" },
-      { text: "Purple Cow", book: "/images/books/purple-cow.jpg", author: "/images/books/seth%20godin.png", authorScale: "h-[120px] sm:h-[160px]" },
-      { text: "Traffic Secrets", book: "/images/books/traffic-secrets.jpg", author: "/images/books/Russell%20Brunson.png", authorScale: "h-[140px] sm:h-[180px]" },
-      { text: "22 Immutable Laws", book: "/images/books/22-laws.jpg", author: "/images/books/al%20rise.png", authorScale: "h-[140px] sm:h-[180px]" }
+      { text: "$100M Offers", book: "/images/books/100m-offers.jpg", author: "/images/books/Alex-Hermozi-Freelancing-removebg-preview.png", authorScale: "h-[185px] sm:h-[200px]" },
+      { text: "$100M Leads", book: "/images/books/100m-leads-original-imagvjkcv3cgu8mf.webp", author: "/images/books/Alex-Hermozi-Freelancing-removebg-preview.png", authorScale: "h-[185px] sm:h-[200px]" },
+      { text: "Purple Cow", book: "/images/books/purple-cow.jpg", author: "/images/books/seth%20godin.png", authorScale: "h-[165px] sm:h-[180px]" },
+      { text: "Traffic Secrets", book: "/images/books/traffic-secrets.jpg", author: "/images/books/Russell%20Brunson.png", authorScale: "h-[185px] sm:h-[200px]" },
+      { text: "22 Immutable Laws", book: "/images/books/22-laws.jpg", author: "/images/books/al%20rise.png", authorScale: "h-[185px] sm:h-[200px]" }
   ];
 
   useEffect(() => {
@@ -131,7 +131,10 @@ export default function MasterclassBanner({ data }: MasterclassBannerProps) {
           </div>
 
           <div className="mt-auto flex items-center gap-3 sm:gap-4">
-            <button className="bg-[#ff6b00] hover:bg-[#e56000] text-white font-bold py-2.5 px-5 sm:py-3.5 sm:px-8 rounded-full transition-all duration-300 shadow-[0_8px_20px_rgba(255,107,0,0.3)] hover:-translate-y-1 text-sm sm:text-base">
+            <button 
+              onClick={() => window.open('https://api.whatsapp.com/send/?phone=919886035330&text=Hi%20EHACK%20Academy%2C%20I%20want%20to%20enroll%20in%20the%207-Day%20Live%20Digital%20Mastermind%20%28Digital%20Marketing%29%20class%20and%20take%20advantage%20of%20the%20early%20bird%20offer.%20Could%20you%20please%20let%20me%20know%20how%20to%20proceed%20with%20the%20enrollment%3F&type=phone_number&app_absent=0', '_blank')}
+              className="bg-[#ff6b00] hover:bg-[#e56000] text-white font-bold py-2.5 px-5 sm:py-3.5 sm:px-8 rounded-full transition-all duration-300 shadow-[0_8px_20px_rgba(255,107,0,0.3)] hover:-translate-y-1 text-sm sm:text-base"
+            >
               Generate Invoice
             </button>
             <div className="flex flex-col">
@@ -145,24 +148,24 @@ export default function MasterclassBanner({ data }: MasterclassBannerProps) {
         <div className="w-full lg:w-[60%] relative z-10 p-5 sm:p-8 md:p-12 flex flex-col lg:flex-row items-center justify-end gap-6 sm:gap-8 lg:gap-12 min-h-auto lg:min-h-[550px]">
           
           {/* Creative GSAP 3D Floating Book/Author Animation */}
-          <div ref={animationContainerRef} className="relative w-full max-w-[220px] sm:max-w-[280px] h-[220px] sm:h-[280px] lg:absolute lg:left-0 lg:top-[30%] lg:-translate-y-1/2 lg:-translate-x-[25%] z-20 flex-shrink-0 mx-auto lg:mx-0 mt-2 sm:mt-0 lg:mt-0 perspective-[1000px]">
+          <div ref={animationContainerRef} className="relative w-full max-w-[260px] sm:max-w-[320px] h-[220px] sm:h-[280px] lg:absolute lg:left-0 lg:top-[30%] lg:-translate-y-1/2 lg:-translate-x-[25%] z-20 flex-shrink-0 mx-auto lg:mx-0 mt-2 sm:mt-0 lg:mt-0 perspective-[1000px]">
             {/* Ambient Background Glow for the floating elements */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-48 sm:h-48 bg-white/10 blur-[40px] sm:blur-[50px] rounded-full z-0"></div>
 
             {pairs.map((pair, idx) => (
               <div key={idx} className="creative-slide absolute inset-0 w-full h-full flex flex-col items-center justify-end z-10 opacity-0 pointer-events-none">
                 
-                <div className="relative w-full h-[180px] sm:h-[220px] flex items-end justify-center">
+                <div className="relative w-full h-[190px] sm:h-[240px] flex items-end justify-center">
                    {/* Book Image */}
                    <img 
                       src={pair.book} 
-                      className="book-img absolute right-4 lg:right-0 bottom-4 w-[85px] h-[120px] sm:w-[110px] sm:h-[155px] rounded-md shadow-[0_15px_30px_rgba(0,0,0,0.6)] object-cover z-10 border-[3px] border-white" 
+                      className="book-img absolute right-0 sm:-right-4 lg:-right-6 bottom-4 w-[110px] h-[155px] sm:w-[130px] sm:h-[180px] rounded-md shadow-[0_15px_30px_rgba(0,0,0,0.6)] object-cover z-10 border-[3px] border-white" 
                       alt="Book Cover"
                    />
                    {/* Author Image */}
                    <img 
                       src={pair.author} 
-                      className={`author-img absolute left-4 lg:-left-6 bottom-0 ${pair.authorScale} w-auto object-contain z-20 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]`} 
+                      className={`author-img absolute left-0 sm:-left-4 lg:-left-10 bottom-0 ${pair.authorScale} w-auto object-contain z-20 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]`} 
                       alt="Author"
                    />
                 </div>
@@ -177,11 +180,11 @@ export default function MasterclassBanner({ data }: MasterclassBannerProps) {
 
           {/* Curriculum Accordion */}
           <div className="w-full max-w-[480px] lg:ml-auto relative z-30 bg-[#fff0e6] rounded-2xl border border-orange-200/50 p-4 sm:p-6 shadow-[0_20px_40px_rgba(17,24,39,0.2)] h-[400px] sm:h-[480px] flex flex-col mb-2 lg:mb-0">
-            <div className="flex items-center justify-between border-b border-orange-200 pb-3 sm:pb-4 mb-4 sm:mb-5">
-              <h3 className="text-gray-900 font-black uppercase tracking-widest text-sm sm:text-base">
+            <div className="flex items-center justify-between border-b border-orange-200 pb-3 sm:pb-4 mb-4 sm:mb-5 gap-2">
+              <h3 className="text-gray-900 font-black uppercase tracking-widest text-sm sm:text-base leading-tight">
                 Curriculum Schedule
               </h3>
-              <span className="text-[10px] sm:text-[11px] text-[#ff6b00] font-bold bg-[#ff6b00]/10 px-2 sm:px-3 py-1 rounded-full border border-[#ff6b00]/20">
+              <span className="whitespace-nowrap flex-shrink-0 text-[10px] sm:text-[11px] text-[#ff6b00] font-bold bg-[#ff6b00]/10 px-2 sm:px-3 py-1 rounded-full border border-[#ff6b00]/20">
                 7 Modules
               </span>
             </div>

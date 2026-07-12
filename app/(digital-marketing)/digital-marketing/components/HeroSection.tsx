@@ -96,7 +96,7 @@ export default function HeroSection() {
             </div>
 
             {/* Header/Logo */}
-            <div className="absolute top-[16px] sm:top-[24px] left-0 w-full z-50 py-2 sm:py-4 border-none">
+            <div className="absolute top-[40px] sm:top-[24px] left-0 w-full z-50 py-0 sm:py-4 border-none">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1300px] flex justify-between items-center">
                     <img
                         src="/images/newnew-ehack-removebg-preview.png"
