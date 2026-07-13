@@ -7,6 +7,7 @@ const navItems = [
     { id: 'key-features', label: 'Key Features' },
     { id: 'course-content', label: 'Curriculum' },
     { id: 'overview', label: 'Overview' },
+    { id: 'pricing', label: 'Pricing' },
     { id: 'certification', label: 'Certification' },
     { id: 'skills', label: 'Skills' },
     { id: 'tools', label: 'Tools' },
@@ -105,13 +106,13 @@ export default function StickyNavbar() {
                 {/* Call Button */}
                 <div className="flex-shrink-0 flex items-center pr-1 sm:pr-0">
                     <a
-                        href="tel:+919513393880"
+                        href="tel:+919886035330"
                         className="inline-flex items-center gap-1 sm:gap-2 border border-gray-300 bg-white text-gray-800 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold text-[10px] sm:text-sm shadow-sm hover:bg-gray-50 transition-all duration-300"
                     >
                         <span className="bg-[#ff6b00] p-1 rounded-full text-white flex items-center justify-center">
                             <Phone size={12} className="sm:w-[14px] sm:h-[14px] fill-current" />
                         </span>
-                        <span className="hidden sm:inline">+91-9513393880</span>
+                        <span className="hidden sm:inline">+91-9886035330</span>
                         <span className="sm:hidden font-semibold ml-0.5 tracking-wide text-xs">Call</span>
                     </a>
                 </div>

@@ -248,7 +248,7 @@ export default function JourneyBox() {
                 {/* Top Right Duration Pill */}
                 <div className="absolute top-4 sm:top-6 right-4 sm:right-8 bg-white border border-gray-200 text-gray-800 shadow-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg flex items-center gap-2 text-xs sm:text-sm font-bold z-10">
                     <Calendar size={16} className="text-[#ff6b00]" />
-                    3 months
+                    7 months
                 </div>
 
                 <div className="relative z-10 mb-4 sm:mb-5 pl-[72px] sm:pl-24">

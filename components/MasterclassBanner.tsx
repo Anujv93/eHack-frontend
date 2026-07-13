@@ -115,18 +115,21 @@ export default function MasterclassBanner({ data }: MasterclassBannerProps) {
             Gain the experience of world&apos;s top marketers — in just 7 days.
           </p>
 
-          {/* Early Bird Pricing Block */}
+          {/* Diploma Bundle Pricing Block */}
           <div className="bg-[#fff7f0] border border-[#ff6b00]/20 rounded-xl p-3 sm:p-4 mb-5 sm:mb-6 max-w-sm">
             <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
-              <span className="bg-[#ff6b00] text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md">Early Bird</span>
-              <span className="text-[#ff6b00] font-extrabold text-xs sm:text-sm">40% OFF</span>
+              <span className="bg-[#ff6b00] text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md">Special Offer</span>
+              <span className="text-[#ff6b00] font-extrabold text-xs sm:text-sm">100% FREE</span>
             </div>
-            <div className="flex items-baseline gap-2.5 mb-1.5 sm:mb-2">
-              <span className="text-gray-400 line-through text-sm sm:text-base font-medium">₹7,000</span>
-              <span className="text-gray-900 font-black text-xl sm:text-2xl md:text-3xl">₹4,200</span>
+            <div className="flex flex-col mb-1.5 sm:mb-2">
+              <div className="flex items-baseline gap-2.5">
+                <span className="text-gray-400 line-through text-sm sm:text-base font-medium">₹28,000</span>
+                <span className="text-gray-900 font-black text-xl sm:text-2xl md:text-3xl">₹0</span>
+              </div>
+              <span className="text-gray-700 text-xs sm:text-sm font-semibold mt-1">When bundled with the main diploma</span>
             </div>
             <p className="text-gray-500 text-[11px] sm:text-xs leading-relaxed">
-              Generate your live class invoice to lock in your 40% discount. A booking token of <span className="font-bold text-gray-700">₹500</span> will appear on your payslip — no money is deducted upfront.
+              Get full access to this exclusive 7-day masterclass absolutely <span className="font-bold text-[#ff6b00]">FREE</span> when you enroll in our complete Digital Marketing Diploma program. Standard price is <span className="font-bold text-gray-700">₹28,000</span> if purchased separately.
             </p>
           </div>
 
@@ -139,7 +142,7 @@ export default function MasterclassBanner({ data }: MasterclassBannerProps) {
             </button>
             <div className="flex flex-col">
               <span className="text-[9px] sm:text-[10px] uppercase font-bold text-gray-400 tracking-widest">Call For Details</span>
-              <span className="text-xs sm:text-sm font-black text-gray-900">+91-9513393880</span>
+              <span className="text-xs sm:text-sm font-black text-gray-900">+91-9886035330</span>
             </div>
           </div>
         </div>

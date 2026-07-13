@@ -4,6 +4,7 @@ import React from 'react';
 import LeadForm from './LeadForm';
 import JourneyBox from './JourneyBox';
 import CourseOverview from './CourseOverview';
+import PricingSection from './PricingSection';
 import CertificationSection from './CertificationSection';
 import SkillsCovered from './SkillsCovered';
 import ToolsCovered from './ToolsCovered';
@@ -193,6 +194,11 @@ export default function KeyFeaturesSection() {
                         {/* Digital Marketing Course Overview */}
                         <div id="overview">
                             <CourseOverview />
+                        </div>
+
+                        {/* Pricing Section */}
+                        <div id="pricing" className="my-8">
+                            <PricingSection />
                         </div>
 
                         {/* Certification Section */}
